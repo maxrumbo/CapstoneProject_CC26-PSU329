@@ -28,14 +28,14 @@ def fetch_today() -> pd.DataFrame:
         try:
             hist = yf.Ticker(ticker_str).history(start=today, end=tomorrow, auto_adjust=True)
             if hist.empty:
-                print(f"  ⚠  {ticker_str}: kosong")
+                print(f"  Error  {ticker_str}: kosong")
                 all_close[ticker_str.replace('.JK', '')] = None
             else:
                 close = round(hist['Close'].iloc[-1], 2)
                 all_close[ticker_str.replace('.JK', '')] = close
-                print(f"  ✓  {ticker_str:8s}  close = {close:,.2f}")
+                print(f"  Oke  {ticker_str:8s}  close = {close:,.2f}")
         except Exception as e:
-            print(f"  ✗  {ticker_str}: {e}")
+            print(f"  No  {ticker_str}: {e}")
             all_close[ticker_str.replace('.JK', '')] = None
 
     return pd.DataFrame([all_close])
@@ -49,7 +49,7 @@ def append_to_csv(new_row: pd.DataFrame):
         existing['Date'] = existing['Date'].astype(str)
 
         if today in existing['Date'].values:
-            print(f"⚠ Tanggal {today} sudah ada, cek perubahan...")
+            print(f"Error Tanggal {today} sudah ada, cek perubahan...")
 
             # ambil row lama
             old_row = existing[existing['Date'] == today]
@@ -59,10 +59,10 @@ def append_to_csv(new_row: pd.DataFrame):
             new_values = new_row.drop(columns=["Date"]).values
 
             if (old_values == new_values).all():
-                print("✓ Data sama, tidak perlu update.")
+                print("Oke Data sama, tidak perlu update.")
                 return
             else:
-                print("🔄 Data berubah, update row...")
+                print("Data berubah, update row...")
 
                 # hapus row lama
                 existing = existing[existing['Date'] != today]
@@ -78,7 +78,7 @@ def append_to_csv(new_row: pd.DataFrame):
     updated = updated.sort_values("Date").reset_index(drop=True)
 
     updated.to_csv(CSV_PATH, index=False)
-    print(f"✓ Saved {today} → total {len(updated)} baris")
+    print(f"Oke Saved {today} → total {len(updated)} baris")
 
 if __name__ == "__main__":
     print(f"Fetching data untuk {datetime.now().strftime('%Y-%m-%d')}...")
