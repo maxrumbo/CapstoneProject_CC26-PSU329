@@ -1,0 +1,1177 @@
+﻿Kategori,Nama Produk,text_cleaned,text_stopwords_removed,clean_text,token_awal,token_akhir,reduksi,persen_%
+BBM,Pertalite,pertalite,pertalite,pertalite,1.0,1.0,0.0,0.0
+BBM,Bensin,bensin,bensin,bensin,1.0,1.0,0.0,0.0
+BBM,Pertamax,pertamax,pertamax,pertamax,1.0,1.0,0.0,0.0
+BBM,Pertamax Turbo,pertamax turbo,pertamax turbo,pertamax turbo,2.0,2.0,0.0,0.0
+BBM,Dexlite,dexlite,dexlite,dexlite,1.0,1.0,0.0,0.0
+BBM,Pertamina Dex,pertamina dex,pertamina dex,pertamina dex,2.0,2.0,0.0,0.0
+BBM,Solar,solar,,,1.0,0.0,1.0,100.0
+BBM,Shell Super,shell super,shell,shell,2.0,1.0,1.0,50.0
+BBM,Shell V-Power,shell vpower,shell vpower,shell vpower,2.0,2.0,0.0,0.0
+BBM,Shell V-Power Nitro+,shell vpower nitro,shell vpower nitro,shell vpower nitro,3.0,3.0,0.0,0.0
+BBM,Shell V-Power Diesel,shell vpower diesel,shell vpower diesel,shell vpower diesel,3.0,3.0,0.0,0.0
+BBM,BP 90,bp,bp,bp,2.0,1.0,1.0,50.0
+BBM,BP 92,bp,bp,bp,2.0,1.0,1.0,50.0
+BBM,BP Ultimate,bp ultimate,bp ultimate,bp ultimate,2.0,2.0,0.0,0.0
+BBM,BP Diesel,bp diesel,bp diesel,bp diesel,2.0,2.0,0.0,0.0
+BBM,Revvo 89,revvo,revvo,revvo,2.0,1.0,1.0,50.0
+BBM,Revvo 90,revvo,revvo,revvo,2.0,1.0,1.0,50.0
+BBM,Revvo 92,revvo,revvo,revvo,2.0,1.0,1.0,50.0
+BBM,Diesel Primus,diesel primus,diesel primus,diesel primus,2.0,2.0,0.0,0.0
+BBM,Bio Solar,bio solar,bio,bio,2.0,1.0,1.0,50.0
+BBM,Pertamax Green 95,pertamax green,pertamax green,pertamax green,3.0,2.0,1.0,33.3
+BBM,Bioetanol Blend,bioetanol blend,bioetanol blend,bioetanol blend,2.0,2.0,0.0,0.0
+BBM,Premium (RON 88),premium ron,ron,ron,3.0,1.0,2.0,66.7
+Parkir,Parkir Motor,parkir motor,parkir motor,parkir motor,2.0,2.0,0.0,0.0
+Parkir,Parkir Mobil,parkir mobil,parkir,parkir,2.0,1.0,1.0,50.0
+Parkir,Parkir Bus,parkir bus,parkir bus,parkir bus,2.0,2.0,0.0,0.0
+Parkir,Parkir Truk,parkir truk,parkir truk,parkir truk,2.0,2.0,0.0,0.0
+Parkir,Parkir Sepeda,parkir sepeda,parkir sepeda,parkir sepeda,2.0,2.0,0.0,0.0
+Parkir,Parkir Kampus,parkir kampus,parkir kampus,parkir kampus,2.0,2.0,0.0,0.0
+Parkir,Parkir Sekolah,parkir sekolah,parkir sekolah,parkir sekolah,2.0,2.0,0.0,0.0
+Parkir,Parkir Kantor,parkir kantor,parkir kantor,parkir kantor,2.0,2.0,0.0,0.0
+Parkir,Parkir Mall,parkir mall,parkir mall,parkir mall,2.0,2.0,0.0,0.0
+Parkir,Parkir Pasar,parkir pasar,parkir,parkir,2.0,1.0,1.0,50.0
+Parkir,Parkir Rumah Sakit,parkir rumah sakit,parkir rumah,parkir rumah,3.0,2.0,1.0,33.3
+Parkir,Parkir Hotel,parkir hotel,parkir hotel,parkir hotel,2.0,2.0,0.0,0.0
+Parkir,Parkir Restoran,parkir restoran,parkir restoran,parkir restoran,2.0,2.0,0.0,0.0
+Parkir,Parkir Apartemen,parkir apartemen,parkir apartemen,parkir apartemen,2.0,2.0,0.0,0.0
+Parkir,Parkir Perumahan,parkir perumahan,parkir perumahan,parkir rumah,2.0,2.0,0.0,0.0
+Parkir,Parkir Stadion,parkir stadion,parkir stadion,parkir stadion,2.0,2.0,0.0,0.0
+Parkir,Parkir Bandara,parkir bandara,parkir bandara,parkir bandara,2.0,2.0,0.0,0.0
+Parkir,Parkir Stasiun,parkir stasiun,parkir stasiun,parkir stasiun,2.0,2.0,0.0,0.0
+Parkir,Parkir Terminal,parkir terminal,parkir terminal,parkir terminal,2.0,2.0,0.0,0.0
+Parkir,Parkir Pelabuhan,parkir pelabuhan,parkir pelabuhan,parkir labuh,2.0,2.0,0.0,0.0
+Parkir,Parkir Tempat Wisata,parkir tempat wisata,parkir wisata,parkir wisata,3.0,2.0,1.0,33.3
+Parkir,Parkir Gedung,parkir gedung,parkir gedung,parkir gedung,2.0,2.0,0.0,0.0
+Parkir,Parkir Basement,parkir basement,parkir basement,parkir basement,2.0,2.0,0.0,0.0
+Parkir,Parkir Rooftop,parkir rooftop,parkir rooftop,parkir rooftop,2.0,2.0,0.0,0.0
+Parkir,Parkir Pinggir Jalan,parkir pinggir jalan,parkir pinggir jalan,parkir pinggir jalan,3.0,3.0,0.0,0.0
+Parkir,Parkir Area Publik,parkir area publik,parkir area publik,parkir area publik,3.0,3.0,0.0,0.0
+Parkir,Parkir VIP,parkir vip,parkir vip,parkir vip,2.0,2.0,0.0,0.0
+Parkir,Valet Parking,valet parking,valet parking,valet parking,2.0,2.0,0.0,0.0
+Parkir,Parkir Inap,parkir inap,parkir inap,parkir inap,2.0,2.0,0.0,0.0
+Parkir,Parkir Harian,parkir harian,parkir harian,parkir hari,2.0,2.0,0.0,0.0
+Parkir,Parkir Mingguan,parkir mingguan,parkir mingguan,parkir minggu,2.0,2.0,0.0,0.0
+Parkir,Parkir Bulanan,parkir bulanan,parkir bulanan,parkir bulan,2.0,2.0,0.0,0.0
+Parkir,Parkir Tahunan,parkir tahunan,parkir tahunan,parkir tahun,2.0,2.0,0.0,0.0
+Parkir,Parkir Langganan,parkir langganan,parkir langganan,parkir langgan,2.0,2.0,0.0,0.0
+Parkir,Parkir Event,parkir event,parkir event,parkir event,2.0,2.0,0.0,0.0
+Parkir,Parkir Konser,parkir konser,parkir konser,parkir konser,2.0,2.0,0.0,0.0
+Parkir,Parkir Pameran,parkir pameran,parkir pameran,parkir pamer,2.0,2.0,0.0,0.0
+Parkir,Parkir Car Free Day,parkir car free day,parkir car day,parkir car day,4.0,3.0,1.0,25.0
+Parkir,Parkir Transit,parkir transit,parkir transit,parkir transit,2.0,2.0,0.0,0.0
+Parkir,Park and Ride,park and ride,park and ride,park and ride,3.0,3.0,0.0,0.0
+Parkir,Parkir Rest Area,parkir rest area,parkir rest area,parkir rest area,3.0,3.0,0.0,0.0
+Parkir,Parkir Tol,parkir tol,parkir tol,parkir tol,2.0,2.0,0.0,0.0
+Parkir,Parkir Wisata,parkir wisata,parkir wisata,parkir wisata,2.0,2.0,0.0,0.0
+Parkir,Parkir Kendaraan Listrik,parkir kendaraan listrik,parkir kendaraan listrik,parkir kendara listrik,3.0,3.0,0.0,0.0
+Parkir,Charging + Parking,charging parking,charging parking,charging parking,3.0,2.0,1.0,33.3
+Parkir,Parkir Disabilitas,parkir disabilitas,parkir disabilitas,parkir disabilitas,2.0,2.0,0.0,0.0
+Parkir,Parkir Keluarga,parkir keluarga,parkir keluarga,parkir keluarga,2.0,2.0,0.0,0.0
+Parkir,Parkir Khusus Wanita,parkir khusus wanita,parkir,parkir,3.0,1.0,2.0,66.7
+Parkir,Parkir Online Booking,parkir online booking,parkir booking,parkir booking,3.0,2.0,1.0,33.3
+Parkir,Smart Parking,smart parking,smart parking,smart parking,2.0,2.0,0.0,0.0
+Parkir,E-Parking,eparking,eparking,eparking,1.0,1.0,0.0,0.0
+Parkir,Parkir Tunai,parkir tunai,parkir tunai,parkir tunai,2.0,2.0,0.0,0.0
+Parkir,Parkir QRIS,parkir qris,parkir qris,parkir qris,2.0,2.0,0.0,0.0
+Parkir,Parkir E-Money,parkir emoney,parkir emoney,parkir emoney,2.0,2.0,0.0,0.0
+Parkir,Parkir Tap Card,parkir tap card,parkir tap card,parkir tap card,3.0,3.0,0.0,0.0
+Parkir,Denda Parkir,denda parkir,denda parkir,denda parkir,2.0,2.0,0.0,0.0
+Parkir,Tilang Parkir,tilang parkir,tilang parkir,tilang parkir,2.0,2.0,0.0,0.0
+Parkir,Biaya Derek,biaya derek,biaya derek,biaya derek,2.0,2.0,0.0,0.0
+Parkir,Titip Kendaraan,titip kendaraan,titip kendaraan,titip kendara,2.0,2.0,0.0,0.0
+Parkir,Garasi Sewa,garasi sewa,garasi sewa,garasi sewa,2.0,2.0,0.0,0.0
+Parkir,Parkir Motor Premium,parkir motor premium,parkir motor,parkir motor,3.0,2.0,1.0,33.3
+Parkir,Parkir Mobil Premium,parkir mobil premium,parkir,parkir,3.0,1.0,2.0,66.7
+Parkir,Parkir Kendaraan Besar,parkir kendaraan besar,parkir kendaraan,parkir kendara,3.0,2.0,1.0,33.3
+Parkir,Parkir Sepeda Listrik,parkir sepeda listrik,parkir sepeda listrik,parkir sepeda listrik,3.0,3.0,0.0,0.0
+Parkir,Parkir Ojek Online,parkir ojek online,parkir ojek,parkir ojek,3.0,2.0,1.0,33.3
+Parkir,Parkir Taksi,parkir taksi,parkir taksi,parkir taksi,2.0,2.0,0.0,0.0
+Parkir,Parkir Armada,parkir armada,parkir armada,parkir armada,2.0,2.0,0.0,0.0
+Parkir,Parkir Logistik,parkir logistik,parkir logistik,parkir logistik,2.0,2.0,0.0,0.0
+Parkir,Parkir Drop Off,parkir drop off,parkir drop off,parkir drop off,3.0,3.0,0.0,0.0
+Parkir,Parkir Pick Up,parkir pick up,parkir pick up,parkir pick up,3.0,3.0,0.0,0.0
+Parkir,Parkir 1 Jam,parkir jam,parkir jam,parkir jam,3.0,2.0,1.0,33.3
+Parkir,Parkir 2 Jam,parkir jam,parkir jam,parkir jam,3.0,2.0,1.0,33.3
+Parkir,Parkir Overnight,parkir overnight,parkir overnight,parkir overnight,2.0,2.0,0.0,0.0
+Parkir,Parkir Akhir Pekan,parkir akhir pekan,parkir pekan,parkir pekan,3.0,2.0,1.0,33.3
+Parkir,Parkir Hari Libur,parkir hari libur,parkir libur,parkir libur,3.0,2.0,1.0,33.3
+Parkir,Parkir Musiman,parkir musiman,parkir musiman,parkir musim,2.0,2.0,0.0,0.0
+Parkir,Parkir Khusus Member,parkir khusus member,parkir member,parkir member,3.0,2.0,1.0,33.3
+Parkir,Parkir Reservasi,parkir reservasi,parkir reservasi,parkir reservasi,2.0,2.0,0.0,0.0
+Parkir,Parkir Darurat,parkir darurat,parkir darurat,parkir darurat,2.0,2.0,0.0,0.0
+Parkir,Parkir Sementara,parkir sementara,parkir,parkir,2.0,1.0,1.0,50.0
+Parkir,Parkir Karyawan,parkir karyawan,parkir karyawan,parkir karyawan,2.0,2.0,0.0,0.0
+Parkir,Parkir Tenant,parkir tenant,parkir tenant,parkir tenant,2.0,2.0,0.0,0.0
+Parkir,Parkir Pengunjung,parkir pengunjung,parkir pengunjung,parkir unjung,2.0,2.0,0.0,0.0
+Parkir,Parkir Loading Zone,parkir loading zone,parkir loading zone,parkir loading zone,3.0,3.0,0.0,0.0
+Parkir,Parkir Bongkar Muat,parkir bongkar muat,parkir bongkar muat,parkir bongkar muat,3.0,3.0,0.0,0.0
+Parkir,Parkir Bus Pariwisata,parkir bus pariwisata,parkir bus pariwisata,parkir bus pariwisata,3.0,3.0,0.0,0.0
+Parkir,Parkir Travel,parkir travel,parkir travel,parkir travel,2.0,2.0,0.0,0.0
+Parkir,Parkir Shuttle,parkir shuttle,parkir shuttle,parkir shuttle,2.0,2.0,0.0,0.0
+Parkir,Parkir Sepeda Motor Listrik,parkir sepeda motor listrik,parkir sepeda motor listrik,parkir sepeda motor listrik,4.0,4.0,0.0,0.0
+Parkir,Parkir Mobil Listrik,parkir mobil listrik,parkir listrik,parkir listrik,3.0,2.0,1.0,33.3
+Parkir,Parkir Hybrid,parkir hybrid,parkir hybrid,parkir hybrid,2.0,2.0,0.0,0.0
+Parkir,Parkir Area Hijau,parkir area hijau,parkir area,parkir area,3.0,2.0,1.0,33.3
+Parkir,Parkir Hemat,parkir hemat,parkir,parkir,2.0,1.0,1.0,50.0
+Parkir,Parkir Lainnya,parkir lainnya,parkir,parkir,2.0,1.0,1.0,50.0
+Ride Hailing,Gojek Bike,gojek bike,gojek bike,gojek bike,2.0,2.0,0.0,0.0
+Ride Hailing,Gojek Car,gojek car,gojek car,gojek car,2.0,2.0,0.0,0.0
+Ride Hailing,GoRide,goride,goride,goride,1.0,1.0,0.0,0.0
+Ride Hailing,GoCar,gocar,gocar,gocar,1.0,1.0,0.0,0.0
+Ride Hailing,GoCar Luxe,gocar luxe,gocar luxe,gocar luxe,2.0,2.0,0.0,0.0
+Ride Hailing,GoBluebird,gobluebird,gobluebird,gobluebird,1.0,1.0,0.0,0.0
+Ride Hailing,Grab Bike,grab bike,grab bike,grab bike,2.0,2.0,0.0,0.0
+Ride Hailing,Grab Car,grab car,grab car,grab car,2.0,2.0,0.0,0.0
+Ride Hailing,GrabCar Plus,grabcar plus,grabcar,grabcar,2.0,1.0,1.0,50.0
+Ride Hailing,GrabCar Premium,grabcar premium,grabcar,grabcar,2.0,1.0,1.0,50.0
+Ride Hailing,GrabTaxi,grabtaxi,grabtaxi,grabtaxi,1.0,1.0,0.0,0.0
+Ride Hailing,GrabRent,grabrent,grabrent,grabrent,1.0,1.0,0.0,0.0
+Ride Hailing,Maxim Bike,maxim bike,maxim bike,maxim bike,2.0,2.0,0.0,0.0
+Ride Hailing,Maxim Car,maxim car,maxim car,maxim car,2.0,2.0,0.0,0.0
+Ride Hailing,Maxim Delivery Ride,maxim delivery ride,maxim delivery ride,maxim delivery ride,3.0,3.0,0.0,0.0
+Ride Hailing,InDrive Bike,indrive bike,indrive bike,indrive bike,2.0,2.0,0.0,0.0
+Ride Hailing,InDrive Car,indrive car,indrive car,indrive car,2.0,2.0,0.0,0.0
+Ride Hailing,Bluebird App Ride,bluebird app ride,bluebird app ride,bluebird app ride,3.0,3.0,0.0,0.0
+Ride Hailing,Taxi Online,taxi online,taxi,taxi,2.0,1.0,1.0,50.0
+Ride Hailing,Taxi Premium Online,taxi premium online,taxi,taxi,3.0,1.0,2.0,66.7
+Ride Hailing,Carpool Ride,carpool ride,carpool ride,carpool ride,2.0,2.0,0.0,0.0
+Ride Hailing,Ride Sharing,ride sharing,ride sharing,ride sharing,2.0,2.0,0.0,0.0
+Ride Hailing,Pooling Ride,pooling ride,pooling ride,pooling ride,2.0,2.0,0.0,0.0
+Ride Hailing,Women Only Ride,women only ride,women only ride,women only ride,3.0,3.0,0.0,0.0
+Ride Hailing,Family Ride,family ride,family ride,family ride,2.0,2.0,0.0,0.0
+Ride Hailing,Executive Ride,executive ride,executive ride,executive ride,2.0,2.0,0.0,0.0
+Ride Hailing,Priority Ride,priority ride,priority ride,priority ride,2.0,2.0,0.0,0.0
+Ride Hailing,XL Vehicle Ride,xl vehicle ride,vehicle ride,vehicle ride,3.0,2.0,1.0,33.3
+Ride Hailing,Van Ride,van ride,van ride,van ride,2.0,2.0,0.0,0.0
+Ride Hailing,SUV Ride,suv ride,suv ride,suv ride,2.0,2.0,0.0,0.0
+Ride Hailing,EV Ride,ev ride,ev ride,ev ride,2.0,2.0,0.0,0.0
+Ride Hailing,Motor Listrik Ride,motor listrik ride,motor listrik ride,motor listrik ride,3.0,3.0,0.0,0.0
+Ride Hailing,Airport Transfer,airport transfer,airport transfer,airport transfer,2.0,2.0,0.0,0.0
+Ride Hailing,Station Transfer,station transfer,station transfer,station transfer,2.0,2.0,0.0,0.0
+Ride Hailing,Hotel Transfer,hotel transfer,hotel transfer,hotel transfer,2.0,2.0,0.0,0.0
+Ride Hailing,Shuttle Ride,shuttle ride,shuttle ride,shuttle ride,2.0,2.0,0.0,0.0
+Ride Hailing,City Tour Ride,city tour ride,city tour ride,city tour ride,3.0,3.0,0.0,0.0
+Ride Hailing,Hourly Booking,hourly booking,hourly booking,hourly booking,2.0,2.0,0.0,0.0
+Ride Hailing,Daily Booking,daily booking,daily booking,daily booking,2.0,2.0,0.0,0.0
+Ride Hailing,Weekly Booking,weekly booking,weekly booking,weekly booking,2.0,2.0,0.0,0.0
+Ride Hailing,Subscription Ride,subscription ride,subscription ride,subscription ride,2.0,2.0,0.0,0.0
+Ride Hailing,Corporate Ride,corporate ride,corporate ride,corporate ride,2.0,2.0,0.0,0.0
+Ride Hailing,Student Ride,student ride,student ride,student ride,2.0,2.0,0.0,0.0
+Ride Hailing,Promo Ride,promo ride,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Shared Bike Ride,shared bike ride,shared bike ride,shared bike ride,3.0,3.0,0.0,0.0
+Ride Hailing,Shared Car Ride,shared car ride,shared car ride,shared car ride,3.0,3.0,0.0,0.0
+Ride Hailing,Late Night Ride,late night ride,late night ride,late night ride,3.0,3.0,0.0,0.0
+Ride Hailing,Emergency Ride,emergency ride,emergency ride,emergency ride,2.0,2.0,0.0,0.0
+Ride Hailing,Pet Friendly Ride,pet friendly ride,pet friendly ride,pet friendly ride,3.0,3.0,0.0,0.0
+Ride Hailing,Child Seat Ride,child seat ride,child seat ride,child seat ride,3.0,3.0,0.0,0.0
+Ride Hailing,Parcel + Ride,parcel ride,parcel ride,parcel ride,3.0,2.0,1.0,33.3
+Ride Hailing,Intercity Ride,intercity ride,intercity ride,intercity ride,2.0,2.0,0.0,0.0
+Ride Hailing,Ride to Work,ride to work,ride to work,ride to work,3.0,3.0,0.0,0.0
+Ride Hailing,Ride to Campus,ride to campus,ride to campus,ride to campus,3.0,3.0,0.0,0.0
+Ride Hailing,Ride to Mall,ride to mall,ride to mall,ride to mall,3.0,3.0,0.0,0.0
+Ride Hailing,Ride to Hospital,ride to hospital,ride to hospital,ride to hospital,3.0,3.0,0.0,0.0
+Ride Hailing,Ride to Event,ride to event,ride to event,ride to event,3.0,3.0,0.0,0.0
+Ride Hailing,Ride Return Trip,ride return trip,ride return trip,ride return trip,3.0,3.0,0.0,0.0
+Ride Hailing,Multi Stop Ride,multi stop ride,multi stop ride,multi stop ride,3.0,3.0,0.0,0.0
+Ride Hailing,Scheduled Ride,scheduled ride,scheduled ride,scheduled ride,2.0,2.0,0.0,0.0
+Ride Hailing,Instant Ride,instant ride,instant ride,instant ride,2.0,2.0,0.0,0.0
+Ride Hailing,Ride Voucher,ride voucher,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Ride Cashback,ride cashback,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Luxury Sedan Ride,luxury sedan ride,luxury sedan ride,luxury sedan ride,3.0,3.0,0.0,0.0
+Ride Hailing,MPV Ride,mpv ride,mpv ride,mpv ride,2.0,2.0,0.0,0.0
+Ride Hailing,Pickup Ride,pickup ride,pickup ride,pickup ride,2.0,2.0,0.0,0.0
+Ride Hailing,Tourism Ride,tourism ride,tourism ride,tourism ride,2.0,2.0,0.0,0.0
+Ride Hailing,Weekend Ride,weekend ride,weekend ride,weekend ride,2.0,2.0,0.0,0.0
+Ride Hailing,Holiday Ride,holiday ride,holiday ride,holiday ride,2.0,2.0,0.0,0.0
+Ride Hailing,Monthly Ride Pass,monthly ride pass,monthly ride pass,monthly ride pass,3.0,3.0,0.0,0.0
+Ride Hailing,Eco Ride,eco ride,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Green Ride,green ride,green ride,green ride,2.0,2.0,0.0,0.0
+Ride Hailing,Female Driver Ride,female driver ride,female driver ride,female driver ride,3.0,3.0,0.0,0.0
+Ride Hailing,Senior Friendly Ride,senior friendly ride,friendly ride,friendly ride,3.0,2.0,1.0,33.3
+Ride Hailing,Accessible Ride,accessible ride,accessible ride,accessible ride,2.0,2.0,0.0,0.0
+Ride Hailing,Wheelchair Ride,wheelchair ride,wheelchair ride,wheelchair ride,2.0,2.0,0.0,0.0
+Ride Hailing,Premium Bike Ride,premium bike ride,bike ride,bike ride,3.0,2.0,1.0,33.3
+Ride Hailing,Fast Pickup Ride,fast pickup ride,fast pickup ride,fast pickup ride,3.0,3.0,0.0,0.0
+Ride Hailing,Long Distance Ride,long distance ride,long distance ride,long distance ride,3.0,3.0,0.0,0.0
+Ride Hailing,Short Distance Ride,short distance ride,short distance ride,short distance ride,3.0,3.0,0.0,0.0
+Ride Hailing,Peak Hour Ride,peak hour ride,peak hour ride,peak hour ride,3.0,3.0,0.0,0.0
+Ride Hailing,Non Peak Ride,non peak ride,non peak ride,non peak ride,3.0,3.0,0.0,0.0
+Ride Hailing,Night Surge Ride,night surge ride,night surge ride,night surge ride,3.0,3.0,0.0,0.0
+Ride Hailing,Rainy Day Ride,rainy day ride,rainy day ride,rainy day ride,3.0,3.0,0.0,0.0
+Ride Hailing,VIP Transfer,vip transfer,vip transfer,vip transfer,2.0,2.0,0.0,0.0
+Ride Hailing,Event Shuttle Ride,event shuttle ride,event shuttle ride,event shuttle ride,3.0,3.0,0.0,0.0
+Ride Hailing,Ride Membership,ride membership,ride membership,ride membership,2.0,2.0,0.0,0.0
+Ride Hailing,Rental with Driver,rental with driver,rental with driver,rental with driver,3.0,3.0,0.0,0.0
+Ride Hailing,Smart Ride,smart ride,smart ride,smart ride,2.0,2.0,0.0,0.0
+Ride Hailing,Ride Credits,ride credits,ride credits,ride credits,2.0,2.0,0.0,0.0
+Ride Hailing,Ride Lainnya,ride lainnya,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Gojek Motor,gojek motor,gojek motor,gojek motor,2.0,2.0,0.0,0.0
+Ride Hailing,Gojek Mobil,gojek mobil,gojek,gojek,2.0,1.0,1.0,50.0
+Ride Hailing,GoCar Mewah,gocar mewah,gocar,gocar,2.0,1.0,1.0,50.0
+Ride Hailing,Grab Motor,grab motor,grab motor,grab motor,2.0,2.0,0.0,0.0
+Ride Hailing,Grab Mobil,grab mobil,grab,grab,2.0,1.0,1.0,50.0
+Ride Hailing,Grab Mobil Plus,grab mobil plus,grab,grab,3.0,1.0,2.0,66.7
+Ride Hailing,Grab Mobil Premium,grab mobil premium,grab,grab,3.0,1.0,2.0,66.7
+Ride Hailing,Grab Taksi,grab taksi,grab taksi,grab taksi,2.0,2.0,0.0,0.0
+Ride Hailing,Grab Sewa,grab sewa,grab sewa,grab sewa,2.0,2.0,0.0,0.0
+Ride Hailing,Maxim Motor,maxim motor,maxim motor,maxim motor,2.0,2.0,0.0,0.0
+Ride Hailing,Maxim Mobil,maxim mobil,maxim,maxim,2.0,1.0,1.0,50.0
+Ride Hailing,Maxim Antar Barang + Penumpang,maxim antar barang penumpang,maxim barang penumpang,maxim barang tumpang,5.0,3.0,2.0,40.0
+Ride Hailing,InDrive Motor,indrive motor,indrive motor,indrive motor,2.0,2.0,0.0,0.0
+Ride Hailing,InDrive Mobil,indrive mobil,indrive,indrive,2.0,1.0,1.0,50.0
+Ride Hailing,Bluebird Aplikasi,bluebird aplikasi,bluebird aplikasi,bluebird aplikasi,2.0,2.0,0.0,0.0
+Ride Hailing,Taksi Online,taksi online,taksi,taksi,2.0,1.0,1.0,50.0
+Ride Hailing,Taksi Premium Online,taksi premium online,taksi,taksi,3.0,1.0,2.0,66.7
+Ride Hailing,Nebeng Mobil,nebeng mobil,nebeng,nebeng,2.0,1.0,1.0,50.0
+Ride Hailing,Berbagi Tumpangan,berbagi tumpangan,berbagi tumpangan,bagi tumpang,2.0,2.0,0.0,0.0
+Ride Hailing,Tumpangan Gabungan,tumpangan gabungan,tumpangan gabungan,tumpang gabung,2.0,2.0,0.0,0.0
+Ride Hailing,Khusus Wanita,khusus wanita,,,2.0,0.0,2.0,100.0
+Ride Hailing,Perjalanan Keluarga,perjalanan keluarga,perjalanan keluarga,jalan keluarga,2.0,2.0,0.0,0.0
+Ride Hailing,Perjalanan Eksekutif,perjalanan eksekutif,perjalanan eksekutif,jalan eksekutif,2.0,2.0,0.0,0.0
+Ride Hailing,Prioritas,prioritas,prioritas,prioritas,1.0,1.0,0.0,0.0
+Ride Hailing,Kendaraan XL,kendaraan xl,kendaraan,kendara,2.0,1.0,1.0,50.0
+Ride Hailing,Van,van,van,van,1.0,1.0,0.0,0.0
+Ride Hailing,SUV,suv,suv,suv,1.0,1.0,0.0,0.0
+Ride Hailing,Kendaraan Listrik,kendaraan listrik,kendaraan listrik,kendara listrik,2.0,2.0,0.0,0.0
+Ride Hailing,Motor Listrik,motor listrik,motor listrik,motor listrik,2.0,2.0,0.0,0.0
+Ride Hailing,Antar Bandara,antar bandara,bandara,bandara,2.0,1.0,1.0,50.0
+Ride Hailing,Antar Stasiun,antar stasiun,stasiun,stasiun,2.0,1.0,1.0,50.0
+Ride Hailing,Antar Hotel,antar hotel,hotel,hotel,2.0,1.0,1.0,50.0
+Ride Hailing,Shuttle Online,shuttle online,shuttle,shuttle,2.0,1.0,1.0,50.0
+Ride Hailing,Tur Kota,tur kota,tur kota,tur kota,2.0,2.0,0.0,0.0
+Ride Hailing,Sewa Per Jam,sewa per jam,sewa jam,sewa jam,3.0,2.0,1.0,33.3
+Ride Hailing,Sewa Harian,sewa harian,sewa harian,sewa hari,2.0,2.0,0.0,0.0
+Ride Hailing,Sewa Mingguan,sewa mingguan,sewa mingguan,sewa minggu,2.0,2.0,0.0,0.0
+Ride Hailing,Langganan Perjalanan,langganan perjalanan,langganan perjalanan,langgan jalan,2.0,2.0,0.0,0.0
+Ride Hailing,Transport Karyawan,transport karyawan,transport karyawan,transport karyawan,2.0,2.0,0.0,0.0
+Ride Hailing,Transport Mahasiswa,transport mahasiswa,transport mahasiswa,transport mahasiswa,2.0,2.0,0.0,0.0
+Ride Hailing,Promo Perjalanan,promo perjalanan,perjalanan,jalan,2.0,1.0,1.0,50.0
+Ride Hailing,Berbagi Motor,berbagi motor,berbagi motor,bagi motor,2.0,2.0,0.0,0.0
+Ride Hailing,Berbagi Mobil,berbagi mobil,berbagi,bagi,2.0,1.0,1.0,50.0
+Ride Hailing,Perjalanan Malam,perjalanan malam,perjalanan malam,jalan malam,2.0,2.0,0.0,0.0
+Ride Hailing,Perjalanan Darurat,perjalanan darurat,perjalanan darurat,jalan darurat,2.0,2.0,0.0,0.0
+Ride Hailing,Ramah Hewan Peliharaan,ramah hewan peliharaan,hewan peliharaan,hewan pelihara,3.0,2.0,1.0,33.3
+Ride Hailing,Kursi Anak,kursi anak,kursi,kursi,2.0,1.0,1.0,50.0
+Ride Hailing,Antar Paket + Penumpang,antar paket penumpang,penumpang,tumpang,4.0,1.0,3.0,75.0
+Ride Hailing,Antar Kota,antar kota,kota,kota,2.0,1.0,1.0,50.0
+Ride Hailing,Ke Kantor,ke kantor,kantor,kantor,2.0,1.0,1.0,50.0
+Ride Hailing,Ke Kampus,ke kampus,kampus,kampus,2.0,1.0,1.0,50.0
+Ride Hailing,Ke Mall,ke mall,mall,mall,2.0,1.0,1.0,50.0
+Ride Hailing,Ke Rumah Sakit,ke rumah sakit,rumah,rumah,3.0,1.0,2.0,66.7
+Ride Hailing,Ke Acara,ke acara,acara,acara,2.0,1.0,1.0,50.0
+Ride Hailing,Pulang Pergi,pulang pergi,pulang pergi,pulang pergi,2.0,2.0,0.0,0.0
+Ride Hailing,Multi Tujuan,multi tujuan,multi tujuan,multi tuju,2.0,2.0,0.0,0.0
+Ride Hailing,Jadwal Pesan,jadwal pesan,jadwal pesan,jadwal pesan,2.0,2.0,0.0,0.0
+Ride Hailing,Pesan Sekarang,pesan sekarang,pesan,pesan,2.0,1.0,1.0,50.0
+Ride Hailing,Voucher Perjalanan,voucher perjalanan,perjalanan,jalan,2.0,1.0,1.0,50.0
+Ride Hailing,Cashback Perjalanan,cashback perjalanan,perjalanan,jalan,2.0,1.0,1.0,50.0
+Ride Hailing,Sedan Mewah,sedan mewah,sedan,sedan,2.0,1.0,1.0,50.0
+Ride Hailing,MPV,mpv,mpv,mpv,1.0,1.0,0.0,0.0
+Ride Hailing,Pickup,pickup,pickup,pickup,1.0,1.0,0.0,0.0
+Ride Hailing,Paket Bulanan,paket bulanan,bulanan,bulan,2.0,1.0,1.0,50.0
+Ride Hailing,Hemat Energi,hemat energi,energi,energi,2.0,1.0,1.0,50.0
+Ride Hailing,Ramah Lingkungan,ramah lingkungan,lingkungan,lingkung,2.0,1.0,1.0,50.0
+Ride Hailing,Driver Perempuan,driver perempuan,driver,driver,2.0,1.0,1.0,50.0
+Ride Hailing,Ramah Lansia,ramah lansia,,,2.0,0.0,2.0,100.0
+Ride Hailing,Akses Disabilitas,akses disabilitas,akses disabilitas,akses disabilitas,2.0,2.0,0.0,0.0
+Ride Hailing,Kursi Roda,kursi roda,kursi roda,kursi roda,2.0,2.0,0.0,0.0
+Ride Hailing,Motor Premium,motor premium,motor,motor,2.0,1.0,1.0,50.0
+Ride Hailing,Jemput Cepat,jemput cepat,jemput,jemput,2.0,1.0,1.0,50.0
+Ride Hailing,Jarak Jauh,jarak jauh,jarak,jarak,2.0,1.0,1.0,50.0
+Ride Hailing,Jarak Dekat,jarak dekat,jarak,jarak,2.0,1.0,1.0,50.0
+Ride Hailing,Jam Sibuk,jam sibuk,jam sibuk,jam sibuk,2.0,2.0,0.0,0.0
+Ride Hailing,Jam Sepi,jam sepi,jam,jam,2.0,1.0,1.0,50.0
+Ride Hailing,Tarif Hujan,tarif hujan,tarif hujan,tarif hujan,2.0,2.0,0.0,0.0
+Ride Hailing,Tarif Malam,tarif malam,tarif malam,tarif malam,2.0,2.0,0.0,0.0
+Ride Hailing,Transfer VIP,transfer vip,transfer vip,transfer vip,2.0,2.0,0.0,0.0
+Ride Hailing,Shuttle Acara,shuttle acara,shuttle acara,shuttle acara,2.0,2.0,0.0,0.0
+Ride Hailing,Membership Ride,membership ride,membership ride,membership ride,2.0,2.0,0.0,0.0
+Ride Hailing,Rental dengan Sopir,rental dengan sopir,rental sopir,rental sopir,3.0,2.0,1.0,33.3
+Ride Hailing,Ride Pintar,ride pintar,ride,ride,2.0,1.0,1.0,50.0
+Ride Hailing,Kredit Perjalanan,kredit perjalanan,kredit perjalanan,kredit jalan,2.0,2.0,0.0,0.0
+BBM,Shell FuelSave 92,shell fuelsave,shell fuelsave,shell fuelsave,3.0,2.0,1.0,33.3
+BBM,Shell FuelSave Diesel,shell fuelsave diesel,shell fuelsave diesel,shell fuelsave diesel,3.0,3.0,0.0,0.0
+BBM,BP Ultimate Diesel,bp ultimate diesel,bp ultimate diesel,bp ultimate diesel,3.0,3.0,0.0,0.0
+BBM,Revvo 95,revvo,revvo,revvo,2.0,1.0,1.0,50.0
+BBM,Revvo Diesel,revvo diesel,revvo diesel,revvo diesel,2.0,2.0,0.0,0.0
+BBM,Gasohol,gasohol,gasohol,gasohol,1.0,1.0,0.0,0.0
+BBM,Compressed Natural Gas (CNG) / Gas Alam Terkompresi,compressed natural gas cng gas alam terkompresi,compressed gas cng gas alam terkompresi,compressed gas cng gas alam kompresi,8.0,6.0,2.0,25.0
+BBM,Liquefied Natural Gas (LNG) / Gas Alam Cair,liquefied natural gas lng gas alam cair,liquefied gas lng gas alam,liquefied gas lng gas alam,8.0,5.0,3.0,37.5
+BBM,Liquefied Petroleum Gas (LPG) / Gas Petroleum Cair,liquefied petroleum gas lpg gas petroleum cair,liquefied petroleum gas lpg gas petroleum,liquefied petroleum gas lpg gas petroleum,8.0,6.0,2.0,25.0
+BBM,Electric Vehicle Charging AC / Pengisian Kendaraan Listrik AC,electric vehicle charging ac pengisian kendaraan listrik ac,electric vehicle charging ac pengisian kendaraan listrik ac,electric vehicle charging ac isi kendara listrik ac,9.0,8.0,1.0,11.1
+BBM,Electric Vehicle Charging DC Fast / Pengisian Kendaraan Listrik DC Cepat,electric vehicle charging dc fast pengisian kendaraan listrik dc cepat,electric vehicle charging dc fast pengisian kendaraan listrik dc,electric vehicle charging dc fast isi kendara listrik dc,11.0,9.0,2.0,18.2
+BBM,Electric Vehicle Ultra Fast Charging / Pengisian Ultra Cepat Kendaraan Listrik,electric vehicle ultra fast charging pengisian ultra cepat kendaraan listrik,electric vehicle fast charging pengisian kendaraan listrik,electric vehicle fast charging isi kendara listrik,11.0,7.0,4.0,36.4
+BBM,Home EV Charging / Pengisian EV di Rumah,home ev charging pengisian ev di rumah,home ev charging pengisian ev rumah,home ev charging isi ev rumah,8.0,6.0,2.0,25.0
+BBM,Public EV Charging / Pengisian EV Umum,public ev charging pengisian ev umum,public ev charging pengisian ev,public ev charging isi ev,7.0,5.0,2.0,28.6
+BBM,Hydrogen Fuel / Bahan Bakar Hidrogen,hydrogen fuel bahan bakar hidrogen,hydrogen fuel bakar hidrogen,hydrogen fuel bakar hidrogen,6.0,4.0,2.0,33.3
+BBM,Aviation Turbine Fuel (Avtur) / Bahan Bakar Pesawat Jet,aviation turbine fuel avtur bahan bakar pesawat jet,aviation turbine fuel avtur bakar pesawat jet,aviation turbine fuel avtur bakar pesawat jet,9.0,7.0,2.0,22.2
+BBM,Aviation Gasoline (Avgas) / Bensin Pesawat,aviation gasoline avgas bensin pesawat,aviation gasoline avgas bensin pesawat,aviation gasoline avgas bensin pesawat,6.0,5.0,1.0,16.7
+BBM,Marine Fuel Oil / Bahan Bakar Kapal,marine fuel oil bahan bakar kapal,marine fuel oil bakar kapal,marine fuel oil bakar kapal,7.0,5.0,2.0,28.6
+BBM,Fuel Oil / Minyak Bakar,fuel oil minyak bakar,fuel oil minyak bakar,fuel oil minyak bakar,5.0,4.0,1.0,20.0
+BBM,Industrial Diesel / Solar Industri,industrial diesel solar industri,industrial diesel industri,industrial diesel industri,5.0,3.0,2.0,40.0
+BBM,High Speed Diesel / Solar Kecepatan Tinggi,high speed diesel solar kecepatan tinggi,high speed diesel kecepatan,high speed diesel cepat,7.0,4.0,3.0,42.9
+BBM,Low Sulfur Diesel / Solar Rendah Sulfur,low sulfur diesel solar rendah sulfur,low sulfur diesel sulfur,low sulfur diesel sulfur,7.0,4.0,3.0,42.9
+BBM,Subsidized Diesel / Solar Subsidi,subsidized diesel solar subsidi,subsidized diesel subsidi,subsidized diesel subsidi,5.0,3.0,2.0,40.0
+BBM,Non Subsidized Diesel / Solar Non Subsidi,non subsidized diesel solar non subsidi,non subsidized diesel non subsidi,non subsidized diesel non subsidi,7.0,5.0,2.0,28.6
+BBM,Kerosene / Minyak Tanah,kerosene minyak tanah,kerosene minyak tanah,kerosene minyak tanah,4.0,3.0,1.0,25.0
+BBM,Industrial Kerosene / Minyak Tanah Industri,industrial kerosene minyak tanah industri,industrial kerosene minyak tanah industri,industrial kerosene minyak tanah industri,6.0,5.0,1.0,16.7
+BBM,Retail Gasoline / Bensin Eceran,retail gasoline bensin eceran,retail gasoline bensin eceran,retail gasoline bensin ecer,5.0,4.0,1.0,20.0
+BBM,Retail Diesel / Solar Eceran,retail diesel solar eceran,retail diesel eceran,retail diesel ecer,5.0,3.0,2.0,40.0
+BBM,Jerry Can Fuel / BBM Jerigen,jerry can fuel bbm jerigen,jerry can fuel bbm jerigen,jerry can fuel bbm jerigen,6.0,5.0,1.0,16.7
+BBM,Fuel Card Top Up / Isi Ulang Kartu BBM,fuel card top up isi ulang kartu bbm,fuel card up ulang kartu bbm,fuel card up ulang kartu bbm,9.0,6.0,3.0,33.3
+BBM,Fuel Voucher / Voucher BBM,fuel voucher voucher bbm,fuel bbm,fuel bbm,5.0,2.0,3.0,60.0
+BBM,Emergency Fuel Delivery / Antar BBM Darurat,emergency fuel delivery antar bbm darurat,emergency fuel delivery bbm darurat,emergency fuel delivery bbm darurat,7.0,5.0,2.0,28.6
+BBM,Motorcycle Refuel / Isi BBM Motor,motorcycle refuel isi bbm motor,motorcycle refuel bbm motor,motorcycle refuel bbm motor,6.0,4.0,2.0,33.3
+BBM,Car Refuel / Isi BBM Mobil,car refuel isi bbm mobil,car refuel bbm,car refuel bbm,6.0,3.0,3.0,50.0
+BBM,Truck Refuel / Isi BBM Truk,truck refuel isi bbm truk,truck refuel bbm truk,truck refuel bbm truk,6.0,4.0,2.0,33.3
+BBM,Bus Refuel / Isi BBM Bus,bus refuel isi bbm bus,bus refuel bbm bus,bus refuel bbm bus,6.0,4.0,2.0,33.3
+BBM,Boat Refuel / Isi BBM Kapal,boat refuel isi bbm kapal,boat refuel bbm kapal,boat refuel bbm kapal,6.0,4.0,2.0,33.3
+BBM,Generator Refuel / Isi BBM Genset,generator refuel isi bbm genset,generator refuel bbm genset,generator refuel bbm genset,6.0,4.0,2.0,33.3
+BBM,Heavy Equipment Refuel / Isi BBM Alat Berat,heavy equipment refuel isi bbm alat berat,heavy equipment refuel bbm alat berat,heavy equipment refuel bbm alat berat,8.0,6.0,2.0,25.0
+BBM,Full Tank Pertalite / Tangki Penuh Pertalite,full tank pertalite tangki penuh pertalite,tank pertalite tangki pertalite,tank pertalite tangki pertalite,7.0,4.0,3.0,42.9
+BBM,Full Tank Pertamax / Tangki Penuh Pertamax,full tank pertamax tangki penuh pertamax,tank pertamax tangki pertamax,tank pertamax tangki pertamax,7.0,4.0,3.0,42.9
+BBM,Full Tank Diesel / Tangki Penuh Solar,full tank diesel tangki penuh solar,tank diesel tangki,tank diesel tangki,7.0,3.0,4.0,57.1
+BBM,Partial Refuel / Isi BBM Sebagian,partial refuel isi bbm sebagian,partial refuel bbm,partial refuel bbm,6.0,3.0,3.0,50.0
+BBM,Fuel Additive / Aditif BBM,fuel additive aditif bbm,fuel additive bbm,fuel additive bbm,5.0,3.0,2.0,40.0
+BBM,Octane Booster / Penambah Oktan,octane booster penambah oktan,octane booster penambah oktan,octane booster tambah oktan,5.0,4.0,1.0,20.0
+BBM,Cetane Booster / Penambah Cetane,cetane booster penambah cetane,cetane booster penambah cetane,cetane booster tambah cetane,5.0,4.0,1.0,20.0
+BBM,AdBlue Diesel,adblue diesel,adblue diesel,adblue diesel,2.0,2.0,0.0,0.0
+BBM,2T Oil Mix / Oli Campuran 2T,t oil mix oli campuran t,oil oli campuran,oil oli campur,7.0,3.0,4.0,57.1
+BBM,Fuel Promo / Promo BBM,fuel promo promo bbm,fuel bbm,fuel bbm,5.0,2.0,3.0,60.0
+BBM,Fuel Cashback / Cashback BBM,fuel cashback cashback bbm,fuel bbm,fuel bbm,5.0,2.0,3.0,60.0
+BBM,Fuel Membership / Membership BBM,fuel membership membership bbm,fuel membership membership bbm,fuel membership membership bbm,5.0,4.0,1.0,20.0
+BBM,Fuel Subscription / Langganan BBM,fuel subscription langganan bbm,fuel subscription langganan bbm,fuel subscription langgan bbm,5.0,4.0,1.0,20.0
+BBM,Corporate Fuel Card / Kartu BBM Perusahaan,corporate fuel card kartu bbm perusahaan,corporate fuel card kartu bbm perusahaan,corporate fuel card kartu bbm usaha,7.0,6.0,1.0,14.3
+BBM,Fleet Fuel Management / Manajemen BBM Armada,fleet fuel management manajemen bbm armada,fleet fuel management manajemen bbm armada,fleet fuel management manajemen bbm armada,7.0,6.0,1.0,14.3
+BBM,Rest Area Refuel / Isi BBM Rest Area,rest area refuel isi bbm rest area,rest area refuel bbm rest area,rest area refuel bbm rest area,8.0,6.0,2.0,25.0
+BBM,Airport Refuel / Isi BBM Bandara,airport refuel isi bbm bandara,airport refuel bbm bandara,airport refuel bbm bandara,6.0,4.0,2.0,33.3
+BBM,Port Refuel / Isi BBM Pelabuhan,port refuel isi bbm pelabuhan,port refuel bbm pelabuhan,port refuel bbm labuh,6.0,4.0,2.0,33.3
+BBM,Mini Fuel Station / SPBU Mini,mini fuel station spbu mini,fuel station spbu,fuel station spbu,6.0,3.0,3.0,50.0
+BBM,Pertashop,pertashop,pertashop,pertashop,1.0,1.0,0.0,0.0
+BBM,Private Fuel Station / SPBU Swasta,private fuel station spbu swasta,private fuel station spbu,private fuel station spbu,6.0,4.0,2.0,33.3
+BBM,Public Fuel Station / SPBU Umum,public fuel station spbu umum,public fuel station spbu,public fuel station spbu,6.0,4.0,2.0,33.3
+BBM,Self Service Fuel Station / SPBU Layanan Mandiri,self service fuel station spbu layanan mandiri,self service fuel station spbu layanan,self service fuel station spbu layan,8.0,6.0,2.0,25.0
+BBM,Fleet Fuel Delivery / Antar BBM Armada,fleet fuel delivery antar bbm armada,fleet fuel delivery bbm armada,fleet fuel delivery bbm armada,7.0,5.0,2.0,28.6
+BBM,EV Motorcycle Charging / Charging Motor Listrik,ev motorcycle charging charging motor listrik,ev motorcycle charging charging motor listrik,ev motorcycle charging charging motor listrik,7.0,6.0,1.0,14.3
+BBM,EV Car Charging / Charging Mobil Listrik,ev car charging charging mobil listrik,ev car charging charging listrik,ev car charging charging listrik,7.0,5.0,2.0,28.6
+BBM,Fast Charging Member / Fast Charging Member,fast charging member fast charging member,fast charging member fast charging member,fast charging member fast charging member,7.0,6.0,1.0,14.3
+BBM,Premium Ultra Charging / Ultra Charging Premium,premium ultra charging ultra charging premium,charging charging,charging charging,7.0,2.0,5.0,71.4
+BBM,Fuel Other / BBM Lainnya,fuel other bbm lainnya,fuel other bbm,fuel other bbm,5.0,3.0,2.0,40.0
+Transport Umum,Bus Kota / City Bus,bus kota city bus,bus kota city bus,bus kota city bus,5.0,4.0,1.0,20.0
+Transport Umum,Bus Rapid Transit (BRT) / Bus Rapid Transit,bus rapid transit brt bus rapid transit,bus rapid transit brt bus rapid transit,bus rapid transit brt bus rapid transit,8.0,7.0,1.0,12.5
+Transport Umum,TransJakarta,transjakarta,transjakarta,transjakarta,1.0,1.0,0.0,0.0
+Transport Umum,Trans Jogja,trans jogja,trans jogja,trans jogja,2.0,2.0,0.0,0.0
+Transport Umum,Trans Semarang,trans semarang,trans semarang,trans semarang,2.0,2.0,0.0,0.0
+Transport Umum,Bus Antar Kota / Intercity Bus,bus antar kota intercity bus,bus kota intercity bus,bus kota intercity bus,6.0,4.0,2.0,33.3
+Transport Umum,Bus Antar Provinsi / Interprovincial Bus,bus antar provinsi interprovincial bus,bus provinsi interprovincial bus,bus provinsi interprovincial bus,6.0,4.0,2.0,33.3
+Transport Umum,Bus Pariwisata / Tourist Bus,bus pariwisata tourist bus,bus pariwisata tourist bus,bus pariwisata tourist bus,5.0,4.0,1.0,20.0
+Transport Umum,Shuttle Bus / Bus Shuttle,shuttle bus bus shuttle,shuttle bus bus shuttle,shuttle bus bus shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Feeder Bus / Bus Pengumpan,feeder bus bus pengumpan,feeder bus bus pengumpan,feeder bus bus umpan,5.0,4.0,1.0,20.0
+Transport Umum,Minibus Umum / Public Minibus,minibus umum public minibus,minibus public minibus,minibus public minibus,5.0,3.0,2.0,40.0
+Transport Umum,Mikrotrans / Micro Transit,mikrotrans micro transit,mikrotrans micro transit,mikrotrans micro transit,4.0,3.0,1.0,25.0
+Transport Umum,Angkot / Public Van,angkot public van,angkot public van,angkot public van,4.0,3.0,1.0,25.0
+Transport Umum,Elf Travel / Elf Shuttle,elf travel elf shuttle,elf travel elf shuttle,elf travel elf shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Travel Antar Kota / Intercity Shuttle,travel antar kota intercity shuttle,travel kota intercity shuttle,travel kota intercity shuttle,6.0,4.0,2.0,33.3
+Transport Umum,Ojek Pangkalan / Conventional Motorcycle Taxi,ojek pangkalan conventional motorcycle taxi,ojek pangkalan conventional motorcycle taxi,ojek pangkal conventional motorcycle taxi,6.0,5.0,1.0,16.7
+Transport Umum,Becak / Pedicab,becak pedicab,becak pedicab,becak pedicab,3.0,2.0,1.0,33.3
+Transport Umum,Bentor / Motorized Rickshaw,bentor motorized rickshaw,bentor motorized rickshaw,bentor motorized rickshaw,4.0,3.0,1.0,25.0
+Transport Umum,Bajaj / Auto Rickshaw,bajaj auto rickshaw,bajaj auto rickshaw,bajaj auto rickshaw,4.0,3.0,1.0,25.0
+Transport Umum,Delman / Horse Carriage,delman horse carriage,delman horse carriage,delman horse carriage,4.0,3.0,1.0,25.0
+Transport Umum,Kereta Ekonomi / Economy Train,kereta ekonomi economy train,kereta ekonomi economy train,kereta ekonomi economy train,5.0,4.0,1.0,20.0
+Transport Umum,Kereta Bisnis / Business Train,kereta bisnis business train,kereta bisnis business train,kereta bisnis business train,5.0,4.0,1.0,20.0
+Transport Umum,Kereta Eksekutif / Executive Train,kereta eksekutif executive train,kereta eksekutif executive train,kereta eksekutif executive train,5.0,4.0,1.0,20.0
+Transport Umum,Kereta Lokal / Local Train,kereta lokal local train,kereta local train,kereta local train,5.0,3.0,2.0,40.0
+Transport Umum,Kereta Bandara / Airport Train,kereta bandara airport train,kereta bandara airport train,kereta bandara airport train,5.0,4.0,1.0,20.0
+Transport Umum,Kereta Cepat / High Speed Rail,kereta cepat high speed rail,kereta high speed rail,kereta high speed rail,6.0,4.0,2.0,33.3
+Transport Umum,KRL Commuter Line / Commuter Rail,krl commuter line commuter rail,krl commuter line commuter rail,krl commuter line commuter rail,6.0,5.0,1.0,16.7
+Transport Umum,MRT / Mass Rapid Transit,mrt mass rapid transit,mrt mass rapid transit,mrt mass rapid transit,5.0,4.0,1.0,20.0
+Transport Umum,LRT / Light Rail Transit,lrt light rail transit,lrt light rail transit,lrt light rail transit,5.0,4.0,1.0,20.0
+Transport Umum,Monorel / Monorail,monorel monorail,monorel monorail,monorel monorail,3.0,2.0,1.0,33.3
+Transport Umum,Tram / Tram,tram tram,tram tram,tram tram,3.0,2.0,1.0,33.3
+Transport Umum,Subway / Kereta Bawah Tanah,subway kereta bawah tanah,subway kereta tanah,subway kereta tanah,5.0,3.0,2.0,40.0
+Transport Umum,Ferry Penyeberangan / Passenger Ferry,ferry penyeberangan passenger ferry,ferry penyeberangan passenger ferry,ferry seberang passenger ferry,5.0,4.0,1.0,20.0
+Transport Umum,Kapal Cepat / Fast Boat,kapal cepat fast boat,kapal fast boat,kapal fast boat,5.0,3.0,2.0,40.0
+Transport Umum,Water Bus / Bus Air,water bus bus air,water bus bus air,water bus bus air,5.0,4.0,1.0,20.0
+Transport Umum,Taksi Reguler / Regular Taxi,taksi reguler regular taxi,taksi taxi,taksi taxi,5.0,2.0,3.0,60.0
+Transport Umum,Taksi Bandara / Airport Taxi,taksi bandara airport taxi,taksi bandara airport taxi,taksi bandara airport taxi,5.0,4.0,1.0,20.0
+Transport Umum,Taksi Premium / Premium Taxi,taksi premium premium taxi,taksi taxi,taksi taxi,5.0,2.0,3.0,60.0
+Transport Umum,Shuttle Bandara / Airport Shuttle,shuttle bandara airport shuttle,shuttle bandara airport shuttle,shuttle bandara airport shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Shuttle Hotel / Hotel Shuttle,shuttle hotel hotel shuttle,shuttle hotel hotel shuttle,shuttle hotel hotel shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Shuttle Kampus / Campus Shuttle,shuttle kampus campus shuttle,shuttle kampus campus shuttle,shuttle kampus campus shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Shuttle Kantor / Office Shuttle,shuttle kantor office shuttle,shuttle kantor office shuttle,shuttle kantor office shuttle,5.0,4.0,1.0,20.0
+Transport Umum,Park and Ride / Park and Ride,park and ride park and ride,park and ride park and ride,park and ride park and ride,7.0,6.0,1.0,14.3
+Transport Umum,Tiket Harian / Daily Pass,tiket harian daily pass,tiket harian daily pass,tiket hari daily pass,5.0,4.0,1.0,20.0
+Transport Umum,Tiket Mingguan / Weekly Pass,tiket mingguan weekly pass,tiket mingguan weekly pass,tiket minggu weekly pass,5.0,4.0,1.0,20.0
+Transport Umum,Tiket Bulanan / Monthly Pass,tiket bulanan monthly pass,tiket bulanan monthly pass,tiket bulan monthly pass,5.0,4.0,1.0,20.0
+Transport Umum,Tiket Tahunan / Annual Pass,tiket tahunan annual pass,tiket tahunan annual pass,tiket tahun annual pass,5.0,4.0,1.0,20.0
+Transport Umum,Kartu Multi Trip / Multi Trip Card,kartu multi trip multi trip card,kartu multi trip multi trip card,kartu multi trip multi trip card,7.0,6.0,1.0,14.3
+Transport Umum,E-Money Transport / Transport E-Money,emoney transport transport emoney,emoney transport transport emoney,emoney transport transport emoney,5.0,4.0,1.0,20.0
+Transport Umum,QR Ticket / Tiket QR,qr ticket tiket qr,qr ticket tiket qr,qr ticket tiket qr,5.0,4.0,1.0,20.0
+Transport Umum,Langganan Komuter / Commuter Subscription,langganan komuter commuter subscription,langganan komuter commuter subscription,langgan komuter commuter subscription,5.0,4.0,1.0,20.0
+Transport Umum,Tarif Pelajar / Student Fare,tarif pelajar student fare,tarif pelajar student fare,tarif ajar student fare,5.0,4.0,1.0,20.0
+Transport Umum,Tarif Lansia / Senior Fare,tarif lansia senior fare,tarif fare,tarif fare,5.0,2.0,3.0,60.0
+Transport Umum,Tarif Disabilitas / Disability Fare,tarif disabilitas disability fare,tarif disabilitas disability fare,tarif disabilitas disability fare,5.0,4.0,1.0,20.0
+Transport Umum,Tarif Ekspres / Express Fare,tarif ekspres express fare,tarif express fare,tarif express fare,5.0,3.0,2.0,40.0
+Transport Umum,Tarif Reguler / Regular Fare,tarif reguler regular fare,tarif fare,tarif fare,5.0,2.0,3.0,60.0
+Transport Umum,Tiket Sekali Jalan / Single Ride Ticket,tiket sekali jalan single ride ticket,tiket jalan single ride ticket,tiket jalan single ride ticket,7.0,5.0,2.0,28.6
+Transport Umum,Tiket Pulang Pergi / Round Trip Ticket,tiket pulang pergi round trip ticket,tiket pulang pergi round trip ticket,tiket pulang pergi round trip ticket,7.0,6.0,1.0,14.3
+Transport Umum,Tiket Transit / Transit Ticket,tiket transit transit ticket,tiket transit transit ticket,tiket transit transit ticket,5.0,4.0,1.0,20.0
+Transport Umum,Tiket Wisata / Tourist Pass,tiket wisata tourist pass,tiket wisata tourist pass,tiket wisata tourist pass,5.0,4.0,1.0,20.0
+Transport Umum,Tiket Event / Event Transport Pass,tiket event event transport pass,tiket event event transport pass,tiket event event transport pass,6.0,5.0,1.0,16.7
+Transport Umum,Tiket Malam / Night Service Ticket,tiket malam night service ticket,tiket malam night service ticket,tiket malam night service ticket,6.0,5.0,1.0,16.7
+Transport Umum,Transport Pedesaan / Rural Transport,transport pedesaan rural transport,transport pedesaan rural transport,transport desa rural transport,5.0,4.0,1.0,20.0
+Transport Umum,Transport Perkotaan / Urban Transport,transport perkotaan urban transport,transport perkotaan urban transport,transport kota urban transport,5.0,4.0,1.0,20.0
+Transport Umum,Transport Pinggiran Kota / Suburban Transport,transport pinggiran kota suburban transport,transport pinggiran kota suburban transport,transport pinggir kota suburban transport,6.0,5.0,1.0,16.7
+Transport Umum,Layanan Jam Sibuk / Peak Hour Service,layanan jam sibuk peak hour service,layanan jam sibuk peak hour service,layan jam sibuk peak hour service,7.0,6.0,1.0,14.3
+Transport Umum,Layanan Malam / Night Service,layanan malam night service,layanan malam night service,layan malam night service,5.0,4.0,1.0,20.0
+Transport Umum,Layanan Akhir Pekan / Weekend Service,layanan akhir pekan weekend service,layanan pekan weekend service,layan pekan weekend service,6.0,4.0,2.0,33.3
+Transport Umum,Layanan Hari Libur / Holiday Service,layanan hari libur holiday service,layanan libur holiday service,layan libur holiday service,6.0,4.0,2.0,33.3
+Transport Umum,Bus Sekolah / School Bus,bus sekolah school bus,bus sekolah school bus,bus sekolah school bus,5.0,4.0,1.0,20.0
+Transport Umum,Antar Jemput Karyawan / Employee Shuttle,antar jemput karyawan employee shuttle,jemput karyawan employee shuttle,jemput karyawan employee shuttle,6.0,4.0,2.0,33.3
+Transport Umum,Antar Jemput Mahasiswa / Student Shuttle,antar jemput mahasiswa student shuttle,jemput mahasiswa student shuttle,jemput mahasiswa student shuttle,6.0,4.0,2.0,33.3
+Transport Umum,Transport Wisata Kota / City Tour Transport,transport wisata kota city tour transport,transport wisata kota city tour transport,transport wisata kota city tour transport,7.0,6.0,1.0,14.3
+Transport Umum,Charter Bus Umum / Public Charter Bus,charter bus umum public charter bus,charter bus public charter bus,charter bus public charter bus,7.0,5.0,2.0,28.6
+Transport Umum,Shared Van / Van Bersama,shared van van bersama,shared van van,shared van van,5.0,3.0,2.0,40.0
+Transport Umum,Public Transport Other / Transport Umum Lainnya,public transport other transport umum lainnya,public transport other transport,public transport other transport,7.0,4.0,3.0,42.9
+Transport Umum,ACI (Aku Cinta Indonesia),aci aku cinta indonesia,aci cinta indonesia,aci cinta indonesia,4.0,3.0,1.0,25.0
+Transportasi,Shell Diesel,shell diesel,shell diesel,shell diesel,2.0,2.0,0.0,0.0
+Transportasi,isi bensin,isi bensin,bensin,bensin,2.0,1.0,1.0,50.0
+Transportasi,SPBU,spbu,spbu,spbu,1.0,1.0,0.0,0.0
+Transportasi,fuel,fuel,fuel,fuel,1.0,1.0,0.0,0.0
+Transportasi,gasoline,gasoline,gasoline,gasoline,1.0,1.0,0.0,0.0
+Transportasi,diesel,diesel,diesel,diesel,1.0,1.0,0.0,0.0
+Transportasi,Gojek,gojek,gojek,gojek,1.0,1.0,0.0,0.0
+Transportasi,Grab,grab,grab,grab,1.0,1.0,0.0,0.0
+Transportasi,GrabBike,grabbike,grabbike,grabbike,1.0,1.0,0.0,0.0
+Transportasi,GrabCar,grabcar,grabcar,grabcar,1.0,1.0,0.0,0.0
+Transportasi,Maxim,maxim,maxim,maxim,1.0,1.0,0.0,0.0
+Transportasi,inDrive,indrive,indrive,indrive,1.0,1.0,0.0,0.0
+Transportasi,Bluebird app,bluebird app,bluebird app,bluebird app,2.0,2.0,0.0,0.0
+Transportasi,taxi online,taxi online,taxi,taxi,2.0,1.0,1.0,50.0
+Transportasi,ojol,ojol,ojol,ojol,1.0,1.0,0.0,0.0
+Transportasi,Blue Bird,blue bird,blue bird,blue bird,2.0,2.0,0.0,0.0
+Transportasi,Express Taxi,express taxi,express taxi,express taxi,2.0,2.0,0.0,0.0
+Transportasi,taxi bandara,taxi bandara,taxi bandara,taxi bandara,2.0,2.0,0.0,0.0
+Transportasi,taksi reguler,taksi reguler,taksi,taksi,2.0,1.0,1.0,50.0
+Transportasi,MRT Jakarta,mrt jakarta,mrt jakarta,mrt jakarta,2.0,2.0,0.0,0.0
+Transportasi,LRT Jakarta,lrt jakarta,lrt jakarta,lrt jakarta,2.0,2.0,0.0,0.0
+Transportasi,KRL,krl,krl,krl,1.0,1.0,0.0,0.0
+Transportasi,Commuter Line,commuter line,commuter line,commuter line,2.0,2.0,0.0,0.0
+Transportasi,bus kota,bus kota,bus kota,bus kota,2.0,2.0,0.0,0.0
+Transportasi,angkot,angkot,angkot,angkot,1.0,1.0,0.0,0.0
+Transportasi,mikrotrans,mikrotrans,mikrotrans,mikrotrans,1.0,1.0,0.0,0.0
+Transportasi,Damri,damri,damri,damri,1.0,1.0,0.0,0.0
+Transportasi,shuttle bus,shuttle bus,shuttle bus,shuttle bus,2.0,2.0,0.0,0.0
+Transportasi,travel bus,travel bus,travel bus,travel bus,2.0,2.0,0.0,0.0
+Transportasi,KAI,kai,kai,kai,1.0,1.0,0.0,0.0
+Transportasi,tiket kereta,tiket kereta,tiket kereta,tiket kereta,2.0,2.0,0.0,0.0
+Transportasi,kereta api,kereta api,kereta api,kereta api,2.0,2.0,0.0,0.0
+Transportasi,Whoosh,whoosh,whoosh,whoosh,1.0,1.0,0.0,0.0
+Transportasi,KCIC,kcic,kcic,kcic,1.0,1.0,0.0,0.0
+Transportasi,rail ticket,rail ticket,rail ticket,rail ticket,2.0,2.0,0.0,0.0
+Transportasi,tiket pesawat,tiket pesawat,tiket pesawat,tiket pesawat,2.0,2.0,0.0,0.0
+Transportasi,Garuda Indonesia,garuda indonesia,garuda indonesia,garuda indonesia,2.0,2.0,0.0,0.0
+Transportasi,Lion Air,lion air,lion air,lion air,2.0,2.0,0.0,0.0
+Transportasi,Citilink,citilink,citilink,citilink,1.0,1.0,0.0,0.0
+Transportasi,AirAsia,airasia,airasia,airasia,1.0,1.0,0.0,0.0
+Transportasi,Batik Air,batik air,batik air,batik air,2.0,2.0,0.0,0.0
+Transportasi,Super Air Jet,super air jet,air jet,air jet,3.0,2.0,1.0,33.3
+Transportasi,airport tax,airport tax,airport tax,airport tax,2.0,2.0,0.0,0.0
+Transportasi,bagasi pesawat,bagasi pesawat,bagasi pesawat,bagasi pesawat,2.0,2.0,0.0,0.0
+Transportasi,ASDP,asdp,asdp,asdp,1.0,1.0,0.0,0.0
+Transportasi,ferry,ferry,ferry,ferry,1.0,1.0,0.0,0.0
+Transportasi,kapal laut,kapal laut,kapal laut,kapal laut,2.0,2.0,0.0,0.0
+Transportasi,tiket kapal,tiket kapal,tiket kapal,tiket kapal,2.0,2.0,0.0,0.0
+Transportasi,Pelni,pelni,pelni,pelni,1.0,1.0,0.0,0.0
+Transportasi,e-toll,etoll,etoll,etoll,1.0,1.0,0.0,0.0
+Transportasi,Flazz toll,flazz toll,flazz toll,flazz toll,2.0,2.0,0.0,0.0
+Transportasi,Mandiri e-money toll,mandiri emoney toll,emoney toll,emoney toll,3.0,2.0,1.0,33.3
+Transportasi,TapCash toll,tapcash toll,tapcash toll,tapcash toll,2.0,2.0,0.0,0.0
+Transportasi,top up toll,top up toll,up toll,up toll,3.0,2.0,1.0,33.3
+Transportasi,bayar tol,bayar tol,tol,tol,2.0,1.0,1.0,50.0
+Transportasi,Jasa Marga,jasa marga,jasa marga,jasa marga,2.0,2.0,0.0,0.0
+Transportasi,parkir,parkir,parkir,parkir,1.0,1.0,0.0,0.0
+Transportasi,parking,parking,parking,parking,1.0,1.0,0.0,0.0
+Transportasi,valet,valet,valet,valet,1.0,1.0,0.0,0.0
+Transportasi,parkir mall,parkir mall,parkir mall,parkir mall,2.0,2.0,0.0,0.0
+Transportasi,parkir bandara,parkir bandara,parkir bandara,parkir bandara,2.0,2.0,0.0,0.0
+Transportasi,parkir stasiun,parkir stasiun,parkir stasiun,parkir stasiun,2.0,2.0,0.0,0.0
+Transportasi,ganti oli,ganti oli,ganti oli,ganti oli,2.0,2.0,0.0,0.0
+Transportasi,servis motor,servis motor,servis motor,servis motor,2.0,2.0,0.0,0.0
+Transportasi,servis mobil,servis mobil,servis,servis,2.0,1.0,1.0,50.0
+Transportasi,tune up,tune up,tune up,tune up,2.0,2.0,0.0,0.0
+Transportasi,spooring,spooring,spooring,spooring,1.0,1.0,0.0,0.0
+Transportasi,balancing,balancing,balancing,balancing,1.0,1.0,0.0,0.0
+Transportasi,bengkel,bengkel,bengkel,bengkel,1.0,1.0,0.0,0.0
+Transportasi,tambal ban,tambal ban,tambal ban,tambal ban,2.0,2.0,0.0,0.0
+Transportasi,cuci mobil,cuci mobil,,,2.0,0.0,2.0,100.0
+Transportasi,cuci motor,cuci motor,motor,motor,2.0,1.0,1.0,50.0
+Transportasi,pajak motor,pajak motor,pajak motor,pajak motor,2.0,2.0,0.0,0.0
+Transportasi,pajak mobil,pajak mobil,pajak,pajak,2.0,1.0,1.0,50.0
+Transportasi,STNK,stnk,stnk,stnk,1.0,1.0,0.0,0.0
+Transportasi,BPKB,bpkb,bpkb,bpkb,1.0,1.0,0.0,0.0
+Transportasi,perpanjang SIM,perpanjang sim,perpanjang sim,panjang sim,2.0,2.0,0.0,0.0
+Transportasi,mutasi kendaraan,mutasi kendaraan,mutasi kendaraan,mutasi kendara,2.0,2.0,0.0,0.0
+Transportasi,helm,helm,helm,helm,1.0,1.0,0.0,0.0
+Transportasi,ban motor,ban motor,ban motor,ban motor,2.0,2.0,0.0,0.0
+Transportasi,oli mesin,oli mesin,oli mesin,oli mesin,2.0,2.0,0.0,0.0
+Transportasi,wiper mobil,wiper mobil,wiper,wiper,2.0,1.0,1.0,50.0
+Transportasi,charger mobil,charger mobil,charger,charger,2.0,1.0,1.0,50.0
+Transportasi,dashcam,dashcam,dashcam,dashcam,1.0,1.0,0.0,0.0
+Transportasi,cover motor,cover motor,cover motor,cover motor,2.0,2.0,0.0,0.0
+Transportasi,sewa mobil,sewa mobil,sewa,sewa,2.0,1.0,1.0,50.0
+Transportasi,rental mobil,rental mobil,rental,rental,2.0,1.0,1.0,50.0
+Transportasi,sewa motor,sewa motor,sewa motor,sewa motor,2.0,2.0,0.0,0.0
+Transportasi,rental motor,rental motor,rental motor,rental motor,2.0,2.0,0.0,0.0
+Transportasi,leasing mobil,leasing mobil,leasing,leasing,2.0,1.0,1.0,50.0
+Transportasi,cicilan mobil,cicilan mobil,cicilan,cicil,2.0,1.0,1.0,50.0
+Transportasi,cicilan motor,cicilan motor,cicilan motor,cicil motor,2.0,2.0,0.0,0.0
+Transportasi,uang muka kendaraan,uang muka kendaraan,uang muka kendaraan,uang muka kendara,3.0,3.0,0.0,0.0
+Transportasi,tol harian,tol harian,tol harian,tol hari,2.0,2.0,0.0,0.0
+Transportasi,tol bulanan,tol bulanan,tol bulanan,tol bulan,2.0,2.0,0.0,0.0
+Transportasi,top up e-money,top up emoney,up emoney,up emoney,3.0,2.0,1.0,33.3
+Transportasi,top up flazz,top up flazz,up flazz,up flazz,3.0,2.0,1.0,33.3
+Transportasi,top up tapcash,top up tapcash,up tapcash,up tapcash,3.0,2.0,1.0,33.3
+Transportasi,top up brizzi,top up brizzi,up brizzi,up brizzi,3.0,2.0,1.0,33.3
+Transportasi,parkir harian,parkir harian,parkir harian,parkir hari,2.0,2.0,0.0,0.0
+Transportasi,parkir inap,parkir inap,parkir inap,parkir inap,2.0,2.0,0.0,0.0
+Transportasi,parkir gedung,parkir gedung,parkir gedung,parkir gedung,2.0,2.0,0.0,0.0
+Transportasi,parkir kantor,parkir kantor,parkir kantor,parkir kantor,2.0,2.0,0.0,0.0
+Transportasi,parkir apartemen,parkir apartemen,parkir apartemen,parkir apartemen,2.0,2.0,0.0,0.0
+Transportasi,valet parking,valet parking,valet parking,valet parking,2.0,2.0,0.0,0.0
+Transportasi,derek mobil,derek mobil,derek,derek,2.0,1.0,1.0,50.0
+Transportasi,towing,towing,towing,towing,1.0,1.0,0.0,0.0
+Transportasi,jasa derek,jasa derek,jasa derek,jasa derek,2.0,2.0,0.0,0.0
+Transportasi,asuransi mobil,asuransi mobil,asuransi,asuransi,2.0,1.0,1.0,50.0
+Transportasi,asuransi motor,asuransi motor,asuransi motor,asuransi motor,2.0,2.0,0.0,0.0
+Transportasi,premi kendaraan,premi kendaraan,premi kendaraan,premi kendara,2.0,2.0,0.0,0.0
+Transportasi,ganti ban,ganti ban,ganti ban,ganti ban,2.0,2.0,0.0,0.0
+Transportasi,ban mobil,ban mobil,ban,ban,2.0,1.0,1.0,50.0
+Transportasi,aki mobil,aki mobil,aki,aki,2.0,1.0,1.0,50.0
+Transportasi,aki motor,aki motor,aki motor,aki motor,2.0,2.0,0.0,0.0
+Transportasi,busi,busi,busi,busi,1.0,1.0,0.0,0.0
+Transportasi,kampas rem,kampas rem,kampas rem,kampas rem,2.0,2.0,0.0,0.0
+Transportasi,rantai motor,rantai motor,rantai motor,rantai motor,2.0,2.0,0.0,0.0
+Transportasi,oli transmisi,oli transmisi,oli transmisi,oli transmisi,2.0,2.0,0.0,0.0
+Transportasi,oli gardan,oli gardan,oli gardan,oli gardan,2.0,2.0,0.0,0.0
+Transportasi,cairan radiator,cairan radiator,cairan radiator,cair radiator,2.0,2.0,0.0,0.0
+Transportasi,spooring mobil,spooring mobil,spooring,spooring,2.0,1.0,1.0,50.0
+Transportasi,balancing ban,balancing ban,balancing ban,balancing ban,2.0,2.0,0.0,0.0
+Transportasi,tune up mobil,tune up mobil,tune up,tune up,3.0,2.0,1.0,33.3
+Transportasi,tune up motor,tune up motor,tune up motor,tune up motor,3.0,3.0,0.0,0.0
+Transportasi,salon mobil,salon mobil,salon,salon,2.0,1.0,1.0,50.0
+Transportasi,detailing mobil,detailing mobil,detailing,detailing,2.0,1.0,1.0,50.0
+Transportasi,cuci steam motor,cuci steam motor,steam motor,steam motor,3.0,2.0,1.0,33.3
+Transportasi,cuci steam mobil,cuci steam mobil,steam,steam,3.0,1.0,2.0,66.7
+Transportasi,tambal ban tubeless,tambal ban tubeless,tambal ban tubeless,tambal ban tubeless,3.0,3.0,0.0,0.0
+Transportasi,isi nitrogen ban,isi nitrogen ban,nitrogen ban,nitrogen ban,3.0,2.0,1.0,33.3
+Transportasi,stiker kendaraan,stiker kendaraan,stiker kendaraan,stiker kendara,2.0,2.0,0.0,0.0
+Transportasi,aksesoris mobil,aksesoris mobil,aksesoris,aksesoris,2.0,1.0,1.0,50.0
+Transportasi,aksesoris motor,aksesoris motor,aksesoris motor,aksesoris motor,2.0,2.0,0.0,0.0
+Transportasi,helm full face,helm full face,helm face,helm face,3.0,2.0,1.0,33.3
+Transportasi,helm half face,helm half face,helm face,helm face,3.0,2.0,1.0,33.3
+Transportasi,jas hujan motor,jas hujan motor,jas hujan motor,jas hujan motor,3.0,3.0,0.0,0.0
+Transportasi,sarung jok mobil,sarung jok mobil,sarung jok,sarung jok,3.0,2.0,1.0,33.3
+Transportasi,cover mobil,cover mobil,cover,cover,2.0,1.0,1.0,50.0
+Transportasi,holder hp motor,holder hp motor,holder hp motor,holder hp motor,3.0,3.0,0.0,0.0
+Transportasi,dashcam mobil,dashcam mobil,dashcam,dashcam,2.0,1.0,1.0,50.0
+Transportasi,GPS mobil,gps mobil,gps,gps,2.0,1.0,1.0,50.0
+Transportasi,tiket bus AKAP,tiket bus akap,tiket bus akap,tiket bus akap,3.0,3.0,0.0,0.0
+Transportasi,tiket bus kota,tiket bus kota,tiket bus kota,tiket bus kota,3.0,3.0,0.0,0.0
+Transportasi,tiket shuttle,tiket shuttle,tiket shuttle,tiket shuttle,2.0,2.0,0.0,0.0
+Transportasi,travel antar kota,travel antar kota,travel kota,travel kota,3.0,2.0,1.0,33.3
+Transportasi,tiket kapal ferry,tiket kapal ferry,tiket kapal ferry,tiket kapal ferry,3.0,3.0,0.0,0.0
+Transportasi,tiket speedboat,tiket speedboat,tiket speedboat,tiket speedboat,2.0,2.0,0.0,0.0
+Transportasi,tiket MRT,tiket mrt,tiket mrt,tiket mrt,2.0,2.0,0.0,0.0
+Transportasi,tiket LRT,tiket lrt,tiket lrt,tiket lrt,2.0,2.0,0.0,0.0
+Transportasi,kartu multi trip,kartu multi trip,kartu multi trip,kartu multi trip,3.0,3.0,0.0,0.0
+Transportasi,saldo e-money transport,saldo emoney transport,saldo emoney transport,saldo emoney transport,3.0,3.0,0.0,0.0
+Transportasi,bagasi tambahan,bagasi tambahan,bagasi tambahan,bagasi tambah,2.0,2.0,0.0,0.0
+Transportasi,airport lounge transport,airport lounge transport,airport lounge transport,airport lounge transport,3.0,3.0,0.0,0.0
+Transportasi,shuttle bandara,shuttle bandara,shuttle bandara,shuttle bandara,2.0,2.0,0.0,0.0
+Transportasi,antar jemput bandara,antar jemput bandara,jemput bandara,jemput bandara,3.0,2.0,1.0,33.3
+Transportasi,cargo kendaraan,cargo kendaraan,cargo kendaraan,cargo kendara,2.0,2.0,0.0,0.0
+Transportasi,kirim motor,kirim motor,motor,motor,2.0,1.0,1.0,50.0
+Transportasi,ekspedisi mobil,ekspedisi mobil,ekspedisi,ekspedisi,2.0,1.0,1.0,50.0
+Transportasi,SIM A,sim a,sim,sim,2.0,1.0,1.0,50.0
+Transportasi,SIM C,sim c,sim,sim,2.0,1.0,1.0,50.0
+Transportasi,perpanjang STNK,perpanjang stnk,perpanjang stnk,panjang stnk,2.0,2.0,0.0,0.0
+Transportasi,balik nama kendaraan,balik nama kendaraan,nama kendaraan,nama kendara,3.0,2.0,1.0,33.3
+Transportasi,mutasi plat,mutasi plat,mutasi plat,mutasi plat,2.0,2.0,0.0,0.0
+Transportasi,uji emisi,uji emisi,uji emisi,uji emisi,2.0,2.0,0.0,0.0
+Transportasi,tilang,tilang,tilang,tilang,1.0,1.0,0.0,0.0
+Transportasi,denda parkir,denda parkir,denda parkir,denda parkir,2.0,2.0,0.0,0.0
+Transportasi,denda tol,denda tol,denda tol,denda tol,2.0,2.0,0.0,0.0
+Transportasi,bensin eceran,bensin eceran,bensin eceran,bensin ecer,2.0,2.0,0.0,0.0
+Transportasi,solar industri,solar industri,industri,industri,2.0,1.0,1.0,50.0
+Transportasi,isi bensin motor,isi bensin motor,bensin motor,bensin motor,3.0,2.0,1.0,33.3
+Transportasi,isi bensin mobil,isi bensin mobil,bensin,bensin,3.0,1.0,2.0,66.7
+Transportasi,voucher BBM,voucher bbm,bbm,bbm,2.0,1.0,1.0,50.0
+Transportasi,refill BBM,refill bbm,refill bbm,refill bbm,2.0,2.0,0.0,0.0
+Transportasi,charging mobil listrik,charging mobil listrik,charging listrik,charging listrik,3.0,2.0,1.0,33.3
+Transportasi,charging motor listrik,charging motor listrik,charging motor listrik,charging motor listrik,3.0,3.0,0.0,0.0
+Transportasi,sewa sepeda,sewa sepeda,sewa sepeda,sewa sepeda,2.0,2.0,0.0,0.0
+Transportasi,rental sepeda listrik,rental sepeda listrik,rental sepeda listrik,rental sepeda listrik,3.0,3.0,0.0,0.0
+Transportasi,scooter listrik,scooter listrik,scooter listrik,scooter listrik,2.0,2.0,0.0,0.0
+Transportasi,sewa skuter,sewa skuter,sewa skuter,sewa skuter,2.0,2.0,0.0,0.0
+Transportasi,bike sharing,bike sharing,bike sharing,bike sharing,2.0,2.0,0.0,0.0
+Transportasi,ojek pangkalan,ojek pangkalan,ojek pangkalan,ojek pangkal,2.0,2.0,0.0,0.0
+Transportasi,becak,becak,becak,becak,1.0,1.0,0.0,0.0
+Transportasi,delman,delman,delman,delman,1.0,1.0,0.0,0.0
+Transportasi,bajaj,bajaj,bajaj,bajaj,1.0,1.0,0.0,0.0
+Transportasi,bentor,bentor,bentor,bentor,1.0,1.0,0.0,0.0
+Transportasi,angkutan desa,angkutan desa,angkutan desa,angkut desa,2.0,2.0,0.0,0.0
+Transportasi,minibus,minibus,minibus,minibus,1.0,1.0,0.0,0.0
+Transportasi,elf travel,elf travel,elf travel,elf travel,2.0,2.0,0.0,0.0
+Transportasi,shuttle hotel,shuttle hotel,shuttle hotel,shuttle hotel,2.0,2.0,0.0,0.0
+Transportasi,antar jemput kantor,antar jemput kantor,jemput kantor,jemput kantor,3.0,2.0,1.0,33.3
+Transportasi,jemput anak sekolah,jemput anak sekolah,jemput sekolah,jemput sekolah,3.0,2.0,1.0,33.3
+Transportasi,transport karyawan,transport karyawan,transport karyawan,transport karyawan,2.0,2.0,0.0,0.0
+Transportasi,tiket sleeper bus,tiket sleeper bus,tiket sleeper bus,tiket sleeper bus,3.0,3.0,0.0,0.0
+Transportasi,tiket executive bus,tiket executive bus,tiket executive bus,tiket executive bus,3.0,3.0,0.0,0.0
+Transportasi,tiket ekonomi bus,tiket ekonomi bus,tiket ekonomi bus,tiket ekonomi bus,3.0,3.0,0.0,0.0
+Transportasi,tiket wisata bus,tiket wisata bus,tiket wisata bus,tiket wisata bus,3.0,3.0,0.0,0.0
+Transportasi,tiket kereta ekonomi,tiket kereta ekonomi,tiket kereta ekonomi,tiket kereta ekonomi,3.0,3.0,0.0,0.0
+Transportasi,tiket kereta bisnis,tiket kereta bisnis,tiket kereta bisnis,tiket kereta bisnis,3.0,3.0,0.0,0.0
+Transportasi,tiket kereta eksekutif,tiket kereta eksekutif,tiket kereta eksekutif,tiket kereta eksekutif,3.0,3.0,0.0,0.0
+Transportasi,tiket kereta lokal,tiket kereta lokal,tiket kereta,tiket kereta,3.0,2.0,1.0,33.3
+Transportasi,tiket kereta bandara,tiket kereta bandara,tiket kereta bandara,tiket kereta bandara,3.0,3.0,0.0,0.0
+Transportasi,tiket pesawat domestik,tiket pesawat domestik,tiket pesawat,tiket pesawat,3.0,2.0,1.0,33.3
+Transportasi,tiket pesawat internasional,tiket pesawat internasional,tiket pesawat internasional,tiket pesawat internasional,3.0,3.0,0.0,0.0
+Transportasi,reschedule tiket,reschedule tiket,reschedule tiket,reschedule tiket,2.0,2.0,0.0,0.0
+Transportasi,refund tiket,refund tiket,refund tiket,refund tiket,2.0,2.0,0.0,0.0
+Transportasi,biaya check in bagasi,biaya check in bagasi,biaya check in bagasi,biaya check in bagasi,4.0,4.0,0.0,0.0
+Transportasi,biaya pilih kursi,biaya pilih kursi,biaya kursi,biaya kursi,3.0,2.0,1.0,33.3
+Transportasi,biaya boarding pass,biaya boarding pass,biaya boarding pass,biaya boarding pass,3.0,3.0,0.0,0.0
+Transportasi,kapal cepat,kapal cepat,kapal,kapal,2.0,1.0,1.0,50.0
+Transportasi,kapal penyeberangan,kapal penyeberangan,kapal penyeberangan,kapal seberang,2.0,2.0,0.0,0.0
+Transportasi,kapal wisata,kapal wisata,kapal wisata,kapal wisata,2.0,2.0,0.0,0.0
+Transportasi,sewa perahu,sewa perahu,sewa perahu,sewa perahu,2.0,2.0,0.0,0.0
+Transportasi,parkir motor,parkir motor,parkir motor,parkir motor,2.0,2.0,0.0,0.0
+Transportasi,parkir mobil,parkir mobil,parkir,parkir,2.0,1.0,1.0,50.0
+Transportasi,parkir valet mall,parkir valet mall,parkir valet mall,parkir valet mall,3.0,3.0,0.0,0.0
+Transportasi,parkir rumah sakit,parkir rumah sakit,parkir rumah,parkir rumah,3.0,2.0,1.0,33.3
+Transportasi,parkir stasiun harian,parkir stasiun harian,parkir stasiun harian,parkir stasiun hari,3.0,3.0,0.0,0.0
+Transportasi,parkir langganan,parkir langganan,parkir langganan,parkir langgan,2.0,2.0,0.0,0.0
+Transportasi,servis AC mobil,servis ac mobil,servis ac,servis ac,3.0,2.0,1.0,33.3
+Transportasi,servis rem,servis rem,servis rem,servis rem,2.0,2.0,0.0,0.0
+Transportasi,servis kaki-kaki,servis kakikaki,servis kakikaki,servis kakikaki,2.0,2.0,0.0,0.0
+Transportasi,servis injeksi,servis injeksi,servis injeksi,servis injeksi,2.0,2.0,0.0,0.0
+Transportasi,servis kelistrikan mobil,servis kelistrikan mobil,servis kelistrikan,servis listrik,3.0,2.0,1.0,33.3
+Transportasi,servis CVT motor,servis cvt motor,servis cvt motor,servis cvt motor,3.0,3.0,0.0,0.0
+Transportasi,ganti oli mesin,ganti oli mesin,ganti oli mesin,ganti oli mesin,3.0,3.0,0.0,0.0
+Transportasi,ganti filter oli,ganti filter oli,ganti filter oli,ganti filter oli,3.0,3.0,0.0,0.0
+Transportasi,ganti filter udara,ganti filter udara,ganti filter udara,ganti filter udara,3.0,3.0,0.0,0.0
+Transportasi,ganti lampu mobil,ganti lampu mobil,ganti lampu,ganti lampu,3.0,2.0,1.0,33.3
+Transportasi,ganti lampu motor,ganti lampu motor,ganti lampu motor,ganti lampu motor,3.0,3.0,0.0,0.0
+Transportasi,ganti kaca spion,ganti kaca spion,ganti kaca spion,ganti kaca spion,3.0,3.0,0.0,0.0
+Transportasi,ganti wiper,ganti wiper,ganti wiper,ganti wiper,2.0,2.0,0.0,0.0
+Transportasi,cuci interior mobil,cuci interior mobil,interior,interior,3.0,1.0,2.0,66.7
+Transportasi,fogging AC mobil,fogging ac mobil,fogging ac,fogging ac,3.0,2.0,1.0,33.3
+Transportasi,poles mobil,poles mobil,poles,poles,2.0,1.0,1.0,50.0
+Transportasi,poles motor,poles motor,poles motor,poles motor,2.0,2.0,0.0,0.0
+Transportasi,stiker kaca film,stiker kaca film,stiker kaca film,stiker kaca film,3.0,3.0,0.0,0.0
+Transportasi,kaca film mobil,kaca film mobil,kaca film,kaca film,3.0,2.0,1.0,33.3
+Transportasi,audio mobil,audio mobil,,,2.0,0.0,2.0,100.0
+Transportasi,alarm mobil,alarm mobil,alarm,alarm,2.0,1.0,1.0,50.0
+Transportasi,kunci duplikat kendaraan,kunci duplikat kendaraan,kunci duplikat kendaraan,kunci duplikat kendara,3.0,3.0,0.0,0.0
+Transportasi,jasa montir panggilan,jasa montir panggilan,jasa montir panggilan,jasa montir panggil,3.0,3.0,0.0,0.0
+Transportasi,bantuan jalan raya,bantuan jalan raya,bantuan jalan,bantu jalan,3.0,2.0,1.0,33.3
+Transportasi,towing darurat,towing darurat,towing darurat,towing darurat,2.0,2.0,0.0,0.0
+Transportasi,derek tol,derek tol,derek tol,derek tol,2.0,2.0,0.0,0.0
+Transportasi,pajak progresif kendaraan,pajak progresif kendaraan,pajak kendaraan,pajak kendara,3.0,2.0,1.0,33.3
+Transportasi,samsat keliling,samsat keliling,samsat keliling,samsat keliling,2.0,2.0,0.0,0.0
+Transportasi,biaya BPKB,biaya bpkb,biaya bpkb,biaya bpkb,2.0,2.0,0.0,0.0
+Transportasi,plat nomor baru,plat nomor baru,plat nomor,plat nomor,3.0,2.0,1.0,33.3
+Transportasi,ganti STNK hilang,ganti stnk hilang,ganti stnk hilang,ganti stnk hilang,3.0,3.0,0.0,0.0
+Transportasi,denda SIM mati,denda sim mati,denda sim mati,denda sim mati,3.0,3.0,0.0,0.0
+Transportasi,denda keterlambatan pajak,denda keterlambatan pajak,denda keterlambatan pajak,denda lambat pajak,3.0,3.0,0.0,0.0
+Transportasi,uji KIR kendaraan,uji kir kendaraan,uji kir kendaraan,uji kir kendara,3.0,3.0,0.0,0.0
+Transportasi,biaya terminal,biaya terminal,biaya terminal,biaya terminal,2.0,2.0,0.0,0.0
+Transportasi,porter bandara,porter bandara,porter bandara,porter bandara,2.0,2.0,0.0,0.0
+Transportasi,porter stasiun,porter stasiun,porter stasiun,porter stasiun,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Sriwijaya Air,sriwijaya air,sriwijaya air,sriwijaya air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Scoot,scoot,scoot,scoot,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Singapore Airlines,singapore airlines,singapore airlines,singapore airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Cathay Pacific,cathay pacific,cathay pacific,cathay pacific,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Thai Airways,thai airways,thai airways,thai airways,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Qatar Airways,qatar airways,qatar airways,qatar airways,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Emirates,emirates,emirates,emirates,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Etihad Airways,etihad airways,etihad airways,etihad airways,2.0,2.0,0.0,0.0
+Maskapai Traveloka,All Nippon Airways (ANA),all nippon airways ana,nippon airways ana,nippon airways ana,4.0,3.0,1.0,25.0
+Maskapai Traveloka,Malaysia Airlines,malaysia airlines,malaysia airlines,malaysia airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Japan Airlines (JAL),japan airlines jal,japan airlines jal,japan airlines jal,3.0,3.0,0.0,0.0
+Maskapai Traveloka,Asiana Airlines,asiana airlines,asiana airlines,asiana airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,China Airlines,china airlines,china airlines,china airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,EVA Air,eva air,eva air,eva air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,KLM,klm,klm,klm,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Air France,air france,air france,air france,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Xiamen Airlines,xiamen airlines,xiamen airlines,xiamen airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Air China,air china,air china,air china,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Oman Air,oman air,oman air,om air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Lufthansa,lufthansa,lufthansa,lufthansa,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Delta Air Lines,delta air lines,delta air lines,delta air les,3.0,3.0,0.0,0.0
+Maskapai Traveloka,Korean Air,korean air,korean air,korean air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Nam Air,nam air,nam air,nam air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Pelita Air,pelita air,pelita air,pelita air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Jetstar,jetstar,jetstar,jetstar,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Firefly,firefly,firefly,firefly,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Thai Lion Air,thai lion air,thai lion air,thai lion air,3.0,3.0,0.0,0.0
+Maskapai Traveloka,Wings Air,wings air,wings air,wings air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Trigana Air,trigana air,trigana air,trigana air,2.0,2.0,0.0,0.0
+Maskapai Traveloka,TransNusa Aviation,transnusa aviation,transnusa aviation,transnusa aviation,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Bangkok Airways,bangkok airways,bangkok airways,bangkok airways,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Philippine Airlines,philippine airlines,philippine airlines,philippine airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Vietnam Airlines,vietnam airlines,vietnam airlines,vietnam airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Qantas,qantas,qantas,qantas,1.0,1.0,0.0,0.0
+Maskapai Traveloka,Turkish Airlines,turkish airlines,turkish airlines,turkish airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,American Airlines,american airlines,american airlines,american airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,China Southern Airlines,china southern airlines,china southern airlines,china southern airlines,3.0,3.0,0.0,0.0
+Maskapai Traveloka,Royal Brunei Airlines,royal brunei airlines,brunei airlines,brunei airlines,3.0,2.0,1.0,33.3
+Maskapai Traveloka,Virgin Australia,virgin australia,virgin australia,virgin australia,2.0,2.0,0.0,0.0
+Maskapai Traveloka,EgyptAir,egyptair,egyptair,egyptair,1.0,1.0,0.0,0.0
+Maskapai Traveloka,United Airlines,united airlines,united airlines,united airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,SriLankan Airlines,srilankan airlines,srilankan airlines,srilankan airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Cebu Pacific,cebu pacific,cebu pacific,cebu pacific,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Saudia Airlines,saudia airlines,saudia airlines,saudia airlines,2.0,2.0,0.0,0.0
+Maskapai Traveloka,Starlux,starlux,starlux,starlux,1.0,1.0,0.0,0.0
+Maskapai Traveloka,FlyJaya,flyjaya,flyjaya,flyjaya,1.0,1.0,0.0,0.0
+Dummy,Tiket Garuda Indonesia,tiket garuda indonesia,tiket garuda indonesia,tiket garuda indonesia,3.0,3.0,0.0,0.0
+Dummy,Tiket Citilink,tiket citilink,tiket citilink,tiket citilink,2.0,2.0,0.0,0.0
+Dummy,Tiket Lion Air,tiket lion air,tiket lion air,tiket lion air,3.0,3.0,0.0,0.0
+Dummy,Tiket Batik Air,tiket batik air,tiket batik air,tiket batik air,3.0,3.0,0.0,0.0
+Dummy,Tiket AirAsia,tiket airasia,tiket airasia,tiket airasia,2.0,2.0,0.0,0.0
+Dummy,Tiket Super Air Jet,tiket super air jet,tiket air jet,tiket air jet,4.0,3.0,1.0,25.0
+Dummy,Tiket Scoot,tiket scoot,tiket scoot,tiket scoot,2.0,2.0,0.0,0.0
+Dummy,Tiket Singapore Airlines,tiket singapore airlines,tiket singapore airlines,tiket singapore airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Cathay Pacific,tiket cathay pacific,tiket cathay pacific,tiket cathay pacific,3.0,3.0,0.0,0.0
+Dummy,Tiket Thai Airways,tiket thai airways,tiket thai airways,tiket thai airways,3.0,3.0,0.0,0.0
+Dummy,Tiket Qatar Airways,tiket qatar airways,tiket qatar airways,tiket qatar airways,3.0,3.0,0.0,0.0
+Dummy,Tiket Emirates,tiket emirates,tiket emirates,tiket emirates,2.0,2.0,0.0,0.0
+Dummy,Tiket Etihad Airways,tiket etihad airways,tiket etihad airways,tiket etihad airways,3.0,3.0,0.0,0.0
+Dummy,Tiket All Nippon Airways,tiket all nippon airways,tiket nippon airways,tiket nippon airways,4.0,3.0,1.0,25.0
+Dummy,Tiket Malaysia Airlines,tiket malaysia airlines,tiket malaysia airlines,tiket malaysia airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Japan Airlines,tiket japan airlines,tiket japan airlines,tiket japan airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Asiana Airlines,tiket asiana airlines,tiket asiana airlines,tiket asiana airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket China Airlines,tiket china airlines,tiket china airlines,tiket china airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket EVA Air,tiket eva air,tiket eva air,tiket eva air,3.0,3.0,0.0,0.0
+Dummy,Tiket KLM,tiket klm,tiket klm,tiket klm,2.0,2.0,0.0,0.0
+Dummy,Tiket Air France,tiket air france,tiket air france,tiket air france,3.0,3.0,0.0,0.0
+Dummy,Tiket Xiamen Airlines,tiket xiamen airlines,tiket xiamen airlines,tiket xiamen airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Air China,tiket air china,tiket air china,tiket air china,3.0,3.0,0.0,0.0
+Dummy,Tiket Oman Air,tiket oman air,tiket oman air,tiket om air,3.0,3.0,0.0,0.0
+Dummy,Tiket Lufthansa,tiket lufthansa,tiket lufthansa,tiket lufthansa,2.0,2.0,0.0,0.0
+Dummy,Tiket Delta Air Lines,tiket delta air lines,tiket delta air lines,tiket delta air les,4.0,4.0,0.0,0.0
+Dummy,Tiket Korean Air,tiket korean air,tiket korean air,tiket korean air,3.0,3.0,0.0,0.0
+Dummy,Tiket Nam Air,tiket nam air,tiket nam air,tiket nam air,3.0,3.0,0.0,0.0
+Dummy,Tiket Pelita Air,tiket pelita air,tiket pelita air,tiket pelita air,3.0,3.0,0.0,0.0
+Dummy,Tiket Jetstar,tiket jetstar,tiket jetstar,tiket jetstar,2.0,2.0,0.0,0.0
+Dummy,Tiket Firefly,tiket firefly,tiket firefly,tiket firefly,2.0,2.0,0.0,0.0
+Dummy,Tiket Thai Lion Air,tiket thai lion air,tiket thai lion air,tiket thai lion air,4.0,4.0,0.0,0.0
+Dummy,Tiket Wings Air,tiket wings air,tiket wings air,tiket wings air,3.0,3.0,0.0,0.0
+Dummy,Tiket Trigana Air,tiket trigana air,tiket trigana air,tiket trigana air,3.0,3.0,0.0,0.0
+Dummy,Tiket TransNusa Aviation,tiket transnusa aviation,tiket transnusa aviation,tiket transnusa aviation,3.0,3.0,0.0,0.0
+Dummy,Tiket Bangkok Airways,tiket bangkok airways,tiket bangkok airways,tiket bangkok airways,3.0,3.0,0.0,0.0
+Dummy,Tiket Philippine Airlines,tiket philippine airlines,tiket philippine airlines,tiket philippine airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Vietnam Airlines,tiket vietnam airlines,tiket vietnam airlines,tiket vietnam airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Qantas,tiket qantas,tiket qantas,tiket qantas,2.0,2.0,0.0,0.0
+Dummy,Tiket Turkish Airlines,tiket turkish airlines,tiket turkish airlines,tiket turkish airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket American Airlines,tiket american airlines,tiket american airlines,tiket american airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket China Southern Airlines,tiket china southern airlines,tiket china southern airlines,tiket china southern airlines,4.0,4.0,0.0,0.0
+Dummy,Tiket Royal Brunei Airlines,tiket royal brunei airlines,tiket brunei airlines,tiket brunei airlines,4.0,3.0,1.0,25.0
+Dummy,Tiket Virgin Australia,tiket virgin australia,tiket virgin australia,tiket virgin australia,3.0,3.0,0.0,0.0
+Dummy,Tiket EgyptAir,tiket egyptair,tiket egyptair,tiket egyptair,2.0,2.0,0.0,0.0
+Dummy,Tiket United Airlines,tiket united airlines,tiket united airlines,tiket united airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket SriLankan Airlines,tiket srilankan airlines,tiket srilankan airlines,tiket srilankan airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Cebu Pacific,tiket cebu pacific,tiket cebu pacific,tiket cebu pacific,3.0,3.0,0.0,0.0
+Dummy,Tiket Saudia Airlines,tiket saudia airlines,tiket saudia airlines,tiket saudia airlines,3.0,3.0,0.0,0.0
+Dummy,Tiket Starlux,tiket starlux,tiket starlux,tiket starlux,2.0,2.0,0.0,0.0
+Dummy,Tiket FlyJaya,tiket flyjaya,tiket flyjaya,tiket flyjaya,2.0,2.0,0.0,0.0
+Dummy,Bagasi Tambahan,bagasi tambahan,bagasi tambahan,bagasi tambah,2.0,2.0,0.0,0.0
+Dummy,Upgrade Kursi,upgrade kursi,upgrade kursi,upgrade kursi,2.0,2.0,0.0,0.0
+Dummy,Pilih Seat,pilih seat,seat,seat,2.0,1.0,1.0,50.0
+Dummy,Makanan di Pesawat,makanan di pesawat,makanan pesawat,makan pesawat,3.0,2.0,1.0,33.3
+Dummy,Minuman di Pesawat,minuman di pesawat,minuman pesawat,minum pesawat,3.0,2.0,1.0,33.3
+Dummy,Asuransi Perjalanan,asuransi perjalanan,asuransi perjalanan,asuransi jalan,2.0,2.0,0.0,0.0
+Dummy,Pajak Bandara,pajak bandara,pajak bandara,pajak bandara,2.0,2.0,0.0,0.0
+Dummy,Biaya Reschedule,biaya reschedule,biaya reschedule,biaya reschedule,2.0,2.0,0.0,0.0
+Dummy,Biaya Refund,biaya refund,biaya refund,biaya refund,2.0,2.0,0.0,0.0
+Dummy,Lounge Bandara,lounge bandara,lounge bandara,lounge bandara,2.0,2.0,0.0,0.0
+Dummy,Shuttle Bandara,shuttle bandara,shuttle bandara,shuttle bandara,2.0,2.0,0.0,0.0
+Dummy,Transport ke Bandara,transport ke bandara,transport bandara,transport bandara,3.0,2.0,1.0,33.3
+Dummy,Hotel Transit,hotel transit,hotel transit,hotel transit,2.0,2.0,0.0,0.0
+Dummy,Visa Perjalanan,visa perjalanan,visa perjalanan,visa jalan,2.0,2.0,0.0,0.0
+Dummy,Paspor Baru,paspor baru,paspor,paspor,2.0,1.0,1.0,50.0
+Dummy,Cetak Boarding Pass,cetak boarding pass,cetak boarding pass,cetak boarding pass,3.0,3.0,0.0,0.0
+Dummy,WiFi Pesawat,wifi pesawat,wifi pesawat,wifi pesawat,2.0,2.0,0.0,0.0
+Dummy,Hiburan Premium Pesawat,hiburan premium pesawat,hiburan pesawat,hibur pesawat,3.0,2.0,1.0,33.3
+Tiket Kereta,Tiket KAI,tiket kai,tiket kai,tiket kai,2.0,2.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Ekonomi,tiket kereta ekonomi,tiket kereta ekonomi,tiket kereta ekonomi,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Bisnis,tiket kereta bisnis,tiket kereta bisnis,tiket kereta bisnis,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Eksekutif,tiket kereta eksekutif,tiket kereta eksekutif,tiket kereta eksekutif,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Luxury,tiket kereta luxury,tiket kereta luxury,tiket kereta luxury,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Argo Bromo Anggrek,tiket ka argo bromo anggrek,tiket ka argo bromo anggrek,tiket ka argo bromo anggrek,5.0,5.0,0.0,0.0
+Tiket Kereta,Tiket KA Argo Parahyangan,tiket ka argo parahyangan,tiket ka argo parahyangan,tiket ka argo parahyangan,4.0,4.0,0.0,0.0
+Tiket Kereta,Tiket KA Argo Wilis,tiket ka argo wilis,tiket ka argo wilis,tiket ka argo wilis,4.0,4.0,0.0,0.0
+Tiket Kereta,Tiket KA Taksaka,tiket ka taksaka,tiket ka taksaka,tiket ka taksaka,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Lodaya,tiket ka lodaya,tiket ka lodaya,tiket ka lodaya,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Malabar,tiket ka malabar,tiket ka malabar,tiket ka malabar,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Turangga,tiket ka turangga,tiket ka,tiket ka,3.0,2.0,1.0,33.3
+Tiket Kereta,Tiket KA Matarmaja,tiket ka matarmaja,tiket ka matarmaja,tiket ka matarmaja,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Majapahit,tiket ka majapahit,tiket ka majapahit,tiket ka majapahit,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Bengawan,tiket ka bengawan,tiket ka bengawan,tiket ka bengawan,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Serayu,tiket ka serayu,tiket ka serayu,tiket ka rayu,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Kahuripan,tiket ka kahuripan,tiket ka kahuripan,tiket ka kahuripan,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Jayabaya,tiket ka jayabaya,tiket ka jayabaya,tiket ka jayabaya,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Gajayana,tiket ka gajayana,tiket ka gajayana,tiket ka gajayana,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Bima,tiket ka bima,tiket ka bima,tiket ka bima,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Sembrani,tiket ka sembrani,tiket ka sembrani,tiket ka sembrani,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Kertajaya,tiket ka kertajaya,tiket ka kertajaya,tiket ka kertajaya,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Sancaka,tiket ka sancaka,tiket ka sancaka,tiket ka sancaka,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Progo,tiket ka progo,tiket ka progo,tiket ka progo,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Brantas,tiket ka brantas,tiket ka brantas,tiket ka brantas,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Logawa,tiket ka logawa,tiket ka logawa,tiket ka logawa,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Sri Tanjung,tiket ka sri tanjung,tiket ka sri tanjung,tiket ka sri tanjung,4.0,4.0,0.0,0.0
+Tiket Kereta,Tiket KA Pasundan,tiket ka pasundan,tiket ka pasundan,tiket ka pasundan,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Bogowonto,tiket ka bogowonto,tiket ka bogowonto,tiket ka bogowonto,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KA Fajar Utama,tiket ka fajar utama,tiket ka fajar,tiket ka fajar,4.0,3.0,1.0,25.0
+Tiket Kereta,Tiket Kereta Bandara,tiket kereta bandara,tiket kereta bandara,tiket kereta bandara,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Railink,tiket railink,tiket railink,tiket railink,2.0,2.0,0.0,0.0
+Tiket Kereta,Tiket LRT Jabodebek,tiket lrt jabodebek,tiket lrt jabodebek,tiket lrt jabodebek,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket MRT Jakarta,tiket mrt jakarta,tiket mrt jakarta,tiket mrt jakarta,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket KRL Commuter Line,tiket krl commuter line,tiket krl commuter line,tiket krl commuter line,4.0,4.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Cepat Whoosh,tiket kereta cepat whoosh,tiket kereta whoosh,tiket kereta whoosh,4.0,3.0,1.0,25.0
+Tiket Kereta,Upgrade Kursi Kereta,upgrade kursi kereta,upgrade kursi kereta,upgrade kursi kereta,3.0,3.0,0.0,0.0
+Tiket Kereta,Pilih Seat Kereta,pilih seat kereta,seat kereta,seat kereta,3.0,2.0,1.0,33.3
+Tiket Kereta,Makanan di Kereta,makanan di kereta,makanan kereta,makan kereta,3.0,2.0,1.0,33.3
+Tiket Kereta,Minuman di Kereta,minuman di kereta,minuman kereta,minum kereta,3.0,2.0,1.0,33.3
+Tiket Kereta,Bagasi Tambahan Kereta,bagasi tambahan kereta,bagasi tambahan kereta,bagasi tambah kereta,3.0,3.0,0.0,0.0
+Tiket Kereta,Biaya Reschedule Tiket Kereta,biaya reschedule tiket kereta,biaya reschedule tiket kereta,biaya reschedule tiket kereta,4.0,4.0,0.0,0.0
+Tiket Kereta,Biaya Refund Tiket Kereta,biaya refund tiket kereta,biaya refund tiket kereta,biaya refund tiket kereta,4.0,4.0,0.0,0.0
+Tiket Kereta,Lounge Stasiun,lounge stasiun,lounge stasiun,lounge stasiun,2.0,2.0,0.0,0.0
+Tiket Kereta,Shuttle ke Stasiun,shuttle ke stasiun,shuttle stasiun,shuttle stasiun,3.0,2.0,1.0,33.3
+Tiket Kereta,Transport ke Stasiun,transport ke stasiun,transport stasiun,transport stasiun,3.0,2.0,1.0,33.3
+Tiket Kereta,Hotel Transit Dekat Stasiun,hotel transit dekat stasiun,hotel transit stasiun,hotel transit stasiun,4.0,3.0,1.0,25.0
+Tiket Kereta,Cetak Boarding Pass Kereta,cetak boarding pass kereta,cetak boarding pass kereta,cetak boarding pass kereta,4.0,4.0,0.0,0.0
+Tiket Kereta,Porter Stasiun,porter stasiun,porter stasiun,porter stasiun,2.0,2.0,0.0,0.0
+Tiket Kereta,Sewa Selimut Kereta,sewa selimut kereta,sewa selimut kereta,sewa selimut kereta,3.0,3.0,0.0,0.0
+Tiket Kereta,WiFi Kereta,wifi kereta,wifi kereta,wifi kereta,2.0,2.0,0.0,0.0
+Tiket Kereta,Tiket Sleeper Train,tiket sleeper train,tiket sleeper train,tiket sleeper train,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Wisata,tiket kereta wisata,tiket kereta wisata,tiket kereta wisata,3.0,3.0,0.0,0.0
+Tiket Kereta,Tiket Kereta Lokal,tiket kereta lokal,tiket kereta,tiket kereta,3.0,2.0,1.0,33.3
+Tiket Kereta,Tiket Kereta Antar Kota,tiket kereta antar kota,tiket kereta kota,tiket kereta kota,4.0,3.0,1.0,25.0
+Tiket Kereta,Tiket Kereta Pulang Pergi,tiket kereta pulang pergi,tiket kereta pulang pergi,tiket kereta pulang pergi,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Ekonomi,tiket whoosh ekonomi,tiket whoosh ekonomi,tiket whoosh ekonomi,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Premium,tiket whoosh premium,tiket whoosh,tiket whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Tiket Whoosh Bisnis,tiket whoosh bisnis,tiket whoosh bisnis,tiket whoosh bisnis,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh First Class,tiket whoosh first class,tiket whoosh first class,tiket whoosh first class,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Ekonomi Promo,tiket whoosh ekonomi promo,tiket whoosh ekonomi,tiket whoosh ekonomi,4.0,3.0,1.0,25.0
+Tiket Whoosh,Tiket Whoosh Premium Promo,tiket whoosh premium promo,tiket whoosh,tiket whoosh,4.0,2.0,2.0,50.0
+Tiket Whoosh,Tiket Whoosh Bisnis Promo,tiket whoosh bisnis promo,tiket whoosh bisnis,tiket whoosh bisnis,4.0,3.0,1.0,25.0
+Tiket Whoosh,Tiket Whoosh First Class Promo,tiket whoosh first class promo,tiket whoosh first class,tiket whoosh first class,5.0,4.0,1.0,20.0
+Tiket Whoosh,Tiket Whoosh Pulang Pergi,tiket whoosh pulang pergi,tiket whoosh pulang pergi,tiket whoosh pulang pergi,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh One Way,tiket whoosh one way,tiket whoosh one way,tiket whoosh one way,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Weekend,tiket whoosh weekend,tiket whoosh weekend,tiket whoosh weekend,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Weekday,tiket whoosh weekday,tiket whoosh weekday,tiket whoosh weekday,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Jam Sibuk,tiket whoosh jam sibuk,tiket whoosh jam sibuk,tiket whoosh jam sibuk,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Non Peak,tiket whoosh non peak,tiket whoosh non peak,tiket whoosh non peak,4.0,4.0,0.0,0.0
+Tiket Whoosh,Upgrade Kursi Whoosh,upgrade kursi whoosh,upgrade kursi whoosh,upgrade kursi whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Upgrade ke Premium Whoosh,upgrade ke premium whoosh,upgrade whoosh,upgrade whoosh,4.0,2.0,2.0,50.0
+Tiket Whoosh,Upgrade ke Bisnis Whoosh,upgrade ke bisnis whoosh,upgrade bisnis whoosh,upgrade bisnis whoosh,4.0,3.0,1.0,25.0
+Tiket Whoosh,Upgrade ke First Class Whoosh,upgrade ke first class whoosh,upgrade first class whoosh,upgrade first class whoosh,5.0,4.0,1.0,20.0
+Tiket Whoosh,Pilih Seat Whoosh,pilih seat whoosh,seat whoosh,seat whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Reschedule Tiket Whoosh,reschedule tiket whoosh,reschedule tiket whoosh,reschedule tiket whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Refund Tiket Whoosh,refund tiket whoosh,refund tiket whoosh,refund tiket whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Biaya Pembatalan Whoosh,biaya pembatalan whoosh,biaya pembatalan whoosh,biaya batal whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Booking Online Whoosh,booking online whoosh,booking whoosh,booking whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Tiket Grup Whoosh,tiket grup whoosh,tiket grup whoosh,tiket grup whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Corporate Whoosh,tiket corporate whoosh,tiket corporate whoosh,tiket corporate whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Pelajar Whoosh,tiket pelajar whoosh,tiket pelajar whoosh,tiket ajar whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Lansia Whoosh,tiket lansia whoosh,tiket whoosh,tiket whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Tiket Anak Whoosh,tiket anak whoosh,tiket whoosh,tiket whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Tiket Prioritas Whoosh,tiket prioritas whoosh,tiket prioritas whoosh,tiket prioritas whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Lounge Whoosh,lounge whoosh,lounge whoosh,lounge whoosh,2.0,2.0,0.0,0.0
+Tiket Whoosh,Parkir Stasiun Whoosh,parkir stasiun whoosh,parkir stasiun whoosh,parkir stasiun whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Shuttle ke Stasiun Whoosh,shuttle ke stasiun whoosh,shuttle stasiun whoosh,shuttle stasiun whoosh,4.0,3.0,1.0,25.0
+Tiket Whoosh,Transport ke Stasiun Whoosh,transport ke stasiun whoosh,transport stasiun whoosh,transport stasiun whoosh,4.0,3.0,1.0,25.0
+Tiket Whoosh,Bagasi Tambahan Whoosh,bagasi tambahan whoosh,bagasi tambahan whoosh,bagasi tambah whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Porter Stasiun Whoosh,porter stasiun whoosh,porter stasiun whoosh,porter stasiun whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,WiFi Premium Whoosh,wifi premium whoosh,wifi whoosh,wifi whoosh,3.0,2.0,1.0,33.3
+Tiket Whoosh,Tiket Whoosh Jakarta Bandung,tiket whoosh jakarta bandung,tiket whoosh jakarta bandung,tiket whoosh jakarta bandung,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Bandung Jakarta,tiket whoosh bandung jakarta,tiket whoosh bandung jakarta,tiket whoosh bandung jakarta,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Halim Padalarang,tiket whoosh halim padalarang,tiket whoosh halim padalarang,tiket whoosh halim padalarang,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Whoosh Halim Tegalluar,tiket whoosh halim tegalluar,tiket whoosh halim tegalluar,tiket whoosh halim tegalluar,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Langganan Whoosh,tiket langganan whoosh,tiket langganan whoosh,tiket langgan whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Harian Whoosh,tiket harian whoosh,tiket harian whoosh,tiket hari whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Mendadak Whoosh,tiket mendadak whoosh,tiket mendadak whoosh,tiket dadak whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Early Booking Whoosh,tiket early booking whoosh,tiket early booking whoosh,tiket early booking whoosh,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Flexible Whoosh,tiket flexible whoosh,tiket flexible whoosh,tiket flexible whoosh,3.0,3.0,0.0,0.0
+Tiket Whoosh,Tiket Non Refundable Whoosh,tiket non refundable whoosh,tiket non refundable whoosh,tiket non refundable whoosh,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Priority Boarding Whoosh,tiket priority boarding whoosh,tiket priority boarding whoosh,tiket priority boarding whoosh,4.0,4.0,0.0,0.0
+Tiket Whoosh,Tiket Fast Track Whoosh,tiket fast track whoosh,tiket fast track whoosh,tiket fast track whoosh,4.0,4.0,0.0,0.0
+Bus Parawisata,Aerotrans (Jakarta),aerotrans jakarta,aerotrans jakarta,aerotrans jakarta,2.0,2.0,0.0,0.0
+Bus Parawisata,Agra Icon,agra icon,agra icon,agra icon,2.0,2.0,0.0,0.0
+Bus Parawisata,AJA,aja,aja,aja,1.0,1.0,0.0,0.0
+Bus Parawisata,Alegra,alegra,alegra,alegra,1.0,1.0,0.0,0.0
+Bus Parawisata,AM Shantika,am shantika,am shantika,am shantika,2.0,2.0,0.0,0.0
+Bus Parawisata,AM Trans,am trans,am trans,am trans,2.0,2.0,0.0,0.0
+Bus Parawisata,AO Transport,ao transport,ao transport,ao transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Ardana,ardana,ardana,ardana,1.0,1.0,0.0,0.0
+Bus Parawisata,Ardian Transport,ardian transport,ardian transport,ardi transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Arimbi,arimbi,arimbi,arimbi,1.0,1.0,0.0,0.0
+Bus Parawisata,Arion (Jakarta),arion jakarta,arion jakarta,arion jakarta,2.0,2.0,0.0,0.0
+Bus Parawisata,Aris Trans,aris trans,aris trans,aris trans,2.0,2.0,0.0,0.0
+Bus Parawisata,Armada Jaya Perkasa,armada jaya perkasa,armada,armada,3.0,1.0,2.0,66.7
+Bus Parawisata,Arya Kencana,arya kencana,arya kencana,arya kencana,2.0,2.0,0.0,0.0
+Bus Parawisata,Asyaco,asyaco,asyaco,asyaco,1.0,1.0,0.0,0.0
+Bus Parawisata,Atmajaya,atmajaya,atmajaya,atmajaya,1.0,1.0,0.0,0.0
+Bus Parawisata,Bahana,bahana,,,1.0,0.0,1.0,100.0
+Bus Parawisata,BEE Bus,bee bus,bee bus,bee bus,2.0,2.0,0.0,0.0
+Bus Parawisata,Bejeu,bejeu,bejeu,bejeu,1.0,1.0,0.0,0.0
+Bus Parawisata,BGS Trans,bgs trans,bgs trans,bgs trans,2.0,2.0,0.0,0.0
+Bus Parawisata,Bhaladatika Tour (Jakarta),bhaladatika tour jakarta,bhaladatika tour jakarta,bhaladatika tour jakarta,3.0,3.0,0.0,0.0
+Bus Parawisata,Bhineka,bhineka,bhineka,bhineka,1.0,1.0,0.0,0.0
+Bus Parawisata,Big Bird (Jakarta dan Surabaya),big bird jakarta dan surabaya,big bird jakarta surabaya,big bird jakarta surabaya,5.0,4.0,1.0,20.0
+Bus Parawisata,Bina Transport,bina transport,bina transport,bina transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Bintang Tiga,bintang tiga,bintang,bintang,2.0,1.0,1.0,50.0
+Bus Parawisata,Bintang Wisata,bintang wisata,bintang wisata,bintang wisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Blue Star,blue star,blue star,blue star,2.0,2.0,0.0,0.0
+Bus Parawisata,Buah Batu,buah batu,batu,batu,2.0,1.0,1.0,50.0
+Bus Parawisata,Budiman Pariwisata,budiman pariwisata,budiman pariwisata,budiman pariwisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Bulan Jaya,bulan jaya,,,2.0,0.0,2.0,100.0
+Bus Parawisata,Cipaganti,cipaganti,cipaganti,cipaganti,1.0,1.0,0.0,0.0
+Bus Parawisata,Cipta Karunia,cipta karunia,cipta karunia,cipta karunia,2.0,2.0,0.0,0.0
+Bus Parawisata,Citra Dewi,citra dewi,citra dewi,citra dewi,2.0,2.0,0.0,0.0
+Bus Parawisata,City Trans Utama,city trans utama,city trans,city trans,3.0,2.0,1.0,33.3
+Bus Parawisata,Cleo,cleo,cleo,cleo,1.0,1.0,0.0,0.0
+Bus Parawisata,Deborah,deborah,deborah,deborah,1.0,1.0,0.0,0.0
+Bus Parawisata,Desiana,desiana,desiana,desiana,1.0,1.0,0.0,0.0
+Bus Parawisata,Dewi Sri Pariwisata,dewi sri pariwisata,dewi sri pariwisata,dewi sri pariwisata,3.0,3.0,0.0,0.0
+Bus Parawisata,Dieng Indah Pariwisata,dieng indah pariwisata,dieng pariwisata,dieng pariwisata,3.0,2.0,1.0,33.3
+Bus Parawisata,Discovery,discovery,discovery,discovery,1.0,1.0,0.0,0.0
+Bus Parawisata,Dutro Minibus,dutro minibus,dutro minibus,dutro minibus,2.0,2.0,0.0,0.0
+Bus Parawisata,Effesiensi,effesiensi,effesiensi,effesiensi,1.0,1.0,0.0,0.0
+Bus Parawisata,Epa Star,epa star,epa star,epa star,2.0,2.0,0.0,0.0
+Bus Parawisata,Esem Abadi,esem abadi,esem,esem,2.0,1.0,1.0,50.0
+Bus Parawisata,Etrans,etrans,etrans,etrans,1.0,1.0,0.0,0.0
+Bus Parawisata,Express Eagle High (Jakarta),express eagle high jakarta,express eagle high jakarta,express eagle high jakarta,4.0,4.0,0.0,0.0
+Bus Parawisata,Fajar Transport,fajar transport,fajar transport,fajar transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Gunung Harta,gunung harta,gunung harta,gunung harta,2.0,2.0,0.0,0.0
+Bus Parawisata,Harapan Jaya Pariwisata,harapan jaya pariwisata,harapan pariwisata,harap pariwisata,3.0,2.0,1.0,33.3
+Bus Parawisata,Haryanto,haryanto,haryanto,haryanto,1.0,1.0,0.0,0.0
+Bus Parawisata,Hiba Utama,hiba utama,hiba,hiba,2.0,1.0,1.0,50.0
+Bus Parawisata,Ichtra Jaya,ichtra jaya,ichtra,ichtra,2.0,1.0,1.0,50.0
+Bus Parawisata,Indah Murni,indah murni,murni,murni,2.0,1.0,1.0,50.0
+Bus Parawisata,Jackal Holiday,jackal holiday,jackal holiday,jackal holiday,2.0,2.0,0.0,0.0
+Bus Parawisata,Jasmine,jasmine,jasmine,jasmine,1.0,1.0,0.0,0.0
+Bus Parawisata,Karunia Pariwisata,karunia pariwisata,karunia pariwisata,karunia pariwisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Kerub Pariwisata Indonesia,kerub pariwisata indonesia,kerub pariwisata indonesia,kerub pariwisata indonesia,3.0,3.0,0.0,0.0
+Bus Parawisata,kosayu,kosayu,kosayu,kosayu,1.0,1.0,0.0,0.0
+Bus Parawisata,Kosub Bersama,kosub bersama,kosub,kosub,2.0,1.0,1.0,50.0
+Bus Parawisata,Kramat Djati,kramat djati,kramat djati,kramat djati,2.0,2.0,0.0,0.0
+Bus Parawisata,Laju Utama,laju utama,laju,laju,2.0,1.0,1.0,50.0
+Bus Parawisata,Laks Autobus,laks autobus,laks autobus,laks autobus,2.0,2.0,0.0,0.0
+Bus Parawisata,Lautan,lautan,lautan,laut,1.0,1.0,0.0,0.0
+Bus Parawisata,Limas Pariwisata (Bogor),limas pariwisata bogor,limas pariwisata bogor,limas pariwisata bogor,3.0,3.0,0.0,0.0
+Bus Parawisata,Lutfansa,lutfansa,lutfansa,lutfansa,1.0,1.0,0.0,0.0
+Bus Parawisata,Malino Putra,malino putra,malino putra,malino putra,2.0,2.0,0.0,0.0
+Bus Parawisata,Manhattan,manhattan,manhattan,manhattan,1.0,1.0,0.0,0.0
+Bus Parawisata,Matahari Holidays,matahari holidays,matahari holidays,matahari holidays,2.0,2.0,0.0,0.0
+Bus Parawisata,Medal Jaya,medal jaya,medal,medal,2.0,1.0,1.0,50.0
+Bus Parawisata,Metropolitan,metropolitan,,,1.0,0.0,1.0,100.0
+Bus Parawisata,Midas Nusantara,midas nusantara,midas nusantara,midas nusantara,2.0,2.0,0.0,0.0
+Bus Parawisata,Nirwana Pariwisata,nirwana pariwisata,nirwana pariwisata,nirwana pariwisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Nuansa Wisata,nuansa wisata,nuansa wisata,nuansa wisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Nugroho,nugroho,nugroho,nugroho,1.0,1.0,0.0,0.0
+Bus Parawisata,Nusa Indah,nusa indah,nusa,nusa,2.0,1.0,1.0,50.0
+Bus Parawisata,Pakar Wisata,pakar wisata,pakar wisata,pakar wisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Panorama Pariwisata,panorama pariwisata,panorama pariwisata,panorama pariwisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Perdana Jaya,perdana jaya,perdana,perdana,2.0,1.0,1.0,50.0
+Bus Parawisata,Premium Passion,premium passion,passion,passion,2.0,1.0,1.0,50.0
+Bus Parawisata,Primajasa Citymiles,primajasa citymiles,primajasa citymiles,primajasa citymiles,2.0,2.0,0.0,0.0
+Bus Parawisata,Purnayasa,purnayasa,purnayasa,purnayasa,1.0,1.0,0.0,0.0
+Bus Parawisata,Pusaka Wisata,pusaka wisata,pusaka wisata,pusaka wisata,2.0,2.0,0.0,0.0
+Bus Parawisata,Putra Remaja Jakarta,putra remaja jakarta,putra jakarta,putra jakarta,3.0,2.0,1.0,33.3
+Bus Parawisata,Qitarabu,qitarabu,qitarabu,qitarabu,1.0,1.0,0.0,0.0
+Bus Parawisata,Queen Trans,queen trans,queen trans,queen trans,2.0,2.0,0.0,0.0
+Bus Parawisata,Restu Mulya,restu mulya,restu mulya,restu mulya,2.0,2.0,0.0,0.0
+Bus Parawisata,Rezeki Baru,rezeki baru,rezeki,rezeki,2.0,1.0,1.0,50.0
+Bus Parawisata,Rosalia Indah Pariwisata,rosalia indah pariwisata,rosalia pariwisata,rosalia pariwisata,3.0,2.0,1.0,33.3
+Bus Parawisata,Royal Platinum,royal platinum,platinum,platinum,2.0,1.0,1.0,50.0
+Bus Parawisata,Safari Dharma Raya (OBL),safari dharma raya obl,safari dharma obl,safari dharma obl,4.0,3.0,1.0,25.0
+Bus Parawisata,Sahabat Kita,sahabat kita,sahabat,sahabat,2.0,1.0,1.0,50.0
+Bus Parawisata,Semanta,semanta,semanta,manta,1.0,1.0,0.0,0.0
+Bus Parawisata,Shantika,shantika,shantika,shantika,1.0,1.0,0.0,0.0
+Bus Parawisata,SJLU (Sinar Jaya Langgeng Utama),sjlu sinar jaya langgeng utama,sjlu sinar,sjlu sinar,5.0,2.0,3.0,60.0
+Bus Parawisata,SM Prima,sm prima,sm,sm,2.0,1.0,1.0,50.0
+Bus Parawisata,SPA Trans,spa trans,spa trans,spa trans,2.0,2.0,0.0,0.0
+Bus Parawisata,Starbus,starbus,starbus,starbus,1.0,1.0,0.0,0.0
+Bus Parawisata,Subur Jaya,subur jaya,,,2.0,0.0,2.0,100.0
+Bus Parawisata,Suhada,suhada,suhada,suhada,1.0,1.0,0.0,0.0
+Bus Parawisata,Sumber Usaha,sumber usaha,sumber usaha,sumber usaha,2.0,2.0,0.0,0.0
+Bus Parawisata,Suryaputra Trans,suryaputra trans,suryaputra trans,suryaputra trans,2.0,2.0,0.0,0.0
+Bus Parawisata,Syimponie,syimponie,syimponie,syimponie,1.0,1.0,0.0,0.0
+Bus Parawisata,Trac,trac,trac,trac,1.0,1.0,0.0,0.0
+Bus Parawisata,Trans Boutiqe,trans boutiqe,trans boutiqe,trans boutiqe,2.0,2.0,0.0,0.0
+Bus Parawisata,Trans Utama,trans utama,trans,trans,2.0,1.0,1.0,50.0
+Bus Parawisata,Tunggal Daya,tunggal daya,daya,daya,2.0,1.0,1.0,50.0
+Bus Parawisata,Vircansa Tour Bus & Travel,vircansa tour bus travel,vircansa tour bus travel,vircansa tour bus travel,5.0,4.0,1.0,20.0
+Bus Parawisata,Virgo Transport,virgo transport,virgo transport,virgo transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Warga Baru Pariwisata,warga baru pariwisata,warga pariwisata,warga pariwisata,3.0,2.0,1.0,33.3
+Bus Parawisata,Wayang,wayang,wayang,wayang,1.0,1.0,0.0,0.0
+Bus Parawisata,"White Horse (Jakarta, Bandung dan Palembang)",white horse jakarta bandung dan palembang,white horse jakarta bandung palembang,white horse jakarta bandung palembang,6.0,5.0,1.0,16.7
+Bus Parawisata,William,william,william,william,1.0,1.0,0.0,0.0
+Bus Parawisata,Win Bus,win bus,win bus,win bus,2.0,2.0,0.0,0.0
+Bus Parawisata,Yellow Wish,yellow wish,yellow wish,yellow wish,2.0,2.0,0.0,0.0
+Bus Parawisata,YM Transport,ym transport,ym transport,ym transport,2.0,2.0,0.0,0.0
+Bus Parawisata,Zentrum,zentrum,zentrum,zentrum,1.0,1.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus AKAP,tiket bus akap,tiket bus akap,tiket bus akap,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus AKDP,tiket bus akdp,tiket bus akdp,tiket bus akdp,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Ekonomi,tiket bus ekonomi,tiket bus ekonomi,tiket bus ekonomi,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Bisnis,tiket bus bisnis,tiket bus bisnis,tiket bus bisnis,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Executive,tiket bus executive,tiket bus executive,tiket bus executive,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Sleeper,tiket bus sleeper,tiket bus sleeper,tiket bus sleeper,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Luxury,tiket bus luxury,tiket bus luxury,tiket bus luxury,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Pariwisata,tiket bus pariwisata,tiket bus pariwisata,tiket bus pariwisata,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Antar Kota,tiket bus antar kota,tiket bus kota,tiket bus kota,4.0,3.0,1.0,25.0
+Generate Tiket Bus,Tiket Bus Antar Provinsi,tiket bus antar provinsi,tiket bus provinsi,tiket bus provinsi,4.0,3.0,1.0,25.0
+Generate Tiket Bus,Tiket Bus Dalam Kota,tiket bus dalam kota,tiket bus kota,tiket bus kota,4.0,3.0,1.0,25.0
+Generate Tiket Bus,Tiket Bus TransJakarta,tiket bus transjakarta,tiket bus transjakarta,tiket bus transjakarta,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus DAMRI,tiket bus damri,tiket bus damri,tiket bus damri,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Bandara,tiket bus bandara,tiket bus bandara,tiket bus bandara,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Shuttle,tiket bus shuttle,tiket bus shuttle,tiket bus shuttle,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Travel,tiket bus travel,tiket bus travel,tiket bus travel,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Malam,tiket bus malam,tiket bus malam,tiket bus malam,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Pagi,tiket bus pagi,tiket bus pagi,tiket bus pagi,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Weekend,tiket bus weekend,tiket bus weekend,tiket bus weekend,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Weekday,tiket bus weekday,tiket bus weekday,tiket bus weekday,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Pulang Pergi,tiket bus pulang pergi,tiket bus pulang pergi,tiket bus pulang pergi,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus One Way,tiket bus one way,tiket bus one way,tiket bus one way,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Promo,tiket bus promo,tiket bus,tiket bus,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Tiket Bus Online Booking,tiket bus online booking,tiket bus booking,tiket bus booking,4.0,3.0,1.0,25.0
+Generate Tiket Bus,Tiket Bus Mendadak,tiket bus mendadak,tiket bus mendadak,tiket bus dadak,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Early Booking,tiket bus early booking,tiket bus early booking,tiket bus early booking,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Rombongan,tiket bus rombongan,tiket bus rombongan,tiket bus rombong,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Corporate,tiket bus corporate,tiket bus corporate,tiket bus corporate,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Pelajar,tiket bus pelajar,tiket bus pelajar,tiket bus ajar,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Lansia,tiket bus lansia,tiket bus,tiket bus,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Tiket Bus Anak,tiket bus anak,tiket bus,tiket bus,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Upgrade Kursi Bus,upgrade kursi bus,upgrade kursi bus,upgrade kursi bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Pilih Seat Bus,pilih seat bus,seat bus,seat bus,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Bagasi Tambahan Bus,bagasi tambahan bus,bagasi tambahan bus,bagasi tambah bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Reschedule Tiket Bus,reschedule tiket bus,reschedule tiket bus,reschedule tiket bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Refund Tiket Bus,refund tiket bus,refund tiket bus,refund tiket bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Biaya Pembatalan Bus,biaya pembatalan bus,biaya pembatalan bus,biaya batal bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Lounge Terminal,lounge terminal,lounge terminal,lounge terminal,2.0,2.0,0.0,0.0
+Generate Tiket Bus,Shuttle ke Terminal,shuttle ke terminal,shuttle terminal,shuttle terminal,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Transport ke Terminal,transport ke terminal,transport terminal,transport terminal,3.0,2.0,1.0,33.3
+Generate Tiket Bus,Porter Terminal,porter terminal,porter terminal,porter terminal,2.0,2.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Jakarta Bandung,tiket bus jakarta bandung,tiket bus jakarta bandung,tiket bus jakarta bandung,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Jakarta Yogyakarta,tiket bus jakarta yogyakarta,tiket bus jakarta yogyakarta,tiket bus jakarta yogyakarta,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Jakarta Surabaya,tiket bus jakarta surabaya,tiket bus jakarta surabaya,tiket bus jakarta surabaya,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Bandung Semarang,tiket bus bandung semarang,tiket bus bandung semarang,tiket bus bandung semarang,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Medan Aceh,tiket bus medan aceh,tiket bus medan aceh,tiket bus medan aceh,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Bus Makassar Manado,tiket bus makassar manado,tiket bus makassar manado,tiket bus makassar manado,4.0,4.0,0.0,0.0
+Generate Tiket Bus,Tiket Langganan Bus,tiket langganan bus,tiket langganan bus,tiket langgan bus,3.0,3.0,0.0,0.0
+Generate Tiket Bus,Tiket Harian Bus,tiket harian bus,tiket harian bus,tiket hari bus,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Antar Kota,tiket travel antar kota,tiket travel kota,tiket travel kota,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Tiket Travel Antar Provinsi,tiket travel antar provinsi,tiket travel provinsi,tiket travel provinsi,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Tiket Travel Dalam Kota,tiket travel dalam kota,tiket travel kota,tiket travel kota,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Tiket Travel Bandara,tiket travel bandara,tiket travel bandara,tiket travel bandara,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Shuttle,tiket travel shuttle,tiket travel shuttle,tiket travel shuttle,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Door to Door,tiket travel door to door,tiket travel door to door,tiket travel door to door,5.0,5.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Reguler,tiket travel reguler,tiket travel,tiket travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Tiket Travel Executive,tiket travel executive,tiket travel executive,tiket travel executive,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel VIP,tiket travel vip,tiket travel vip,tiket travel vip,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Premium,tiket travel premium,tiket travel,tiket travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Tiket Travel Ekonomi,tiket travel ekonomi,tiket travel ekonomi,tiket travel ekonomi,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Malam,tiket travel malam,tiket travel malam,tiket travel malam,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Pagi,tiket travel pagi,tiket travel pagi,tiket travel pagi,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Weekend,tiket travel weekend,tiket travel weekend,tiket travel weekend,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Weekday,tiket travel weekday,tiket travel weekday,tiket travel weekday,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Pulang Pergi,tiket travel pulang pergi,tiket travel pulang pergi,tiket travel pulang pergi,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel One Way,tiket travel one way,tiket travel one way,tiket travel one way,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Promo,tiket travel promo,tiket travel,tiket travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Tiket Travel Online Booking,tiket travel online booking,tiket travel booking,tiket travel booking,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Tiket Travel Mendadak,tiket travel mendadak,tiket travel mendadak,tiket travel dadak,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Early Booking,tiket travel early booking,tiket travel early booking,tiket travel early booking,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Rombongan,tiket travel rombongan,tiket travel rombongan,tiket travel rombong,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Corporate,tiket travel corporate,tiket travel corporate,tiket travel corporate,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Pelajar,tiket travel pelajar,tiket travel pelajar,tiket travel ajar,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Lansia,tiket travel lansia,tiket travel,tiket travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Tiket Travel Anak,tiket travel anak,tiket travel,tiket travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Upgrade Kursi Travel,upgrade kursi travel,upgrade kursi travel,upgrade kursi travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Pilih Seat Travel,pilih seat travel,seat travel,seat travel,3.0,2.0,1.0,33.3
+Generate Tiket Travel,Bagasi Tambahan Travel,bagasi tambahan travel,bagasi tambahan travel,bagasi tambah travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Reschedule Tiket Travel,reschedule tiket travel,reschedule tiket travel,reschedule tiket travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Refund Tiket Travel,refund tiket travel,refund tiket travel,refund tiket travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Biaya Pembatalan Travel,biaya pembatalan travel,biaya pembatalan travel,biaya batal travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Shuttle ke Pool Travel,shuttle ke pool travel,shuttle pool travel,shuttle pool travel,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Transport ke Pool Travel,transport ke pool travel,transport pool travel,transport pool travel,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Porter Travel,porter travel,porter travel,porter travel,2.0,2.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Jakarta Bandung,tiket travel jakarta bandung,tiket travel jakarta bandung,tiket travel jakarta bandung,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Jakarta Cirebon,tiket travel jakarta cirebon,tiket travel jakarta cirebon,tiket travel jakarta cirebon,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Bandung Yogyakarta,tiket travel bandung yogyakarta,tiket travel bandung yogyakarta,tiket travel bandung yogyakarta,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Jakarta Semarang,tiket travel jakarta semarang,tiket travel jakarta semarang,tiket travel jakarta semarang,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Surabaya Malang,tiket travel surabaya malang,tiket travel surabaya,tiket travel surabaya,4.0,3.0,1.0,25.0
+Generate Tiket Travel,Tiket Travel Medan Pekanbaru,tiket travel medan pekanbaru,tiket travel medan pekanbaru,tiket travel medan pekanbaru,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Langganan Travel,tiket langganan travel,tiket langganan travel,tiket langgan travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Harian Travel,tiket harian travel,tiket harian travel,tiket hari travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Carter Travel,tiket carter travel,tiket carter travel,tiket carter travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Private Travel,tiket private travel,tiket private travel,tiket private travel,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Shared Ride,tiket travel shared ride,tiket travel shared ride,tiket travel shared ride,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Area Wisata,tiket travel area wisata,tiket travel area wisata,tiket travel area wisata,4.0,4.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Karyawan,tiket travel karyawan,tiket travel karyawan,tiket travel karyawan,3.0,3.0,0.0,0.0
+Generate Tiket Travel,Tiket Travel Komuter,tiket travel komuter,tiket travel komuter,tiket travel komuter,3.0,3.0,0.0,0.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara,antar jemput bandara,jemput bandara,jemput bandara,3.0,2.0,1.0,33.3
+Generate Antar Jemput Bandara,Antar Jemput Bandara Reguler,antar jemput bandara reguler,jemput bandara,jemput bandara,4.0,2.0,2.0,50.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara VIP,antar jemput bandara vip,jemput bandara vip,jemput bandara vip,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Private,antar jemput bandara private,jemput bandara private,jemput bandara private,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Shared Ride,antar jemput bandara shared ride,jemput bandara shared ride,jemput bandara shared ride,5.0,4.0,1.0,20.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Hotel,antar jemput bandara hotel,jemput bandara hotel,jemput bandara hotel,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Stasiun,antar jemput bandara stasiun,jemput bandara stasiun,jemput bandara stasiun,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Terminal,antar jemput bandara terminal,jemput bandara terminal,jemput bandara terminal,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Pagi,antar jemput bandara pagi,jemput bandara pagi,jemput bandara pagi,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Malam,antar jemput bandara malam,jemput bandara malam,jemput bandara malam,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Weekend,antar jemput bandara weekend,jemput bandara weekend,jemput bandara weekend,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Weekday,antar jemput bandara weekday,jemput bandara weekday,jemput bandara weekday,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara Pulang Pergi,antar jemput bandara pulang pergi,jemput bandara pulang pergi,jemput bandara pulang pergi,5.0,4.0,1.0,20.0
+Generate Antar Jemput Bandara,Antar Jemput Bandara One Way,antar jemput bandara one way,jemput bandara one way,jemput bandara one way,5.0,4.0,1.0,20.0
+Generate Antar Jemput Bandara,Booking Antar Jemput Bandara,booking antar jemput bandara,booking jemput bandara,booking jemput bandara,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Reschedule Antar Jemput Bandara,reschedule antar jemput bandara,reschedule jemput bandara,reschedule jemput bandara,4.0,3.0,1.0,25.0
+Generate Antar Jemput Bandara,Refund Antar Jemput Bandara,refund antar jemput bandara,refund jemput bandara,refund jemput bandara,4.0,3.0,1.0,25.0
+Generate Rental Mobil,Rental Mobil Harian,rental mobil harian,rental harian,rental hari,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Mingguan,rental mobil mingguan,rental mingguan,rental minggu,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Bulanan,rental mobil bulanan,rental bulanan,rental bulan,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Lepas Kunci,rental mobil lepas kunci,rental kunci,rental kunci,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Dengan Sopir,rental mobil dengan sopir,rental sopir,rental sopir,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Premium,rental mobil premium,rental,rental,3.0,1.0,2.0,66.7
+Generate Rental Mobil,Rental Mobil SUV,rental mobil suv,rental suv,rental suv,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil MPV,rental mobil mpv,rental mpv,rental mpv,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil City Car,rental mobil city car,rental city car,rental city car,4.0,3.0,1.0,25.0
+Generate Rental Mobil,Rental Mobil Mewah,rental mobil mewah,rental,rental,3.0,1.0,2.0,66.7
+Generate Rental Mobil,Rental Mobil Bandara,rental mobil bandara,rental bandara,rental bandara,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Luar Kota,rental mobil luar kota,rental kota,rental kota,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Dalam Kota,rental mobil dalam kota,rental kota,rental kota,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Perjalanan Dinas,rental mobil perjalanan dinas,rental perjalanan dinas,rental jalan dinas,4.0,3.0,1.0,25.0
+Generate Rental Mobil,Rental Mobil Wisata,rental mobil wisata,rental wisata,rental wisata,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Pernikahan,rental mobil pernikahan,rental pernikahan,rental nikah,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil Jemput Tamu,rental mobil jemput tamu,rental jemput tamu,rental jemput tamu,4.0,3.0,1.0,25.0
+Generate Rental Mobil,Rental Mobil Corporate,rental mobil corporate,rental corporate,rental corporate,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Rental Mobil 12 Jam,rental mobil jam,rental jam,rental jam,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Full Day,rental mobil full day,rental day,rental day,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Rental Mobil Half Day,rental mobil half day,rental day,rental day,4.0,2.0,2.0,50.0
+Generate Rental Mobil,Upgrade Kendaraan Rental,upgrade kendaraan rental,upgrade kendaraan rental,upgrade kendara rental,3.0,3.0,0.0,0.0
+Generate Rental Mobil,Tambahan Jam Rental,tambahan jam rental,tambahan jam rental,tambah jam rental,3.0,3.0,0.0,0.0
+Generate Rental Mobil,Tambahan Sopir Rental,tambahan sopir rental,tambahan sopir rental,tambah sopir rental,3.0,3.0,0.0,0.0
+Generate Rental Mobil,BBM Rental,bbm rental,bbm rental,bbm rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Tol Rental,tol rental,tol rental,tol rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Parkir Rental,parkir rental,parkir rental,parkir rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Deposit Rental,deposit rental,deposit rental,deposit rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Booking Online Rental,booking online rental,booking rental,booking rental,3.0,2.0,1.0,33.3
+Generate Rental Mobil,Reschedule Rental,reschedule rental,reschedule rental,reschedule rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Refund Rental,refund rental,refund rental,refund rental,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Sewa Hiace,sewa hiace,sewa hiace,sewa hiace,2.0,2.0,0.0,0.0
+Generate Rental Mobil,Sewa Elf,sewa elf,sewa elf,sewa elf,2.0,2.0,0.0,0.0

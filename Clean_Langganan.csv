@@ -1,0 +1,2180 @@
+﻿Kategori,Nama Produk,text_cleaned,text_stopwords_removed,clean_text,token_awal,token_akhir,reduksi,persen_%
+AI & Productivity AI,ChatGPT Plus,chatgpt plus,chatgpt,chatgpt,2.0,1.0,1.0,50.0
+AI & Productivity AI,Claude Pro,claude pro,claude pro,claude pro,2.0,2.0,0.0,0.0
+AI & Productivity AI,Gemini Advanced,gemini advanced,gemini advanced,gemini advanced,2.0,2.0,0.0,0.0
+AI & Productivity AI,Copilot Pro,copilot pro,copilot pro,copilot pro,2.0,2.0,0.0,0.0
+AI & Productivity AI,Perplexity Pro,perplexity pro,perplexity pro,perplexity pro,2.0,2.0,0.0,0.0
+AI & Productivity AI,Otter.ai,otterai,otterai,otterai,1.0,1.0,0.0,0.0
+AI & Productivity AI,Grammarly Premium,grammarly premium,grammarly,grammarly,2.0,1.0,1.0,50.0
+AI & Productivity AI,Jasper,jasper,jasper,jasper,1.0,1.0,0.0,0.0
+AI & Productivity AI,Midjourney,midjourney,midjourney,midjourney,1.0,1.0,0.0,0.0
+AI & Productivity AI,Notion AI,notion ai,notion ai,notion ai,2.0,2.0,0.0,0.0
+AI & Productivity AI,DeepL,deepl,deepl,deepl,1.0,1.0,0.0,0.0
+AI & Productivity AI,ChatGPT+,chatgpt,chatgpt,chatgpt,1.0,1.0,0.0,0.0
+AI & Productivity AI,Claude AI,claude ai,claude ai,claude ai,2.0,2.0,0.0,0.0
+AI & Productivity AI,Humata AI,humata ai,humata ai,humata ai,2.0,2.0,0.0,0.0
+AI & Productivity AI,ZeroGPT,zerogpt,zerogpt,zerogpt,1.0,1.0,0.0,0.0
+AI & Productivity AI,Chatpdf,chatpdf,chatpdf,chatpdf,1.0,1.0,0.0,0.0
+AI & Productivity AI,Quillbot,quillbot,quillbot,quillbot,1.0,1.0,0.0,0.0
+AI & Productivity AI,Grammarly,grammarly,grammarly,grammarly,1.0,1.0,0.0,0.0
+AI & Productivity AI,Perplexity,perplexity,perplexity,perplexity,1.0,1.0,0.0,0.0
+AI & Productivity AI,Blackbox AI,blackbox ai,blackbox ai,blackbox ai,2.0,2.0,0.0,0.0
+AI & Productivity AI,Wordtune,wordtune,wordtune,wordtune,1.0,1.0,0.0,0.0
+AI & Productivity AI,Gemini AI,gemini ai,gemini ai,gemini ai,2.0,2.0,0.0,0.0
+AI & Productivity AI,Elicit.org Plus,elicitorg plus,elicitorg,elicitorg,2.0,1.0,1.0,50.0
+AI & Productivity AI,Consensus,consensus,consensus,consensus,1.0,1.0,0.0,0.0
+AI & Productivity AI,SciSpace (Typeset),scispace typeset,scispace typeset,scispace typeset,2.0,2.0,0.0,0.0
+AI & Productivity AI,ResearchRabbit,researchrabbit,researchrabbit,researchrabbit,1.0,1.0,0.0,0.0
+AI & Productivity AI,Hugging Face Pro,hugging face pro,hugging face pro,hugging face pro,3.0,3.0,0.0,0.0
+AI & Productivity AI,Replit Core,replit core,replit core,replit core,2.0,2.0,0.0,0.0
+AI & Productivity AI,Raycast Pro,raycast pro,raycast pro,raycast pro,2.0,2.0,0.0,0.0
+AI & Productivity AI,Kagi Search,kagi search,kagi search,kagi search,2.0,2.0,0.0,0.0
+AI & Productivity AI,Exa.ai,exaai,exaai,exaai,1.0,1.0,0.0,0.0
+AI & Productivity AI,Gamma.app,gammaapp,gammaapp,gammaapp,1.0,1.0,0.0,0.0
+AI & Productivity AI,Pitch,pitch,pitch,pitch,1.0,1.0,0.0,0.0
+AI & Productivity AI,Craft,craft,craft,craft,1.0,1.0,0.0,0.0
+AI & Productivity AI,Superhuman,superhuman,superhuman,superhuman,1.0,1.0,0.0,0.0
+AI & Productivity AI,Hex.tech,hextech,hextech,hextech,1.0,1.0,0.0,0.0
+AI & Productivity AI,Deepnote,deepnote,deepnote,deepnote,1.0,1.0,0.0,0.0
+AI & Productivity AI,Exploratory.io,exploratoryio,exploratoryio,exploratoryio,1.0,1.0,0.0,0.0
+AI & Productivity AI,Snipd,snipd,snipd,snipd,1.0,1.0,0.0,0.0
+AI & Productivity AI,Shortform,shortform,shortform,shortform,1.0,1.0,0.0,0.0
+AI & Productivity AI,Refind,refind,refind,refind,1.0,1.0,0.0,0.0
+AI & Productivity AI,Langua,langua,langua,langua,1.0,1.0,0.0,0.0
+AI & Productivity AI,Speak,speak,speak,speak,1.0,1.0,0.0,0.0
+AI & Productivity AI,ELSA Speak,elsa speak,elsa speak,elsa speak,2.0,2.0,0.0,0.0
+AI & Productivity AI,TalkPal,talkpal,talkpal,talkpal,1.0,1.0,0.0,0.0
+AI & Productivity AI,Praktika,praktika,praktika,praktika,1.0,1.0,0.0,0.0
+AI & Productivity AI,Scholarcy,scholarcy,scholarcy,scholarcy,1.0,1.0,0.0,0.0
+AI & Productivity AI,Scrintal,scrintal,scrintal,scrintal,1.0,1.0,0.0,0.0
+AI & Productivity AI,Tana,tana,tana,tana,1.0,1.0,0.0,0.0
+AI & Productivity AI,Readwise Reader,readwise reader,readwise reader,readwise reader,2.0,2.0,0.0,0.0
+AI & Productivity AI,Manus AI,manus ai,manus ai,manus ai,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Canva Pro,canva pro,canva pro,canva pro,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Canva Teams,canva teams,canva teams,canva teams,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Canva,canva,canva,canva,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Adobe Photoshop,adobe photoshop,adobe photoshop,adobe photoshop,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Adobe Lightroom,adobe lightroom,adobe lightroom,adobe lightroom,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Adobe Premiere Rush,adobe premiere rush,adobe premiere rush,adobe premiere rush,3.0,3.0,0.0,0.0
+Kreativitas & Desain,Adobe Express,adobe express,adobe express,adobe express,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Adobe Fresco,adobe fresco,adobe fresco,adobe fresco,2.0,2.0,0.0,0.0
+Kreativitas & Desain,VSCO,vsco,vsco,vsco,1.0,1.0,0.0,0.0
+Kreativitas & Desain,VSCO X,vsco x,vsco,vsco,2.0,1.0,1.0,50.0
+Kreativitas & Desain,Darkroom,darkroom,darkroom,darkroom,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Unfold,unfold,unfold,unfold,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Over,over,over,over,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Halide Mark II,halide mark ii,halide mark ii,halide mark ii,3.0,3.0,0.0,0.0
+Kreativitas & Desain,Moment Pro,moment pro,moment pro,moment pro,2.0,2.0,0.0,0.0
+Kreativitas & Desain,FiLMiC Pro,filmic pro,filmic pro,filmic pro,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Picsart Gold,picsart gold,picsart gold,picsart gold,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Picsart,picsart,picsart,picsart,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Photoroom,photoroom,photoroom,photoroom,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Unfolder,unfolder,unfolder,unfolder,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Motionleap,motionleap,motionleap,motionleap,1.0,1.0,0.0,0.0
+Kreativitas & Desain,CapCut Pro,capcut pro,capcut pro,capcut pro,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Capcut,capcut,capcut,capcut,1.0,1.0,0.0,0.0
+Kreativitas & Desain,InShot,inshot,inshot,inshot,1.0,1.0,0.0,0.0
+Kreativitas & Desain,FilmoraGo,filmorago,filmorago,filmorago,1.0,1.0,0.0,0.0
+Kreativitas & Desain,KineMaster,kinemaster,kinemaster,master,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Remini,remini,remini,rini,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Lensa AI,lensa ai,lensa ai,lensa ai,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Google Photos,google photos,google photos,google photos,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Splice,splice,splice,splice,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Alight Motion,alight motion,alight motion,alight motion,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Alight motion,alight motion,alight motion,alight motion,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Beauty Plus,beauty plus,beauty,beauty,2.0,1.0,1.0,50.0
+Kreativitas & Desain,Dazzcam,dazzcam,dazzcam,dazzcam,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Wink,wink,wink,wink,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Phonto,phonto,phonto,phonto,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Spark Post,spark post,spark post,spark post,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Overlay,overlay,overlay,overlay,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Lightricks,lightricks,lightricks,lightricks,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Envato Elements,envato elements,envato elements,envato elements,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Envato,envato,envato,envato,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Freepik,freepik,freepik,freepik,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Pngtree,pngtree,pngtree,pngtree,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Motion array,motion array,motion array,motion array,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Creative Fabrica,creative fabrica,creative fabrica,creative fabrica,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Pikbest,pikbest,pikbest,pikbest,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Lovepik,lovepik,lovepik,lovepik,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Slidedocs,slidedocs,slidedocs,slidedocs,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Rawpixel,rawpixel,rawpixel,rawpixel,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Vacteezy,vacteezy,vacteezy,vacteezy,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Adobestock,adobestock,adobestock,adobestock,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Istock,istock,istock,istock,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Shutterstock,shutterstock,shutterstock,shutterstock,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Figma,figma,figma,figma,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Marvel App,marvel app,marvel app,marvel app,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Sketch,sketch,sketch,sketch,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Kapwing Pro,kapwing pro,kapwing pro,kapwing pro,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Epidemic Sound,epidemic sound,epidemic sound,epidemic sound,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Piktochart,piktochart,piktochart,piktochart,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Prezi Video,prezi video,prezi video,prezi video,2.0,2.0,0.0,0.0
+Kreativitas & Desain,Beautiful.ai,beautifulai,beautifulai,beautifulai,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Slidebean,slidebean,slidebean,slidebean,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Biteable,biteable,biteable,biteable,1.0,1.0,0.0,0.0
+Kreativitas & Desain,Brand24,brand,,,1.0,0.0,1.0,100.0
+Kreativitas & Desain,SlidesGo,slidesgo,slidesgo,slidesgo,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Netflix,netflix,netflix,netflix,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Disney+,disney,disney,disney,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),HBO Max,hbo max,hbo max,hbo max,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Apple TV+,apple tv,apple tv,apple tv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Amazon Prime Video,amazon prime video,amazon prime video,amazon prime video,3.0,3.0,0.0,0.0
+Hiburan (Streaming & Media),Amazon Prime,amazon prime,amazon prime,amazon prime,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Hulu,hulu,hulu,hulu,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Paramount+,paramount,paramount,paramount,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Peacock,peacock,peacock,peacock,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Crunchyroll,crunchyroll,crunchyroll,crunchyroll,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Crunchy Roll,crunchy roll,crunchy,crunchy,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),MUBI,mubi,mubi,mubi,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Mubi Go,mubi go,mubi go,mubi go,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Plex Pass,plex pass,plex pass,plex pass,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Plex,plex,plex,plex,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Starz,starz,starz,starz,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Showtime,showtime,showtime,showtime,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Vidio Ultimate,vidio ultimate,vidio ultimate,vidio ultimate,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Vidio Platinum,vidio platinum,vidio platinum,vidio platinum,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Vidio,vidio,vidio,vidio,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Vision+,vision,vision,vision,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),RCTI+,rcti,rcti,rcti,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),WeTv,wetv,wetv,wetv,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),YouTube,youtube,youtube,youtube,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Dramabox,dramabox,dramabox,dramabox,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Shortmax,shortmax,shortmax,shortmax,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Dramawave,dramawave,dramawave,dramawave,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Catch Play,catch play,catch play,catch play,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Drakor.id,drakorid,drakorid,drakorid,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Loklok,loklok,loklok,loklok,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Bstation,bstation,bstation,bstation,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Iflix,iflix,iflix,iflix,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Genflix,genflix,genflix,genflix,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Viu,viu,viu,viu,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Reelshort,reelshort,reelshort,reelshort,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),iQIYI,iqiyi,iqiyi,iqiyi,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Youku,youku,youku,youku,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Mola TV,mola tv,mola tv,mola tv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Melolo,melolo,melolo,melolo,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Drama box,drama box,drama,drama,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),GagaOOlala,gagaoolala,gagaoolala,gagaoolala,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Rakuten Viki,rakuten viki,rakuten viki,rakuten viki,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Criterion Channel,criterion channel,criterion channel,criterion channel,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),BFI Player,bfi player,bfi player,bfi player,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Sundance Now,sundance now,sundance now,sundance now,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Acorn TV,acorn tv,acorn tv,acorn tv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),AMC+,amc,amc,amc,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),BritBox,britbox,britbox,britbox,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Curiosity Stream,curiosity stream,curiosity stream,curiosity stream,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Nebula,nebula,nebula,nebula,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),ESPN+,espn,espn,espn,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),DAZN,dazn,dazn,dazn,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),WWE Network,wwe network,wwe network,wwe network,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Sony LIV,sony liv,sony liv,sony liv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Lionsgate Play,lionsgate play,lionsgate play,lionsgate play,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Hotstar,hotstar,hotstar,hotstar,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Voot,voot,voot,voot,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Zee5,zee,zee,zee,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),ALTBalaji,altbalaji,altbalaji,altbalaji,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),MX Player,mx player,mx player,mx player,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),WeTV (Tencent),wetv tencent,wetv tencent,wetv tencent,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),PPTV,pptv,pptv,pptv,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),BiliBili,bilibili,bilibili,bilibili,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Abema,abema,abema,abema,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),TVer,tver,tver,tver,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Paravi,paravi,paravi,paravi,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Hami Video,hami video,hami video,ham video,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),KKTV,kktv,kktv,kktv,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Catchplay+,catchplay,catchplay,catchplay,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),myTV SUPER,mytv super,mytv,mytv,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),ViuTV,viutv,viutv,viutv,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),TVNZ OnDemand,tvnz ondemand,tvnz ondemand,tvnz ondemand,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),9Now,now,now,now,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),10 Play,play,play,play,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),Channel 4,channel,channel,channel,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),My5,my,my,my,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),ITVX,itvx,itvx,itvx,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),RTÉ Player,rté player,rté player,rt player,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),SVT Play,svt play,svt play,svt play,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),NRK TV,nrk tv,nrk tv,nrk tv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),DR TV,dr tv,dr tv,dr tv,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),YLE Areena,yle areena,yle areena,yle areena,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Viaplay,viaplay,viaplay,viaplay,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),SkyShowtime,skyshowtime,skyshowtime,skyshowtime,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Nova Play,nova play,nova play,nova play,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Voyo,voyo,voyo,voyo,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Binge,binge,binge,binge,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Kayo Sports,kayo sports,kayo sports,kayo sports,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Stan,stan,stan,stan,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Flash,flash,,,1.0,0.0,1.0,100.0
+Hiburan (Streaming & Media),Neon,neon,neon,neon,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),TVNZ+,tvnz,tvnz,tvnz,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Disney+ Hotstar,disney hotstar,disney hotstar,disney hotstar,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),VIU Indonesia,viu indonesia,viu indonesia,viu indonesia,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),CatchPlay,catchplay,catchplay,catchplay,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Mola,mola,mola,mola,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),KlikFilm,klikfilm,klikfilm,klikfilm,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Bioskop Online,bioskop online,bioskop,bioskop,2.0,1.0,1.0,50.0
+Hiburan (Streaming & Media),MAXstream,maxstream,maxstream,maxstream,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),GoPlay,goplay,goplay,goplay,1.0,1.0,0.0,0.0
+Hiburan (Streaming & Media),Netflix Lite,netflix lite,netflix lite,netflix lite,2.0,2.0,0.0,0.0
+Hiburan (Streaming & Media),Prime Video Lite,prime video lite,prime video lite,prime video lite,3.0,3.0,0.0,0.0
+Musik & Audio,Spotify,spotify,spotify,spotify,1.0,1.0,0.0,0.0
+Musik & Audio,Apple Music,apple music,apple music,apple music,2.0,2.0,0.0,0.0
+Musik & Audio,YouTube Music,youtube music,youtube music,youtube music,2.0,2.0,0.0,0.0
+Musik & Audio,YouTube Premium,youtube premium,youtube,youtube,2.0,1.0,1.0,50.0
+Musik & Audio,Tidal,tidal,tidal,tidal,1.0,1.0,0.0,0.0
+Musik & Audio,Deezer,deezer,deezer,deezer,1.0,1.0,0.0,0.0
+Musik & Audio,Joox,joox,joox,joox,1.0,1.0,0.0,0.0
+Musik & Audio,Pocket Casts,pocket casts,pocket casts,pocket casts,2.0,2.0,0.0,0.0
+Musik & Audio,Audible,audible,audible,audible,1.0,1.0,0.0,0.0
+Musik & Audio,Twitch Turbo,twitch turbo,twitch turbo,twitch turbo,2.0,2.0,0.0,0.0
+Musik & Audio,SoundCloud Go+,soundcloud go,soundcloud go,soundcloud go,2.0,2.0,0.0,0.0
+Musik & Audio,Amazon Music Unlimited,amazon music unlimited,amazon music unlimited,amazon music unlimited,3.0,3.0,0.0,0.0
+Musik & Audio,Qobuz,qobuz,qobuz,qobuz,1.0,1.0,0.0,0.0
+Musik & Audio,Napster,napster,napster,napster,1.0,1.0,0.0,0.0
+Musik & Audio,KKBOX,kkbox,kkbox,kkbox,1.0,1.0,0.0,0.0
+Musik & Audio,LINE Music,line music,line music,line music,2.0,2.0,0.0,0.0
+Musik & Audio,Anghami,anghami,anghami,anghami,1.0,1.0,0.0,0.0
+Musik & Audio,Saavn,saavn,saavn,saavn,1.0,1.0,0.0,0.0
+Musik & Audio,Gaana,gaana,gaana,gaana,1.0,1.0,0.0,0.0
+Musik & Audio,Wynk Music,wynk music,wynk music,wynk music,2.0,2.0,0.0,0.0
+Musik & Audio,Navgati,navgati,navgati,navgati,1.0,1.0,0.0,0.0
+Musik & Audio,Hungama,hungama,hungama,hungama,1.0,1.0,0.0,0.0
+Musik & Audio,Boomplay,boomplay,boomplay,boomplay,1.0,1.0,0.0,0.0
+Musik & Audio,Audiomack,audiomack,audiomack,audiomack,1.0,1.0,0.0,0.0
+Musik & Audio,Pandora,pandora,pandora,pandora,1.0,1.0,0.0,0.0
+Musik & Audio,iHeartRadio,iheartradio,iheartradio,iheartradio,1.0,1.0,0.0,0.0
+Musik & Audio,TuneIn Radio,tunein radio,tunein radio,tunein radio,2.0,2.0,0.0,0.0
+Musik & Audio,Radio Garden,radio garden,radio garden,radio garden,2.0,2.0,0.0,0.0
+Musik & Audio,MyTuner Radio,mytuner radio,mytuner radio,mytuner radio,2.0,2.0,0.0,0.0
+Musik & Audio,Simple Radio,simple radio,simple radio,simple radio,2.0,2.0,0.0,0.0
+Musik & Audio,LiveOne,liveone,liveone,liveone,1.0,1.0,0.0,0.0
+Musik & Audio,AccuRadio,accuradio,accuradio,accuradio,1.0,1.0,0.0,0.0
+Musik & Audio,Slacker Radio,slacker radio,slacker radio,slacker radio,2.0,2.0,0.0,0.0
+Musik & Audio,VK Music,vk music,vk music,vk music,2.0,2.0,0.0,0.0
+Musik & Audio,Yandex Music,yandex music,yandex music,yandex music,2.0,2.0,0.0,0.0
+Musik & Audio,Zvuk,zvuk,zvuk,zvuk,1.0,1.0,0.0,0.0
+Musik & Audio,Boom,boom,boom,boom,1.0,1.0,0.0,0.0
+Musik & Audio,Mixcloud,mixcloud,mixcloud,mixcloud,1.0,1.0,0.0,0.0
+Musik & Audio,ReverbNation,reverbnation,reverbnation,reverbnation,1.0,1.0,0.0,0.0
+Musik & Audio,Presto Music,presto music,presto music,presto music,2.0,2.0,0.0,0.0
+Musik & Audio,Idagio,idagio,idagio,idagio,1.0,1.0,0.0,0.0
+Musik & Audio,Primephonic (Apple Music Classical),primephonic apple music classical,primephonic apple music classical,primephonic apple music classical,4.0,4.0,0.0,0.0
+Musik & Audio,Sono Luminus,sono luminus,sono luminus,sono luminus,2.0,2.0,0.0,0.0
+Musik & Audio,Classical Archive,classical archive,classical archive,classical archive,2.0,2.0,0.0,0.0
+Musik & Audio,Naxos Music Library,naxos music library,naxos music library,naxos music library,3.0,3.0,0.0,0.0
+Musik & Audio,Medici.tv,medicitv,medicitv,medicitv,1.0,1.0,0.0,0.0
+Musik & Audio,Stingray Classica,stingray classica,stingray classica,stingray classica,2.0,2.0,0.0,0.0
+Musik & Audio,Qello Concerts,qello concerts,qello concerts,qello concerts,2.0,2.0,0.0,0.0
+Musik & Audio,Vevo,vevo,vevo,vevo,1.0,1.0,0.0,0.0
+Musik & Audio,Veeps,veeps,veeps,veeps,1.0,1.0,0.0,0.0
+Musik & Audio,Moment House,moment house,moment house,moment house,2.0,2.0,0.0,0.0
+Musik & Audio,Mandolin,mandolin,mandolin,mandolin,1.0,1.0,0.0,0.0
+Musik & Audio,Noisli,noisli,noisli,noisli,1.0,1.0,0.0,0.0
+Musik & Audio,MyNoise,mynoise,mynoise,mynoise,1.0,1.0,0.0,0.0
+Musik & Audio,A Soft Murmur,a soft murmur,soft murmur,soft murmur,3.0,2.0,1.0,33.3
+Musik & Audio,Rainy Mood,rainy mood,rainy mood,rainy mood,2.0,2.0,0.0,0.0
+Musik & Audio,Ambient Mixer,ambient mixer,ambient mixer,ambient mixer,2.0,2.0,0.0,0.0
+Musik & Audio,White Noise Lite,white noise lite,white noise lite,white noise lite,3.0,3.0,0.0,0.0
+Musik & Audio,Relax Melodies,relax melodies,relax melodies,relax melodies,2.0,2.0,0.0,0.0
+Musik & Audio,Tide,tide,tide,tide,1.0,1.0,0.0,0.0
+Musik & Audio,Sleepa,sleepa,sleepa,sleepa,1.0,1.0,0.0,0.0
+Musik & Audio,BetterSleep,bettersleep,bettersleep,bettersleep,1.0,1.0,0.0,0.0
+Musik & Audio,Sleep Jar,sleep jar,sleep jar,sleep jar,2.0,2.0,0.0,0.0
+Musik & Audio,Nature Sounds,nature sounds,nature sounds,nature sounds,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Headspace,headspace,headspace,headspace,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Calm,calm,calm,calm,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,MyFitnessPal,myfitnesspal,myfitnesspal,myfitnesspal,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Strava Premium,strava premium,strava,strava,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,Strava,strava,strava,strava,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Peloton App,peloton app,peloton app,peloton app,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Peloton,peloton,peloton,peloton,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Sleep Cycle,sleep cycle,sleep cycle,sleep cycle,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Flo Health,flo health,flo health,flo health,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Flo,flo,flo,flo,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,AllTrails,alltrails,alltrails,alltrails,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,8fit,fit,,,1.0,0.0,1.0,100.0
+Kesehatan & Fitness,Noom,noom,noom,noom,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Whoop,whoop,whoop,whoop,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Fitia,fitia,fitia,fitia,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Hevy,hevy,hevy,hevy,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Fitbod,fitbod,fitbod,fitbod,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Samsung Health,samsung health,samsung health,samsung health,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Apple Fitness+,apple fitness,apple fitness,apple fitness,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,MyFitnessPal Premium,myfitnesspal premium,myfitnesspal,myfitnesspal,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,StrongLifts 5x5,stronglifts x,stronglifts,stronglifts,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,Zwift,zwift,zwift,zwift,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Cronometer,cronometer,cronometer,cronometer,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Alpha Progression,alpha progression,alpha progression,alpha progression,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Pliability,pliability,pliability,pliability,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Centr,centr,centr,centr,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Sweat,sweat,sweat,sweat,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Garmin Connect,garmin connect,garmin connect,garmin connect,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,FIT HUB,fit hub,hub,hub,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,GoFasting,gofasting,gofasting,gofasting,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,7 Minute Workout,minute workout,minute workout,mute workout,3.0,2.0,1.0,33.3
+Kesehatan & Fitness,Adidas Running,adidas running,adidas running,adidas running,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Pacer Pedometer,pacer pedometer,pacer pedometer,pacer pedometer,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Fitbit Premium,fitbit premium,fitbit,fitbit,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,FatSecret Premium,fatsecret premium,fatsecret,fatsecret,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,Strive Workout Log,strive workout log,strive workout log,strive workout log,3.0,3.0,0.0,0.0
+Kesehatan & Fitness,Future,future,future,future,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Aaptiv,aaptiv,aaptiv,aaptiv,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,StretchIt,stretchit,stretchit,stretchit,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Yoga-Go,yogago,yogago,yogago,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,The Movement Athlete,the movement athlete,the movement athlete,the movement athlete,3.0,3.0,0.0,0.0
+Kesehatan & Fitness,Caliber,caliber,caliber,caliber,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,JEFIT,jefit,jefit,jefit,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Shred,shred,shred,shred,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Relive,relive,relive,relive,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Daily Burn,daily burn,daily burn,daily burn,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Freeletics,freeletics,freeletics,freeletics,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Lifesum,lifesum,lifesum,lifesum,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Endomondo,endomondo,endomondo,endomondo,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,FitOn Pro,fiton pro,fiton pro,fiton pro,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Sleep Cycle Premium,sleep cycle premium,sleep cycle,sleep cycle,3.0,2.0,1.0,33.3
+Kesehatan & Fitness,Rise Science,rise science,rise science,rise science,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Cronometer Gold,cronometer gold,cronometer gold,cronometer gold,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Levels,levels,levels,levels,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Oura,oura,oura,oura,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,InsideTracker,insidetracker,insidetracker,insidetracker,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Exist.io,existio,existio,existio,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Focus@Will,focuswill,focuswill,focuswill,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Waking Up,waking up,waking up,waking up,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Ten Percent Happier,ten percent happier,ten percent happier,ten percent happier,3.0,3.0,0.0,0.0
+Kesehatan & Fitness,Clarity,clarity,clarity,clarity,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Stoic,stoic,stoic,stoic,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Way of Life,way of life,way of life,way of life,3.0,3.0,0.0,0.0
+Kesehatan & Fitness,SleepSpace,sleepspace,sleepspace,sleepspace,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,AutoSleep,autosleep,autosleep,autosleep,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Heartwatch,heartwatch,heartwatch,heartwatch,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Bearable,bearable,bearable,bearable,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Clue Plus,clue plus,clue,clue,2.0,1.0,1.0,50.0
+Kesehatan & Fitness,Plant Nanny,plant nanny,plant nanny,plant nanny,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Fabulous,fabulous,fabulous,fabulous,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Reflectly,reflectly,reflectly,reflectly,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Finch,finch,finch,finch,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Strong,strong,strong,strong,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,FitOn,fiton,fiton,fiton,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,FatSecret,fatsecret,fatsecret,fatsecret,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Lose It!,lose it,lose it,lose it,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Yazio,yazio,yazio,yazio,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Foodvisor,foodvisor,foodvisor,foodvisor,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Bitesnap,bitesnap,bitesnap,bitesnap,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,See How You Eat,see how you eat,see how you eat,see how you eat,4.0,4.0,0.0,0.0
+Kesehatan & Fitness,Calory,calory,calory,calory,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,MacroFactor,macrofactor,macrofactor,macrofactor,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Carbon Diet Coach,carbon diet coach,carbon diet coach,carbon diet coach,3.0,3.0,0.0,0.0
+Kesehatan & Fitness,Dietitian AI,dietitian ai,dietitian ai,dietitian ai,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,FoodNoms,foodnoms,foodnoms,foodnoms,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Rise,rise,rise,rise,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,SleepScore,sleepscore,sleepscore,sleepscore,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Pillow,pillow,pillow,pillow,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,SleepWatch,sleepwatch,sleepwatch,sleepwatch,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,ShutEye,shuteye,shuteye,shuteye,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Sleep Reset,sleep reset,sleep reset,sleep reset,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Sleep Lab,sleep lab,sleep lab,sleep lab,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,DreamLab,dreamlab,dreamlab,dreamlab,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Insight Timer,insight timer,insight timer,insight timer,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Meditation Studio,meditation studio,meditation studio,meditation studio,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Oak,oak,oak,oak,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Simple Habit,simple habit,simple habit,simple habit,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Breethe,breethe,breethe,breethe,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Aura,aura,aura,aura,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Sattva,sattva,sattva,sattva,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,MyLife,mylife,mylife,mylife,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Smiling Mind,smiling mind,smiling mind,smiling mind,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Waking Up with Sam Harris,waking up with sam harris,waking up with sam harris,waking up with sam harris,5.0,5.0,0.0,0.0
+Kesehatan & Fitness,Lumosity,lumosity,lumosity,lumosity,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Elevate,elevate,elevate,elevate,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,BrainHQ,brainhq,brainhq,brainhq,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,CogniFit,cognifit,cognifit,cognifit,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Peak,peak,peak,peak,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Memorado,memorado,memorado,memorado,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Impulse,impulse,impulse,impulse,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,NeuroNation,neuronation,neuronation,neuronation,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Fitbit,fitbit,fitbit,fitbit,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Garmin,garmin,garmin,garmin,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Oura Ring,oura ring,oura ring,oura ring,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,WHOOP Strap,whoop strap,whoop strap,whoop strap,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Polar Flow,polar flow,polar flow,polar flow,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Suunto,suunto,suunto,suunto,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Coros,coros,coros,coros,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Amazfit,amazfit,amazfit,amazfit,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Zepp,zepp,zepp,zepp,1.0,1.0,0.0,0.0
+Kesehatan & Fitness,Huawei Health,huawei health,huawei health,huawei health,2.0,2.0,0.0,0.0
+Kesehatan & Fitness,Mi Fit,mi fit,mi,mi,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Duolingo Plus,duolingo plus,duolingo,duolingo,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Duolingo Max,duolingo max,duolingo max,duolingo max,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Duolingo,duolingo,duolingo,duolingo,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Babbel,babbel,babbel,babbel,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Rosetta Stone,rosetta stone,rosetta stone,rosetta stone,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Coursera,coursera,coursera,coursera,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Skillshare,skillshare,skillshare,skillshare,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,MasterClass,masterclass,masterclass,masterclass,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Khan Academy Kids,khan academy kids,khan academy kids,khan academy kids,3.0,3.0,0.0,0.0
+Edukasi & Pembelajaran,Khan Academy,khan academy,khan academy,khan academy,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Brilliant,brilliant,brilliant,brilliant,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Photomath,photomath,photomath,photomath,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Mathway,mathway,mathway,mathway,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Mathlab,mathlab,mathlab,mathlab,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Symbolab,symbolab,symbolab,symbolab,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Chegg,chegg,chegg,chegg,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Course Hero,course hero,course hero,course hero,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Bartleby,bartleby,bartleby,bartleby,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,StudyX,studyx,studyx,studyx,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Numerade,numerade,numerade,numerade,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Quizlet Plus,quizlet plus,quizlet,quizlet,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Quizlet,quizlet,quizlet,quizlet,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Roboguru,roboguru,roboguru,roboguru,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Studocu,studocu,studocu,studocu,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,SlideShare,slideshare,slideshare,slideshare,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,SledePlayer,sledeplayer,sledeplayer,sledeplayer,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Anyflip,anyflip,anyflip,anyflip,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,FlipHTML5,fliphtml,fliphtml,fliphtml,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Academia Edu,academia edu,academia edu,academia edu,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Course Sidekick,course sidekick,course sidekick,course sidekick,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,College Sidekick,college sidekick,college sidekick,college sidekick,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,123dok,dok,dok,dok,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,PdfCoffee,pdfcoffee,pdfcoffee,pdfcoffee,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Transtutors,transtutors,transtutors,transtutors,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Studycom,studycom,studycom,studycom,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Studypool,studypool,studypool,studypool,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Brainly,brainly,brainly,brainly,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Wolfram Alpha,wolfram alpha,wolfram alpha,wolfram alpha,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Pimsleur,pimsleur,pimsleur,pimsleur,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,IXL Learning,ixl learning,ixl learning,ixl learning,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Anki,anki,anki,anki,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Readwise,readwise,readwise,readwise,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Outschool,outschool,outschool,outschool,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,LinkedIn Learning,linkedin learning,linkedin learning,linkedin learning,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,DataCamp Premium,datacamp premium,datacamp,datacamp,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Codecademy Pro,codecademy pro,codecademy pro,codecademy pro,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,LeetCode Premium,leetcode premium,leetcode,leetcode,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Brilliant.org,brilliantorg,brilliantorg,brilliantorg,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,365 Data Science,data science,data science,data science,3.0,2.0,1.0,33.3
+Edukasi & Pembelajaran,Maven,maven,maven,maven,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,DataCamp,datacamp,datacamp,datacamp,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Coursera Plus,coursera plus,coursera,coursera,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Udacity Nanodegree,udacity nanodegree,udacity nanodegree,udacity nanodegree,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,RevoU Premium,revou premium,revou,revou,2.0,1.0,1.0,50.0
+Edukasi & Pembelajaran,Ruangkerja,ruangkerja,ruangkerja,ruangkerja,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Binar Academy,binar academy,binar academy,binar academy,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Myskill,myskill,myskill,myskill,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Glints ExpertClass,glints expertclass,glints expertclass,glints expertclass,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Careerboom.ai,careerboomai,careerboomai,careerboomai,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Preppy,preppy,preppy,preppy,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Quizziz,quizziz,quizziz,quizziz,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Waygorund,waygorund,waygorund,waygorund,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Blooket,blooket,blooket,blooket,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Kahoot,kahoot,kahoot,kahoot,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,WPS Office,wps office,wps office,wps office,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,StudyBlue,studyblue,studyblue,studyblue,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,GoConqr,goconqr,goconqr,goconqr,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Cram,cram,cram,cram,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Flashcard Machine,flashcard machine,flashcard machine,flashcard machine,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Brainscape,brainscape,brainscape,brainscape,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,StudyStack,studystack,studystack,studystack,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Tinycards,tinycards,tinycards,tinycards,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Chegg Prep,chegg prep,chegg prep,chegg prep,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Knowt,knowt,knowt,knowt,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,RemNote,remnote,remnote,remnote,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Zorbi,zorbi,zorbi,zorbi,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Feyn,feyn,feyn,feyn,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,StudySmarter,studysmarter,studysmarter,studysmarter,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Vaia,vaia,vaia,vaia,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Simple Club,simple club,simple club,simple club,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,The Study Portal,the study portal,the study portal,the study portal,3.0,3.0,0.0,0.0
+Edukasi & Pembelajaran,OpenStudy,openstudy,openstudy,openstudy,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Piazza,piazza,piazza,piazza,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Edmodo,edmodo,edmodo,edmodo,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Blackboard,blackboard,blackboard,blackboard,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Brightspace,brightspace,brightspace,brightspace,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Schoology,schoology,schoology,schoology,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Seesaw,seesaw,seesaw,seesaw,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Nearpod,nearpod,nearpod,nearpod,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Pear Deck,pear deck,pear deck,pear deck,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Edpuzzle,edpuzzle,edpuzzle,edpuzzle,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Flipgrid,flipgrid,flipgrid,flipgrid,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Padlet,padlet,padlet,padlet,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Wakelet,wakelet,wakelet,wakelet,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Buncee,buncee,buncee,buncee,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,ThingLink,thinglink,thinglink,thinglink,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Genially,genially,genially,genially,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Sutori,sutori,sutori,sutori,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,TimelineJS,timelinejs,timelinejs,timelinejs,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Tiki-Toki,tikitoki,tikitoki,tikitoki,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Time Graphics,time graphics,time graphics,time graphics,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Prezi,prezi,prezi,prezi,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Haiku Deck,haiku deck,haiku deck,haiku deck,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Emaze,emaze,emaze,emaze,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Powtoon,powtoon,powtoon,powtoon,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Moovly,moovly,moovly,moovly,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Vyond,vyond,vyond,vyond,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Animaker,animaker,animaker,animaker,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,RawShorts,rawshorts,rawshorts,rawshorts,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Renderforest,renderforest,renderforest,renderforest,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Lumen5,lumen,lumen,lumen,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,InVideo,invideo,invideo,invideo,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Pictory.ai,pictoryai,pictoryai,pictoryai,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Designs.ai,designsai,designsai,designsai,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Simplified,simplified,simplified,simplified,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,VistaCreate,vistacreate,vistacreate,vistacreate,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Easil,easil,easil,easil,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Sparkol,sparkol,sparkol,sparkol,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,VideoScribe,videoscribe,videoscribe,videoscribe,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Doodly,doodly,doodly,doodly,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Explain Everything,explain everything,explain everything,explain everything,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,ShowMe,showme,showme,showme,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Educreations,educreations,educreations,educreations,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Knowmia,knowmia,knowmia,knowmia,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Shadow Puppet,shadow puppet,shadow puppet,shadow puppet,2.0,2.0,0.0,0.0
+Edukasi & Pembelajaran,Clips,clips,clips,clips,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,iMovie,imovie,imovie,imovie,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,WeVideo,wevideo,wevideo,wevideo,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Kapwing,kapwing,kapwing,kapwing,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Clipchamp,clipchamp,clipchamp,clipchamp,1.0,1.0,0.0,0.0
+Edukasi & Pembelajaran,Canva Video,canva video,canva video,canva video,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,PyCharm,pycharm,pycharm,pycharm,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,JetBrains,jetbrains,jetbrains,jetbrains,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Docker,docker,docker,docker,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Docker Desktop,docker desktop,docker desktop,docker desktop,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Postman Pro,postman pro,postman pro,postman pro,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Postman,postman,postman,postman,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,GitKraken,gitkraken,gitkraken,gitkraken,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Tower,tower,tower,tower,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Kaleidoscope,kaleidoscope,kaleidoscope,kaleidoscope,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Navicat,navicat,navicat,navicat,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Tableau,tableau,tableau,tableau,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Tableau Public,tableau public,tableau public,tableau public,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,RapidMiner,rapidminer,rapidminer,rapidminer,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,NVivo,nvivo,nvivo,nvivo,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,SPSS,spss,spss,spss,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Minitab,minitab,minitab,minitab,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Stata,stata,stata,stata,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,GraphPad Prism,graphpad prism,graphpad prism,graphpad prism,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,MATLAB,matlab,matlab,matlab,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Mathematica,mathematica,mathematica,mathematica,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Wolfram Mathematica,wolfram mathematica,wolfram mathematica,wolfram mathematica,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Jupyter,jupyter,jupyter,jupyter,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,RStudio,rstudio,rstudio,rstudio,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Anaconda,anaconda,anaconda,anaconda,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,VS Code,vs code,vs code,vs code,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Vim,vim,vim,vim,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Emacs,emacs,emacs,emacs,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,IntelliJ IDEA,intellij idea,intellij idea,intellij idea,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,WebStorm,webstorm,webstorm,webstorm,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,PHPStorm,phpstorm,phpstorm,phpstorm,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Rider,rider,rider,rider,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,CLion,clion,clion,clion,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,GoLand,goland,goland,goland,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,DataGrip,datagrip,datagrip,datagrip,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,RubyMine,rubymine,rubymine,rubymine,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,AppCode,appcode,appcode,appcode,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Android Studio,android studio,android studio,android studio,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Xcode,xcode,xcode,xcode,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Eclipse,eclipse,eclipse,eclipse,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,NetBeans,netbeans,netbeans,netbeans,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Visual Studio,visual studio,studio,studio,2.0,1.0,1.0,50.0
+Development & Data / Tools Teknis,Cursor,cursor,cursor,cursor,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Windsurf,windsurf,windsurf,windsurf,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Zed,zed,zed,zed,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,CodeRunner,coderunner,coderunner,coderunner,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Proxyman Pro,proxyman pro,proxyman pro,proxyman pro,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Charles Proxy,charles proxy,charles proxy,charles proxy,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,GitPod,gitpod,gitpod,gitpod,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Sourcetree,sourcetree,sourcetree,sourcetree,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Termius,termius,termius,termius,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Dash,dash,dash,dash,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Insomnia Professional,insomnia professional,insomnia professional,insomnia professional,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Paw (RapidAPI),paw rapidapi,paw rapidapi,paw rapidapi,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Proxyman,proxyman,proxyman,proxyman,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Wireshark,wireshark,wireshark,wireshark,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Burp Suite,burp suite,burp suite,burp suite,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,OWASP ZAP,owasp zap,owasp zap,owasp zap,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Nmap,nmap,nmap,nmap,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Metasploit,metasploit,metasploit,metasploit,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Kali Linux,kali linux,kali linux,kali linux,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Ubuntu Server,ubuntu server,ubuntu server,ubuntu server,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,CentOS,centos,centos,centos,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,RedHat,redhat,redhat,redhat,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Fedora,fedora,fedora,fedora,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Debian,debian,debian,debian,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Arch Linux,arch linux,arch linux,arch linux,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Manjaro,manjaro,manjaro,manjaro,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Pop!_OS,popos,popos,popos,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Linux Mint,linux mint,linux mint,linux mint,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Zorin OS,zorin os,zorin os,zorin os,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Elementary OS,elementary os,elementary os,elementary os,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Deepin,deepin,deepin,deepin,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,openSUSE,opensuse,opensuse,opensuse,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,SUSE Linux,suse linux,suse linux,suse linux,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Alpine Linux,alpine linux,alpine linux,alpine linux,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,FreeBSD,freebsd,freebsd,freebsd,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,OpenBSD,openbsd,openbsd,openbsd,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,NetBSD,netbsd,netbsd,netbsd,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,TrueNAS,truenas,truenas,truenas,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Unraid,unraid,unraid,unraid,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Proxmox,proxmox,proxmox,proxmox,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,VMware,vmware,vmware,vmware,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,VirtualBox,virtualbox,virtualbox,virtualbox,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Parallels Desktop,parallels desktop,parallels desktop,parallels desktop,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,QEMU,qemu,qemu,qemu,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,LXD,lxd,lxd,lxd,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Podman,podman,podman,podman,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Kubernetes,kubernetes,kubernetes,kubernetes,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Minikube,minikube,minikube,minikube,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Kind,kind,kind,kind,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,K3s,ks,ks,ks,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Rancher,rancher,rancher,rancher,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,OpenShift,openshift,openshift,openshift,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Docker Swarm,docker swarm,docker swarm,docker swarm,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Nomad,nomad,nomad,nomad,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Vagrant,vagrant,vagrant,vagrant,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Ansible,ansible,ansible,ansible,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Terraform,terraform,terraform,terraform,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Pulumi,pulumi,pulumi,pulumi,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Packer,packer,packer,packer,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Chef,chef,chef,chef,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Puppet,puppet,puppet,puppet,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,SaltStack,saltstack,saltstack,saltstack,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Nix,nix,nix,nix,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Bazel,bazel,bazel,bazel,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Gradle,gradle,gradle,gradle,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,NPM,npm,npm,npm,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Yarn,yarn,yarn,yarn,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,PNPM,pnpm,pnpm,pnpm,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Bun,bun,bun,bun,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Go Modules,go modules,go modules,go modules,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Cargo,cargo,cargo,cargo,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Composer,composer,composer,composer,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Pipenv,pipenv,pipenv,pipenv,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Poetry,poetry,poetry,poetry,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Conda,conda,conda,conda,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Rye,rye,rye,rye,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Flutter,flutter,flutter,flutter,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,React Native,react native,react native,react native,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Expo,expo,expo,expo,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Ionic,ionic,ionic,ionic,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,NativeScript,nativescript,nativescript,nativescript,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Xamarin,xamarin,xamarin,xamarin,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,.NET MAUI,net maui,maui,mau,2.0,1.0,1.0,50.0
+Development & Data / Tools Teknis,FlutterFlow,flutterflow,flutterflow,flutterflow,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Draftbit,draftbit,draftbit,draftbit,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Bravo Studio,bravo studio,bravo studio,bravo studio,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Adalo,adalo,adalo,adalo,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Bubble,bubble,bubble,bubble,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Bildr,bildr,bildr,bildr,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,WeWeb,weweb,weweb,weweb,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Xano,xano,xano,xano,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Backendless,backendless,backendless,backendless,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,AppGyver,appgyver,appgyver,appgyver,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Glide,glide,glide,glide,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Retool,retool,retool,retool,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Internal.io,internalio,internalio,internalio,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Budibase,budibase,budibase,budibase,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Appsmith,appsmith,appsmith,appsmith,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,ToolJet,tooljet,tooljet,tooljet,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Supabase,supabase,supabase,supabase,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Firebase,firebase,firebase,firebase,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Appwrite,appwrite,appwrite,appwrite,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,PocketBase,pocketbase,pocketbase,pocketbase,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Directus,directus,directus,directus,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Strapi,strapi,strapi,strapi,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,KeystoneJS,keystonejs,keystonejs,keystonejs,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Payload CMS,payload cms,payload cms,payload cms,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Sanity,sanity,sanity,sanity,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Contentful,contentful,contentful,contentful,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Prismic,prismic,prismic,prismic,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Storyblok,storyblok,storyblok,storyblok,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Cosmic,cosmic,cosmic,cosmic,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,ButterCMS,buttercms,buttercms,buttercms,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Ghost,ghost,ghost,ghost,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,WordPress (VIP),wordpress vip,wordpress vip,wordpress vip,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,(Jetpack),jetpack,jetpack,jetpack,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Drupal,drupal,drupal,drupal,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Joomla,joomla,joomla,joomla,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Magento,magento,magento,magento,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Shopify Plus,shopify plus,shopify,shopify,2.0,1.0,1.0,50.0
+Development & Data / Tools Teknis,WooCommerce,woocommerce,woocommerce,woocommerce,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,BigCommerce,bigcommerce,bigcommerce,bigcommerce,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Commerce Layer,commerce layer,commerce layer,commerce layer,2.0,2.0,0.0,0.0
+Development & Data / Tools Teknis,Medusa,medusa,medusa,medusa,1.0,1.0,0.0,0.0
+Development & Data / Tools Teknis,Vendure,vendure,vendure,vendure,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Notion,notion,notion,notion,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Evernote,evernote,evernote,evernote,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Todoist,todoist,todoist,todoist,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Microsoft 365,microsoft,microsoft,microsoft,2.0,1.0,1.0,50.0
+Produktivitas & Kerja,Microsoft Teams,microsoft teams,microsoft teams,microsoft teams,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Google One,google one,google one,google one,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Airtable Pro,airtable pro,airtable pro,airtable pro,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Airtable,airtable,airtable,airtable,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Notion Calendar,notion calendar,notion calendar,notion calendar,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Lark,lark,lark,lark,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Basecamp,basecamp,basecamp,basecamp,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,ClickUp,clickup,clickup,clickup,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Freshdesk,freshdesk,freshdesk,freshdesk,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Zendesk,zendesk,zendesk,zendesk,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Pipedrive,pipedrive,pipedrive,pipedrive,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Wave Accounting,wave accounting,wave accounting,wave accounting,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Toggl Track,toggl track,toggl track,toggl track,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Toggl Plan,toggl plan,toggl plan,toggl plan,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Float,float,float,float,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,10to8,to,to,to,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Doodle Premium,doodle premium,doodle,doodle,2.0,1.0,1.0,50.0
+Produktivitas & Kerja,Hunter.io,hunterio,hunterio,hunterio,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Lusha,lusha,lusha,lusha,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Apollo.io,apolloio,apolloio,apolloio,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Zirtual,zirtual,zirtual,zirtual,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Clean Email,clean email,clean email,clean email,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,SaneBox,sanebox,sanebox,sanebox,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Spark Desktop Pro,spark desktop pro,spark desktop pro,spark desktop pro,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Airmail,airmail,airmail,airmail,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Newton Mail,newton mail,newton mail,newton mail,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Setapp,setapp,setapp,setapp,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Setapp (Mobile + Mac),setapp mobile mac,setapp mobile mac,setapp mobile mac,4.0,3.0,1.0,25.0
+Produktivitas & Kerja,Vellum,vellum,vellum,vellum,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Focus Keeper Pro,focus keeper pro,focus keeper pro,focus keeper pro,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Session,session,session,session,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Minimalist Phone,minimalist phone,minimalist phone,minimalist phone,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Opal,opal,opal,opal,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Freedom,freedom,freedom,freedom,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Coda.io,codaio,codaio,codaio,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Sunsama,sunsama,sunsama,sunsama,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Akiflow,akiflow,akiflow,akiflow,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Obsidian Sync,obsidian sync,obsidian sync,obsidian sync,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Logseq Pro,logseq pro,logseq pro,logseq pro,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Mem.ai,memai,memai,mai,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Heptabase,heptabase,heptabase,heptabase,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Aeon Timeline,aeon timeline,aeon timeline,aeon timeline,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Final Draft,final draft,final draft,final draft,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Ulysses,ulysses,ulysses,ulysses,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,IA Writer,ia writer,writer,writer,2.0,1.0,1.0,50.0
+Produktivitas & Kerja,Fantastical,fantastical,fantastical,fantastical,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,BusyCal,busycal,busycal,busycal,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Due,due,due,due,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Sorted^3,sorted,sorted,sorted,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Hookmark,hookmark,hookmark,hookmark,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Centered,centered,centered,centered,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,RescueTime Premium,rescuetime premium,rescuetime,rescuetime,2.0,1.0,1.0,50.0
+Produktivitas & Kerja,Raindrop.io Pro,raindropio pro,raindropio pro,raindropio pro,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Cron Calendar,cron calendar,cron calendar,cron calendar,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Daylite,daylite,daylite,daylite,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Mesa,mesa,mesa,mesa,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Inoreader Pro,inoreader pro,inoreader pro,inoreader pro,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Feedly Market Intelligence,feedly market intelligence,feedly market intelligence,feedly market intelligence,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Paprika Recipe Manager,paprika recipe manager,paprika recipe manager,paprika recipe manager,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Strong Lifts 5x5 Pro,strong lifts x pro,strong lifts pro,strong lifts pro,4.0,3.0,1.0,25.0
+Produktivitas & Kerja,Gyrosco.pe,gyroscope,gyroscope,gyroscope,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Flow,flow,flow,flow,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Milanote,milanote,milanote,milanote,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Whimsical,whimsical,whimsical,whimsical,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Miro Business,miro business,miro business,miro business,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Lucidchart,lucidchart,lucidchart,lucidchart,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,MindMeister,mindmeister,mindmeister,mindmeister,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,MindNode,mindnode,mindnode,mindnode,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,XMind,xmind,xmind,xmind,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Coggle,coggle,coggle,coggle,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Ayoa,ayoa,ayoa,ayoa,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,SimpleMind,simplemind,simplemind,simplemind,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,MindManager,mindmanager,mindmanager,mindmanager,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,SmartDraw,smartdraw,smartdraw,smartdraw,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Draw.io,drawio,drawio,drawio,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Diagrams.net,diagramsnet,diagramsnet,diagramsnet,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,FigJam,figjam,figjam,figjam,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Mural,mural,mural,mural,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Conceptboard,conceptboard,conceptboard,conceptboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,InVision Freehand,invision freehand,invision freehand,invision freehand,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Freehand by InVision,freehand by invision,freehand by invision,freehand by invision,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Witeboard,witeboard,witeboard,witeboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Ziteboard,ziteboard,ziteboard,ziteboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,AWW App,aww app,aww app,aww app,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Webwhiteboard,webwhiteboard,webwhiteboard,webwhiteboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Collaboard,collaboard,collaboard,collaboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Limnu,limnu,limnu,limnu,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Groupboard,groupboard,groupboard,groupboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Scribblar,scribblar,scribblar,scribblar,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Twiddla,twiddla,twiddla,twiddla,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Sketchboard,sketchboard,sketchboard,sketchboard,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Noteshelf,noteshelf,noteshelf,noteshelf,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,LiquidText,liquidtext,liquidtext,liquidtext,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,MarginNote,marginnote,marginnote,marginnote,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Flexcil,flexcil,flexcil,flexcil,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Xodo,xodo,xodo,xodo,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,PDF Expert,pdf expert,pdf expert,pdf expert,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Adobe Acrobat Pro,adobe acrobat pro,adobe acrobat pro,adobe acrobat pro,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Foxit PDF Editor,foxit pdf editor,foxit pdf editor,foxit pdf editor,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,Nitro PDF Pro,nitro pdf pro,nitro pdf pro,nitro pdf pro,3.0,3.0,0.0,0.0
+Produktivitas & Kerja,PDFelement,pdfelement,pdfelement,pdfelement,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Sejda,sejda,sejda,sejda,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Smallpdf,smallpdf,smallpdf,smallpdf,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Ilovepdf,ilovepdf,ilovepdf,ilovepdf,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,PDF Candy,pdf candy,pdf candy,pdf candy,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Soda PDF,soda pdf,soda pdf,soda pdf,2.0,2.0,0.0,0.0
+Produktivitas & Kerja,Able2Extract,ableextract,ableextract,ableextract,1.0,1.0,0.0,0.0
+Produktivitas & Kerja,Wondershare PDFelement,wondershare pdfelement,wondershare pdfelement,wondershare pdfelement,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Slack Pro,slack pro,slack pro,slack pro,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Slack,slack,slack,slack,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Zoom Pro,zoom pro,zoom pro,zoom pro,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Zoom,zoom,zoom,zoom,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Discord Nitro,discord nitro,discord nitro,discord nitro,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Webex,webex,webex,webex,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Loom Pro,loom pro,loom pro,loom pro,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Loom,loom,loom,loom,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Krisp,krisp,krisp,krisp,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Cisco Webex,cisco webex,cisco webex,cisco webex,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,BlueJeans,bluejeans,bluejeans,bluejeans,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,GoToMeeting,gotomeeting,gotomeeting,gotomeeting,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Join.me,joinme,joinme,joinme,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,TeamViewer,teamviewer,teamviewer,teamviewer,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,AnyDesk,anydesk,anydesk,anydesk,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,RemotePC,remotepc,remotepc,remotepc,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Splashtop,splashtop,splashtop,splashtop,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Microsoft Remote Desktop,microsoft remote desktop,microsoft remote desktop,microsoft remote desktop,3.0,3.0,0.0,0.0
+Meeting & Komunikasi,RealVNC,realvnc,realvnc,realvnc,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,TightVNC,tightvnc,tightvnc,tightvnc,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,UltraVNC,ultravnc,ultravnc,ultravnc,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,TigerVNC,tigervnc,tigervnc,tigervnc,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,NoMachine,nomachine,nomachine,nomachine,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,X2Go,xgo,xgo,xgo,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,AnyMeeting,anymeeting,anymeeting,anymeeting,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,ClickMeeting,clickmeeting,clickmeeting,clickmeeting,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,MyOwnConference,myownconference,myownconference,myownconference,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Livestorm,livestorm,livestorm,livestorm,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Demio,demio,demio,demio,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,BigMarker,bigmarker,bigmarker,bigmarker,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,On24,on,on,on,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Airmeet,airmeet,airmeet,airmeet,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Hopin,hopin,hopin,hopin,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Remo,remo,remo,remo,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Workadventure,workadventure,workadventure,workadventure,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Gather,gather,gather,gather,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,SpatialChat,spatialchat,spatialchat,spatialchat,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Wonder,wonder,wonder,wonder,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Sococo,sococo,sococo,sococo,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Tandem,tandem,tandem,tandem,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Yotribe,yotribe,yotribe,yotribe,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Pragli,pragli,pragli,pragli,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Bunch,bunch,bunch,bunch,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Supernormal,supernormal,supernormal,supernormal,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Fireflies.ai,firefliesai,firefliesai,firefliesai,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Avoma,avoma,avoma,avoma,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Gong.io,gongio,gongio,gongio,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Chorus.ai,chorusai,chorusai,chorusai,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,ExecVision,execvision,execvision,execvision,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Clari,clari,clari,clari,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Salesloft,salesloft,salesloft,salesloft,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Outreach,outreach,outreach,outreach,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Mixmax,mixmax,mixmax,mixmax,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Yesware,yesware,yesware,yesware,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Mailtrack,mailtrack,mailtrack,mailtrack,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Streak,streak,streak,streak,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,HubSpot Sales Hub,hubspot sales hub,hubspot sales hub,hubspot sales hub,3.0,3.0,0.0,0.0
+Meeting & Komunikasi,Salesforce Sales Cloud,salesforce sales cloud,salesforce sales cloud,salesforce sales cloud,3.0,3.0,0.0,0.0
+Meeting & Komunikasi,Freshsales,freshsales,freshsales,freshsales,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Zoho CRM,zoho crm,zoho crm,zoho crm,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Copper,copper,copper,copper,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Nimble,nimble,nimble,nimble,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Insightly,insightly,insightly,insightly,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Capsule,capsule,capsule,capsule,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Close,close,close,close,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Agile CRM,agile crm,agile crm,agile crm,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Bitrix24,bitrix,bitrix,bitrix,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Apptivo,apptivo,apptivo,apptivo,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Less Annoying CRM,less annoying crm,less annoying crm,less annoying crm,3.0,3.0,0.0,0.0
+Meeting & Komunikasi,Really Simple Systems,really simple systems,really simple systems,really simple systems,3.0,3.0,0.0,0.0
+Meeting & Komunikasi,Ontraport,ontraport,ontraport,ontraport,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Keap,keap,keap,keap,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Infusionsoft,infusionsoft,infusionsoft,infusionsoft,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,ActiveCampaign,activecampaign,activecampaign,activecampaign,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,ConvertKit,convertkit,convertkit,convertkit,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Mailchimp,mailchimp,mailchimp,mailchimp,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Constant Contact,constant contact,constant contact,constant contact,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Sendinblue,sendinblue,sendinblue,sendinblue,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,MailerLite,mailerlite,mailerlite,mailerlite,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,AWeber,aweber,aweber,aweber,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,GetResponse,getresponse,getresponse,getresponse,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Campaign Monitor,campaign monitor,campaign monitor,campaign monitor,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Drip,drip,drip,drip,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Klaviyo,klaviyo,klaviyo,klaviyo,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Omnisend,omnisend,omnisend,omnisend,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Moosend,moosend,moosend,moosend,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,SendGrid,sendgrid,sendgrid,sendgrid,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Mailjet,mailjet,mailjet,mailjet,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Postmark,postmark,postmark,postmark,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,Amazon SES,amazon ses,amazon ses,amazon ses,2.0,2.0,0.0,0.0
+Meeting & Komunikasi,Pepipost,pepipost,pepipost,pepipost,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,SocketLabs,socketlabs,socketlabs,socketlabs,1.0,1.0,0.0,0.0
+Meeting & Komunikasi,SMTP2GO,smtpgo,smtpgo,smtpgo,1.0,1.0,0.0,0.0
+Finance & Investment,QuickBooks,quickbooks,quickbooks,quickbooks,1.0,1.0,0.0,0.0
+Finance & Investment,YNAB,ynab,ynab,ynab,1.0,1.0,0.0,0.0
+Finance & Investment,Mint,mint,mint,mint,1.0,1.0,0.0,0.0
+Finance & Investment,Robinhood Gold,robinhood gold,robinhood gold,robinhood gold,2.0,2.0,0.0,0.0
+Finance & Investment,Acorns,acorns,acorns,acorns,1.0,1.0,0.0,0.0
+Finance & Investment,Stash,stash,stash,stash,1.0,1.0,0.0,0.0
+Finance & Investment,Binance Pro,binance pro,binance pro,binance pro,2.0,2.0,0.0,0.0
+Finance & Investment,Credit Karma,credit karma,credit karma,credit karma,2.0,2.0,0.0,0.0
+Finance & Investment,TradingView Pro,tradingview pro,tradingview pro,tradingview pro,2.0,2.0,0.0,0.0
+Finance & Investment,Bloomberg Anywhere,bloomberg anywhere,bloomberg anywhere,bloomberg anywhere,2.0,2.0,0.0,0.0
+Finance & Investment,Financial Times,financial times,financial times,financial times,2.0,2.0,0.0,0.0
+Finance & Investment,The Economist,the economist,the economist,the economist,2.0,2.0,0.0,0.0
+Finance & Investment,HBR (Harvard Business Review),hbr harvard business review,hbr harvard business review,hbr harvard business review,4.0,4.0,0.0,0.0
+Finance & Investment,Expensify,expensify,expensify,expensify,1.0,1.0,0.0,0.0
+Finance & Investment,Harvest,harvest,harvest,harvest,1.0,1.0,0.0,0.0
+Finance & Investment,Wallet by BudgetBakers,wallet by budgetbakers,wallet by budgetbakers,wallet by budgetbakers,3.0,3.0,0.0,0.0
+Finance & Investment,Money Lover Premium,money lover premium,money lover,money lover,3.0,2.0,1.0,33.3
+Finance & Investment,Bluecoins,bluecoins,bluecoins,bluecoins,1.0,1.0,0.0,0.0
+Finance & Investment,Bloomberg,bloomberg,bloomberg,bloomberg,1.0,1.0,0.0,0.0
+Finance & Investment,The Ken,the ken,the ken,the ken,2.0,2.0,0.0,0.0
+Finance & Investment,Tech in Asia,tech in asia,tech in asia,tech in asia,3.0,3.0,0.0,0.0
+Finance & Investment,The Wall Street Journal,the wall street journal,the wall street journal,the wall street journal,4.0,4.0,0.0,0.0
+Finance & Investment,The Washington Post,the washington post,the washington post,the washington post,3.0,3.0,0.0,0.0
+Finance & Investment,The Guardian,the guardian,the guardian,the guardian,2.0,2.0,0.0,0.0
+Finance & Investment,Foreign Policy,foreign policy,foreign policy,foreign policy,2.0,2.0,0.0,0.0
+Finance & Investment,Reuters News,reuters news,reuters news,reuters news,2.0,2.0,0.0,0.0
+Finance & Investment,PressReader,pressreader,pressreader,pressreader,1.0,1.0,0.0,0.0
+Finance & Investment,Readly,readly,readly,readly,1.0,1.0,0.0,0.0
+Finance & Investment,Feedly Pro+,feedly pro,feedly pro,feedly pro,2.0,2.0,0.0,0.0
+Finance & Investment,Ground News,ground news,ground news,ground news,2.0,2.0,0.0,0.0
+Finance & Investment,Pocket,pocket,pocket,pocket,1.0,1.0,0.0,0.0
+Finance & Investment,Artifact by Instagram Founders,artifact by instagram founders,artifact by instagram founders,artifact by instagram founders,4.0,4.0,0.0,0.0
+Finance & Investment,Kraken Pro,kraken pro,kraken pro,kraken pro,2.0,2.0,0.0,0.0
+Finance & Investment,KuCoin,kucoin,kucoin,kucoin,1.0,1.0,0.0,0.0
+Finance & Investment,Bybit,bybit,bybit,bybit,1.0,1.0,0.0,0.0
+Finance & Investment,OKX,okx,okx,okx,1.0,1.0,0.0,0.0
+Finance & Investment,Gate.io,gateio,gateio,gateio,1.0,1.0,0.0,0.0
+Finance & Investment,Huobi,huobi,huobi,huobi,1.0,1.0,0.0,0.0
+Finance & Investment,Bitfinex,bitfinex,bitfinex,bitfinex,1.0,1.0,0.0,0.0
+Finance & Investment,Crypto.com,cryptocom,cryptocom,cryptocom,1.0,1.0,0.0,0.0
+Finance & Investment,Nexo,nexo,nexo,nexo,1.0,1.0,0.0,0.0
+Finance & Investment,Celsius (if active),celsius if active,celsius if active,celsius if active,3.0,3.0,0.0,0.0
+Finance & Investment,BlockFi (if active),blockfi if active,blockfi if active,blockfi if active,3.0,3.0,0.0,0.0
+Finance & Investment,Zerion,zerion,zerion,zion,1.0,1.0,0.0,0.0
+Finance & Investment,Zapper,zapper,zapper,zapper,1.0,1.0,0.0,0.0
+Finance & Investment,DeBank,debank,debank,debank,1.0,1.0,0.0,0.0
+Finance & Investment,Ape Board,ape board,ape board,ape board,2.0,2.0,0.0,0.0
+Finance & Investment,TradingView,tradingview,tradingview,tradingview,1.0,1.0,0.0,0.0
+Finance & Investment,Bloomberg Terminal,bloomberg terminal,bloomberg terminal,bloomberg terminal,2.0,2.0,0.0,0.0
+Finance & Investment,Refinitiv Eikon,refinitiv eikon,refinitiv eikon,refinitiv eikon,2.0,2.0,0.0,0.0
+Finance & Investment,FactSet,factset,factset,factset,1.0,1.0,0.0,0.0
+Finance & Investment,Capital IQ,capital iq,capital iq,capital iq,2.0,2.0,0.0,0.0
+Finance & Investment,Morningstar Direct,morningstar direct,morningstar direct,morningstar direct,2.0,2.0,0.0,0.0
+Finance & Investment,PitchBook,pitchbook,pitchbook,pitchbook,1.0,1.0,0.0,0.0
+Finance & Investment,Crunchbase Pro,crunchbase pro,crunchbase pro,crunchbase pro,2.0,2.0,0.0,0.0
+Finance & Investment,CB Insights,cb insights,cb insights,cb insights,2.0,2.0,0.0,0.0
+Finance & Investment,Statista,statista,statista,statista,1.0,1.0,0.0,0.0
+Finance & Investment,S&P Capital IQ,sp capital iq,sp capital iq,sp capital iq,3.0,3.0,0.0,0.0
+Finance & Investment,Moody's Analytics,moodys analytics,moodys analytics,moodys analytics,2.0,2.0,0.0,0.0
+Finance & Investment,Fitch Connect,fitch connect,fitch connect,fitch connect,2.0,2.0,0.0,0.0
+Finance & Investment,World Bank Data,world bank data,world bank data,world bank data,3.0,3.0,0.0,0.0
+Finance & Investment,OECD iLibrary,oecd ilibrary,oecd ilibrary,oecd ilibrary,2.0,2.0,0.0,0.0
+Finance & Investment,BIS Statistics,bis statistics,bis statistics,bis statistics,2.0,2.0,0.0,0.0
+Finance & Investment,Eurostat,eurostat,eurostat,eurostat,1.0,1.0,0.0,0.0
+Finance & Investment,St. Louis Fed,st louis fed,st louis fed,st louis fed,3.0,3.0,0.0,0.0
+Finance & Investment,Wall Street Journal,wall street journal,wall street journal,wall street journal,3.0,3.0,0.0,0.0
+Finance & Investment,Barron's,barrons,barrons,barrons,1.0,1.0,0.0,0.0
+Finance & Investment,Investors Business Daily,investors business daily,investors business daily,investors business daily,3.0,3.0,0.0,0.0
+Finance & Investment,Kiplinger,kiplinger,kiplinger,kiplinger,1.0,1.0,0.0,0.0
+Finance & Investment,Fortune,fortune,fortune,fortune,1.0,1.0,0.0,0.0
+Finance & Investment,Forbes,forbes,forbes,forbes,1.0,1.0,0.0,0.0
+Finance & Investment,Business Insider,business insider,business insider,business insider,2.0,2.0,0.0,0.0
+Finance & Investment,Quartz,quartz,quartz,quartz,1.0,1.0,0.0,0.0
+Finance & Investment,Axios,axios,axios,axios,1.0,1.0,0.0,0.0
+Finance & Investment,Benzinga,benzinga,benzinga,benzinga,1.0,1.0,0.0,0.0
+Finance & Investment,Seeking Alpha,seeking alpha,seeking alpha,seeking alpha,2.0,2.0,0.0,0.0
+Finance & Investment,Motley Fool,motley fool,motley fool,motley fool,2.0,2.0,0.0,0.0
+Finance & Investment,TheStreet,thestreet,thestreet,thestreet,1.0,1.0,0.0,0.0
+Finance & Investment,MarketWatch,marketwatch,marketwatch,marketwatch,1.0,1.0,0.0,0.0
+Finance & Investment,Afford Anything,afford anything,afford anything,afford anything,2.0,2.0,0.0,0.0
+Finance & Investment,BiggerPockets,biggerpockets,biggerpockets,biggerpockets,1.0,1.0,0.0,0.0
+Finance & Investment,White Coat Investor,white coat investor,white coat investor,white coat investor,3.0,3.0,0.0,0.0
+Finance & Investment,Physician on FIRE,physician on fire,physician on fire,physician on fire,3.0,3.0,0.0,0.0
+Finance & Investment,Financial Samurai,financial samurai,financial samurai,financial samurai,2.0,2.0,0.0,0.0
+Security & Privacy,1Password,password,password,password,1.0,1.0,0.0,0.0
+Security & Privacy,LastPass,lastpass,lastpass,lastpass,1.0,1.0,0.0,0.0
+Security & Privacy,NordVPN,nordvpn,nordvpn,nordvpn,1.0,1.0,0.0,0.0
+Security & Privacy,ExpressVPN,expressvpn,expressvpn,expressvpn,1.0,1.0,0.0,0.0
+Security & Privacy,Surfshark,surfshark,surfshark,surfshark,1.0,1.0,0.0,0.0
+Security & Privacy,Malwarebytes,malwarebytes,malwarebytes,malwarebytes,1.0,1.0,0.0,0.0
+Security & Privacy,1Blocker,blocker,blocker,blocker,1.0,1.0,0.0,0.0
+Security & Privacy,AdGuard,adguard,adguard,adguard,1.0,1.0,0.0,0.0
+Security & Privacy,Proton VPN,proton vpn,proton vpn,proton vpn,2.0,2.0,0.0,0.0
+Security & Privacy,Bitwarden Premium,bitwarden premium,bitwarden,bitwarden,2.0,1.0,1.0,50.0
+Security & Privacy,Dashlane,dashlane,dashlane,dashlane,1.0,1.0,0.0,0.0
+Security & Privacy,ProtonMail,protonmail,protonmail,protonmail,1.0,1.0,0.0,0.0
+Security & Privacy,Authy,authy,authy,authy,1.0,1.0,0.0,0.0
+Security & Privacy,Lookout,lookout,lookout,lookout,1.0,1.0,0.0,0.0
+Security & Privacy,Avast Mobile,avast mobile,avast mobile,avast mobile,2.0,2.0,0.0,0.0
+Security & Privacy,Keeper,keeper,keeper,keeper,1.0,1.0,0.0,0.0
+Security & Privacy,Proton Pass,proton pass,proton pass,proton pass,2.0,2.0,0.0,0.0
+Security & Privacy,Mullvad VPN,mullvad vpn,mullvad vpn,mullvad vpn,2.0,2.0,0.0,0.0
+Security & Privacy,Little Snitch,little snitch,little snitch,little snitch,2.0,2.0,0.0,0.0
+Security & Privacy,Carbon Copy Cloner,carbon copy cloner,carbon copy cloner,carbon copy cloner,3.0,3.0,0.0,0.0
+Security & Privacy,Backblaze,backblaze,backblaze,backblaze,1.0,1.0,0.0,0.0
+Security & Privacy,NordLayer,nordlayer,nordlayer,nordlayer,1.0,1.0,0.0,0.0
+Security & Privacy,Tailscale,tailscale,tailscale,tailscale,1.0,1.0,0.0,0.0
+Security & Privacy,ZeroTier,zerotier,zerotier,zerotier,1.0,1.0,0.0,0.0
+Security & Privacy,Cloudflare WARP,cloudflare warp,cloudflare warp,cloudflare warp,2.0,2.0,0.0,0.0
+Security & Privacy,1.1.1.1,,,,1.0,0.0,1.0,100.0
+Security & Privacy,NextDNS,nextdns,nextdns,nextdns,1.0,1.0,0.0,0.0
+Security & Privacy,Control D,control d,control,control,2.0,1.0,1.0,50.0
+Security & Privacy,Quad9,quad,quad,quad,1.0,1.0,0.0,0.0
+Security & Privacy,OpenDNS,opendns,opendns,opendns,1.0,1.0,0.0,0.0
+Security & Privacy,Cisco Umbrella,cisco umbrella,cisco umbrella,cisco umbrella,2.0,2.0,0.0,0.0
+Security & Privacy,Webroot DNS Protection,webroot dns protection,webroot dns protection,webroot dns protection,3.0,3.0,0.0,0.0
+Security & Privacy,Comodo Secure DNS,comodo secure dns,comodo secure dns,comodo secure dns,3.0,3.0,0.0,0.0
+Security & Privacy,Yandex DNS,yandex dns,yandex dns,yandex dns,2.0,2.0,0.0,0.0
+Security & Privacy,AdGuard DNS,adguard dns,adguard dns,adguard dns,2.0,2.0,0.0,0.0
+Security & Privacy,Pi-hole,pihole,pihole,pihole,1.0,1.0,0.0,0.0
+Security & Privacy,AdGuard Home,adguard home,adguard home,adguard home,2.0,2.0,0.0,0.0
+Security & Privacy,AdAway,adaway,adaway,adaway,1.0,1.0,0.0,0.0
+Security & Privacy,Blokada,blokada,blokada,blokada,1.0,1.0,0.0,0.0
+Security & Privacy,DNS66,dns,dns,dns,1.0,1.0,0.0,0.0
+Security & Privacy,PersonalDNSfilter,personaldnsfilter,personaldnsfilter,personaldnsfilter,1.0,1.0,0.0,0.0
+Security & Privacy,NetGuard,netguard,netguard,netguard,1.0,1.0,0.0,0.0
+Security & Privacy,AFWall+,afwall,afwall,afwall,1.0,1.0,0.0,0.0
+Security & Privacy,GlassWire,glasswire,glasswire,glasswire,1.0,1.0,0.0,0.0
+Security & Privacy,NetLimiter,netlimiter,netlimiter,netlimiter,1.0,1.0,0.0,0.0
+Security & Privacy,Lulu,lulu,lulu,lulu,1.0,1.0,0.0,0.0
+Security & Privacy,Hands Off!,hands off,hands off,hands off,2.0,2.0,0.0,0.0
+Security & Privacy,Radio Silence,radio silence,radio silence,radio silence,2.0,2.0,0.0,0.0
+Security & Privacy,TripMode,tripmode,tripmode,tripmode,1.0,1.0,0.0,0.0
+Security & Privacy,Scudo,scudo,scudo,scudo,1.0,1.0,0.0,0.0
+Security & Privacy,TypeGuard,typeguard,typeguard,typeguard,1.0,1.0,0.0,0.0
+Security & Privacy,Espionage,espionage,espionage,espionage,1.0,1.0,0.0,0.0
+Security & Privacy,Knox,knox,knox,knox,1.0,1.0,0.0,0.0
+Security & Privacy,Folder Guard,folder guard,folder guard,folder guard,2.0,2.0,0.0,0.0
+Security & Privacy,AxCrypt,axcrypt,axcrypt,axcrypt,1.0,1.0,0.0,0.0
+Security & Privacy,Cryptomator,cryptomator,cryptomator,cryptomator,1.0,1.0,0.0,0.0
+Security & Privacy,Veracrypt,veracrypt,veracrypt,veracrypt,1.0,1.0,0.0,0.0
+Security & Privacy,GnuPG,gnupg,gnupg,gnupg,1.0,1.0,0.0,0.0
+Security & Privacy,GPGTools,gpgtools,gpgtools,gpgtools,1.0,1.0,0.0,0.0
+Security & Privacy,OpenPGP,openpgp,openpgp,openpgp,1.0,1.0,0.0,0.0
+Security & Privacy,Tutanota,tutanota,tutanota,tutanota,1.0,1.0,0.0,0.0
+Security & Privacy,Mailfence,mailfence,mailfence,mailfence,1.0,1.0,0.0,0.0
+Security & Privacy,CTemplar,ctemplar,ctemplar,ctemplar,1.0,1.0,0.0,0.0
+Security & Privacy,Posteo,posteo,posteo,posteo,1.0,1.0,0.0,0.0
+Security & Privacy,StartMail,startmail,startmail,startmail,1.0,1.0,0.0,0.0
+Security & Privacy,Runbox,runbox,runbox,runbox,1.0,1.0,0.0,0.0
+Security & Privacy,Soverin,soverin,soverin,soverin,1.0,1.0,0.0,0.0
+Security & Privacy,Disroot,disroot,disroot,disroot,1.0,1.0,0.0,0.0
+Security & Privacy,Cock.li,cockli,cockli,cockli,1.0,1.0,0.0,0.0
+Security & Privacy,Guerrilla Mail,guerrilla mail,guerrilla mail,guerrilla mail,2.0,2.0,0.0,0.0
+Security & Privacy,10MinuteMail,minutemail,minutemail,minutemail,1.0,1.0,0.0,0.0
+Security & Privacy,Temp Mail,temp mail,temp mail,temp mail,2.0,2.0,0.0,0.0
+Security & Privacy,Mailinator,mailinator,mailinator,mailinator,1.0,1.0,0.0,0.0
+Security & Privacy,YOPmail,yopmail,yopmail,yopmail,1.0,1.0,0.0,0.0
+Security & Privacy,Spamgourmet,spamgourmet,spamgourmet,spamgourmet,1.0,1.0,0.0,0.0
+Security & Privacy,33Mail,mail,mail,mail,1.0,1.0,0.0,0.0
+Security & Privacy,SimpleLogin,simplelogin,simplelogin,simplelogin,1.0,1.0,0.0,0.0
+Security & Privacy,AnonAddy,anonaddy,anonaddy,anonaddy,1.0,1.0,0.0,0.0
+Security & Privacy,Firefox Relay,firefox relay,firefox relay,firefox relay,2.0,2.0,0.0,0.0
+Security & Privacy,Apple Hide My Email,apple hide my email,apple hide my email,apple hide my email,4.0,4.0,0.0,0.0
+Security & Privacy,DuckDuckGo Email Protection,duckduckgo email protection,duckduckgo email protection,duckduckgo email protection,3.0,3.0,0.0,0.0
+Security & Privacy,Burner,burner,burner,burner,1.0,1.0,0.0,0.0
+Security & Privacy,Hushed,hushed,hushed,hushed,1.0,1.0,0.0,0.0
+Security & Privacy,MySudo,mysudo,mysudo,mysudo,1.0,1.0,0.0,0.0
+Security & Privacy,Silent Phone,silent phone,silent phone,silent phone,2.0,2.0,0.0,0.0
+Security & Privacy,Signal,signal,signal,signal,1.0,1.0,0.0,0.0
+Security & Privacy,Briar,briar,briar,briar,1.0,1.0,0.0,0.0
+Security & Privacy,Matrix,matrix,matrix,matrix,1.0,1.0,0.0,0.0
+Security & Privacy,Element,element,element,element,1.0,1.0,0.0,0.0
+Security & Privacy,Wire,wire,wire,wire,1.0,1.0,0.0,0.0
+Security & Privacy,Threema,threema,threema,threema,1.0,1.0,0.0,0.0
+Security & Privacy,Wickr Me (if active),wickr me if active,wickr me if active,wickr me if active,4.0,4.0,0.0,0.0
+Security & Privacy,Telegram Secret Chat,telegram secret chat,telegram secret chat,telegram secret chat,3.0,3.0,0.0,0.0
+Security & Privacy,WhatsApp,whatsapp,whatsapp,whatsapp,1.0,1.0,0.0,0.0
+Security & Privacy,iMessage,imessage,imessage,imessage,1.0,1.0,0.0,0.0
+Security & Privacy,Viber,viber,viber,viber,1.0,1.0,0.0,0.0
+Security & Privacy,Line,line,line,line,1.0,1.0,0.0,0.0
+Security & Privacy,WeChat,wechat,wechat,wechat,1.0,1.0,0.0,0.0
+Security & Privacy,KakaoTalk,kakaotalk,kakaotalk,kakaotalk,1.0,1.0,0.0,0.0
+Security & Privacy,QQ,qq,qq,qq,1.0,1.0,0.0,0.0
+Security & Privacy,ICQ,icq,icq,icq,1.0,1.0,0.0,0.0
+Security & Privacy,AIM,aim,aim,aim,1.0,1.0,0.0,0.0
+Security & Privacy,IRC (with SSL),irc with ssl,irc with ssl,irc with ssl,3.0,3.0,0.0,0.0
+Security & Privacy,XMPP (with OMEMO),xmpp with omemo,xmpp with omemo,xmpp with omemo,3.0,3.0,0.0,0.0
+Security & Privacy,Conversations,conversations,conversations,conversations,1.0,1.0,0.0,0.0
+Security & Privacy,ChatSecure,chatsecure,chatsecure,chatsecure,1.0,1.0,0.0,0.0
+Security & Privacy,Monal,monal,monal,monal,1.0,1.0,0.0,0.0
+Security & Privacy,Siskin,siskin,siskin,siskin,1.0,1.0,0.0,0.0
+Security & Privacy,Beagle IM,beagle im,beagle im,beagle im,2.0,2.0,0.0,0.0
+Security & Privacy,Gajim,gajim,gajim,gajim,1.0,1.0,0.0,0.0
+Travel & Navigasi,Google Maps Go,google maps go,google maps go,google maps go,3.0,3.0,0.0,0.0
+Travel & Navigasi,TripIt Pro,tripit pro,tripit pro,tripit pro,2.0,2.0,0.0,0.0
+Travel & Navigasi,TripIt,tripit,tripit,tripit,1.0,1.0,0.0,0.0
+Travel & Navigasi,Airbnb,airbnb,airbnb,airbnb,1.0,1.0,0.0,0.0
+Travel & Navigasi,Hopper,hopper,hopper,hopper,1.0,1.0,0.0,0.0
+Travel & Navigasi,Flighty,flighty,flighty,flighty,1.0,1.0,0.0,0.0
+Travel & Navigasi,Maps.me,mapsme,mapsme,mapsme,1.0,1.0,0.0,0.0
+Travel & Navigasi,Rome2Rio,romerio,romerio,romerio,1.0,1.0,0.0,0.0
+Travel & Navigasi,Gaia GPS,gaia gps,gaia gps,gaia gps,2.0,2.0,0.0,0.0
+Travel & Navigasi,Komoot,komoot,komoot,komoot,1.0,1.0,0.0,0.0
+Travel & Navigasi,Ride with GPS,ride with gps,ride with gps,ride with gps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Trailforks,trailforks,trailforks,trailforks,1.0,1.0,0.0,0.0
+Travel & Navigasi,FatMap,fatmap,fatmap,fatmap,1.0,1.0,0.0,0.0
+Travel & Navigasi,OnTheSnow,onthesnow,onthesnow,onthesnow,1.0,1.0,0.0,0.0
+Travel & Navigasi,Ski Tracks,ski tracks,ski tracks,ski tracks,2.0,2.0,0.0,0.0
+Travel & Navigasi,Slopes,slopes,slopes,slopes,1.0,1.0,0.0,0.0
+Travel & Navigasi,Mapillary,mapillary,mapillary,mapillary,1.0,1.0,0.0,0.0
+Travel & Navigasi,OpenStreetMap,openstreetmap,openstreetmap,openstreetmap,1.0,1.0,0.0,0.0
+Travel & Navigasi,OsmAnd,osmand,osmand,osmand,1.0,1.0,0.0,0.0
+Travel & Navigasi,Organic Maps,organic maps,organic maps,organic maps,2.0,2.0,0.0,0.0
+Travel & Navigasi,MAPS.ME,mapsme,mapsme,mapsme,1.0,1.0,0.0,0.0
+Travel & Navigasi,Citymapper,citymapper,citymapper,citymapper,1.0,1.0,0.0,0.0
+Travel & Navigasi,Moovit,moovit,moovit,moovit,1.0,1.0,0.0,0.0
+Travel & Navigasi,Transit,transit,transit,transit,1.0,1.0,0.0,0.0
+Travel & Navigasi,Offline Maps & Navigation,offline maps navigation,offline maps navigation,offline maps navigation,4.0,3.0,1.0,25.0
+Travel & Navigasi,Sygic,sygic,sygic,sygic,1.0,1.0,0.0,0.0
+Travel & Navigasi,TomTom GO,tomtom go,tomtom go,tomtom go,2.0,2.0,0.0,0.0
+Travel & Navigasi,Navigon,navigon,navigon,navigon,1.0,1.0,0.0,0.0
+Travel & Navigasi,CoPilot GPS,copilot gps,copilot gps,copilot gps,2.0,2.0,0.0,0.0
+Travel & Navigasi,Polaris GPS,polaris gps,polaris gps,polaris gps,2.0,2.0,0.0,0.0
+Travel & Navigasi,GPS Essentials,gps essentials,gps essentials,gps essentials,2.0,2.0,0.0,0.0
+Travel & Navigasi,Locus Map,locus map,locus map,locus map,2.0,2.0,0.0,0.0
+Travel & Navigasi,AlpineQuest,alpinequest,alpinequest,alpinequest,1.0,1.0,0.0,0.0
+Travel & Navigasi,BackCountry Navigator,backcountry navigator,backcountry navigator,backcountry navigator,2.0,2.0,0.0,0.0
+Travel & Navigasi,Topo Maps,topo maps,topo maps,topo maps,2.0,2.0,0.0,0.0
+Travel & Navigasi,USGS Topo Maps,usgs topo maps,usgs topo maps,usgs topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Canada Topo Maps,canada topo maps,canada topo maps,canada topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,NZ Topo Maps,nz topo maps,nz topo maps,nz topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Australia Topo Maps,australia topo maps,australia topo maps,australia topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,UK Topo Maps,uk topo maps,uk topo maps,uk topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Europe Topo Maps,europe topo maps,europe topo maps,europe topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Africa Topo Maps,africa topo maps,africa topo maps,africa topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,South America Topo Maps,south america topo maps,south america topo maps,south america topo maps,4.0,4.0,0.0,0.0
+Travel & Navigasi,Asia Topo Maps,asia topo maps,asia topo maps,asia topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,World Topo Maps,world topo maps,world topo maps,world topo maps,3.0,3.0,0.0,0.0
+Travel & Navigasi,Google Earth,google earth,google earth,google earth,2.0,2.0,0.0,0.0
+Travel & Navigasi,NASA Worldview,nasa worldview,nasa worldview,nasa worldview,2.0,2.0,0.0,0.0
+Travel & Navigasi,Sentinel Hub,sentinel hub,sentinel hub,sentinel hub,2.0,2.0,0.0,0.0
+Travel & Navigasi,Zoom Earth,zoom earth,zoom earth,zoom earth,2.0,2.0,0.0,0.0
+Travel & Navigasi,Windy,windy,windy,windy,1.0,1.0,0.0,0.0
+Travel & Navigasi,Ventusky,ventusky,ventusky,ventusky,1.0,1.0,0.0,0.0
+Travel & Navigasi,WeatherPro,weatherpro,weatherpro,weatherpro,1.0,1.0,0.0,0.0
+Travel & Navigasi,WeatherBug,weatherbug,weatherbug,weatherbug,1.0,1.0,0.0,0.0
+Travel & Navigasi,AccuWeather,accuweather,accuweather,accuweather,1.0,1.0,0.0,0.0
+Travel & Navigasi,The Weather Channel,the weather channel,the weather channel,the weather channel,3.0,3.0,0.0,0.0
+Travel & Navigasi,Weather Underground,weather underground,weather underground,weather underground,2.0,2.0,0.0,0.0
+Travel & Navigasi,Dark Sky (Apple Weather),dark sky apple weather,dark sky apple weather,dark sky apple weather,4.0,4.0,0.0,0.0
+Travel & Navigasi,Carrot Weather,carrot weather,carrot weather,carrot weather,2.0,2.0,0.0,0.0
+Travel & Navigasi,Hello Weather,hello weather,hello weather,hello weather,2.0,2.0,0.0,0.0
+Travel & Navigasi,Weather Mate,weather mate,weather mate,weather mate,2.0,2.0,0.0,0.0
+Travel & Navigasi,Weather Live,weather live,weather live,weather live,2.0,2.0,0.0,0.0
+Travel & Navigasi,Weather XL,weather xl,weather,weather,2.0,1.0,1.0,50.0
+Travel & Navigasi,Weather & Radar,weather radar,weather radar,weather radar,3.0,2.0,1.0,33.3
+Travel & Navigasi,Rain Alarm,rain alarm,rain alarm,rain alarm,2.0,2.0,0.0,0.0
+Travel & Navigasi,MyRadar,myradar,myradar,myradar,1.0,1.0,0.0,0.0
+Travel & Navigasi,RadarScope,radarscope,radarscope,radarscope,1.0,1.0,0.0,0.0
+Travel & Navigasi,Storm Radar,storm radar,storm radar,storm radar,2.0,2.0,0.0,0.0
+Travel & Navigasi,Weather on the Way,weather on the way,weather on the way,weather on the way,4.0,4.0,0.0,0.0
+Travel & Navigasi,Drive Weather,drive weather,drive weather,drive weather,2.0,2.0,0.0,0.0
+Travel & Navigasi,FlightRadar24,flightradar,flightradar,flightradar,1.0,1.0,0.0,0.0
+Travel & Navigasi,FlightRadar24 Gold,flightradar gold,flightradar gold,flightradar gold,2.0,2.0,0.0,0.0
+Travel & Navigasi,ADSBExchange,adsbexchange,adsbexchange,adsbexchange,1.0,1.0,0.0,0.0
+Travel & Navigasi,RadarBox,radarbox,radarbox,radarbox,1.0,1.0,0.0,0.0
+Travel & Navigasi,PlaneFinder,planefinder,planefinder,planefinder,1.0,1.0,0.0,0.0
+Travel & Navigasi,FlightAware Global,flightaware global,flightaware,flightaware,2.0,1.0,1.0,50.0
+Travel & Navigasi,LiveATC Air Radio,liveatc air radio,liveatc air radio,liveatc air radio,3.0,3.0,0.0,0.0
+Travel & Navigasi,ForeFlight,foreflight,foreflight,foreflight,1.0,1.0,0.0,0.0
+Travel & Navigasi,ForeFlight Dispatch,foreflight dispatch,foreflight dispatch,foreflight dispatch,2.0,2.0,0.0,0.0
+Travel & Navigasi,Navigraph Charts,navigraph charts,navigraph charts,navigraph charts,2.0,2.0,0.0,0.0
+Travel & Navigasi,Infinite Flight Pro,infinite flight pro,infinite flight pro,infinite flight pro,3.0,3.0,0.0,0.0
+Travel & Navigasi,RFS Real Flight Simulator,rfs real flight simulator,rfs flight simulator,rfs flight simulator,4.0,3.0,1.0,25.0
+Travel & Navigasi,SkyDemon,skydemon,skydemon,skydemon,1.0,1.0,0.0,0.0
+Travel & Navigasi,LogTen Pro,logten pro,logten pro,logten pro,2.0,2.0,0.0,0.0
+Travel & Navigasi,X-Plane 12 Mobile,xplane mobile,xplane mobile,xplane mobile,3.0,2.0,1.0,33.3
+Travel & Navigasi,CloudAhoy,cloudahoy,cloudahoy,cloudahoy,1.0,1.0,0.0,0.0
+Travel & Navigasi,Aeroweather Pro,aeroweather pro,aeroweather pro,aeroweather pro,2.0,2.0,0.0,0.0
+Travel & Navigasi,Flighty Pro,flighty pro,flighty pro,flighty pro,2.0,2.0,0.0,0.0
+Travel & Navigasi,TripCase,tripcase,tripcase,tripcase,1.0,1.0,0.0,0.0
+Travel & Navigasi,App in the Air,app in the air,app in the air,app in the air,4.0,4.0,0.0,0.0
+Travel & Navigasi,GateGuru,gateguru,gateguru,gateguru,1.0,1.0,0.0,0.0
+Travel & Navigasi,LoungeBuddy,loungebuddy,loungebuddy,loungebuddy,1.0,1.0,0.0,0.0
+Travel & Navigasi,ExpertFlyer,expertflyer,expertflyer,expertflyer,1.0,1.0,0.0,0.0
+Travel & Navigasi,SeatGuru,seatguru,seatguru,seatguru,1.0,1.0,0.0,0.0
+Travel & Navigasi,SeatAlerts,seatalerts,seatalerts,seatalerts,1.0,1.0,0.0,0.0
+Travel & Navigasi,AwardWallet,awardwallet,awardwallet,awardwallet,1.0,1.0,0.0,0.0
+Travel & Navigasi,Points.com,pointscom,pointscom,pointscom,1.0,1.0,0.0,0.0
+Travel & Navigasi,MilesTracker,milestracker,milestracker,milestracker,1.0,1.0,0.0,0.0
+Travel & Navigasi,Kayak,kayak,kayak,kayak,1.0,1.0,0.0,0.0
+Travel & Navigasi,Skyscanner,skyscanner,skyscanner,skyscanner,1.0,1.0,0.0,0.0
+Travel & Navigasi,Momondo,momondo,momondo,momondo,1.0,1.0,0.0,0.0
+Travel & Navigasi,Cheapflights,cheapflights,cheapflights,cheapflights,1.0,1.0,0.0,0.0
+Travel & Navigasi,Google Travel,google travel,google travel,google travel,2.0,2.0,0.0,0.0
+Travel & Navigasi,Expedia,expedia,expedia,expedia,1.0,1.0,0.0,0.0
+Travel & Navigasi,Travelocity,travelocity,travelocity,travelocity,1.0,1.0,0.0,0.0
+Travel & Navigasi,Orbitz,orbitz,orbitz,orbitz,1.0,1.0,0.0,0.0
+Travel & Navigasi,Priceline,priceline,priceline,priceline,1.0,1.0,0.0,0.0
+Travel & Navigasi,Agoda,agoda,agoda,agoda,1.0,1.0,0.0,0.0
+Travel & Navigasi,Trivago,trivago,trivago,trivago,1.0,1.0,0.0,0.0
+Travel & Navigasi,Hotels.com,hotelscom,hotelscom,hotelscom,1.0,1.0,0.0,0.0
+Travel & Navigasi,Hotwire,hotwire,hotwire,hotwire,1.0,1.0,0.0,0.0
+Travel & Navigasi,Lastminute.com,lastminutecom,lastminutecom,lastminutecom,1.0,1.0,0.0,0.0
+Travel & Navigasi,TravelZoo,travelzoo,travelzoo,travelzoo,1.0,1.0,0.0,0.0
+Travel & Navigasi,Groupon Getaways,groupon getaways,groupon getaways,groupon getaways,2.0,2.0,0.0,0.0
+Travel & Navigasi,LivingSocial Escapes,livingsocial escapes,livingsocial escapes,livingsocial escapes,2.0,2.0,0.0,0.0
+Travel & Navigasi,Viator,viator,viator,viator,1.0,1.0,0.0,0.0
+Travel & Navigasi,GetYourGuide,getyourguide,getyourguide,getyourguide,1.0,1.0,0.0,0.0
+Travel & Navigasi,Klook,klook,klook,klook,1.0,1.0,0.0,0.0
+Travel & Navigasi,KKday,kkday,kkday,kkday,1.0,1.0,0.0,0.0
+Travel & Navigasi,Civitatis,civitatis,civitatis,civitatis,1.0,1.0,0.0,0.0
+Travel & Navigasi,Context Travel,context travel,context travel,context travel,2.0,2.0,0.0,0.0
+Travel & Navigasi,ToursByLocals,toursbylocals,toursbylocals,toursbylocals,1.0,1.0,0.0,0.0
+Travel & Navigasi,WithLocals,withlocals,withlocals,withlocals,1.0,1.0,0.0,0.0
+Travel & Navigasi,EatWith,eatwith,eatwith,eatwith,1.0,1.0,0.0,0.0
+Travel & Navigasi,VizEat,vizeat,vizeat,vizeat,1.0,1.0,0.0,0.0
+Travel & Navigasi,Traveling Spoon,traveling spoon,traveling spoon,traveling spoon,2.0,2.0,0.0,0.0
+Travel & Navigasi,Airbnb Experiences,airbnb experiences,airbnb experiences,airbnb experiences,2.0,2.0,0.0,0.0
+Travel & Navigasi,MEETin,meetin,meetin,meetin,1.0,1.0,0.0,0.0
+Travel & Navigasi,TripAdvisor,tripadvisor,tripadvisor,tripadvisor,1.0,1.0,0.0,0.0
+Travel & Navigasi,Yelp Travel,yelp travel,yelp travel,yelp travel,2.0,2.0,0.0,0.0
+Travel & Navigasi,Foursquare Swarm,foursquare swarm,foursquare swarm,foursquare swarm,2.0,2.0,0.0,0.0
+Travel & Navigasi,Polarsteps,polarsteps,polarsteps,polarsteps,1.0,1.0,0.0,0.0
+Travel & Navigasi,Find Penguins,find penguins,find penguins,find penguins,2.0,2.0,0.0,0.0
+Travel & Navigasi,Journal,journal,journal,journal,1.0,1.0,0.0,0.0
+Travel & Navigasi,Day One Trip,day one trip,day one trip,day one trip,3.0,3.0,0.0,0.0
+Travel & Navigasi,Path Tracker,path tracker,path tracker,path tracker,2.0,2.0,0.0,0.0
+News & Media,Kompas,kompas,kompas,kompas,1.0,1.0,0.0,0.0
+News & Media,Tempo,tempo,tempo,tempo,1.0,1.0,0.0,0.0
+News & Media,Detik,detik,detik,detik,1.0,1.0,0.0,0.0
+News & Media,The New York Times,the new york times,the york times,the york times,4.0,3.0,1.0,25.0
+News & Media,Reuters,reuters,reuters,reuters,1.0,1.0,0.0,0.0
+News & Media,Kompas.id,kompasid,kompasid,kompasid,1.0,1.0,0.0,0.0
+News & Media,Tempo Media,tempo media,tempo media,tempo media,2.0,2.0,0.0,0.0
+News & Media,Bisnis Indonesia,bisnis indonesia,bisnis indonesia,bisnis indonesia,2.0,2.0,0.0,0.0
+News & Media,The Jakarta Post,the jakarta post,the jakarta post,the jakarta post,3.0,3.0,0.0,0.0
+News & Media,Katadata (D-Insights),katadata dinsights,katadata dinsights,katadata dinsights,2.0,2.0,0.0,0.0
+News & Media,Kontan Digital,kontan digital,,,2.0,0.0,2.0,100.0
+News & Media,IDN Times,idn times,idn times,idn times,2.0,2.0,0.0,0.0
+News & Media,Financial Times (FT),financial times ft,financial times ft,financial times ft,3.0,3.0,0.0,0.0
+News & Media,The Ken (SE Asia),the ken se asia,the ken asia,the ken asia,4.0,3.0,1.0,25.0
+News & Media,Harvard Business Review,harvard business review,harvard business review,harvard business review,3.0,3.0,0.0,0.0
+News & Media,BBC News,bbc news,bbc news,bbc news,2.0,2.0,0.0,0.0
+News & Media,CNN,cnn,cnn,cnn,1.0,1.0,0.0,0.0
+News & Media,Fox News,fox news,fox news,fox news,2.0,2.0,0.0,0.0
+News & Media,MSNBC,msnbc,msnbc,msnbc,1.0,1.0,0.0,0.0
+News & Media,NPR,npr,npr,npr,1.0,1.0,0.0,0.0
+News & Media,PBS News,pbs news,pbs news,pbs news,2.0,2.0,0.0,0.0
+News & Media,Al Jazeera,al jazeera,al jazeera,al jazeera,2.0,2.0,0.0,0.0
+News & Media,France 24,france,france,france,2.0,1.0,1.0,50.0
+News & Media,Deutsche Welle,deutsche welle,deutsche welle,deutsche welle,2.0,2.0,0.0,0.0
+News & Media,Euronews,euronews,euronews,euronews,1.0,1.0,0.0,0.0
+News & Media,Sky News,sky news,sky news,sky news,2.0,2.0,0.0,0.0
+News & Media,ITV News,itv news,itv news,itv news,2.0,2.0,0.0,0.0
+News & Media,Channel 4 News,channel news,channel news,channel news,3.0,2.0,1.0,33.3
+News & Media,CBC News,cbc news,cbc news,cbc news,2.0,2.0,0.0,0.0
+News & Media,CTV News,ctv news,ctv news,ctv news,2.0,2.0,0.0,0.0
+News & Media,Global News,global news,news,news,2.0,1.0,1.0,50.0
+News & Media,ABC News Australia,abc news australia,abc news australia,abc news australia,3.0,3.0,0.0,0.0
+News & Media,SBS News,sbs news,sbs news,sbs news,2.0,2.0,0.0,0.0
+News & Media,9News,news,news,news,1.0,1.0,0.0,0.0
+News & Media,TVNZ News,tvnz news,tvnz news,tvnz news,2.0,2.0,0.0,0.0
+News & Media,Stuff.co.nz,stuffconz,stuffconz,stuffconz,1.0,1.0,0.0,0.0
+News & Media,NZ Herald,nz herald,nz herald,nz herald,2.0,2.0,0.0,0.0
+News & Media,The Times,the times,the times,the times,2.0,2.0,0.0,0.0
+News & Media,The Telegraph,the telegraph,the telegraph,the telegraph,2.0,2.0,0.0,0.0
+News & Media,The Independent,the independent,the independent,the independent,2.0,2.0,0.0,0.0
+News & Media,The Sun,the sun,the sun,the sun,2.0,2.0,0.0,0.0
+News & Media,Daily Mail,daily mail,daily mail,daily mail,2.0,2.0,0.0,0.0
+News & Media,Daily Express,daily express,daily express,daily express,2.0,2.0,0.0,0.0
+News & Media,The Mirror,the mirror,the mirror,the mirror,2.0,2.0,0.0,0.0
+News & Media,Evening Standard,evening standard,evening standard,evening standard,2.0,2.0,0.0,0.0
+News & Media,The Scotsman,the scotsman,the scotsman,the scotsman,2.0,2.0,0.0,0.0
+News & Media,The Herald,the herald,the herald,the herald,2.0,2.0,0.0,0.0
+News & Media,The Irish Times,the irish times,the irish times,the irish times,3.0,3.0,0.0,0.0
+News & Media,The Irish Independent,the irish independent,the irish independent,the irish independent,3.0,3.0,0.0,0.0
+News & Media,The Sydney Morning Herald,the sydney morning herald,the sydney morning herald,the sydney morning herald,4.0,4.0,0.0,0.0
+News & Media,The Age,the age,the age,the age,2.0,2.0,0.0,0.0
+News & Media,The Australian,the australian,the australian,the australian,2.0,2.0,0.0,0.0
+News & Media,Brisbane Times,brisbane times,brisbane times,brisbane times,2.0,2.0,0.0,0.0
+News & Media,The West Australian,the west australian,the west australian,the west australian,3.0,3.0,0.0,0.0
+News & Media,The New Zealand Herald,the new zealand herald,the zealand herald,the zealand herald,4.0,3.0,1.0,25.0
+News & Media,The Dominion Post,the dominion post,the dominion post,the dominion post,3.0,3.0,0.0,0.0
+News & Media,The Press,the press,the press,the press,2.0,2.0,0.0,0.0
+News & Media,The Southland Times,the southland times,the southland times,the southland times,3.0,3.0,0.0,0.0
+News & Media,The Otago Daily Times,the otago daily times,the otago daily times,the otago daily times,4.0,4.0,0.0,0.0
+News & Media,The Straits Times,the straits times,the straits times,the straits times,3.0,3.0,0.0,0.0
+News & Media,The Bangkok Post,the bangkok post,the bangkok post,the bangkok post,3.0,3.0,0.0,0.0
+News & Media,The Nation,the nation,the nation,the nation,2.0,2.0,0.0,0.0
+News & Media,The Phnom Penh Post,the phnom penh post,the phnom penh post,the phnom penh post,4.0,4.0,0.0,0.0
+News & Media,The Korea Times,the korea times,the korea times,the korea times,3.0,3.0,0.0,0.0
+News & Media,The Japan Times,the japan times,the japan times,the japan times,3.0,3.0,0.0,0.0
+News & Media,China Daily,china daily,china daily,china daily,2.0,2.0,0.0,0.0
+News & Media,South China Morning Post,south china morning post,south china morning post,south china morning post,4.0,4.0,0.0,0.0
+News & Media,The Hindu,the hindu,the hindu,the hindu,2.0,2.0,0.0,0.0
+News & Media,The Times of India,the times of india,the times of india,the times of india,4.0,4.0,0.0,0.0
+News & Media,Hindustan Times,hindustan times,hindustan times,hindustan times,2.0,2.0,0.0,0.0
+News & Media,The Indian Express,the indian express,the indian express,the indian express,3.0,3.0,0.0,0.0
+News & Media,Dawn,dawn,dawn,dawn,1.0,1.0,0.0,0.0
+News & Media,Khaleej Times,khaleej times,khaleej times,khaleej times,2.0,2.0,0.0,0.0
+News & Media,Gulf News,gulf news,gulf news,gulf news,2.0,2.0,0.0,0.0
+News & Media,The National,the national,the national,the national,2.0,2.0,0.0,0.0
+News & Media,The Jerusalem Post,the jerusalem post,the jerusalem post,the jerusalem post,3.0,3.0,0.0,0.0
+News & Media,Haaretz,haaretz,haaretz,haaretz,1.0,1.0,0.0,0.0
+News & Media,The Times of Israel,the times of israel,the times of israel,the times of israel,4.0,4.0,0.0,0.0
+News & Media,Al Arabiya,al arabiya,al arabiya,al arabiya,2.0,2.0,0.0,0.0
+News & Media,Mada Masr,mada masr,mada masr,mada masr,2.0,2.0,0.0,0.0
+News & Media,Daily News Egypt,daily news egypt,daily news egypt,daily news egypt,3.0,3.0,0.0,0.0
+News & Media,The Africa Report,the africa report,the africa report,the africa report,3.0,3.0,0.0,0.0
+News & Media,Mail & Guardian,mail guardian,mail guardian,mail guardian,3.0,2.0,1.0,33.3
+News & Media,Daily Maverick,daily maverick,daily maverick,daily maverick,2.0,2.0,0.0,0.0
+News & Media,The New Times,the new times,the times,the times,3.0,2.0,1.0,33.3
+News & Media,The Monitor (Uganda),the monitor uganda,the monitor uganda,the monitor uganda,3.0,3.0,0.0,0.0
+News & Media,Daily Nation,daily nation,daily nation,daily nation,2.0,2.0,0.0,0.0
+News & Media,The Star (Kenya),the star kenya,the star kenya,the star kenya,3.0,3.0,0.0,0.0
+News & Media,The Citizen (Tanzania),the citizen tanzania,the citizen tanzania,the citizen tanzania,3.0,3.0,0.0,0.0
+News & Media,The Herald (Zimbabwe),the herald zimbabwe,the herald zimbabwe,the herald zimbabwe,3.0,3.0,0.0,0.0
+News & Media,News24,news,news,news,1.0,1.0,0.0,0.0
+News & Media,IOL,iol,iol,iol,1.0,1.0,0.0,0.0
+News & Media,Business Day (SA),business day sa,business day sa,business day sa,3.0,3.0,0.0,0.0
+News & Media,Financial Mail,financial mail,financial mail,financial mail,2.0,2.0,0.0,0.0
+News & Media,The Namibian,the namibian,the namibian,the namibian,2.0,2.0,0.0,0.0
+News & Media,The Botswana Guardian,the botswana guardian,the botswana guardian,the botswana guardian,3.0,3.0,0.0,0.0
+News & Media,Zambia Daily Mail,zambia daily mail,zambia daily mail,zambia daily mail,3.0,3.0,0.0,0.0
+News & Media,The Post (Zambia),the post zambia,the post zambia,the post zambia,3.0,3.0,0.0,0.0
+Reading & Knowledge,Kindle Unlimited,kindle unlimited,kindle unlimited,kindle unlimited,2.0,2.0,0.0,0.0
+Reading & Knowledge,Scribd,scribd,scribd,scribd,1.0,1.0,0.0,0.0
+Reading & Knowledge,Blinkist,blinkist,blinkist,blinkist,1.0,1.0,0.0,0.0
+Reading & Knowledge,Headway,headway,headway,headway,1.0,1.0,0.0,0.0
+Reading & Knowledge,Bookmate,bookmate,bookmate,bookmate,1.0,1.0,0.0,0.0
+Reading & Knowledge,Storytel,storytel,storytel,storytel,1.0,1.0,0.0,0.0
+Reading & Knowledge,Bookbeat,bookbeat,bookbeat,bookbeat,1.0,1.0,0.0,0.0
+Reading & Knowledge,Nextory,nextory,nextory,nextory,1.0,1.0,0.0,0.0
+Reading & Knowledge,24symbols,symbols,symbols,symbols,1.0,1.0,0.0,0.0
+Reading & Knowledge,Perlego,perlego,perlego,lego,1.0,1.0,0.0,0.0
+Reading & Knowledge,Z-Library (if accessible),zlibrary if accessible,zlibrary if accessible,zlibrary if accessible,3.0,3.0,0.0,0.0
+Reading & Knowledge,AudioBooks.com,audiobookscom,audiobookscom,audiobookscom,1.0,1.0,0.0,0.0
+Reading & Knowledge,Downpour,downpour,downpour,downpour,1.0,1.0,0.0,0.0
+Reading & Knowledge,Chirp,chirp,chirp,chirp,1.0,1.0,0.0,0.0
+Reading & Knowledge,Libro.fm,librofm,librofm,librofm,1.0,1.0,0.0,0.0
+Reading & Knowledge,Audiobooks Now,audiobooks now,audiobooks now,audiobooks now,2.0,2.0,0.0,0.0
+Reading & Knowledge,Kobo Plus,kobo plus,kobo,kobo,2.0,1.0,1.0,50.0
+Reading & Knowledge,BookFusion,bookfusion,bookfusion,bookfusion,1.0,1.0,0.0,0.0
+Reading & Knowledge,UPDF,updf,updf,updf,1.0,1.0,0.0,0.0
+Reading & Knowledge,Foxit PDF Reader,foxit pdf reader,foxit pdf reader,foxit pdf reader,3.0,3.0,0.0,0.0
+Reading & Knowledge,Lithium,lithium,lithium,lithium,1.0,1.0,0.0,0.0
+Reading & Knowledge,Aldiko,aldiko,aldiko,aldiko,1.0,1.0,0.0,0.0
+Reading & Knowledge,Cool Reader,cool reader,cool reader,cool reader,2.0,2.0,0.0,0.0
+Reading & Knowledge,AlReader,alreader,alreader,alreader,1.0,1.0,0.0,0.0
+Reading & Knowledge,Eboox,eboox,eboox,eboox,1.0,1.0,0.0,0.0
+Reading & Knowledge,FullReader,fullreader,fullreader,fullreader,1.0,1.0,0.0,0.0
+Reading & Knowledge,AIReader,aireader,aireader,aireader,1.0,1.0,0.0,0.0
+Reading & Knowledge,BookReader,bookreader,bookreader,bookreader,1.0,1.0,0.0,0.0
+Reading & Knowledge,Obook,obook,obook,obook,1.0,1.0,0.0,0.0
+Reading & Knowledge,QuickReader,quickreader,quickreader,quickreader,1.0,1.0,0.0,0.0
+Reading & Knowledge,Speed Reading,speed reading,speed reading,speed reading,2.0,2.0,0.0,0.0
+Reading & Knowledge,Outread,outread,outread,outread,1.0,1.0,0.0,0.0
+Reading & Knowledge,ReadMe,readme,readme,readme,1.0,1.0,0.0,0.0
+Reading & Knowledge,Marvin,marvin,marvin,marvin,1.0,1.0,0.0,0.0
+Reading & Knowledge,Chunky Comic Reader,chunky comic reader,chunky comic reader,chunky comic reader,3.0,3.0,0.0,0.0
+Reading & Knowledge,Panels,panels,panels,panels,1.0,1.0,0.0,0.0
+Reading & Knowledge,ComicFlow,comicflow,comicflow,comicflow,1.0,1.0,0.0,0.0
+Reading & Knowledge,Simple Comic,simple comic,simple comic,simple comic,2.0,2.0,0.0,0.0
+Reading & Knowledge,YACReader,yacreader,yacreader,yacreader,1.0,1.0,0.0,0.0
+Reading & Knowledge,Comic Zeal,comic zeal,comic zeal,comic zeal,2.0,2.0,0.0,0.0
+Reading & Knowledge,iComics,icomics,icomics,icomics,1.0,1.0,0.0,0.0
+Reading & Knowledge,Comic Screen,comic screen,comic screen,comic screen,2.0,2.0,0.0,0.0
+Reading & Knowledge,Perfect Viewer,perfect viewer,perfect viewer,perfect viewer,2.0,2.0,0.0,0.0
+Reading & Knowledge,Tachiyomi,tachiyomi,tachiyomi,tachiyomi,1.0,1.0,0.0,0.0
+Reading & Knowledge,Manga Rock (defunct alternatives),manga rock defunct alternatives,manga rock defunct alternatives,manga rock defunct alternatives,4.0,4.0,0.0,0.0
+Reading & Knowledge,Manga Storm,manga storm,manga storm,manga storm,2.0,2.0,0.0,0.0
+Reading & Knowledge,Manga Bird,manga bird,manga bird,manga bird,2.0,2.0,0.0,0.0
+Reading & Knowledge,Manga Searcher,manga searcher,manga searcher,manga searcher,2.0,2.0,0.0,0.0
+Reading & Knowledge,Manga Reader,manga reader,manga reader,manga reader,2.0,2.0,0.0,0.0
+Reading & Knowledge,Manga Zone,manga zone,manga zone,manga zone,2.0,2.0,0.0,0.0
+Reading & Knowledge,Manga Plus,manga plus,manga,manga,2.0,1.0,1.0,50.0
+Reading & Knowledge,Shonen Jump,shonen jump,shonen jump,shonen jump,2.0,2.0,0.0,0.0
+Reading & Knowledge,Viz Manga,viz manga,viz manga,viz manga,2.0,2.0,0.0,0.0
+Reading & Knowledge,Crunchyroll Manga,crunchyroll manga,crunchyroll manga,crunchyroll manga,2.0,2.0,0.0,0.0
+Reading & Knowledge,ComiXology,comixology,comixology,comixology,1.0,1.0,0.0,0.0
+Reading & Knowledge,Marvel Unlimited,marvel unlimited,marvel unlimited,marvel unlimited,2.0,2.0,0.0,0.0
+Reading & Knowledge,DC Universe Infinite,dc universe infinite,dc universe infinite,dc universe infinite,3.0,3.0,0.0,0.0
+Reading & Knowledge,2000 AD,ad,ad,ad,2.0,1.0,1.0,50.0
+Reading & Knowledge,Image Comics,image comics,image comics,image comics,2.0,2.0,0.0,0.0
+Reading & Knowledge,Dark Horse Comics,dark horse comics,dark horse comics,dark horse comics,3.0,3.0,0.0,0.0
+Reading & Knowledge,Boom Studios,boom studios,boom studios,boom studios,2.0,2.0,0.0,0.0
+Reading & Knowledge,IDW Publishing,idw publishing,idw publishing,idw publishing,2.0,2.0,0.0,0.0
+Reading & Knowledge,Valiant Comics,valiant comics,valiant comics,valiant comics,2.0,2.0,0.0,0.0
+Reading & Knowledge,Dynamite Entertainment,dynamite entertainment,dynamite entertainment,dynamite entertainment,2.0,2.0,0.0,0.0
+Reading & Knowledge,Oni Press,oni press,oni press,oni press,2.0,2.0,0.0,0.0
+Reading & Knowledge,Fantagraphics,fantagraphics,fantagraphics,fantagraphics,1.0,1.0,0.0,0.0
+Reading & Knowledge,Drawn & Quarterly,drawn quarterly,drawn quarterly,drawn quarterly,3.0,2.0,1.0,33.3
+Reading & Knowledge,Top Shelf,top shelf,shelf,shelf,2.0,1.0,1.0,50.0
+Reading & Knowledge,First Second,first second,first second,first second,2.0,2.0,0.0,0.0
+Reading & Knowledge,Nobrow,nobrow,nobrow,nobrow,1.0,1.0,0.0,0.0
+Reading & Knowledge,SelfMadeHero,selfmadehero,selfmadehero,selfmadehero,1.0,1.0,0.0,0.0
+Reading & Knowledge,Conundrum Press,conundrum press,conundrum press,conundrum press,2.0,2.0,0.0,0.0
+Reading & Knowledge,Koyama Press,koyama press,koyama press,koyama press,2.0,2.0,0.0,0.0
+Reading & Knowledge,Uncivilized Books,uncivilized books,uncivilized books,uncivilized books,2.0,2.0,0.0,0.0
+Self Development & Habit,Streaks,streaks,streaks,streaks,1.0,1.0,0.0,0.0
+Self Development & Habit,Forest,forest,forest,forest,1.0,1.0,0.0,0.0
+Self Development & Habit,Endel,endel,endel,endel,1.0,1.0,0.0,0.0
+Self Development & Habit,Brain.fm,brainfm,brainfm,brainfm,1.0,1.0,0.0,0.0
+Self Development & Habit,Nuzzel,nuzzel,nuzzel,nuzzel,1.0,1.0,0.0,0.0
+Self Development & Habit,Artifact,artifact,artifact,artifact,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitShare,habitshare,habitshare,habitshare,1.0,1.0,0.0,0.0
+Self Development & Habit,Strides,strides,strides,strides,1.0,1.0,0.0,0.0
+Self Development & Habit,Habitica,habitica,habitica,habitica,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitBull,habitbull,habitbull,habitbull,1.0,1.0,0.0,0.0
+Self Development & Habit,Habitify,habitify,habitify,habitify,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitNow,habitnow,habitnow,habitnow,1.0,1.0,0.0,0.0
+Self Development & Habit,Loop Habit Tracker,loop habit tracker,loop habit tracker,loop habit tracker,3.0,3.0,0.0,0.0
+Self Development & Habit,Habit Tracker,habit tracker,habit tracker,habit tracker,2.0,2.0,0.0,0.0
+Self Development & Habit,Everyday Habits,everyday habits,everyday habits,everyday habits,2.0,2.0,0.0,0.0
+Self Development & Habit,Productive,productive,productive,productive,1.0,1.0,0.0,0.0
+Self Development & Habit,Done,done,done,done,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitHub,habithub,habithub,habithub,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitMinder,habitminder,habitminder,habitminder,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitFlow,habitflow,habitflow,habitflow,1.0,1.0,0.0,0.0
+Self Development & Habit,Habit List,habit list,habit list,habit list,2.0,2.0,0.0,0.0
+Self Development & Habit,Habit Calendar,habit calendar,habit calendar,habit calendar,2.0,2.0,0.0,0.0
+Self Development & Habit,Momentum,momentum,momentum,momentum,1.0,1.0,0.0,0.0
+Self Development & Habit,Coach.me,coachme,coachme,coachme,1.0,1.0,0.0,0.0
+Self Development & Habit,Goal Tracker,goal tracker,goal tracker,goal tracker,2.0,2.0,0.0,0.0
+Self Development & Habit,Goalsetter,goalsetter,goalsetter,goalsetter,1.0,1.0,0.0,0.0
+Self Development & Habit,Gyroscope,gyroscope,gyroscope,gyroscope,1.0,1.0,0.0,0.0
+Self Development & Habit,Zenobase,zenobase,zenobase,zenobase,1.0,1.0,0.0,0.0
+Self Development & Habit,Reporter App,reporter app,reporter app,reporter app,2.0,2.0,0.0,0.0
+Self Development & Habit,Nomie,nomie,nomie,nomie,1.0,1.0,0.0,0.0
+Self Development & Habit,Track & Share,track share,track share,track share,3.0,2.0,1.0,33.3
+Self Development & Habit,Instant,instant,instant,instant,1.0,1.0,0.0,0.0
+Self Development & Habit,Daylio,daylio,daylio,daylio,1.0,1.0,0.0,0.0
+Self Development & Habit,Life Cycle,life cycle,life cycle,life cycle,2.0,2.0,0.0,0.0
+Self Development & Habit,Moodnotes,moodnotes,moodnotes,moodnotes,1.0,1.0,0.0,0.0
+Self Development & Habit,Day One,day one,day one,day one,2.0,2.0,0.0,0.0
+Self Development & Habit,Gratitude,gratitude,gratitude,gratitude,1.0,1.0,0.0,0.0
+Self Development & Habit,The Five Minute Journal,the five minute journal,the five minute journal,the five mute journal,4.0,4.0,0.0,0.0
+Self Development & Habit,Presently,presently,presently,presently,1.0,1.0,0.0,0.0
+Self Development & Habit,Grateful,grateful,grateful,grateful,1.0,1.0,0.0,0.0
+Self Development & Habit,365 Gratitude,gratitude,gratitude,gratitude,2.0,1.0,1.0,50.0
+Self Development & Habit,Happier,happier,happier,happier,1.0,1.0,0.0,0.0
+Self Development & Habit,Buddhify,buddhify,buddhify,buddhify,1.0,1.0,0.0,0.0
+Self Development & Habit,Plum Village,plum village,plum village,plum village,2.0,2.0,0.0,0.0
+Self Development & Habit,The Mindfulness App,the mindfulness app,the mindfulness app,the mindfulness app,3.0,3.0,0.0,0.0
+Self Development & Habit,Stop,stop,stop,stop,1.0,1.0,0.0,0.0
+Self Development & Habit,Breathe & Think,breathe think,breathe think,breathe think,3.0,2.0,1.0,33.3
+Self Development & Habit,Inner Balance,inner balance,inner balance,inner balance,2.0,2.0,0.0,0.0
+Self Development & Habit,HeartMath,heartmath,heartmath,heartmath,1.0,1.0,0.0,0.0
+Self Development & Habit,StressScan,stressscan,stressscan,stressscan,1.0,1.0,0.0,0.0
+Self Development & Habit,Welltory,welltory,welltory,welltory,1.0,1.0,0.0,0.0
+Self Development & Habit,Streaks (dari atas),streaks dari atas,streaks,streaks,3.0,1.0,2.0,66.7
+Self Development & Habit,Flora,flora,flora,flora,1.0,1.0,0.0,0.0
+Self Development & Habit,Care/of,careof,careof,careof,1.0,1.0,0.0,0.0
+Self Development & Habit,Rituals,rituals,rituals,rituals,1.0,1.0,0.0,0.0
+Self Development & Habit,HabitAware,habitaware,habitaware,habitaware,1.0,1.0,0.0,0.0
+Self Development & Habit,Keen,keen,keen,keen,1.0,1.0,0.0,0.0
+Self Development & Habit,MindDoc,minddoc,minddoc,minddoc,1.0,1.0,0.0,0.0
+Self Development & Habit,Woebot,woebot,woebot,woebot,1.0,1.0,0.0,0.0
+Self Development & Habit,Youper,youper,youper,youper,1.0,1.0,0.0,0.0
+Self Development & Habit,Wysa,wysa,wysa,wysa,1.0,1.0,0.0,0.0
+Self Development & Habit,Replika,replika,replika,replika,1.0,1.0,0.0,0.0
+Self Development & Habit,Kuki,kuki,kuki,kuk,1.0,1.0,0.0,0.0
+Self Development & Habit,SimSimi,simsimi,simsimi,simsimi,1.0,1.0,0.0,0.0
+Self Development & Habit,Cleverbot,cleverbot,cleverbot,cleverbot,1.0,1.0,0.0,0.0
+Self Development & Habit,Mitsuku,mitsuku,mitsuku,mitsuku,1.0,1.0,0.0,0.0
+Self Development & Habit,Rose,rose,rose,rose,1.0,1.0,0.0,0.0
+Self Development & Habit,Anima,anima,anima,anima,1.0,1.0,0.0,0.0
+Self Development & Habit,iGirl,igirl,igirl,igirl,1.0,1.0,0.0,0.0
+Self Development & Habit,iBoy,iboy,iboy,iboy,1.0,1.0,0.0,0.0
+Self Development & Habit,Romantic AI,romantic ai,romantic ai,romantic ai,2.0,2.0,0.0,0.0
+Self Development & Habit,Soulmate AI,soulmate ai,soulmate ai,soulmate ai,2.0,2.0,0.0,0.0
+Self Development & Habit,Journey,journey,journey,journey,1.0,1.0,0.0,0.0
+Self Development & Habit,Diarium,diarium,diarium,diarium,1.0,1.0,0.0,0.0
+Self Development & Habit,Penzu,penzu,penzu,penzu,1.0,1.0,0.0,0.0
+Self Development & Habit,Grid Diary,grid diary,grid diary,grid diary,2.0,2.0,0.0,0.0
+Self Development & Habit,Apple Journal,apple journal,apple journal,apple journal,2.0,2.0,0.0,0.0
+Self Development & Habit,Reflect,reflect,reflect,reflect,1.0,1.0,0.0,0.0
+Self Development & Habit,Dreamily,dreamily,dreamily,dreamily,1.0,1.0,0.0,0.0
+Self Development & Habit,Happyfeed,happyfeed,happyfeed,happyfeed,1.0,1.0,0.0,0.0
+Self Development & Habit,DailyBean,dailybean,dailybean,dailybean,1.0,1.0,0.0,0.0
+Self Development & Habit,DayGram,daygram,daygram,daygram,1.0,1.0,0.0,0.0
+Self Development & Habit,Momento,momento,momento,momento,1.0,1.0,0.0,0.0
+Self Development & Habit,Flown,flown,flown,flown,1.0,1.0,0.0,0.0
+Self Development & Habit,Noizio,noizio,noizio,noizio,1.0,1.0,0.0,0.0
+Self Development & Habit,Coffitivity,coffitivity,coffitivity,coffitivity,1.0,1.0,0.0,0.0
+Self Development & Habit,Soundrown,soundrown,soundrown,soundrown,1.0,1.0,0.0,0.0
+Social & Dating,Tinder,tinder,tinder,tinder,1.0,1.0,0.0,0.0
+Social & Dating,Bumble,bumble,bumble,bumble,1.0,1.0,0.0,0.0
+Social & Dating,OkCupid,okcupid,okcupid,okcupid,1.0,1.0,0.0,0.0
+Social & Dating,Tantan (VIP),tantan vip,tantan vip,tantan vip,2.0,2.0,0.0,0.0
+Social & Dating,Omi,omi,omi,omi,1.0,1.0,0.0,0.0
+Social & Dating,Badoo,badoo,badoo,badoo,1.0,1.0,0.0,0.0
+Social & Dating,Hinge,hinge,hinge,hinge,1.0,1.0,0.0,0.0
+Social & Dating,Coffee Meets Bagel,coffee meets bagel,coffee meets bagel,coffee meets bagel,3.0,3.0,0.0,0.0
+Social & Dating,Happn,happn,happn,happn,1.0,1.0,0.0,0.0
+Social & Dating,Litmatch,litmatch,litmatch,litmatch,1.0,1.0,0.0,0.0
+Social & Dating,The League,the league,the league,the league,2.0,2.0,0.0,0.0
+Social & Dating,EliteSingles,elitesingles,elitesingles,elitesingles,1.0,1.0,0.0,0.0
+Social & Dating,Inner Circle,inner circle,inner circle,inner circle,2.0,2.0,0.0,0.0
+Social & Dating,Raya,raya,,,1.0,0.0,1.0,100.0
+Social & Dating,Boo,boo,boo,boo,1.0,1.0,0.0,0.0
+Social & Dating,Schmooze,schmooze,schmooze,schmooze,1.0,1.0,0.0,0.0
+Social & Dating,Sapio,sapio,sapio,sapio,1.0,1.0,0.0,0.0
+Social & Dating,Muslim Mingle,muslim mingle,muslim mingle,muslim mingle,2.0,2.0,0.0,0.0
+Social & Dating,Hawaya,hawaya,hawaya,hawaya,1.0,1.0,0.0,0.0
+Social & Dating,Muzmatch (Muzz),muzmatch muzz,muzmatch muzz,muzmatch muzz,2.0,2.0,0.0,0.0
+Social & Dating,Salams,salams,salams,salams,1.0,1.0,0.0,0.0
+Social & Dating,Taaruf ID,taaruf id,taaruf id,taaruf id,2.0,2.0,0.0,0.0
+Social & Dating,Christian Mingle,christian mingle,christian mingle,christian mingle,2.0,2.0,0.0,0.0
+Social & Dating,JDate,jdate,jdate,jdate,1.0,1.0,0.0,0.0
+Social & Dating,Grindr,grindr,grindr,grindr,1.0,1.0,0.0,0.0
+Social & Dating,HER,her,her,her,1.0,1.0,0.0,0.0
+Social & Dating,Scruff,scruff,scruff,scruff,1.0,1.0,0.0,0.0
+Social & Dating,Taimi,taimi,taimi,taimi,1.0,1.0,0.0,0.0
+Social & Dating,Hornet,hornet,hornet,hornet,1.0,1.0,0.0,0.0
+Social & Dating,Lex,lex,lex,lex,1.0,1.0,0.0,0.0
+Social & Dating,Kippo,kippo,kippo,kippo,1.0,1.0,0.0,0.0
+Social & Dating,Feeld,feeld,feeld,feeld,1.0,1.0,0.0,0.0
+Social & Dating,Pure,pure,pure,pure,1.0,1.0,0.0,0.0
+Social & Dating,Veggly,veggly,veggly,veggly,1.0,1.0,0.0,0.0
+Social & Dating,Dig,dig,dig,dig,1.0,1.0,0.0,0.0
+Social & Dating,DateFit,datefit,datefit,datefit,1.0,1.0,0.0,0.0
+Social & Dating,Tastebuds,tastebuds,tastebuds,tastebuds,1.0,1.0,0.0,0.0
+Social & Dating,Thursday,thursday,thursday,thursday,1.0,1.0,0.0,0.0
+Social & Dating,TimeLeft,timeleft,timeleft,timeleft,1.0,1.0,0.0,0.0
+Social & Dating,Snack,snack,snack,snack,1.0,1.0,0.0,0.0
+Social & Dating,Plenty of Fish (POF),plenty of fish pof,plenty of fish pof,plenty of fish pof,4.0,4.0,0.0,0.0
+Social & Dating,Zoosk,zoosk,zoosk,zoosk,1.0,1.0,0.0,0.0
+Social & Dating,Match.com,matchcom,matchcom,matchcom,1.0,1.0,0.0,0.0
+Social & Dating,Clover,clover,clover,clover,1.0,1.0,0.0,0.0
+Social & Dating,Bumble Bizz,bumble bizz,bumble bizz,bumble bizz,2.0,2.0,0.0,0.0
+Social & Dating,Pikabu,pikabu,pikabu,pikabu,1.0,1.0,0.0,0.0
+Social & Dating,Setipe,setipe,setipe,tipe,1.0,1.0,0.0,0.0
+Social & Dating,Aisle,aisle,aisle,aisle,1.0,1.0,0.0,0.0
+Social & Dating,LOVOO,lovoo,lovoo,lovoo,1.0,1.0,0.0,0.0
+Social & Dating,Woo,woo,woo,woo,1.0,1.0,0.0,0.0
+Social & Dating,Facebook Dating,facebook dating,facebook dating,facebook dating,2.0,2.0,0.0,0.0
+Social & Dating,Instagram,instagram,instagram,instagram,1.0,1.0,0.0,0.0
+Social & Dating,Snapchat,snapchat,snapchat,snapchat,1.0,1.0,0.0,0.0
+Social & Dating,TikTok,tiktok,tiktok,tiktok,1.0,1.0,0.0,0.0
+Social & Dating,Twitter,twitter,twitter,twitter,1.0,1.0,0.0,0.0
+Social & Dating,X,x,,,1.0,0.0,1.0,100.0
+Social & Dating,Mastodon,mastodon,mastodon,mastodon,1.0,1.0,0.0,0.0
+Social & Dating,Threads,threads,threads,threads,1.0,1.0,0.0,0.0
+Social & Dating,Bluesky,bluesky,bluesky,bluesky,1.0,1.0,0.0,0.0
+Social & Dating,LinkedIn,linkedin,linkedin,linkedin,1.0,1.0,0.0,0.0
+Social & Dating,Tagged,tagged,tagged,tagged,1.0,1.0,0.0,0.0
+Social & Dating,Hi5,hi,hi,hi,1.0,1.0,0.0,0.0
+Social & Dating,Mamba,mamba,mamba,mamba,1.0,1.0,0.0,0.0
+Social & Dating,LovePlanet,loveplanet,loveplanet,loveplanet,1.0,1.0,0.0,0.0
+Social & Dating,Twoo,twoo,twoo,twoo,1.0,1.0,0.0,0.0
+Social & Dating,MeetMe,meetme,meetme,meetme,1.0,1.0,0.0,0.0
+Social & Dating,Skout,skout,skout,skout,1.0,1.0,0.0,0.0
+Social & Dating,Periscope (defunct),periscope defunct,periscope defunct,periscope defunct,2.0,2.0,0.0,0.0
+Social & Dating,Houseparty (if active),houseparty if active,houseparty if active,houseparty if active,3.0,3.0,0.0,0.0
+Social & Dating,Yubo,yubo,yubo,yubo,1.0,1.0,0.0,0.0
+Social & Dating,Bubbly,bubbly,bubbly,bubbly,1.0,1.0,0.0,0.0
+Social & Dating,Spotafriend,spotafriend,spotafriend,spotafriend,1.0,1.0,0.0,0.0
+Social & Dating,Yellow,yellow,yellow,yellow,1.0,1.0,0.0,0.0
+Social & Dating,Hoop,hoop,hoop,hoop,1.0,1.0,0.0,0.0
+Social & Dating,Wizz,wizz,wizz,wizz,1.0,1.0,0.0,0.0
+Social & Dating,Swag,swag,swag,swag,1.0,1.0,0.0,0.0
+Social & Dating,LMK,lmk,lmk,lmk,1.0,1.0,0.0,0.0
+Social & Dating,NGL,ngl,ngl,ngl,1.0,1.0,0.0,0.0
+Social & Dating,Sendit,sendit,sendit,sendit,1.0,1.0,0.0,0.0
+Social & Dating,Tellonym,tellonym,tellonym,tellonym,1.0,1.0,0.0,0.0
+Social & Dating,Sarahah,sarahah,sarahah,sarahah,1.0,1.0,0.0,0.0
+Social & Dating,Ask.fm,askfm,askfm,askfm,1.0,1.0,0.0,0.0
+Social & Dating,Curious Cat,curious cat,curious cat,curious cat,2.0,2.0,0.0,0.0
+Social & Dating,Formspring (defunct),formspring defunct,formspring defunct,formspring defunct,2.0,2.0,0.0,0.0
+Social & Dating,Qooh.me,qoohme,qoohme,qoohme,1.0,1.0,0.0,0.0
+Social & Dating,Anonymous Q&A,anonymous qa,anonymous qa,anonymous qa,2.0,2.0,0.0,0.0
+Social & Dating,Whisper,whisper,whisper,whisper,1.0,1.0,0.0,0.0
+Social & Dating,Secrets,secrets,secrets,secrets,1.0,1.0,0.0,0.0
+Social & Dating,PostSecret,postsecret,postsecret,postsecret,1.0,1.0,0.0,0.0
+Social & Dating,Yik Yak,yik yak,yik yak,yik yak,2.0,2.0,0.0,0.0
+Social & Dating,Jodel,jodel,jodel,jodel,1.0,1.0,0.0,0.0
+Social & Dating,Rumors,rumors,rumors,rumors,1.0,1.0,0.0,0.0
+Social & Dating,Swiflie,swiflie,swiflie,swiflie,1.0,1.0,0.0,0.0
+Social & Dating,F3,f,,,1.0,0.0,1.0,100.0
+Social & Dating,NearGroup,neargroup,neargroup,neargroup,1.0,1.0,0.0,0.0
+Social & Dating,Backpage,backpage,backpage,backpage,1.0,1.0,0.0,0.0
+Social & Dating,Craigslist Personals (defunct alternative),craigslist personals defunct alternative,craigslist personals defunct alternative,craigslist personals defunct alternative,4.0,4.0,0.0,0.0
+Social & Dating,DoubleList,doublelist,doublelist,doublelist,1.0,1.0,0.0,0.0
+Social & Dating,Locanto,locanto,locanto,locanto,1.0,1.0,0.0,0.0
+Social & Dating,Oodle,oodle,oodle,oodle,1.0,1.0,0.0,0.0
+Social & Dating,Geebo,geebo,geebo,geebo,1.0,1.0,0.0,0.0
+Social & Dating,YesBackpage,yesbackpage,yesbackpage,yesbackpage,1.0,1.0,0.0,0.0
+Social & Dating,ClassifiedsGiant,classifiedsgiant,classifiedsgiant,classifiedsgiant,1.0,1.0,0.0,0.0
+Social & Dating,Advertiseera,advertiseera,advertiseera,advertiseera,1.0,1.0,0.0,0.0
+Social & Dating,Facebook Marketplace,facebook marketplace,facebook marketplace,facebook marketplace,2.0,2.0,0.0,0.0
+Social & Dating,OfferUp,offerup,offerup,offerup,1.0,1.0,0.0,0.0
+Social & Dating,Letgo,letgo,letgo,letgo,1.0,1.0,0.0,0.0
+Social & Dating,5miles,miles,miles,miles,1.0,1.0,0.0,0.0
+Social & Dating,Mercari,mercari,mercari,mercari,1.0,1.0,0.0,0.0
+Social & Dating,Poshmark,poshmark,poshmark,poshmark,1.0,1.0,0.0,0.0
+Social & Dating,Depop,depop,depop,depop,1.0,1.0,0.0,0.0
+Social & Dating,Vinted,vinted,vinted,vinted,1.0,1.0,0.0,0.0
+Social & Dating,Grailed,grailed,grailed,grailed,1.0,1.0,0.0,0.0
+Social & Dating,StockX,stockx,stockx,stockx,1.0,1.0,0.0,0.0
+Social & Dating,GOAT,goat,goat,goat,1.0,1.0,0.0,0.0
+Social & Dating,Stadium Goods,stadium goods,stadium goods,stadium goods,2.0,2.0,0.0,0.0
+Social & Dating,Farfetch,farfetch,farfetch,farfetch,1.0,1.0,0.0,0.0
+Social & Dating,Net-a-Porter,netaporter,netaporter,netaporter,1.0,1.0,0.0,0.0
+Social & Dating,MyTheresa,mytheresa,mytheresa,mytheresa,1.0,1.0,0.0,0.0
+Social & Dating,MatchesFashion,matchesfashion,matchesfashion,matchesfashion,1.0,1.0,0.0,0.0
+Social & Dating,SSENSE,ssense,ssense,ssense,1.0,1.0,0.0,0.0
+Social & Dating,END.,end,end,end,1.0,1.0,0.0,0.0
+Social & Dating,HBX,hbx,hbx,hbx,1.0,1.0,0.0,0.0
+Social & Dating,Kith,kith,kith,kith,1.0,1.0,0.0,0.0
+Social & Dating,Supreme,supreme,supreme,supreme,1.0,1.0,0.0,0.0
+Social & Dating,Palace,palace,palace,palace,1.0,1.0,0.0,0.0
+Social & Dating,Bape,bape,bape,bape,1.0,1.0,0.0,0.0
+Social & Dating,Off-White,offwhite,offwhite,offwhite,1.0,1.0,0.0,0.0
+Social & Dating,Fear of God,fear of god,fear of god,fear of god,3.0,3.0,0.0,0.0
+Social & Dating,Yeezy Supply,yeezy supply,yeezy supply,yeezy supply,2.0,2.0,0.0,0.0
+Career & Freelance,ZipRecruiter,ziprecruiter,ziprecruiter,ziprecruiter,1.0,1.0,0.0,0.0
+Career & Freelance,Indeed (Prime),indeed prime,indeed prime,indeed prime,2.0,2.0,0.0,0.0
+Career & Freelance,Glassdoor,glassdoor,glassdoor,glassdoor,1.0,1.0,0.0,0.0
+Career & Freelance,Polywork,polywork,polywork,polywork,1.0,1.0,0.0,0.0
+Career & Freelance,Peerlist,peerlist,peerlist,peerlist,1.0,1.0,0.0,0.0
+Career & Freelance,Contra,contra,contra,contra,1.0,1.0,0.0,0.0
+Career & Freelance,JobStreet (by SEEK),jobstreet by seek,jobstreet by seek,jobstreet by seek,3.0,3.0,0.0,0.0
+Career & Freelance,Glints,glints,glints,glints,1.0,1.0,0.0,0.0
+Career & Freelance,Kalibrr,kalibrr,kalibrr,kalibrr,1.0,1.0,0.0,0.0
+Career & Freelance,KitaLulus,kitalulus,kitalulus,kitalulus,1.0,1.0,0.0,0.0
+Career & Freelance,Karir.com,karircom,karircom,karircom,1.0,1.0,0.0,0.0
+Career & Freelance,KUPU,kupu,kupu,kupu,1.0,1.0,0.0,0.0
+Career & Freelance,Wellfound (AngelList Talent),wellfound angellist talent,wellfound angellist talent,wellfound angellist talent,3.0,3.0,0.0,0.0
+Career & Freelance,Hired,hired,hired,hired,1.0,1.0,0.0,0.0
+Career & Freelance,Dice,dice,dice,dice,1.0,1.0,0.0,0.0
+Career & Freelance,Ottoman,ottoman,ottoman,ottoman,1.0,1.0,0.0,0.0
+Career & Freelance,GitHub,github,github,github,1.0,1.0,0.0,0.0
+Career & Freelance,Clay,clay,clay,clay,1.0,1.0,0.0,0.0
+Career & Freelance,Intch,intch,intch,intch,1.0,1.0,0.0,0.0
+Career & Freelance,Meander,meander,meander,meander,1.0,1.0,0.0,0.0
+Career & Freelance,Upwork (Plus),upwork plus,upwork,upwork,2.0,1.0,1.0,50.0
+Career & Freelance,Toptal,toptal,toptal,toptal,1.0,1.0,0.0,0.0
+Career & Freelance,Fiverr (Pro),fiverr pro,fiverr pro,fiverr pro,2.0,2.0,0.0,0.0
+Career & Freelance,Cakeresume,cakeresume,cakeresume,cakeresume,1.0,1.0,0.0,0.0
+Career & Freelance,Novorésumé,novorésumé,novorésumé,novor sum,1.0,2.0,-1.0,-100.0
+Career & Freelance,Zety,zety,zety,zety,1.0,1.0,0.0,0.0
+Career & Freelance,Enhancv,enhancv,enhancv,enhancv,1.0,1.0,0.0,0.0
+Career & Freelance,Resume.io,resumeio,resumeio,resumeio,1.0,1.0,0.0,0.0
+Career & Freelance,VisualCV,visualcv,visualcv,visualcv,1.0,1.0,0.0,0.0
+Career & Freelance,Kickresume,kickresume,kickresume,kickresume,1.0,1.0,0.0,0.0
+Career & Freelance,Framer,framer,framer,framer,1.0,1.0,0.0,0.0
+Career & Freelance,Webflow,webflow,webflow,webflow,1.0,1.0,0.0,0.0
+Career & Freelance,Rezi,rezi,rezi,rezi,1.0,1.0,0.0,0.0
+Career & Freelance,Teal,teal,teal,teal,1.0,1.0,0.0,0.0
+Career & Freelance,Jobscan,jobscan,jobscan,jobscan,1.0,1.0,0.0,0.0
+Career & Freelance,Cvflow,cvflow,cvflow,cvflow,1.0,1.0,0.0,0.0
+Career & Freelance,Flowcv,flowcv,flowcv,flowcv,1.0,1.0,0.0,0.0
+Career & Freelance,Working Not Working,working not working,working not working,working not working,3.0,3.0,0.0,0.0
+Career & Freelance,Seed,seed,seed,seed,1.0,1.0,0.0,0.0
+Career & Freelance,Y Combinator Work at a Startup,y combinator work at a startup,combinator work at startup,combinator work at startup,6.0,4.0,2.0,33.3
+Career & Freelance,Remotive,remotive,remotive,remotive,1.0,1.0,0.0,0.0
+Career & Freelance,We Work Remotely,we work remotely,we work remotely,we work remotely,3.0,3.0,0.0,0.0
+Career & Freelance,Remote OK,remote ok,remote ok,remote ok,2.0,2.0,0.0,0.0
+Career & Freelance,FlexJobs,flexjobs,flexjobs,flexjobs,1.0,1.0,0.0,0.0
+Career & Freelance,Working Nomads,working nomads,working nomads,working nomads,2.0,2.0,0.0,0.0
+Career & Freelance,Remote.co,remoteco,remoteco,remoteco,1.0,1.0,0.0,0.0
+Career & Freelance,JustRemote,justremote,justremote,justremote,1.0,1.0,0.0,0.0
+Career & Freelance,NoDesk,nodesk,nodesk,nodesk,1.0,1.0,0.0,0.0
+Career & Freelance,Remotees,remotees,remotees,remotees,1.0,1.0,0.0,0.0
+Career & Freelance,Outdoority,outdoority,outdoority,outdoority,1.0,1.0,0.0,0.0
+Career & Freelance,Hubstaff Talent,hubstaff talent,hubstaff talent,hubstaff talent,2.0,2.0,0.0,0.0
+Career & Freelance,SkipTheDrive,skipthedrive,skipthedrive,skipthedrive,1.0,1.0,0.0,0.0
+Career & Freelance,Pangian,pangian,pangian,pangian,1.0,1.0,0.0,0.0
+Career & Freelance,Jobspresso,jobspresso,jobspresso,jobspresso,1.0,1.0,0.0,0.0
+Career & Freelance,PowerToFly,powertofly,powertofly,powertofly,1.0,1.0,0.0,0.0
+Career & Freelance,Wfh.io,wfhio,wfhio,wfhio,1.0,1.0,0.0,0.0
+Career & Freelance,Virtual Vocations,virtual vocations,virtual vocations,virtual vocations,2.0,2.0,0.0,0.0
+Career & Freelance,Dynamite Jobs,dynamite jobs,dynamite jobs,dynamite jobs,2.0,2.0,0.0,0.0
+Career & Freelance,Remotely,remotely,remotely,remotely,1.0,1.0,0.0,0.0
+Career & Freelance,Remoters,remoters,remoters,remoters,1.0,1.0,0.0,0.0
+Career & Freelance,Remoteleaf,remoteleaf,remoteleaf,remoteleaf,1.0,1.0,0.0,0.0
+Career & Freelance,RemoteBase,remotebase,remotebase,remotebase,1.0,1.0,0.0,0.0
+Career & Freelance,Remote Internships,remote internships,remote internships,remote internships,2.0,2.0,0.0,0.0
+Career & Freelance,Remote Experience,remote experience,remote experience,remote experience,2.0,2.0,0.0,0.0
+Career & Freelance,Remote Club,remote club,remote club,remote club,2.0,2.0,0.0,0.0
+Career & Freelance,DailyRemote,dailyremote,dailyremote,dailyremote,1.0,1.0,0.0,0.0
+Career & Freelance,Remotify,remotify,remotify,remotify,1.0,1.0,0.0,0.0
+Career & Freelance,WeAreDevelopers,wearedevelopers,wearedevelopers,wearedevelopers,1.0,1.0,0.0,0.0
+Career & Freelance,Turing,turing,turing,turing,1.0,1.0,0.0,0.0
+Career & Freelance,Arc.dev,arcdev,arcdev,arcdev,1.0,1.0,0.0,0.0
+Career & Freelance,Lemon.io,lemonio,lemonio,lemonio,1.0,1.0,0.0,0.0
+Career & Freelance,X-Team,xteam,xteam,xteam,1.0,1.0,0.0,0.0
+Career & Freelance,Topcoder,topcoder,topcoder,topcoder,1.0,1.0,0.0,0.0
+Career & Freelance,Gigster,gigster,gigster,gigster,1.0,1.0,0.0,0.0
+Career & Freelance,Braintrust,braintrust,braintrust,braintrust,1.0,1.0,0.0,0.0
+Career & Freelance,Superpeer,superpeer,superpeer,superpeer,1.0,1.0,0.0,0.0
+Career & Freelance,Codementor,codementor,codementor,codementor,1.0,1.0,0.0,0.0
+Career & Freelance,HackHands,hackhands,hackhands,hackhands,1.0,1.0,0.0,0.0
+Career & Freelance,CodersRank,codersrank,codersrank,codersrank,1.0,1.0,0.0,0.0
+Career & Freelance,HackerEarth,hackerearth,hackerearth,hackerearth,1.0,1.0,0.0,0.0
+Career & Freelance,CodeSignal,codesignal,codesignal,codesignal,1.0,1.0,0.0,0.0
+Career & Freelance,LeetCode,leetcode,leetcode,leetcode,1.0,1.0,0.0,0.0
+Career & Freelance,HackerRank,hackerrank,hackerrank,hackerrank,1.0,1.0,0.0,0.0
+Career & Freelance,CodinGame,codingame,codingame,codingame,1.0,1.0,0.0,0.0
+Career & Freelance,Coderbyte,coderbyte,coderbyte,coderbyte,1.0,1.0,0.0,0.0
+Career & Freelance,GeeksforGeeks,geeksforgeeks,geeksforgeeks,geeksforgeeks,1.0,1.0,0.0,0.0
+Career & Freelance,InterviewBit,interviewbit,interviewbit,interviewbit,1.0,1.0,0.0,0.0
+Career & Freelance,AlgoExpert,algoexpert,algoexpert,algoexpert,1.0,1.0,0.0,0.0
+Career & Freelance,Byte by Byte,byte by byte,byte by byte,byte by byte,3.0,3.0,0.0,0.0
+Career & Freelance,Grokking the Coding Interview,grokking the coding interview,grokking the coding interview,grokking the coding interview,4.0,4.0,0.0,0.0
+Career & Freelance,Educative.io,educativeio,educativeio,educativeio,1.0,1.0,0.0,0.0
+Career & Freelance,Interview Cake,interview cake,interview cake,interview cake,2.0,2.0,0.0,0.0
+Career & Freelance,Pramp,pramp,pramp,pramp,1.0,1.0,0.0,0.0
+Career & Freelance,Gainlo,gainlo,gainlo,gainlo,1.0,1.0,0.0,0.0
+Career & Freelance,CareerCup,careercup,careercup,careercup,1.0,1.0,0.0,0.0
+Career & Freelance,Glassdoor Interview Questions,glassdoor interview questions,glassdoor interview questions,glassdoor interview questions,3.0,3.0,0.0,0.0
+Career & Freelance,Blind,blind,blind,blind,1.0,1.0,0.0,0.0
+Career & Freelance,TeamBlind,teamblind,teamblind,teamblind,1.0,1.0,0.0,0.0
+Career & Freelance,Fishbowl,fishbowl,fishbowl,fishbowl,1.0,1.0,0.0,0.0
+Career & Freelance,Fairygodboss,fairygodboss,fairygodboss,fairygodboss,1.0,1.0,0.0,0.0
+Career & Freelance,TheLadders,theladders,theladders,theladders,1.0,1.0,0.0,0.0
+Career & Freelance,Beyond,beyond,beyond,beyond,1.0,1.0,0.0,0.0
+Career & Freelance,Execunet,execunet,execunet,execunet,1.0,1.0,0.0,0.0
+Career & Freelance,Ladders,ladders,ladders,ladders,1.0,1.0,0.0,0.0
+Career & Freelance,Ivy Exec,ivy exec,ivy exec,ivy exec,2.0,2.0,0.0,0.0
+Career & Freelance,TheChoice,thechoice,thechoice,thechoice,1.0,1.0,0.0,0.0
+Career & Freelance,jobcase,jobcase,jobcase,jobcase,1.0,1.0,0.0,0.0
+Career & Freelance,Snagajob,snagajob,snagajob,snagajob,1.0,1.0,0.0,0.0
+Career & Freelance,Indeed for Employers,indeed for employers,indeed for employers,indeed for employers,3.0,3.0,0.0,0.0
+Career & Freelance,ZipRecruiter Employer,ziprecruiter employer,ziprecruiter employer,ziprecruiter employer,2.0,2.0,0.0,0.0
+Career & Freelance,LinkedIn Recruiter,linkedin recruiter,linkedin recruiter,linkedin recruiter,2.0,2.0,0.0,0.0
+Career & Freelance,Monster for Employers,monster for employers,monster for employers,monster for employers,3.0,3.0,0.0,0.0
+Career & Freelance,CareerBuilder Employer,careerbuilder employer,careerbuilder employer,careerbuilder employer,2.0,2.0,0.0,0.0
+Career & Freelance,Glassdoor for Employers,glassdoor for employers,glassdoor for employers,glassdoor for employers,3.0,3.0,0.0,0.0
+Career & Freelance,Upwork Enterprise,upwork enterprise,upwork enterprise,upwork enterprise,2.0,2.0,0.0,0.0
+Career & Freelance,Fiverr Business,fiverr business,fiverr business,fiverr business,2.0,2.0,0.0,0.0
+Career & Freelance,Toptal for Business,toptal for business,toptal for business,toptal for business,3.0,3.0,0.0,0.0
+Career & Freelance,Arc.dev for Hiring,arcdev for hiring,arcdev for hiring,arcdev for hiring,3.0,3.0,0.0,0.0
+Career & Freelance,Turing for Companies,turing for companies,turing for companies,turing for companies,3.0,3.0,0.0,0.0
+Career & Freelance,Braintrust for Enterprise,braintrust for enterprise,braintrust for enterprise,braintrust for enterprise,3.0,3.0,0.0,0.0
+Career & Freelance,Gigster for Enterprise,gigster for enterprise,gigster for enterprise,gigster for enterprise,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,GoodNotes,goodnotes,goodnotes,goodnotes,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,CamScanner,camscanner,camscanner,camscanner,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Turnitin,turnitin,turnitin,turnitin,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Overleaf,overleaf,overleaf,overleaf,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,iLovePDF,ilovepdf,ilovepdf,ilovepdf,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Foxit PhantomPDF,foxit phantompdf,foxit phantompdf,foxit phantompdf,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Kofax Power PDF,kofax power pdf,kofax power pdf,kofax power pdf,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Architect,pdf architect,pdf architect,pdf architect,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDF-XChange Editor,pdfxchange editor,pdfxchange editor,pdfxchange editor,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDFescape,pdfescape,pdfescape,pdfescape,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDFSam,pdfsam,pdfsam,pdfsam,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Split and Merge,pdf split and merge,pdf split and merge,pdf split and merge,4.0,4.0,0.0,0.0
+Dokumen & Akademik Tools,PDFTK,pdftk,pdftk,pdftk,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Arranger,pdf arranger,pdf arranger,pdf arranger,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Shuffler,pdf shuffler,pdf shuffler,pdf shuffler,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Mix Tool,pdf mix tool,pdf tool,pdf tool,3.0,2.0,1.0,33.3
+Dokumen & Akademik Tools,PDF Bender,pdf bender,pdf bender,pdf bender,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Mod,pdf mod,pdf mod,pdf mod,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDF Chain,pdf chain,pdf chain,pdf chain,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,PDFJam,pdfjam,pdfjam,pdfjam,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDFNup,pdfnup,pdfnup,pdfnup,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDFCrop,pdfcrop,pdfcrop,pdfcrop,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDFTron,pdftron,pdftron,pdftron,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Apryse,apryse,apryse,apryse,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,ComPDFKit,compdfkit,compdfkit,compdfkit,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PSPDFKit,pspdfkit,pspdfkit,pspdfkit,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PDF.js,pdfjs,pdfjs,pdfjs,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Mozilla PDF.js,mozilla pdfjs,mozilla pdfjs,mozilla pdfjs,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Google PDF Viewer,google pdf viewer,google pdf viewer,google pdf viewer,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,Microsoft Edge PDF Reader,microsoft edge pdf reader,microsoft edge pdf reader,microsoft edge pdf reader,4.0,4.0,0.0,0.0
+Dokumen & Akademik Tools,Chrome PDF Viewer,chrome pdf viewer,chrome pdf viewer,chrome pdf viewer,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,Safari PDFKit,safari pdfkit,safari pdfkit,safari pdfkit,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Firefox PDF Viewer,firefox pdf viewer,firefox pdf viewer,firefox pdf viewer,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,SumatraPDF,sumatrapdf,sumatrapdf,sumatrapdf,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Okular,okular,okular,okular,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Evince,evince,evince,evince,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,MuPDF,mupdf,mupdf,mupdf,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Poppler,poppler,poppler,poppler,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Xpdf,xpdf,xpdf,xpdf,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PdfToText,pdftotext,pdftotext,pdftotext,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PdfGrep,pdfgrep,pdfgrep,pdfgrep,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PdfImages,pdfimages,pdfimages,pdfimages,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PdfSeparate,pdfseparate,pdfseparate,pdfseparate,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,PdfUnite,pdfunite,pdfunite,pdfunite,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,LibreOffice Draw,libreoffice draw,libreoffice draw,libreoffice draw,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,OpenOffice Draw,openoffice draw,openoffice draw,openoffice draw,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Calligra Stage,calligra stage,calligra stage,calligra stage,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Pages,pages,pages,pages,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Word,word,word,word,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Google Docs,google docs,google docs,google docs,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Zoho Writer,zoho writer,zoho writer,zoho writer,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,OnlyOffice,onlyoffice,onlyoffice,onlyoffice,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,FreeOffice,freeoffice,freeoffice,freeoffice,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,SoftMaker Office,softmaker office,softmaker office,softmaker office,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Polaris Office,polaris office,polaris office,polaris office,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Hancom Office,hancom office,hancom office,hancom office,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,ThinkFree Office,thinkfree office,thinkfree office,thinkfree office,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,OfficeSuite,officesuite,officesuite,officesuite,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,SmartOffice,smartoffice,smartoffice,smartoffice,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Quickoffice (defunct),quickoffice defunct,quickoffice defunct,quickoffice defunct,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,AbleWord,ableword,ableword,ableword,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Atlantis Word Processor,atlantis word processor,atlantis word processor,atlantis word processor,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,Jarte,jarte,jarte,jarte,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,AbiWord,abiword,abiword,abiword,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,FocusWriter,focuswriter,focuswriter,focuswriter,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,WriteMonkey,writemonkey,writemonkey,writemonkey,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Typora,typora,typora,typora,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,MarkdownPad,markdownpad,markdownpad,markdownpad,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Mark Text,mark text,mark text,mark text,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Zettlr,zettlr,zettlr,zettlr,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Joplin,joplin,joplin,joplin,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Obsidian,obsidian,obsidian,obsidian,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,iA Writer,ia writer,writer,writer,2.0,1.0,1.0,50.0
+Dokumen & Akademik Tools,Byword,byword,byword,byword,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Drafts,drafts,drafts,drafts,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Bear,bear,bear,bear,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Standard Notes,standard notes,standard notes,standard notes,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Simplenote,simplenote,simplenote,simplenote,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Notesnook,notesnook,notesnook,notesnook,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,AppFlowy,appflowy,appflowy,appflowy,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Anytype,anytype,anytype,anytype,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Affine,affine,affine,affine,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Outline,outline,outline,outline,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Trilium Notes,trilium notes,trilium notes,trilium notes,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Dendron,dendron,dendron,dendron,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Foam,foam,foam,foam,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Neuron,neuron,neuron,neuron,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Org-roam,orgroam,orgroam,orgroam,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Emacs Org-mode,emacs orgmode,emacs orgmode,emacs orgmode,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Vimwiki,vimwiki,vimwiki,vimwiki,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Notational Velocity,notational velocity,notational velocity,notational velocity,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,nvUltra,nvultra,nvultra,nvultra,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,FSNotes,fsnotes,fsnotes,fsnotes,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Mweb,mweb,mweb,mweb,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Quiver,quiver,quiver,quiver,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Boostnote,boostnote,boostnote,boostnote,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Cacher,cacher,cacher,cacher,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,GitBook,gitbook,gitbook,gitbook,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Docusaurus,docusaurus,docusaurus,docusaurus,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,MkDocs,mkdocs,mkdocs,mkdocs,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Sphinx,sphinx,sphinx,sphinx,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Read the Docs,read the docs,read the docs,read the docs,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,Jupyter Book,jupyter book,jupyter book,jupyter book,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Quarto,quarto,quarto,quarto,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,R Markdown,r markdown,markdown,markdown,2.0,1.0,1.0,50.0
+Dokumen & Akademik Tools,Bookdown,bookdown,bookdown,bookdown,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Pandoc,pandoc,pandoc,pandoc,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Asciidoctor,asciidoctor,asciidoctor,asciidoctor,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,LaTeX,latex,latex,latex,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,ShareLaTeX,sharelatex,sharelatex,sharelatex,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Papeeria,papeeria,papeeria,papeeria,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Authorea,authorea,authorea,authorea,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Manuscripts,manuscripts,manuscripts,manuscripts,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Fidus Writer,fidus writer,fidus writer,fidus writer,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Collabwriter,collabwriter,collabwriter,collabwriter,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Penflip,penflip,penflip,penflip,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,HackMD,hackmd,hackmd,hackmd,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,HedgeDoc,hedgedoc,hedgedoc,hedgedoc,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,CodiMD,codimd,codimd,codimd,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Etherpad,etherpad,etherpad,etherpad,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Cryptpad,cryptpad,cryptpad,cryptpad,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Google Keep,google keep,google keep,google keep,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Microsoft OneNote,microsoft onenote,microsoft onenote,microsoft onenote,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Zoho Notebook,zoho notebook,zoho notebook,zoho notebook,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Nimbus Note,nimbus note,nimbus note,nimbus note,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,ClickUp Docs,clickup docs,clickup docs,clickup docs,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Coda,coda,coda,coda,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Logseq,logseq,logseq,logseq,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Roam Research,roam research,roam research,roam research,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Athens Research,athens research,athens research,athens research,2.0,2.0,0.0,0.0
+Dokumen & Akademik Tools,Mem,mem,mem,mem,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Capacities,capacities,capacities,capacities,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,TiddlyWiki,tiddlywiki,tiddlywiki,tiddlywiki,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Zim,zim,zim,zim,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,CherryTree,cherrytree,cherrytree,cherrytree,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,RedNotebook,rednotebook,rednotebook,rednotebook,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,KeepNote,keepnote,keepnote,keepnote,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Tomboy,tomboy,tomboy,tomboy,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Gnote,gnote,gnote,gnote,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Basket Note Pads,basket note pads,basket note pads,basket note pads,3.0,3.0,0.0,0.0
+Dokumen & Akademik Tools,TagSpaces,tagspaces,tagspaces,tagspaces,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,QOwnNotes,qownnotes,qownnotes,qownnotes,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,Notes,notes,notes,notes,1.0,1.0,0.0,0.0
+Dokumen & Akademik Tools,SimpleNote,simplenote,simplenote,simplenote,1.0,1.0,0.0,0.0
+Cloud & Storage,Google Drive,google drive,google drive,google drive,2.0,2.0,0.0,0.0
+Cloud & Storage,Dropbox,dropbox,dropbox,dropbox,1.0,1.0,0.0,0.0
+Cloud & Storage,OneDrive,onedrive,onedrive,onedrive,1.0,1.0,0.0,0.0
+Cloud & Storage,iCloud Drive,icloud drive,icloud drive,icloud drive,2.0,2.0,0.0,0.0
+Cloud & Storage,Amazon Drive,amazon drive,amazon drive,amazon drive,2.0,2.0,0.0,0.0
+Cloud & Storage,Box,box,,,1.0,0.0,1.0,100.0
+Cloud & Storage,pCloud,pcloud,pcloud,pcloud,1.0,1.0,0.0,0.0
+Cloud & Storage,Sync.com,synccom,synccom,synccom,1.0,1.0,0.0,0.0
+Cloud & Storage,Tresorit,tresorit,tresorit,tresorit,1.0,1.0,0.0,0.0
+Cloud & Storage,MEGA,mega,mega,mega,1.0,1.0,0.0,0.0
+Cloud & Storage,Proton Drive,proton drive,proton drive,proton drive,2.0,2.0,0.0,0.0
+Cloud & Storage,Filen.io,filenio,filenio,filenio,1.0,1.0,0.0,0.0
+Cloud & Storage,Koofr,koofr,koofr,koofr,1.0,1.0,0.0,0.0
+Cloud & Storage,Icedrive,icedrive,icedrive,icedrive,1.0,1.0,0.0,0.0
+Cloud & Storage,Seafile,seafile,seafile,seafile,1.0,1.0,0.0,0.0
+Cloud & Storage,Nextcloud,nextcloud,nextcloud,nextcloud,1.0,1.0,0.0,0.0
+Cloud & Storage,ownCloud,owncloud,owncloud,owncloud,1.0,1.0,0.0,0.0
+Cloud & Storage,FileCloud,filecloud,filecloud,filecloud,1.0,1.0,0.0,0.0
+Cloud & Storage,PowerFolder,powerfolder,powerfolder,powerfolder,1.0,1.0,0.0,0.0
+Cloud & Storage,Tonido,tonido,tonido,tonido,1.0,1.0,0.0,0.0
+Cloud & Storage,Resilio Sync,resilio sync,resilio sync,resilio sync,2.0,2.0,0.0,0.0
+Cloud & Storage,Syncthing,syncthing,syncthing,syncthing,1.0,1.0,0.0,0.0
+Cloud & Storage,GoodSync,goodsync,goodsync,goodsync,1.0,1.0,0.0,0.0
+Cloud & Storage,FreeFileSync,freefilesync,freefilesync,freefilesync,1.0,1.0,0.0,0.0
+Cloud & Storage,DirSync Pro,dirsync pro,dirsync pro,dirsync pro,2.0,2.0,0.0,0.0
+Cloud & Storage,Unison,unison,unison,unison,1.0,1.0,0.0,0.0
+Cloud & Storage,Rclone,rclone,rclone,rclone,1.0,1.0,0.0,0.0
+Cloud & Storage,Duplicati,duplicati,duplicati,duplicati,1.0,1.0,0.0,0.0
+Cloud & Storage,Duplicacy,duplicacy,duplicacy,duplicacy,1.0,1.0,0.0,0.0
+Cloud & Storage,Arq Backup,arq backup,arq backup,arq backup,2.0,2.0,0.0,0.0
+Cloud & Storage,CloudBerry Backup,cloudberry backup,cloudberry backup,cloudberry backup,2.0,2.0,0.0,0.0
+Cloud & Storage,Acronis True Image,acronis true image,acronis true image,acronis true image,3.0,3.0,0.0,0.0
+Cloud & Storage,EaseUS Todo Backup,easeus todo backup,easeus todo backup,easeus todo backup,3.0,3.0,0.0,0.0
+Cloud & Storage,AOMEI Backupper,aomei backupper,aomei backupper,aomei backupper,2.0,2.0,0.0,0.0
+Cloud & Storage,Paragon Backup & Recovery,paragon backup recovery,paragon backup recovery,paragon backup recovery,4.0,3.0,1.0,25.0
+Cloud & Storage,Macrium Reflect,macrium reflect,macrium reflect,macrium reflect,2.0,2.0,0.0,0.0
+Cloud & Storage,Veeam Agent,veeam agent,veeam agent,veeam agent,2.0,2.0,0.0,0.0
+Cloud & Storage,UrBackup,urbackup,urbackup,urbackup,1.0,1.0,0.0,0.0
+Cloud & Storage,BorgBackup,borgbackup,borgbackup,borgbackup,1.0,1.0,0.0,0.0
+Cloud & Storage,Restic,restic,restic,restic,1.0,1.0,0.0,0.0
+Cloud & Storage,Kopia,kopia,kopia,kopia,1.0,1.0,0.0,0.0
+Cloud & Storage,DeltaCopy,deltacopy,deltacopy,deltacopy,1.0,1.0,0.0,0.0
+Cloud & Storage,RSync,rsync,rsync,rsync,1.0,1.0,0.0,0.0
+Cloud & Storage,CrashPlan,crashplan,crashplan,crashplan,1.0,1.0,0.0,0.0
+Cloud & Storage,IDrive,idrive,idrive,idrive,1.0,1.0,0.0,0.0
+Cloud & Storage,Carbonite,carbonite,carbonite,carbonite,1.0,1.0,0.0,0.0
+Cloud & Storage,Mozy,mozy,mozy,mozy,1.0,1.0,0.0,0.0
+Cloud & Storage,SOS Online Backup,sos online backup,sos backup,sos backup,3.0,2.0,1.0,33.3
+Cloud & Storage,SpiderOak,spideroak,spideroak,spideroak,1.0,1.0,0.0,0.0
+Cloud & Storage,Jungle Disk,jungle disk,jungle disk,jungle disk,2.0,2.0,0.0,0.0
+Cloud & Storage,ElephantDrive,elephantdrive,elephantdrive,elephantdrive,1.0,1.0,0.0,0.0
+Cloud & Storage,Livedrive,livedrive,livedrive,livedrive,1.0,1.0,0.0,0.0
+Cloud & Storage,JustCloud,justcloud,justcloud,justcloud,1.0,1.0,0.0,0.0
+Cloud & Storage,ZipCloud,zipcloud,zipcloud,zipcloud,1.0,1.0,0.0,0.0
+Cloud & Storage,CloudDrive,clouddrive,clouddrive,clouddrive,1.0,1.0,0.0,0.0
+Cloud & Storage,Odrive,odrive,odrive,odrive,1.0,1.0,0.0,0.0
+Cloud & Storage,MultCloud,multcloud,multcloud,multcloud,1.0,1.0,0.0,0.0
+Cloud & Storage,Air Explorer,air explorer,air explorer,air explorer,2.0,2.0,0.0,0.0
+Cloud & Storage,CloudMounter,cloudmounter,cloudmounter,cloudmounter,1.0,1.0,0.0,0.0
+Cloud & Storage,ExpanDrive,expandrive,expandrive,expandrive,1.0,1.0,0.0,0.0
+Cloud & Storage,Mountain Duck,mountain duck,mountain duck,mountain duck,2.0,2.0,0.0,0.0
+Cloud & Storage,Cyberduck,cyberduck,cyberduck,cyberduck,1.0,1.0,0.0,0.0
+Cloud & Storage,WinSCP,winscp,winscp,winscp,1.0,1.0,0.0,0.0
+Cloud & Storage,FileZilla Pro,filezilla pro,filezilla pro,filezilla pro,2.0,2.0,0.0,0.0
+Cloud & Storage,Transmit,transmit,transmit,transmit,1.0,1.0,0.0,0.0
+Cloud & Storage,ForkLift,forklift,forklift,forklift,1.0,1.0,0.0,0.0
+Cloud & Storage,Commander One,commander one,commander one,commander one,2.0,2.0,0.0,0.0
+Cloud & Storage,Path Finder,path finder,path finder,path finder,2.0,2.0,0.0,0.0
+Cloud & Storage,Nimble Commander,nimble commander,nimble commander,nimble commander,2.0,2.0,0.0,0.0
+Cloud & Storage,Marta,marta,marta,marta,1.0,1.0,0.0,0.0
+Cloud & Storage,Double Commander,double commander,double commander,double commander,2.0,2.0,0.0,0.0
+Cloud & Storage,Krusader,krusader,krusader,krusader,1.0,1.0,0.0,0.0
+Cloud & Storage,GNOME Commander,gnome commander,gnome commander,gnome commander,2.0,2.0,0.0,0.0
+Cloud & Storage,Thunar,thunar,thunar,thunar,1.0,1.0,0.0,0.0
+Cloud & Storage,Nautilus,nautilus,nautilus,nautilus,1.0,1.0,0.0,0.0
+Cloud & Storage,Dolphin,dolphin,dolphin,dolphin,1.0,1.0,0.0,0.0
+Cloud & Storage,Konqueror,konqueror,konqueror,konqueror,1.0,1.0,0.0,0.0
+Cloud & Storage,PCManFM,pcmanfm,pcmanfm,pcmanfm,1.0,1.0,0.0,0.0
+Cloud & Storage,Caja,caja,caja,caja,1.0,1.0,0.0,0.0
+Cloud & Storage,Nemo,nemo,nemo,nemo,1.0,1.0,0.0,0.0
+Cloud & Storage,SpaceFM,spacefm,spacefm,spacefm,1.0,1.0,0.0,0.0
+Cloud & Storage,Sunflower,sunflower,sunflower,sunflower,1.0,1.0,0.0,0.0
+Cloud & Storage,muCommander,mucommander,mucommander,mucommander,1.0,1.0,0.0,0.0
+Cloud & Storage,Midnight Commander,midnight commander,midnight commander,midnight commander,2.0,2.0,0.0,0.0
+Cloud & Storage,Ranger,ranger,ranger,ranger,1.0,1.0,0.0,0.0
+Cloud & Storage,lf,lf,lf,lf,1.0,1.0,0.0,0.0
+Cloud & Storage,vifm,vifm,vifm,vifm,1.0,1.0,0.0,0.0
+Cloud & Storage,nnn,nnn,nnn,nnn,1.0,1.0,0.0,0.0
+Cloud & Storage,fff,fff,fff,fff,1.0,1.0,0.0,0.0
+Cloud & Storage,broot,broot,broot,broot,1.0,1.0,0.0,0.0
+Cloud & Storage,fzf,fzf,fzf,fzf,1.0,1.0,0.0,0.0
+Cloud & Storage,Zoxide,zoxide,zoxide,zoxide,1.0,1.0,0.0,0.0
+Cloud & Storage,Autojump,autojump,autojump,autojump,1.0,1.0,0.0,0.0
+Cloud & Storage,Colors,colors,colors,colors,1.0,1.0,0.0,0.0
+Cloud & Storage,Exa,exa,exa,exa,1.0,1.0,0.0,0.0
+Cloud & Storage,Lsd,lsd,lsd,lsd,1.0,1.0,0.0,0.0
+Cloud & Storage,Bat,bat,bat,bat,1.0,1.0,0.0,0.0
+Cloud & Storage,Ripgrep,ripgrep,ripgrep,ripgrep,1.0,1.0,0.0,0.0
+Cloud & Storage,Fd,fd,fd,fd,1.0,1.0,0.0,0.0
+Cloud & Storage,Procs,procs,procs,procs,1.0,1.0,0.0,0.0
+Cloud & Storage,Dust,dust,dust,dust,1.0,1.0,0.0,0.0
+Cloud & Storage,Du-dust,dudust,dudust,dudust,1.0,1.0,0.0,0.0
+Cloud & Storage,Bandwhich,bandwhich,bandwhich,bandwhich,1.0,1.0,0.0,0.0
+Cloud & Storage,Bottom,bottom,bottom,bottom,1.0,1.0,0.0,0.0
+Cloud & Storage,Glances,glances,glances,glances,1.0,1.0,0.0,0.0
+Cloud & Storage,Htop,htop,htop,htop,1.0,1.0,0.0,0.0
+Cloud & Storage,Btop,btop,btop,btop,1.0,1.0,0.0,0.0
+Cloud & Storage,Nvtop,nvtop,nvtop,nvtop,1.0,1.0,0.0,0.0
+Cloud & Storage,S-tui,stui,stui,stui,1.0,1.0,0.0,0.0
+Cloud & Storage,Gtop,gtop,gtop,gtop,1.0,1.0,0.0,0.0
+Cloud & Storage,Ytop,ytop,ytop,ytop,1.0,1.0,0.0,0.0
+Cloud & Storage,Bashtop,bashtop,bashtop,bashtop,1.0,1.0,0.0,0.0
+Cloud & Storage,Gotop,gotop,gotop,gotop,1.0,1.0,0.0,0.0
+Cloud & Storage,Ctop,ctop,ctop,ctop,1.0,1.0,0.0,0.0
+Cloud & Storage,Dt,dt,dt,dt,1.0,1.0,0.0,0.0
+Cloud & Storage,gping,gping,gping,gping,1.0,1.0,0.0,0.0
+Cloud & Storage,Prettyping,prettyping,prettyping,prettyping,1.0,1.0,0.0,0.0
+Cloud & Storage,Mtr,mtr,mtr,mtr,1.0,1.0,0.0,0.0
+Cloud & Storage,Tcptraceroute,tcptraceroute,tcptraceroute,tcptraceroute,1.0,1.0,0.0,0.0
+Cloud & Storage,Masscan,masscan,masscan,masscan,1.0,1.0,0.0,0.0
+Cloud & Storage,Zmap,zmap,zmap,zmap,1.0,1.0,0.0,0.0
+Cloud & Storage,Rustscan,rustscan,rustscan,rustscan,1.0,1.0,0.0,0.0
+Cloud & Storage,Naabu,naabu,naabu,naabu,1.0,1.0,0.0,0.0
+Cloud & Storage,Httpx,httpx,httpx,httpx,1.0,1.0,0.0,0.0
+Cloud & Storage,Nuclei,nuclei,nuclei,nuclei,1.0,1.0,0.0,0.0
+Cloud & Storage,Sslscan,sslscan,sslscan,sslscan,1.0,1.0,0.0,0.0
+Cloud & Storage,Sslyze,sslyze,sslyze,sslyze,1.0,1.0,0.0,0.0
+Cloud & Storage,Testssl,testssl,testssl,testssl,1.0,1.0,0.0,0.0
+Cloud & Storage,OpenSSL,openssl,openssl,openssl,1.0,1.0,0.0,0.0
+Cloud & Storage,GnuTLS,gnutls,gnutls,gnutls,1.0,1.0,0.0,0.0
+Cloud & Storage,Libressl,libressl,libressl,libressl,1.0,1.0,0.0,0.0
+Cloud & Storage,BoringSSL,boringssl,boringssl,boringssl,1.0,1.0,0.0,0.0
+Cloud & Storage,QuicTLS,quictls,quictls,quictls,1.0,1.0,0.0,0.0
+Cloud & Storage,AWS S3 CLI,aws s cli,aws cli,aws cli,3.0,2.0,1.0,33.3
+Cloud & Storage,AWS CLI,aws cli,aws cli,aws cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Azure CLI,azure cli,azure cli,azure cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Google Cloud SDK,google cloud sdk,google cloud sdk,google cloud sdk,3.0,3.0,0.0,0.0
+Cloud & Storage,S3cmd,scmd,scmd,scmd,1.0,1.0,0.0,0.0
+Cloud & Storage,S3sync,ssync,ssync,ssync,1.0,1.0,0.0,0.0
+Cloud & Storage,MinIO Client,minio client,minio client,minio client,2.0,2.0,0.0,0.0
+Cloud & Storage,Wasabi CLI,wasabi cli,wasabi cli,wasabi cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Backblaze B2 CLI,backblaze b cli,backblaze cli,backblaze cli,3.0,2.0,1.0,33.3
+Cloud & Storage,Google Drive CLI,google drive cli,google drive cli,google drive cli,3.0,3.0,0.0,0.0
+Cloud & Storage,OneDrive CLI,onedrive cli,onedrive cli,onedrive cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Aliyun CLI,aliyun cli,aliyun cli,aliyun cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Tencent Cloud CLI,tencent cloud cli,tencent cloud cli,tencent cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,Huawei Cloud CLI,huawei cloud cli,huawei cloud cli,huawei cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,Oracle Cloud CLI,oracle cloud cli,oracle cloud cli,oracle cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,IBM Cloud CLI,ibm cloud cli,ibm cloud cli,ibm cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,DigitalOcean CLI,digitalocean cli,digitalocean cli,digitalocean cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Linode CLI,linode cli,linode cli,linode cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Vultr CLI,vultr cli,vultr cli,vultr cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Scaleway CLI,scaleway cli,scaleway cli,scaleway cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Hetzner Cloud CLI,hetzner cloud cli,hetzner cloud cli,hetzner cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,OVH Cloud CLI,ovh cloud cli,ovh cloud cli,ovh cloud cli,3.0,3.0,0.0,0.0
+Cloud & Storage,UpCloud CLI,upcloud cli,upcloud cli,upcloud cli,2.0,2.0,0.0,0.0
+Cloud & Storage,ArvanCloud CLI,arvancloud cli,arvancloud cli,arvancloud cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Cloudflare CLI,cloudflare cli,cloudflare cli,cloudflare cli,2.0,2.0,0.0,0.0
+Cloud & Storage,BunnyCDN CLI,bunnycdn cli,bunnycdn cli,bunnycdn cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Fastly CLI,fastly cli,fastly cli,fastly cli,2.0,2.0,0.0,0.0
+Cloud & Storage,KeyCDN CLI,keycdn cli,keycdn cli,keycdn cli,2.0,2.0,0.0,0.0
+Cloud & Storage,CDN77 CLI,cdn cli,cdn cli,cdn cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Gcore CLI,gcore cli,gcore cli,gcore cli,2.0,2.0,0.0,0.0
+Cloud & Storage,Akamai CLI,akamai cli,akamai cli,akamai cli,2.0,2.0,0.0,0.0
+Cloud & Storage,CloudFront CLI,cloudfront cli,cloudfront cli,cloudfront cli,2.0,2.0,0.0,0.0
+Cloud & Storage,S3 Browser,s browser,browser,browser,2.0,1.0,1.0,50.0
+Cloud & Storage,RaiDrive,raidrive,raidrive,raidrive,1.0,1.0,0.0,0.0
+Cloud & Storage,NetDrive,netdrive,netdrive,netdrive,1.0,1.0,0.0,0.0
+Cloud & Storage,WebDrive,webdrive,webdrive,webdrive,1.0,1.0,0.0,0.0
+Cloud & Storage,TntDrive,tntdrive,tntdrive,tntdrive,1.0,1.0,0.0,0.0
+Cloud & Storage,SFTP Drive,sftp drive,sftp drive,sftp drive,2.0,2.0,0.0,0.0
+Cloud & Storage,FTP Drive,ftp drive,ftp drive,ftp drive,2.0,2.0,0.0,0.0
+Cloud & Storage,S3 Drive,s drive,drive,drive,2.0,1.0,1.0,50.0
+Lain-lain,Trading tools,trading tools,trading tools,trading tools,2.0,2.0,0.0,0.0
+Lain-lain,Aviation apps,aviation apps,aviation apps,aviation apps,2.0,2.0,0.0,0.0
+Lain-lain,Research tools (Elsevier,research tools elsevier,research tools elsevier,research tools elsevier,3.0,3.0,0.0,0.0
+Lain-lain,JSTOR,jstor,jstor,jstor,1.0,1.0,0.0,0.0
+Lain-lain,dll),dll,,,1.0,0.0,1.0,100.0
+Lain-lain,Stimuler app,stimuler app,stimuler app,stimuler app,2.0,2.0,0.0,0.0
+Lain-lain,Scanner Pro,scanner pro,scanner pro,scanner pro,2.0,2.0,0.0,0.0
+Lain-lain,RFS (Real Flight Simulator),rfs real flight simulator,rfs flight simulator,rfs flight simulator,4.0,3.0,1.0,25.0
+Lain-lain,Flightradar24 Gold,flightradar gold,flightradar gold,flightradar gold,2.0,2.0,0.0,0.0
+Lain-lain,X-Plane 12 (Mobile),xplane mobile,xplane mobile,xplane mobile,3.0,2.0,1.0,33.3
+Lain-lain,Weights & Biases,weights biases,weights biases,weights biases,3.0,2.0,1.0,33.3
+Lain-lain,Comet ML,comet ml,comet,comet,2.0,1.0,1.0,50.0
+Lain-lain,Streamlit Cloud,streamlit cloud,streamlit cloud,streamlit cloud,2.0,2.0,0.0,0.0
+Lain-lain,WordPress VIP,wordpress vip,wordpress vip,wordpress vip,2.0,2.0,0.0,0.0
+Lain-lain,Jetpack,jetpack,jetpack,jetpack,1.0,1.0,0.0,0.0
+Lain-lain,Saleor,saleor,saleor,saleor,1.0,1.0,0.0,0.0
+Lain-lain,Spree,spree,spree,spree,1.0,1.0,0.0,0.0
+Lain-lain,Solidus,solidus,solidus,solidus,1.0,1.0,0.0,0.0
+Lain-lain,Reaction Commerce,reaction commerce,reaction commerce,reaction commerce,2.0,2.0,0.0,0.0
+Lain-lain,Bagisto,bagisto,bagisto,bagisto,1.0,1.0,0.0,0.0
+Lain-lain,Sylius,sylius,sylius,sylius,1.0,1.0,0.0,0.0
+Lain-lain,OpenCart,opencart,opencart,opencart,1.0,1.0,0.0,0.0
+Lain-lain,PrestaShop,prestashop,prestashop,prestashop,1.0,1.0,0.0,0.0
+Lain-lain,Magento Open Source,magento open source,magento open source,magento open source,3.0,3.0,0.0,0.0
+Lain-lain,Drupal Commerce,drupal commerce,drupal commerce,drupal commerce,2.0,2.0,0.0,0.0
+Lain-lain,OroCommerce,orocommerce,orocommerce,orocommerce,1.0,1.0,0.0,0.0
+Lain-lain,VTEX,vtex,vtex,vtex,1.0,1.0,0.0,0.0
+Lain-lain,Kibo Commerce,kibo commerce,kibo commerce,kibo commerce,2.0,2.0,0.0,0.0
+Lain-lain,Elastic Path,elastic path,elastic path,elastic path,2.0,2.0,0.0,0.0
+Lain-lain,Fabric,fabric,fabric,fabric,1.0,1.0,0.0,0.0
+Lain-lain,Moltin,moltin,moltin,moltin,1.0,1.0,0.0,0.0
+Lain-lain,Granular,granular,granular,granular,1.0,1.0,0.0,0.0
+Lain-lain,LitExtension,litextension,litextension,litextension,1.0,1.0,0.0,0.0
+Lain-lain,Cart2Cart,cartcart,cartcart,cartcart,1.0,1.0,0.0,0.0
+Lain-lain,NextCart,nextcart,nextcart,nextcart,1.0,1.0,0.0,0.0
+Lain-lain,Swell,swell,swell,swell,1.0,1.0,0.0,0.0
+Lain-lain,Snipcart,snipcart,snipcart,snipcart,1.0,1.0,0.0,0.0
+Lain-lain,FoxyCart,foxycart,foxycart,foxycart,1.0,1.0,0.0,0.0
+Lain-lain,Ecwid,ecwid,ecwid,ecwid,1.0,1.0,0.0,0.0
+Lain-lain,Square Online,square online,square,square,2.0,1.0,1.0,50.0
+Lain-lain,Wix Stores,wix stores,wix stores,wix stores,2.0,2.0,0.0,0.0
+Lain-lain,Weebly,weebly,weebly,weebly,1.0,1.0,0.0,0.0
+Lain-lain,Jimdo,jimdo,jimdo,jimdo,1.0,1.0,0.0,0.0
+Lain-lain,Strikingly,strikingly,strikingly,strikingly,1.0,1.0,0.0,0.0
+Lain-lain,SITE123,site,site,site,1.0,1.0,0.0,0.0
+Lain-lain,GoDaddy Website Builder,godaddy website builder,godaddy website builder,godaddy website builder,3.0,3.0,0.0,0.0
+Lain-lain,Duda,duda,duda,duda,1.0,1.0,0.0,0.0
+Lain-lain,Builder.ai,builderai,builderai,builderai,1.0,1.0,0.0,0.0
+Lain-lain,Bookmark,bookmark,bookmark,bookmark,1.0,1.0,0.0,0.0
+Lain-lain,B12,b,,,1.0,0.0,1.0,100.0
+Lain-lain,Zyro,zyro,zyro,zyro,1.0,1.0,0.0,0.0
+Lain-lain,Hostinger Website Builder,hostinger website builder,hostinger website builder,hostinger website builder,3.0,3.0,0.0,0.0
+Lain-lain,Linktree premium,linktree premium,linktree,linktree,2.0,1.0,1.0,50.0
+Lain-lain,eleven labs,eleven labs,eleven labs,eleven labs,2.0,2.0,0.0,0.0
+Lain-lain,getcontact,getcontact,getcontact,getcontact,1.0,1.0,0.0,0.0
+Lain-lain,mendeley,mendeley,mendeley,mendeley,1.0,1.0,0.0,0.0
+Gym,Membership Gym,membership gym,membership gym,membership gym,2.0,2.0,0.0,0.0
+Gym,Celebrity Fitness,celebrity fitness,celebrity fitness,celebrity fitness,2.0,2.0,0.0,0.0
+Gym,Gold's Gym,golds gym,golds gym,golds gym,2.0,2.0,0.0,0.0
+Gym,Rai Fitness,rai fitness,rai fitness,rai fitness,2.0,2.0,0.0,0.0
+Gym,Fitness Plus Indonesia,fitness plus indonesia,fitness indonesia,fitness indonesia,3.0,2.0,1.0,33.3
+Gym,Anytime Fitness,anytime fitness,anytime fitness,anytime fitness,2.0,2.0,0.0,0.0
+Les Fitness,ZYCLE,zycle,zycle,zycle,1.0,1.0,0.0,0.0
+Les Fitness,Pilates Studio,pilates studio,pilates studio,pilates studio,2.0,2.0,0.0,0.0
+Les Fitness,Yoga Studio,yoga studio,yoga studio,yoga studio,2.0,2.0,0.0,0.0
+Les Fitness,BodyFit Training,bodyfit training,bodyfit training,bodyfit training,2.0,2.0,0.0,0.0
+Les Fitness,Activ.Co (Women Fitness),activco women fitness,activco women fitness,activco women fitness,3.0,3.0,0.0,0.0
+Les Fitness,Pilates,pilates,pilates,pilates,1.0,1.0,0.0,0.0
+Les Fitness,Yoga,yoga,yoga,yoga,1.0,1.0,0.0,0.0
+Les Fitness,Zumba,zumba,zumba,zumba,1.0,1.0,0.0,0.0
+Les Fitness,Dance Fitness,dance fitness,dance fitness,dance fitness,2.0,2.0,0.0,0.0
+Les Fitness,Cycling / Spin Class,cycling spin class,cycling spin class,cycling spin class,4.0,3.0,1.0,25.0
+Les Fitness,Barre,barre,barre,barre,1.0,1.0,0.0,0.0
+Les Fitness,Aerobics,aerobics,aerobics,aerobics,1.0,1.0,0.0,0.0
+Les Fitness,TRX Training,trx training,trx training,trx training,2.0,2.0,0.0,0.0
+Les Fitness,Functional Training,functional training,functional training,functional training,2.0,2.0,0.0,0.0
+Les Fitness,Strength Class (Body Pump),strength class body pump,strength class body pump,strength class body pump,4.0,4.0,0.0,0.0
+Les Fitness,Cardio Class,cardio class,cardio class,cardio class,2.0,2.0,0.0,0.0
+Les Fitness,Stretching / Mobility,stretching mobility,stretching mobility,stretching mobility,3.0,2.0,1.0,33.3
+Les Fitness,Prenatal / Postnatal Yoga,prenatal postnatal yoga,postnatal yoga,postnatal yoga,4.0,2.0,2.0,50.0
+Les Fitness,Aqua Fitness,aqua fitness,aqua fitness,aqua fitness,2.0,2.0,0.0,0.0
+Bootcamp,CHASE Fitness Bootcamp,chase fitness bootcamp,chase fitness bootcamp,chase fitness bootcamp,3.0,3.0,0.0,0.0
+Bootcamp,HIIT Bootcamp,hiit bootcamp,hiit bootcamp,hiit bootcamp,2.0,2.0,0.0,0.0
+Bootcamp,Weight Loss Bootcamp,weight loss bootcamp,weight loss bootcamp,weight loss bootcamp,3.0,3.0,0.0,0.0
+Bootcamp,Military Training,military training,military training,military training,2.0,2.0,0.0,0.0
+Bootcamp,Cross Training Camp,cross training camp,cross training camp,cross training camp,3.0,3.0,0.0,0.0
+Bootcamp,Outdoor Bootcamp,outdoor bootcamp,outdoor bootcamp,outdoor bootcamp,2.0,2.0,0.0,0.0
+Bootcamp,Fat Loss Program,fat loss program,fat loss program,fat loss program,3.0,3.0,0.0,0.0
+Bootcamp,Muscle Building Program,muscle building program,muscle building program,muscle building program,3.0,3.0,0.0,0.0
+Bootcamp,Coding Bootcamp,coding bootcamp,coding bootcamp,coding bootcamp,2.0,2.0,0.0,0.0
+Bootcamp,Data Science Bootcamp,data science bootcamp,data science bootcamp,data science bootcamp,3.0,3.0,0.0,0.0
+Bootcamp,UI/UX Bootcamp,uiux bootcamp,uiux bootcamp,uiux bootcamp,2.0,2.0,0.0,0.0
+Bootcamp,Digital Marketing Bootcamp,digital marketing bootcamp,marketing bootcamp,marketing bootcamp,3.0,2.0,1.0,33.3
+Online Fitness,Nike Training Club,nike training club,nike training club,nike training club,3.0,3.0,0.0,0.0
+Online Fitness,Home Workout App,home workout app,home workout app,home workout app,3.0,3.0,0.0,0.0
+Les Bahasa,Les Bahasa Inggris,les bahasa inggris,les inggris,les inggris,3.0,2.0,1.0,33.3
+Les Bahasa,Les Bahasa Jepang,les bahasa jepang,les jepang,les jepang,3.0,2.0,1.0,33.3
+Les Bahasa,Les Bahasa Korea,les bahasa korea,les korea,les korea,3.0,2.0,1.0,33.3
+Les Bahasa,Les Bahasa Mandarin,les bahasa mandarin,les mandarin,les mandarin,3.0,2.0,1.0,33.3
+Les Akademik,Bimbel Matematika,bimbel matematika,bimbel matematika,bimbel matematika,2.0,2.0,0.0,0.0
+Les Akademik,Bimbel Fisika,bimbel fisika,bimbel fisika,bimbel fisika,2.0,2.0,0.0,0.0
+Les Akademik,Bimbel Kimia,bimbel kimia,bimbel kimia,bimbel kimia,2.0,2.0,0.0,0.0
+Les Akademik,Les Statistik,les statistik,les statistik,les statistik,2.0,2.0,0.0,0.0
+Les Skill,Coding / Programming,coding programming,coding programming,coding programming,3.0,2.0,1.0,33.3
+Les Skill,Data Science,data science,data science,data science,2.0,2.0,0.0,0.0
+Les Skill,UI/UX Design,uiux design,uiux design,uiux design,2.0,2.0,0.0,0.0
+Les Skill,Digital Marketing,digital marketing,marketing,marketing,2.0,1.0,1.0,50.0
+Les Skill,Public Speaking,public speaking,public speaking,public speaking,2.0,2.0,0.0,0.0
+Les Skill,Graphic Design,graphic design,graphic design,graphic design,2.0,2.0,0.0,0.0
+Les Skill,Video Editing,video editing,video editing,video editing,2.0,2.0,0.0,0.0
+Bootcamp,Fitness Bootcamp (HIIT),fitness bootcamp hiit,fitness bootcamp hiit,fitness bootcamp hiit,3.0,3.0,0.0,0.0
+E-commerce,Shopee VIP,shopee vip,shopee vip,shopee vip,2.0,2.0,0.0,0.0
+E-commerce,Grab Unlimited,grab unlimited,grab unlimited,grab unlimited,2.0,2.0,0.0,0.0
+E-commerce,Gojek Plus,gojek plus,gojek,gojek,2.0,1.0,1.0,50.0
+E-commerce,Tokopedia Plus,tokopedia plus,tokopedia,tokopedia,2.0,1.0,1.0,50.0
+E-commerce,Plus by GoTo,plus by goto,by goto,by goto,3.0,2.0,1.0,33.3
+FnB,Kenangan VIP,kenangan vip,kenangan vip,kenang vip,2.0,2.0,0.0,0.0
