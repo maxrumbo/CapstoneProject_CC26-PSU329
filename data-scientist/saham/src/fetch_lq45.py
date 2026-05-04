@@ -42,23 +42,43 @@ def fetch_today() -> pd.DataFrame:
 
 def append_to_csv(new_row: pd.DataFrame):
     os.makedirs("data", exist_ok=True)
-    today = new_row['Date'].iloc[0]
+    today = str(new_row['Date'].iloc[0])
 
     if os.path.exists(CSV_PATH):
         existing = pd.read_csv(CSV_PATH)
+        existing['Date'] = existing['Date'].astype(str)
 
-        # Cek apakah tanggal hari ini sudah ada (hindari duplikat)
         if today in existing['Date'].values:
-            print(f"✓ Tanggal {today} sudah ada di CSV, skip.")
-            return
+            print(f"⚠ Tanggal {today} sudah ada, cek perubahan...")
 
-        updated = pd.concat([existing, new_row], ignore_index=True)
+            # ambil row lama
+            old_row = existing[existing['Date'] == today]
+
+            # bandingkan isi (kecuali kolom Date)
+            old_values = old_row.drop(columns=["Date"]).values
+            new_values = new_row.drop(columns=["Date"]).values
+
+            if (old_values == new_values).all():
+                print("✓ Data sama, tidak perlu update.")
+                return
+            else:
+                print("🔄 Data berubah, update row...")
+
+                # hapus row lama
+                existing = existing[existing['Date'] != today]
+
+                # append data baru
+                updated = pd.concat([existing, new_row], ignore_index=True)
+        else:
+            updated = pd.concat([existing, new_row], ignore_index=True)
     else:
-        # CSV belum ada, buat baru
         updated = new_row
 
+    # rapikan
+    updated = updated.sort_values("Date").reset_index(drop=True)
+
     updated.to_csv(CSV_PATH, index=False)
-    print(f"✓ Append {today} → total {len(updated)} baris")
+    print(f"✓ Saved {today} → total {len(updated)} baris")
 
 if __name__ == "__main__":
     print(f"Fetching data untuk {datetime.now().strftime('%Y-%m-%d')}...")
