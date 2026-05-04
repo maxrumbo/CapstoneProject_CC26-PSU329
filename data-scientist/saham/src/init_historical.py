@@ -1,6 +1,3 @@
-# data-scientist/src/init_historical.py
-# Jalankan SEKALI di lokal: python data-scientist/src/init_historical.py
-
 import yfinance as yf
 import pandas as pd
 import os
@@ -33,15 +30,15 @@ def init():
                 start=START_DATE, end=END_DATE, auto_adjust=True
             )
             if hist.empty:
-                print(f"  ⚠  {ticker_str}: kosong")
+                print(f"  Error  {ticker_str}: kosong")
                 continue
 
             hist.index = hist.index.tz_localize(None)
             all_close[ticker_str.replace('.JK', '')] = hist['Close']
-            print(f"  ✓  {ticker_str:8s}  ({len(hist)} hari trading)")
+            print(f"  Ok  {ticker_str:8s}  ({len(hist)} hari trading)")
 
         except Exception as e:
-            print(f"  ✗  {ticker_str}: {e}")
+            print(f"  No  {ticker_str}: {e}")
 
     # Gabungkan semua jadi satu DataFrame
     df = pd.DataFrame(all_close)
