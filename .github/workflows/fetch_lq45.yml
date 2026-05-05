@@ -1,0 +1,40 @@
+name: Fetch LQ45 Daily
+
+on:
+  schedule:
+    # 09:05 UTC = 16:05 WIB, Senin–Jumat
+    - cron: '5 9 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        working-directory: data-scientist/saham
+        run: pip install -r requirements.txt
+
+      - name: Run fetcher
+        working-directory: data-scientist/saham
+        run: python src/fetch_lq45.py
+
+      - name: Commit & push CSV
+        working-directory: data-scientist/saham
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/lq45_historical.csv
+          git diff --cached --quiet || git commit -m "data: update LQ45 $(date +'%Y-%m-%d')"
+          git push
