@@ -15,7 +15,7 @@ LQ45_TICKERS = [
     "TLKM.JK", "TOWR.JK", "UNTR.JK", "UNVR.JK", "WIFI.JK",
 ]
 
-CSV_PATH = "data-scientist/saham/data/lq45_historical.csv"
+CSV_PATH = "data/lq45_historical.csv"
 
 def fetch_today() -> pd.DataFrame:
     """Ambil data close hari ini untuk semua ticker."""
