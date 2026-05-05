@@ -1,6 +1,6 @@
 # Capstone Project CC26-PSU329
 
-Repository ini dipakai bareng oleh beberapa anggota tim. Isi README ini dibuat sebagai panduan kerja supaya proses clone, branch, commit, dan push tetap aman dan rapi, terutama untuk yang belum terbiasa pakai Git.
+README ini dibuat sebagai panduan kerja 
 
 ## Isi Repo
 
@@ -14,7 +14,7 @@ Repository ini dipakai bareng oleh beberapa anggota tim. Isi README ini dibuat s
 1. Clone repository ke laptop masing-masing.
 2. Selalu buat branch baru untuk pekerjaan kamu.
 3. Kerjakan perubahan di branch itu, jangan langsung di `main`.
-4. Commit perubahan dengan pesan yang jelas.
+4. Commit perubahan dengan pesan yang jelas. misal (Maxwell : update profile page)
 5. Push branch ke GitHub.
 6. Kalau sudah selesai, buat pull request atau minta review dari tim.
 
