@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f3f7f5;
+  --sidebar: #ffffff;
+  --text: #102033;
+  --muted: #667889;
+  --border: #d8e4df;
+  --primary: #0f8f5f;
+  --primary-dark: #087245;
+  --primary-soft: #e8f6ef;
+  --green: #0f8f5f;
+  --red: #bd4a4a;
+  --shadow: 0 8px 18px rgba(16, 32, 51, 0.06);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}

@@ -1,0 +1,26 @@
+function FeaturePreview({ features }) {
+  return (
+    <section className="panel">
+      <div className="panel-header">
+        <div>
+          <p className="eyebrow">Rencana Fitur</p>
+          <h3>Kebutuhan Keuangan</h3>
+        </div>
+      </div>
+
+      <div className="feature-grid">
+        {features.map((feature) => (
+          <article className="feature-card" key={feature.title}>
+            <h4>{feature.title}</h4>
+            <p>{feature.description}</p>
+            <button type="button" disabled>
+              Belum aktif
+            </button>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default FeaturePreview;
