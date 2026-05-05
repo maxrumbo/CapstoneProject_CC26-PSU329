@@ -10,7 +10,7 @@ const initialTransactions = [
     amount: 1500000,
     type: "income",
     date: "2026-04-30",
-    category: "Pemasukan",
+    category: "",
     method: "Bank",
   },
   {
@@ -77,12 +77,21 @@ function App() {
     return {
       income,
       expense,
-      balance: income - expense,
+      balance: Math.max(income - expense, 0),
       total: transactions.length,
     };
   }, [transactions]);
 
   const addTransaction = (transaction) => {
+    if (transaction.type === "expense" && transaction.amount > summary.balance) {
+      return {
+        success: false,
+        message: `Saldo tidak cukup. Saldo tersedia saat ini ${formatCurrency(
+          summary.balance
+        )}.`,
+      };
+    }
+
     setTransactions((prev) => [
       {
         ...transaction,
@@ -90,6 +99,11 @@ function App() {
       },
       ...prev,
     ]);
+
+    return {
+      success: true,
+      message: "Transaksi berhasil ditambahkan ke riwayat.",
+    };
   };
 
   return (
@@ -169,7 +183,10 @@ function App() {
 
         <section className="workspace-grid">
           <div className="primary-column">
-            <TransactionForm onAddTransaction={addTransaction} />
+            <TransactionForm
+              availableBalance={summary.balance}
+              onAddTransaction={addTransaction}
+            />
 
             <section className="panel transaction-table-card">
               <div className="panel-header">
@@ -209,8 +226,9 @@ function App() {
                     <div>
                       <strong>{transaction.description}</strong>
                       <span>
-                        {transaction.category} / {transaction.method} /{" "}
-                        {transaction.date}
+                        {[transaction.category, transaction.method, transaction.date]
+                          .filter(Boolean)
+                          .join(" / ")}
                       </span>
                     </div>
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
+import { formatCurrency } from "../../../utils/formatCurrency";
 
 const createInitialFormData = () => ({
   description: "",
@@ -12,30 +13,43 @@ const createInitialFormData = () => ({
 
 const getCategoryByType = (type, currentCategory) => {
   if (type === "income") {
-    return "Pemasukan";
-  }
-
-  if (currentCategory === "Pemasukan") {
-    return TRANSACTION_CATEGORIES[0];
+    return "";
   }
 
   return currentCategory;
 };
 
-function TransactionForm({ onAddTransaction }) {
+function TransactionForm({ availableBalance, onAddTransaction }) {
   const [formData, setFormData] = useState(createInitialFormData);
   const [message, setMessage] = useState("");
-  const categoryOptions =
-    formData.type === "income"
-      ? ["Pemasukan"]
-      : TRANSACTION_CATEGORIES.filter((category) => category !== "Pemasukan");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    let nextValue = value;
+
+    if (name === "amount" && formData.type === "expense" && value) {
+      const numericValue = Number(value);
+
+      if (availableBalance <= 0) {
+        nextValue = "";
+        setMessage("Saldo tersedia saat ini Rp 0. Tambahkan pemasukan dulu.");
+      } else if (numericValue > availableBalance) {
+        nextValue = String(availableBalance);
+        setMessage(
+          `Maksimal pengeluaran saat ini ${formatCurrency(availableBalance)}.`
+        );
+      } else if (message) {
+        setMessage("");
+      }
+    }
+
+    if (name === "amount" && formData.type === "income" && message) {
+      setMessage("");
+    }
 
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: nextValue,
     }));
   };
 
@@ -43,8 +57,20 @@ function TransactionForm({ onAddTransaction }) {
     setFormData((prev) => ({
       ...prev,
       type,
+      amount:
+        type === "expense" && Number(prev.amount) > availableBalance
+          ? availableBalance > 0
+            ? String(availableBalance)
+            : ""
+          : prev.amount,
       category: getCategoryByType(type, prev.category),
     }));
+
+    if (type === "expense" && availableBalance <= 0) {
+      setMessage("Saldo tersedia saat ini Rp 0. Tambahkan pemasukan dulu.");
+    } else if (message) {
+      setMessage("");
+    }
   };
 
   const handleSubmit = (event) => {
@@ -60,13 +86,24 @@ function TransactionForm({ onAddTransaction }) {
       return;
     }
 
-    onAddTransaction({
+    if (formData.type === "expense" && Number(formData.amount) > availableBalance) {
+      setMessage(
+        `Maksimal pengeluaran saat ini ${formatCurrency(availableBalance)}.`
+      );
+      return;
+    }
+
+    const result = onAddTransaction({
       ...formData,
       amount: Number(formData.amount),
+      category: formData.type === "income" ? "" : formData.category,
     });
 
-    setMessage("Transaksi berhasil ditambahkan ke riwayat.");
-    setFormData(createInitialFormData());
+    setMessage(result.message);
+
+    if (result.success) {
+      setFormData(createInitialFormData());
+    }
   };
 
   return (
@@ -108,17 +145,27 @@ function TransactionForm({ onAddTransaction }) {
           />
         </label>
 
-        <div className="form-grid">
+        <div
+          className={
+            formData.type === "income" ? "form-grid single-field" : "form-grid"
+          }
+        >
           <label>
             Nominal
             <input
               type="number"
               name="amount"
               min="1"
+              max={formData.type === "expense" ? availableBalance : undefined}
               placeholder="25000"
               value={formData.amount}
               onChange={handleChange}
             />
+            {formData.type === "expense" && (
+              <small className="field-hint">
+                Maksimal: {formatCurrency(availableBalance)}
+              </small>
+            )}
           </label>
 
           <label>
@@ -133,20 +180,22 @@ function TransactionForm({ onAddTransaction }) {
         </div>
 
         <div className="form-grid">
-          <label>
-            Kategori
-            <select
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-            >
-              {categoryOptions.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </label>
+          {formData.type === "expense" && (
+            <label>
+              Kategori
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+              >
+                {TRANSACTION_CATEGORIES.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
 
           <label>
             Metode
@@ -158,7 +207,11 @@ function TransactionForm({ onAddTransaction }) {
           </label>
         </div>
 
-        <button className="submit-button" type="submit">
+        <button
+          className="submit-button"
+          type="submit"
+          disabled={formData.type === "expense" && availableBalance <= 0}
+        >
           Simpan Transaksi
         </button>
       </form>

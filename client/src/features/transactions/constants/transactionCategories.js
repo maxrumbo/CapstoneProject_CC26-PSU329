@@ -6,6 +6,5 @@ export const TRANSACTION_CATEGORIES = [
   "Tagihan",
   "Wishlist",
   "Investasi",
-  "Pemasukan",
   "Lainnya",
 ];
