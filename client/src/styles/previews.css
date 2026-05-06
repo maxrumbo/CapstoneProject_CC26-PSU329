@@ -1,0 +1,107 @@
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feature-card {
+  min-height: 118px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-card h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.feature-card button {
+  width: fit-content;
+  margin-top: auto;
+  padding: 6px 8px;
+  border-radius: 5px;
+  color: var(--muted);
+  background: #e8eee9;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.feature-card.active {
+  background: #ffffff;
+}
+
+.feature-card.active button {
+  color: #ffffff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.feature-card.active button:hover {
+  background: var(--primary-dark);
+}
+
+.chart-card {
+  overflow: hidden;
+}
+
+.bar-chart {
+  height: 145px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 14px;
+  padding: 10px 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bar-chart div {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 5px;
+}
+
+.bar-chart span {
+  display: block;
+  min-height: 8px;
+  border-radius: 4px 4px 0 0;
+}
+
+.bar-chart span:first-child {
+  height: var(--income);
+  background: var(--primary);
+}
+
+.bar-chart span:nth-child(2) {
+  height: var(--expense);
+  background: #cfdad4;
+}
+
+.bar-chart small {
+  grid-column: 1 / -1;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.muted-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
