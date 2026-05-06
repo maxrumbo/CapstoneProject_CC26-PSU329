@@ -39,6 +39,20 @@
   font-weight: 500;
 }
 
+.feature-card.active {
+  background: #ffffff;
+}
+
+.feature-card.active button {
+  color: #ffffff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.feature-card.active button:hover {
+  background: var(--primary-dark);
+}
+
 .chart-card {
   overflow: hidden;
 }

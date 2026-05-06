@@ -1,4 +1,4 @@
-function FeaturePreview({ features }) {
+function FeaturePreview({ features, onNavigate }) {
   return (
     <section className="panel">
       <div className="panel-header">
@@ -10,11 +10,18 @@ function FeaturePreview({ features }) {
 
       <div className="feature-grid">
         {features.map((feature) => (
-          <article className="feature-card" key={feature.title}>
+          <article
+            className={feature.active ? "feature-card active" : "feature-card"}
+            key={feature.title}
+          >
             <h4>{feature.title}</h4>
             <p>{feature.description}</p>
-            <button type="button" disabled>
-              Belum aktif
+            <button
+              type="button"
+              disabled={!feature.active}
+              onClick={() => onNavigate(feature.page)}
+            >
+              {feature.active ? "Buka fitur" : "Belum aktif"}
             </button>
           </article>
         ))}

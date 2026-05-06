@@ -1,4 +1,4 @@
-function Sidebar({ menuItems, onCreateTransaction }) {
+function Sidebar({ menuItems, currentPage, onCreateTransaction, onNavigate }) {
   return (
     <aside className="sidebar">
       <div className="brand">
@@ -18,21 +18,26 @@ function Sidebar({ menuItems, onCreateTransaction }) {
       </button>
 
       <nav className="menu" aria-label="Menu utama">
-        {menuItems.map((item) => (
-          <button
-            key={item.label}
-            className={item.active ? "menu-item active" : "menu-item"}
-            type="button"
-            disabled={!item.active}
-          >
-            <span>{item.label}</span>
-            <small>{item.status}</small>
-          </button>
-        ))}
+        {menuItems.map((item) => {
+          const isCurrentPage = item.page === currentPage;
+
+          return (
+            <button
+              key={item.label}
+              className={isCurrentPage ? "menu-item active" : "menu-item"}
+              type="button"
+              disabled={!item.active || !item.page}
+              onClick={() => onNavigate(item.page)}
+            >
+              <span>{item.label}</span>
+              <small>{item.status}</small>
+            </button>
+          );
+        })}
       </nav>
 
       <div className="project-card">
-        <p>Project Plan</p>
+        <p>Capstone Project</p>
         <strong>CC26-PSU329</strong>
       </div>
     </aside>

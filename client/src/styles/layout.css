@@ -81,6 +81,7 @@
   color: var(--text);
   background: transparent;
   text-align: left;
+  cursor: pointer;
 }
 
 .menu-item span {
@@ -136,6 +137,10 @@
   min-width: 0;
   margin: 0 auto;
   padding: 24px 32px 32px;
+}
+
+.workspace-grid.single-column {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .topbar {

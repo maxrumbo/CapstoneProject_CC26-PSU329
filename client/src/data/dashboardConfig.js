@@ -29,11 +29,26 @@ export const initialTransactions = [
 ];
 
 export const menuItems = [
-  { label: "Dashboard", status: "Preview" },
-  { label: "Transaksi", status: "Aktif", active: true },
+  {
+    label: "Dashboard",
+    status: "Aktif",
+    active: true,
+    page: "dashboard",
+  },
+  {
+    label: "Transaksi",
+    status: "Aktif",
+    active: true,
+    page: "transactions",
+  },
   { label: "Budget", status: "Segera" },
   { label: "Subscription", status: "Segera" },
-  { label: "Wishlist", status: "Segera" },
+  {
+    label: "Wishlist Calculator",
+    status: "Aktif",
+    active: true,
+    page: "wishlist",
+  },
   { label: "Investasi", status: "Segera" },
   { label: "Analisis AI", status: "Segera" },
 ];
@@ -46,6 +61,8 @@ export const featureCards = [
   {
     title: "Wishlist Calculator",
     description: "Hitung target tabungan untuk barang yang ingin dibeli.",
+    active: true,
+    page: "wishlist",
   },
   {
     title: "Analisis Konsumsi",

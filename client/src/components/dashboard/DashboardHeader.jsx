@@ -1,10 +1,14 @@
-function DashboardHeader() {
+function DashboardHeader({
+  eyebrow = "Workspace SAWIT",
+  title = "Transaction Report",
+  description = "Ringkasan pemasukan dan pengeluaran dari transaksi aktif.",
+}) {
   return (
     <header className="topbar">
       <div>
-        <p className="eyebrow">Workspace SAWIT</p>
-        <h2>Transaction Report</h2>
-        <span>Ringkasan pemasukan dan pengeluaran dari transaksi aktif.</span>
+        <p className="eyebrow">{eyebrow}</p>
+        <h2>{title}</h2>
+        <span>{description}</span>
       </div>
     </header>
   );
