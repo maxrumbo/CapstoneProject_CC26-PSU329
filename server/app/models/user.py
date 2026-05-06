@@ -20,3 +20,6 @@ class User(Base):
 
     # Relasi ke transaksi (lazy load)
     transactions = relationship("Transaction", back_populates="owner", cascade="all, delete-orphan")
+
+    # Relasi ke wishlists
+    wishlists = relationship("Wishlist", back_populates="owner", cascade="all, delete-orphan")
