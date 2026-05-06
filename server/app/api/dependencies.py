@@ -1,22 +1,26 @@
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import HTTPBearer, HTTPAuthCredentials
 from sqlalchemy.orm import Session
 
 from app.core.security import decode_token
 from app.db.session import get_db
 from app.models.user import User
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
+security = HTTPBearer(description="JWT Bearer Token")
 
 
 def get_current_user(
-    token: str = Depends(oauth2_scheme),
+    credentials: HTTPAuthCredentials = Depends(security),
     db: Session = Depends(get_db),
 ) -> User:
     """
     Dependency wajib di semua endpoint yang butuh autentikasi.
-    Ekstrak user_id dari JWT, query user dari DB, kembalikan objek User.
+    Extract JWT dari Authorization header, decode, dan return User object.
+    
+    Usage:
+    Header: Authorization: Bearer <jwt_token>
     """
+    token = credentials.credentials
     payload = decode_token(token)
     user_id: int = payload.get("sub")
 
