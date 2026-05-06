@@ -26,6 +26,7 @@ function Sidebar({ menuItems, currentPage, onCreateTransaction, onNavigate }) {
               key={item.label}
               className={isCurrentPage ? "menu-item active" : "menu-item"}
               type="button"
+              aria-current={isCurrentPage ? "page" : undefined}
               disabled={!item.active || !item.page}
               onClick={() => onNavigate(item.page)}
             >

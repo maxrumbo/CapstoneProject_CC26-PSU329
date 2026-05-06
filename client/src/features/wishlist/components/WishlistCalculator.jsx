@@ -26,14 +26,23 @@ function WishlistCalculator() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    setFormData((prev) => ({
-      ...prev,
+    const nextFormData = {
+      ...formData,
       [name]: value,
-    }));
+    };
+
+    setFormData(nextFormData);
 
     if (error) {
       setError("");
+    }
+
+    if (result) {
+      try {
+        setResult(calculateWishlist(nextFormData));
+      } catch {
+        setResult(null);
+      }
     }
   };
 
@@ -69,8 +78,11 @@ function WishlistCalculator() {
           <input
             type="text"
             name="itemName"
+            autoComplete="off"
             placeholder="Contoh: Laptop Baru"
             value={formData.itemName}
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? "wishlist-error" : undefined}
             onChange={handleChange}
           />
         </label>
@@ -82,8 +94,11 @@ function WishlistCalculator() {
               type="number"
               name="targetPrice"
               min="1"
+              inputMode="numeric"
               placeholder="8000000"
               value={formData.targetPrice}
+              aria-invalid={Boolean(error)}
+              aria-describedby={error ? "wishlist-error" : undefined}
               onChange={handleChange}
             />
           </label>
@@ -95,8 +110,11 @@ function WishlistCalculator() {
               name="targetMonths"
               min="1"
               step="any"
+              inputMode="decimal"
               placeholder="8"
               value={formData.targetMonths}
+              aria-invalid={Boolean(error)}
+              aria-describedby={error ? "wishlist-error" : undefined}
               onChange={handleChange}
             />
           </label>
@@ -108,7 +126,7 @@ function WishlistCalculator() {
       </form>
 
       {error && (
-        <p className="wishlist-error" role="alert">
+        <p className="wishlist-error" id="wishlist-error" role="alert">
           {error}
         </p>
       )}

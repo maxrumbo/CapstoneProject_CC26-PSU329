@@ -46,6 +46,7 @@
   border-radius: 6px;
   background: #ffffff;
   box-shadow: 0 6px 14px rgba(16, 32, 51, 0.05);
+  animation: result-pop 180ms ease;
 }
 
 .wishlist-result-header {
@@ -123,6 +124,18 @@
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
+}
+
+@keyframes result-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 840px) {

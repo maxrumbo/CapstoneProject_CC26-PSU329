@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import {
   featureCards,
@@ -6,12 +6,19 @@ import {
   menuItems,
   previewChartBars,
 } from "./data/dashboardConfig";
-import DashboardPage from "./pages/DashboardPage";
-import TransactionsPage from "./pages/TransactionsPage";
-import WishlistPage from "./pages/WishlistPage";
 import { formatCurrency } from "./utils/formatCurrency";
 import { summarizeTransactions } from "./utils/summarizeTransactions";
 import "./App.css";
+
+const pageLoaders = {
+  dashboard: () => import("./pages/DashboardPage"),
+  transactions: () => import("./pages/TransactionsPage"),
+  wishlist: () => import("./pages/WishlistPage"),
+};
+
+const DashboardPage = lazy(pageLoaders.dashboard);
+const TransactionsPage = lazy(pageLoaders.transactions);
+const WishlistPage = lazy(pageLoaders.wishlist);
 
 const PAGE_HASHES = {
   dashboard: "dashboard",
@@ -77,6 +84,7 @@ function App() {
   };
 
   const navigateToPage = (page) => {
+    pageLoaders[page]?.();
     setCurrentPage(page);
     const nextHash = PAGE_HASHES[page];
 
@@ -121,7 +129,17 @@ function App() {
         onNavigate={navigateToPage}
       />
 
-      <main className="dashboard">{renderPage()}</main>
+      <main className="dashboard">
+        <Suspense
+          fallback={
+            <div className="page-loading" role="status">
+              Memuat halaman...
+            </div>
+          }
+        >
+          {renderPage()}
+        </Suspense>
+      </main>
     </div>
   );
 }
