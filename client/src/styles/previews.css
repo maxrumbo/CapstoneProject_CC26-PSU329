@@ -15,6 +15,22 @@
   gap: 8px;
 }
 
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--primary);
+  background: #ffffff;
+}
+
+.feature-card.active .feature-icon {
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
 .feature-card h4 {
   margin: 0;
   font-size: 13px;
@@ -32,6 +48,9 @@
   width: fit-content;
   margin-top: auto;
   padding: 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
   color: var(--muted);
   background: #e8eee9;

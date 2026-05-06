@@ -46,6 +46,31 @@ button {
   border: 0;
 }
 
+.icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.field-label,
+.button-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field-label {
+  color: inherit;
+}
+
+.field-label .icon {
+  color: var(--muted);
+}
+
+.button-content {
+  justify-content: center;
+}
+
 button,
 input,
 select {
@@ -62,4 +87,15 @@ input:focus-visible,
 select:focus-visible {
   outline: 3px solid rgba(15, 143, 95, 0.22);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

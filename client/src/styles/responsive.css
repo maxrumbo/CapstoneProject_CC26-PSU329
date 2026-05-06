@@ -14,11 +14,24 @@
   }
 
   .sidebar {
-    min-height: auto;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding-right: 14px;
   }
 
   .menu {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand,
+  .create-button,
+  .menu {
+    min-width: 0;
+  }
+
+  .sidebar-resize-handle {
+    display: none;
   }
 
   .project-card {
@@ -49,6 +62,11 @@
   .feature-grid,
   .transaction-row {
     grid-template-columns: 1fr;
+  }
+
+  .transaction-row .amount {
+    padding-left: 42px;
+    text-align: left;
   }
 
   .submit-button {

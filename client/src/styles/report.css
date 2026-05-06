@@ -23,6 +23,9 @@
 
 .report-toolbar button {
   min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 999px;
   padding: 0 16px;
   color: #ffffff;
@@ -41,10 +44,34 @@
 }
 
 .report-equation article {
+  display: grid;
+  justify-items: center;
   text-align: center;
 }
 
-.report-equation span {
+.report-metric-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.expense-metric .report-metric-icon {
+  color: var(--red);
+  background: #fdebea;
+}
+
+.balance-metric .report-metric-icon {
+  color: var(--primary-dark);
+  background: #eef4f1;
+}
+
+.report-label {
   display: block;
   margin-bottom: 7px;
   color: var(--muted);

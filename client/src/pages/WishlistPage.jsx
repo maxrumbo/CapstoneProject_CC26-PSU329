@@ -8,6 +8,7 @@ function WishlistPage() {
         eyebrow="Fitur Aktif"
         title="Wishlist Calculator"
         description="Hitung estimasi tabungan dari nol untuk mencapai target barang impian."
+        icon="target"
       />
 
       <section className="workspace-grid single-column">

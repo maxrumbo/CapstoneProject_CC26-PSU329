@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Icon from "../../../components/ui/Icon";
 import { calculateWishlist } from "../utils/calculateWishlist";
 
 const initialFormData = {
@@ -65,16 +66,24 @@ function WishlistCalculator() {
       id="wishlist-calculator"
     >
       <div className="panel-header">
-        <div>
-          <p className="eyebrow">Fitur Aktif</p>
-          <h3>Wishlist Calculator</h3>
+        <div className="panel-title">
+          <span className="panel-icon">
+            <Icon name="target" size={18} />
+          </span>
+          <div>
+            <p className="eyebrow">Fitur Aktif</p>
+            <h3>Wishlist Calculator</h3>
+          </div>
         </div>
-        <span className="status-pill">Frontend-only</span>
+        <span className="status-pill">Aktif</span>
       </div>
 
       <form className="wishlist-form" onSubmit={handleSubmit} noValidate>
         <label>
-          Nama Barang
+          <span className="field-label">
+            <Icon name="tag" size={14} />
+            Nama Barang
+          </span>
           <input
             type="text"
             name="itemName"
@@ -89,7 +98,10 @@ function WishlistCalculator() {
 
         <div className="wishlist-form-grid">
           <label>
-            Harga Barang
+            <span className="field-label">
+              <Icon name="wallet" size={14} />
+              Harga Barang
+            </span>
             <input
               type="number"
               name="targetPrice"
@@ -104,7 +116,10 @@ function WishlistCalculator() {
           </label>
 
           <label>
-            Target Waktu (Bulan)
+            <span className="field-label">
+              <Icon name="clock" size={14} />
+              Target Waktu (Bulan)
+            </span>
             <input
               type="number"
               name="targetMonths"
@@ -121,7 +136,10 @@ function WishlistCalculator() {
         </div>
 
         <button className="submit-button wishlist-submit" type="submit">
-          Hitung Rencana
+          <span className="button-content">
+            <Icon name="target" size={15} />
+            Hitung Rencana
+          </span>
         </button>
       </form>
 
@@ -147,23 +165,38 @@ function WishlistCalculator() {
 
           <dl className="wishlist-summary">
             <div>
-              <dt>Harga Target</dt>
+              <dt>
+                <Icon name="wallet" size={14} />
+                Harga Target
+              </dt>
               <dd>{formatRupiah(result.targetPrice)}</dd>
             </div>
             <div>
-              <dt>Target Waktu</dt>
+              <dt>
+                <Icon name="clock" size={14} />
+                Target Waktu
+              </dt>
               <dd>{result.targetMonths} bulan</dd>
             </div>
             <div>
-              <dt>Per Bulan</dt>
+              <dt>
+                <Icon name="calendar" size={14} />
+                Per Bulan
+              </dt>
               <dd>{formatRupiah(result.monthlySaving)}</dd>
             </div>
             <div>
-              <dt>Per Minggu</dt>
+              <dt>
+                <Icon name="calendar" size={14} />
+                Per Minggu
+              </dt>
               <dd>{formatRupiah(result.weeklySaving)}</dd>
             </div>
             <div className="wishlist-summary-wide">
-              <dt>Per Hari</dt>
+              <dt>
+                <Icon name="calendar" size={14} />
+                Per Hari
+              </dt>
               <dd>{formatRupiah(result.dailySaving)}</dd>
             </div>
           </dl>

@@ -9,6 +9,7 @@ function DashboardPage({ summary, features, bars, onNavigate }) {
       <DashboardHeader
         title="Dashboard SAWIT"
         description="Ringkasan pemasukan, pengeluaran, dan fitur keuangan yang tersedia."
+        icon="dashboard"
       />
       <SummaryReport summary={summary} />
 

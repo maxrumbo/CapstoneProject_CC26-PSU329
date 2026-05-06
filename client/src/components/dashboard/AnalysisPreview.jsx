@@ -1,10 +1,17 @@
+import Icon from "../ui/Icon";
+
 function AnalysisPreview({ bars }) {
   return (
     <section className="panel chart-card">
       <div className="panel-header">
-        <div>
-          <p className="eyebrow">Preview Analisis</p>
-          <h3>Income & Expense</h3>
+        <div className="panel-title">
+          <span className="panel-icon">
+            <Icon name="chart" size={18} />
+          </span>
+          <div>
+            <p className="eyebrow">Preview Analisis</p>
+            <h3>Income & Expense</h3>
+          </div>
         </div>
       </div>
 

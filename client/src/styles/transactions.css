@@ -59,6 +59,10 @@
 
 .type-toggle button {
   min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   border-radius: 5px;
   color: var(--muted);
   background: transparent;
@@ -117,6 +121,9 @@ select:focus {
 .submit-button {
   width: fit-content;
   min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
   padding: 0 16px;
   color: #ffffff;
@@ -164,12 +171,43 @@ select:focus {
   background: #ffffff;
 }
 
+.transaction-row-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.transaction-row-main > div {
+  min-width: 0;
+}
+
+.transaction-type-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--surface-soft);
+}
+
+.transaction-type-icon.income {
+  color: var(--green);
+  background: var(--primary-soft);
+}
+
+.transaction-type-icon.expense {
+  color: var(--red);
+  background: #fdebea;
+}
+
 .transaction-row:last-child {
   border-bottom: 0;
 }
 
 .transaction-row strong,
-.transaction-row span {
+.transaction-meta {
   display: block;
 }
 
@@ -179,13 +217,14 @@ select:focus {
   font-weight: 600;
 }
 
-.transaction-row span {
+.transaction-meta {
   color: var(--muted);
   font-size: 11px;
 }
 
 .amount {
   margin-bottom: 0;
+  text-align: right;
   white-space: nowrap;
 }
 

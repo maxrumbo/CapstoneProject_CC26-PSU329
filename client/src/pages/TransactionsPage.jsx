@@ -10,6 +10,7 @@ function TransactionsPage({ summary, transactions, onAddTransaction }) {
         eyebrow="Fitur Aktif"
         title="Transaksi"
         description="Catat pemasukan dan pengeluaran, lalu pantau riwayat terbaru."
+        icon="receipt"
       />
       <SummaryReport summary={summary} />
 

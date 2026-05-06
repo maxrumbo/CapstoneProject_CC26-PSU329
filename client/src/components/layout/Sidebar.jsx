@@ -1,4 +1,26 @@
-function Sidebar({ menuItems, currentPage, onCreateTransaction, onNavigate }) {
+import Icon from "../ui/Icon";
+
+function Sidebar({
+  menuItems,
+  currentPage,
+  onCreateTransaction,
+  onNavigate,
+  onPreload,
+  onResizeByKeyboard,
+  onResizeStart,
+}) {
+  const handleResizeKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      onResizeByKeyboard(-16);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      onResizeByKeyboard(16);
+    }
+  };
+
   return (
     <aside className="sidebar">
       <div className="brand">
@@ -13,8 +35,13 @@ function Sidebar({ menuItems, currentPage, onCreateTransaction, onNavigate }) {
         className="create-button"
         type="button"
         onClick={onCreateTransaction}
+        onFocus={() => onPreload("transactions")}
+        onMouseEnter={() => onPreload("transactions")}
       >
-        + Buat Transaksi
+        <span className="button-content">
+          <Icon name="plus" size={16} />
+          Buat Transaksi
+        </span>
       </button>
 
       <nav className="menu" aria-label="Menu utama">
@@ -29,18 +56,27 @@ function Sidebar({ menuItems, currentPage, onCreateTransaction, onNavigate }) {
               aria-current={isCurrentPage ? "page" : undefined}
               disabled={!item.active || !item.page}
               onClick={() => onNavigate(item.page)}
+              onFocus={() => item.page && onPreload(item.page)}
+              onMouseEnter={() => item.page && onPreload(item.page)}
             >
-              <span>{item.label}</span>
+              <span className="menu-item-main">
+                <Icon name={item.icon} size={16} />
+                <span className="menu-item-label">{item.label}</span>
+              </span>
               <small>{item.status}</small>
             </button>
           );
         })}
       </nav>
 
-      <div className="project-card">
-        <p>Capstone Project</p>
-        <strong>CC26-PSU329</strong>
-      </div>
+      <button
+        aria-label="Geser lebar sidebar"
+        className="sidebar-resize-handle"
+        title="Geser lebar sidebar"
+        type="button"
+        onKeyDown={handleResizeKeyDown}
+        onPointerDown={onResizeStart}
+      />
     </aside>
   );
 }

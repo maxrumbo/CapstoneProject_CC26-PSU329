@@ -1,3 +1,4 @@
+import Icon from "../../../components/ui/Icon";
 import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 import { useTransactionForm } from "../hooks/useTransactionForm";
 import { formatCurrency } from "../../../utils/formatCurrency";
@@ -16,9 +17,14 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
   return (
     <section className="panel transaction-form-card" id="transaksi">
       <div className="panel-header">
-        <div>
-          <p className="eyebrow">Fitur Aktif</p>
-          <h3>Input Transaksi</h3>
+        <div className="panel-title">
+          <span className="panel-icon">
+            <Icon name="form" size={18} />
+          </span>
+          <div>
+            <p className="eyebrow">Fitur Aktif</p>
+            <h3>Input Transaksi</h3>
+          </div>
         </div>
         <span className="status-pill">Berfungsi</span>
       </div>
@@ -30,6 +36,7 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
             type="button"
             onClick={() => handleTypeChange("expense")}
           >
+            <Icon name="expense" size={15} />
             Pengeluaran
           </button>
           <button
@@ -37,12 +44,16 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
             type="button"
             onClick={() => handleTypeChange("income")}
           >
+            <Icon name="income" size={15} />
             Pemasukan
           </button>
         </div>
 
         <label>
-          Deskripsi
+          <span className="field-label">
+            <Icon name="receipt" size={14} />
+            Deskripsi
+          </span>
           <input
             type="text"
             name="description"
@@ -54,7 +65,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
 
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
           <label>
-            Nominal
+            <span className="field-label">
+              <Icon name="wallet" size={14} />
+              Nominal
+            </span>
             <input
               type="number"
               name="amount"
@@ -72,7 +86,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
           </label>
 
           <label>
-            Tanggal
+            <span className="field-label">
+              <Icon name="calendar" size={14} />
+              Tanggal
+            </span>
             <input
               type="date"
               name="date"
@@ -85,7 +102,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
           {isExpense && (
             <label>
-              Kategori
+              <span className="field-label">
+                <Icon name="tag" size={14} />
+                Kategori
+              </span>
               <select
                 name="category"
                 value={formData.category}
@@ -101,7 +121,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
           )}
 
           <label>
-            Metode
+            <span className="field-label">
+              <Icon name="card" size={14} />
+              Metode
+            </span>
             <select name="method" value={formData.method} onChange={handleChange}>
               <option value="Tunai">Tunai</option>
               <option value="Bank">Bank</option>
@@ -115,7 +138,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
           type="submit"
           disabled={isSubmitDisabled}
         >
-          Simpan Transaksi
+          <span className="button-content">
+            <Icon name="save" size={15} />
+            Simpan Transaksi
+          </span>
         </button>
       </form>
 
