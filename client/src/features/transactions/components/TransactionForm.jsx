@@ -1,5 +1,4 @@
 import Icon from "../../../components/ui/Icon";
-import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 import { useTransactionForm } from "../hooks/useTransactionForm";
 import { formatCurrency } from "../../../utils/formatCurrency";
 
@@ -57,10 +56,13 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
           <input
             type="text"
             name="description"
-            placeholder="Contoh: beli makan siang"
+            placeholder="Deskripsi transaksi"
             value={formData.description}
             onChange={handleChange}
           />
+          <small className="field-hint">
+            Kategori akan ditentukan otomatis oleh sistem.
+          </small>
         </label>
 
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
@@ -74,7 +76,7 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
               name="amount"
               min="1"
               max={isExpense ? availableBalance : undefined}
-              placeholder="25000"
+              placeholder="Nominal"
               value={formData.amount}
               onChange={handleChange}
             />
@@ -100,26 +102,6 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
         </div>
 
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
-          {isExpense && (
-            <label>
-              <span className="field-label">
-                <Icon name="tag" size={14} />
-                Kategori
-              </span>
-              <select
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-              >
-                {TRANSACTION_CATEGORIES.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
-
           <label>
             <span className="field-label">
               <Icon name="card" size={14} />

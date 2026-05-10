@@ -1,7 +1,7 @@
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import WishlistCalculator from "../features/wishlist/components/WishlistCalculator";
 
-function WishlistPage() {
+function WishlistPage({ userName }) {
   return (
     <>
       <DashboardHeader
@@ -9,6 +9,7 @@ function WishlistPage() {
         title="Wishlist Calculator"
         description="Hitung estimasi tabungan dari nol untuk mencapai target barang impian."
         icon="target"
+        userName={userName}
       />
 
       <section className="workspace-grid single-column">

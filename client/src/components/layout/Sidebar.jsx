@@ -8,6 +8,7 @@ function Sidebar({
   onPreload,
   onResizeByKeyboard,
   onResizeStart,
+  onLogout,
 }) {
   const handleResizeKeyDown = (event) => {
     if (event.key === "ArrowLeft") {
@@ -68,6 +69,17 @@ function Sidebar({
           );
         })}
       </nav>
+
+      {onLogout && (
+        <div className="sidebar-footer">
+          <button className="logout-button" type="button" onClick={onLogout}>
+            <span className="button-content">
+              <Icon name="arrowRight" size={16} />
+              Keluar
+            </span>
+          </button>
+        </div>
+      )}
 
       <button
         aria-label="Geser lebar sidebar"

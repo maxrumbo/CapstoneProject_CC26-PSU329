@@ -1,13 +1,7 @@
-import { Suspense, lazy, useEffect, useMemo, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
-import {
-  featureCards,
-  initialTransactions,
-  menuItems,
-  previewChartBars,
-} from "./data/dashboardConfig";
-import { formatCurrency } from "./utils/formatCurrency";
-import { summarizeTransactions } from "./utils/summarizeTransactions";
+import { menuItems } from "./data/dashboardConfig";
+import { useAuth } from "./context/useAuth";
 import "./App.css";
 
 const pageLoaders = {
@@ -44,8 +38,8 @@ const HASH_TO_PAGE = {
   register: "register",
 };
 
-const getPageFromHash = () => {
-  const hash = window.location.hash.replace("#", "");
+const getPageFromHash = (value = window.location.hash) => {
+  const hash = value.replace("#", "");
   return HASH_TO_PAGE[hash] ?? "login";
 };
 
@@ -81,22 +75,13 @@ const clampSidebarWidth = (width) =>
   Math.min(SIDEBAR_MAX_WIDTH, Math.max(SIDEBAR_MIN_WIDTH, width));
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(() =>
-    getAllowedPage(getPageFromHash(), false)
-  );
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [hash, setHash] = useState(() => window.location.hash);
+  const { user, isAuthenticated, isChecking, setSession, clearSession } = useAuth();
   const [sidebarWidth, setSidebarWidth] = useState(SIDEBAR_DEFAULT_WIDTH);
-  const [transactions, setTransactions] = useState(initialTransactions);
-  const summary = useMemo(
-    () => summarizeTransactions(transactions),
-    [transactions]
-  );
 
   useEffect(() => {
     const handleHashChange = () => {
-      const nextPage = getAllowedPage(getPageFromHash(), isAuthenticated);
-      setCurrentPage(nextPage);
-      updateHash(nextPage);
+      setHash(window.location.hash);
     };
 
     window.addEventListener("hashchange", handleHashChange);
@@ -104,46 +89,32 @@ function App() {
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [isAuthenticated]);
+  }, []);
 
-  const addTransaction = (transaction) => {
-    if (transaction.type === "expense" && transaction.amount > summary.balance) {
-      return {
-        success: false,
-        message: `Saldo tidak cukup. Saldo tersedia saat ini ${formatCurrency(
-          summary.balance
-        )}.`,
-      };
-    }
-
-    setTransactions((prev) => [
-      {
-        ...transaction,
-        id: `TRX-${String(prev.length + 1).padStart(3, "0")}`,
-      },
-      ...prev,
-    ]);
-
-    return {
-      success: true,
-      message: "Transaksi berhasil ditambahkan ke riwayat.",
-    };
-  };
+  useEffect(() => {
+    const nextPage = getAllowedPage(getPageFromHash(hash), isAuthenticated);
+    updateHash(nextPage);
+  }, [hash, isAuthenticated]);
 
   const navigateToPage = (page) => {
     const nextPage = getAllowedPage(page, isAuthenticated);
 
     preloadPage(nextPage);
-    setCurrentPage(nextPage);
     updateHash(nextPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleAuthSuccess = () => {
-    setIsAuthenticated(true);
+  const handleAuthSuccess = (token, nextUser, rememberMe = true) => {
+    setSession(token, nextUser, rememberMe);
     preloadPage("dashboard");
-    setCurrentPage("dashboard");
     updateHash("dashboard");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleLogout = () => {
+    clearSession();
+    preloadPage("login");
+    updateHash("login");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -175,14 +146,11 @@ function App() {
     window.addEventListener("pointercancel", handlePointerEnd);
   };
 
+  const currentPage = getAllowedPage(getPageFromHash(hash), isAuthenticated);
+
   const renderAuthPage = () => {
     if (currentPage === "register") {
-      return (
-        <RegisterPage
-          onAuthSuccess={handleAuthSuccess}
-          onNavigate={navigateToPage}
-        />
-      );
+      return <RegisterPage onNavigate={navigateToPage} />;
     }
 
     return (
@@ -190,30 +158,39 @@ function App() {
     );
   };
 
+  const userName = user?.display_name || user?.email || "";
+
   const renderPage = () => {
     if (currentPage === "transactions") {
       return (
         <TransactionsPage
-          summary={summary}
-          transactions={transactions}
-          onAddTransaction={addTransaction}
+          userName={userName}
         />
       );
     }
 
     if (currentPage === "wishlist") {
-      return <WishlistPage />;
+      return <WishlistPage userName={userName} />;
     }
 
     return (
       <DashboardPage
-        summary={summary}
-        features={featureCards}
-        bars={previewChartBars}
-        onNavigate={navigateToPage}
+        userName={userName}
       />
     );
   };
+
+  if (isChecking) {
+    return (
+      <div className="auth-shell">
+        <main className="auth-main">
+          <div className="page-loading" role="status">
+            Memeriksa sesi...
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -246,6 +223,7 @@ function App() {
         onPreload={preloadPage}
         onResizeByKeyboard={resizeSidebarBy}
         onResizeStart={handleSidebarResizeStart}
+        onLogout={handleLogout}
       />
 
       <main className="dashboard">

@@ -63,28 +63,25 @@
   font-weight: 600;
 }
 
-.wishlist-status {
-  width: fit-content;
-  padding: 5px 8px;
+.wishlist-result-close {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  font-size: 11px;
+  color: var(--muted);
+  background: #ffffff;
+  font-size: 13px;
   font-weight: 700;
-  white-space: nowrap;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.wishlist-status.ringan {
-  color: var(--primary-dark);
-  background: var(--primary-soft);
-}
-
-.wishlist-status.realistis {
-  color: #755100;
-  background: #fff2c7;
-}
-
-.wishlist-status.perlu-usaha-lebih {
-  color: #8f2f2f;
-  background: #fdebea;
+.wishlist-result-close:hover {
+  color: var(--text);
+  background: var(--surface-soft);
 }
 
 .wishlist-summary {
@@ -126,12 +123,6 @@
   font-weight: 700;
 }
 
-.wishlist-message {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
 
 @keyframes result-pop {
   from {
@@ -150,6 +141,7 @@
   .wishlist-summary {
     grid-template-columns: 1fr;
   }
+
 
   .wishlist-summary-wide {
     grid-column: auto;

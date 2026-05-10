@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { validateLoginForm } from "../utils/authValidation";
+import { loginUser } from "../../../services/authApi";
 
 const initialFormData = {
   email: "",
@@ -28,6 +29,7 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [apiError, setApiError] = useState("");
 
   const updateFieldError = (name, value, nextFormData, nextDirtyFields) => {
     if (hasSubmitted) {
@@ -67,9 +69,10 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
     updateFieldError(name, nextValue, nextFormData, nextDirtyFields);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setHasSubmitted(true);
+    setApiError("");
 
     const validationErrors = validateLoginForm(formData);
     setErrors(validationErrors);
@@ -79,16 +82,21 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
     }
 
     setIsLoading(true);
-    console.log("Login SAWIT", {
-      email: formData.email,
-      rememberMe: formData.rememberMe,
-    });
 
-    window.setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await loginUser({
+        email: formData.email,
+        password: formData.password,
+      });
+      const { access_token, user } = response.data;
+
       setSuccessMessage("Login berhasil. Mengarahkan ke dashboard...");
-      onAuthSuccess();
-    }, 650);
+      onAuthSuccess(access_token, user, formData.rememberMe);
+    } catch (error) {
+      setApiError(error.message || "Login gagal. Coba lagi.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -105,6 +113,11 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
         onSubmit={handleSubmit}
         noValidate
       >
+        {apiError && (
+          <p className="auth-error" role="alert">
+            {apiError}
+          </p>
+        )}
         <label>
           <span className="field-label">
             <Icon name="mail" size={14} />
@@ -114,7 +127,7 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
             type="email"
             name="email"
             autoComplete="email"
-            placeholder="nama@email.com"
+            placeholder="Email"
             value={formData.email}
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "login-email-error" : undefined}
@@ -137,7 +150,7 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
               type={showPassword ? "text" : "password"}
               name="password"
               autoComplete="current-password"
-              placeholder="Masukkan password"
+              placeholder="Password"
               value={formData.password}
               aria-invalid={Boolean(errors.password)}
               aria-describedby={

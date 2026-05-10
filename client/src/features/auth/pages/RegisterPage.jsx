@@ -1,11 +1,10 @@
 import AuthLayout from "../components/AuthLayout";
 import RegisterForm from "../components/RegisterForm";
 
-function RegisterPage({ onAuthSuccess, onNavigate }) {
+function RegisterPage({ onNavigate }) {
   return (
     <AuthLayout>
       <RegisterForm
-        onAuthSuccess={onAuthSuccess}
         onSwitchToLogin={() => onNavigate("login")}
       />
     </AuthLayout>

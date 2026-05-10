@@ -78,6 +78,7 @@
 
 .transaction-form label {
   display: grid;
+  align-content: start;
   gap: 6px;
   color: var(--text);
   font-size: 12px;
@@ -87,6 +88,7 @@
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 10px;
 }
 
@@ -114,8 +116,11 @@ select:focus {
 }
 
 .field-hint {
+  display: block;
+  min-height: 14px;
   color: var(--muted);
   font-size: 11px;
+  line-height: 1.25;
 }
 
 .submit-button {

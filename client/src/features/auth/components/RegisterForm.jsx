@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { validateRegisterForm } from "../utils/authValidation";
+import { registerUser } from "../../../services/authApi";
 
 const initialFormData = {
   name: "",
@@ -22,7 +23,7 @@ const getRequiredMessage = (name) => {
   return messages[name] ?? "";
 };
 
-function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
+function RegisterForm({ onSwitchToLogin }) {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [dirtyFields, setDirtyFields] = useState({});
@@ -31,6 +32,7 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [apiError, setApiError] = useState("");
 
   const updateFieldError = (name, value, nextFormData, nextDirtyFields) => {
     if (hasSubmitted) {
@@ -73,9 +75,10 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
     updateFieldError(name, nextValue, nextFormData, nextDirtyFields);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setHasSubmitted(true);
+    setApiError("");
 
     const validationErrors = validateRegisterForm(formData);
     setErrors(validationErrors);
@@ -85,17 +88,23 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
     }
 
     setIsLoading(true);
-    console.log("Register SAWIT", {
-      name: formData.name,
-      email: formData.email,
-      acceptedTerms: formData.acceptedTerms,
-    });
 
-    window.setTimeout(() => {
+    try {
+      await registerUser({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
+      setSuccessMessage("Registrasi berhasil. Silakan login.");
+
+      window.setTimeout(() => {
+        onSwitchToLogin();
+      }, 650);
+    } catch (error) {
+      setApiError(error.message || "Registrasi gagal. Coba lagi.");
+    } finally {
       setIsLoading(false);
-      setSuccessMessage("Akun siap digunakan. Mengarahkan ke dashboard...");
-      onAuthSuccess();
-    }, 650);
+    }
   };
 
   return (
@@ -112,6 +121,11 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
         onSubmit={handleSubmit}
         noValidate
       >
+        {apiError && (
+          <p className="auth-error" role="alert">
+            {apiError}
+          </p>
+        )}
         <label>
           <span className="field-label">
             <Icon name="user" size={14} />
@@ -121,7 +135,7 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
             type="text"
             name="name"
             autoComplete="name"
-            placeholder="Nama kamu"
+            placeholder="Nama lengkap"
             value={formData.name}
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "register-name-error" : undefined}
@@ -143,7 +157,7 @@ function RegisterForm({ onAuthSuccess, onSwitchToLogin }) {
             type="email"
             name="email"
             autoComplete="email"
-            placeholder="nama@email.com"
+            placeholder="Email"
             value={formData.email}
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "register-email-error" : undefined}

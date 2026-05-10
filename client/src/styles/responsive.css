@@ -54,6 +54,11 @@
     flex-direction: column;
   }
 
+  .topbar-profile {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .report-equation b {
     display: none;
   }

@@ -5,7 +5,11 @@ function DashboardHeader({
   title = "Transaction Report",
   description = "Ringkasan pemasukan dan pengeluaran dari transaksi aktif.",
   icon = "dashboard",
+  userName = "",
 }) {
+  const displayName = userName.trim();
+  const initial = displayName ? displayName[0].toUpperCase() : "";
+
   return (
     <header className="topbar">
       <div className="topbar-content">
@@ -18,6 +22,17 @@ function DashboardHeader({
           <span className="topbar-description">{description}</span>
         </div>
       </div>
+
+      {displayName && (
+        <div className="topbar-profile" aria-label={`Logged in as ${displayName}`}>
+          <span className="topbar-avatar" aria-hidden="true">
+            {initial}
+          </span>
+          <div className="topbar-user">
+            <span className="topbar-name">{displayName}</span>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

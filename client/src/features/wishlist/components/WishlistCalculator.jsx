@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
+import { useAuth } from "../../../context/useAuth";
+import { createWishlist } from "../../../services/wishlistApi";
 import { calculateWishlist } from "../utils/calculateWishlist";
 
 const initialFormData = {
@@ -16,13 +18,12 @@ const rupiahFormatter = new Intl.NumberFormat("id-ID", {
 
 const formatRupiah = (value) => rupiahFormatter.format(value);
 
-const getStatusClassName = (status) => {
-  return status.toLowerCase().replace(/\s+/g, "-");
-};
-
 function WishlistCalculator() {
+  const { token } = useAuth();
   const [formData, setFormData] = useState(initialFormData);
   const [error, setError] = useState("");
+  const [apiError, setApiError] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
   const [result, setResult] = useState(null);
 
   const handleChange = (event) => {
@@ -38,25 +39,41 @@ function WishlistCalculator() {
       setError("");
     }
 
+    if (apiError) {
+      setApiError("");
+    }
+
     if (result) {
-      try {
-        setResult(calculateWishlist(nextFormData));
-      } catch {
-        setResult(null);
-      }
+      setResult(null);
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setError("");
+    setApiError("");
 
     try {
       const wishlistResult = calculateWishlist(formData);
-      setResult(wishlistResult);
-      setError("");
+
+      if (!token) {
+        setApiError("Silakan login terlebih dahulu untuk menyimpan.");
+        setResult(wishlistResult);
+        return;
+      }
+
+      setIsSaving(true);
+      const response = await createWishlist(token, {
+        itemName: wishlistResult.itemName,
+        targetPrice: wishlistResult.targetPrice,
+        targetMonths: wishlistResult.targetMonths,
+      });
+      setResult(response.data || wishlistResult);
     } catch (validationError) {
-      setError(validationError.message);
+      setError(validationError.message || "Gagal menyimpan wishlist.");
       setResult(null);
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -135,17 +152,21 @@ function WishlistCalculator() {
           </label>
         </div>
 
-        <button className="submit-button wishlist-submit" type="submit">
+        <button
+          className="submit-button wishlist-submit"
+          type="submit"
+          disabled={isSaving}
+        >
           <span className="button-content">
             <Icon name="target" size={15} />
-            Hitung Rencana
+            {isSaving ? "Menyimpan..." : "Hitung Rencana"}
           </span>
         </button>
       </form>
 
-      {error && (
+      {(error || apiError) && (
         <p className="wishlist-error" id="wishlist-error" role="alert">
-          {error}
+          {error || apiError}
         </p>
       )}
 
@@ -156,11 +177,14 @@ function WishlistCalculator() {
               <p className="eyebrow">Rencana Tabungan</p>
               <h4>{result.itemName}</h4>
             </div>
-            <span
-              className={`wishlist-status ${getStatusClassName(result.status)}`}
+            <button
+              className="wishlist-result-close"
+              type="button"
+              onClick={() => setResult(null)}
+              aria-label="Hapus hasil perhitungan"
             >
-              {result.status}
-            </span>
+              x
+            </button>
           </div>
 
           <dl className="wishlist-summary">
@@ -201,7 +225,6 @@ function WishlistCalculator() {
             </div>
           </dl>
 
-          <p className="wishlist-message">{result.message}</p>
         </article>
       )}
     </section>

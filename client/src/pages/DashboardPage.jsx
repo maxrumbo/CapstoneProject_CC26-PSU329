@@ -1,26 +1,21 @@
 import AnalysisPreview from "../components/dashboard/AnalysisPreview";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
-import FeaturePreview from "../components/dashboard/FeaturePreview";
-import SummaryReport from "../components/dashboard/SummaryReport";
+const STREAMLIT_URL = import.meta.env.VITE_STREAMLIT_URL || "";
 
-function DashboardPage({ summary, features, bars, onNavigate }) {
+function DashboardPage({ userName }) {
   return (
     <>
       <DashboardHeader
-        title="Dashboard SAWIT"
-        description="Ringkasan pemasukan, pengeluaran, dan fitur keuangan yang tersedia."
+        title="Dashboard Analitik"
+        description="Dashboard analitik akan ditampilkan melalui Streamlit."
         icon="dashboard"
+        userName={userName}
       />
-      <SummaryReport summary={summary} />
 
       <section className="workspace-grid">
         <div className="primary-column">
-          <FeaturePreview features={features} onNavigate={onNavigate} />
+          <AnalysisPreview streamlitUrl={STREAMLIT_URL} />
         </div>
-
-        <aside className="side-column">
-          <AnalysisPreview bars={bars} />
-        </aside>
       </section>
     </>
   );

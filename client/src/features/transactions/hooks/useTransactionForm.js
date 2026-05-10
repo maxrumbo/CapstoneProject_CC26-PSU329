@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 import { formatCurrency } from "../../../utils/formatCurrency";
+
+const DEFAULT_EXPENSE_CATEGORY = "Lainnya";
 
 const createInitialFormData = () => ({
   description: "",
   amount: "",
   type: "expense",
   date: new Date().toISOString().split("T")[0],
-  category: TRANSACTION_CATEGORIES[0],
+  category: DEFAULT_EXPENSE_CATEGORY,
   method: "Tunai",
 });
 
@@ -16,7 +17,7 @@ const getCategoryByType = (type, currentCategory) => {
     return "";
   }
 
-  return currentCategory || TRANSACTION_CATEGORIES[0];
+  return currentCategory || DEFAULT_EXPENSE_CATEGORY;
 };
 
 export function useTransactionForm({ availableBalance, onAddTransaction }) {
@@ -74,7 +75,7 @@ export function useTransactionForm({ availableBalance, onAddTransaction }) {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!formData.description.trim()) {
@@ -94,10 +95,10 @@ export function useTransactionForm({ availableBalance, onAddTransaction }) {
       return;
     }
 
-    const result = onAddTransaction({
+    const result = await onAddTransaction({
       ...formData,
       amount: Number(formData.amount),
-      category: isExpense ? formData.category : "",
+      category: isExpense ? DEFAULT_EXPENSE_CATEGORY : "",
     });
 
     setMessage(result.message);

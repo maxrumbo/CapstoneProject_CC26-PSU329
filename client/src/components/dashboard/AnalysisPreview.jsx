@@ -1,6 +1,8 @@
 import Icon from "../ui/Icon";
 
-function AnalysisPreview({ bars }) {
+function AnalysisPreview({ streamlitUrl }) {
+  const hasStreamlit = Boolean(streamlitUrl);
+
   return (
     <section className="panel chart-card">
       <div className="panel-header">
@@ -9,27 +11,41 @@ function AnalysisPreview({ bars }) {
             <Icon name="chart" size={18} />
           </span>
           <div>
-            <p className="eyebrow">Preview Analisis</p>
-            <h3>Income & Expense</h3>
+            <p className="eyebrow">Dashboard Analitik</p>
+            <h3>Streamlit Analytics</h3>
           </div>
         </div>
       </div>
 
-      <div className="bar-chart" aria-hidden="true">
-        {bars.map((bar) => (
-          <div
-            key={bar.month}
-            style={{ "--income": bar.income, "--expense": bar.expense }}
+      <div className="analysis-placeholder">
+        <div>
+          <span className="analysis-badge">Segera</span>
+          <p>Dashboard analitik lengkap hanya tersedia dari Streamlit.</p>
+          <p className="analysis-helper">Tombol aktif saat URL sudah disiapkan.</p>
+        </div>
+        {hasStreamlit ? (
+          <a
+            className="streamlit-button"
+            href={streamlitUrl}
+            target="_blank"
+            rel="noreferrer"
           >
-            <span></span>
-            <span></span>
-            <small>{bar.month}</small>
-          </div>
-        ))}
+            Buka Streamlit
+          </a>
+        ) : (
+          <button
+            className="streamlit-button is-disabled"
+            type="button"
+            disabled
+            title="URL Streamlit belum tersedia"
+          >
+            Buka Streamlit
+          </button>
+        )}
       </div>
 
       <p className="muted-note">
-        Grafik ini masih preview. Data aktif saat ini hanya dari form transaksi.
+        Konten Streamlit akan muncul di sini setelah integrasi dari tim AI.
       </p>
     </section>
   );

@@ -48,6 +48,23 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 ```
 
+### Opsional — Akun Demo Otomatis
+
+Backend akan membuat akun demo saat startup. Defaultnya:
+
+- Email: `sawit@sawit.id`
+- Password: `sawit123`
+- Nama: `Demo SAWIT`
+
+Kalau mau ubah atau nonaktifkan, tambahkan ke `.env`:
+
+```env
+DEMO_USER_ENABLED=true
+DEMO_USER_EMAIL=demo@sawit.id
+DEMO_USER_PASSWORD=Sahabat123
+DEMO_USER_DISPLAY_NAME=Demo SAWIT
+```
+
 > Cara generate SECRET_KEY yang aman:
 > ```bash
 > python -c "import secrets; print(secrets.token_hex(32))"
