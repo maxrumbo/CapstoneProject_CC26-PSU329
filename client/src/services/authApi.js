@@ -10,7 +10,7 @@ async function handleResponse(response) {
       data?.detail ||
       data?.message ||
       "Terjadi kesalahan saat menghubungi server";
-
+      
     throw new Error(typeof message === "string" ? message : JSON.stringify(message));
   }
 
