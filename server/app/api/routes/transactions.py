@@ -193,10 +193,10 @@ def get_transaction(
 
 # ── ENDPOINT 4: UPDATE transaksi ─────────────────────────────────────────────
 
-@router.put(
+@router.patch(
     "/{transaction_id}",
     response_model=APIResponse[TransactionResponse],
-    summary="Edit transaksi yang sudah ada",
+    summary="Edit sebagian field transaksi yang sudah ada",
 )
 def update_transaction(
     transaction_id: int,

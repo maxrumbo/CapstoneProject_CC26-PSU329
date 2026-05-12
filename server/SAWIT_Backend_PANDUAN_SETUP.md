@@ -1,4 +1,4 @@
-# SAWIT Backend — Panduan Setup & Jalankan Server
+`# SAWIT Backend — Panduan Setup & Jalankan Server
 
 Semua file sudah dibuat. Ikuti langkah di bawah ini secara berurutan di terminal kamu.
 
@@ -196,7 +196,7 @@ server/
 | POST | `/api/transactions/` | Tambah transaksi baru | ✅ |
 | GET | `/api/transactions/` | Daftar transaksi (filter + pagination) | ✅ |
 | GET | `/api/transactions/{id}` | Detail 1 transaksi | ✅ |
-| PUT | `/api/transactions/{id}` | Edit transaksi | ✅ |
+| PATCH | `/api/transactions/{id}` | Edit sebagian field transaksi yang sudah ada | ✅ |
 | DELETE | `/api/transactions/{id}` | Hapus transaksi | ✅ |
 
 ---
@@ -208,7 +208,7 @@ server/
 | `connection refused` saat start | PostgreSQL belum jalan | Start service PostgreSQL di pgAdmin |
 | `database "sawit_db" does not exist` | DB belum dibuat | Buat manual di pgAdmin |
 | `module 'pydantic_settings' not found` | Library belum install | `pip install pydantic-settings` |
-| `LookupError: No installed app with label` | `__init__.py` hilang | Pastikan semua folder punya `__init__.py` |
+| `ModuleNotFoundError` or `ImportError` | Modul tidak ditemukan atau terjadi kesalahan import (sering akibat `__init__.py` hilang) | Pastikan semua folder punya `__init__.py` dan modul bisa di-import |
 | `401 Unauthorized` saat test | Lupa klik Authorize di Swagger | Klik tombol Authorize → paste token |
 | `403 Saldo tidak cukup` | Amount expense > balance | Tambah income dulu |
 

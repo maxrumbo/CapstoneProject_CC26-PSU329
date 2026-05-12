@@ -40,17 +40,24 @@ class TransactionCreate(BaseModel):
         return v
 
     @model_validator(mode="after")
-    def validate_category_for_expense(self) -> "TransactionCreate":
-        if self.type == TransactionType.expense:
-            if not self.category:
-                raise ValueError("Kategori wajib diisi untuk tipe expense")
-            if self.category not in VALID_CATEGORIES:
-                raise ValueError(
-                    f"Kategori tidak valid. Pilihan: {', '.join(VALID_CATEGORIES)}"
-                )
-        # Untuk income: abaikan kategori apapun yang dikirim
-        if self.type == TransactionType.income:
-            self.category = None
+    def validate_category_logic(self) -> "TransactionCreate":
+        # 1. Pastikan kategori selalu diisi (baik income maupun expense)
+        if not self.category:
+            raise ValueError("Kategori wajib diisi")
+            
+        # 2. Pastikan kategori ada di list VALID_CATEGORIES
+        if self.category not in VALID_CATEGORIES:
+            raise ValueError(
+                f"Kategori tidak valid. Pilihan: {', '.join(VALID_CATEGORIES)}"
+            )
+            
+        # 3. Validasi silang tipe dan kategori (Biar datanya rapi)
+        if self.type == TransactionType.income and self.category != "Pemasukan":
+            raise ValueError("Transaksi income harus menggunakan kategori 'Pemasukan'")
+            
+        if self.type == TransactionType.expense and self.category == "Pemasukan":
+            raise ValueError("Transaksi expense tidak boleh menggunakan kategori 'Pemasukan'")
+            
         return self
 
 
