@@ -13,7 +13,6 @@ export const menuItems = [
     active: true,
     page: "transactions",
   },
-  { label: "Budget", icon: "budget", status: "Segera" },
   { label: "Subscription", icon: "subscription", status: "Segera" },
   {
     label: "Wishlist Calculator",

@@ -8,6 +8,7 @@ const pageLoaders = {
   dashboard: () => import("./pages/DashboardPage"),
   transactions: () => import("./pages/TransactionsPage"),
   wishlist: () => import("./pages/WishlistPage"),
+  profile: () => import("./pages/ProfilePage"),
   login: () => import("./features/auth/pages/LoginPage"),
   register: () => import("./features/auth/pages/RegisterPage"),
 };
@@ -15,6 +16,7 @@ const pageLoaders = {
 const DashboardPage = lazy(pageLoaders.dashboard);
 const TransactionsPage = lazy(pageLoaders.transactions);
 const WishlistPage = lazy(pageLoaders.wishlist);
+const ProfilePage = lazy(pageLoaders.profile);
 const LoginPage = lazy(pageLoaders.login);
 const RegisterPage = lazy(pageLoaders.register);
 
@@ -22,6 +24,7 @@ const PAGE_HASHES = {
   dashboard: "dashboard",
   transactions: "transactions",
   wishlist: "wishlist-calculator",
+  profile: "profile",
   login: "login",
   register: "register",
 };
@@ -34,6 +37,8 @@ const HASH_TO_PAGE = {
   transactions: "transactions",
   "wishlist-calculator": "wishlist",
   wishlist: "wishlist",
+  profile: "profile",
+  profil: "profile",
   login: "login",
   register: "register",
 };
@@ -118,6 +123,10 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleOpenProfile = () => {
+    navigateToPage("profile");
+  };
+
   const resizeSidebarBy = (delta) => {
     setSidebarWidth((prevWidth) => clampSidebarWidth(prevWidth + delta));
   };
@@ -164,17 +173,35 @@ function App() {
     if (currentPage === "transactions") {
       return (
         <TransactionsPage
+          onProfileClick={handleOpenProfile}
           userName={userName}
         />
       );
     }
 
     if (currentPage === "wishlist") {
-      return <WishlistPage userName={userName} />;
+      return (
+        <WishlistPage
+          onProfileClick={handleOpenProfile}
+          userName={userName}
+        />
+      );
+    }
+
+    if (currentPage === "profile") {
+      return (
+        <ProfilePage
+          onLogout={handleLogout}
+          onProfileClick={handleOpenProfile}
+          user={user}
+          userName={userName}
+        />
+      );
     }
 
     return (
       <DashboardPage
+        onProfileClick={handleOpenProfile}
         userName={userName}
       />
     );
@@ -223,7 +250,6 @@ function App() {
         onPreload={preloadPage}
         onResizeByKeyboard={resizeSidebarBy}
         onResizeStart={handleSidebarResizeStart}
-        onLogout={handleLogout}
       />
 
       <main className="dashboard">

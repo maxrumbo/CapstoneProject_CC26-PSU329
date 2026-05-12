@@ -1,15 +1,26 @@
 import { useState } from "react";
 import { formatCurrency } from "../../../utils/formatCurrency";
+import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 
 const DEFAULT_EXPENSE_CATEGORY = "Lainnya";
+const DEFAULT_METHOD = "Tunai";
+
+const getToday = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const date = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${date}`;
+};
 
 const createInitialFormData = () => ({
   description: "",
   amount: "",
   type: "expense",
-  date: new Date().toISOString().split("T")[0],
+  date: getToday(),
   category: DEFAULT_EXPENSE_CATEGORY,
-  method: "Tunai",
+  method: DEFAULT_METHOD,
 });
 
 const getCategoryByType = (type, currentCategory) => {
@@ -20,7 +31,10 @@ const getCategoryByType = (type, currentCategory) => {
   return currentCategory || DEFAULT_EXPENSE_CATEGORY;
 };
 
-export function useTransactionForm({ availableBalance, onAddTransaction }) {
+export function useTransactionForm({
+  availableBalance,
+  onAddTransaction,
+}) {
   const [formData, setFormData] = useState(createInitialFormData);
   const [message, setMessage] = useState("");
   const isExpense = formData.type === "expense";
@@ -95,11 +109,18 @@ export function useTransactionForm({ availableBalance, onAddTransaction }) {
       return;
     }
 
-    const result = await onAddTransaction({
+    if (isExpense && !TRANSACTION_CATEGORIES.includes(formData.category)) {
+      setMessage("Pilih kategori pengeluaran yang valid.");
+      return;
+    }
+
+    const payload = {
       ...formData,
       amount: Number(formData.amount),
-      category: isExpense ? DEFAULT_EXPENSE_CATEGORY : "",
-    });
+      category: isExpense ? formData.category : null,
+    };
+
+    const result = await onAddTransaction(payload);
 
     setMessage(result.message);
 

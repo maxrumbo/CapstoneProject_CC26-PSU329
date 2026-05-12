@@ -1,11 +1,16 @@
+const toAmount = (transaction) => {
+  const amount = Number(transaction.amount);
+  return Number.isFinite(amount) ? amount : 0;
+};
+
 export function summarizeTransactions(transactions) {
   const income = transactions
     .filter((transaction) => transaction.type === "income")
-    .reduce((total, transaction) => total + transaction.amount, 0);
+    .reduce((total, transaction) => total + toAmount(transaction), 0);
 
   const expense = transactions
     .filter((transaction) => transaction.type === "expense")
-    .reduce((total, transaction) => total + transaction.amount, 0);
+    .reduce((total, transaction) => total + toAmount(transaction), 0);
 
   return {
     income,

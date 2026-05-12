@@ -1,7 +1,17 @@
 import Icon from "../../../components/ui/Icon";
 import { formatCurrency } from "../../../utils/formatCurrency";
 
-function TransactionHistory({ transactions }) {
+function TransactionHistory({
+  filters,
+  onFilterChange,
+  onResetFilters,
+  transactions,
+}) {
+  const handleFilterChange = (event) => {
+    const { name, value } = event.target;
+    onFilterChange(name, value);
+  };
+
   return (
     <section className="panel transaction-table-card">
       <div className="panel-header">
@@ -23,8 +33,28 @@ function TransactionHistory({ transactions }) {
             <Icon name="calendar" size={14} />
             Periode
           </span>
-          <select defaultValue="2026" disabled>
-            <option value="2026">2026</option>
+          <select
+            name="period"
+            value={filters.period}
+            onChange={handleFilterChange}
+          >
+            <option value="all">Semua</option>
+            <option value="this-month">Bulan ini</option>
+            <option value="last-month">Bulan lalu</option>
+            <option value="this-year">Tahun ini</option>
+            <option value="custom">Kustom</option>
+          </select>
+        </label>
+
+        <label>
+          <span className="field-label">
+            <Icon name="receipt" size={14} />
+            Tipe
+          </span>
+          <select name="type" value={filters.type} onChange={handleFilterChange}>
+            <option value="">Semua tipe</option>
+            <option value="income">Pemasukan</option>
+            <option value="expense">Pengeluaran</option>
           </select>
         </label>
 
@@ -33,7 +63,13 @@ function TransactionHistory({ transactions }) {
             <Icon name="calendar" size={14} />
             Dari
           </span>
-          <input type="date" value="2026-04-01" readOnly />
+          <input
+            type="date"
+            name="start_date"
+            max={filters.end_date || undefined}
+            value={filters.start_date}
+            onChange={handleFilterChange}
+          />
         </label>
 
         <label>
@@ -41,55 +77,67 @@ function TransactionHistory({ transactions }) {
             <Icon name="calendar" size={14} />
             Sampai
           </span>
-          <input type="date" value="2026-04-30" readOnly />
+          <input
+            type="date"
+            name="end_date"
+            min={filters.start_date || undefined}
+            value={filters.end_date}
+            onChange={handleFilterChange}
+          />
         </label>
 
-        <button type="button" disabled>
+        <button type="button" onClick={onResetFilters}>
           <span className="button-content">
-            <Icon name="chart" size={15} />
-            Update Report
+            <Icon name="repeat" size={15} />
+            Reset
           </span>
         </button>
       </div>
 
       <div className="transaction-table">
-        {transactions.map((transaction) => (
-          <article className="transaction-row" key={transaction.id}>
-            <div className="transaction-row-main">
-              <span
+        {transactions.length ? (
+          transactions.map((transaction) => (
+            <article className="transaction-row" key={transaction.id}>
+              <div className="transaction-row-main">
+                <span
+                  className={
+                    transaction.type === "income"
+                      ? "transaction-type-icon income"
+                      : "transaction-type-icon expense"
+                  }
+                >
+                  <Icon
+                    name={transaction.type === "income" ? "income" : "expense"}
+                    size={16}
+                  />
+                </span>
+                <div>
+                  <strong>{transaction.description}</strong>
+                  <span className="transaction-meta">
+                    {[transaction.category, transaction.method, transaction.date]
+                      .filter(Boolean)
+                      .join(" / ")}
+                  </span>
+                </div>
+              </div>
+
+              <strong
                 className={
                   transaction.type === "income"
-                    ? "transaction-type-icon income"
-                    : "transaction-type-icon expense"
+                    ? "amount income"
+                    : "amount expense"
                 }
               >
-                <Icon
-                  name={transaction.type === "income" ? "income" : "expense"}
-                  size={16}
-                />
-              </span>
-              <div>
-                <strong>{transaction.description}</strong>
-                <span className="transaction-meta">
-                  {[transaction.category, transaction.method, transaction.date]
-                    .filter(Boolean)
-                    .join(" / ")}
-                </span>
-              </div>
-            </div>
-
-            <strong
-              className={
-                transaction.type === "income"
-                  ? "amount income"
-                  : "amount expense"
-              }
-            >
-              {transaction.type === "income" ? "+" : "-"}
-              {formatCurrency(transaction.amount)}
-            </strong>
-          </article>
-        ))}
+                {transaction.type === "income" ? "+" : "-"}
+                {formatCurrency(transaction.amount)}
+              </strong>
+            </article>
+          ))
+        ) : (
+          <div className="empty-state">
+            Belum ada transaksi pada filter ini.
+          </div>
+        )}
       </div>
     </section>
   );

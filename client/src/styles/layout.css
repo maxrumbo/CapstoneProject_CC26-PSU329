@@ -365,6 +365,17 @@
   box-shadow: var(--shadow);
 }
 
+.topbar-profile-button {
+  max-width: 220px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.topbar-profile-button:hover {
+  border-color: #b9d8ca;
+  background: var(--primary-soft);
+}
+
 .topbar-avatar {
   width: 32px;
   height: 32px;
@@ -384,6 +395,11 @@
 }
 
 .topbar-name {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 12px;
   font-weight: 600;
   color: var(--text);

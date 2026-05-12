@@ -1,6 +1,11 @@
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
 
+const toNumber = (value) => {
+  const numberValue = Number(value);
+  return Number.isFinite(numberValue) ? numberValue : 0;
+};
+
 const buildAuthHeaders = (token) => ({
   "Content-Type": "application/json",
   Authorization: `Bearer ${token}`,
@@ -22,6 +27,42 @@ const handleResponse = async (response) => {
   return data;
 };
 
+const normalizeTransaction = (transaction) => {
+  if (!transaction) {
+    return transaction;
+  }
+
+  return {
+    ...transaction,
+    amount: toNumber(transaction.amount),
+  };
+};
+
+const normalizeBalanceSummary = (summary) => ({
+  ...summary,
+  total_income: toNumber(summary?.total_income),
+  total_expense: toNumber(summary?.total_expense),
+  balance: toNumber(summary?.balance),
+});
+
+const normalizeTransactionPayload = (payload) => ({
+  ...payload,
+  amount: toNumber(payload.amount),
+  category: payload.type === "expense" ? payload.category : null,
+});
+
+const normalizeTransactionResponse = (response) => ({
+  ...response,
+  data: Array.isArray(response.data)
+    ? response.data.map(normalizeTransaction)
+    : normalizeTransaction(response.data),
+});
+
+const normalizeBalanceResponse = (response) => ({
+  ...response,
+  data: normalizeBalanceSummary(response.data),
+});
+
 const buildQueryString = (filters = {}) => {
   const params = new URLSearchParams();
 
@@ -30,6 +71,7 @@ const buildQueryString = (filters = {}) => {
   if (filters.type) params.append("type", filters.type);
   if (filters.start_date) params.append("start_date", filters.start_date);
   if (filters.end_date) params.append("end_date", filters.end_date);
+  if (filters.up_to_date) params.append("up_to_date", filters.up_to_date);
 
   const query = params.toString();
   return query ? `?${query}` : "";
@@ -44,7 +86,7 @@ export const getTransactions = async (token, filters) => {
     }
   );
 
-  return handleResponse(response);
+  return normalizeTransactionResponse(await handleResponse(response));
 };
 
 export const getBalanceSummary = async (token, filters) => {
@@ -56,34 +98,15 @@ export const getBalanceSummary = async (token, filters) => {
     }
   );
 
-  return handleResponse(response);
+  return normalizeBalanceResponse(await handleResponse(response));
 };
 
 export const createTransaction = async (token, payload) => {
   const response = await fetch(`${API_BASE_URL}/transactions`, {
     method: "POST",
     headers: buildAuthHeaders(token),
-    body: JSON.stringify(payload),
+    body: JSON.stringify(normalizeTransactionPayload(payload)),
   });
 
-  return handleResponse(response);
-};
-
-export const updateTransaction = async (token, id, payload) => {
-  const response = await fetch(`${API_BASE_URL}/transactions/${id}`, {
-    method: "PUT",
-    headers: buildAuthHeaders(token),
-    body: JSON.stringify(payload),
-  });
-
-  return handleResponse(response);
-};
-
-export const deleteTransaction = async (token, id) => {
-  const response = await fetch(`${API_BASE_URL}/transactions/${id}`, {
-    method: "DELETE",
-    headers: buildAuthHeaders(token),
-  });
-
-  return handleResponse(response);
+  return normalizeTransactionResponse(await handleResponse(response));
 };

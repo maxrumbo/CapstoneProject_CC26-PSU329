@@ -147,6 +147,13 @@ select:focus {
   cursor: not-allowed;
 }
 
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .form-message {
   margin: 12px 0 0;
   padding: 10px 12px;
@@ -239,4 +246,14 @@ select:focus {
 
 .amount.expense {
   color: var(--red);
+}
+
+.empty-state {
+  padding: 20px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  background: #ffffff;
+  font-size: 13px;
+  text-align: center;
 }

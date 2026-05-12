@@ -1,6 +1,7 @@
 import Icon from "../../../components/ui/Icon";
 import { useTransactionForm } from "../hooks/useTransactionForm";
 import { formatCurrency } from "../../../utils/formatCurrency";
+import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 
 function TransactionForm({ availableBalance, onAddTransaction }) {
   const {
@@ -11,7 +12,10 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
     handleChange,
     handleSubmit,
     handleTypeChange,
-  } = useTransactionForm({ availableBalance, onAddTransaction });
+  } = useTransactionForm({
+    availableBalance,
+    onAddTransaction,
+  });
 
   return (
     <section className="panel transaction-form-card" id="transaksi">
@@ -61,7 +65,7 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
             onChange={handleChange}
           />
           <small className="field-hint">
-            Kategori akan ditentukan otomatis oleh sistem.
+            Tulis keterangan singkat agar riwayat mudah dibaca.
           </small>
         </label>
 
@@ -102,6 +106,26 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
         </div>
 
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
+          {isExpense && (
+            <label>
+              <span className="field-label">
+                <Icon name="tag" size={14} />
+                Kategori
+              </span>
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+              >
+                {TRANSACTION_CATEGORIES.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+
           <label>
             <span className="field-label">
               <Icon name="card" size={14} />
@@ -115,16 +139,18 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
           </label>
         </div>
 
-        <button
-          className="submit-button"
-          type="submit"
-          disabled={isSubmitDisabled}
-        >
-          <span className="button-content">
-            <Icon name="save" size={15} />
-            Simpan Transaksi
-          </span>
-        </button>
+        <div className="form-actions">
+          <button
+            className="submit-button"
+            type="submit"
+            disabled={isSubmitDisabled}
+          >
+            <span className="button-content">
+              <Icon name="save" size={15} />
+              Simpan Transaksi
+            </span>
+          </button>
+        </div>
       </form>
 
       {message && <p className="form-message">{message}</p>}

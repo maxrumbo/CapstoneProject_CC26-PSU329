@@ -196,7 +196,7 @@ server/
         └── routes/
             ├── __init__.py
             ├── auth.py           ← POST /register, POST /login, GET /me
-            └── transactions.py   ← 6 endpoint transaksi lengkap
+            └── transactions.py   ← endpoint transaksi aktif + proteksi immutable
 ```
 
 ---
@@ -213,8 +213,8 @@ server/
 | POST | `/api/transactions/` | Tambah transaksi baru | ✅ |
 | GET | `/api/transactions/` | Daftar transaksi (filter + pagination) | ✅ |
 | GET | `/api/transactions/{id}` | Detail 1 transaksi | ✅ |
-| PUT | `/api/transactions/{id}` | Edit transaksi | ✅ |
-| DELETE | `/api/transactions/{id}` | Hapus transaksi | ✅ |
+| PUT | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
+| DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
 
 ---
 

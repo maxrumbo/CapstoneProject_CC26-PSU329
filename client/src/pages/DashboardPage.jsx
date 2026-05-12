@@ -2,13 +2,14 @@ import AnalysisPreview from "../components/dashboard/AnalysisPreview";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 const STREAMLIT_URL = import.meta.env.VITE_STREAMLIT_URL || "";
 
-function DashboardPage({ userName }) {
+function DashboardPage({ onProfileClick, userName }) {
   return (
     <>
       <DashboardHeader
         title="Dashboard Analitik"
         description="Dashboard analitik akan ditampilkan melalui Streamlit."
         icon="dashboard"
+        onProfileClick={onProfileClick}
         userName={userName}
       />
 

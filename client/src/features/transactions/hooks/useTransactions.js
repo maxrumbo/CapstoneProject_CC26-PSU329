@@ -2,10 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "../../../context/useAuth";
 import {
   createTransaction,
-  deleteTransaction,
   getBalanceSummary,
   getTransactions,
-  updateTransaction,
 } from "../../../services/transactionsApi";
 import { summarizeTransactions } from "../../../utils/summarizeTransactions";
 
@@ -52,12 +50,12 @@ export function useTransactions(initialFilters) {
     }
 
     try {
-      const response = await getBalanceSummary(token, filters);
+      const response = await getBalanceSummary(token);
       setBalanceSummary(response.data || null);
     } catch (err) {
       setError(err.message || "Gagal memuat saldo.");
     }
-  }, [filters, token]);
+  }, [token]);
 
   const addTransaction = useCallback(
     async (payload) => {
@@ -88,64 +86,6 @@ export function useTransactions(initialFilters) {
     [refreshBalance, refreshTransactions, token]
   );
 
-  const editTransaction = useCallback(
-    async (id, payload) => {
-      if (!token) {
-        return { success: false, message: "Token belum tersedia." };
-      }
-
-      setIsMutating(true);
-      setError("");
-
-      try {
-        const response = await updateTransaction(token, id, payload);
-        await refreshTransactions();
-        await refreshBalance();
-        return {
-          success: true,
-          message: response.message || "Transaksi berhasil diperbarui.",
-        };
-      } catch (err) {
-        return {
-          success: false,
-          message: err.message || "Gagal memperbarui transaksi.",
-        };
-      } finally {
-        setIsMutating(false);
-      }
-    },
-    [refreshBalance, refreshTransactions, token]
-  );
-
-  const removeTransaction = useCallback(
-    async (id) => {
-      if (!token) {
-        return { success: false, message: "Token belum tersedia." };
-      }
-
-      setIsMutating(true);
-      setError("");
-
-      try {
-        const response = await deleteTransaction(token, id);
-        await refreshTransactions();
-        await refreshBalance();
-        return {
-          success: true,
-          message: response.message || "Transaksi berhasil dihapus.",
-        };
-      } catch (err) {
-        return {
-          success: false,
-          message: err.message || "Gagal menghapus transaksi.",
-        };
-      } finally {
-        setIsMutating(false);
-      }
-    },
-    [refreshBalance, refreshTransactions, token]
-  );
-
   useEffect(() => {
     if (isAuthenticated) {
       Promise.resolve().then(() => {
@@ -165,7 +105,5 @@ export function useTransactions(initialFilters) {
     refreshTransactions,
     refreshBalance,
     addTransaction,
-    editTransaction,
-    removeTransaction,
   };
 }

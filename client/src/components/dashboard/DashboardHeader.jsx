@@ -5,6 +5,7 @@ function DashboardHeader({
   title = "Transaction Report",
   description = "Ringkasan pemasukan dan pengeluaran dari transaksi aktif.",
   icon = "dashboard",
+  onProfileClick,
   userName = "",
 }) {
   const displayName = userName.trim();
@@ -24,14 +25,19 @@ function DashboardHeader({
       </div>
 
       {displayName && (
-        <div className="topbar-profile" aria-label={`Logged in as ${displayName}`}>
+        <button
+          className="topbar-profile topbar-profile-button"
+          type="button"
+          aria-label={`Buka profil ${displayName}`}
+          onClick={onProfileClick}
+        >
           <span className="topbar-avatar" aria-hidden="true">
             {initial}
           </span>
           <div className="topbar-user">
             <span className="topbar-name">{displayName}</span>
           </div>
-        </div>
+        </button>
       )}
     </header>
   );
