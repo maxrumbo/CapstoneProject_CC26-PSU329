@@ -61,49 +61,6 @@ class TransactionCreate(BaseModel):
         return self
 
 
-class TransactionUpdate(BaseModel):
-    description: Optional[str] = None
-    amount: Optional[Decimal] = None
-    category: Optional[str] = None
-    method: Optional[str] = None
-    date: Optional[date] = None
-
-    @field_validator("description")
-    @classmethod
-    def description_not_empty(cls, v: Optional[str]) -> Optional[str]:
-        if v is not None:
-            v = v.strip()
-            if not v:
-                raise ValueError("Deskripsi tidak boleh kosong")
-            if len(v) > 255:
-                raise ValueError("Deskripsi maksimal 255 karakter")
-        return v
-
-    @field_validator("amount")
-    @classmethod
-    def amount_positive(cls, v: Optional[Decimal]) -> Optional[Decimal]:
-        if v is not None and v <= 0:
-            raise ValueError("Nominal harus lebih dari 0")
-        return v
-
-    @field_validator("date")
-    @classmethod
-    def date_not_future(cls, v: Optional[date]) -> Optional[date]:
-        from datetime import date as date_type
-        if v is not None and v > date_type.today():
-            raise ValueError("Tanggal tidak boleh di masa depan")
-        return v
-
-    @field_validator("category")
-    @classmethod
-    def category_valid(cls, v: Optional[str]) -> Optional[str]:
-        if v is not None and v not in VALID_CATEGORIES:
-            raise ValueError(
-                f"Kategori tidak valid. Pilihan: {', '.join(VALID_CATEGORIES)}"
-            )
-        return v
-
-
 class TransactionResponse(BaseModel):
     id: int
     user_id: int

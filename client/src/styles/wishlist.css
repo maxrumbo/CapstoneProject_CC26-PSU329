@@ -1,0 +1,153 @@
+.wishlist-section {
+  scroll-margin-top: 18px;
+}
+
+.wishlist-card {
+  background: #ffffff;
+}
+
+.wishlist-form {
+  display: grid;
+  gap: 12px;
+}
+
+.wishlist-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wishlist-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.wishlist-submit {
+  justify-self: start;
+}
+
+.wishlist-error {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: var(--red);
+  background: #fdebea;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wishlist-result-card {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(16, 32, 51, 0.05);
+  animation: result-pop 180ms ease;
+}
+
+.wishlist-result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.wishlist-result-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wishlist-result-close {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wishlist-result-close:hover {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.wishlist-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.wishlist-summary div {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-soft);
+}
+
+.wishlist-summary-wide {
+  grid-column: 1 / -1;
+}
+
+.wishlist-summary dt {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.wishlist-summary dt .icon {
+  color: var(--primary);
+}
+
+.wishlist-summary dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+@keyframes result-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 840px) {
+  .wishlist-form-grid,
+  .wishlist-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .wishlist-summary-wide {
+    grid-column: auto;
+  }
+
+  .wishlist-submit {
+    width: 100%;
+  }
+}

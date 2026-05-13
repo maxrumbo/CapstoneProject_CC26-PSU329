@@ -5,14 +5,12 @@ async function handleResponse(response) {
   const data = await response.json();
 
   if (!response.ok) {
-    console.log("API Error:", data);
-
     const message =
       data?.detail?.[0]?.msg ||
       data?.detail ||
       data?.message ||
       "Terjadi kesalahan saat menghubungi server";
-
+      
     throw new Error(typeof message === "string" ? message : JSON.stringify(message));
   }
 
@@ -25,8 +23,6 @@ export async function registerUser(payload) {
     password: payload.password,
     display_name: payload.display_name || payload.name || payload.fullName,
   };
-
-  console.log("Register payload:", registerPayload);
 
   const response = await fetch(`${API_BASE_URL}/auth/register`, {
     method: "POST",
