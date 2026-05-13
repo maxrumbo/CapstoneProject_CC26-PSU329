@@ -10,7 +10,7 @@ class BudgetItemRequest(BaseModel):
 
 class BudgetSetRequest(BaseModel):
     """Request untuk set/update budget"""
-    month: str = Field(..., regex=r"^\d{4}-(0[1-9]|1[0-2])$", description="Bulan dalam format YYYY-MM")
+    month: str = Field(..., pattern=r"^\d{4}-(0[1-9]|1[0-2])$", description="Bulan dalam format YYYY-MM")
     budgets: List[BudgetItemRequest] = Field(..., description="Daftar budget per kategori")
 
 

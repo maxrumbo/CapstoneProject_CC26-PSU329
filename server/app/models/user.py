@@ -23,3 +23,6 @@ class User(Base):
 
     # Relasi ke wishlists
     wishlists = relationship("Wishlist", back_populates="owner", cascade="all, delete-orphan")
+
+    # Relasi ke budgets
+    budgets = relationship("UserBudget", back_populates="owner", cascade="all, delete-orphan")

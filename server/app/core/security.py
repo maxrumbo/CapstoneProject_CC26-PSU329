@@ -88,4 +88,4 @@ def decode_token(token: str) -> dict:
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Token tidak valid",
             headers={"WWW-Authenticate": "Bearer"},
-        )   
+        )
