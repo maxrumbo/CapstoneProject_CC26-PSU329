@@ -7,12 +7,20 @@ from app.db.session import engine, SessionLocal
 from app.core.config import settings
 from app.core.security import hash_password, verify_password
 
+<<<<<<< HEAD
 from app.models import transaction, user, wishlist  # noqa: F401
 from app.models.user import User
+=======
+# Tambahkan budget di sini biar ORM-nya sinkron
+from app.models import transaction, user, wishlist, budget  # noqa: F401
+>>>>>>> origin/server
 
 from app.api.routes.auth import router as auth_router
 from app.api.routes.transactions import router as transactions_router
 from app.api.routes.wishlist import router as wishlist_router
+# Import router baru yang nanti isinya dibikinin Claude
+from app.api.routes.budget import router as budget_router
+from app.api.routes.profile import router as profile_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -91,6 +99,9 @@ async def global_exception_handler(request: Request, exc: Exception):
 app.include_router(auth_router, prefix="/api")
 app.include_router(transactions_router, prefix="/api")
 app.include_router(wishlist_router, prefix="/api")
+# Daftarin router baru ke FastAPI
+app.include_router(budget_router, prefix="/api")
+app.include_router(profile_router, prefix="/api")
 
 
 @app.get("/", tags=["Health"])
