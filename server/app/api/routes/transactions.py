@@ -195,11 +195,7 @@ def get_transaction(
 @router.patch(
     "/{transaction_id}",
     response_model=APIResponse[TransactionResponse],
-<<<<<<< HEAD
     summary="Edit transaksi tidak tersedia",
-=======
-    summary="Edit sebagian field transaksi yang sudah ada",
->>>>>>> origin/server
 )
 def update_transaction(
     transaction_id: int,
