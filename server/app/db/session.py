@@ -21,7 +21,7 @@ SessionLocal = sessionmaker(
 
 def get_db() -> Generator[Session, None, None]:
     """
-    Dependency FastAPI — inject ke setiap route yang butuh database.
+    Dependency FastAPI – inject ke setiap route yang butuh database.
     Otomatis menutup sesi setelah request selesai.
     """
     db = SessionLocal()
