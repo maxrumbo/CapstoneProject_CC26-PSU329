@@ -29,17 +29,22 @@ CSV_PATH = "data/lq45_historical.csv"
 def fetch_ohlcv_today(ticker_str, label):
     today = datetime.now().strftime('%Y-%m-%d')
     tomorrow = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
-
     try:
-        hist = yf.Ticker(ticker_str).history(
-            start=today,
-            end=tomorrow,
-            auto_adjust=True
-        )
-
+        hist = yf.Ticker(ticker_str).history(start=today, end=tomorrow, auto_adjust=True)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
-            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+            return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+
+        # VALIDASI: cek apakah tanggal data sesuai dengan hari ini
+        last_date = hist.index[-1]
+        if hasattr(last_date, 'tz_localize'):
+            last_date_str = last_date.strftime('%Y-%m-%d')
+        else:
+            last_date_str = str(last_date)[:10]
+
+        if last_date_str != today:
+            print(f"  Skip  {ticker_str}: data terakhir {last_date_str}, bukan hari ini (libur bursa?)")
+            return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
         row = hist.iloc[-1]
 
