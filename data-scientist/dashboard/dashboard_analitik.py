@@ -12,6 +12,7 @@ File .env:
 
 import os
 from datetime import date, datetime, timedelta
+from urllib import response
 
 import streamlit as st
 import pandas as pd
@@ -87,20 +88,15 @@ def get_status(expense, income):
     return "BAHAYA", "status-bahaya"
 
 
-@st.cache_resource
-def get_engine():
-    url = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/sawit_db")
-    return create_engine(url)
-
-
+import requests
 @st.cache_data(ttl=30)
 def load_data(user_id: int) -> pd.DataFrame:
-    engine = get_engine()
-    with engine.connect() as conn:
-        df = pd.read_sql(
-            text("SELECT * FROM transactions WHERE user_id = :uid ORDER BY date"),
-            conn, params={"uid": user_id}
-        )
+    response = requests.get(
+        "https://web-production-00bb0.up.railway.app/transactions/",
+        params={"user_id": user_id}
+    )
+    df = pd.DataFrame(response.json())
+
     df["date"]     = pd.to_datetime(df["date"], errors="coerce")
     df["amount"]   = pd.to_numeric(df["amount"], errors="coerce").fillna(0)
     df["category"] = df["category"].fillna("Pemasukan")
