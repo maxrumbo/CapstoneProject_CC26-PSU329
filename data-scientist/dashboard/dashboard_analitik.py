@@ -12,13 +12,11 @@ File .env:
 
 import os
 from datetime import date, datetime, timedelta
-from urllib import response
-
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
+import calendar
 
 load_dotenv()
 
@@ -77,10 +75,38 @@ def fmt(amount: float) -> str:
     return f"Rp {amount:,.0f}"
 
 
-def get_status(expense, income):
+def get_status(expense, income, budget_total=0, days_elapsed=0, days_in_month=30):
+    """
+    Status berdasarkan 3 faktor:
+    - Rasio expense/income
+    - Sisa budget (jika ada data budget)
+    - Kecepatan pengeluaran (apakah sudah > 80% budget sebelum bulan habis)
+    """
     if income == 0:
         return "Tidak Ada Data", "status-waspada"
+    
     r = expense / income
+    
+    # Jika ada data budget, cek kecepatan pengeluaran
+    if budget_total > 0 and days_in_month > 0:
+        budget_used_pct = expense / budget_total  # % budget terpakai
+        month_elapsed_pct = days_elapsed / days_in_month  # % bulan berjalan
+        
+        # Proyeksi pengeluaran akhir bulan
+        if days_elapsed > 0:
+            projected = expense / days_elapsed * days_in_month
+            projected_pct = projected / budget_total
+        else:
+            projected_pct = 0
+        
+        # Boros jika sudah pakai >80% budget sebelum 80% bulan berjalan
+        if budget_used_pct >= 0.80 and month_elapsed_pct < 0.80:
+            return "BOROS", "status-bahaya"
+        # Waspada jika proyeksi akhir bulan melebihi budget
+        if projected_pct > 1.10:
+            return "WASPADA", "status-waspada"
+    
+    # Fallback ke rasio expense/income
     if r <= 0.60:
         return "AMAN", "status-aman"
     elif r <= 0.80:
@@ -92,7 +118,7 @@ import requests
 @st.cache_data(ttl=30)
 def load_data(user_id: int) -> pd.DataFrame:
     response = requests.get(
-        "https://web-production-00bb0.up.railway.app/transactions/",
+        "https://coba-render-vercel.vercel.app/transactions/",
         params={"user_id": user_id}
     )
     df = pd.DataFrame(response.json())
@@ -105,6 +131,19 @@ def load_data(user_id: int) -> pd.DataFrame:
     df["tanggal"]  = df["date"].dt.date
     return df
 
+@st.cache_data(ttl=30)
+def load_budget(user_id: int) -> pd.DataFrame:
+    response = requests.get(
+        "https://coba-render-vercel.vercel.app/budget/",
+        params={"user_id": user_id}
+    )
+    df = pd.DataFrame(response.json())
+    if df.empty:
+        return df
+    
+    df["month"]  = pd.to_datetime(df["month"]).dt.strftime("%Y-%m")
+    df["amount"] = pd.to_numeric(df["amount"], errors="coerce").fillna(0)
+    return df
 
 def get_user_id() -> int:
     param = st.query_params.get("user_id")
@@ -127,6 +166,7 @@ def main():
 
     try:
         df_all = load_data(user_id)
+        df_budget = load_budget(user_id)
     except Exception as e:
         st.error(f"Gagal konek ke database: {e}")
         st.stop()
@@ -139,6 +179,7 @@ def main():
     max_date = df_all["date"].max().date()
     today    = date.today()
 
+      
     # ── Sidebar ───────────────────────────────────────────────────────────────
     with st.sidebar:
         st.markdown("### 🌴 SAWIT")
@@ -242,8 +283,27 @@ def main():
     expense_total = df_exp["amount"].sum()
     saldo         = income_total - expense_total
     savings_pct   = (saldo / income_total * 100) if income_total > 0 else 0
-    status_txt, status_cls = get_status(expense_total, income_total)
 
+    # Hitung parameter budget untuk bulan yang sedang dilihat
+    today = date.today()
+    current_month_str = today.strftime("%Y-%m")
+
+    # Filter budget bulan ini
+    if not df_budget.empty:
+        budget_this_month = df_budget[df_budget["month"] == current_month_str]["amount"].sum()
+    else:
+        budget_this_month = 0
+
+    days_in_month  = calendar.monthrange(today.year, today.month)[1]
+    days_elapsed   = today.day
+
+    status_txt, status_cls = get_status(
+        expense_total, income_total,
+        budget_total=budget_this_month,
+        days_elapsed=days_elapsed,
+        days_in_month=days_in_month
+    )
+    
     k1, k2, k3, k4, k5 = st.columns(5)
     with k1:
         st.markdown(f"""<div class="kpi"><div class="label">Pemasukan</div>
@@ -360,37 +420,139 @@ def main():
     col_a, col_b = st.columns([4, 6])
     with col_a:
         st.subheader("Komposisi Pengeluaran")
+
         if not df_exp.empty:
-            cat_sum = df_exp.groupby("category")["amount"].sum().reset_index().sort_values("amount", ascending=False)
+
+            # spacer atas
+            st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
+
+            cat_sum = (
+                df_exp.groupby("category")["amount"]
+                .sum()
+                .reset_index()
+                .sort_values("amount", ascending=False)
+            )
+
             fig3 = go.Figure(go.Pie(
-                labels=cat_sum["category"], values=cat_sum["amount"], hole=0.55,
-                marker=dict(colors=[CATEGORY_COLORS.get(c, "#888780") for c in cat_sum["category"]]),
-                textinfo="percent+label", textfont_size=11,
+                labels=cat_sum["category"],
+                values=cat_sum["amount"],
+                hole=0.55,
+                marker=dict(
+                   colors=[CATEGORY_COLORS.get(c, "#888780")
+                            for c in cat_sum["category"]]
+                ),
+                textinfo="percent+label",
+                textfont_size=11,
                 hovertemplate="<b>%{label}</b><br>Rp %{value:,.0f} (%{percent})<extra></extra>",
             ))
-            fig3.add_annotation(text=f"<b>{fmt(expense_total)}</b>", x=0.5, y=0.5,
-                                 showarrow=False, font=dict(size=13, family="Plus Jakarta Sans"))
-            fig3.update_layout(height=320, margin=dict(l=0, r=0, t=10, b=0), showlegend=False,
-                                plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
+
+            fig3.add_annotation(
+                text=f"<b>{fmt(expense_total)}</b>",
+                x=0.5,
+                y=0.5,
+                showarrow=False,
+                font=dict(size=13, family="Plus Jakarta Sans")
+            )
+
+            fig3.update_layout(
+                height=360,
+                margin=dict(l=0, r=0, t=10, b=0),
+                showlegend=False,
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)"
+            )
+
             st.plotly_chart(fig3, use_container_width=True)
-        else:
-            st.info("Tidak ada data pengeluaran.")
 
     with col_b:
-        st.subheader("Pengeluaran per Kategori")
+        st.subheader("Budget Tracker")
         if not df_exp.empty:
-            cat_bar = df_exp.groupby("category")["amount"].sum().reset_index().sort_values("amount")
-            fig4 = go.Figure(go.Bar(
-                x=cat_bar["amount"], y=cat_bar["category"], orientation="h",
-                marker=dict(color=[CATEGORY_COLORS.get(c, "#888780") for c in cat_bar["category"]]),
-                text=[fmt(v) for v in cat_bar["amount"]], textposition="outside",
-                hovertemplate="<b>%{y}</b><br>Rp %{x:,.0f}<extra></extra>",
-            ))
-            fig4.update_layout(height=320, margin=dict(l=0, r=90, t=10, b=0),
-                                xaxis=dict(tickprefix="Rp ", tickformat=",.0f", gridcolor="#F5F5F5"),
-                                plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-                                font=dict(family="Plus Jakarta Sans"))
-            st.plotly_chart(fig4, use_container_width=True)
+            cat_bar = df_exp.groupby("category")["amount"].sum().reset_index().sort_values("amount", ascending=False)
+
+            if not df_budget.empty:
+                # ── Ambil semua bulan dalam rentang filter, bukan cuma bulan ini ──
+                months_in_range = pd.period_range(
+                    start=date_start.strftime("%Y-%m"),
+                    end=date_end.strftime("%Y-%m"),
+                    freq="M"
+                ).strftime("%Y-%m").tolist()
+
+                budget_range = df_budget[df_budget["month"].isin(months_in_range)]
+                budget_map   = budget_range.groupby("category")["amount"].sum().to_dict()
+            else:
+                budget_map = {}
+
+            if budget_map:
+                for _, row in cat_bar.iterrows():
+                    cat    = row["category"]
+                    actual = row["amount"]
+                    budget = budget_map.get(cat, 0)
+
+                    if budget > 0:
+                        pct = actual / budget * 100
+                        if pct >= 100:
+                            bar_color  = "#A32D2D"
+                            status     = f"OVER +{fmt(actual - budget)}"
+                            status_bg  = "#FCEBEB"
+                            status_fg  = "#A32D2D"
+                        elif pct >= 80:
+                            bar_color  = "#EF9F27"
+                            status     = f"{pct:.0f}% terpakai"
+                            status_bg  = "#FAEEDA"
+                            status_fg  = "#854F0B"
+                        else:
+                            bar_color  = CATEGORY_COLORS.get(cat, "#1D9E75")
+                            status     = f"{pct:.0f}% terpakai"
+                            status_bg  = "#E1F5EE"
+                            status_fg  = "#0F6E56"
+
+                        over_badge = (
+                            '<div style="position:absolute;right:0;top:-3px;'
+                            'font-size:0.65rem;color:#A32D2D;font-weight:600">⚠️</div>'
+                            if pct >= 100 else ""
+                        )
+                        st.markdown(
+                            f'<div style="margin-bottom:16px">'
+                            f'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">'
+                            f'<span style="font-weight:600;font-size:0.95rem;color:#1a1a1a">{cat}</span>'
+                            f'<span style="font-size:0.8rem;font-weight:600;padding:2px 10px;border-radius:20px;background:{status_bg};color:{status_fg}">{status}</span>'
+                            f'</div>'
+                            f'<div style="display:flex;justify-content:space-between;font-size:0.78rem;color:#888;margin-bottom:6px">'
+                            f'<span>{fmt(actual)} dari {fmt(budget)}</span>'
+                            f'<span>Sisa: {fmt(max(budget - actual, 0))}</span>'
+                            f'</div>'
+                            f'<div style="background:#F0F0F0;border-radius:6px;height:8px;position:relative">'
+                            f'<div style="background:{bar_color};width:{min(pct,100):.0f}%;height:8px;border-radius:6px"></div>'
+                            f'{over_badge}'
+                            f'</div>'
+                            f'</div>',
+                            unsafe_allow_html=True
+                        )
+                    else:
+                        st.markdown(
+                            f'<div style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">'
+                            f'<span style="font-weight:600;font-size:0.95rem;color:#1a1a1a">{cat}</span>'
+                            f'<span style="font-size:0.78rem;color:#aaa">{fmt(actual)} — no budget</span>'
+                            f'</div>',
+                            unsafe_allow_html=True
+                        )
+            else:
+                # Fallback ke bar chart biasa jika tidak ada budget
+                fig4 = go.Figure(go.Bar(
+                    x=cat_bar["amount"], y=cat_bar["category"], orientation="h",
+                    marker=dict(color=[CATEGORY_COLORS.get(c, "#888780") for c in cat_bar["category"]]),
+                    text=[fmt(v) for v in cat_bar["amount"]], textposition="outside",
+                    hovertemplate="<b>%{y}</b><br>Rp %{x:,.0f}<extra></extra>",
+                ))
+                fig4.update_layout(
+                    height=320, margin=dict(l=0, r=90, t=10, b=0),
+                    xaxis=dict(tickprefix="Rp ", tickformat=",.0f", gridcolor="#F5F5F5"),
+                    plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+                    font=dict(family="Plus Jakarta Sans"),
+                )
+                st.plotly_chart(fig4, use_container_width=True)
+        else:
+            st.info("Tidak ada data pengeluaran.")
 
     st.markdown("<hr>", unsafe_allow_html=True)
     
