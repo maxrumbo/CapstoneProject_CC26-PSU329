@@ -88,3 +88,10 @@ export const createTransaction = async (token, payload) => {
 
   return normalizeTransactionResponse(response);
 };
+
+export const predictTransactionCategory = async (token, description) =>
+  apiRequest("/transactions/predict-category", {
+    method: "POST",
+    token,
+    body: { description },
+  });

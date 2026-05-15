@@ -4,6 +4,7 @@ import {
   createTransaction,
   getBalanceSummary,
   getTransactions,
+  predictTransactionCategory,
 } from "../../../services/transactionsApi";
 import { summarizeTransactions } from "../../../utils/summarizeTransactions";
 
@@ -86,6 +87,17 @@ export function useTransactions(initialFilters) {
     [refreshBalance, refreshTransactions, token]
   );
 
+  const predictCategory = useCallback(
+    async (description) => {
+      if (!token) {
+        throw new Error("Token belum tersedia.");
+      }
+
+      return predictTransactionCategory(token, description);
+    },
+    [token]
+  );
+
   useEffect(() => {
     if (isAuthenticated) {
       Promise.resolve().then(() => {
@@ -105,5 +117,6 @@ export function useTransactions(initialFilters) {
     refreshTransactions,
     refreshBalance,
     addTransaction,
+    predictCategory,
   };
 }

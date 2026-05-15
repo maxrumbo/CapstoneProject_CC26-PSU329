@@ -3,8 +3,13 @@ import { useTransactionForm } from "../hooks/useTransactionForm";
 import { formatCurrency } from "../../../utils/formatCurrency";
 import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 
-function TransactionForm({ availableBalance, onAddTransaction }) {
+function TransactionForm({
+  availableBalance,
+  onAddTransaction,
+  onPredictCategory,
+}) {
   const {
+    categoryPrediction,
     formData,
     isExpense,
     isSubmitDisabled,
@@ -15,6 +20,7 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
   } = useTransactionForm({
     availableBalance,
     onAddTransaction,
+    onPredictCategory,
   });
 
   return (
@@ -123,6 +129,21 @@ function TransactionForm({ availableBalance, onAddTransaction }) {
                   </option>
                 ))}
               </select>
+              {categoryPrediction.isLoading && (
+                <small className="field-hint category-prediction-hint">
+                  AI menganalisis kategori...
+                </small>
+              )}
+              {!categoryPrediction.isLoading && categoryPrediction.category && (
+                <small className="field-hint category-prediction-hint">
+                  AI memilih {categoryPrediction.category}
+                </small>
+              )}
+              {!categoryPrediction.isLoading && categoryPrediction.error && (
+                <small className="field-hint category-prediction-hint warning">
+                  {categoryPrediction.error}
+                </small>
+              )}
             </label>
           )}
 

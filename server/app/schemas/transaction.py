@@ -3,7 +3,11 @@ from decimal import Decimal
 from typing import Optional
 from pydantic import BaseModel, field_validator, model_validator
 
-from app.models.transaction import VALID_CATEGORIES, TransactionType
+from app.models.transaction import (
+    EXPENSE_CATEGORIES,
+    INCOME_CATEGORY,
+    TransactionType,
+)
 
 
 class TransactionCreate(BaseModel):
@@ -43,23 +47,43 @@ class TransactionCreate(BaseModel):
     def validate_category_logic(self) -> "TransactionCreate":
         if self.type == TransactionType.income:
             if not self.category:
-                self.category = "Pemasukan"
-            if self.category != "Pemasukan":
+                self.category = INCOME_CATEGORY
+            if self.category != INCOME_CATEGORY:
                 raise ValueError("Transaksi income harus menggunakan kategori 'Pemasukan'")
             return self
 
         if not self.category:
             raise ValueError("Kategori wajib diisi")
 
-        if self.category not in VALID_CATEGORIES:
+        if self.category not in EXPENSE_CATEGORIES:
             raise ValueError(
-                f"Kategori tidak valid. Pilihan: {', '.join(VALID_CATEGORIES)}"
+                f"Kategori tidak valid. Pilihan: {', '.join(EXPENSE_CATEGORIES)}"
             )
 
-        if self.category == "Pemasukan":
+        if self.category == INCOME_CATEGORY:
             raise ValueError("Transaksi expense tidak boleh menggunakan kategori 'Pemasukan'")
 
         return self
+
+
+class TransactionCategoryPredictionRequest(BaseModel):
+    description: str
+
+    @field_validator("description")
+    @classmethod
+    def prediction_description_not_empty(cls, v: str) -> str:
+        v = v.strip()
+        if not v:
+            raise ValueError("Deskripsi tidak boleh kosong")
+        if len(v) > 255:
+            raise ValueError("Deskripsi maksimal 255 karakter")
+        return v
+
+
+class TransactionCategoryPredictionResponse(BaseModel):
+    category: str
+    confidence: float
+    model_label: str
 
 
 class TransactionResponse(BaseModel):

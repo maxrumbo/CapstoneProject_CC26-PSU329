@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { formatCurrency } from "../../../utils/formatCurrency";
-import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
+import {
+  DEFAULT_EXPENSE_CATEGORY,
+  INCOME_CATEGORY,
+  TRANSACTION_CATEGORIES,
+} from "../constants/transactionCategories";
 
-const DEFAULT_EXPENSE_CATEGORY = "Lainnya";
-const INCOME_CATEGORY = "Pemasukan";
 const DEFAULT_METHOD = "Tunai";
+const MIN_DESCRIPTION_LENGTH_FOR_AI = 3;
 
 const getToday = () => {
   const today = new Date();
@@ -29,20 +32,135 @@ const getCategoryByType = (type, currentCategory) => {
     return INCOME_CATEGORY;
   }
 
-  return currentCategory || DEFAULT_EXPENSE_CATEGORY;
+  return TRANSACTION_CATEGORIES.includes(currentCategory)
+    ? currentCategory
+    : DEFAULT_EXPENSE_CATEGORY;
 };
 
 export function useTransactionForm({
   availableBalance,
   onAddTransaction,
+  onPredictCategory,
 }) {
   const [formData, setFormData] = useState(createInitialFormData);
   const [message, setMessage] = useState("");
+  const [categoryPrediction, setCategoryPrediction] = useState({
+    isLoading: false,
+    category: "",
+    confidence: null,
+    error: "",
+  });
+  const [hasManualCategory, setHasManualCategory] = useState(false);
+  const hasManualCategoryRef = useRef(false);
+  const latestDescriptionRef = useRef(formData.description);
   const isExpense = formData.type === "expense";
+
+  useEffect(() => {
+    hasManualCategoryRef.current = hasManualCategory;
+  }, [hasManualCategory]);
+
+  useEffect(() => {
+    latestDescriptionRef.current = formData.description;
+  }, [formData.description]);
+
+  useEffect(() => {
+    const description = formData.description.trim();
+
+    if (
+      !isExpense ||
+      hasManualCategory ||
+      !onPredictCategory ||
+      description.length < MIN_DESCRIPTION_LENGTH_FOR_AI
+    ) {
+      return undefined;
+    }
+
+    let isActive = true;
+    const timeoutId = window.setTimeout(async () => {
+      setCategoryPrediction({
+        isLoading: true,
+        category: "",
+        confidence: null,
+        error: "",
+      });
+
+      try {
+        const response = await onPredictCategory(description);
+        const prediction = response.data;
+
+        if (!isActive || !prediction) {
+          return;
+        }
+
+        setCategoryPrediction({
+          isLoading: false,
+          category: prediction.category,
+          confidence: prediction.confidence,
+          error: "",
+        });
+
+        if (!TRANSACTION_CATEGORIES.includes(prediction.category)) {
+          return;
+        }
+
+        setFormData((prev) => {
+          const isCurrentExpense = prev.type === "expense";
+          const isCurrentDescription =
+            latestDescriptionRef.current.trim() === description;
+
+          if (
+            !isCurrentExpense ||
+            !isCurrentDescription ||
+            hasManualCategoryRef.current
+          ) {
+            return prev;
+          }
+
+          return {
+            ...prev,
+            category: prediction.category,
+          };
+        });
+      } catch (err) {
+        if (isActive) {
+          setCategoryPrediction({
+            isLoading: false,
+            category: "",
+            confidence: null,
+            error: err.message || "Gagal memprediksi kategori.",
+          });
+        }
+      }
+    }, 500);
+
+    return () => {
+      isActive = false;
+      window.clearTimeout(timeoutId);
+    };
+  }, [formData.description, hasManualCategory, isExpense, onPredictCategory]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     let nextValue = value;
+
+    if (name === "category") {
+      setHasManualCategory(true);
+      setCategoryPrediction({
+        isLoading: false,
+        category: "",
+        confidence: null,
+        error: "",
+      });
+    }
+
+    if (name === "description" && !hasManualCategory) {
+      setCategoryPrediction({
+        isLoading: false,
+        category: "",
+        confidence: null,
+        error: "",
+      });
+    }
 
     if (name === "amount" && isExpense && value) {
       const numericValue = Number(value);
@@ -71,6 +189,14 @@ export function useTransactionForm({
   };
 
   const handleTypeChange = (type) => {
+    setHasManualCategory(false);
+    setCategoryPrediction({
+      isLoading: false,
+      category: "",
+      confidence: null,
+      error: "",
+    });
+
     setFormData((prev) => ({
       ...prev,
       type,
@@ -127,11 +253,19 @@ export function useTransactionForm({
 
     if (result.success) {
       setFormData(createInitialFormData());
+      setHasManualCategory(false);
+      setCategoryPrediction({
+        isLoading: false,
+        category: "",
+        confidence: null,
+        error: "",
+      });
     }
   };
 
   return {
     formData,
+    categoryPrediction,
     isExpense,
     isSubmitDisabled: isExpense && availableBalance <= 0,
     message,

@@ -123,6 +123,15 @@ select:focus {
   line-height: 1.25;
 }
 
+.category-prediction-hint {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.category-prediction-hint.warning {
+  color: var(--red);
+}
+
 .submit-button {
   width: fit-content;
   min-height: 36px;

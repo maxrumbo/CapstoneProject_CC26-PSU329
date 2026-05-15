@@ -15,17 +15,16 @@ class TransactionType(str, enum.Enum):
 
 
 # Fixed list sesuai transaction.md – hardcode di sini, tidak perlu tabel DB
-VALID_CATEGORIES = [
-    "Pemasukan",
-    "Makanan",
-    "Transportasi",
+INCOME_CATEGORY = "Pemasukan"
+EXPENSE_CATEGORIES = [
+    "Entertainment",
     "Langganan",
-    "Belanja",
+    "Kesehatan",
+    "Transportasi",
+    "Konsumsi",
     "Tagihan",
-    "Wishlist",
-    "Investasi",
-    "Lainnya",
 ]
+VALID_CATEGORIES = [INCOME_CATEGORY, *EXPENSE_CATEGORIES]
 
 
 class Transaction(Base):

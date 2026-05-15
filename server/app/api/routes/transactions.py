@@ -12,8 +12,14 @@ from app.models.user import User
 from app.schemas.base import APIResponse
 from app.schemas.transaction import (
     BalanceSummaryResponse,
+    TransactionCategoryPredictionRequest,
+    TransactionCategoryPredictionResponse,
     TransactionCreate,
     TransactionResponse,
+)
+from app.services.transaction_classifier import (
+    TransactionClassifierError,
+    predict_transaction_category,
 )
 
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
@@ -82,6 +88,34 @@ def get_balance_summary(
 
 
 # ── ENDPOINT 1: CREATE transaksi baru ────────────────────────────────────────
+
+@router.post(
+    "/predict-category",
+    response_model=APIResponse[TransactionCategoryPredictionResponse],
+    summary="Prediksi kategori pengeluaran dari deskripsi transaksi",
+)
+def predict_category(
+    payload: TransactionCategoryPredictionRequest,
+    current_user: User = Depends(get_current_user),
+):
+    try:
+        prediction = predict_transaction_category(payload.description)
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=str(exc),
+        ) from exc
+    except TransactionClassifierError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=str(exc),
+        ) from exc
+
+    return APIResponse(
+        data=TransactionCategoryPredictionResponse(**prediction),
+        message="Kategori berhasil diprediksi",
+    )
+
 
 @router.post(
     "/",

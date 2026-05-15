@@ -1,10 +1,11 @@
 export const TRANSACTION_CATEGORIES = [
-  "Makanan",
-  "Transportasi",
+  "Entertainment",
   "Langganan",
-  "Belanja",
+  "Kesehatan",
+  "Transportasi",
+  "Konsumsi",
   "Tagihan",
-  "Wishlist",
-  "Investasi",
-  "Lainnya",
 ];
+
+export const INCOME_CATEGORY = "Pemasukan";
+export const DEFAULT_EXPENSE_CATEGORY = "Konsumsi";

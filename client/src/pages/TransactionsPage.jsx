@@ -85,6 +85,7 @@ function TransactionsPage({ onProfileClick, userName }) {
     isMutating,
     error,
     addTransaction,
+    predictCategory,
   } = useTransactions(apiFilters);
 
   const availableBalance = toNumber(balanceSummary?.balance ?? summary.balance);
@@ -136,6 +137,7 @@ function TransactionsPage({ onProfileClick, userName }) {
           <TransactionForm
             availableBalance={availableBalance}
             onAddTransaction={addTransaction}
+            onPredictCategory={predictCategory}
           />
           {isLoading && !transactions.length ? (
             <div className="page-loading" role="status">
