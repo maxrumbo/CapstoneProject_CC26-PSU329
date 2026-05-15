@@ -16,6 +16,7 @@ class TransactionType(str, enum.Enum):
 
 # Fixed list sesuai transaction.md – hardcode di sini, tidak perlu tabel DB
 VALID_CATEGORIES = [
+    "Pemasukan",
     "Makanan",
     "Transportasi",
     "Langganan",

@@ -33,6 +33,16 @@ const parsePositiveNumber = (value, emptyMessage, invalidMessage) => {
   return parsedValue;
 };
 
+const parsePositiveInteger = (value, emptyMessage, invalidMessage) => {
+  const parsedValue = parsePositiveNumber(value, emptyMessage, invalidMessage);
+
+  if (!Number.isInteger(parsedValue)) {
+    throw new Error(invalidMessage);
+  }
+
+  return parsedValue;
+};
+
 export const calculateWishlist = ({ itemName, targetPrice, targetMonths }) => {
   const normalizedItemName = String(itemName ?? "").trim();
 
@@ -45,10 +55,10 @@ export const calculateWishlist = ({ itemName, targetPrice, targetMonths }) => {
     "Harga barang wajib diisi.",
     "Harga barang harus lebih dari 0."
   );
-  const parsedTargetMonths = parsePositiveNumber(
+  const parsedTargetMonths = parsePositiveInteger(
     targetMonths,
     "Target waktu wajib diisi.",
-    "Target waktu harus lebih dari 0."
+    "Target waktu harus berupa jumlah bulan bulat lebih dari 0."
   );
 
   const monthlySaving = parsedTargetPrice / parsedTargetMonths;

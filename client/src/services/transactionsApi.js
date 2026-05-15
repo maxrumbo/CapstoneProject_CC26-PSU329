@@ -1,30 +1,8 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
+import { apiRequest } from "./apiClient";
 
 const toNumber = (value) => {
   const numberValue = Number(value);
   return Number.isFinite(numberValue) ? numberValue : 0;
-};
-
-const buildAuthHeaders = (token) => ({
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${token}`,
-});
-
-const handleResponse = async (response) => {
-  const data = await response.json();
-
-  if (!response.ok) {
-    const message =
-      data?.detail?.[0]?.msg ||
-      data?.detail ||
-      data?.message ||
-      "Terjadi kesalahan saat menghubungi server";
-
-    throw new Error(typeof message === "string" ? message : JSON.stringify(message));
-  }
-
-  return data;
 };
 
 const normalizeTransaction = (transaction) => {
@@ -48,7 +26,7 @@ const normalizeBalanceSummary = (summary) => ({
 const normalizeTransactionPayload = (payload) => ({
   ...payload,
   amount: toNumber(payload.amount),
-  category: payload.type === "expense" ? payload.category : null,
+  category: payload.type === "income" ? "Pemasukan" : payload.category,
 });
 
 const normalizeTransactionResponse = (response) => ({
@@ -78,35 +56,35 @@ const buildQueryString = (filters = {}) => {
 };
 
 export const getTransactions = async (token, filters) => {
-  const response = await fetch(
-    `${API_BASE_URL}/transactions${buildQueryString(filters)}`,
+  const response = await apiRequest(
+    `/transactions/${buildQueryString(filters)}`,
     {
       method: "GET",
-      headers: buildAuthHeaders(token),
+      token,
     }
   );
 
-  return normalizeTransactionResponse(await handleResponse(response));
+  return normalizeTransactionResponse(response);
 };
 
 export const getBalanceSummary = async (token, filters) => {
-  const response = await fetch(
-    `${API_BASE_URL}/transactions/summary/balance${buildQueryString(filters)}`,
+  const response = await apiRequest(
+    `/transactions/summary/balance${buildQueryString(filters)}`,
     {
       method: "GET",
-      headers: buildAuthHeaders(token),
+      token,
     }
   );
 
-  return normalizeBalanceResponse(await handleResponse(response));
+  return normalizeBalanceResponse(response);
 };
 
 export const createTransaction = async (token, payload) => {
-  const response = await fetch(`${API_BASE_URL}/transactions`, {
+  const response = await apiRequest("/transactions/", {
     method: "POST",
-    headers: buildAuthHeaders(token),
-    body: JSON.stringify(normalizeTransactionPayload(payload)),
+    token,
+    body: normalizeTransactionPayload(payload),
   });
 
-  return normalizeTransactionResponse(await handleResponse(response));
+  return normalizeTransactionResponse(response);
 };

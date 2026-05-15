@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import Icon from "../components/ui/Icon";
+import { useAuth } from "../context/useAuth";
+import { getBudgetSummary, setBudget as setBudgetApi } from "../services/budgetApi";
 import {
   BUDGET_CATEGORIES,
   createEmptyCategoryLimits,
-  readBudgetSetting,
-  writeBudgetSetting,
 } from "../utils/budgetStorage";
 
 const toNumber = (value) => {
@@ -38,10 +38,44 @@ const getConfiguredExpenseCategoryCount = (categoryLimits = {}) =>
       category.type === "expense" && toNumber(categoryLimits[category.name]) > 0
   ).length;
 
+const getCurrentMonth = () => {
+  const today = new Date();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+
+  return `${today.getFullYear()}-${month}`;
+};
+
+const createBudgetSettingFromSummary = (summary) => {
+  const categoryLimits = createEmptyCategoryLimits();
+  const categories = summary?.categories || [];
+
+  categories.forEach((item) => {
+    if (Object.prototype.hasOwnProperty.call(categoryLimits, item.category)) {
+      categoryLimits[item.category] = toNumber(item.budget);
+    }
+  });
+
+  return {
+    category_limits: categoryLimits,
+    month: summary?.month || getCurrentMonth(),
+    updated_at: categories.length > 0 ? summary?.month || getCurrentMonth() : null,
+  };
+};
+
+const buildBudgetPayload = (month, categoryLimits) => ({
+  month,
+  budgets: BUDGET_CATEGORIES.map((category) => ({
+    category: category.name,
+    amount: toNumber(categoryLimits[category.name]),
+  })),
+});
+
 function ProfilePage({ onLogout, onProfileClick, user, userName }) {
+  const { token } = useAuth();
   const displayName = user?.display_name || userName || "Pengguna SAWIT";
   const email = user?.email || "-";
   const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
+  const [budgetMonth] = useState(getCurrentMonth);
 
   const [budget, setBudget] = useState(null);
   const [categoryInputs, setCategoryInputs] = useState(() =>
@@ -71,7 +105,12 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
       setError("");
 
       try {
-        const nextBudget = readBudgetSetting(user);
+        if (!token) {
+          throw new Error("Token belum tersedia. Silakan login ulang.");
+        }
+
+        const response = await getBudgetSummary(token, budgetMonth);
+        const nextBudget = createBudgetSettingFromSummary(response.data);
 
         if (!isActive) {
           return;
@@ -91,12 +130,14 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
       }
     };
 
-    loadProfileData();
+    if (token) {
+      loadProfileData();
+    }
 
     return () => {
       isActive = false;
     };
-  }, [user]);
+  }, [budgetMonth, token]);
 
   const handleCategoryBudgetChange = (categoryName, value) => {
     if (!isBudgetEditable) {
@@ -138,12 +179,14 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
     setIsSaving(true);
 
     try {
-      const nextBudget = writeBudgetSetting(
-        user,
-        {
-          category_limits: categoryLimits,
-        }
-      );
+      if (!token) {
+        throw new Error("Token belum tersedia. Silakan login ulang.");
+      }
+
+      await setBudgetApi(token, buildBudgetPayload(budgetMonth, categoryLimits));
+      const response = await getBudgetSummary(token, budgetMonth);
+      const nextBudget = createBudgetSettingFromSummary(response.data);
+
       setBudget(nextBudget);
       setCategoryInputs(normalizeCategoryInputValues(nextBudget.category_limits));
       setIsEditingBudget(false);
@@ -238,7 +281,7 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
                           step="1000"
                           inputMode="numeric"
                           value={categoryInputs[category.name]}
-                          placeholder={category.type === "income" ? "Target" : "Budget"}
+                          placeholder="Budget"
                           disabled={!isBudgetEditable || isSaving}
                           onChange={(event) =>
                             handleCategoryBudgetChange(category.name, event.target.value)
@@ -246,9 +289,7 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
                           aria-label={`Budget ${category.name}`}
                         />
                         <span className="category-usage">
-                          {category.type === "income"
-                            ? "Target pemasukan"
-                            : "Nilai berlaku sampai di-update"}
+                          Nilai berlaku sampai di-update
                         </span>
                       </label>
                     );

@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { useAuth } from "../../../context/useAuth";
-import { createWishlist } from "../../../services/wishlistApi";
+import {
+  createWishlist,
+  deleteWishlist,
+  getWishlists,
+} from "../../../services/wishlistApi";
 import { calculateWishlist } from "../utils/calculateWishlist";
 
 const initialFormData = {
@@ -24,7 +28,33 @@ function WishlistCalculator() {
   const [error, setError] = useState("");
   const [apiError, setApiError] = useState("");
   const [isSaving, setIsSaving] = useState(false);
+  const [isLoadingList, setIsLoadingList] = useState(false);
+  const [deletingId, setDeletingId] = useState(null);
   const [result, setResult] = useState(null);
+  const [wishlists, setWishlists] = useState([]);
+
+  const loadWishlists = useCallback(async () => {
+    if (!token) {
+      setWishlists([]);
+      return;
+    }
+
+    setIsLoadingList(true);
+    setApiError("");
+
+    try {
+      const response = await getWishlists(token);
+      setWishlists(response.data || []);
+    } catch (err) {
+      setApiError(err.message || "Gagal memuat wishlist.");
+    } finally {
+      setIsLoadingList(false);
+    }
+  }, [token]);
+
+  useEffect(() => {
+    Promise.resolve().then(loadWishlists);
+  }, [loadWishlists]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -68,12 +98,42 @@ function WishlistCalculator() {
         targetPrice: wishlistResult.targetPrice,
         targetMonths: wishlistResult.targetMonths,
       });
-      setResult(response.data || wishlistResult);
+      const savedWishlist = response.data || wishlistResult;
+      setResult(savedWishlist);
+      setWishlists((prevWishlists) => [
+        savedWishlist,
+        ...prevWishlists.filter((item) => item.id !== savedWishlist.id),
+      ]);
     } catch (validationError) {
       setError(validationError.message || "Gagal menyimpan wishlist.");
       setResult(null);
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleDeleteWishlist = async (wishlistId) => {
+    if (!token) {
+      setApiError("Silakan login terlebih dahulu.");
+      return;
+    }
+
+    setDeletingId(wishlistId);
+    setApiError("");
+
+    try {
+      await deleteWishlist(token, wishlistId);
+      setWishlists((prevWishlists) =>
+        prevWishlists.filter((wishlist) => wishlist.id !== wishlistId)
+      );
+
+      if (result?.id === wishlistId) {
+        setResult(null);
+      }
+    } catch (err) {
+      setApiError(err.message || "Gagal menghapus wishlist.");
+    } finally {
+      setDeletingId(null);
     }
   };
 
@@ -141,8 +201,8 @@ function WishlistCalculator() {
               type="number"
               name="targetMonths"
               min="1"
-              step="any"
-              inputMode="decimal"
+              step="1"
+              inputMode="numeric"
               placeholder="8"
               value={formData.targetMonths}
               aria-invalid={Boolean(error)}
@@ -226,6 +286,46 @@ function WishlistCalculator() {
           </dl>
 
         </article>
+      )}
+
+      {token && (
+        <section className="wishlist-list-section" aria-label="Wishlist tersimpan">
+          <div className="wishlist-list-header">
+            <p className="eyebrow">Wishlist Tersimpan</p>
+            {isLoadingList && <span>Memuat...</span>}
+          </div>
+
+          <div className="wishlist-list">
+            {wishlists.length ? (
+              wishlists.map((wishlist) => (
+                <article className="wishlist-list-item" key={wishlist.id}>
+                  <div>
+                    <strong>{wishlist.itemName}</strong>
+                    <span>
+                      {formatRupiah(wishlist.targetPrice)} / {wishlist.targetMonths} bulan
+                    </span>
+                  </div>
+                  <div className="wishlist-list-actions">
+                    <span className="status-pill">{wishlist.status}</span>
+                    <button
+                      className="wishlist-delete-button"
+                      type="button"
+                      disabled={deletingId === wishlist.id}
+                      onClick={() => handleDeleteWishlist(wishlist.id)}
+                      aria-label={`Hapus wishlist ${wishlist.itemName}`}
+                    >
+                      x
+                    </button>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div className="empty-state">
+                Belum ada wishlist tersimpan.
+              </div>
+            )}
+          </div>
+        </section>
       )}
     </section>
   );

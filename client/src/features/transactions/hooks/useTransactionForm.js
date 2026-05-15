@@ -3,6 +3,7 @@ import { formatCurrency } from "../../../utils/formatCurrency";
 import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 
 const DEFAULT_EXPENSE_CATEGORY = "Lainnya";
+const INCOME_CATEGORY = "Pemasukan";
 const DEFAULT_METHOD = "Tunai";
 
 const getToday = () => {
@@ -25,7 +26,7 @@ const createInitialFormData = () => ({
 
 const getCategoryByType = (type, currentCategory) => {
   if (type === "income") {
-    return "";
+    return INCOME_CATEGORY;
   }
 
   return currentCategory || DEFAULT_EXPENSE_CATEGORY;
@@ -117,7 +118,7 @@ export function useTransactionForm({
     const payload = {
       ...formData,
       amount: Number(formData.amount),
-      category: isExpense ? formData.category : null,
+      category: isExpense ? formData.category : INCOME_CATEGORY,
     };
 
     const result = await onAddTransaction(payload);

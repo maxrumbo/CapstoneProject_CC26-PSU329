@@ -7,7 +7,7 @@ from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_current_user, get_db
-from app.models.transaction import Transaction, TransactionType, VALID_CATEGORIES
+from app.models.transaction import Transaction, TransactionType
 from app.models.user import User
 from app.schemas.base import APIResponse
 from app.schemas.transaction import (
@@ -108,7 +108,7 @@ def create_transaction(
         description=payload.description,
         amount=payload.amount,
         type=payload.type,
-        category=payload.category,   # None untuk income (sudah di-handle schema)
+        category=payload.category,
         method=payload.method,
         date=payload.date,
     )

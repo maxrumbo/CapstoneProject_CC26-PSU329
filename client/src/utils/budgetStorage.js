@@ -1,20 +1,21 @@
 const BUDGET_STORAGE_KEY = "sawit_budget_settings";
 
 export const BUDGET_CATEGORY_COLORS = {
-  Entertainment: "#D85A30",
-  Langganan: "#7F77DD",
-  Kesehatan: "#D4537E",
+  Makanan: "#D85A30",
   Transportasi: "#378ADD",
-  Konsumsi: "#1D9E75",
+  Langganan: "#7F77DD",
+  Belanja: "#D4537E",
   Tagihan: "#EF9F27",
-  Pemasukan: "#B4B2A9",
+  Wishlist: "#1D9E75",
+  Investasi: "#6750A4",
+  Lainnya: "#667889",
 };
 
 export const BUDGET_CATEGORIES = Object.entries(BUDGET_CATEGORY_COLORS).map(
   ([name, color]) => ({
     name,
     color,
-    type: name === "Pemasukan" ? "income" : "expense",
+    type: "expense",
   })
 );
 
