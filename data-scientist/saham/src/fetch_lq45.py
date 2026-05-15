@@ -27,46 +27,73 @@ CSV_PATH = "data/lq45_historical.csv"
 
 
 def fetch_ohlcv_today(ticker_str, label):
-    """Ambil data OHLCV hari ini untuk satu ticker."""
     today = datetime.now().strftime('%Y-%m-%d')
     tomorrow = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
 
     try:
-        hist = yf.Ticker(ticker_str).history(start=today, end=tomorrow, auto_adjust=True)
+        hist = yf.Ticker(ticker_str).history(
+            start=today,
+            end=tomorrow,
+            auto_adjust=True
+        )
+
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
-            return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
         row = hist.iloc[-1]
+
+        # ambil tanggal asli market
+        market_date = hist.index[-1].strftime('%Y-%m-%d')
+
         data = {}
         for col in OHLCV_COLUMNS:
             if col in row.index:
                 val = row[col]
-                data[f"{label}_{col}"] = round(float(val), 2) if col != "Volume" else int(val)
+                data[f"{label}_{col}"] = (
+                    round(float(val), 2)
+                    if col != "Volume"
+                    else int(val)
+                )
             else:
                 data[f"{label}_{col}"] = None
 
-        print(f"  Ok  {ticker_str:10s} ({label})  Close={data.get(f'{label}_Close')}")
-        return data
+        print(
+            f"  Ok  {ticker_str:10s} ({label})  "
+            f"{market_date}  Close={data.get(f'{label}_Close')}"
+        )
+
+        return market_date, data
 
     except Exception as e:
         print(f"  Error  {ticker_str}: {e}")
-        return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+        return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
 
 def fetch_today():
-    """Ambil data OHLCV hari ini untuk semua ticker + IHSG."""
-    today = datetime.now().strftime('%Y-%m-%d')
-    all_data = {"Date": today}
+    """Ambil data OHLCV semua ticker."""
+    all_data = {}
+
+    market_date = None
 
     # Fetch LQ45
     for ticker_str in LQ45_TICKERS:
         label = ticker_str.replace('.JK', '')
-        all_data.update(fetch_ohlcv_today(ticker_str, label))
+
+        fetched_date, data = fetch_ohlcv_today(ticker_str, label)
+
+        # simpan tanggal market pertama
+        if market_date is None and fetched_date is not None:
+            market_date = fetched_date
+
+        all_data.update(data)
 
     # Fetch indeks
     for ticker_str, label in INDEX_TICKERS.items():
-        all_data.update(fetch_ohlcv_today(ticker_str, label))
+        _, data = fetch_ohlcv_today(ticker_str, label)
+        all_data.update(data)
+
+    all_data["Date"] = market_date
 
     return pd.DataFrame([all_data])
 
