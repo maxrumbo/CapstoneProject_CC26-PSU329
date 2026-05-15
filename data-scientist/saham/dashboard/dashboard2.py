@@ -575,31 +575,106 @@ def make_price_chart(t, chart_type="Line", ticker="", show_ma=True):
     return fig
 
 def make_macd_rsi_chart(t):
-    fig = make_subplots(rows=2, cols=1, shared_xaxes=True,
-                        row_heights=[0.5,0.5], vertical_spacing=0.08,
-                        subplot_titles=["MACD","RSI (14)"])
-    hist_colors = ["#16a34a" if v >= 0 else "#dc2626" for v in t["MACD_hist"].fillna(0)]
-    fig.add_trace(go.Bar(x=t["Date"], y=t["MACD_hist"], name="Histogram",
-                         marker_color=hist_colors, opacity=0.7), row=1, col=1)
-    fig.add_trace(go.Scatter(x=t["Date"], y=t["MACD"], name="MACD",
-                             line=dict(color="#3b82f6", width=1.5)), row=1, col=1)
-    fig.add_trace(go.Scatter(x=t["Date"], y=t["MACD_signal"], name="Signal",
-                             line=dict(color="#f59e0b", width=1.5, dash="dot")), row=1, col=1)
-    fig.add_trace(go.Scatter(x=t["Date"], y=t["RSI"], name="RSI",
-                             line=dict(color="#8b5cf6", width=1.5)), row=2, col=1)
-    for lvl, clr in [(70,"rgba(220,38,38,0.12)"),(30,"rgba(22,163,74,0.12)")]:
-        fig.add_hline(y=lvl, line_dash="dot", line_color="rgba(0,0,0,0.15)",
-                      annotation_text=str(lvl), annotation_font_size=10, row=2, col=1)
-    fig.update_layout(
-        height=360, paper_bgcolor=CHART_BG, plot_bgcolor=CHART_BG,
-        font=dict(family="DM Sans", color="#1a1d2e", size=11),
-        margin=dict(l=0, r=0, t=30, b=0),
-        legend=dict(orientation="h", y=1.12, x=0, font_size=11, bgcolor="rgba(0,0,0,0)"),
-        xaxis_rangeslider_visible=False, hovermode="x unified",
+    fig = make_subplots(
+        rows=2, cols=1, shared_xaxes=True,
+        row_heights=[0.48, 0.52], vertical_spacing=0.10,
+        subplot_titles=["MACD (12, 26, 9)", "RSI — Relative Strength Index (14)"]
     )
-    for ax in ["xaxis","xaxis2","yaxis","yaxis2"]:
-        fig.update_layout(**{ax: dict(gridcolor=GRID_COLOR, showgrid=True,
-            tickfont=dict(color=AXIS_COLOR, size=10), linecolor="#e8eaf0")})
+
+    # ── MACD ──
+    hist_colors = ["#16a34a" if v >= 0 else "#dc2626" for v in t["MACD_hist"].fillna(0)]
+    fig.add_trace(go.Bar(
+        x=t["Date"], y=t["MACD_hist"], name="Histogram",
+        marker_color=hist_colors, opacity=0.65,
+        legendgroup="macd", legendgrouptitle_text="",
+        hovertemplate="Histogram: %{y:.4f}<extra></extra>"
+    ), row=1, col=1)
+    fig.add_trace(go.Scatter(
+        x=t["Date"], y=t["MACD"], name="MACD",
+        line=dict(color="#3b82f6", width=2),
+        legendgroup="macd",
+        hovertemplate="MACD: %{y:.4f}<extra></extra>"
+    ), row=1, col=1)
+    fig.add_trace(go.Scatter(
+        x=t["Date"], y=t["MACD_signal"], name="Signal",
+        line=dict(color="#f59e0b", width=1.8, dash="dot"),
+        legendgroup="macd",
+        hovertemplate="Signal: %{y:.4f}<extra></extra>"
+    ), row=1, col=1)
+    fig.add_hline(y=0, line_color="rgba(0,0,0,0.12)", line_width=1, row=1, col=1)
+
+    # ── RSI zona warna (showlegend=False semua, biar ga masuk legend) ──
+    dates = t["Date"]
+    rsi_vals = t["RSI"].fillna(50)
+
+    # Zona overbought fill antara 70–100
+    fig.add_trace(go.Scatter(
+        x=dates, y=[70]*len(dates),
+        line=dict(color="rgba(0,0,0,0)", width=0),
+        showlegend=False, hoverinfo="skip"
+    ), row=2, col=1)
+    fig.add_trace(go.Scatter(
+        x=dates, y=[100]*len(dates),
+        fill="tonexty", fillcolor="rgba(220,38,38,0.10)",
+        line=dict(color="rgba(0,0,0,0)", width=0),
+        showlegend=False, hoverinfo="skip"
+    ), row=2, col=1)
+
+    # Zona oversold fill antara 0–30
+    fig.add_trace(go.Scatter(
+        x=dates, y=[0]*len(dates),
+        line=dict(color="rgba(0,0,0,0)", width=0),
+        showlegend=False, hoverinfo="skip"
+    ), row=2, col=1)
+    fig.add_trace(go.Scatter(
+        x=dates, y=[30]*len(dates),
+        fill="tonexty", fillcolor="rgba(22,163,74,0.10)",
+        line=dict(color="rgba(0,0,0,0)", width=0),
+        showlegend=False, hoverinfo="skip"
+    ), row=2, col=1)
+
+    # Garis batas 70, 30, 50
+    fig.add_hline(y=70, line_dash="dash", line_color="rgba(220,38,38,0.45)", line_width=1.2,
+                  annotation_text="Overbought 70", annotation_position="right",
+                  annotation_font=dict(color="#dc2626", size=11), row=2, col=1)
+    fig.add_hline(y=30, line_dash="dash", line_color="rgba(22,163,74,0.45)", line_width=1.2,
+                  annotation_text="Oversold 30", annotation_position="right",
+                  annotation_font=dict(color="#16a34a", size=11), row=2, col=1)
+    fig.add_hline(y=50, line_dash="dot", line_color="rgba(0,0,0,0.08)", line_width=1, row=2, col=1)
+
+    # Garis RSI utama
+    fig.add_trace(go.Scatter(
+        x=dates, y=rsi_vals, name="RSI",
+        line=dict(color="#7c3aed", width=2),
+        fill="tozeroy", fillcolor="rgba(124,58,237,0.07)",
+        legendgroup="rsi",
+        hovertemplate="RSI: %{y:.1f}<extra></extra>"
+    ), row=2, col=1)
+
+    fig.update_layout(
+        height=460,
+        paper_bgcolor=CHART_BG, plot_bgcolor=CHART_BG,
+        font=dict(family="DM Sans", color="#1a1d2e", size=12),
+        margin=dict(l=10, r=90, t=36, b=10),
+        legend=dict(
+            orientation="h", y=1.06, x=0,
+            font=dict(size=12), bgcolor="rgba(0,0,0,0)",
+            tracegroupgap=0,
+        ),
+        xaxis_rangeslider_visible=False,
+        hovermode="x unified",
+    )
+    for ax in ["xaxis", "xaxis2", "yaxis", "yaxis2"]:
+        fig.update_layout(**{ax: dict(
+            gridcolor=GRID_COLOR, showgrid=True,
+            tickfont=dict(color=AXIS_COLOR, size=11),
+            linecolor="#e8eaf0"
+        )})
+    fig.update_layout(yaxis2=dict(
+        range=[0, 100], gridcolor=GRID_COLOR,
+        tickfont=dict(color=AXIS_COLOR, size=11),
+        linecolor="#e8eaf0"
+    ))
     return fig
 
 # ──────────────────────────────────────────────────────
@@ -1167,6 +1242,56 @@ MACD &gt; Signal: tren naik (BUY). MACD &lt; Signal: tren turun (SELL).</span>
 t_ind   = compute_indicators(t_full.copy())
 fig_ind = make_macd_rsi_chart(filter_period(t_ind, chart_period))
 st.plotly_chart(fig_ind, use_container_width=True)
+
+# Keterangan makna RSI
+st.markdown("""
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:-8px; margin-bottom:8px;">
+  <div style="display:flex; align-items:flex-start; gap:10px; background:#fff7ed;
+              border:1px solid #fed7aa; border-left:4px solid #f59e0b;
+              border-radius:8px; padding:10px 14px; flex:1; min-width:220px;">
+    <span style="font-size:18px;">📊</span>
+    <div>
+      <div style="font-size:13px; font-weight:700; color:#92400e; margin-bottom:3px;">RSI — Cara Membaca</div>
+      <div style="font-size:13px; color:#78350f; line-height:1.6;">
+        RSI mengukur <b>kekuatan momentum</b> harga dalam 14 hari terakhir (skala 0–100).
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; align-items:flex-start; gap:10px; background:#fef2f2;
+              border:1px solid #fecaca; border-left:4px solid #dc2626;
+              border-radius:8px; padding:10px 14px; flex:1; min-width:220px;">
+    <span style="font-size:18px;">🔴</span>
+    <div>
+      <div style="font-size:13px; font-weight:700; color:#991b1b; margin-bottom:3px;">RSI &gt; 70 — Overbought (Jenuh Beli)</div>
+      <div style="font-size:13px; color:#7f1d1d; line-height:1.6;">
+        Saham sudah naik terlalu banyak dalam waktu singkat. Harga berpotensi <b>terkoreksi turun</b>. Sinyal hati-hati untuk beli baru.
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; align-items:flex-start; gap:10px; background:#f0fdf4;
+              border:1px solid #bbf7d0; border-left:4px solid #16a34a;
+              border-radius:8px; padding:10px 14px; flex:1; min-width:220px;">
+    <span style="font-size:18px;">🟢</span>
+    <div>
+      <div style="font-size:13px; font-weight:700; color:#14532d; margin-bottom:3px;">RSI &lt; 30 — Oversold (Jenuh Jual)</div>
+      <div style="font-size:13px; color:#14532d; line-height:1.6;">
+        Saham sudah turun terlalu dalam. Harga berpotensi <b>rebound naik</b>. Sinyal potensi peluang beli.
+      </div>
+    </div>
+  </div>
+  <div style="display:flex; align-items:flex-start; gap:10px; background:#f8faff;
+              border:1px solid #e0e7ff; border-left:4px solid #6366f1;
+              border-radius:8px; padding:10px 14px; flex:1; min-width:220px;">
+    <span style="font-size:18px;">⚪</span>
+    <div>
+      <div style="font-size:13px; font-weight:700; color:#3730a3; margin-bottom:3px;">RSI 30–70 — Normal</div>
+      <div style="font-size:13px; color:#312e81; line-height:1.6;">
+        Kondisi pasar <b>netral</b>, momentum tidak ekstrem ke arah manapun. Perlu sinyal lain untuk konfirmasi arah.
+      </div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown(f"""
 <div style="text-align:center; color:#c0c6d8; font-size:13px; margin-top:24px;
