@@ -33,41 +33,28 @@ def fetch_ohlcv_today(ticker_str, label):
         hist = yf.Ticker(ticker_str).history(start=today, end=tomorrow, auto_adjust=True)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
-            return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}  # ✅ tuple
 
-        # VALIDASI: cek apakah tanggal data sesuai dengan hari ini
         last_date = hist.index[-1]
-        if hasattr(last_date, 'tz_localize'):
-            last_date_str = last_date.strftime('%Y-%m-%d')
-        else:
-            last_date_str = str(last_date)[:10]
+        if last_date.tzinfo is not None:                                     # ✅ fix hasattr
+            last_date = last_date.tz_convert(None)
+        last_date_str = last_date.strftime('%Y-%m-%d')
 
         if last_date_str != today:
             print(f"  Skip  {ticker_str}: data terakhir {last_date_str}, bukan hari ini (libur bursa?)")
-            return {f"{label}_{col}": None for col in OHLCV_COLUMNS}
+            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
         row = hist.iloc[-1]
-
-        # ambil tanggal asli market
-        market_date = hist.index[-1].strftime('%Y-%m-%d')
-
+        market_date = last_date_str
         data = {}
         for col in OHLCV_COLUMNS:
             if col in row.index:
                 val = row[col]
-                data[f"{label}_{col}"] = (
-                    round(float(val), 2)
-                    if col != "Volume"
-                    else int(val)
-                )
+                data[f"{label}_{col}"] = round(float(val), 2) if col != "Volume" else int(val)
             else:
                 data[f"{label}_{col}"] = None
 
-        print(
-            f"  Ok  {ticker_str:10s} ({label})  "
-            f"{market_date}  Close={data.get(f'{label}_Close')}"
-        )
-
+        print(f"  Ok  {ticker_str:10s} ({label})  {market_date}  Close={data.get(f'{label}_Close')}")
         return market_date, data
 
     except Exception as e:
@@ -76,30 +63,25 @@ def fetch_ohlcv_today(ticker_str, label):
 
 
 def fetch_today():
-    """Ambil data OHLCV semua ticker."""
     all_data = {}
-
     market_date = None
 
-    # Fetch LQ45
     for ticker_str in LQ45_TICKERS:
         label = ticker_str.replace('.JK', '')
-
         fetched_date, data = fetch_ohlcv_today(ticker_str, label)
-
-        # simpan tanggal market pertama
         if market_date is None and fetched_date is not None:
             market_date = fetched_date
-
         all_data.update(data)
 
-    # Fetch indeks
     for ticker_str, label in INDEX_TICKERS.items():
         _, data = fetch_ohlcv_today(ticker_str, label)
         all_data.update(data)
 
-    all_data["Date"] = market_date
+    if market_date is None:                                                  # ✅ cek dulu
+        print("Tidak ada data hari ini — kemungkinan hari libur bursa.")
+        return None
 
+    all_data["Date"] = market_date
     return pd.DataFrame([all_data])
 
 
@@ -141,4 +123,5 @@ def append_to_csv(new_row):
 if __name__ == "__main__":
     print(f"Fetching data untuk {datetime.now().strftime('%Y-%m-%d')}...")
     new_row = fetch_today()
-    append_to_csv(new_row)
+    if new_row is not None:  
+        append_to_csv(new_row)
