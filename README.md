@@ -13,7 +13,7 @@ README ini dibuat sebagai panduan kerja
 
 1. Clone repository ke laptop masing-masing.
 2. Selalu buat branch baru untuk pekerjaan kamu.
-3. Kerjakan perubahan di branch itu, jangan langsung di `main`.
+3. Kerjakan perubahan di branch itu, jangan langsung di `development (default)`.
 4. Commit perubahan dengan pesan yang jelas. misal (Maxwell : update profile page)
 5. Push branch ke GitHub.
 6. Kalau sudah selesai, buat pull request atau minta review dari tim.
