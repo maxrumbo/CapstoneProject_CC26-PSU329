@@ -169,6 +169,8 @@ def main():
         df_budget = load_budget(user_id)
     except Exception as e:
         st.error(f"Gagal konek ke database: {e}")
+        import traceback
+        st.code(traceback.format_exc())
         st.stop()
 
     if df_all.empty:
