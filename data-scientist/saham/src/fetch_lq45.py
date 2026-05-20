@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 
 LQ45_TICKERS = [
     "AADI.JK", "ADMR.JK", "ADRO.JK", "AKRA.JK", "AMMN.JK",
@@ -15,12 +15,10 @@ LQ45_TICKERS = [
     "TLKM.JK", "TOWR.JK", "UNTR.JK", "UNVR.JK", "WIFI.JK",
 ]
 
-# IHSG dan indeks lain jika dibutuhkan
 INDEX_TICKERS = {
     "^JKSE": "IHSG",
 }
 
-# Kolom OHLCV yang akan diambil
 OHLCV_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,12 +27,15 @@ CSV_PATH = os.path.join(BASE_DIR, "data", "lq45_historical.csv")
 
 def fetch_ohlcv_today(ticker_str, label):
     try:
-        hist = yf.Ticker(ticker_str).history(period="5d", auto_adjust=True)
+        hist = yf.download(ticker_str, period="5d", auto_adjust=True, progress=False)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
             return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
-        hist.index = hist.index.tz_convert(None)  # fix timezone
+        # yf.download punya MultiIndex columns, flatten dulu
+        hist.columns = hist.columns.get_level_values(0)
+        hist.index = hist.index.tz_localize(None) if hist.index.tzinfo else hist.index
+
         last_date = hist.index[-1]
         last_date_str = last_date.strftime('%Y-%m-%d')
 
@@ -58,6 +59,7 @@ def fetch_ohlcv_today(ticker_str, label):
 def fetch_today():
     all_data = {}
     market_date = None
+    today = datetime.now().strftime('%Y-%m-%d')
 
     for ticker_str in LQ45_TICKERS:
         label = ticker_str.replace('.JK', '')
@@ -70,8 +72,12 @@ def fetch_today():
         _, data = fetch_ohlcv_today(ticker_str, label)
         all_data.update(data)
 
-    if market_date is None:                                                  
-        print("Tidak ada data hari ini — kemungkinan hari libur bursa.")
+    if market_date is None:
+        print("Tidak ada data — kemungkinan hari libur bursa.")
+        return None
+
+    if market_date != today:
+        print(f"Data yfinance masih {market_date}, belum update untuk {today}. Skip.")
         return None
 
     all_data["Date"] = market_date
@@ -90,8 +96,6 @@ def append_to_csv(new_row):
             print(f"Tanggal {today} sudah ada, cek perubahan...")
 
             old_row = existing[existing['Date'] == today]
-
-            # Align kolom sebelum dibandingkan
             common_cols = [c for c in new_row.columns if c in old_row.columns and c != 'Date']
             old_values = old_row[common_cols].values
             new_values = new_row[common_cols].values
@@ -116,5 +120,5 @@ def append_to_csv(new_row):
 if __name__ == "__main__":
     print(f"Fetching data untuk {datetime.now().strftime('%Y-%m-%d')}...")
     new_row = fetch_today()
-    if new_row is not None:  
+    if new_row is not None:
         append_to_csv(new_row)
