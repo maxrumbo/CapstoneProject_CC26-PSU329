@@ -2,7 +2,7 @@ name: Fetch LQ45 Daily
 
 on:
   schedule:
-    - cron: '12 12 * * 1-5'
+    - cron: '0 10 * * 1-5'
   workflow_dispatch:
 
 jobs:
