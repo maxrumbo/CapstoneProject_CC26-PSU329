@@ -28,7 +28,11 @@ jobs:
 
       - name: Run fetcher
         working-directory: data-scientist/saham
-        run: python src/fetch_lq45.py
+        run: |
+          python src/fetch_lq45.py
+          echo "--- Cek file CSV ---"
+          ls -la data/
+          tail -2 data/lq45_historical.csv
 
       - name: Commit & push CSV
         working-directory: data-scientist/saham
