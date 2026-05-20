@@ -23,7 +23,7 @@ INDEX_TICKERS = {
 # Kolom OHLCV yang akan diambil
 OHLCV_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
 
-CSV_PATH = "data/lq45_historical.csv"
+CSV_PATH = "data-scientist/saham/data/lq45_historical.csv"
 
 
 def fetch_ohlcv_today(ticker_str, label):
