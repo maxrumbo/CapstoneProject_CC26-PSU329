@@ -34,7 +34,6 @@ jobs:
           tail -2 data/lq45_historical.csv
 
       - name: Commit & push CSV
-        working-directory: data-scientist/saham
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
