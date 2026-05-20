@@ -23,7 +23,8 @@ INDEX_TICKERS = {
 # Kolom OHLCV yang akan diambil
 OHLCV_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
 
-CSV_PATH = "data/lq45_historical.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSV_PATH = os.path.join(BASE_DIR, "data", "lq45_historical.csv")
 
 
 def fetch_ohlcv_today(ticker_str, label):
