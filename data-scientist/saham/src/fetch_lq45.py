@@ -28,21 +28,17 @@ CSV_PATH = os.path.join(BASE_DIR, "data", "lq45_historical.csv")
 
 
 def fetch_ohlcv_today(ticker_str, label):
-    end = (datetime.utcnow() + timedelta(days=1)).strftime('%Y-%m-%d')
-    start = (datetime.utcnow() - timedelta(days=3)).strftime('%Y-%m-%d')
     try:
-        hist = yf.Ticker(ticker_str).history(start=start, end=end, auto_adjust=True)
+        hist = yf.Ticker(ticker_str).history(period="5d", auto_adjust=True)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
             return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
 
+        hist.index = hist.index.tz_convert(None)  # fix timezone
         last_date = hist.index[-1]
-        if last_date.tzinfo is not None:
-            last_date = last_date.tz_convert(None)
         last_date_str = last_date.strftime('%Y-%m-%d')
 
         row = hist.iloc[-1]
-        market_date = last_date_str
         data = {}
         for col in OHLCV_COLUMNS:
             if col in row.index:
@@ -51,8 +47,8 @@ def fetch_ohlcv_today(ticker_str, label):
             else:
                 data[f"{label}_{col}"] = None
 
-        print(f"  Ok  {ticker_str:10s} ({label})  {market_date}  Close={data.get(f'{label}_Close')}")
-        return market_date, data
+        print(f"  Ok  {ticker_str:10s} ({label})  {last_date_str}  Close={data.get(f'{label}_Close')}")
+        return last_date_str, data
 
     except Exception as e:
         print(f"  Error  {ticker_str}: {e}")
