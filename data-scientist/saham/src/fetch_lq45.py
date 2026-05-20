@@ -23,7 +23,7 @@ INDEX_TICKERS = {
 # Kolom OHLCV yang akan diambil
 OHLCV_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
 
-CSV_PATH = "data-scientist/saham/data/lq45_historical.csv"
+CSV_PATH = "data/lq45_historical.csv"
 
 
 def fetch_ohlcv_today(ticker_str, label):
@@ -33,10 +33,10 @@ def fetch_ohlcv_today(ticker_str, label):
         hist = yf.Ticker(ticker_str).history(start=today, end=tomorrow, auto_adjust=True)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
-            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}  # ✅ tuple
+            return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}  
 
         last_date = hist.index[-1]
-        if last_date.tzinfo is not None:                                     # ✅ fix hasattr
+        if last_date.tzinfo is not None:                                     
             last_date = last_date.tz_convert(None)
         last_date_str = last_date.strftime('%Y-%m-%d')
 
@@ -77,7 +77,7 @@ def fetch_today():
         _, data = fetch_ohlcv_today(ticker_str, label)
         all_data.update(data)
 
-    if market_date is None:                                                  # ✅ cek dulu
+    if market_date is None:                                                  
         print("Tidak ada data hari ini — kemungkinan hari libur bursa.")
         return None
 
