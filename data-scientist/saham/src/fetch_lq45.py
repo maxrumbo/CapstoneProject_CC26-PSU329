@@ -28,10 +28,10 @@ CSV_PATH = os.path.join(BASE_DIR, "data", "lq45_historical.csv")
 
 
 def fetch_ohlcv_today(ticker_str, label):
-    today = datetime.utcnow().strftime('%Y-%m-%d')
-    yesterday = (datetime.utcnow() - timedelta(days=2)).strftime('%Y-%m-%d')
+    end = (datetime.utcnow() + timedelta(days=1)).strftime('%Y-%m-%d')
+    start = (datetime.utcnow() - timedelta(days=3)).strftime('%Y-%m-%d')
     try:
-        hist = yf.Ticker(ticker_str).history(start=yesterday, end=today, auto_adjust=True)
+        hist = yf.Ticker(ticker_str).history(start=start, end=end, auto_adjust=True)
         if hist.empty:
             print(f"  Error  {ticker_str}: kosong")
             return None, {f"{label}_{col}": None for col in OHLCV_COLUMNS}
