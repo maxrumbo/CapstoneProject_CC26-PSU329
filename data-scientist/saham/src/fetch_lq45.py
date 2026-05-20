@@ -100,7 +100,7 @@ def append_to_csv(new_row):
             old_values = old_row[common_cols].values
             new_values = new_row[common_cols].values
 
-            if (old_values == new_values).all():
+            if pd.DataFrame(old_values).equals(pd.DataFrame(new_values)):
                 print("Data sama, tidak perlu update.")
                 return
             else:
