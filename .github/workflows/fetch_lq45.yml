@@ -2,8 +2,7 @@ name: Fetch LQ45 Daily
 
 on:
   schedule:
-    # 09:05 UTC = 16:05 WIB, Senin–Jumat
-    - cron: '0 10 * * 1-5'
+    - cron: '12 12 * * 1-5'
   workflow_dispatch:
 
 jobs:
