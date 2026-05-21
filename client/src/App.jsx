@@ -8,6 +8,7 @@ const pageLoaders = {
   dashboard: () => import("./pages/DashboardPage"),
   transactions: () => import("./pages/TransactionsPage"),
   wishlist: () => import("./pages/WishlistPage"),
+  investment: () => import("./pages/InvestmentPage"),
   profile: () => import("./pages/ProfilePage"),
   login: () => import("./features/auth/pages/LoginPage"),
   register: () => import("./features/auth/pages/RegisterPage"),
@@ -16,6 +17,7 @@ const pageLoaders = {
 const DashboardPage = lazy(pageLoaders.dashboard);
 const TransactionsPage = lazy(pageLoaders.transactions);
 const WishlistPage = lazy(pageLoaders.wishlist);
+const InvestmentPage = lazy(pageLoaders.investment);
 const ProfilePage = lazy(pageLoaders.profile);
 const LoginPage = lazy(pageLoaders.login);
 const RegisterPage = lazy(pageLoaders.register);
@@ -24,6 +26,7 @@ const PAGE_HASHES = {
   dashboard: "dashboard",
   transactions: "transactions",
   wishlist: "wishlist-calculator",
+  investment: "investment",
   profile: "profile",
   login: "login",
   register: "register",
@@ -37,6 +40,8 @@ const HASH_TO_PAGE = {
   transactions: "transactions",
   "wishlist-calculator": "wishlist",
   wishlist: "wishlist",
+  investasi: "investment",
+  investment: "investment",
   profile: "profile",
   profil: "profile",
   login: "login",
@@ -182,6 +187,15 @@ function App() {
     if (currentPage === "wishlist") {
       return (
         <WishlistPage
+          onProfileClick={handleOpenProfile}
+          userName={userName}
+        />
+      );
+    }
+
+    if (currentPage === "investment") {
+      return (
+        <InvestmentPage
           onProfileClick={handleOpenProfile}
           userName={userName}
         />

@@ -25,12 +25,14 @@ Buat file `.env` di folder `client/`:
 ```env
 VITE_API_BASE_URL=http://localhost:8000/api
 VITE_STREAMLIT_URL=https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true
+VITE_STOCK_STREAMLIT_URL=https://dashboardsahamlq45.streamlit.app/?embed=true
 ```
 
 | Variable | Nilai Default |
 |----------|---------|
 | `VITE_API_BASE_URL` | `http://localhost:8000/api` |
 | `VITE_STREAMLIT_URL` | `https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true` |
+| `VITE_STOCK_STREAMLIT_URL` | `https://dashboardsahamlq45.streamlit.app/?embed=true` |
 
 ## 4. Jalankan Backend Dulu
 
@@ -68,6 +70,7 @@ Password: `sawit123`
 | `#/dashboard` | Dashboard |
 | `#/transactions` | Transaksi |
 | `#/wishlist-calculator` | Wishlist |
+| `#/investment` | Investasi |
 
 ---
 

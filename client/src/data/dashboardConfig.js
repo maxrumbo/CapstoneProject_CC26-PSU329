@@ -21,7 +21,13 @@ export const menuItems = [
     active: true,
     page: "wishlist",
   },
-  { label: "Investasi", icon: "investment", status: "Segera" },
+  {
+    label: "Investasi",
+    icon: "investment",
+    status: "Aktif",
+    active: true,
+    page: "investment",
+  },
   { label: "Analisis AI", icon: "ai", status: "Segera" },
 ];
 

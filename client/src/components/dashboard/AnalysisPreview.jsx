@@ -1,6 +1,12 @@
 import Icon from "../ui/Icon";
 
-function AnalysisPreview({ streamlitUrl }) {
+function AnalysisPreview({
+  streamlitUrl,
+  eyebrow = "Dashboard Analitik",
+  title = "Streamlit Analytics",
+  icon = "chart",
+  configName = "VITE_STREAMLIT_URL",
+}) {
   const hasStreamlit = Boolean(streamlitUrl);
 
   return (
@@ -8,11 +14,11 @@ function AnalysisPreview({ streamlitUrl }) {
       <div className="panel-header">
         <div className="panel-title">
           <span className="panel-icon">
-            <Icon name="chart" size={18} />
+            <Icon name={icon} size={18} />
           </span>
           <div>
-            <p className="eyebrow">Dashboard Analitik</p>
-            <h3>Streamlit Analytics</h3>
+            <p className="eyebrow">{eyebrow}</p>
+            <h3>{title}</h3>
           </div>
         </div>
         {hasStreamlit ? (
@@ -43,7 +49,7 @@ function AnalysisPreview({ streamlitUrl }) {
             <span className="analysis-badge">Konfigurasi</span>
             <p>URL Streamlit belum tersedia.</p>
             <p className="analysis-helper">
-              Isi VITE_STREAMLIT_URL agar dashboard analitik tampil di sini.
+              Isi {configName} agar dashboard tampil di sini.
             </p>
           </div>
           <button
