@@ -24,13 +24,13 @@ Buat file `.env` di folder `client/`:
 
 ```env
 VITE_API_BASE_URL=http://localhost:8000/api
-VITE_STREAMLIT_URL=
+VITE_STREAMLIT_URL=https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true
 ```
 
 | Variable | Nilai Default |
 |----------|---------|
 | `VITE_API_BASE_URL` | `http://localhost:8000/api` |
-| `VITE_STREAMLIT_URL` | Kosongkan jika tidak ada |
+| `VITE_STREAMLIT_URL` | `https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true` |
 
 ## 4. Jalankan Backend Dulu
 

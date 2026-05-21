@@ -76,6 +76,10 @@
   overflow: hidden;
 }
 
+.chart-card .panel-header {
+  align-items: center;
+}
+
 .analysis-placeholder {
   display: flex;
   align-items: center;
@@ -137,6 +141,23 @@
   background: #dfe6e2;
   color: var(--muted);
   cursor: not-allowed;
+}
+
+.streamlit-frame-wrap {
+  overflow: hidden;
+  height: min(78vh, 820px);
+  min-height: 620px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.streamlit-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #ffffff;
 }
 
 .muted-note {

@@ -98,4 +98,9 @@
   .submit-button {
     width: 100%;
   }
+
+  .streamlit-frame-wrap {
+    height: 72vh;
+    min-height: 520px;
+  }
 }

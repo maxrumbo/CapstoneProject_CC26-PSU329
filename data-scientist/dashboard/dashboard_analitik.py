@@ -12,13 +12,22 @@ File .env:
 
 import os
 from datetime import date, datetime, timedelta
+from typing import Optional, Tuple
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+import requests
 from dotenv import load_dotenv
 import calendar
 
 load_dotenv()
+
+BACKEND_API_BASE_URL = os.getenv(
+    "BACKEND_API_BASE_URL",
+    "https://coba-render-vercel.vercel.app",
+).rstrip("/")
+BACKEND_API_TOKEN = os.getenv("BACKEND_API_TOKEN", "").strip()
+REQUEST_TIMEOUT = 15
 
 CATEGORY_COLORS = {
     "Entertainment": "#D85A30",
@@ -114,14 +123,54 @@ def get_status(expense, income, budget_total=0, days_elapsed=0, days_in_month=30
     return "BAHAYA", "status-bahaya"
 
 
-import requests
+def build_api_url(path: str) -> str:
+    return f"{BACKEND_API_BASE_URL}/{path.lstrip('/')}"
+
+
+def get_api_headers() -> dict:
+    if not BACKEND_API_TOKEN:
+        return {}
+
+    return {"Authorization": f"Bearer {BACKEND_API_TOKEN}"}
+
+
+def get_api_params(user_id: int, extra_params: Optional[dict] = None) -> dict:
+    params = dict(extra_params or {})
+
+    # Backend lama memakai user_id query, sedangkan backend FastAPI utama
+    # memakai Bearer token. Jangan kirim user_id saat token tersedia.
+    if not BACKEND_API_TOKEN:
+        params["user_id"] = user_id
+
+    return params
+
+
+def unwrap_api_response(payload):
+    if isinstance(payload, dict) and "data" in payload:
+        return payload.get("data") or []
+
+    return payload or []
+
+
+def fetch_api_json(path: str, user_id: int, extra_params: Optional[dict] = None):
+    response = requests.get(
+        build_api_url(path),
+        params=get_api_params(user_id, extra_params),
+        headers=get_api_headers(),
+        timeout=REQUEST_TIMEOUT,
+    )
+    response.raise_for_status()
+    return unwrap_api_response(response.json())
+
+
 @st.cache_data(ttl=30)
 def load_data(user_id: int) -> pd.DataFrame:
-    response = requests.get(
-        "https://coba-render-vercel.vercel.app/transactions/",
-        params={"user_id": user_id}
-    )
-    df = pd.DataFrame(response.json())
+    df = pd.DataFrame(fetch_api_json("/transactions/", user_id, {"limit": 500}))
+
+    if df.empty:
+        return pd.DataFrame(
+            columns=["date", "amount", "category", "method", "type", "bulan", "tanggal"]
+        )
 
     df["date"]     = pd.to_datetime(df["date"], errors="coerce")
     df["amount"]   = pd.to_numeric(df["amount"], errors="coerce").fillna(0)
@@ -132,12 +181,32 @@ def load_data(user_id: int) -> pd.DataFrame:
     return df
 
 @st.cache_data(ttl=30)
-def load_budget(user_id: int) -> pd.DataFrame:
-    response = requests.get(
-        "https://coba-render-vercel.vercel.app/budget/",
-        params={"user_id": user_id}
-    )
-    df = pd.DataFrame(response.json())
+def load_budget(user_id: int, months: Tuple[str, ...]) -> pd.DataFrame:
+    rows = []
+
+    try:
+        rows = fetch_api_json("/budget/", user_id)
+    except requests.HTTPError as exc:
+        if exc.response is None or exc.response.status_code not in {404, 405}:
+            rows = []
+
+    if not rows:
+        for month in months:
+            try:
+                summary = fetch_api_json(f"/budget/summary/{month}", user_id)
+            except requests.HTTPError:
+                continue
+
+            for category in summary.get("categories", []):
+                rows.append(
+                    {
+                        "month": month,
+                        "category": category.get("category"),
+                        "amount": category.get("budget", category.get("amount", 0)),
+                    }
+                )
+
+    df = pd.DataFrame(rows)
     if df.empty:
         return df
     
@@ -166,7 +235,6 @@ def main():
 
     try:
         df_all = load_data(user_id)
-        df_budget = load_budget(user_id)
     except Exception as e:
         st.error(f"Gagal konek ke database: {e}")
         import traceback
@@ -176,6 +244,13 @@ def main():
     if df_all.empty:
         st.warning("Belum ada data transaksi untuk user ini.")
         st.stop()
+
+    available_months = tuple(sorted(df_all["bulan"].dropna().unique()))
+    try:
+        df_budget = load_budget(user_id, available_months)
+    except Exception:
+        df_budget = pd.DataFrame()
+        st.warning("Data budget belum bisa dimuat. Dashboard tetap ditampilkan tanpa budget tracker.")
 
     min_date = df_all["date"].min().date()
     max_date = df_all["date"].max().date()

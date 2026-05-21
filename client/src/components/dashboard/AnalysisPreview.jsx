@@ -15,14 +15,6 @@ function AnalysisPreview({ streamlitUrl }) {
             <h3>Streamlit Analytics</h3>
           </div>
         </div>
-      </div>
-
-      <div className="analysis-placeholder">
-        <div>
-          <span className="analysis-badge">Segera</span>
-          <p>Dashboard analitik lengkap hanya tersedia dari Streamlit.</p>
-          <p className="analysis-helper">Tombol aktif saat URL sudah disiapkan.</p>
-        </div>
         {hasStreamlit ? (
           <a
             className="streamlit-button"
@@ -30,23 +22,40 @@ function AnalysisPreview({ streamlitUrl }) {
             target="_blank"
             rel="noreferrer"
           >
-            Buka Streamlit
+            Buka penuh
           </a>
-        ) : (
+        ) : null}
+      </div>
+
+      {hasStreamlit ? (
+        <div className="streamlit-frame-wrap">
+          <iframe
+            className="streamlit-frame"
+            src={streamlitUrl}
+            title="Dashboard analitik Streamlit"
+            loading="lazy"
+            sandbox="allow-downloads allow-forms allow-popups allow-same-origin allow-scripts"
+          />
+        </div>
+      ) : (
+        <div className="analysis-placeholder">
+          <div>
+            <span className="analysis-badge">Konfigurasi</span>
+            <p>URL Streamlit belum tersedia.</p>
+            <p className="analysis-helper">
+              Isi VITE_STREAMLIT_URL agar dashboard analitik tampil di sini.
+            </p>
+          </div>
           <button
             className="streamlit-button is-disabled"
             type="button"
             disabled
             title="URL Streamlit belum tersedia"
           >
-            Buka Streamlit
+            Buka penuh
           </button>
-        )}
-      </div>
-
-      <p className="muted-note">
-        Konten Streamlit akan muncul di sini setelah integrasi dari tim AI.
-      </p>
+        </div>
+      )}
     </section>
   );
 }
