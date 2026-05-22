@@ -48,10 +48,10 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 ```
 
-### Catatan — Akun Demo
+### Opsional — Akun Demo
 
-Backend **tidak** membuat akun demo otomatis saat startup.
-Jika butuh akun demo, buat manual lewat endpoint register.
+Saat ini backend **tidak** membuat akun demo otomatis saat startup.
+Jika butuh akun demo, buat manual melalui endpoint registrasi (`POST /auth/register`).
 
 > Cara generate SECRET_KEY yang aman:
 > ```bash
@@ -201,13 +201,8 @@ server/
 | POST | `/api/transactions/` | Tambah transaksi baru | ✅ |
 | GET | `/api/transactions/` | Daftar transaksi (filter + pagination) | ✅ |
 | GET | `/api/transactions/{id}` | Detail 1 transaksi | ✅ |
-<<<<<<< HEAD
-| PUT | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
-| DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
-=======
-| PATCH | `/api/transactions/{id}` | Edit sebagian field transaksi yang sudah ada | ✅ |
-| DELETE | `/api/transactions/{id}` | Hapus transaksi | ✅ |
->>>>>>> origin/server
+| PATCH | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ❌ |
+| DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ❌ |
 
 ---
 
