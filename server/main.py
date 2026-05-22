@@ -7,7 +7,7 @@ from app.db.base import Base
 from app.db.session import engine
 
 # Import models agar SQLAlchemy tahu tabel apa yang perlu dibuat
-from app.models import user, transaction, wishlist, budget  # noqa: F401
+from app.models import user, transaction, wishlist, budget, subscription  # noqa: F401
 
 # Import routers
 from app.api.routes.auth import router as auth_router
@@ -15,6 +15,7 @@ from app.api.routes.transactions import router as transactions_router
 from app.api.routes.wishlist import router as wishlist_router
 from app.api.routes.budget import router as budget_router
 from app.api.routes.profile import router as profile_router
+from app.api.routes.subscriptions import router as subscriptions_router
 
 # ── Buat semua tabel di database (jika belum ada) ────────────────────────────
 Base.metadata.create_all(bind=engine)
@@ -62,6 +63,7 @@ app.include_router(transactions_router, prefix="/api")
 app.include_router(wishlist_router, prefix="/api")
 app.include_router(budget_router, prefix="/api")
 app.include_router(profile_router, prefix="/api")
+app.include_router(subscriptions_router, prefix="/api")
 
 
 # ── Health Check ──────────────────────────────────────────────────────────────
@@ -73,3 +75,4 @@ def health_check():
         "version": "1.0.0",
         "docs": "/docs",
     }
+

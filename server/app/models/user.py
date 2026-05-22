@@ -26,3 +26,6 @@ class User(Base):
 
     # Relasi ke budgets
     budgets = relationship("UserBudget", back_populates="owner", cascade="all, delete-orphan")
+
+    # Relasi ke subscriptions
+    subscriptions = relationship("Subscription", back_populates="owner", cascade="all, delete-orphan")
