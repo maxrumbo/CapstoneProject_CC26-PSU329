@@ -233,6 +233,8 @@ def get_transaction(
 )
 def update_transaction(
     transaction_id: int,
+    _current_user: User = Depends(get_current_user),
+    _db: Session = Depends(get_db),
 ):
     raise HTTPException(
         status_code=status.HTTP_405_METHOD_NOT_ALLOWED,
