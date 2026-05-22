@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f3f7f5;
+  --sidebar: #ffffff;
+  --text: #102033;
+  --muted: #667889;
+  --border: #d8e4df;
+  --primary: #0f8f5f;
+  --primary-dark: #087245;
+  --primary-soft: #e8f6ef;
+  --green: #0f8f5f;
+  --red: #bd4a4a;
+  --shadow: 0 8px 18px rgba(16, 32, 51, 0.06);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+.icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.field-label,
+.button-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field-label {
+  color: inherit;
+}
+
+.field-label .icon {
+  color: var(--muted);
+}
+
+.button-content {
+  justify-content: center;
+}
+
+button,
+input,
+select {
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(15, 143, 95, 0.22);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

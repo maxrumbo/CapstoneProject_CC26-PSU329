@@ -1,0 +1,268 @@
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.8fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.primary-column,
+.side-column {
+  display: grid;
+  gap: 16px;
+}
+
+.panel {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.status-pill {
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.transaction-form {
+  display: grid;
+  gap: 12px;
+}
+
+.type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 6px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+}
+
+.type-toggle button {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 5px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.type-toggle button.active {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.transaction-form label {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px;
+}
+
+.form-grid.single-field {
+  grid-template-columns: 1fr;
+}
+
+input,
+select {
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px 10px;
+  color: var(--text);
+  background: #ffffff;
+  outline: none;
+  font-size: 13px;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 143, 95, 0.14);
+}
+
+.field-hint {
+  display: block;
+  min-height: 14px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.category-prediction-hint {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.category-prediction-hint.warning {
+  color: var(--red);
+}
+
+.submit-button {
+  width: fit-content;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0 16px;
+  color: #ffffff;
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: var(--primary-dark);
+}
+
+.submit-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-message {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.transaction-table-card {
+  padding-bottom: 12px;
+}
+
+.transaction-table {
+  display: grid;
+  gap: 8px;
+}
+
+.transaction-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.transaction-row-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.transaction-row-main > div {
+  min-width: 0;
+}
+
+.transaction-type-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--surface-soft);
+}
+
+.transaction-type-icon.income {
+  color: var(--green);
+  background: var(--primary-soft);
+}
+
+.transaction-type-icon.expense {
+  color: var(--red);
+  background: #fdebea;
+}
+
+.transaction-row:last-child {
+  border-bottom: 0;
+}
+
+.transaction-row strong,
+.transaction-meta {
+  display: block;
+}
+
+.transaction-row strong {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.transaction-meta {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.amount {
+  margin-bottom: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.amount.income {
+  color: var(--green);
+}
+
+.amount.expense {
+  color: var(--red);
+}
+
+.empty-state {
+  padding: 20px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  background: #ffffff;
+  font-size: 13px;
+  text-align: center;
+}

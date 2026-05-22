@@ -1,0 +1,16 @@
+{
+  "vocab_size": 20000,
+  "embed_dim": 128,
+  "max_len": 20,
+  "n_classes": 6,
+  "classes": [
+    "entertainment",
+    "kesehatan",
+    "konsumsi",
+    "langganan",
+    "tagihan",
+    "transport"
+  ],
+  "model_type": "Bidirectional LSTM",
+  "test_accuracy": 0.9660683012259195
+}

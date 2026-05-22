@@ -7,14 +7,19 @@ from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_current_user, get_db
-from app.models.transaction import Transaction, TransactionType, VALID_CATEGORIES
+from app.models.transaction import Transaction, TransactionType
 from app.models.user import User
 from app.schemas.base import APIResponse
 from app.schemas.transaction import (
     BalanceSummaryResponse,
+    TransactionCategoryPredictionRequest,
+    TransactionCategoryPredictionResponse,
     TransactionCreate,
     TransactionResponse,
-    TransactionUpdate,
+)
+from app.services.transaction_classifier import (
+    TransactionClassifierError,
+    predict_transaction_category,
 )
 
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
@@ -85,6 +90,34 @@ def get_balance_summary(
 # ── ENDPOINT 1: CREATE transaksi baru ────────────────────────────────────────
 
 @router.post(
+    "/predict-category",
+    response_model=APIResponse[TransactionCategoryPredictionResponse],
+    summary="Prediksi kategori pengeluaran dari deskripsi transaksi",
+)
+def predict_category(
+    payload: TransactionCategoryPredictionRequest,
+    current_user: User = Depends(get_current_user),
+):
+    try:
+        prediction = predict_transaction_category(payload.description)
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=str(exc),
+        ) from exc
+    except TransactionClassifierError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=str(exc),
+        ) from exc
+
+    return APIResponse(
+        data=TransactionCategoryPredictionResponse(**prediction),
+        message="Kategori berhasil diprediksi",
+    )
+
+
+@router.post(
     "/",
     response_model=APIResponse[TransactionResponse],
     status_code=status.HTTP_201_CREATED,
@@ -109,7 +142,7 @@ def create_transaction(
         description=payload.description,
         amount=payload.amount,
         type=payload.type,
-        category=payload.category,   # None untuk income (sudah di-handle schema)
+        category=payload.category,
         method=payload.method,
         date=payload.date,
     )
@@ -196,51 +229,14 @@ def get_transaction(
 @router.patch(
     "/{transaction_id}",
     response_model=APIResponse[TransactionResponse],
-    summary="Edit sebagian field transaksi yang sudah ada",
+    summary="Edit transaksi tidak tersedia",
 )
 def update_transaction(
     transaction_id: int,
-    payload: TransactionUpdate,
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db),
 ):
-    transaction = db.query(Transaction).filter(Transaction.id == transaction_id).first()
-
-    if not transaction:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Transaksi tidak ditemukan",
-        )
-
-    if transaction.user_id != current_user.id:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Kamu tidak punya izin untuk mengubah transaksi ini",
-        )
-
-    # Validasi kategori hanya untuk expense
-    if transaction.type == TransactionType.expense and payload.category is not None:
-        if payload.category not in VALID_CATEGORIES:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Kategori tidak valid. Pilihan: {', '.join(VALID_CATEGORIES)}",
-            )
-
-    # Update hanya field yang dikirim (partial update)
-    update_data = payload.model_dump(exclude_unset=True)
-    for field, value in update_data.items():
-        setattr(transaction, field, value)
-
-    # updated_at di-handle oleh SQLAlchemy onupdate, tapi kita set manual untuk jaminan
-    from datetime import datetime, timezone
-    transaction.updated_at = datetime.now(timezone.utc)
-
-    db.commit()
-    db.refresh(transaction)
-
-    return APIResponse(
-        data=TransactionResponse.model_validate(transaction),
-        message="Transaksi berhasil diubah",
+    raise HTTPException(
+        status_code=status.HTTP_405_METHOD_NOT_ALLOWED,
+        detail="Transaksi yang sudah dicatat tidak bisa diubah",
     )
 
 
@@ -249,28 +245,12 @@ def update_transaction(
 @router.delete(
     "/{transaction_id}",
     response_model=APIResponse[None],
-    summary="Hapus transaksi",
+    summary="Hapus transaksi tidak tersedia",
 )
 def delete_transaction(
     transaction_id: int,
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db),
 ):
-    transaction = db.query(Transaction).filter(Transaction.id == transaction_id).first()
-
-    if not transaction:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Transaksi tidak ditemukan",
-        )
-
-    if transaction.user_id != current_user.id:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Kamu tidak punya izin untuk menghapus transaksi ini",
-        )
-
-    db.delete(transaction)
-    db.commit()
-
-    return APIResponse(message="Transaksi berhasil dihapus")
+    raise HTTPException(
+        status_code=status.HTTP_405_METHOD_NOT_ALLOWED,
+        detail="Transaksi yang sudah dicatat tidak bisa dihapus",
+    )

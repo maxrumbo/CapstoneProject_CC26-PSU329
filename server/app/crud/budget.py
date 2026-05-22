@@ -1,4 +1,5 @@
 from decimal import Decimal
+from datetime import date
 from typing import List
 from sqlalchemy.orm import Session
 from sqlalchemy import and_, func
@@ -6,6 +7,18 @@ from sqlalchemy import and_, func
 from app.models.budget import UserBudget
 from app.models.transaction import Transaction, TransactionType
 from app.schemas.budget import BudgetItemRequest, BudgetItemResponse, BudgetCategoryComparison, BudgetSetResponse
+
+
+def _get_month_range(month: str) -> tuple[date, date]:
+    year, month_number = map(int, month.split("-"))
+    start_date = date(year, month_number, 1)
+
+    if month_number == 12:
+        end_date = date(year + 1, 1, 1)
+    else:
+        end_date = date(year, month_number + 1, 1)
+
+    return start_date, end_date
 
 
 def upsert_budgets(
@@ -94,6 +107,7 @@ def get_budget_summary(
     ).all()
     
     categories = []
+    start_date, end_date = _get_month_range(month)
     
     for budget in budgets:
         # Calculate total spending untuk kategori ini dalam bulan tersebut
@@ -103,7 +117,8 @@ def get_budget_summary(
                 Transaction.user_id == user_id,
                 Transaction.category == budget.category,
                 Transaction.type == TransactionType.expense,
-                func.to_char(Transaction.date, 'YYYY-MM') == month,
+                Transaction.date >= start_date,
+                Transaction.date < end_date,
             )
         ).scalar()
         

@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 class BudgetItemRequest(BaseModel):
     """Request item untuk satu kategori budget"""
     category: str = Field(..., description="Nama kategori")
-    amount: float = Field(..., gt=0, description="Budget limit dalam rupiah")
+    amount: float = Field(..., ge=0, description="Budget limit dalam rupiah")
 
 
 class BudgetSetRequest(BaseModel):
