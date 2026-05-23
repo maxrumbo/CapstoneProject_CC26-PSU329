@@ -16,6 +16,7 @@ from app.api.routes.wishlist import router as wishlist_router
 from app.api.routes.budget import router as budget_router
 from app.api.routes.profile import router as profile_router
 from app.api.routes.subscriptions import router as subscriptions_router
+from app.api.routes.advice import router as advice_router
 
 # ── Buat semua tabel di database (jika belum ada) ────────────────────────────
 Base.metadata.create_all(bind=engine)
@@ -64,6 +65,7 @@ app.include_router(wishlist_router, prefix="/api")
 app.include_router(budget_router, prefix="/api")
 app.include_router(profile_router, prefix="/api")
 app.include_router(subscriptions_router, prefix="/api")
+app.include_router(advice_router, prefix="/api")
 
 
 # ── Health Check ──────────────────────────────────────────────────────────────

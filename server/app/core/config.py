@@ -18,6 +18,8 @@ class Settings(BaseSettings):
         "http://localhost:3000,http://127.0.0.1:3000"
     )
 
+    GEMINI_API_KEY: str = ""
+
     @property
     def cors_origins(self) -> list[str]:
         return [

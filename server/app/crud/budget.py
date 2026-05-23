@@ -136,3 +136,47 @@ def get_budget_summary(
         ))
     
     return categories
+
+def get_monthly_spending_summary(
+    db: Session,
+    user_id: int,
+    month: str,
+) -> dict:
+    start_date, end_date = _get_month_range(month)
+
+    total_spent_query = db.query(func.sum(Transaction.amount)).filter(
+        and_(
+            Transaction.user_id == user_id,
+            Transaction.type == TransactionType.expense,
+            Transaction.date >= start_date,
+            Transaction.date < end_date,
+        )
+    ).scalar()
+    total_spent = float(total_spent_query or 0)
+
+    category_totals = db.query(
+        Transaction.category,
+        func.sum(Transaction.amount).label("total")
+    ).filter(
+        and_(
+            Transaction.user_id == user_id,
+            Transaction.type == TransactionType.expense,
+            Transaction.date >= start_date,
+            Transaction.date < end_date,
+        )
+    ).group_by(Transaction.category)\
+     .order_by(func.sum(Transaction.amount).desc())\
+     .all()
+
+    top_categories = [
+        row.category for row in category_totals[:3] if row.category
+    ]
+
+    return {
+        "total_spent": total_spent,
+        "top_categories": top_categories,
+        "category_breakdown": [
+            {"category": row.category, "total": float(row.total)}
+            for row in category_totals
+        ]
+    }
