@@ -1,45 +1,47 @@
-`# SAWIT Backend — Panduan Setup & Jalankan Server
+# SAWIT Backend - Panduan Setup & Jalankan Server
 
-Semua file sudah dibuat. Ikuti langkah di bawah ini secara berurutan di terminal kamu.
+Panduan ini menjelaskan cara menjalankan backend SAWIT, termasuk fitur klasifikasi kategori transaksi otomatis dengan model LSTM.
 
----
-
-## Langkah 1 — Masuk ke Folder & Aktifkan Virtual Environment
+## 1. Masuk ke Folder & Aktifkan Virtual Environment
 
 ```bash
 cd server
-# Aktifkan venv kamu (sesuaikan dengan OS)
-source venv/bin/activate          # macOS / Linux
-venv\Scripts\activate             # Windows
+
+# macOS / Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
 ```
 
----
-
-## Langkah 2 — Install Semua Dependensi
+## 2. Install Dependensi
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Isi `requirements.txt`:
-```
+Dependensi utama backend:
+
+```txt
 fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
 sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.9
-alembic>=1.13.0
 python-jose[cryptography]>=3.3.0
 passlib[bcrypt]>=1.7.4
 pydantic-settings>=2.3.0
 pydantic[email]>=2.7.0
 python-multipart>=0.0.9
+tensorflow-intel>=2.16.0; platform_system == "Windows"
+tensorflow>=2.16.0; platform_system != "Windows"
+numpy>=1.26.0
 ```
 
----
+Dependency AI dipakai untuk klasifikasi kategori transaksi dengan model LSTM di `machine-learning/ModelLSTM`. Model yang dipakai adalah `best_lstm_model.keras`, `tokenizer.json`, dan `model_config.json`.
 
-## Langkah 3 — Pastikan File .env Sudah Benar
+## 3. Siapkan File `.env`
 
-File `.env` kamu harus berada di `server/.env` (sejajar dengan `main.py`), isinya:
+File `.env` berada di folder `server/`:
 
 ```env
 DATABASE_URL=postgresql://postgres:password_kamu@localhost:5432/sawit_db
@@ -48,61 +50,28 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 ```
 
-### Opsional — Akun Demo Otomatis
-
-Backend akan membuat akun demo saat startup. Defaultnya:
-
-- Email: `sawit@sawit.id`
-- Password: `sawit123`
-- Nama: `Demo SAWIT`
-
-Kalau mau ubah atau nonaktifkan, tambahkan ke `.env`:
+Akun demo default:
 
 ```env
 DEMO_USER_ENABLED=true
-DEMO_USER_EMAIL=demo@sawit.id
-DEMO_USER_PASSWORD=Sahabat123
+DEMO_USER_EMAIL=sawit@sawit.id
+DEMO_USER_PASSWORD=sawit123
 DEMO_USER_DISPLAY_NAME=Demo SAWIT
 ```
 
-> Cara generate SECRET_KEY yang aman:
-> ```bash
-> python -c "import secrets; print(secrets.token_hex(32))"
-> ```
-
----
-
-## Langkah 4 — Jalankan Server
+## 4. Jalankan Server
 
 ```bash
-# Dari dalam folder server/, pastikan venv aktif
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Kalau berhasil, terminal akan tampilkan:
-```
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process
-INFO:     Application startup complete.
-```
+Swagger UI tersedia di `http://localhost:8000/docs`.
 
-**Saat pertama jalan**, FastAPI otomatis membuat semua tabel di `sawit_db` melalui:
-```python
-Base.metadata.create_all(bind=engine)  # Ada di main.py
-```
+## 5. Urutan Test di Swagger
 
-Kamu bisa cek di pgAdmin — tabel `users` dan `transactions` akan muncul otomatis.
+Register user:
 
----
-
-## Langkah 5 — Buka Swagger UI & Test Endpoint
-
-Buka browser: **http://localhost:8000/docs**
-
-### Urutan Test yang Benar:
-
-**1. Register user baru**
-```
+```http
 POST /api/auth/register
 {
   "email": "test@sawit.id",
@@ -111,18 +80,19 @@ POST /api/auth/register
 }
 ```
 
-**2. Login untuk dapat token**
-```
+Login dan salin `access_token`:
+
+```http
 POST /api/auth/login
 {
   "email": "test@sawit.id",
   "password": "password123"
 }
 ```
-Salin `access_token` dari response → klik tombol **Authorize** di Swagger → paste token.
 
-**3. Tambah income dulu (supaya ada saldo)**
-```
+Tambah pemasukan dulu agar saldo tersedia:
+
+```http
 POST /api/transactions/
 {
   "description": "Gaji bulan ini",
@@ -132,126 +102,80 @@ POST /api/transactions/
 }
 ```
 
-**4. Cek saldo**
-```
+Cek saldo:
+
+```http
 GET /api/transactions/summary/balance
 ```
 
-**5. Tambah expense**
-```
+Tambah pengeluaran. Kategori tidak perlu dikirim karena backend selalu memakai prediksi AI LSTM dari `description`:
+
+```http
 POST /api/transactions/
 {
   "description": "Beli makan siang",
   "amount": 35000,
   "type": "expense",
-  "category": "Makanan",
   "method": "Tunai",
   "date": "2026-05-06"
 }
 ```
 
-**6. Test expense melebihi saldo → harusnya error 403**
+Test prediksi kategori langsung:
+
+```http
+POST /api/transactions/predict-category
+{
+  "description": "Beli makan siang"
+}
 ```
+
+Test expense melebihi saldo:
+
+```http
 POST /api/transactions/
 {
   "description": "Beli laptop mahal",
   "amount": 99999999,
   "type": "expense",
-  "category": "Belanja",
   "date": "2026-05-06"
 }
 ```
 
----
-
-## Struktur File Lengkap
-
-```
-server/
-├── .env                          ← File kamu (jangan di-commit ke git!)
-├── main.py                       ← Entry point, register router, buat tabel
-├── requirements.txt              ← Semua dependensi
-└── app/
-    ├── __init__.py
-    ├── core/
-    │   ├── __init__.py
-    │   ├── config.py             ← Baca .env via pydantic-settings
-    │   └── security.py           ← hash_password, verify_password, JWT functions
-    ├── db/
-    │   ├── __init__.py
-    │   ├── base.py               ← SQLAlchemy Base class
-    │   └── session.py            ← Engine, SessionLocal, get_db dependency
-    ├── models/
-    │   ├── __init__.py
-    │   ├── user.py               ← ORM model tabel users
-    │   └── transaction.py        ← ORM model tabel transactions + VALID_CATEGORIES
-    ├── schemas/
-    │   ├── __init__.py
-    │   ├── base.py               ← APIResponse<T> wrapper standar
-    │   ├── user.py               ← UserRegister, UserLogin, UserResponse, TokenResponse
-    │   └── transaction.py        ← TransactionCreate, TransactionUpdate, TransactionResponse, BalanceSummaryResponse
-    └── api/
-        ├── __init__.py
-        ├── dependencies.py       ← get_current_user, get_db
-        └── routes/
-            ├── __init__.py
-            ├── auth.py           ← POST /register, POST /login, GET /me
-            └── transactions.py   ← endpoint transaksi aktif + proteksi immutable
-```
-
----
-
-## Semua Endpoint yang Tersedia
+## Endpoint
 
 | Method | Path | Fungsi | Auth |
 |--------|------|--------|------|
-| GET | `/` | Health check | ❌ |
-| POST | `/api/auth/register` | Daftar akun baru | ❌ |
-| POST | `/api/auth/login` | Login, dapat JWT token | ❌ |
-| GET | `/api/auth/me` | Data user yang login | ✅ |
-| GET | `/api/transactions/summary/balance` | Hitung saldo (income - expense) | ✅ |
-| POST | `/api/transactions/` | Tambah transaksi baru | ✅ |
-| GET | `/api/transactions/` | Daftar transaksi (filter + pagination) | ✅ |
-| GET | `/api/transactions/{id}` | Detail 1 transaksi | ✅ |
-<<<<<<< HEAD
-| PUT | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
-| DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable setelah dicatat (405) | ✅ |
-=======
-| PATCH | `/api/transactions/{id}` | Edit sebagian field transaksi yang sudah ada | ✅ |
-| DELETE | `/api/transactions/{id}` | Hapus transaksi | ✅ |
->>>>>>> origin/server
+| GET | `/` | Health check | Tidak |
+| POST | `/api/auth/register` | Daftar akun baru | Tidak |
+| POST | `/api/auth/login` | Login dan dapat JWT token | Tidak |
+| GET | `/api/auth/me` | Data user login | Ya |
+| GET | `/api/transactions/summary/balance` | Hitung saldo | Ya |
+| POST | `/api/transactions/predict-category` | Prediksi kategori pengeluaran dengan LSTM | Ya |
+| POST | `/api/transactions/` | Tambah transaksi baru | Ya |
+| GET | `/api/transactions/` | Daftar transaksi | Ya |
+| GET | `/api/transactions/{id}` | Detail transaksi | Ya |
+| PATCH | `/api/transactions/{id}` | Ditolak: transaksi immutable | Ya |
+| DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable | Ya |
 
----
+## Catatan Validasi
 
-## Error yang Umum & Cara Fixing
+- Expense selalu dikategorikan otomatis oleh model LSTM; kategori manual dari client diabaikan.
+- Income selalu memakai kategori `Pemasukan`.
+- Deskripsi wajib diisi dan maksimal 255 karakter.
+- Amount harus lebih dari 0.
+- Tanggal tidak boleh di masa depan.
+- Expense ditolak jika amount lebih besar dari saldo user.
+- User hanya bisa mengakses transaksi miliknya.
 
-| Error | Penyebab | Solusi |
-|-------|----------|--------|
-| `connection refused` saat start | PostgreSQL belum jalan | Start service PostgreSQL di pgAdmin |
-| `database "sawit_db" does not exist` | DB belum dibuat | Buat manual di pgAdmin |
-| `module 'pydantic_settings' not found` | Library belum install | `pip install pydantic-settings` |
-| `ModuleNotFoundError` or `ImportError` | Modul tidak ditemukan atau terjadi kesalahan import (sering akibat `__init__.py` hilang) | Pastikan semua folder punya `__init__.py` dan modul bisa di-import |
-| `401 Unauthorized` saat test | Lupa klik Authorize di Swagger | Klik tombol Authorize → paste token |
-| `403 Saldo tidak cukup` | Amount expense > balance | Tambah income dulu |
+## Troubleshooting
 
----
-
-## Catatan Penting untuk Tim
-
-**Validasi yang sudah ada di backend (tidak perlu duplikasi di FE):**
-- Kategori wajib untuk expense, diabaikan untuk income
-- Deskripsi max 255 karakter, tidak boleh kosong
-- Amount harus > 0
-- Tanggal tidak boleh di masa depan
-- Expense ditolak jika amount > saldo user (HTTP 403)
-- User hanya bisa akses transaksi miliknya (HTTP 403 jika bukan miliknya)
-
-**Format response semua endpoint konsisten:**
-```json
-{
-  "success": true,
-  "data": { ... },
-  "message": "Transaksi berhasil ditambahkan",
-  "error": null
-}
-```
+| Masalah | Penyebab | Solusi |
+|--------|----------|--------|
+| `connection refused` saat start | PostgreSQL belum jalan | Start service PostgreSQL |
+| `database "sawit_db" does not exist` | Database belum dibuat | Buat database di pgAdmin |
+| `module 'pydantic_settings' not found` | Dependency belum terinstall | Jalankan `pip install -r requirements.txt` |
+| `No module named 'tensorflow'` saat prediksi | Dependency AI belum terinstall | Jalankan `pip install -r requirements.txt` |
+| Prediksi mengembalikan 503 | Model LSTM gagal dimuat atau file model tidak ditemukan | Pastikan folder `machine-learning/ModelLSTM` lengkap |
+| `401 Unauthorized` | Token belum dikirim | Login lalu pakai token Bearer |
+| `403 Saldo tidak cukup` | Expense melebihi saldo | Tambah income dulu |

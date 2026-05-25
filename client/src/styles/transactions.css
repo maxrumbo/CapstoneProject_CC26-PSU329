@@ -76,7 +76,8 @@
   background: var(--primary);
 }
 
-.transaction-form label {
+.transaction-form label,
+.ai-category-field {
   display: grid;
   align-content: start;
   gap: 6px;
@@ -113,6 +114,19 @@ input:focus,
 select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(15, 143, 95, 0.14);
+}
+
+.ai-category-result {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px 10px;
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .field-hint {

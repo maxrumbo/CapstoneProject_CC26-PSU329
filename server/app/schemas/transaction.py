@@ -4,7 +4,6 @@ from typing import Optional
 from pydantic import BaseModel, field_validator, model_validator
 
 from app.models.transaction import (
-    EXPENSE_CATEGORIES,
     INCOME_CATEGORY,
     TransactionType,
 )
@@ -43,6 +42,15 @@ class TransactionCreate(BaseModel):
             raise ValueError("Tanggal tidak boleh di masa depan")
         return v
 
+    @field_validator("category")
+    @classmethod
+    def normalize_category(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return None
+
+        v = v.strip()
+        return v or None
+
     @model_validator(mode="after")
     def validate_category_logic(self) -> "TransactionCreate":
         if self.type == TransactionType.income:
@@ -52,16 +60,7 @@ class TransactionCreate(BaseModel):
                 raise ValueError("Transaksi income harus menggunakan kategori 'Pemasukan'")
             return self
 
-        if not self.category:
-            raise ValueError("Kategori wajib diisi")
-
-        if self.category not in EXPENSE_CATEGORIES:
-            raise ValueError(
-                f"Kategori tidak valid. Pilihan: {', '.join(EXPENSE_CATEGORIES)}"
-            )
-
-        if self.category == INCOME_CATEGORY:
-            raise ValueError("Transaksi expense tidak boleh menggunakan kategori 'Pemasukan'")
+        self.category = None
 
         return self
 

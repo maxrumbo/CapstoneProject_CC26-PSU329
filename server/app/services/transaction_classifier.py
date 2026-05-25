@@ -45,6 +45,14 @@ def _load_artifacts():
         model = load_model(str(model_path), compile=False)
         tokenizer = tokenizer_from_json(tokenizer_path.read_text(encoding="utf-8"))
         config = json.loads(config_path.read_text(encoding="utf-8"))
+    except ModuleNotFoundError as exc:
+        if exc.name and exc.name.startswith("tensorflow"):
+            raise TransactionClassifierError(
+                "TensorFlow belum terinstall. Jalankan `pip install -r requirements.txt`."
+            ) from exc
+        raise TransactionClassifierError(
+            "Gagal memuat model klasifikasi transaksi"
+        ) from exc
     except Exception as exc:
         raise TransactionClassifierError(
             "Gagal memuat model klasifikasi transaksi"
@@ -82,6 +90,12 @@ def predict_transaction_category(description: str) -> dict:
         confidence = float(scores[class_index])
     except TransactionClassifierError:
         raise
+    except ModuleNotFoundError as exc:
+        if exc.name and exc.name.startswith("tensorflow"):
+            raise TransactionClassifierError(
+                "TensorFlow belum terinstall. Jalankan `pip install -r requirements.txt`."
+            ) from exc
+        raise TransactionClassifierError("Gagal melakukan prediksi kategori") from exc
     except Exception as exc:
         raise TransactionClassifierError("Gagal melakukan prediksi kategori") from exc
 

@@ -1,7 +1,6 @@
 import Icon from "../../../components/ui/Icon";
 import { useTransactionForm } from "../hooks/useTransactionForm";
 import { formatCurrency } from "../../../utils/formatCurrency";
-import { TRANSACTION_CATEGORIES } from "../constants/transactionCategories";
 
 function TransactionForm({
   availableBalance,
@@ -113,22 +112,16 @@ function TransactionForm({
 
         <div className={isExpense ? "form-grid" : "form-grid single-field"}>
           {isExpense && (
-            <label>
+            <div className="ai-category-field" aria-live="polite">
               <span className="field-label">
                 <Icon name="tag" size={14} />
                 Kategori
               </span>
-              <select
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-              >
-                {TRANSACTION_CATEGORIES.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
+              <div className="ai-category-result">
+                {categoryPrediction.isLoading
+                  ? "Menganalisis..."
+                  : formData.category || "Otomatis oleh AI"}
+              </div>
               {categoryPrediction.isLoading && (
                 <small className="field-hint category-prediction-hint">
                   AI menganalisis kategori...
@@ -144,7 +137,7 @@ function TransactionForm({
                   {categoryPrediction.error}
                 </small>
               )}
-            </label>
+            </div>
           )}
 
           <label>

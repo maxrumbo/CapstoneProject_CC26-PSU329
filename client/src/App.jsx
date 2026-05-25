@@ -7,6 +7,7 @@ import "./App.css";
 const pageLoaders = {
   dashboard: () => import("./pages/DashboardPage"),
   transactions: () => import("./pages/TransactionsPage"),
+  subscription: () => import("./pages/SubscriptionPage"),
   wishlist: () => import("./pages/WishlistPage"),
   investment: () => import("./pages/InvestmentPage"),
   profile: () => import("./pages/ProfilePage"),
@@ -16,6 +17,7 @@ const pageLoaders = {
 
 const DashboardPage = lazy(pageLoaders.dashboard);
 const TransactionsPage = lazy(pageLoaders.transactions);
+const SubscriptionPage = lazy(pageLoaders.subscription);
 const WishlistPage = lazy(pageLoaders.wishlist);
 const InvestmentPage = lazy(pageLoaders.investment);
 const ProfilePage = lazy(pageLoaders.profile);
@@ -25,6 +27,7 @@ const RegisterPage = lazy(pageLoaders.register);
 const PAGE_HASHES = {
   dashboard: "dashboard",
   transactions: "transactions",
+  subscription: "subscription",
   wishlist: "wishlist-calculator",
   investment: "investment",
   profile: "profile",
@@ -38,6 +41,8 @@ const HASH_TO_PAGE = {
   dashboard: "dashboard",
   transaksi: "transactions",
   transactions: "transactions",
+  subscription: "subscription",
+  langganan: "subscription",
   "wishlist-calculator": "wishlist",
   wishlist: "wishlist",
   investasi: "investment",
@@ -187,6 +192,15 @@ function App() {
     if (currentPage === "wishlist") {
       return (
         <WishlistPage
+          onProfileClick={handleOpenProfile}
+          userName={userName}
+        />
+      );
+    }
+
+    if (currentPage === "subscription") {
+      return (
+        <SubscriptionPage
           onProfileClick={handleOpenProfile}
           userName={userName}
         />

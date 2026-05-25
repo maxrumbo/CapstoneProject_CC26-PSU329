@@ -128,7 +128,8 @@ def create_transaction(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    # Cek saldo hanya untuk tipe expense
+    category = payload.category
+
     if payload.type == TransactionType.expense:
         current_balance = _get_balance(current_user.id, db)
         if payload.amount > current_balance:
@@ -137,12 +138,22 @@ def create_transaction(
                 detail="Saldo tidak cukup untuk transaksi ini",
             )
 
+        try:
+            prediction = predict_transaction_category(payload.description)
+        except TransactionClassifierError as exc:
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail=str(exc),
+            ) from exc
+
+        category = prediction["category"]
+
     transaction = Transaction(
         user_id=current_user.id,
         description=payload.description,
         amount=payload.amount,
         type=payload.type,
-        category=payload.category,
+        category=category,
         method=payload.method,
         date=payload.date,
     )

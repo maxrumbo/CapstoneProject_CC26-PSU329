@@ -13,7 +13,13 @@ export const menuItems = [
     active: true,
     page: "transactions",
   },
-  { label: "Subscription", icon: "subscription", status: "Segera" },
+  {
+    label: "Subscription",
+    icon: "subscription",
+    status: "Aktif",
+    active: true,
+    page: "subscription",
+  },
   {
     label: "Wishlist Calculator",
     icon: "target",
@@ -36,6 +42,8 @@ export const featureCards = [
     title: "Subscription Tracker",
     icon: "subscription",
     description: "Pantau biaya langganan rutin agar tidak bocor tiap bulan.",
+    active: true,
+    page: "subscription",
   },
   {
     title: "Wishlist Calculator",

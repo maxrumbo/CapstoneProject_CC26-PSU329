@@ -8,4 +8,3 @@ export const TRANSACTION_CATEGORIES = [
 ];
 
 export const INCOME_CATEGORY = "Pemasukan";
-export const DEFAULT_EXPENSE_CATEGORY = "Konsumsi";

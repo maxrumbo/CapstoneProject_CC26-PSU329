@@ -26,7 +26,7 @@ const normalizeBalanceSummary = (summary) => ({
 const normalizeTransactionPayload = (payload) => ({
   ...payload,
   amount: toNumber(payload.amount),
-  category: payload.type === "income" ? "Pemasukan" : payload.category,
+  category: payload.type === "income" ? "Pemasukan" : null,
 });
 
 const normalizeTransactionResponse = (response) => ({

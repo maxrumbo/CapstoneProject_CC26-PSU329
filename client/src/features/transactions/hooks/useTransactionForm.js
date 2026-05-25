@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { formatCurrency } from "../../../utils/formatCurrency";
 import {
-  DEFAULT_EXPENSE_CATEGORY,
   INCOME_CATEGORY,
   TRANSACTION_CATEGORIES,
 } from "../constants/transactionCategories";
@@ -23,19 +22,9 @@ const createInitialFormData = () => ({
   amount: "",
   type: "expense",
   date: getToday(),
-  category: DEFAULT_EXPENSE_CATEGORY,
+  category: "",
   method: DEFAULT_METHOD,
 });
-
-const getCategoryByType = (type, currentCategory) => {
-  if (type === "income") {
-    return INCOME_CATEGORY;
-  }
-
-  return TRANSACTION_CATEGORIES.includes(currentCategory)
-    ? currentCategory
-    : DEFAULT_EXPENSE_CATEGORY;
-};
 
 export function useTransactionForm({
   availableBalance,
@@ -50,14 +39,8 @@ export function useTransactionForm({
     confidence: null,
     error: "",
   });
-  const [hasManualCategory, setHasManualCategory] = useState(false);
-  const hasManualCategoryRef = useRef(false);
   const latestDescriptionRef = useRef(formData.description);
   const isExpense = formData.type === "expense";
-
-  useEffect(() => {
-    hasManualCategoryRef.current = hasManualCategory;
-  }, [hasManualCategory]);
 
   useEffect(() => {
     latestDescriptionRef.current = formData.description;
@@ -68,7 +51,6 @@ export function useTransactionForm({
 
     if (
       !isExpense ||
-      hasManualCategory ||
       !onPredictCategory ||
       description.length < MIN_DESCRIPTION_LENGTH_FOR_AI
     ) {
@@ -108,11 +90,7 @@ export function useTransactionForm({
           const isCurrentDescription =
             latestDescriptionRef.current.trim() === description;
 
-          if (
-            !isCurrentExpense ||
-            !isCurrentDescription ||
-            hasManualCategoryRef.current
-          ) {
+          if (!isCurrentExpense || !isCurrentDescription) {
             return prev;
           }
 
@@ -137,23 +115,13 @@ export function useTransactionForm({
       isActive = false;
       window.clearTimeout(timeoutId);
     };
-  }, [formData.description, hasManualCategory, isExpense, onPredictCategory]);
+  }, [formData.description, isExpense, onPredictCategory]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     let nextValue = value;
 
-    if (name === "category") {
-      setHasManualCategory(true);
-      setCategoryPrediction({
-        isLoading: false,
-        category: "",
-        confidence: null,
-        error: "",
-      });
-    }
-
-    if (name === "description" && !hasManualCategory) {
+    if (name === "description") {
       setCategoryPrediction({
         isLoading: false,
         category: "",
@@ -189,7 +157,6 @@ export function useTransactionForm({
   };
 
   const handleTypeChange = (type) => {
-    setHasManualCategory(false);
     setCategoryPrediction({
       isLoading: false,
       category: "",
@@ -206,7 +173,7 @@ export function useTransactionForm({
             ? String(availableBalance)
             : ""
           : prev.amount,
-      category: getCategoryByType(type, prev.category),
+      category: type === "income" ? INCOME_CATEGORY : "",
     }));
 
     if (type === "expense" && availableBalance <= 0) {
@@ -236,15 +203,10 @@ export function useTransactionForm({
       return;
     }
 
-    if (isExpense && !TRANSACTION_CATEGORIES.includes(formData.category)) {
-      setMessage("Pilih kategori pengeluaran yang valid.");
-      return;
-    }
-
     const payload = {
       ...formData,
       amount: Number(formData.amount),
-      category: isExpense ? formData.category : INCOME_CATEGORY,
+      category: isExpense ? null : INCOME_CATEGORY,
     };
 
     const result = await onAddTransaction(payload);
@@ -253,7 +215,6 @@ export function useTransactionForm({
 
     if (result.success) {
       setFormData(createInitialFormData());
-      setHasManualCategory(false);
       setCategoryPrediction({
         isLoading: false,
         category: "",
