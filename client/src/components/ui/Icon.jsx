@@ -138,6 +138,12 @@ const iconPaths = {
       <path d="M9 16h4" />
     </>
   ),
+  search: (
+    <>
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="M16 16l4.5 4.5" />
+    </>
+  ),
   repeat: (
     <>
       <path d="M17 4l3 3-3 3" />

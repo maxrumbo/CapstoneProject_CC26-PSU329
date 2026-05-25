@@ -1,17 +1,15 @@
-import DashboardHeader from "../components/dashboard/DashboardHeader";
 import WishlistCalculator from "../features/wishlist/components/WishlistCalculator";
 
-function WishlistPage({ onProfileClick, userName }) {
+function WishlistPage() {
   return (
     <>
-      <DashboardHeader
-        eyebrow="Fitur Aktif"
-        title="Wishlist Calculator"
-        description="Hitung estimasi tabungan dari nol untuk mencapai target barang impian."
-        icon="target"
-        onProfileClick={onProfileClick}
-        userName={userName}
-      />
+      <header className="dashboard-section">
+        <p className="dashboard-section-kicker">Fitur Aktif</p>
+        <h2>Wishlist Calculator</h2>
+        <span>
+          Hitung estimasi tabungan dari nol untuk mencapai target barang impian.
+        </span>
+      </header>
 
       <section className="workspace-grid single-column">
         <div className="primary-column">

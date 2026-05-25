@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
 import SummaryReport from "../components/dashboard/SummaryReport";
 import TransactionForm from "../features/transactions/components/TransactionForm";
 import TransactionHistory from "../features/transactions/components/TransactionHistory";
@@ -74,7 +73,7 @@ const toNumber = (value) => {
   return Number.isFinite(numberValue) ? numberValue : 0;
 };
 
-function TransactionsPage({ onProfileClick, userName }) {
+function TransactionsPage() {
   const [filters, setFilters] = useState(defaultFilters);
   const apiFilters = useMemo(() => buildApiFilters(filters), [filters]);
   const {
@@ -116,14 +115,11 @@ function TransactionsPage({ onProfileClick, userName }) {
 
   return (
     <>
-      <DashboardHeader
-        eyebrow="Fitur Aktif"
-        title="Transaksi"
-        description="Catat pemasukan dan pengeluaran, lalu pantau riwayat terbaru."
-        icon="receipt"
-        onProfileClick={onProfileClick}
-        userName={userName}
-      />
+      <header className="dashboard-section">
+        <p className="dashboard-section-kicker">Fitur Aktif</p>
+        <h2>Transaksi</h2>
+        <span>Catat pemasukan dan pengeluaran, lalu pantau riwayat terbaru.</span>
+      </header>
       <SummaryReport summary={summary} />
 
       {error && (

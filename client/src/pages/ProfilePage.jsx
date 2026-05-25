@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
+import { useNavigate } from "react-router-dom";
 import Icon from "../components/ui/Icon";
 import { useAuth } from "../context/useAuth";
 import { getBudgetSummary, setBudget as setBudgetApi } from "../services/budgetApi";
@@ -70,9 +70,10 @@ const buildBudgetPayload = (month, categoryLimits) => ({
   })),
 });
 
-function ProfilePage({ onLogout, onProfileClick, user, userName }) {
-  const { token } = useAuth();
-  const displayName = user?.display_name || userName || "Pengguna SAWIT";
+function ProfilePage() {
+  const navigate = useNavigate();
+  const { token, user, clearSession } = useAuth();
+  const displayName = user?.display_name || user?.email || "Pengguna SAWIT";
   const email = user?.email || "-";
   const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
   const [budgetMonth] = useState(getCurrentMonth);
@@ -202,16 +203,24 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
     }
   };
 
+  const handleLogout = () => {
+    clearSession();
+    navigate("/auth", { replace: true });
+  };
+
   return (
     <>
-      <DashboardHeader
-        eyebrow="Akun"
-        title="Profil"
-        description="Update nominal kategori yang berlaku sampai kamu mengubahnya lagi."
-        icon="user"
-        userName={userName}
-        onProfileClick={onProfileClick}
-      />
+      <button className="profile-back-button" type="button" onClick={() => navigate(-1)}>
+        <span className="button-content">
+          <Icon name="arrowRight" size={15} />
+          Kembali
+        </span>
+      </button>
+      <header className="dashboard-section">
+        <p className="dashboard-section-kicker">Akun</p>
+        <h2>Profil</h2>
+        <span>Update nominal kategori yang berlaku sampai kamu mengubahnya lagi.</span>
+      </header>
 
       <section className="profile-stack" aria-label="Profil pengguna">
         <section className="panel profile-hero">
@@ -223,14 +232,12 @@ function ProfilePage({ onLogout, onProfileClick, user, userName }) {
             <h3>{displayName}</h3>
             <p>{email}</p>
           </div>
-          {onLogout && (
-            <button className="profile-logout-button" type="button" onClick={onLogout}>
-              <span className="button-content">
-                <Icon name="arrowRight" size={15} />
-                Keluar
-              </span>
-            </button>
-          )}
+          <button className="profile-logout-button" type="button" onClick={handleLogout}>
+            <span className="button-content">
+              <Icon name="arrowRight" size={15} />
+              Keluar
+            </span>
+          </button>
         </section>
 
         <section className="panel profile-budget-panel">

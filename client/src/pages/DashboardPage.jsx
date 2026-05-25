@@ -1,5 +1,5 @@
 import AnalysisPreview from "../components/dashboard/AnalysisPreview";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
+import Icon from "../components/ui/Icon";
 
 const DEFAULT_STREAMLIT_URL =
   "https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true";
@@ -7,16 +7,23 @@ const DEFAULT_STREAMLIT_URL =
 const STREAMLIT_URL =
   import.meta.env.VITE_STREAMLIT_URL || DEFAULT_STREAMLIT_URL;
 
-function DashboardPage({ onProfileClick, userName }) {
+function DashboardPage() {
   return (
     <>
-      <DashboardHeader
-        title="Dashboard Analitik"
-        description="Dashboard analitik ditampilkan dari Streamlit dan memakai data backend."
-        icon="dashboard"
-        onProfileClick={onProfileClick}
-        userName={userName}
-      />
+      <header className="dashboard-section">
+        <div className="dashboard-section-title">
+          <span className="dashboard-section-icon" aria-hidden="true">
+            <Icon name="dashboard" size={18} />
+          </span>
+          <div>
+            <p className="dashboard-section-kicker">Dashboard</p>
+            <h2>Dashboard Analitik</h2>
+          </div>
+        </div>
+        <span>
+          Dashboard analitik ditampilkan dari Streamlit dan memakai data backend.
+        </span>
+      </header>
 
       <section className="workspace-grid single-column">
         <div className="primary-column">

@@ -9,7 +9,7 @@
   gap: 10px;
   padding: 12px;
   border-radius: 6px;
-  background: #eef4f1;
+  background: var(--surface-soft);
   margin-bottom: 14px;
 }
 
@@ -73,7 +73,7 @@
 
 .balance-metric .report-metric-icon {
   color: var(--primary-dark);
-  background: #eef4f1;
+  background: var(--surface-soft);
 }
 
 .report-label {
