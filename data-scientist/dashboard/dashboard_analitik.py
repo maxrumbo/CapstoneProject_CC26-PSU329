@@ -320,16 +320,41 @@ def main():
         st.markdown(f"""<div class="kpi"><div class="label">Saldo Bersih</div>
             <div class="value" style="color:{saldo_color}">{fmt(saldo)}</div>
             <div class="sub">Savings: {savings_pct:.0f}%</div></div>""", unsafe_allow_html=True)
-    with k4:
+    with k4:    
         st.markdown(f"""<div class="kpi"><div class="label">Total Transaksi</div>
             <div class="value" style="color:#7F77DD">{len(df)}</div>
             <div class="sub">income + expense</div></div>""", unsafe_allow_html=True)
     with k5:
-        st.markdown(f"""<div class="kpi"><div class="label">Status Keuangan</div>
-            <div class="value"><span class="{status_cls}">{status_txt}</span></div>
-            <div class="sub">Rasio: {expense_total/max(income_total,1)*100:.0f}%</div></div>""", unsafe_allow_html=True)
-
-    st.markdown("<br>", unsafe_allow_html=True)
+        status_config = {
+            "SEHAT":   {"bg": "#E1F5EE", "border": "#1D9E75", "text": "#085041", "icon": "✅", "sub_color": "#0F6E56"},
+            "WASPADA": {"bg": "#FAEEDA", "border": "#BA7517", "text": "#633806", "icon": "⚠️", "sub_color": "#854F0B"},
+            "KRITIS":  {"bg": "#FAECE7", "border": "#D85A30", "text": "#4A1B0C", "icon": "🚨", "sub_color": "#993C1D"},
+        }
+        cfg = status_config.get(status_txt, status_config["WASPADA"])
+        rasio = expense_total / max(income_total, 1) * 100
+        st.markdown(f"""
+            <div class="kpi" style="
+                background-color: {cfg['bg']};
+                border: 2px solid {cfg['border']};
+                border-radius: 10px;
+                padding: 12px 16px;
+            ">
+                <div class="label" style="color: {cfg['sub_color']}; font-weight: 600;">
+                    Status Keuangan
+                </div>
+                <div class="value" style="
+                    color: {cfg['text']};
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    margin: 4px 0;
+                ">
+                    {cfg['icon']} {status_txt}
+            </div>
+                <div class="sub" style="color: {cfg['sub_color']};">
+                    Rasio: {rasio:.0f}%
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
     # =========================================================================
     # CHART 1: Cashflow Bulanan
