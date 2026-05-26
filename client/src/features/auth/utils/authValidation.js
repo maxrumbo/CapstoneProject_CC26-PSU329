@@ -23,6 +23,7 @@ export const validateRegisterForm = ({
   email,
   password,
   confirmPassword,
+  otp,
   acceptedTerms,
 }) => {
   const errors = {};
@@ -43,6 +44,10 @@ export const validateRegisterForm = ({
 
   if (password !== confirmPassword) {
     errors.confirmPassword = "Password dan konfirmasi password harus sama.";
+  }
+
+  if (!otp?.trim()) {
+    errors.otp = "Kode OTP wajib diisi.";
   }
 
   if (!acceptedTerms) {

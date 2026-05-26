@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 jam
+    OTP_EXPIRE_MINUTES: int = 10
+    OTP_DEV_MODE: bool = True
     DEMO_USER_ENABLED: bool = True
     DEMO_USER_EMAIL: str = "sawit@sawit.id"
     DEMO_USER_PASSWORD: str = "sawit123"

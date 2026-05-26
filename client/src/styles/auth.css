@@ -23,7 +23,7 @@
 .auth-card {
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 32px rgba(23, 94, 57, 0.16);
 }
 
 .auth-brand-panel {
@@ -32,7 +32,7 @@
   justify-content: center;
   padding: 28px;
   color: var(--text);
-  background: linear-gradient(150deg, #1a2420 0%, #202b26 55%, #1f2f27 100%);
+  background: linear-gradient(150deg, #f9fdfb 0%, #eef6f0 55%, #e5f4ea 100%);
 }
 
 .auth-brand-mark {
@@ -199,7 +199,7 @@
 }
 
 .auth-password-toggle:hover {
-  background: #27342d;
+  background: #e2f0e7;
 }
 
 .auth-options {
@@ -265,6 +265,25 @@
   cursor: pointer;
 }
 
+.auth-secondary-button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 16px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--text);
+  background: var(--surface-soft);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-secondary-button:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
 .auth-primary-button:hover {
   background: var(--primary-dark);
 }
@@ -303,6 +322,24 @@
   color: var(--muted);
   font-size: 12px;
   font-weight: 600;
+}
+
+.auth-reset-panel {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.auth-reset-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {

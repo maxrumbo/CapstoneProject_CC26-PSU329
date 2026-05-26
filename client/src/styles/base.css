@@ -10,20 +10,20 @@ html {
 
 :root {
   --font-sans: "Sora", "Segoe UI", sans-serif;
-  --background: #121212;
-  --surface: #181c1a;
-  --surface-soft: #1f2421;
-  --sidebar: #181c1a;
-  --text: #e6eee8;
-  --muted: #9fb0a6;
-  --border: #2b3530;
-  --primary: #1a4d2e;
-  --primary-dark: #143d24;
-  --primary-soft: #203829;
-  --green: #48a868;
-  --gold: #c9a84c;
-  --red: #d66666;
-  --shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  --background: #f6fbf8;
+  --surface: #ffffff;
+  --surface-soft: #eef6f0;
+  --sidebar: #eff7f2;
+  --text: #1b2a1f;
+  --muted: #5c6f66;
+  --border: #d6e6dc;
+  --primary: #1f7a4a;
+  --primary-dark: #175e39;
+  --primary-soft: #dff3e7;
+  --green: #21b97a;
+  --gold: #e0b159;
+  --red: #e45d5d;
+  --shadow: 0 18px 36px rgba(23, 94, 57, 0.12);
 }
 
 body {
@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--text);
-  background: var(--background);
+  background: linear-gradient(180deg, #f8fcf9 0%, #eff6f1 100%);
 }
 
 button,
@@ -83,7 +83,7 @@ select {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(15, 143, 95, 0.22);
+  outline: 3px solid rgba(31, 122, 74, 0.22);
   outline-offset: 2px;
 }
 

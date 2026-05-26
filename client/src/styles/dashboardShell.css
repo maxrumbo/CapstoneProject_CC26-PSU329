@@ -14,8 +14,8 @@
   inset: -20% 0 auto 0;
   height: 260px;
   background:
-    radial-gradient(circle at 15% 18%, rgba(26, 77, 46, 0.26), transparent 62%),
-    radial-gradient(circle at 85% 12%, rgba(201, 168, 76, 0.16), transparent 60%);
+    radial-gradient(circle at 15% 18%, rgba(31, 122, 74, 0.18), transparent 62%),
+    radial-gradient(circle at 85% 12%, rgba(224, 177, 89, 0.22), transparent 60%);
   opacity: 0.55;
   filter: blur(18px);
   pointer-events: none;
@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.98) 0%, rgba(18, 18, 18, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(245, 247, 251, 0.98) 0%, rgba(245, 247, 251, 0.92) 100%);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }
@@ -43,23 +43,23 @@
   padding: 0 12px;
   height: 38px;
   border-radius: 999px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  background: linear-gradient(160deg, #1c2320 0%, #1a201d 100%);
+  border: 1px solid rgba(31, 122, 74, 0.18);
+  background: linear-gradient(160deg, #ffffff 0%, #eef6f0 100%);
   color: var(--text);
   font-size: 12px;
   font-weight: 600;
   box-shadow:
-    0 12px 20px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 12px 20px rgba(23, 94, 57, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
   transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .dashboard-topbar-feature:hover {
   transform: translateY(-1px);
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(31, 122, 74, 0.4);
   box-shadow:
-    0 14px 22px rgba(0, 0, 0, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 14px 22px rgba(23, 94, 57, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-topbar-icon {
@@ -68,9 +68,9 @@
   display: grid;
   place-items: center;
   border-radius: 9px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  color: var(--gold);
-  background: linear-gradient(160deg, rgba(26, 77, 46, 0.45) 0%, rgba(26, 77, 46, 0.12) 100%);
+  border: 1px solid rgba(31, 122, 74, 0.26);
+  color: var(--primary);
+  background: linear-gradient(160deg, rgba(31, 122, 74, 0.16) 0%, rgba(31, 122, 74, 0.04) 100%);
 }
 
 .dashboard-topbar-title {
@@ -97,12 +97,12 @@
   height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, #1f2623 0%, #1a201d 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eef6f0 100%);
   width: 100%;
   transition: width 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
   box-shadow:
-    0 12px 20px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 12px 20px rgba(23, 94, 57, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-search input {
@@ -119,8 +119,8 @@
 
 .dashboard-search:focus-within {
   width: 100%;
-  border-color: rgba(201, 168, 76, 0.6);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.18);
+  border-color: rgba(31, 122, 74, 0.6);
+  box-shadow: 0 0 0 3px rgba(31, 122, 74, 0.18);
 }
 
 .dashboard-search-icon {
@@ -133,9 +133,9 @@
   width: 42px;
   height: 42px;
   border-radius: 999px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  background: linear-gradient(140deg, #1c2a22 0%, #2b3b32 100%);
-  color: var(--gold);
+  border: 1px solid rgba(31, 122, 74, 0.35);
+  background: linear-gradient(140deg, #e8f6ee 0%, #f8fdf9 100%);
+  color: var(--primary);
   font-weight: 700;
   display: grid;
   place-items: center;
@@ -143,7 +143,7 @@
 }
 
 .dashboard-avatar:hover {
-  border-color: rgba(201, 168, 76, 0.6);
+  border-color: rgba(31, 122, 74, 0.6);
 }
 
 .dashboard-nav {
@@ -159,16 +159,16 @@
   padding: 0 12px;
   height: 38px;
   border-radius: 999px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(31, 122, 74, 0.2);
   color: var(--text);
-  background: linear-gradient(160deg, #1c2320 0%, #1a201d 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #eef6f0 100%);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
   transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
   box-shadow:
-    0 12px 20px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 12px 20px rgba(23, 94, 57, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .dashboard-pill-icon {
@@ -177,23 +177,23 @@
   display: grid;
   place-items: center;
   border-radius: 9px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  color: var(--gold);
-  background: linear-gradient(160deg, rgba(26, 77, 46, 0.45) 0%, rgba(26, 77, 46, 0.12) 100%);
+  border: 1px solid rgba(31, 122, 74, 0.26);
+  color: var(--primary);
+  background: linear-gradient(160deg, rgba(31, 122, 74, 0.16) 0%, rgba(31, 122, 74, 0.04) 100%);
 }
 
 .dashboard-pill:hover {
   color: var(--text);
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(31, 122, 74, 0.4);
   transform: translateY(-1px);
 }
 
 .dashboard-pill.active {
   color: var(--text);
-  border-color: rgba(201, 168, 76, 0.45);
+  border-color: rgba(31, 122, 74, 0.45);
   box-shadow:
-    0 12px 20px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 12px 20px rgba(23, 94, 57, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-pill-label {
@@ -216,11 +216,11 @@
   gap: 6px;
   padding: 16px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  background: linear-gradient(160deg, #1c2320 0%, #1a201d 100%);
+  border: 1px solid rgba(31, 122, 74, 0.14);
+  background: linear-gradient(160deg, #ffffff 0%, #f2f7f4 100%);
   box-shadow:
-    0 16px 28px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 16px 28px rgba(23, 94, 57, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-section-title {
@@ -235,12 +235,12 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  color: var(--gold);
-  background: linear-gradient(160deg, rgba(26, 77, 46, 0.4) 0%, rgba(26, 77, 46, 0.1) 100%);
+  border: 1px solid rgba(31, 122, 74, 0.2);
+  color: var(--primary);
+  background: linear-gradient(160deg, rgba(31, 122, 74, 0.18) 0%, rgba(31, 122, 74, 0.04) 100%);
   box-shadow:
-    0 10px 18px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 10px 18px rgba(23, 94, 57, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dashboard-section-kicker {

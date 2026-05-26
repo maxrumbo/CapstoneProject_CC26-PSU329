@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { validateRegisterForm } from "../utils/authValidation";
-import { registerUser } from "../../../services/authApi";
+import { registerWithOtp, requestOtp } from "../../../services/authApi";
 
 const initialFormData = {
   name: "",
   email: "",
+  otp: "",
   password: "",
   confirmPassword: "",
   acceptedTerms: false,
@@ -15,6 +16,7 @@ const getRequiredMessage = (name) => {
   const messages = {
     name: "Nama wajib diisi.",
     email: "Email wajib diisi.",
+    otp: "Kode OTP wajib diisi.",
     password: "Password minimal 8 karakter.",
     confirmPassword: "Password dan konfirmasi password harus sama.",
     acceptedTerms: "Persetujuan harus dicentang.",
@@ -33,6 +35,8 @@ function RegisterForm({ onSwitchToLogin }) {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [apiError, setApiError] = useState("");
+  const [otpMessage, setOtpMessage] = useState("");
+  const [isSendingOtp, setIsSendingOtp] = useState(false);
 
   const updateFieldError = (name, value, nextFormData, nextDirtyFields) => {
     if (hasSubmitted) {
@@ -72,7 +76,32 @@ function RegisterForm({ onSwitchToLogin }) {
     setFormData(nextFormData);
     setDirtyFields(nextDirtyFields);
     setSuccessMessage("");
+    setOtpMessage("");
     updateFieldError(name, nextValue, nextFormData, nextDirtyFields);
+  };
+
+  const handleSendOtp = async () => {
+    setIsSendingOtp(true);
+    setApiError("");
+    setOtpMessage("");
+
+    try {
+      const response = await requestOtp({
+        email: formData.email,
+        purpose: "signup",
+      });
+      const otpCode = response?.data?.otp_code;
+
+      setOtpMessage(
+        otpCode
+          ? `OTP terkirim. (DEV) Kode: ${otpCode}`
+          : "OTP terkirim ke email."
+      );
+    } catch (error) {
+      setApiError(error.message || "Gagal mengirim OTP.");
+    } finally {
+      setIsSendingOtp(false);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -90,10 +119,11 @@ function RegisterForm({ onSwitchToLogin }) {
     setIsLoading(true);
 
     try {
-      await registerUser({
+      await registerWithOtp({
         name: formData.name,
         email: formData.email,
         password: formData.password,
+        code: formData.otp,
       });
       setSuccessMessage("Registrasi berhasil. Silakan login.");
 
@@ -126,6 +156,7 @@ function RegisterForm({ onSwitchToLogin }) {
             {apiError}
           </p>
         )}
+        {otpMessage && <p className="auth-success">{otpMessage}</p>}
         <label>
           <span className="field-label">
             <Icon name="user" size={14} />
@@ -147,6 +178,36 @@ function RegisterForm({ onSwitchToLogin }) {
             </small>
           )}
         </label>
+
+        <label>
+          <span className="field-label">
+            <Icon name="mail" size={14} />
+            Kode OTP
+          </span>
+          <input
+            type="text"
+            name="otp"
+            placeholder="Masukkan OTP"
+            value={formData.otp}
+            aria-invalid={Boolean(errors.otp)}
+            aria-describedby={errors.otp ? "register-otp-error" : undefined}
+            onChange={handleChange}
+          />
+          {errors.otp && (
+            <small className="auth-error" id="register-otp-error">
+              {errors.otp}
+            </small>
+          )}
+        </label>
+
+        <button
+          className="auth-secondary-button"
+          type="button"
+          onClick={handleSendOtp}
+          disabled={!formData.email || isSendingOtp}
+        >
+          {isSendingOtp ? "Mengirim OTP..." : "Kirim OTP ke Email"}
+        </button>
 
         <label>
           <span className="field-label">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { validateLoginForm } from "../utils/authValidation";
-import { loginUser } from "../../../services/authApi";
+import { loginUser, requestOtp, resetPassword } from "../../../services/authApi";
 
 const initialFormData = {
   email: "",
@@ -30,6 +30,15 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
   const [showPassword, setShowPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [apiError, setApiError] = useState("");
+  const [showReset, setShowReset] = useState(false);
+  const [resetData, setResetData] = useState({
+    email: "",
+    otp: "",
+    new_password: "",
+  });
+  const [resetMessage, setResetMessage] = useState("");
+  const [isSendingOtp, setIsSendingOtp] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
 
   const updateFieldError = (name, value, nextFormData, nextDirtyFields) => {
     if (hasSubmitted) {
@@ -67,6 +76,58 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
     setDirtyFields(nextDirtyFields);
     setSuccessMessage("");
     updateFieldError(name, nextValue, nextFormData, nextDirtyFields);
+  };
+
+  const handleResetChange = (event) => {
+    const { name, value } = event.target;
+    setResetData((prev) => ({ ...prev, [name]: value }));
+    setResetMessage("");
+    setApiError("");
+  };
+
+  const handleSendOtp = async () => {
+    setIsSendingOtp(true);
+    setResetMessage("");
+    setApiError("");
+
+    try {
+      const response = await requestOtp({
+        email: resetData.email,
+        purpose: "reset_password",
+      });
+      const otpCode = response?.data?.otp_code;
+      setResetMessage(
+        otpCode
+          ? `OTP terkirim. (DEV) Kode: ${otpCode}`
+          : "OTP terkirim ke email."
+      );
+    } catch (error) {
+      setApiError(error.message || "Gagal mengirim OTP.");
+    } finally {
+      setIsSendingOtp(false);
+    }
+  };
+
+  const handleResetSubmit = async (event) => {
+    event.preventDefault();
+    setIsResetting(true);
+    setResetMessage("");
+    setApiError("");
+
+    try {
+      await resetPassword({
+        email: resetData.email,
+        code: resetData.otp,
+        new_password: resetData.new_password,
+      });
+      setResetMessage("Password berhasil direset. Silakan login.");
+      setShowReset(false);
+      setResetData({ email: "", otp: "", new_password: "" });
+    } catch (error) {
+      setApiError(error.message || "Reset password gagal.");
+    } finally {
+      setIsResetting(false);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -185,7 +246,11 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
             Ingat saya
           </label>
 
-          <button className="auth-link-button" type="button">
+          <button
+            className="auth-link-button"
+            type="button"
+            onClick={() => setShowReset((prev) => !prev)}
+          >
             Lupa password?
           </button>
         </div>
@@ -199,6 +264,68 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
       </form>
 
       {successMessage && <p className="auth-success">{successMessage}</p>}
+
+      {showReset && (
+        <form className="auth-reset-panel" onSubmit={handleResetSubmit} noValidate>
+          <label>
+            <span className="field-label">
+              <Icon name="mail" size={14} />
+              Email
+            </span>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={resetData.email}
+              onChange={handleResetChange}
+            />
+          </label>
+
+          <label>
+            <span className="field-label">
+              <Icon name="lock" size={14} />
+              Kode OTP
+            </span>
+            <input
+              type="text"
+              name="otp"
+              placeholder="Masukkan OTP"
+              value={resetData.otp}
+              onChange={handleResetChange}
+            />
+          </label>
+
+          <label>
+            <span className="field-label">
+              <Icon name="lock" size={14} />
+              Password baru
+            </span>
+            <input
+              type="password"
+              name="new_password"
+              placeholder="Minimal 8 karakter"
+              value={resetData.new_password}
+              onChange={handleResetChange}
+            />
+          </label>
+
+          {resetMessage && <p className="auth-success">{resetMessage}</p>}
+
+          <div className="auth-reset-actions">
+            <button
+              className="auth-secondary-button"
+              type="button"
+              onClick={handleSendOtp}
+              disabled={!resetData.email || isSendingOtp}
+            >
+              {isSendingOtp ? "Mengirim OTP..." : "Kirim OTP"}
+            </button>
+            <button className="auth-primary-button" type="submit" disabled={isResetting}>
+              {isResetting ? "Memproses..." : "Reset Password"}
+            </button>
+          </div>
+        </form>
+      )}
 
       <p className="auth-switch">
         Belum punya akun?

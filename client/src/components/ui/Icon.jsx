@@ -124,6 +124,12 @@ const iconPaths = {
       <path d="M4 8l8 5 8-5" />
     </>
   ),
+  pencil: (
+    <>
+      <path d="M4 20h4l10-10-4-4L4 16v4Z" />
+      <path d="M13 6l4 4" />
+    </>
+  ),
   plus: (
     <>
       <path d="M12 5v14" />

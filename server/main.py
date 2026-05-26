@@ -7,7 +7,7 @@ from app.db.base import Base
 from app.db.session import engine
 
 # Import models agar SQLAlchemy tahu tabel apa yang perlu dibuat
-from app.models import user, transaction, wishlist, budget, subscription  # noqa: F401
+from app.models import user, transaction, wishlist, budget, subscription, otp  # noqa: F401
 
 # Import routers
 from app.api.routes.auth import router as auth_router
