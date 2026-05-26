@@ -5,6 +5,31 @@
   align-items: start;
 }
 
+.profile-back-button {
+  justify-self: start;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0 14px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--text);
+  background: linear-gradient(160deg, #1c2320 0%, #1a201d 100%);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.profile-back-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
 .profile-stack > .panel {
   position: relative;
   border-radius: 8px;
@@ -22,8 +47,8 @@
   border: 0;
   color: #ffffff;
   background:
-    linear-gradient(135deg, rgba(16, 32, 51, 0.96) 0%, rgba(8, 114, 69, 0.95) 62%, rgba(202, 242, 94, 0.92) 145%),
-    #102033;
+    linear-gradient(135deg, rgba(18, 18, 18, 0.98) 0%, rgba(26, 77, 46, 0.92) 62%, rgba(201, 168, 76, 0.42) 140%),
+    #121212;
 }
 
 .profile-hero::before {
@@ -44,10 +69,10 @@
   place-items: center;
   flex: 0 0 auto;
   border-radius: 999px;
-  color: var(--primary-dark);
-  background: linear-gradient(135deg, #ffffff 0%, #e6f8ee 100%);
-  border: 2px solid rgba(255, 255, 255, 0.72);
-  box-shadow: 0 18px 34px rgba(16, 32, 51, 0.22);
+  color: var(--gold);
+  background: linear-gradient(135deg, #1a2520 0%, #2a3a31 100%);
+  border: 2px solid rgba(201, 168, 76, 0.42);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.35);
   font-size: 34px;
   font-weight: 800;
 }
@@ -86,9 +111,9 @@
   flex: 0 0 auto;
   border-radius: 6px;
   padding: 0 14px;
-  color: #102033;
-  background: #ffffff;
-  box-shadow: 0 12px 24px rgba(16, 32, 51, 0.16);
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -96,7 +121,7 @@
 
 .profile-logout-button:hover {
   transform: translateY(-1px);
-  background: #f3f7f5;
+  background: var(--surface-soft);
 }
 
 .profile-budget-panel {
@@ -130,7 +155,7 @@
 .budget-form input {
   min-height: 40px;
   border-radius: 7px;
-  background: #fbfdfc;
+  background: var(--surface);
 }
 
 .category-budget-grid {
@@ -146,17 +171,17 @@
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 8px 18px rgba(16, 32, 51, 0.04);
+  background: var(--surface);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 .category-budget-card:hover {
-  border-color: #c2ddd1;
+  border-color: rgba(201, 168, 76, 0.45);
   transform: translateY(-1px);
 }
 
 .category-budget-card.locked {
-  background: #f7faf8;
+  background: var(--surface-soft);
 }
 
 .category-budget-card.locked:hover {
@@ -205,6 +230,19 @@
   box-shadow: 0 10px 20px rgba(15, 143, 95, 0.18);
 }
 
+.budget-form .submit-button {
+  color: #0b1f14;
+  background: linear-gradient(160deg, #2a6b45 0%, #1f5a38 100%);
+  border: 1px solid rgba(31, 90, 56, 0.55);
+  box-shadow:
+    0 14px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.budget-form .submit-button:hover {
+  background: linear-gradient(160deg, #2f7a4e 0%, #236742 100%);
+}
+
 .budget-update-button {
   width: fit-content;
   min-height: 40px;
@@ -214,15 +252,19 @@
   justify-self: start;
   border-radius: 5px;
   padding: 0 16px;
-  color: var(--primary-dark);
-  background: var(--primary-soft);
+  color: #0b1f14;
+  background: linear-gradient(160deg, #2a6b45 0%, #1f5a38 100%);
+  border: 1px solid rgba(31, 90, 56, 0.55);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
+  box-shadow:
+    0 14px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 .budget-update-button:hover:not(:disabled) {
-  background: #dff2e8;
+  background: linear-gradient(160deg, #2f7a4e 0%, #236742 100%);
   transform: translateY(-1px);
 }
 
@@ -243,12 +285,16 @@
 
 .status-pill.danger {
   color: var(--red);
-  background: #fdebea;
+  background: rgba(214, 102, 102, 0.16);
 }
 
 .danger-message {
   color: var(--red);
-  background: #fdebea;
+  background: linear-gradient(160deg, rgba(214, 102, 102, 0.28) 0%, rgba(214, 102, 102, 0.12) 100%);
+  border: 1px solid rgba(214, 102, 102, 0.4);
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 1120px) {

@@ -1,5 +1,4 @@
 import AnalysisPreview from "../components/dashboard/AnalysisPreview";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
 
 const DEFAULT_STOCK_STREAMLIT_URL =
   "https://dashboardsahamlq45.streamlit.app/?embed=true";
@@ -7,16 +6,14 @@ const DEFAULT_STOCK_STREAMLIT_URL =
 const STOCK_STREAMLIT_URL =
   import.meta.env.VITE_STOCK_STREAMLIT_URL || DEFAULT_STOCK_STREAMLIT_URL;
 
-function InvestmentPage({ onProfileClick, userName }) {
+function InvestmentPage() {
   return (
     <>
-      <DashboardHeader
-        title="Investasi"
-        description="Dashboard saham LQ45 ditampilkan dari Streamlit."
-        icon="investment"
-        onProfileClick={onProfileClick}
-        userName={userName}
-      />
+      <header className="dashboard-section">
+        <p className="dashboard-section-kicker">Insight</p>
+        <h2>Investasi</h2>
+        <span>Dashboard saham LQ45 ditampilkan dari Streamlit.</span>
+      </header>
 
       <section className="workspace-grid single-column">
         <div className="primary-column">

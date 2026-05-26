@@ -8,4 +8,6 @@
 @import "./styles/profile.css";
 @import "./styles/recommendation.css";
 @import "./styles/auth.css";
+@import "./styles/dashboardShell.css";
+@import "./styles/welcome.css";
 @import "./styles/responsive.css";
