@@ -7,7 +7,10 @@ from app.api.dependencies import get_current_user, get_db
 from app.crud import budget as budget_crud
 from app.models.user import User
 from app.schemas.base import APIResponse
-from app.services.financial_advisor import get_financial_advice
+from app.services.financial_advisor import (
+    calculate_warning_metrics,
+    get_financial_advice,
+)
 
 router = APIRouter(prefix="/advice", tags=["Financial Advice"])
 
@@ -35,7 +38,7 @@ def get_advice(
     if total_budget <= 0:
         raise HTTPException(
             status_code=400,
-            detail="Kamu belum set budget bulan ini. Set budget dulu ya! 💰"
+            detail="Kamu belum set budget bulan ini. Set budget dulu ya!"
         )
 
     # Ambil total pengeluaran & top kategori bulan ini
@@ -44,6 +47,12 @@ def get_advice(
     )
     total_spent = spending_data["total_spent"]
     top_categories = spending_data["top_categories"]
+    metrics = calculate_warning_metrics(
+        budget=total_budget,
+        total_spent=total_spent,
+        day_of_month=day_of_month,
+        days_in_month=days_in_month,
+    )
 
     # Panggil Gemini
     try:
@@ -70,6 +79,10 @@ def get_advice(
                 "day_of_month": day_of_month,
                 "days_in_month": days_in_month,
                 "month": month_str,
+                "daily_average": metrics["daily_average"],
+                "projected_monthly_spending": metrics["projected_monthly_spending"],
+                "spending_ratio": metrics["spending_ratio"],
+                "remaining_days": metrics["remaining_days"],
             }
         },
         message="Saran keuangan berhasil dihasilkan"

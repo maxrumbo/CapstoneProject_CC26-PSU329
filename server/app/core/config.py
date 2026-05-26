@@ -1,5 +1,9 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
+from pathlib import Path
+
+
+SERVER_DIR = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
@@ -29,7 +33,7 @@ class Settings(BaseSettings):
         ]
 
     class Config:
-        env_file = ".env"
+        env_file = SERVER_DIR / ".env"
         env_file_encoding = "utf-8"
 
 

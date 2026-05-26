@@ -35,9 +35,11 @@ python-multipart>=0.0.9
 tensorflow-intel>=2.16.0; platform_system == "Windows"
 tensorflow>=2.16.0; platform_system != "Windows"
 numpy>=1.26.0
+google-genai>=2.6.0
 ```
 
 Dependency AI dipakai untuk klasifikasi kategori transaksi dengan model LSTM di `machine-learning/ModelLSTM`. Model yang dipakai adalah `best_lstm_model.keras`, `tokenizer.json`, dan `model_config.json`.
+Dependency `google-genai` dipakai untuk fitur Rekomendasi AI dan Early Warning berbasis Gemini.
 
 ## 3. Siapkan File `.env`
 
@@ -48,6 +50,7 @@ DATABASE_URL=postgresql://postgres:password_kamu@localhost:5432/sawit_db
 SECRET_KEY=ganti_dengan_random_string_panjang_minimal_32_karakter
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
+GEMINI_API_KEY=isi_api_key_gemini_dari_tim_ai
 ```
 
 Akun demo default:
@@ -130,6 +133,28 @@ POST /api/transactions/predict-category
 }
 ```
 
+Set budget bulan ini sebelum mencoba Rekomendasi AI:
+
+```http
+POST /api/budget/set
+{
+  "month": "2026-05",
+  "budgets": [
+    { "category": "Konsumsi", "amount": 1500000 },
+    { "category": "Transportasi", "amount": 500000 },
+    { "category": "Tagihan", "amount": 750000 }
+  ]
+}
+```
+
+Test rekomendasi AI dan Early Warning:
+
+```http
+GET /api/advice/
+```
+
+Endpoint ini mengembalikan status `AMAN`, `WASPADA`, atau `BAHAYA`, ringkasan kondisi keuangan, saran hemat dari Gemini, dan metrik seperti rata-rata pengeluaran harian serta proyeksi akhir bulan.
+
 Test expense melebihi saldo:
 
 ```http
@@ -157,6 +182,9 @@ POST /api/transactions/
 | GET | `/api/transactions/{id}` | Detail transaksi | Ya |
 | PATCH | `/api/transactions/{id}` | Ditolak: transaksi immutable | Ya |
 | DELETE | `/api/transactions/{id}` | Ditolak: transaksi immutable | Ya |
+| POST | `/api/budget/set` | Set/update budget bulanan per kategori | Ya |
+| GET | `/api/budget/summary/{month}` | Ringkasan budget vs spending | Ya |
+| GET | `/api/advice/` | Rekomendasi AI dan Early Warning dari Gemini | Ya |
 
 ## Catatan Validasi
 
@@ -177,5 +205,7 @@ POST /api/transactions/
 | `module 'pydantic_settings' not found` | Dependency belum terinstall | Jalankan `pip install -r requirements.txt` |
 | `No module named 'tensorflow'` saat prediksi | Dependency AI belum terinstall | Jalankan `pip install -r requirements.txt` |
 | Prediksi mengembalikan 503 | Model LSTM gagal dimuat atau file model tidak ditemukan | Pastikan folder `machine-learning/ModelLSTM` lengkap |
+| Rekomendasi AI mengembalikan 503 Gemini belum terinstall | Dependency `google-genai` belum terinstall | Jalankan `pip install google-genai` atau `pip install -r requirements.txt` |
+| Rekomendasi AI mengembalikan 503 API key kosong | `GEMINI_API_KEY` belum diisi | Isi `GEMINI_API_KEY` di `server/.env`, lalu restart backend |
 | `401 Unauthorized` | Token belum dikirim | Login lalu pakai token Bearer |
 | `403 Saldo tidak cukup` | Expense melebihi saldo | Tambah income dulu |

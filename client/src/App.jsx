@@ -10,6 +10,7 @@ const pageLoaders = {
   subscription: () => import("./pages/SubscriptionPage"),
   wishlist: () => import("./pages/WishlistPage"),
   investment: () => import("./pages/InvestmentPage"),
+  recommendation: () => import("./pages/RecommendationPage"),
   profile: () => import("./pages/ProfilePage"),
   login: () => import("./features/auth/pages/LoginPage"),
   register: () => import("./features/auth/pages/RegisterPage"),
@@ -20,6 +21,7 @@ const TransactionsPage = lazy(pageLoaders.transactions);
 const SubscriptionPage = lazy(pageLoaders.subscription);
 const WishlistPage = lazy(pageLoaders.wishlist);
 const InvestmentPage = lazy(pageLoaders.investment);
+const RecommendationPage = lazy(pageLoaders.recommendation);
 const ProfilePage = lazy(pageLoaders.profile);
 const LoginPage = lazy(pageLoaders.login);
 const RegisterPage = lazy(pageLoaders.register);
@@ -30,6 +32,7 @@ const PAGE_HASHES = {
   subscription: "subscription",
   wishlist: "wishlist-calculator",
   investment: "investment",
+  recommendation: "rekomendasi-ai",
   profile: "profile",
   login: "login",
   register: "register",
@@ -47,6 +50,8 @@ const HASH_TO_PAGE = {
   wishlist: "wishlist",
   investasi: "investment",
   investment: "investment",
+  "rekomendasi-ai": "recommendation",
+  recommendation: "recommendation",
   profile: "profile",
   profil: "profile",
   login: "login",
@@ -210,6 +215,15 @@ function App() {
     if (currentPage === "investment") {
       return (
         <InvestmentPage
+          onProfileClick={handleOpenProfile}
+          userName={userName}
+        />
+      );
+    }
+
+    if (currentPage === "recommendation") {
+      return (
+        <RecommendationPage
           onProfileClick={handleOpenProfile}
           userName={userName}
         />

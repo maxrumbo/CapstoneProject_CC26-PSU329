@@ -34,7 +34,13 @@ export const menuItems = [
     active: true,
     page: "investment",
   },
-  { label: "Analisis AI", icon: "ai", status: "Segera" },
+  {
+    label: "Rekomendasi AI",
+    icon: "ai",
+    status: "Aktif",
+    active: true,
+    page: "recommendation",
+  },
 ];
 
 export const featureCards = [
@@ -54,8 +60,10 @@ export const featureCards = [
   },
   {
     title: "Analisis Konsumsi",
-    icon: "chart",
-    description: "Baca pola pemasukan dan pengeluaran secara ringkas.",
+    icon: "ai",
+    description: "Dapatkan status pengeluaran dan saran hemat personal.",
+    active: true,
+    page: "recommendation",
   },
   {
     title: "Edukasi Investasi",

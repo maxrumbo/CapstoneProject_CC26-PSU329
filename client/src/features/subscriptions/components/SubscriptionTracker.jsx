@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { useAuth } from "../../../context/useAuth";
 import {
@@ -69,10 +69,6 @@ function SubscriptionTracker() {
   const [message, setMessage] = useState("");
 
   const activeCount = subscriptions.length;
-  const averageCost = useMemo(
-    () => (activeCount ? summary.totalCost / activeCount : 0),
-    [activeCount, summary.totalCost]
-  );
 
   const loadSubscriptions = useCallback(async () => {
     if (!token) {
@@ -201,62 +197,29 @@ function SubscriptionTracker() {
 
   return (
     <section className="subscription-layout" id="subscription">
-      <div className="subscription-summary-grid" aria-label="Ringkasan subscription">
-        <article className="subscription-summary-card primary">
-          <span className="subscription-summary-icon">
-            <Icon name="wallet" size={18} />
-          </span>
-          <div>
-            <p className="eyebrow">Total Bulanan</p>
-            <strong>{formatRupiah(summary.totalCost)}</strong>
-            <span>Diambil dari ringkasan backend</span>
-          </div>
-        </article>
-
-        <article className="subscription-summary-card">
-          <span className="subscription-summary-icon">
-            <Icon name="subscription" size={18} />
-          </span>
-          <div>
-            <p className="eyebrow">Langganan Aktif</p>
-            <strong>{activeCount}</strong>
-            <span>Siklus ditampilkan sebagai bulanan</span>
-          </div>
-        </article>
-
-        <article className="subscription-summary-card">
-          <span className="subscription-summary-icon">
-            <Icon name="chart" size={18} />
-          </span>
-          <div>
-            <p className="eyebrow">Rata-rata</p>
-            <strong>{formatRupiah(averageCost)}</strong>
-            <span>Per subscription aktif</span>
-          </div>
-        </article>
-      </div>
+      <article className="subscription-summary-card" aria-label="Ringkasan subscription">
+        <div>
+          <p className="eyebrow">Total Pengeluaran Bulanan</p>
+          <strong>{formatRupiah(summary.totalCost)}</strong>
+          <span>{activeCount} langganan aktif</span>
+        </div>
+        <span className="subscription-summary-badge">Bulanan</span>
+      </article>
 
       <div className="subscription-content-grid">
         <section className="panel subscription-form-card">
           <div className="panel-header">
             <div className="panel-title">
-              <span className="panel-icon">
-                <Icon name="form" size={18} />
-              </span>
               <div>
                 <p className="eyebrow">Form Langganan</p>
-                <h3>{editingSubscription ? "Edit Subscription" : "Tambah Subscription"}</h3>
+                <h3>{editingSubscription ? "Edit Langganan" : "Tambah Langganan"}</h3>
               </div>
             </div>
-            <span className="status-pill">Bulanan</span>
           </div>
 
           <form className="subscription-form" onSubmit={handleSubmit} noValidate>
             <label>
-              <span className="field-label">
-                <Icon name="tag" size={14} />
-                Nama Langganan
-              </span>
+              <span className="field-label">Nama Langganan</span>
               <input
                 type="text"
                 name="name"
@@ -271,10 +234,7 @@ function SubscriptionTracker() {
 
             <div className="subscription-form-grid">
               <label>
-                <span className="field-label">
-                  <Icon name="wallet" size={14} />
-                  Nominal Bulanan
-                </span>
+                <span className="field-label">Nominal</span>
                 <input
                   type="number"
                   name="amount"
@@ -289,10 +249,7 @@ function SubscriptionTracker() {
               </label>
 
               <label>
-                <span className="field-label">
-                  <Icon name="calendar" size={14} />
-                  Tagihan Berikutnya
-                </span>
+                <span className="field-label">Tagihan Berikutnya</span>
                 <input
                   type="date"
                   name="nextBillingDate"
@@ -305,14 +262,8 @@ function SubscriptionTracker() {
             </div>
 
             <label>
-              <span className="field-label">
-                <Icon name="repeat" size={14} />
-                Siklus Pembayaran
-              </span>
+              <span className="field-label">Siklus Pembayaran</span>
               <input type="text" value="Bulanan" disabled readOnly />
-              <span className="field-hint">
-                Backend saat ini belum menyimpan pilihan siklus.
-              </span>
             </label>
 
             <div className="form-actions">
@@ -323,7 +274,7 @@ function SubscriptionTracker() {
                     ? "Menyimpan..."
                     : editingSubscription
                       ? "Simpan Perubahan"
-                      : "Tambah Subscription"}
+                      : "Tambah Langganan"}
                 </span>
               </button>
 
@@ -354,43 +305,32 @@ function SubscriptionTracker() {
         <section className="panel subscription-list-card">
           <div className="panel-header">
             <div className="panel-title">
-              <span className="panel-icon">
-                <Icon name="subscription" size={18} />
-              </span>
               <div>
                 <p className="eyebrow">Daftar Aktif</p>
-                <h3>Subscription Tersimpan</h3>
+                <h3>Langganan Tersimpan</h3>
               </div>
             </div>
             {isLoading && <span className="subscription-loading-label">Memuat...</span>}
           </div>
 
           {isLoading && !subscriptions.length ? (
-            <div className="empty-state">Memuat subscription...</div>
+            <div className="empty-state">Memuat langganan...</div>
           ) : subscriptions.length ? (
             <div className="subscription-list">
               {subscriptions.map((subscription) => (
                 <article className="subscription-item" key={subscription.id}>
                   <div className="subscription-item-main">
-                    <span className="subscription-item-icon">
-                      <Icon name="subscription" size={16} />
-                    </span>
                     <div>
                       <strong>{subscription.name}</strong>
                       <span>
-                        {formatRupiah(subscription.amount)} / bulan
+                        {formatRupiah(subscription.amount)} per bulan
                       </span>
                     </div>
                   </div>
 
                   <div className="subscription-item-meta">
                     <span>
-                      <Icon name="calendar" size={13} />
-                      {formatDate(subscription.nextBillingDate)}
-                    </span>
-                    <span>
-                      <Icon name="repeat" size={13} />
-                      Bulanan
+                      Tagihan berikutnya: {formatDate(subscription.nextBillingDate)}
                     </span>
                   </div>
 
@@ -416,7 +356,7 @@ function SubscriptionTracker() {
             </div>
           ) : (
             <div className="empty-state">
-              Belum ada subscription tersimpan.
+              Belum ada langganan. Tambahkan langganan aktif dari form.
             </div>
           )}
         </section>
