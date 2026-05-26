@@ -326,31 +326,28 @@ def main():
             <div class="sub">income + expense</div></div>""", unsafe_allow_html=True)
     with k5:
         status_config = {
-            "SEHAT":   {"bg": "#E1F5EE", "border": "#1D9E75", "text": "#085041", "icon": "✅", "sub_color": "#0F6E56"},
+            "AMAN":    {"bg": "#E1F5EE", "border": "#1D9E75", "text": "#085041", "icon": "✅", "sub_color": "#0F6E56"},
             "WASPADA": {"bg": "#FAEEDA", "border": "#BA7517", "text": "#633806", "icon": "⚠️", "sub_color": "#854F0B"},
-            "KRITIS":  {"bg": "#FAECE7", "border": "#D85A30", "text": "#4A1B0C", "icon": "🚨", "sub_color": "#993C1D"},
+            "BAHAYA":  {"bg": "#FCEBEB", "border": "#A32D2D", "text": "#501313", "icon": "🚨", "sub_color": "#791F1F"},
+            "BOROS":   {"bg": "#FCEBEB", "border": "#A32D2D", "text": "#501313", "icon": "🔥", "sub_color": "#791F1F"},
+            "Tidak Ada Data": {"bg": "#F1EFE8", "border": "#888780", "text": "#2C2C2A", "icon": "❓", "sub_color": "#5F5E5A"},
         }
         cfg = status_config.get(status_txt, status_config["WASPADA"])
         rasio = expense_total / max(income_total, 1) * 100
         st.markdown(f"""
-            <div class="kpi" style="
-                background-color: {cfg['bg']};
+            <div style="
+                background-color: {cfg['bg']} !important;
                 border: 2px solid {cfg['border']};
-                border-radius: 10px;
-                padding: 12px 16px;
+                border-radius: 12px;
+                padding: 1rem 1.2rem;
             ">
-                <div class="label" style="color: {cfg['sub_color']}; font-weight: 600;">
+                <div style="font-size:0.75rem; color:{cfg['sub_color']}; font-weight:600;">
                     Status Keuangan
                 </div>
-                <div class="value" style="
-                    color: {cfg['text']};
-                    font-size: 1.4rem;
-                    font-weight: 700;
-                    margin: 4px 0;
-                ">
+                <div style="font-size:1.35rem; font-weight:700; margin-top:4px; color:{cfg['text']};">
                     {cfg['icon']} {status_txt}
-            </div>
-                <div class="sub" style="color: {cfg['sub_color']};">
+                </div>
+                <div style="font-size:0.72rem; color:{cfg['sub_color']}; margin-top:2px;">
                     Rasio: {rasio:.0f}%
                 </div>
             </div>
