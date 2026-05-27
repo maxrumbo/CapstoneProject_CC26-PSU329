@@ -157,7 +157,10 @@ def _load_adjective_stopwords() -> set[str]:
 
 custom_stopwords.update(_load_adjective_stopwords())
 
-all_stopwords = stop_words.union(custom_stopwords)
+tokenized_custom_stopwords = {
+    token for phrase in custom_stopwords for token in phrase.split() if token
+}
+all_stopwords = stop_words.union(tokenized_custom_stopwords)
 all_stopwords -= {"solar"}
 
 
