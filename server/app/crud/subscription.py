@@ -10,7 +10,7 @@ MONTHLY_MULTIPLIERS = {
     "daily": Decimal("30"),
     "weekly": Decimal("4"),
     "monthly": Decimal("1"),
-    "yearly": Decimal("0.083333333333333333"),
+    "yearly": Decimal(1) / Decimal(12),
 }
 
 
