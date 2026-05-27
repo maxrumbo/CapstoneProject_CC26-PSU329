@@ -5,7 +5,6 @@ import re
 import string
 from pathlib import Path
 
-import nltk
 import pandas as pd
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from nltk.corpus import stopwords
@@ -15,12 +14,17 @@ from nltk.corpus import stopwords
 
 logger = logging.getLogger(__name__)
 
-nltk.download("stopwords", quiet=True)
-
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 
-stop_words = set(stopwords.words("indonesian"))
+try:
+    stop_words = set(stopwords.words("indonesian"))
+except LookupError:
+    logger.warning(
+        "[preprocessing] NLTK stopwords corpus tidak ditemukan. "
+        "Jalankan 'python -m nltk.downloader stopwords' saat build/deploy."
+    )
+    stop_words = set()
 
 custom_stopwords = {
     "promo", "promosi", "sale", "diskon", "discount", "obral",
