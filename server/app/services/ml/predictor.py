@@ -18,6 +18,7 @@ def predict_transaction_category(
 ) -> dict:
     """Predict the transaction category from a user-provided description."""
     cleaned_description = _validate_description(description)
+    threshold = _validate_confidence_threshold(confidence_threshold)
     processed_text = preprocess_text(cleaned_description)
 
     try:
@@ -54,6 +55,10 @@ def predict_transaction_category(
     category = MODEL_LABEL_TO_CATEGORY.get(model_label)
     if not category:
         raise TransactionClassifierError(f"Label model tidak dikenali: {model_label}")
+    if threshold is not None and confidence < threshold:
+        raise TransactionClassifierError(
+            "Prediksi kategori berada di bawah confidence threshold."
+        )
 
     return {
         "category": category,
@@ -71,6 +76,15 @@ def _validate_description(description: str) -> str:
     if len(cleaned_description) > 255:
         raise ValueError("Deskripsi maksimal 255 karakter")
     return cleaned_description
+
+
+def _validate_confidence_threshold(confidence_threshold: float | None) -> float | None:
+    if confidence_threshold is None:
+        return None
+    threshold = float(confidence_threshold)
+    if threshold < 0 or threshold > 1:
+        raise ValueError("confidence_threshold harus di antara 0 dan 1")
+    return threshold
 
 
 def _pad_sequences(sequences, maxlen: int, padding: str, truncating: str):
