@@ -32,6 +32,16 @@
   gap: 16px;
 }
 
+.welcome-brand {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.welcome-brand .brand-logo-lockup {
+  width: min(230px, 72vw);
+}
+
 .welcome-kicker {
   color: var(--gold);
   font-size: 12px;

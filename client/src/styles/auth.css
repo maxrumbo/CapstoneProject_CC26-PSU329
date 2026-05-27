@@ -35,17 +35,9 @@
   background: linear-gradient(150deg, #f9fdfb 0%, #eef6f0 55%, #e5f4ea 100%);
 }
 
-.auth-brand-mark {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
+.auth-brand-logo {
+  width: min(230px, 100%);
   margin-bottom: 22px;
-  border-radius: 10px;
-  color: #ffffff;
-  background: var(--primary);
-  font-size: 17px;
-  font-weight: 800;
 }
 
 .auth-kicker {

@@ -9,11 +9,12 @@ import {
   updateSubscription,
 } from "../../../services/subscriptionsApi";
 
-const initialFormData = {
-  name: "",
-  amount: "",
-  nextBillingDate: "",
-};
+const billingCycleOptions = [
+  { value: "daily", label: "Harian", intervalLabel: "hari" },
+  { value: "weekly", label: "Mingguan", intervalLabel: "minggu" },
+  { value: "monthly", label: "Bulanan", intervalLabel: "bulan" },
+  { value: "yearly", label: "Tahunan", intervalLabel: "tahun" },
+];
 
 const rupiahFormatter = new Intl.NumberFormat("id-ID", {
   style: "currency",
@@ -29,6 +30,31 @@ const dateFormatter = new Intl.DateTimeFormat("id-ID", {
 
 const formatRupiah = (value) => rupiahFormatter.format(value || 0);
 
+const formatDateInput = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+};
+
+const createInitialFormData = () => ({
+  name: "",
+  amount: "",
+  billingCycle: "monthly",
+  nextBillingDate: formatDateInput(new Date()),
+});
+
+const getBillingCycleOption = (billingCycle) =>
+  billingCycleOptions.find((option) => option.value === billingCycle) ??
+  billingCycleOptions[2];
+
+const formatBillingCycle = (billingCycle) =>
+  getBillingCycleOption(billingCycle).label;
+
+const formatAmountPerCycle = (amount, billingCycle) =>
+  `${formatRupiah(amount)} per ${getBillingCycleOption(billingCycle).intervalLabel}`;
+
 const formatDate = (value) => {
   if (!value) {
     return "-";
@@ -36,6 +62,47 @@ const formatDate = (value) => {
 
   const date = new Date(`${value}T00:00:00`);
   return Number.isNaN(date.getTime()) ? value : dateFormatter.format(date);
+};
+
+const getDaysInMonth = (year, monthIndex) =>
+  new Date(year, monthIndex + 1, 0).getDate();
+
+const addMonths = (date, monthCount) => {
+  const nextDate = new Date(date);
+  const targetMonth = nextDate.getMonth() + monthCount;
+  const targetYear = nextDate.getFullYear() + Math.floor(targetMonth / 12);
+  const normalizedMonth = ((targetMonth % 12) + 12) % 12;
+  const targetDay = Math.min(
+    nextDate.getDate(),
+    getDaysInMonth(targetYear, normalizedMonth)
+  );
+
+  nextDate.setFullYear(targetYear, normalizedMonth, targetDay);
+  return nextDate;
+};
+
+const getNextBillingDate = (currentDateValue, billingCycle) => {
+  const currentDate = new Date(`${currentDateValue}T00:00:00`);
+
+  if (Number.isNaN(currentDate.getTime())) {
+    return currentDateValue;
+  }
+
+  if (billingCycle === "daily") {
+    currentDate.setDate(currentDate.getDate() + 1);
+    return formatDateInput(currentDate);
+  }
+
+  if (billingCycle === "weekly") {
+    currentDate.setDate(currentDate.getDate() + 7);
+    return formatDateInput(currentDate);
+  }
+
+  if (billingCycle === "yearly") {
+    return formatDateInput(addMonths(currentDate, 12));
+  }
+
+  return formatDateInput(addMonths(currentDate, 1));
 };
 
 const validateForm = (formData) => {
@@ -50,21 +117,33 @@ const validateForm = (formData) => {
   }
 
   if (!formData.nextBillingDate) {
-    return "Tanggal tagihan berikutnya wajib diisi.";
+    return "Tanggal mulai tagihan wajib diisi.";
+  }
+
+  if (!billingCycleOptions.some((option) => option.value === formData.billingCycle)) {
+    return "Siklus pembayaran wajib dipilih.";
   }
 
   return "";
 };
 
+const buildSubscriptionPayload = (formData, shouldAdvanceFromStartDate) => ({
+  ...formData,
+  nextBillingDate: shouldAdvanceFromStartDate
+    ? getNextBillingDate(formData.nextBillingDate, formData.billingCycle)
+    : formData.nextBillingDate,
+});
+
 function SubscriptionTracker() {
   const { token } = useAuth();
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState(createInitialFormData);
   const [subscriptions, setSubscriptions] = useState([]);
   const [summary, setSummary] = useState({ totalCost: 0 });
   const [editingSubscription, setEditingSubscription] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [deletingId, setDeletingId] = useState(null);
+  const [markingPaidId, setMarkingPaidId] = useState(null);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
@@ -100,7 +179,7 @@ function SubscriptionTracker() {
   }, [loadSubscriptions]);
 
   const resetForm = () => {
-    setFormData(initialFormData);
+    setFormData(createInitialFormData());
     setEditingSubscription(null);
   };
 
@@ -126,6 +205,7 @@ function SubscriptionTracker() {
     setFormData({
       name: subscription.name || "",
       amount: subscription.amount ? String(subscription.amount) : "",
+      billingCycle: subscription.billingCycle || "monthly",
       nextBillingDate: subscription.nextBillingDate || "",
     });
     setError("");
@@ -154,12 +234,16 @@ function SubscriptionTracker() {
     setMessage("");
 
     try {
+      const payload = buildSubscriptionPayload(formData, !editingSubscription);
+
       if (editingSubscription) {
-        await updateSubscription(token, editingSubscription.id, formData);
+        await updateSubscription(token, editingSubscription.id, payload);
         setMessage("Subscription berhasil diperbarui.");
       } else {
-        await createSubscription(token, formData);
-        setMessage("Subscription berhasil ditambahkan.");
+        await createSubscription(token, payload);
+        setMessage(
+          `Subscription berhasil ditambahkan. Jadwal aktif pertama ${formatDate(payload.nextBillingDate)}.`
+        );
       }
 
       resetForm();
@@ -195,6 +279,37 @@ function SubscriptionTracker() {
     }
   };
 
+  const handleMarkPaid = async (subscription) => {
+    if (!token) {
+      setError("Silakan login terlebih dahulu.");
+      return;
+    }
+
+    const nextBillingDate = getNextBillingDate(
+      subscription.nextBillingDate,
+      subscription.billingCycle
+    );
+
+    setMarkingPaidId(subscription.id);
+    setError("");
+    setMessage("");
+
+    try {
+      await updateSubscription(token, subscription.id, {
+        ...subscription,
+        nextBillingDate,
+      });
+      setMessage(
+        `Tagihan ${subscription.name} ditandai dibayar. Jadwal berikutnya ${formatDate(nextBillingDate)}.`
+      );
+      await loadSubscriptions();
+    } catch (err) {
+      setError(err.message || "Gagal memperbarui tanggal tagihan.");
+    } finally {
+      setMarkingPaidId(null);
+    }
+  };
+
   return (
     <section className="subscription-layout" id="subscription">
       <article className="subscription-summary-card" aria-label="Ringkasan subscription">
@@ -203,7 +318,7 @@ function SubscriptionTracker() {
           <strong>{formatRupiah(summary.totalCost)}</strong>
           <span>{activeCount} langganan aktif</span>
         </div>
-        <span className="subscription-summary-badge">Bulanan</span>
+        <span className="subscription-summary-badge">Estimasi Bulanan</span>
       </article>
 
       <div className="subscription-content-grid">
@@ -249,7 +364,9 @@ function SubscriptionTracker() {
               </label>
 
               <label>
-                <span className="field-label">Tagihan Berikutnya</span>
+                <span className="field-label">
+                  {editingSubscription ? "Jadwal Aktif" : "Tagihan Dimulai"}
+                </span>
                 <input
                   type="date"
                   name="nextBillingDate"
@@ -263,7 +380,22 @@ function SubscriptionTracker() {
 
             <label>
               <span className="field-label">Siklus Pembayaran</span>
-              <input type="text" value="Bulanan" disabled readOnly />
+              <select
+                name="billingCycle"
+                value={formData.billingCycle}
+                aria-invalid={Boolean(error)}
+                aria-describedby={error ? "subscription-feedback" : undefined}
+                onChange={handleChange}
+              >
+                {billingCycleOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <span className="subscription-cycle-help">
+                Total bulanan akan dikonversi otomatis dari siklus ini.
+              </span>
             </label>
 
             <div className="form-actions">
@@ -323,18 +455,32 @@ function SubscriptionTracker() {
                     <div>
                       <strong>{subscription.name}</strong>
                       <span>
-                        {formatRupiah(subscription.amount)} per bulan
+                        {formatAmountPerCycle(
+                          subscription.amount,
+                          subscription.billingCycle
+                        )}
                       </span>
                     </div>
                   </div>
 
                   <div className="subscription-item-meta">
                     <span>
-                      Tagihan berikutnya: {formatDate(subscription.nextBillingDate)}
+                      Siklus: {formatBillingCycle(subscription.billingCycle)}
+                    </span>
+                    <span>
+                      Jadwal aktif: {formatDate(subscription.nextBillingDate)}
                     </span>
                   </div>
 
                   <div className="subscription-item-actions">
+                    <button
+                      className="subscription-action-button"
+                      type="button"
+                      disabled={markingPaidId === subscription.id}
+                      onClick={() => handleMarkPaid(subscription)}
+                    >
+                      {markingPaidId === subscription.id ? "Memproses..." : "Tandai Dibayar"}
+                    </button>
                     <button
                       className="subscription-action-button"
                       type="button"

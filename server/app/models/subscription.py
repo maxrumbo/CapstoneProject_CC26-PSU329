@@ -18,6 +18,7 @@ class Subscription(Base):
     )
     name = Column(String(255), nullable=False)
     amount = Column(Numeric(15, 2), nullable=False)
+    billing_cycle = Column(String(20), nullable=False, default="monthly")
     next_billing_date = Column(Date, nullable=False)
 
     created_at = Column(

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BrandLogo from "../components/brand/BrandLogo";
 import Icon from "../components/ui/Icon";
 
 function WelcomePage() {
@@ -7,7 +8,10 @@ function WelcomePage() {
       <div className="welcome-gradient" aria-hidden="true" />
       <main className="welcome-layout">
         <section className="welcome-copy">
-          <span className="welcome-kicker">SAWIT FinOps</span>
+          <div className="welcome-brand">
+            <BrandLogo variant="lockup" />
+            <span className="welcome-kicker">SAWIT FinOps</span>
+          </div>
           <h1>Tenangin uang harianmu, rapiin langkah investasimu.</h1>
           <p>
             SAWIT membantu kamu mencatat transaksi, memantau langganan, dan

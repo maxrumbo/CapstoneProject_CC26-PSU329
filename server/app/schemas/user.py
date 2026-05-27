@@ -1,4 +1,6 @@
 from datetime import datetime
+from typing import Optional
+
 from pydantic import BaseModel, EmailStr, field_validator
 
 
@@ -31,6 +33,7 @@ class UserResponse(BaseModel):
     id: int
     email: str
     display_name: str
+    photo_url: Optional[str] = None
     created_at: datetime
 
     model_config = {"from_attributes": True}

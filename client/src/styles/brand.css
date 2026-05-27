@@ -1,0 +1,26 @@
+.brand-logo {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.brand-logo-mark {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.brand-logo-lockup {
+  width: min(260px, 100%);
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+}
+
+.brand-logo-compact {
+  width: auto;
+  height: 60px;
+  background: transparent;
+  box-shadow: none;
+}

@@ -1,3 +1,4 @@
+import BrandLogo from "../../../components/brand/BrandLogo";
 import Icon from "../../../components/ui/Icon";
 
 const authBenefits = [
@@ -11,7 +12,7 @@ function AuthLayout({ children }) {
   return (
     <section className="auth-layout" aria-label="Authentication">
       <div className="auth-brand-panel">
-        <div className="auth-brand-mark">S</div>
+        <BrandLogo className="auth-brand-logo" variant="lockup" />
         <p className="auth-kicker">SAWIT</p>
         <h1>Sahabat Duwit</h1>
         <strong>Kelola uangmu tanpa pusing.</strong>

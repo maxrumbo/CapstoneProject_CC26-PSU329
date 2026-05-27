@@ -13,6 +13,8 @@ const normalizeSubscription = (subscription) => {
   return {
     ...subscription,
     amount: toNumber(subscription.amount),
+    billingCycle:
+      subscription.billingCycle ?? subscription.billing_cycle ?? "monthly",
     nextBillingDate:
       subscription.nextBillingDate ?? subscription.next_billing_date,
     createdAt: subscription.createdAt ?? subscription.created_at,
@@ -40,6 +42,7 @@ const normalizeSummaryResponse = (response) => ({
 const buildSubscriptionPayload = (payload) => ({
   name: payload.name?.trim(),
   amount: toNumber(payload.amount),
+  billing_cycle: payload.billingCycle ?? payload.billing_cycle ?? "monthly",
   next_billing_date: payload.nextBillingDate ?? payload.next_billing_date,
 });
 

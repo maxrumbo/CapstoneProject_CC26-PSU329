@@ -22,6 +22,22 @@ const rupiahFormatter = new Intl.NumberFormat("id-ID", {
 
 const formatRupiah = (value) => rupiahFormatter.format(value);
 
+const buildWishlistPlan = (wishlist) => ({
+  ...wishlist,
+  monthlySaving:
+    wishlist.monthlySaving > 0
+      ? wishlist.monthlySaving
+      : wishlist.targetPrice / wishlist.targetMonths,
+  weeklySaving:
+    wishlist.weeklySaving > 0
+      ? wishlist.weeklySaving
+      : wishlist.targetPrice / wishlist.targetMonths / 4,
+  dailySaving:
+    wishlist.dailySaving > 0
+      ? wishlist.dailySaving
+      : wishlist.targetPrice / wishlist.targetMonths / 30,
+});
+
 function WishlistCalculator() {
   const { token } = useAuth();
   const [formData, setFormData] = useState(initialFormData);
@@ -32,6 +48,7 @@ function WishlistCalculator() {
   const [deletingId, setDeletingId] = useState(null);
   const [result, setResult] = useState(null);
   const [wishlists, setWishlists] = useState([]);
+  const [expandedWishlistId, setExpandedWishlistId] = useState(null);
 
   const loadWishlists = useCallback(async () => {
     if (!token) {
@@ -125,6 +142,9 @@ function WishlistCalculator() {
       await deleteWishlist(token, wishlistId);
       setWishlists((prevWishlists) =>
         prevWishlists.filter((wishlist) => wishlist.id !== wishlistId)
+      );
+      setExpandedWishlistId((currentId) =>
+        currentId === wishlistId ? null : currentId
       );
 
       if (result?.id === wishlistId) {
@@ -297,28 +317,107 @@ function WishlistCalculator() {
 
           <div className="wishlist-list">
             {wishlists.length ? (
-              wishlists.map((wishlist) => (
-                <article className="wishlist-list-item" key={wishlist.id}>
-                  <div>
-                    <strong>{wishlist.itemName}</strong>
-                    <span>
-                      {formatRupiah(wishlist.targetPrice)} / {wishlist.targetMonths} bulan
-                    </span>
-                  </div>
-                  <div className="wishlist-list-actions">
-                    <span className="status-pill">{wishlist.status}</span>
-                    <button
-                      className="wishlist-delete-button"
-                      type="button"
-                      disabled={deletingId === wishlist.id}
-                      onClick={() => handleDeleteWishlist(wishlist.id)}
-                      aria-label={`Hapus wishlist ${wishlist.itemName}`}
-                    >
-                      x
-                    </button>
-                  </div>
-                </article>
-              ))
+              wishlists.map((wishlist) => {
+                const isExpanded = expandedWishlistId === wishlist.id;
+                const wishlistPlan = isExpanded ? buildWishlistPlan(wishlist) : null;
+
+                return (
+                  <article
+                    className={
+                      isExpanded
+                        ? "wishlist-list-item wishlist-list-item-expanded"
+                        : "wishlist-list-item"
+                    }
+                    key={wishlist.id}
+                  >
+                    <div className="wishlist-list-summary-row">
+                      <div>
+                        <strong>{wishlist.itemName}</strong>
+                        <span>
+                          {formatRupiah(wishlist.targetPrice)} / {wishlist.targetMonths} bulan
+                        </span>
+                      </div>
+                      <div className="wishlist-list-actions">
+                        <button
+                          className="status-pill wishlist-status-button"
+                          type="button"
+                          onClick={() =>
+                            setExpandedWishlistId((currentId) =>
+                              currentId === wishlist.id ? null : wishlist.id
+                            )
+                          }
+                          aria-expanded={isExpanded}
+                          aria-controls={`wishlist-plan-${wishlist.id}`}
+                        >
+                          {wishlist.status}
+                        </button>
+                        <button
+                          className="wishlist-delete-button"
+                          type="button"
+                          disabled={deletingId === wishlist.id}
+                          onClick={() => handleDeleteWishlist(wishlist.id)}
+                          aria-label={`Hapus wishlist ${wishlist.itemName}`}
+                        >
+                          x
+                        </button>
+                      </div>
+                    </div>
+
+                    {wishlistPlan && (
+                      <div
+                        className="wishlist-saved-plan"
+                        id={`wishlist-plan-${wishlist.id}`}
+                        aria-live="polite"
+                      >
+                        <div className="wishlist-result-header">
+                          <div>
+                            <p className="eyebrow">Rencana Tabungan</p>
+                            <h4>{wishlistPlan.itemName}</h4>
+                          </div>
+                        </div>
+
+                        <dl className="wishlist-summary">
+                          <div>
+                            <dt>
+                              <Icon name="wallet" size={14} />
+                              Harga Target
+                            </dt>
+                            <dd>{formatRupiah(wishlistPlan.targetPrice)}</dd>
+                          </div>
+                          <div>
+                            <dt>
+                              <Icon name="clock" size={14} />
+                              Target Waktu
+                            </dt>
+                            <dd>{wishlistPlan.targetMonths} bulan</dd>
+                          </div>
+                          <div>
+                            <dt>
+                              <Icon name="calendar" size={14} />
+                              Per Bulan
+                            </dt>
+                            <dd>{formatRupiah(wishlistPlan.monthlySaving)}</dd>
+                          </div>
+                          <div>
+                            <dt>
+                              <Icon name="calendar" size={14} />
+                              Per Minggu
+                            </dt>
+                            <dd>{formatRupiah(wishlistPlan.weeklySaving)}</dd>
+                          </div>
+                          <div className="wishlist-summary-wide">
+                            <dt>
+                              <Icon name="calendar" size={14} />
+                              Per Hari
+                            </dt>
+                            <dd>{formatRupiah(wishlistPlan.dailySaving)}</dd>
+                          </div>
+                        </dl>
+                      </div>
+                    )}
+                  </article>
+                );
+              })
             ) : (
               <div className="empty-state">
                 Belum ada wishlist tersimpan.
