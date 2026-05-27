@@ -138,15 +138,16 @@ def _load_adjective_stopwords() -> set[str]:
         / "kategorisasi"
         / "indonesian-adjective-sentiment-raw.csv"
     )
-    source = local_path
     if not local_path.exists():
-        source = (
-            "https://raw.githubusercontent.com/maxrumbo/CapstoneProject_CC26-PSU329"
-            "/development/data-scientist/kategorisasi/indonesian-adjective-sentiment-raw.csv"
+        logger.warning(
+            "[preprocessing] CSV adjective tidak ditemukan di %s; "
+            "skip load (bundle file ke repo/image untuk mengaktifkan fitur ini).",
+            local_path,
         )
+        return set()
 
     try:
-        df_adj = pd.read_csv(source)
+        df_adj = pd.read_csv(local_path)
         words_from_csv = set(df_adj["word"].dropna().str.lower().str.strip())
         logger.info("[preprocessing] Loaded %s kata dari CSV adjective.", len(words_from_csv))
         return words_from_csv
