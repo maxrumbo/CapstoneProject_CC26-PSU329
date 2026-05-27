@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 
 from app.core.config import settings
 from app.db.base import Base
+from app.db.migrations import ensure_subscription_billing_cycle, ensure_user_photo_url
 from app.db.session import engine
 
 # Import models agar SQLAlchemy tahu tabel apa yang perlu dibuat
@@ -20,6 +21,8 @@ from app.api.routes.advice import router as advice_router
 
 # ── Buat semua tabel di database (jika belum ada) ────────────────────────────
 Base.metadata.create_all(bind=engine)
+ensure_subscription_billing_cycle(engine)
+ensure_user_photo_url(engine)
 
 # ── Inisialisasi aplikasi FastAPI ─────────────────────────────────────────────
 app = FastAPI(

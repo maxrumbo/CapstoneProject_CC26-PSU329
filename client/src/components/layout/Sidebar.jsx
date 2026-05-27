@@ -1,3 +1,4 @@
+import BrandLogo from "../brand/BrandLogo";
 import Icon from "../ui/Icon";
 
 function Sidebar({
@@ -25,7 +26,7 @@ function Sidebar({
   return (
     <aside className="sidebar">
       <div className="brand">
-        <div className="brand-mark">S</div>
+        <BrandLogo variant="mark" />
         <div>
           <h1>SAWIT</h1>
           <p>Sahabat Duwit</p>

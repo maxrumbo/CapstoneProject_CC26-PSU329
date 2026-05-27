@@ -12,6 +12,12 @@ const iconPaths = {
       <path d="M13 6l6 6-6 6" />
     </>
   ),
+  arrowLeft: (
+    <>
+      <path d="M19 12H5" />
+      <path d="M11 6l-6 6 6 6" />
+    </>
+  ),
   balance: (
     <>
       <path d="M12 4v16" />
