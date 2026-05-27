@@ -51,6 +51,13 @@ def predict_transaction_category(
     except Exception as exc:
         raise TransactionClassifierError("Gagal melakukan prediksi kategori.") from exc
 
+    if confidence_threshold is not None and confidence < confidence_threshold:
+        return {
+            "category": "unknown",
+            "confidence": confidence,
+            "model_label": model_label,
+        }
+
     category = MODEL_LABEL_TO_CATEGORY.get(model_label)
     if not category:
         raise TransactionClassifierError(f"Label model tidak dikenali: {model_label}")
