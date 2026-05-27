@@ -24,7 +24,7 @@ stop_words = set(stopwords.words("indonesian"))
 
 custom_stopwords = {
     "promo", "promosi", "sale", "diskon", "discount", "obral",
-    "cuci", "gudang", "clearance", "flash", "live", "hot", "deal", "hemat", "murah meriah",
+    "cuci", "gudang", "clearance", "flash", "live", "hot", "deal", "hemat", "meriah",
     "murah", "termurah", "terjangkau", "hemat", "harga",
     "cod", "bayar", "ditempat", "gratis", "free",
     "ongkir", "ongkos", "kirim", "cashback", "voucher",
