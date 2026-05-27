@@ -13,8 +13,13 @@ class ProfileResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 
+_ALLOWED_IMAGE_TYPES = {"png", "jpeg", "webp"}
+# 1.5 MB original → ~2 097 152 base64 chars + small prefix overhead
+_MAX_DATA_URL_LENGTH = 2_100_000
+
+
 class ProfilePhotoUpdate(BaseModel):
-    photo_url: Optional[str] = Field(default=None, max_length=2_500_000)
+    photo_url: Optional[str] = Field(default=None, max_length=_MAX_DATA_URL_LENGTH)
 
     @field_validator("photo_url")
     @classmethod
@@ -22,7 +27,11 @@ class ProfilePhotoUpdate(BaseModel):
         if value is None or value == "":
             return None
 
-        if not value.startswith("data:image/"):
-            raise ValueError("Foto profil harus berupa data URL gambar")
+        valid_prefixes = [f"data:image/{t};base64," for t in _ALLOWED_IMAGE_TYPES]
+        if not any(value.startswith(prefix) for prefix in valid_prefixes):
+            raise ValueError(
+                "Foto profil harus berupa data URL gambar dengan format "
+                "data:image/<png|jpeg|webp>;base64,<data>"
+            )
 
         return value
