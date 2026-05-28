@@ -5,6 +5,17 @@
   overflow: hidden;
 }
 
+.welcome-logo {
+  position: absolute;
+  top: 28px;
+  left: clamp(20px, 5vw, 64px);
+  z-index: 2;
+}
+
+.welcome-logo .brand-logo-lockup {
+  width: clamp(220px, 34vw, 360px);
+}
+
 .welcome-gradient {
   position: absolute;
   inset: -20% 0 auto 0;
@@ -20,34 +31,20 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 32px;
-  padding: 56px clamp(20px, 5vw, 64px);
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 140px clamp(20px, 5vw, 64px) 88px;
   align-items: center;
+  justify-items: center;
   min-height: 100vh;
 }
 
 .welcome-copy {
   display: grid;
   gap: 16px;
-}
-
-.welcome-brand {
-  display: grid;
-  justify-items: start;
-  gap: 10px;
-}
-
-.welcome-brand .brand-logo-lockup {
-  width: min(230px, 72vw);
-}
-
-.welcome-kicker {
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  text-align: center;
+  justify-items: center;
+  max-width: 600px;
 }
 
 .welcome-copy h1 {
@@ -55,6 +52,7 @@
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 700;
   line-height: 1.1;
+  max-width: 520px;
 }
 
 .welcome-copy p {
@@ -69,6 +67,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
 }
 
 .welcome-button {
@@ -104,6 +103,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  width: 100%;
 }
 
 .welcome-metrics div {
@@ -129,10 +129,12 @@
   position: relative;
   display: grid;
   place-items: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .welcome-card {
-  width: min(100%, 420px);
+  width: min(100%, 380px);
   border-radius: 18px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -230,22 +232,20 @@
 
 .welcome-orbit {
   position: absolute;
-  inset: 14% auto auto 20%;
-  width: 200px;
-  height: 200px;
+  top: 30px;
+  left: calc(50% - 320px);
+  width: 180px;
+  height: 180px;
   border-radius: 999px;
   border: 1px solid rgba(201, 168, 76, 0.25);
   box-shadow: inset 0 0 30px rgba(201, 168, 76, 0.08);
   z-index: 0;
+  opacity: 0.6;
 }
 
 @media (max-width: 980px) {
   .welcome-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .welcome-visual {
-    order: -1;
+    padding-top: 120px;
   }
 }
 
@@ -256,5 +256,9 @@
 
   .welcome-footnotes {
     flex-direction: column;
+  }
+
+  .welcome-orbit {
+    display: none;
   }
 }

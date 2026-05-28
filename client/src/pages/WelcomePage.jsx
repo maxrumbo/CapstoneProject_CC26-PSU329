@@ -6,12 +6,11 @@ function WelcomePage() {
   return (
     <div className="welcome-shell">
       <div className="welcome-gradient" aria-hidden="true" />
+      <div className="welcome-logo">
+        <BrandLogo variant="lockup" />
+      </div>
       <main className="welcome-layout">
         <section className="welcome-copy">
-          <div className="welcome-brand">
-            <BrandLogo variant="lockup" />
-            <span className="welcome-kicker">SAWIT FinOps</span>
-          </div>
           <h1>Tenangin uang harianmu, rapiin langkah investasimu.</h1>
           <p>
             SAWIT membantu kamu mencatat transaksi, memantau langganan, dan
