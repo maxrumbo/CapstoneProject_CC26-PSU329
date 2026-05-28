@@ -20,7 +20,7 @@ INDEX_TICKERS = {
 }
 
 OHLCV_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
-LOOKBACK_DAYS = 7  # jumlah hari ke belakang yang dicek & di-refresh
+LOOKBACK_DAYS = 30  # jumlah hari ke belakang yang dicek & di-refresh
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(BASE_DIR, "data", "lq45_historical.csv")
