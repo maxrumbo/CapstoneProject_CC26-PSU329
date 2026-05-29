@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { loginUser } from "../services/authApi";
+import { useAuth } from "../context/useAuth";
 
 /* ─── Toast notification ─── */
 function Toast({ message, type = "success", onClose }) {
@@ -17,17 +19,17 @@ function Toast({ message, type = "success", onClose }) {
 
   return (
     <div
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex items-start gap-3 px-5 py-4 rounded-2xl text-sm max-w-sm w-full mx-4 shadow-2xl"
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-100 flex items-start gap-3 px-5 py-4 rounded-2xl text-sm max-w-sm w-full mx-4 shadow-2xl"
       style={{
         background: c.bg, border: `1px solid ${c.border}`,
         backdropFilter: "blur(20px)",
         animation: "toastIn 0.35s cubic-bezier(0.16,1,0.3,1) both",
       }}
     >
-      <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+      <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
         style={{ background: c.border, color: c.text }}>{c.icon}</span>
       <span style={{ color: "rgba(255,255,255,0.9)" }} className="leading-relaxed">{message}</span>
-      <button onClick={onClose} className="flex-shrink-0 ml-auto text-white/30 hover:text-white/70 transition-colors">✕</button>
+      <button onClick={onClose} className="shrink-0 ml-auto text-white/30 hover:text-white/70 transition-colors">✕</button>
     </div>
   );
 }
@@ -144,17 +146,35 @@ function OtpInput({ value, onChange }) {
 /* ─── AUTH STATES ─── */
 
 function LoginForm({ onSwitch, toast }) {
+  const { setSession } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false);
-    navigate("/dashboard");
+    setApiError("");
+
+    try {
+      const response = await loginUser({ email, password });
+      const authData = response?.data ?? response;
+      const accessToken = authData?.access_token || authData?.token;
+      const user = authData?.user || null;
+
+      if (!accessToken) {
+        throw new Error("Token login tidak ditemukan.");
+      }
+
+      setSession(accessToken, user, true);
+      navigate("/dashboard", { replace: true });
+    } catch (error) {
+      setApiError(error.message || "Login gagal. Coba lagi.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -166,6 +186,11 @@ function LoginForm({ onSwitch, toast }) {
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>Sign in to your SAWIT account</p>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        {apiError ? (
+          <p className="text-sm font-semibold text-red-300" role="alert">
+            {apiError}
+          </p>
+        ) : null}
         <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)}
           placeholder="you@example.com" autoComplete="email" required />
         <Input label="Password" type="password" value={password} onChange={e => setPassword(e.target.value)}
@@ -417,7 +442,7 @@ export default function AuthPage() {
           style={{ background: "radial-gradient(circle, rgba(34,197,94,0.18), transparent)", animation: "bgFloat 12s ease-in-out infinite" }} />
         <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(245,166,35,0.15), transparent)", animation: "bgFloat 15s ease-in-out infinite reverse" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-3xl"
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 rounded-full blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(96,165,250,0.05), transparent)" }} />
         {/* Grid */}
         <div className="absolute inset-0 opacity-[0.03]"
@@ -451,7 +476,7 @@ export default function AuthPage() {
           <img
             src="/logo-no-bg.png"
             alt="SAWIT"
-            className="h-auto w-[170px] -mb-6"
+            className="h-auto w-42.5 -mb-6"
             loading="lazy"
           />
         </div>
