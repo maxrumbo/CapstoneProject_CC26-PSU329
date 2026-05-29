@@ -36,8 +36,12 @@ function DashboardLayout() {
 
   return (
     <div className="dashboard-shell">
+      <div className="dashboard-shell-glow dashboard-shell-glow-left" aria-hidden="true" />
+      <div className="dashboard-shell-glow dashboard-shell-glow-right" aria-hidden="true" />
+
       <header className="dashboard-topbar">
-        <div className="dashboard-actions">
+        <div className="dashboard-topbar-surface">
+          <div className="dashboard-actions">
           <div className="dashboard-brand" aria-label="SAWIT">
             <BrandLogo variant="compact" />
           </div>
@@ -102,6 +106,7 @@ function DashboardLayout() {
               <span>{initial}</span>
             )}
           </button>
+          </div>
         </div>
       </header>
 

@@ -114,8 +114,8 @@ function TransactionsPage() {
   };
 
   return (
-    <>
-      <header className="dashboard-section">
+    <section className="dashboard-page-stack dashboard-transaction-page">
+      <header className="dashboard-section dashboard-section--transaction">
         <p className="dashboard-section-kicker">Fitur Aktif</p>
         <h2>Transaksi</h2>
         <span>Catat pemasukan dan pengeluaran, lalu pantau riwayat terbaru.</span>
@@ -154,7 +154,7 @@ function TransactionsPage() {
           )}
         </div>
       </section>
-    </>
+    </section>
   );
 }
 

@@ -8,8 +8,8 @@ const STOCK_STREAMLIT_URL =
 
 function InvestmentPage() {
   return (
-    <>
-      <header className="dashboard-section">
+    <section className="dashboard-page-stack dashboard-embed-page">
+      <header className="dashboard-section dashboard-section--embed">
         <p className="dashboard-section-kicker">Insight</p>
         <h2>Investasi</h2>
         <span>Dashboard saham LQ45 ditampilkan dari Streamlit.</span>
@@ -26,7 +26,7 @@ function InvestmentPage() {
           />
         </div>
       </section>
-    </>
+    </section>
   );
 }
 

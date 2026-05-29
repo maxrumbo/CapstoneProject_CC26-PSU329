@@ -9,8 +9,8 @@ const STREAMLIT_URL =
 
 function DashboardPage() {
   return (
-    <>
-      <header className="dashboard-section">
+    <section className="dashboard-page-stack dashboard-embed-page">
+      <header className="dashboard-section dashboard-section--embed">
         <div className="dashboard-section-title">
           <span className="dashboard-section-icon" aria-hidden="true">
             <Icon name="dashboard" size={18} />
@@ -30,7 +30,7 @@ function DashboardPage() {
           <AnalysisPreview streamlitUrl={STREAMLIT_URL} />
         </div>
       </section>
-    </>
+    </section>
   );
 }
 
