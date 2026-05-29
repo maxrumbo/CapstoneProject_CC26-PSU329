@@ -9,63 +9,6 @@ const landingSections = [
   { id: "contact", label: "Contact" },
 ];
 
-const searchTargets = [
-  {
-    keywords: [
-      "home", "beranda", "landing", "dashboard", "utama", "awal",
-    ],
-    id: "home",
-  },
-  {
-    keywords: [
-      "about", "about us", "tentang", "profil", "company", "story", "siapa kami",
-    ],
-    id: "about",
-  },
-  {
-    keywords: [
-      "service", "services", "fitur", "features", "layanan", "tools", "tool", "budget", "budgeting",
-      "transactions", "transaksi", "expense", "expenses", "cash flow", "ai", "insight", "recommendation",
-      "analytics", "analytics dashboard", "planning",
-    ],
-    id: "services",
-  },
-  {
-    keywords: [
-      "contact", "kontak", "support", "help", "bantuan", "email", "hubungi", "chat", "customer service",
-    ],
-    id: "contact",
-  },
-  {
-    keywords: ["login", "sign in", "masuk", "auth", "account", "akun"],
-    action: "login",
-  },
-  {
-    keywords: ["register", "sign up", "daftar", "create account", "buat akun", "join"],
-    action: "register",
-  },
-  {
-    keywords: ["transactions", "transaction", "transaksi", "expense", "expenses", "income", "pemasukan", "pengeluaran"],
-    action: "transactions",
-  },
-  {
-    keywords: ["wishlist", "target", "goal", "goals", "impian", "wishlist calculator", "calculator"],
-    action: "wishlist",
-  },
-  {
-    keywords: ["investment", "invest", "investasi", "portfolio", "asset", "assets", "yield", "return"],
-    action: "investment",
-  },
-  {
-    keywords: ["subscription", "subscriptions", "langganan", "membership", "billing"],
-    action: "subscriptions",
-  },
-  {
-    keywords: ["profile", "profil", "settings", "akun saya", "my account"],
-    action: "profile",
-  },
-];
-
 /* ─── Floating particle background ─── */
 function ParticleField() {
   const particles = Array.from({ length: 24 }).map((_, i) => {
@@ -134,33 +77,14 @@ function StatBadge({ className, label, value, color, delay }) {
 
 function HeroCharacter() {
   return (
-    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "320px", height: "400px" }}>
+    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "420px", height: "480px" }}>
       <div className="absolute inset-0 rounded-full blur-3xl opacity-30"
         style={{ background: "radial-gradient(circle, #F5A623 0%, #22c55e 60%, transparent 100%)" }} />
-      <div className="relative z-10 w-64 h-72 sm:w-72 sm:h-80 rounded-3xl flex items-end justify-center overflow-hidden"
-        style={{
-          background: "linear-gradient(145deg, rgba(245,166,35,0.12) 0%, rgba(74,222,128,0.08) 50%, rgba(30,35,38,0.6) 100%)",
-          border: "1px solid rgba(245,166,35,0.25)",
-          boxShadow: "0 0 60px rgba(245,166,35,0.15), inset 0 1px 0 rgba(255,255,255,0.08)",
-          backdropFilter: "blur(12px)",
-        }}
-      >
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "linear-gradient(rgba(245,166,35,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(245,166,35,0.4) 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-          }} />
-        <div className="relative z-10 flex flex-col items-center pb-6 gap-2">
-          <div className="w-20 h-20 rounded-full flex items-center justify-center text-4xl"
-            style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", boxShadow: "0 8px 32px rgba(245,166,35,0.5)" }}>
-            🌿
-          </div>
-          <span className="text-xs font-mono tracking-widest uppercase" style={{ color: "rgba(245,166,35,0.6)" }}>3D Character</span>
-          <span className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.3)" }}>Drop asset here</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24"
-          style={{ background: "linear-gradient(to top, rgba(15,20,25,0.95) 0%, rgba(15,20,25,0.5) 60%, transparent 100%)" }} />
+
+      <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "360px", height: "420px" }}>
+        <img src="/3Dpict.svg" alt="3D Character" className="hero-3dpict" />
       </div>
+
       <div className="w-48 h-10 mt-1 rounded-full blur-xl"
         style={{ background: "radial-gradient(ellipse, rgba(245,166,35,0.5) 0%, transparent 70%)" }} />
       <StatBadge className="-left-4 sm:-left-14" style={{ top: "40px" }} label="Portfolio" value="+24.8%" color="#22c55e" delay="0s" />
@@ -197,6 +121,8 @@ export default function WelcomePage() {
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
   const searchMessageTimerRef = useRef(null);
+  const lastSearchQueryRef = useRef("");
+  const activeMatchIndexRef = useRef(0);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
@@ -217,39 +143,107 @@ export default function WelcomePage() {
 
   const normalizeSearchText = (value) => value.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 
-  const rankSearchTarget = (query) => {
-    const normalizedQuery = normalizeSearchText(query);
-    const queryTokens = normalizedQuery.split(" ").filter(Boolean);
+  // Clear previous highlights added by the search (unwrap highlight spans)
+  const clearSearchHighlights = () => {
+    // remove inline highlight spans
+    const spans = Array.from(document.querySelectorAll(".search-highlight"));
+    spans.forEach((s) => {
+      const txt = document.createTextNode(s.textContent);
+      s.parentNode.replaceChild(txt, s);
+    });
+    lastSearchQueryRef.current = "";
+    activeMatchIndexRef.current = 0;
+  };
 
-    let bestTarget = null;
-    let bestScore = 0;
+  const getMatchSpans = () => Array.from(document.querySelectorAll(".search-highlight"));
 
-    for (const target of searchTargets) {
-      let score = 0;
+  const setActiveMatch = (index) => {
+    const list = getMatchSpans();
+    if (list.length === 0) return 0;
 
-      for (const keyword of target.keywords) {
-        const normalizedKeyword = normalizeSearchText(keyword);
-        const keywordTokens = normalizedKeyword.split(" ").filter(Boolean);
+    const safeIndex = ((index % list.length) + list.length) % list.length;
+    list.forEach((el, currentIndex) => {
+      el.classList.toggle("search-highlight-active", currentIndex === safeIndex);
+    });
 
-        if (normalizedQuery === normalizedKeyword) {
-          score += 8;
-        }
-
-        if (normalizedQuery.includes(normalizedKeyword) || normalizedKeyword.includes(normalizedQuery)) {
-          score += 5;
-        }
-
-        const tokenHits = queryTokens.filter((token) => keywordTokens.some((keywordToken) => keywordToken.includes(token) || token.includes(keywordToken))).length;
-        score += tokenHits;
-      }
-
-      if (score > bestScore) {
-        bestScore = score;
-        bestTarget = target;
-      }
+    const active = list[safeIndex];
+    if (active) {
+      active.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
-    return bestScore > 0 ? bestTarget : null;
+    activeMatchIndexRef.current = safeIndex;
+    return list.length;
+  };
+
+  const findAndHighlight = (q) => {
+    clearSearchHighlights();
+
+    if (!q) return 0;
+
+    // Search visible elements that contain text and are not too large containers
+    const all = Array.from(document.querySelectorAll("body *"));
+    const matches = all.filter((el) => {
+      if (!el || !el.textContent) return false;
+      // skip script, style, SVG path, and hidden elements
+      const tag = el.tagName.toLowerCase();
+      if (tag === "script" || tag === "style" || tag === "svg" || tag === "path") return false;
+      const style = window.getComputedStyle(el);
+      if (style && (style.display === "none" || style.visibility === "hidden" || style.opacity === "0")) return false;
+      // prefer leaf-ish nodes to avoid highlighting whole layout containers
+      if (el.children && el.children.length > 0) {
+        // allow small containers with few children
+        if (el.children.length > 3) return false;
+      }
+      return el.textContent.toLowerCase().includes(q);
+    });
+
+    // wrap all matched substrings in text nodes inside the first matching sections
+    const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(escapeRegExp(q), "ig");
+    let total = 0;
+
+    for (const el of matches) {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+
+      textNodes.forEach((node) => {
+        if (!node.nodeValue) return;
+        const originalText = node.nodeValue;
+        if (!regex.test(originalText)) return;
+
+        regex.lastIndex = 0;
+        const replaced = originalText.replace(regex, (match) => `<span class="search-highlight">${match}</span>`);
+        const temp = document.createElement("span");
+        temp.innerHTML = replaced;
+
+        while (temp.firstChild) {
+          node.parentNode.insertBefore(temp.firstChild, node);
+        }
+        node.parentNode.removeChild(node);
+
+        const count = (originalText.match(new RegExp(escapeRegExp(q), "ig")) || []).length;
+        total += count;
+      });
+    }
+
+    if (total > 0) {
+      setActiveMatch(0);
+    }
+
+    return total;
+  };
+
+  const cycleSearchMatch = (direction) => {
+    const list = getMatchSpans();
+    if (list.length === 0) return false;
+
+    const nextIndex = activeMatchIndexRef.current + direction;
+    setActiveMatch(nextIndex);
+    return true;
   };
 
   const handleSearchSubmit = (event) => {
@@ -263,63 +257,48 @@ export default function WelcomePage() {
     const normalized = normalizeSearchText(searchValue);
 
     if (!normalized) {
-      setSearchMessage("Try Home, About Us, Services, Contact, Login, Register, Transactions, Wishlist, or Investment.");
-      searchMessageTimerRef.current = window.setTimeout(() => {
-        setSearchMessage("");
-        searchMessageTimerRef.current = null;
-      }, 2200);
-      return;
-    }
-
-    const target = rankSearchTarget(normalized);
-
-    if (target?.id) {
+      // empty search: clear highlights and message
+      clearSearchHighlights();
       setSearchMessage("");
-      // For sections with id only, scroll to that section.
-      // For action-based targets (login/register/etc), use navigation.
-      if (!target?.action) {
-        scrollToSection(target.id);
-        return;
-      }
-    }
-
-    if (target?.action === "login") {
-      navigate("/auth?mode=login");
       return;
     }
 
+    // First try landing sections (exact/partial)
+    const landingMatch = landingSections.find((s) => {
+      const label = s.label.toLowerCase();
+      return (
+        normalized === s.id ||
+        normalized === label ||
+        normalized.includes(s.id) ||
+        normalized.includes(label) ||
+        label.includes(normalized)
+      );
+    });
 
-    if (target?.action === "register") {
-      navigate("/auth?mode=register");
+    if (landingMatch) {
+      clearSearchHighlights();
+      setSearchMessage("");
+      scrollToSection(landingMatch.id);
       return;
     }
 
-    if (target?.action === "transactions") {
-      navigate("/dashboard/transactions");
+    if (normalized === lastSearchQueryRef.current && cycleSearchMatch(1)) {
+      setSearchMessage("");
       return;
     }
 
-    if (target?.action === "wishlist") {
-      navigate("/dashboard/wishlist");
-      return;
+    // Otherwise perform page-find style search and highlight matched words
+    clearSearchHighlights();
+    const count = findAndHighlight(normalized);
+    if (count <= 0) {
+      setSearchMessage("No direct match found.");
+      lastSearchQueryRef.current = "";
+    } else {
+      setSearchMessage("");
+      lastSearchQueryRef.current = normalized;
     }
 
-    if (target?.action === "investment") {
-      navigate("/dashboard/investments");
-      return;
-    }
-
-    if (target?.action === "subscriptions") {
-      navigate("/dashboard/subscriptions");
-      return;
-    }
-
-    if (target?.action === "profile") {
-      navigate("/dashboard/profile");
-      return;
-    }
-
-    setSearchMessage("No direct match found. Try Home, Services, Transactions, Wishlist, Investment, or Login.");
+    // hide transient text-only message after delay, keep highlights/nav unless cleared
     searchMessageTimerRef.current = window.setTimeout(() => {
       setSearchMessage("");
       searchMessageTimerRef.current = null;
@@ -383,17 +362,11 @@ export default function WelcomePage() {
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
+          {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
         </form>
-
-        <button className="welcome-topbar-icon-button" type="button" aria-label="Open account" onClick={() => navigate("/auth?mode=login") }>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M20 21a8 8 0 10-16 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2" />
-          </svg>
-        </button>
+        {/* profile button removed from welcome topbar */}
       </header>
-
-      {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
+      
 
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center pt-24 py-24">
@@ -452,7 +425,7 @@ export default function WelcomePage() {
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-xs tracking-widest uppercase text-gray-300">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
+          <div className="w-px h-10 bg-linear-to-b from-white/40 to-transparent animate-pulse" />
         </div>
       </section>
 
