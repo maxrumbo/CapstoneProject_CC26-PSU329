@@ -446,7 +446,7 @@ function SubscriptionTracker() {
           </div>
 
           {isLoading && !subscriptions.length ? (
-            <div className="empty-state">Memuat langganan...</div>
+            <div className="page-loading" role="status">Memuat langganan...</div>
           ) : subscriptions.length ? (
             <div className="subscription-list">
               {subscriptions.map((subscription) => (

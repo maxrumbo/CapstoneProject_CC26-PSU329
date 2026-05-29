@@ -312,7 +312,7 @@ function WishlistCalculator() {
         <section className="wishlist-list-section" aria-label="Wishlist tersimpan">
           <div className="wishlist-list-header">
             <p className="eyebrow">Wishlist Tersimpan</p>
-            {isLoadingList && <span>Memuat...</span>}
+            {isLoadingList && <span className="wishlist-loading-label">Memuat...</span>}
           </div>
 
           <div className="wishlist-list">

@@ -231,23 +231,21 @@
   display: grid;
   place-items: center;
   gap: 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--muted);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  color: rgba(255, 255, 255, 0.74);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
+  text-align: center;
 }
 
 .page-loading::before {
   content: "";
-  width: 28px;
-  height: 28px;
-  border: 3px solid var(--primary-soft);
-  border-top-color: var(--primary);
+  width: 26px;
+  height: 26px;
   border-radius: 999px;
-  animation: loading-spin 700ms linear infinite;
+  background: conic-gradient(from 0deg, rgba(245, 166, 35, 0.08), rgba(245, 166, 35, 0.95) 48%, rgba(74, 222, 128, 0.95) 70%, rgba(74, 222, 128, 0.1));
+  mask: radial-gradient(circle at center, transparent 56%, #000 57%);
+  -webkit-mask: radial-gradient(circle at center, transparent 56%, #000 57%);
+  animation: loading-spin 1s linear infinite;
 }
 
 @keyframes loading-spin {

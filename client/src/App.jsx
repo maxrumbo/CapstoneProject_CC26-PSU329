@@ -21,10 +21,12 @@ const AuthPage = lazy(() => import("./pages/AuthPage"));
 
 function PageLoader({ label = "Memuat halaman..." }) {
   return (
-    <div className="auth-shell">
-      <main className="auth-main">
-        <div className="page-loading" role="status">
-          {label}
+    <div className="app-route-loader-shell">
+      <main className="app-route-loader-main">
+        <div className="app-route-loader" role="status" aria-live="polite">
+          <div className="sawit-loader-core sawit-loader-core-lg" aria-hidden="true" />
+          <img src="/logo-no-bg.png" alt="" className="app-route-loader-logo" />
+          <p className="app-route-loader-label">{label}</p>
         </div>
       </main>
     </div>

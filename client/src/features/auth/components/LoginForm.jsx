@@ -256,10 +256,17 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
         </div>
 
         <button className="auth-primary-button" type="submit" disabled={isLoading}>
-          <span className="button-content">
-            <Icon name="lock" size={15} />
-            {isLoading ? "Memproses..." : "Masuk ke SAWIT"}
-          </span>
+          {isLoading ? (
+            <span className="button-content">
+              <span className="auth-inline-loader" aria-hidden="true" />
+              Memproses...
+            </span>
+          ) : (
+            <span className="button-content">
+              <Icon name="lock" size={15} />
+              Masuk ke SAWIT
+            </span>
+          )}
         </button>
       </form>
 
@@ -318,10 +325,24 @@ function LoginForm({ onAuthSuccess, onSwitchToRegister }) {
               onClick={handleSendOtp}
               disabled={!resetData.email || isSendingOtp}
             >
-              {isSendingOtp ? "Mengirim OTP..." : "Kirim OTP"}
+              {isSendingOtp ? (
+                <span className="button-content">
+                  <span className="auth-inline-loader auth-inline-loader-muted" aria-hidden="true" />
+                  Mengirim OTP...
+                </span>
+              ) : (
+                "Kirim OTP"
+              )}
             </button>
             <button className="auth-primary-button" type="submit" disabled={isResetting}>
-              {isResetting ? "Memproses..." : "Reset Password"}
+              {isResetting ? (
+                <span className="button-content">
+                  <span className="auth-inline-loader" aria-hidden="true" />
+                  Memproses...
+                </span>
+              ) : (
+                "Reset Password"
+              )}
             </button>
           </div>
         </form>

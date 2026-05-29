@@ -332,10 +332,17 @@ function RegisterForm({ onSwitchToLogin }) {
         )}
 
         <button className="auth-primary-button" type="submit" disabled={isLoading}>
-          <span className="button-content">
-            <Icon name="user" size={15} />
-            {isLoading ? "Memproses..." : "Daftar"}
-          </span>
+          {isLoading ? (
+            <span className="button-content">
+              <span className="auth-inline-loader" aria-hidden="true" />
+              Memproses...
+            </span>
+          ) : (
+            <span className="button-content">
+              <Icon name="user" size={15} />
+              Daftar
+            </span>
+          )}
         </button>
       </form>
 

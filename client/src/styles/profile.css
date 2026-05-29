@@ -502,9 +502,22 @@
   min-height: 180px;
   display: grid;
   place-items: center;
-  color: var(--muted);
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.74);
   font-size: 13px;
   font-weight: 650;
+  text-align: center;
+}
+
+.profile-budget-loading::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: conic-gradient(from 0deg, rgba(245, 166, 35, 0.08), rgba(245, 166, 35, 0.95) 48%, rgba(74, 222, 128, 0.95) 70%, rgba(74, 222, 128, 0.1));
+  mask: radial-gradient(circle at center, transparent 56%, #000 57%);
+  -webkit-mask: radial-gradient(circle at center, transparent 56%, #000 57%);
+  animation: loading-spin 1s linear infinite;
 }
 
 .status-pill.danger {

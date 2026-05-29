@@ -2,7 +2,7 @@ function BrandLogo({ className = "", variant = "mark" }) {
   return (
     <img
       className={`brand-logo brand-logo-${variant}${className ? ` ${className}` : ""}`}
-      src="/logo-sawit.png"
+      src="/logo-no-bg.png"
       alt="Logo SAWIT"
       loading="lazy"
     />

@@ -36,8 +36,9 @@
 }
 
 .auth-brand-logo {
-  width: min(230px, 100%);
-  margin-bottom: 22px;
+  width: min(260px, 100%);
+  margin-bottom: 18px;
+  align-self: center;
 }
 
 .auth-kicker {
@@ -276,6 +277,21 @@
   border-color: rgba(201, 168, 76, 0.5);
 }
 
+.auth-inline-loader {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  display: inline-block;
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.2), #ffffff 62%, rgba(255, 255, 255, 0.24));
+  mask: radial-gradient(circle at center, transparent 54%, #000 56%);
+  -webkit-mask: radial-gradient(circle at center, transparent 54%, #000 56%);
+  animation: auth-inline-spin 0.9s linear infinite;
+}
+
+.auth-inline-loader-muted {
+  background: conic-gradient(from 0deg, rgba(27, 42, 31, 0.14), rgba(27, 42, 31, 0.95) 62%, rgba(27, 42, 31, 0.22));
+}
+
 .auth-primary-button:hover {
   background: var(--primary-dark);
 }
@@ -284,6 +300,12 @@
   opacity: 0.7;
   cursor: wait;
   transform: none;
+}
+
+@keyframes auth-inline-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .auth-error,

@@ -5,15 +5,56 @@
   overflow: hidden;
 }
 
-.welcome-logo {
-  position: absolute;
-  top: 28px;
-  left: clamp(20px, 5vw, 64px);
-  z-index: 2;
+.welcome-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 84px;
+  padding: 6px 22px 14px 20px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(320px, 520px);
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(18, 24, 30, 0.96), rgba(18, 24, 30, 0.88));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
 }
 
-.welcome-logo .brand-logo-lockup {
-  width: clamp(220px, 34vw, 360px);
+.welcome-topbar-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  line-height: 0;
+  transform: translateY(-32px);
+}
+
+.welcome-topbar-logo-mark {
+  width: clamp(106px, 11.5vw, 150px);
+  height: auto;
+  display: block;
+}
+
+.welcome-topbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 32px);
+  transform: translateY(-34px);
+}
+
+.welcome-topbar-link {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.welcome-topbar-link:hover {
+  color: #f5a623;
+  transform: translateY(-1px);
 }
 
 .welcome-gradient {
@@ -37,6 +78,88 @@
   align-items: center;
   justify-items: center;
   min-height: 100vh;
+}
+
+.welcome-searchbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 16px 0 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 166, 35, 0.42);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(245, 166, 35, 0.06));
+  box-shadow:
+    0 0 0 1px rgba(245, 166, 35, 0.08),
+    0 0 22px rgba(245, 166, 35, 0.2),
+    0 0 48px rgba(245, 166, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(-34px);
+}
+
+.welcome-searchbar:focus-within {
+  border-color: rgba(245, 166, 35, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(245, 166, 35, 0.12),
+    0 0 26px rgba(245, 166, 35, 0.28),
+    0 0 52px rgba(245, 166, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.welcome-searchbar-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.58);
+  transform: translateY(-0.5px);
+}
+
+.welcome-searchbar input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.welcome-searchbar input:focus,
+.welcome-searchbar input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.welcome-searchbar input:-webkit-autofill,
+.welcome-searchbar input:-webkit-autofill:focus,
+.welcome-searchbar input:-webkit-autofill:hover {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px rgba(18, 24, 30, 0.98) inset !important;
+}
+
+.welcome-searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.welcome-search-message {
+  position: fixed;
+  top: 90px;
+  right: 18px;
+  z-index: 55;
+  max-width: min(520px, calc(100vw - 36px));
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(18, 24, 30, 0.92);
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  box-shadow: 0 0 24px rgba(245, 166, 35, 0.12);
+  font-size: 12px;
+  backdrop-filter: blur(12px);
 }
 
 .welcome-copy {
