@@ -18,6 +18,9 @@ const ProfilePage = lazy(() => import("./pages/ProfilePage"));
 const DashboardLayout = lazy(() => import("./pages/DashboardLayout"));
 const WelcomePage = lazy(() => import("./pages/WelcomePage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
+const VerifyEmailPage = lazy(() =>
+  import("./features/auth/pages/VerifyEmailPage")
+);
 
 function PageLoader({ label = "Memuat halaman..." }) {
   return (
@@ -67,6 +70,7 @@ function App() {
       <Suspense fallback={<PageLoader />}>        
         <Routes>
           <Route path="/" element={<WelcomePage />} />
+          <Route path="/auth/verify-email" element={<VerifyEmailPage />} />
           <Route path="/auth" element={<AuthGate />} />
 
           <Route element={<RequireAuth />}>

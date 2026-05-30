@@ -18,6 +18,7 @@ class User(Base):
         default=lambda: datetime.now(timezone.utc),
         nullable=False,
     )
+    email_verified_at = Column(DateTime(timezone=True), nullable=True)
 
     # Relasi ke transaksi (lazy load)
     transactions = relationship("Transaction", back_populates="owner", cascade="all, delete-orphan")

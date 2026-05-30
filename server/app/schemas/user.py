@@ -1,7 +1,11 @@
 from datetime import datetime
+<<<<<<< HEAD
+from pydantic import BaseModel, EmailStr, computed_field, field_validator
+=======
 from typing import Optional
 
 from pydantic import BaseModel, EmailStr, field_validator
+>>>>>>> 6bb0a55f7f503976c3ed7232da107ac1e3c4de8a
 
 
 class UserRegister(BaseModel):
@@ -35,6 +39,12 @@ class UserResponse(BaseModel):
     display_name: str
     photo_url: Optional[str] = None
     created_at: datetime
+    email_verified_at: datetime | None = None
+
+    @computed_field
+    @property
+    def is_email_verified(self) -> bool:
+        return self.email_verified_at is not None
 
     model_config = {"from_attributes": True}
 

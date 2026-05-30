@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from sqlalchemy import inspect, text
 
 from app.core.config import settings
 from app.db.base import Base
@@ -23,6 +24,27 @@ from app.api.routes.advice import router as advice_router
 Base.metadata.create_all(bind=engine)
 ensure_subscription_billing_cycle(engine)
 ensure_user_photo_url(engine)
+
+
+def ensure_email_verified_column() -> None:
+    columns = {column["name"] for column in inspect(engine).get_columns("users")}
+    if "email_verified_at" in columns:
+        return
+
+    with engine.begin() as connection:
+        connection.execute(
+            text("ALTER TABLE users ADD COLUMN email_verified_at TIMESTAMP WITH TIME ZONE")
+        )
+        connection.execute(
+            text(
+                "UPDATE users "
+                "SET email_verified_at = created_at "
+                "WHERE email_verified_at IS NULL"
+            )
+        )
+
+
+ensure_email_verified_column()
 
 # ── Inisialisasi aplikasi FastAPI ─────────────────────────────────────────────
 app = FastAPI(

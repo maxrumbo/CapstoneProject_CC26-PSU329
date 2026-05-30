@@ -1,13 +1,15 @@
 from datetime import datetime, timedelta, timezone
 import hashlib
 import secrets
-from fastapi import APIRouter, Depends, HTTPException, status
+from urllib.parse import quote
+
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 
-# Menambahkan get_current_user ke baris import
 from app.api.dependencies import get_db, get_current_user
 from app.core.config import settings
-from app.core.security import hash_password, verify_password, create_access_token
+from app.core.security import create_access_token, hash_password, verify_password
 from app.models.otp import OtpCode
 from app.models.user import User
 from app.schemas.auth import (
@@ -15,10 +17,12 @@ from app.schemas.auth import (
     OtpRequest,
     OtpRequestResponse,
     RegisterWithOtp,
+    ResendVerificationRequest,
     ResetPasswordWithOtp,
 )
-from app.schemas.user import UserRegister, UserLogin, UserResponse, TokenResponse
 from app.schemas.base import APIResponse
+from app.schemas.user import TokenResponse, UserLogin, UserRegister, UserResponse
+from app.services.email import send_otp_email, send_verification_email
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
@@ -27,9 +31,25 @@ def hash_otp_code(code: str) -> str:
     return hashlib.sha256(code.encode("utf-8")).hexdigest()
 
 
+def mark_existing_codes_consumed(db: Session, email: str, purpose: str) -> None:
+    now = datetime.now(timezone.utc)
+    (
+        db.query(OtpCode)
+        .filter(
+            OtpCode.email == email.lower(),
+            OtpCode.purpose == purpose,
+            OtpCode.consumed_at.is_(None),
+        )
+        .update({"consumed_at": now}, synchronize_session=False)
+    )
+
+
 def create_otp(db: Session, email: str, purpose: str) -> tuple[str, datetime]:
     code = f"{secrets.randbelow(1_000_000):06d}"
-    expires_at = datetime.now(timezone.utc) + timedelta(minutes=settings.OTP_EXPIRE_MINUTES)
+    expires_at = datetime.now(timezone.utc) + timedelta(
+        minutes=settings.OTP_EXPIRE_MINUTES
+    )
+    mark_existing_codes_consumed(db, email, purpose)
     otp = OtpCode(
         email=email.lower(),
         purpose=purpose,
@@ -39,6 +59,33 @@ def create_otp(db: Session, email: str, purpose: str) -> tuple[str, datetime]:
     db.add(otp)
     db.commit()
     return code, expires_at
+
+
+def create_email_verification_token(db: Session, email: str) -> tuple[str, datetime]:
+    token = secrets.token_urlsafe(32)
+    expires_at = datetime.now(timezone.utc) + timedelta(
+        minutes=settings.EMAIL_VERIFICATION_EXPIRE_MINUTES
+    )
+    mark_existing_codes_consumed(db, email, "email_verification")
+    verification = OtpCode(
+        email=email.lower(),
+        purpose="email_verification",
+        code_hash=hash_otp_code(token),
+        expires_at=expires_at,
+    )
+    db.add(verification)
+    db.commit()
+    return token, expires_at
+
+
+def build_verification_link(request: Request, token: str) -> str:
+    return f"{request.url_for('verify_email')}?token={quote(token)}"
+
+
+def send_user_verification_email(request: Request, db: Session, user: User) -> None:
+    token, _ = create_email_verification_token(db, user.email)
+    verification_link = build_verification_link(request, token)
+    send_verification_email(user.email, user.display_name, verification_link)
 
 
 def verify_otp(db: Session, email: str, purpose: str, code: str) -> None:
@@ -65,21 +112,15 @@ def verify_otp(db: Session, email: str, purpose: str, code: str) -> None:
     db.commit()
 
 
-def send_otp_email(email: str, code: str, purpose: str) -> None:
-    # Stub dev: log to server console. Replace with real email provider.
-    print(f"[OTP:{purpose}] {email} -> {code}")
-
-
-
 @router.post(
     "/register",
     response_model=APIResponse[UserResponse],
     status_code=status.HTTP_201_CREATED,
     summary="Daftar akun baru",
 )
-def register(payload: UserRegister, db: Session = Depends(get_db)):
-    # Cek apakah email sudah dipakai
-    existing = db.query(User).filter(User.email == payload.email).first()
+def register(payload: UserRegister, request: Request, db: Session = Depends(get_db)):
+    email = payload.email.lower()
+    existing = db.query(User).filter(User.email == email).first()
     if existing:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -87,7 +128,7 @@ def register(payload: UserRegister, db: Session = Depends(get_db)):
         )
 
     user = User(
-        email=payload.email,
+        email=email,
         hashed_password=hash_password(payload.password),
         display_name=payload.display_name,
     )
@@ -95,10 +136,83 @@ def register(payload: UserRegister, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(user)
 
+    send_user_verification_email(request, db, user)
+
     return APIResponse(
         data=UserResponse.model_validate(user),
-        message=f"Selamat datang, {user.display_name}! Akun berhasil dibuat.",
+        message="Registrasi berhasil. Cek email untuk verifikasi akun.",
     )
+
+
+@router.post(
+    "/resend-verification",
+    response_model=APIResponse[None],
+    summary="Kirim ulang link verifikasi email",
+)
+def resend_verification(
+    payload: ResendVerificationRequest,
+    request: Request,
+    db: Session = Depends(get_db),
+):
+    user = db.query(User).filter(User.email == payload.email.lower()).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Email tidak ditemukan",
+        )
+
+    if user.email_verified_at is not None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email sudah diverifikasi",
+        )
+
+    send_user_verification_email(request, db, user)
+    return APIResponse(message="Link verifikasi dikirim ulang ke email.")
+
+
+@router.get(
+    "/verify-email",
+    summary="Verifikasi email dan redirect ke frontend dengan token login",
+)
+def verify_email(token: str, db: Session = Depends(get_db)):
+    now = datetime.now(timezone.utc)
+    verification = (
+        db.query(OtpCode)
+        .filter(
+            OtpCode.purpose == "email_verification",
+            OtpCode.code_hash == hash_otp_code(token),
+            OtpCode.consumed_at.is_(None),
+            OtpCode.expires_at > now,
+        )
+        .first()
+    )
+
+    if not verification:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Link verifikasi tidak valid atau kedaluwarsa",
+        )
+
+    user = db.query(User).filter(User.email == verification.email).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="User untuk link verifikasi tidak ditemukan",
+        )
+
+    if user.email_verified_at is None:
+        user.email_verified_at = now
+    verification.consumed_at = now
+    db.commit()
+    db.refresh(user)
+
+    access_token = create_access_token(data={"sub": str(user.id)})
+    redirect_url = (
+        f"{settings.FRONTEND_VERIFY_EMAIL_URL}"
+        f"#access_token={quote(access_token)}&token_type=bearer"
+    )
+    return RedirectResponse(url=redirect_url, status_code=status.HTTP_302_FOUND)
 
 
 @router.post(
@@ -134,28 +248,28 @@ def request_otp(payload: OtpRequest, db: Session = Depends(get_db)):
     )
 
 
-
-
 @router.post(
     "/register-otp",
     response_model=APIResponse[UserResponse],
     status_code=status.HTTP_201_CREATED,
-    summary="Daftar akun baru dengan OTP",
+    summary="Daftar akun baru dengan OTP (deprecated)",
 )
 def register_with_otp(payload: RegisterWithOtp, db: Session = Depends(get_db)):
-    existing = db.query(User).filter(User.email == payload.email).first()
+    email = payload.email.lower()
+    existing = db.query(User).filter(User.email == email).first()
     if existing:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Email sudah terdaftar",
         )
 
-    verify_otp(db, payload.email, "signup", payload.code)
+    verify_otp(db, email, "signup", payload.code)
 
     user = User(
-        email=payload.email,
+        email=email,
         hashed_password=hash_password(payload.password),
         display_name=payload.display_name,
+        email_verified_at=datetime.now(timezone.utc),
     )
     db.add(user)
     db.commit()
@@ -166,13 +280,14 @@ def register_with_otp(payload: RegisterWithOtp, db: Session = Depends(get_db)):
         message=f"Selamat datang, {user.display_name}! Akun berhasil dibuat.",
     )
 
+
 @router.post(
     "/login",
     response_model=APIResponse[TokenResponse],
     summary="Login dan dapatkan JWT token",
 )
 def login(payload: UserLogin, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == payload.email).first()
+    user = db.query(User).filter(User.email == payload.email.lower()).first()
 
     if not user or not verify_password(payload.password, user.hashed_password):
         raise HTTPException(
@@ -181,7 +296,12 @@ def login(payload: UserLogin, db: Session = Depends(get_db)):
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # "sub" di JWT berisi user_id (sebagai string — standar JWT)
+    if user.email_verified_at is None:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Email belum diverifikasi. Cek email untuk link verifikasi.",
+        )
+
     token = create_access_token(data={"sub": str(user.id)})
 
     return APIResponse(
@@ -200,7 +320,7 @@ def login(payload: UserLogin, db: Session = Depends(get_db)):
     summary="Reset password dengan OTP",
 )
 def reset_password(payload: ResetPasswordWithOtp, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == payload.email).first()
+    user = db.query(User).filter(User.email == payload.email.lower()).first()
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -212,8 +332,6 @@ def reset_password(payload: ResetPasswordWithOtp, db: Session = Depends(get_db))
     db.commit()
 
     return APIResponse(message="Password berhasil diperbarui.")
-
-
 
 
 @router.post(
@@ -252,6 +370,7 @@ def change_password_with_otp(
     db.commit()
 
     return APIResponse(message="Password berhasil diperbarui.")
+
 
 @router.get(
     "/me",
