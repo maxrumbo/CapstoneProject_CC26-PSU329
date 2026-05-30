@@ -13,6 +13,15 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 jam
     OTP_EXPIRE_MINUTES: int = 10
     OTP_DEV_MODE: bool = True
+    EMAIL_VERIFICATION_EXPIRE_MINUTES: int = 30
+    FRONTEND_VERIFY_EMAIL_URL: str = "http://localhost:5173/auth/verify-email"
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USERNAME: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_FROM_EMAIL: str = ""
+    SMTP_FROM_NAME: str = "SAWIT"
+    SMTP_USE_TLS: bool = True
     DEMO_USER_ENABLED: bool = True
     DEMO_USER_EMAIL: str = "sawit@sawit.id"
     DEMO_USER_PASSWORD: str = "sawit123"

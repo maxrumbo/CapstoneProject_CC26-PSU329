@@ -1,5 +1,5 @@
 from datetime import datetime
-from pydantic import BaseModel, EmailStr, field_validator
+from pydantic import BaseModel, EmailStr, computed_field, field_validator
 
 
 class UserRegister(BaseModel):
@@ -32,6 +32,12 @@ class UserResponse(BaseModel):
     email: str
     display_name: str
     created_at: datetime
+    email_verified_at: datetime | None = None
+
+    @computed_field
+    @property
+    def is_email_verified(self) -> bool:
+        return self.email_verified_at is not None
 
     model_config = {"from_attributes": True}
 

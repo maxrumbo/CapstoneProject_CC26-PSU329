@@ -57,3 +57,7 @@ class ChangePasswordWithOtp(BaseModel):
         return v
 
 
+class ResendVerificationRequest(BaseModel):
+    email: EmailStr
+
+

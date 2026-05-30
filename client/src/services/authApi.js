@@ -32,6 +32,13 @@ export async function requestOtp(payload) {
   });
 }
 
+export async function resendVerification(payload) {
+  return apiRequest("/auth/resend-verification", {
+    method: "POST",
+    body: payload,
+  });
+}
+
 export async function registerWithOtp(payload) {
   const registerPayload = {
     email: payload.email,
