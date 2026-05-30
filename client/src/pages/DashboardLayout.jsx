@@ -1,4 +1,6 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import BrandLogo from "../components/brand/BrandLogo";
+import FloatingAnalisisAi from "../components/advice/FloatingAnalisisAi";
 import Icon from "../components/ui/Icon";
 import { useAuth } from "../context/useAuth";
 
@@ -29,12 +31,21 @@ function DashboardLayout() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const displayName = user?.display_name || user?.email || "Akun SAWIT";
+  const photoUrl = user?.photo_url || "";
   const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
 
   return (
     <div className="dashboard-shell">
+      <div className="dashboard-shell-glow dashboard-shell-glow-left" aria-hidden="true" />
+      <div className="dashboard-shell-glow dashboard-shell-glow-right" aria-hidden="true" />
+
       <header className="dashboard-topbar">
-        <div className="dashboard-actions">
+        <div className="dashboard-topbar-surface">
+          <div className="dashboard-actions">
+          <div className="dashboard-brand" aria-label="SAWIT">
+            <BrandLogo variant="compact" />
+          </div>
+
           <label className="dashboard-search">
             <span className="dashboard-search-icon">
               <Icon name="search" size={16} />
@@ -63,12 +74,21 @@ function DashboardLayout() {
             ))}
           </nav>
 
-          <div className="dashboard-topbar-feature" aria-label="Fitur aktif">
+          <NavLink
+            to="/dashboard"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "dashboard-topbar-feature active"
+                : "dashboard-topbar-feature"
+            }
+            aria-label="Buka Dashboard Analitik"
+          >
             <span className="dashboard-topbar-icon" aria-hidden="true">
               <Icon name="dashboard" size={16} />
             </span>
             <span className="dashboard-topbar-title">Dashboard Analitik</span>
-          </div>
+          </NavLink>
 
           <button
             className="dashboard-avatar"
@@ -76,14 +96,25 @@ function DashboardLayout() {
             onClick={() => navigate("/dashboard/profile")}
             aria-label="Buka profil"
           >
-            <span>{initial}</span>
+            {photoUrl ? (
+              <img
+                className="dashboard-avatar-image"
+                src={photoUrl}
+                alt="Foto profil"
+              />
+            ) : (
+              <span>{initial}</span>
+            )}
           </button>
+          </div>
         </div>
       </header>
 
       <main className="dashboard-content">
         <Outlet />
       </main>
+
+      <FloatingAnalisisAi />
     </div>
   );
 }

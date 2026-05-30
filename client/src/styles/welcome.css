@@ -5,6 +5,58 @@
   overflow: hidden;
 }
 
+.welcome-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 84px;
+  padding: 6px 22px 14px 20px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(320px, 520px);
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(18, 24, 30, 0.96), rgba(18, 24, 30, 0.88));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.welcome-topbar-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  line-height: 0;
+  transform: translateY(-32px);
+}
+
+.welcome-topbar-logo-mark {
+  width: clamp(106px, 11.5vw, 150px);
+  height: auto;
+  display: block;
+}
+
+.welcome-topbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 32px);
+  transform: translateY(-34px);
+}
+
+.welcome-topbar-link {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.welcome-topbar-link:hover {
+  color: #f5a623;
+  transform: translateY(-1px);
+}
+
 .welcome-gradient {
   position: absolute;
   inset: -20% 0 auto 0;
@@ -20,24 +72,153 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 32px;
-  padding: 56px clamp(20px, 5vw, 64px);
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 140px clamp(20px, 5vw, 64px) 88px;
   align-items: center;
+  justify-items: center;
   min-height: 100vh;
+}
+
+.welcome-searchbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 16px 0 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 166, 35, 0.42);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(245, 166, 35, 0.06));
+  box-shadow:
+    0 0 0 1px rgba(245, 166, 35, 0.08),
+    0 0 22px rgba(245, 166, 35, 0.2),
+    0 0 48px rgba(245, 166, 35, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(-34px);
+  position: relative;
+}
+
+.welcome-searchbar:focus-within {
+  border-color: rgba(245, 166, 35, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(245, 166, 35, 0.12),
+    0 0 26px rgba(245, 166, 35, 0.28),
+    0 0 52px rgba(245, 166, 35, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.welcome-searchbar-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.58);
+  transform: translateY(-0.5px);
+}
+
+.welcome-searchbar input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.welcome-searchbar input:focus,
+.welcome-searchbar input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.welcome-searchbar input:-webkit-autofill,
+.welcome-searchbar input:-webkit-autofill:focus,
+.welcome-searchbar input:-webkit-autofill:hover {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px rgba(18, 24, 30, 0.98) inset !important;
+}
+
+.welcome-searchbar input::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.welcome-search-message {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 12px;
+  z-index: 55;
+  max-width: min(420px, calc(100vw - 48px));
+  padding: 8px 14px;
+  border-radius: 999px;
+  /* orange gradient like the primary CTA */
+  background: linear-gradient(135deg, #F5A623, #e08000);
+  color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px rgba(245,166,35,0.18);
+  font-size: 13px;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+/* inline highlight for matched words only */
+.search-highlight {
+  display: inline;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration-line: underline;
+  text-decoration-color: #F5A623;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 120ms ease;
+}
+.search-highlight:hover,
+.search-highlight:focus {
+  text-decoration-color: #ffd080;
+}
+
+/* active match */
+.search-highlight-active {
+  text-decoration-thickness: 3px;
+  text-decoration-color: #ffd36a;
+}
+
+.welcome-search-message .search-nav-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: 800;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin: 0 6px;
+  cursor: pointer;
+}
+.welcome-search-message .search-nav-btn:hover {
+  background: rgba(255,255,255,0.06);
+}
+.welcome-search-message .search-nav-count {
+  font-weight: 800;
+  color: white;
+  padding: 6px 8px;
 }
 
 .welcome-copy {
   display: grid;
   gap: 16px;
-}
-
-.welcome-kicker {
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  text-align: center;
+  justify-items: center;
+  max-width: 600px;
 }
 
 .welcome-copy h1 {
@@ -45,6 +226,7 @@
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 700;
   line-height: 1.1;
+  max-width: 520px;
 }
 
 .welcome-copy p {
@@ -59,6 +241,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
 }
 
 .welcome-button {
@@ -94,6 +277,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  width: 100%;
 }
 
 .welcome-metrics div {
@@ -119,10 +303,12 @@
   position: relative;
   display: grid;
   place-items: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .welcome-card {
-  width: min(100%, 420px);
+  width: min(100%, 380px);
   border-radius: 18px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -220,22 +406,46 @@
 
 .welcome-orbit {
   position: absolute;
-  inset: 14% auto auto 20%;
-  width: 200px;
-  height: 200px;
+  top: 30px;
+  left: calc(50% - 320px);
+  width: 180px;
+  height: 180px;
   border-radius: 999px;
   border: 1px solid rgba(201, 168, 76, 0.25);
   box-shadow: inset 0 0 30px rgba(201, 168, 76, 0.08);
   z-index: 0;
+  opacity: 0.6;
+}
+
+.hero-frame {
+  display: grid;
+  place-items: center;
+}
+
+.hero-3dpict {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* highlight containers found by search */
+.search-highlight-container {
+  background: linear-gradient(135deg, rgba(245,166,35,0.14), rgba(224,161,89,0.06));
+  box-shadow: 0 8px 24px rgba(245,166,35,0.08) inset;
+  border-radius: 8px;
+  padding: 6px 8px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.search-highlight-container:focus,
+.search-highlight-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(245,166,35,0.14);
 }
 
 @media (max-width: 980px) {
   .welcome-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .welcome-visual {
-    order: -1;
+    padding-top: 120px;
   }
 }
 
@@ -247,4 +457,22 @@
   .welcome-footnotes {
     flex-direction: column;
   }
+
+  .welcome-orbit {
+    display: none;
+  }
+}
+
+/* Hide large decorative user silhouette that appears in the hero */
+.welcome-layout > svg,
+.welcome-visual svg,
+.welcome-hero-svg,
+.welcome-silhouette {
+  display: none !important;
+}
+
+/* Also hide any top-level large SVG added directly inside the page container
+   (covers decorative silhouette inserted outside the .welcome-layout element) */
+.relative.min-h-screen > svg {
+  display: none !important;
 }

@@ -68,6 +68,11 @@ export function AuthProvider({ children }) {
     setIsAuthenticated(false);
   }, []);
 
+  const updateUser = useCallback((nextUser) => {
+    setUser(nextUser || null);
+    updateStoredUser(nextUser, readAuthSession().storageType);
+  }, []);
+
   const value = useMemo(
     () => ({
       user,
@@ -75,9 +80,10 @@ export function AuthProvider({ children }) {
       isAuthenticated,
       isChecking,
       setSession,
+      updateUser,
       clearSession,
     }),
-    [user, token, isAuthenticated, isChecking, setSession, clearSession]
+    [user, token, isAuthenticated, isChecking, setSession, updateUser, clearSession]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

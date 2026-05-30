@@ -87,10 +87,27 @@
   gap: 10px;
 }
 
-.subscription-form input:disabled {
+.subscription-form select {
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.subscription-form input:disabled,
+.subscription-form select:disabled {
   color: var(--muted);
   background: var(--surface-soft);
   cursor: not-allowed;
+}
+
+.subscription-cycle-help {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .subscription-secondary-button {
@@ -133,9 +150,23 @@
 }
 
 .subscription-loading-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--muted);
   font-size: 12px;
   font-weight: 600;
+}
+
+.subscription-loading-label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: conic-gradient(from 0deg, rgba(245, 166, 35, 0.08), rgba(245, 166, 35, 0.95) 48%, rgba(74, 222, 128, 0.95) 70%, rgba(74, 222, 128, 0.1));
+  mask: radial-gradient(circle at center, transparent 55%, #000 56%);
+  -webkit-mask: radial-gradient(circle at center, transparent 55%, #000 56%);
+  animation: loading-spin 1s linear infinite;
 }
 
 .subscription-list {
@@ -214,6 +245,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .subscription-action-button {

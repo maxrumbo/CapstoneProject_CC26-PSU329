@@ -1,3 +1,6 @@
+# ========================
+# Node & Frontend (React/Vite)
+# ========================
 # Logs
 logs
 *.log
@@ -7,11 +10,51 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+/client/node_modules/
+.pnp
+.pnp.js
+
+# Build / Production
+dist/
+dist-ssr/
+/client/dist/
+build/
+/client/build/
+
+# Tailwind
+.tailwind/
+
+# ========================
+# Backend (Python)
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.env/
+.venv/
+venv/
+ENV/
+env.bak/
+/server/.venv/
+/server/venv/
+
+# Python logs & testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ========================
+# General & Environment
+# ========================
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Editor directories and files
 .vscode/*

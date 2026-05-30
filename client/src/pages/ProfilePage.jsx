@@ -4,6 +4,7 @@ import Icon from "../components/ui/Icon";
 import { useAuth } from "../context/useAuth";
 import { changePasswordWithOtp, requestProfileOtp } from "../services/authApi";
 import { getBudgetSummary, setBudget as setBudgetApi } from "../services/budgetApi";
+import { updateProfilePhoto } from "../services/profileApi";
 import {
   BUDGET_CATEGORIES,
   createEmptyCategoryLimits,
@@ -71,9 +72,19 @@ const buildBudgetPayload = (month, categoryLimits) => ({
   })),
 });
 
+const MAX_PROFILE_PHOTO_SIZE = 1_500_000;
+
+const readFileAsDataUrl = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || ""));
+    reader.onerror = () => reject(new Error("Gagal membaca file foto."));
+    reader.readAsDataURL(file);
+  });
+
 function ProfilePage() {
   const navigate = useNavigate();
-  const { token, user, clearSession } = useAuth();
+  const { token, user, updateUser, clearSession } = useAuth();
   const [profileOverrides, setProfileOverrides] = useState({
     name: "",
     email: "",
@@ -82,6 +93,7 @@ function ProfilePage() {
   const displayName =
     profileOverrides.name || user?.display_name || user?.email || "Pengguna SAWIT";
   const email = profileOverrides.email || user?.email || "-";
+  const savedPhotoUrl = profileOverrides.photoUrl || user?.photo_url || "";
   const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
   const [budgetMonth] = useState(getCurrentMonth);
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -91,6 +103,8 @@ function ProfilePage() {
   const [profileOtpError, setProfileOtpError] = useState("");
   const [isSendingProfileOtp, setIsSendingProfileOtp] = useState(false);
   const [isChangingPassword, setIsChangingPassword] = useState(false);
+  const [isSavingProfile, setIsSavingProfile] = useState(false);
+  const [shouldRemovePhoto, setShouldRemovePhoto] = useState(false);
   const [editDraft, setEditDraft] = useState({
     name: displayName,
     email,
@@ -159,22 +173,6 @@ function ProfilePage() {
       isActive = false;
     };
   }, [budgetMonth, token]);
-
-  useEffect(() => {
-    setEditDraft({ name: displayName, email, password: "" });
-    setIsPasswordEditing(false);
-    setProfileOtp("");
-    setProfileOtpMessage("");
-    setProfileOtpError("");
-  }, [displayName, email]);
-
-  useEffect(() => {
-    return () => {
-      if (photoPreview) {
-        URL.revokeObjectURL(photoPreview);
-      }
-    };
-  }, [photoPreview]);
 
   const handleCategoryBudgetChange = (categoryName, value) => {
     if (!isBudgetEditable) {
@@ -245,15 +243,25 @@ function ProfilePage() {
   };
 
   const handleOpenEdit = () => {
+    setEditDraft({ name: displayName, email, password: "" });
+    setIsPasswordEditing(false);
+    setProfileOtp("");
+    setProfileOtpMessage("");
+    setProfileOtpError("");
+    setPhotoPreview("");
+    setShouldRemovePhoto(false);
     setIsEditOpen(true);
   };
 
   const handleCloseEdit = () => {
     setIsEditOpen(false);
     setIsPasswordEditing(false);
+    setEditDraft({ name: displayName, email, password: "" });
     setProfileOtp("");
     setProfileOtpMessage("");
     setProfileOtpError("");
+    setPhotoPreview("");
+    setShouldRemovePhoto(false);
   };
 
   const handleEditChange = (event) => {
@@ -261,18 +269,36 @@ function ProfilePage() {
     setEditDraft((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePhotoChange = (event) => {
+  const handlePhotoChange = async (event) => {
     const file = event.target.files?.[0];
     if (!file) {
       return;
     }
 
-    if (photoPreview) {
-      URL.revokeObjectURL(photoPreview);
+    if (!file.type.startsWith("image/")) {
+      setProfileOtpError("File harus berupa gambar.");
+      return;
     }
 
-    const nextUrl = URL.createObjectURL(file);
-    setPhotoPreview(nextUrl);
+    if (file.size > MAX_PROFILE_PHOTO_SIZE) {
+      setProfileOtpError("Ukuran foto maksimal 1,5 MB.");
+      return;
+    }
+
+    try {
+      const nextPhotoUrl = await readFileAsDataUrl(file);
+      setPhotoPreview(nextPhotoUrl);
+      setShouldRemovePhoto(false);
+      setProfileOtpError("");
+    } catch (err) {
+      setProfileOtpError(err.message || "Gagal membaca foto.");
+    }
+  };
+
+  const handleRemovePhoto = () => {
+    setPhotoPreview("");
+    setShouldRemovePhoto(true);
+    setProfileOtpError("");
   };
 
   const handleSendProfileOtp = async () => {
@@ -299,44 +325,62 @@ function ProfilePage() {
     event.preventDefault();
     setProfileOtpMessage("");
     setProfileOtpError("");
+    setIsSavingProfile(true);
 
-    if (isPasswordEditing) {
-      if (!editDraft.password.trim()) {
-        setProfileOtpError("Password baru wajib diisi.");
-        return;
-      }
+    try {
+      if (isPasswordEditing) {
+        if (!editDraft.password.trim()) {
+          setProfileOtpError("Password baru wajib diisi.");
+          return;
+        }
 
-      if (!profileOtp.trim()) {
-        setProfileOtpError("Kode OTP wajib diisi.");
-        return;
-      }
+        if (!profileOtp.trim()) {
+          setProfileOtpError("Kode OTP wajib diisi.");
+          return;
+        }
 
-      setIsChangingPassword(true);
+        setIsChangingPassword(true);
 
-      try {
         await changePasswordWithOtp(token, {
           code: profileOtp,
           new_password: editDraft.password,
         });
         setProfileOtpMessage("Password berhasil diperbarui.");
-      } catch (err) {
-        setProfileOtpError(err.message || "Gagal memperbarui password.");
-        setIsChangingPassword(false);
-        return;
-      } finally {
         setIsChangingPassword(false);
       }
-    }
 
-    setProfileOverrides({
-      name: editDraft.name.trim() || displayName,
-      email: editDraft.email.trim() || email,
-      photoUrl: photoPreview || profileOverrides.photoUrl,
-    });
-    setIsEditOpen(false);
-    setIsPasswordEditing(false);
-    setEditDraft((prev) => ({ ...prev, password: "" }));
-    setProfileOtp("");
+      let nextPhotoUrl = savedPhotoUrl;
+
+      if (photoPreview || shouldRemovePhoto) {
+        const response = await updateProfilePhoto(
+          token,
+          shouldRemovePhoto ? null : photoPreview
+        );
+        const updatedProfile = response.data;
+        nextPhotoUrl = updatedProfile?.photo_url || "";
+        updateUser({
+          ...user,
+          ...updatedProfile,
+        });
+      }
+
+      setProfileOverrides({
+        name: editDraft.name.trim() || displayName,
+        email: editDraft.email.trim() || email,
+        photoUrl: nextPhotoUrl,
+      });
+      setIsEditOpen(false);
+      setIsPasswordEditing(false);
+      setEditDraft((prev) => ({ ...prev, password: "" }));
+      setPhotoPreview("");
+      setShouldRemovePhoto(false);
+      setProfileOtp("");
+    } catch (err) {
+      setProfileOtpError(err.message || "Gagal menyimpan profil.");
+    } finally {
+      setIsChangingPassword(false);
+      setIsSavingProfile(false);
+    }
   };
 
   const handleHeroKeyDown = (event) => {
@@ -350,7 +394,7 @@ function ProfilePage() {
     <>
       <button className="profile-back-button" type="button" onClick={() => navigate(-1)}>
         <span className="button-content">
-          <Icon name="arrowRight" size={15} />
+          <Icon name="arrowLeft" size={15} />
           Kembali
         </span>
       </button>
@@ -370,10 +414,10 @@ function ProfilePage() {
           aria-label="Buka kartu edit profil"
         >
           <span className="profile-avatar-large" aria-hidden="true">
-            {profileOverrides.photoUrl ? (
+            {savedPhotoUrl ? (
               <img
                 className="profile-avatar-image"
-                src={profileOverrides.photoUrl}
+                src={savedPhotoUrl}
                 alt="Foto profil"
               />
             ) : (
@@ -408,17 +452,25 @@ function ProfilePage() {
             <section className="panel profile-edit-card" aria-label="Edit profil">
               <div className="profile-edit-hero">
                 <span className="profile-edit-avatar" aria-hidden="true">
-                  {photoPreview || profileOverrides.photoUrl ? (
+                  {photoPreview || (!shouldRemovePhoto && savedPhotoUrl) ? (
                     <img
-                      src={photoPreview || profileOverrides.photoUrl}
+                      src={photoPreview || savedPhotoUrl}
                       alt="Pratinjau foto profil"
                     />
                   ) : (
                     initial
                   )}
-                  <span className="profile-avatar-edit" aria-hidden="true">
+                  <label
+                    className="profile-avatar-edit"
+                    aria-label="Ganti foto profil"
+                  >
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handlePhotoChange}
+                    />
                     <Icon name="pencil" size={12} />
-                  </span>
+                  </label>
                 </span>
               </div>
 
@@ -431,6 +483,14 @@ function ProfilePage() {
                   />
                   Ganti foto
                 </label>
+                <button
+                  className="profile-photo-remove"
+                  type="button"
+                  onClick={handleRemovePhoto}
+                  disabled={!photoPreview && (!savedPhotoUrl || shouldRemovePhoto)}
+                >
+                  Hapus foto
+                </button>
 
                 <label className="profile-edit-field">
                   <span>Nama lengkap</span>
@@ -511,8 +571,14 @@ function ProfilePage() {
                 )}
 
                 <div className="profile-edit-actions">
-                  <button className="submit-button" type="submit" disabled={isChangingPassword}>
-                    {isChangingPassword ? "Menyimpan..." : "Simpan perubahan"}
+                  <button
+                    className="submit-button"
+                    type="submit"
+                    disabled={isChangingPassword || isSavingProfile}
+                  >
+                    {isChangingPassword || isSavingProfile
+                      ? "Menyimpan..."
+                      : "Simpan perubahan"}
                   </button>
                   <button
                     className="budget-update-button"

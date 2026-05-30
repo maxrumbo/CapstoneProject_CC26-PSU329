@@ -1,11 +1,17 @@
 from decimal import Decimal
 from typing import List, Optional
 
-from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from app.models.subscription import Subscription
 from app.schemas.subscription import SubscriptionCreate, SubscriptionUpdate
+
+MONTHLY_MULTIPLIERS = {
+    "daily": Decimal("30"),
+    "weekly": Decimal("4"),
+    "monthly": Decimal("1"),
+    "yearly": Decimal(1) / Decimal(12),
+}
 
 
 def create_subscription(
@@ -17,6 +23,7 @@ def create_subscription(
         user_id=user_id,
         name=payload.name,
         amount=payload.amount,
+        billing_cycle=payload.billing_cycle,
         next_billing_date=payload.next_billing_date,
     )
     db.add(subscription)
@@ -45,12 +52,18 @@ def get_total_cost(
     db: Session,
     user_id: int,
 ) -> Decimal:
-    total = (
-        db.query(func.coalesce(func.sum(Subscription.amount), 0))
+    subscriptions = (
+        db.query(Subscription.amount, Subscription.billing_cycle)
         .filter(Subscription.user_id == user_id)
-        .scalar()
+        .all()
     )
-    return Decimal(str(total))
+    total = Decimal("0")
+
+    for amount, billing_cycle in subscriptions:
+        multiplier = MONTHLY_MULTIPLIERS.get(billing_cycle, Decimal("1"))
+        total += Decimal(str(amount)) * multiplier
+
+    return total
 
 
 def get_subscription_by_id(
@@ -69,6 +82,8 @@ def update_subscription(
         subscription.name = payload.name
     if payload.amount is not None:
         subscription.amount = payload.amount
+    if payload.billing_cycle is not None:
+        subscription.billing_cycle = payload.billing_cycle
     if payload.next_billing_date is not None:
         subscription.next_billing_date = payload.next_billing_date
 
