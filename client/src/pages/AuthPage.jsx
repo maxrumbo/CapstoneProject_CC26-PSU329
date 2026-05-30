@@ -4,11 +4,11 @@ import { loginUser } from "../services/authApi";
 import { useAuth } from "../context/useAuth";
 
 /* ─── Toast notification ─── */
-function Toast({ message, type = "success", onClose }) {
+function Toast({ message, type = "success", onClose, fixed = true, emphasized = false, duration = 5000 }) {
   useEffect(() => {
-    const t = setTimeout(onClose, 5000);
+    const t = setTimeout(onClose, duration);
     return () => clearTimeout(t);
-  }, [onClose]);
+  }, [onClose, duration]);
 
   const colors = {
     success: { bg: "rgba(34,197,94,0.15)", border: "rgba(34,197,94,0.35)", text: "#4ade80", icon: "✓" },
@@ -17,19 +17,40 @@ function Toast({ message, type = "success", onClose }) {
   };
   const c = colors[type];
 
+  const positionClass = fixed
+    ? "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    : "absolute -top-16 inset-x-0";
+
+  const innerClass = fixed
+    ? "flex items-start gap-3 px-5 py-4 rounded-2xl text-sm max-w-sm w-full mx-4 shadow-2xl"
+    : "flex items-start gap-3 px-5 py-4 rounded-2xl text-sm max-w-sm w-auto mx-auto shadow-2xl";
+
+  const boxShadow = emphasized ? "0 18px 60px rgba(0,0,0,0.6)" : "0 12px 32px rgba(0,0,0,0.5)";
+  const borderStyle = emphasized ? `2px solid ${c.border}` : `1px solid ${c.border}`;
+  const pulse = emphasized ? "toastPulse 0.9s ease-in-out both" : undefined;
+
   return (
     <div
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-100 flex items-start gap-3 px-5 py-4 rounded-2xl text-sm max-w-sm w-full mx-4 shadow-2xl"
+      className={`${positionClass} z-100 flex justify-center`}
       style={{
-        background: c.bg, border: `1px solid ${c.border}`,
-        backdropFilter: "blur(20px)",
-        animation: "toastIn 0.35s cubic-bezier(0.16,1,0.3,1) both",
+        pointerEvents: "none",
       }}
     >
-      <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
-        style={{ background: c.border, color: c.text }}>{c.icon}</span>
-      <span style={{ color: "rgba(255,255,255,0.9)" }} className="leading-relaxed">{message}</span>
-      <button onClick={onClose} className="shrink-0 ml-auto text-white/30 hover:text-white/70 transition-colors">✕</button>
+      <div
+        className={innerClass}
+        style={{
+          background: c.bg, border: borderStyle,
+          backdropFilter: "blur(20px)",
+          animation: pulse || "toastIn 0.35s cubic-bezier(0.16,1,0.3,1) both",
+          pointerEvents: "auto",
+          boxShadow,
+        }}
+      >
+        <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+          style={{ background: c.border, color: c.text }}>{c.icon}</span>
+        <span style={{ color: "rgba(255,255,255,0.95)" }} className="leading-relaxed">{message}</span>
+        <button onClick={onClose} className="shrink-0 ml-auto text-white/30 hover:text-white/70 transition-colors">✕</button>
+      </div>
     </div>
   );
 }
@@ -379,9 +400,22 @@ export default function AuthPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [mode, setMode] = useState(searchParams.get("mode") || "login");
   const [toastData, setToastData] = useState(null);
+  const toastAttemptsRef = useRef({});
 
-  const showToast = (message, type = "success") => {
-    setToastData({ message, type, id: Date.now() });
+  const showToast = (message, type = "success", opts = {}) => {
+    // track repeated attempts for the same message so we can emphasize on retriggers
+    const key = `${message}|${type}`;
+    const record = toastAttemptsRef.current[key] || { count: 0, timer: null };
+    record.count += 1;
+    if (record.timer) clearTimeout(record.timer);
+    // reset attempt count after 5s of inactivity
+    record.timer = setTimeout(() => { delete toastAttemptsRef.current[key]; }, 5000);
+    toastAttemptsRef.current[key] = record;
+
+    const emphasized = !!opts.force || record.count > 1;
+    const duration = emphasized ? 6500 : 5000;
+
+    setToastData({ message, type, id: Date.now(), emphasized, duration });
   };
 
   const switchMode = (newMode) => {
@@ -397,8 +431,14 @@ export default function AuthPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
         @keyframes toastIn {
-          from { opacity: 0; transform: translate(-50%, -20px) scale(0.95); }
-          to   { opacity: 1; transform: translate(-50%, 0)      scale(1); }
+          from { opacity: 0; transform: translateY(-12px) scale(0.95); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes toastPulse {
+          0% { transform: translateY(-6px) scale(0.98); }
+          30% { transform: translateY(-10px) scale(1.02); }
+          60% { transform: translateY(-6px) scale(1.01); }
+          100% { transform: translateY(0) scale(1); }
         }
         @keyframes cardSlide {
           from { opacity: 0; transform: translateX(12px); }
@@ -430,11 +470,7 @@ export default function AuthPage() {
         }
       `}</style>
 
-      {/* Toast */}
-      {toastData && (
-        <Toast key={toastData.id} message={toastData.message} type={toastData.type}
-          onClose={() => setToastData(null)} />
-      )}
+      {/* Toast: render inside the card so it appears above it */}
 
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -471,6 +507,10 @@ export default function AuthPage() {
           backdropFilter: "blur(24px)",
         }}
       >
+        {toastData && (
+          <Toast key={toastData.id} message={toastData.message} type={toastData.type}
+            onClose={() => setToastData(null)} fixed={false} emphasized={toastData.emphasized} duration={toastData.duration} />
+        )}
         {/* Logo */}
         <div className="flex items-center justify-center mb-0">
           <img
