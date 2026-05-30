@@ -245,14 +245,13 @@ function FloatingAnalisisAi() {
       )}
 
       <button
-        className="analisis-ai-toggle"
+        className="analisis-ai-toggle circular"
         type="button"
         onClick={handleToggle}
         aria-expanded={isOpen}
-        aria-label={isOpen ? "Tutup analisis AI" : "Buka analisis AI"}
+        aria-label={isOpen ? "Tutup Analisis AI" : "Buka Analisis AI"}
       >
-        <Icon name="ai" size={21} />
-        <span>Analisis AI</span>
+        <Icon name="ai" size={18} />
       </button>
     </section>
   );

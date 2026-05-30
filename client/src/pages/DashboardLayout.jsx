@@ -1,4 +1,5 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import BrandLogo from "../components/brand/BrandLogo";
 import FloatingAnalisisAi from "../components/advice/FloatingAnalisisAi";
 import Icon from "../components/ui/Icon";
@@ -34,6 +35,149 @@ function DashboardLayout() {
   const photoUrl = user?.photo_url || "";
   const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
 
+  // Search state (adapted from WelcomePage search behavior)
+  const [searchValue, setSearchValue] = useState("");
+  const [searchMessage, setSearchMessage] = useState("");
+  const searchMessageTimerRef = useRef(null);
+  const lastSearchQueryRef = useRef("");
+  const activeMatchIndexRef = useRef(0);
+
+  useEffect(() => {
+    return () => {
+      if (searchMessageTimerRef.current) {
+        window.clearTimeout(searchMessageTimerRef.current);
+      }
+    };
+  }, []);
+
+  const normalizeSearchText = (value) =>
+    value.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+
+  const clearSearchHighlights = () => {
+    const spans = Array.from(document.querySelectorAll(".search-highlight"));
+    spans.forEach((s) => {
+      const txt = document.createTextNode(s.textContent);
+      s.parentNode.replaceChild(txt, s);
+    });
+    lastSearchQueryRef.current = "";
+    activeMatchIndexRef.current = 0;
+  };
+
+  const getMatchSpans = () => Array.from(document.querySelectorAll(".search-highlight"));
+
+  const setActiveMatch = (index) => {
+    const list = getMatchSpans();
+    if (list.length === 0) return 0;
+
+    const safeIndex = ((index % list.length) + list.length) % list.length;
+    list.forEach((el, currentIndex) => {
+      el.classList.toggle("search-highlight-active", currentIndex === safeIndex);
+    });
+
+    const active = list[safeIndex];
+    if (active) {
+      active.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    activeMatchIndexRef.current = safeIndex;
+    return list.length;
+  };
+
+  const findAndHighlight = (q) => {
+    clearSearchHighlights();
+    if (!q) return 0;
+    const all = Array.from(document.querySelectorAll("body *"));
+    const matches = all.filter((el) => {
+      if (!el || !el.textContent) return false;
+      const tag = el.tagName.toLowerCase();
+      if (tag === "script" || tag === "style" || tag === "svg" || tag === "path") return false;
+      const style = window.getComputedStyle(el);
+      if (style && (style.display === "none" || style.visibility === "hidden" || style.opacity === "0")) return false;
+      if (el.children && el.children.length > 0) {
+        if (el.children.length > 3) return false;
+      }
+      return el.textContent.toLowerCase().includes(q);
+    });
+
+    const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(escapeRegExp(q), "ig");
+    let total = 0;
+
+    for (const el of matches) {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+      textNodes.forEach((node) => {
+        if (!node.nodeValue) return;
+        const originalText = node.nodeValue;
+        if (!regex.test(originalText)) return;
+
+        regex.lastIndex = 0;
+        const replaced = originalText.replace(regex, (match) => `<span class=\"search-highlight\">${match}</span>`);
+        const temp = document.createElement("span");
+        temp.innerHTML = replaced;
+        while (temp.firstChild) {
+          node.parentNode.insertBefore(temp.firstChild, node);
+        }
+        node.parentNode.removeChild(node);
+        const count = (originalText.match(new RegExp(escapeRegExp(q), "ig")) || []).length;
+        total += count;
+      });
+    }
+
+    if (total > 0) {
+      setActiveMatch(0);
+    }
+
+    return total;
+  };
+
+  const cycleSearchMatch = (direction) => {
+    const list = getMatchSpans();
+    if (list.length === 0) return false;
+    const nextIndex = activeMatchIndexRef.current + direction;
+    setActiveMatch(nextIndex);
+    return true;
+  };
+
+  const handleSearchSubmit = (event) => {
+    event?.preventDefault?.();
+    if (searchMessageTimerRef.current) {
+      window.clearTimeout(searchMessageTimerRef.current);
+      searchMessageTimerRef.current = null;
+    }
+
+    const normalized = normalizeSearchText(searchValue);
+
+    if (!normalized) {
+      clearSearchHighlights();
+      setSearchMessage("");
+      return;
+    }
+
+    if (normalized === lastSearchQueryRef.current && cycleSearchMatch(1)) {
+      setSearchMessage("");
+      return;
+    }
+
+    clearSearchHighlights();
+    const count = findAndHighlight(normalized);
+    if (count <= 0) {
+      setSearchMessage("No direct match found.");
+      lastSearchQueryRef.current = "";
+    } else {
+      setSearchMessage("");
+      lastSearchQueryRef.current = normalized;
+    }
+
+    searchMessageTimerRef.current = window.setTimeout(() => {
+      setSearchMessage("");
+      searchMessageTimerRef.current = null;
+    }, 2200);
+  };
+
   return (
     <div className="dashboard-shell">
       <div className="dashboard-shell-glow dashboard-shell-glow-left" aria-hidden="true" />
@@ -46,7 +190,7 @@ function DashboardLayout() {
             <BrandLogo variant="compact" />
           </div>
 
-          <label className="dashboard-search">
+          <form className="dashboard-search" onSubmit={handleSearchSubmit} role="search">
             <span className="dashboard-search-icon">
               <Icon name="search" size={16} />
             </span>
@@ -54,8 +198,12 @@ function DashboardLayout() {
               type="search"
               placeholder="Cari transaksi, kategori, atau insight"
               aria-label="Cari transaksi"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              className="bg-transparent border-none outline-none focus:ring-0"
             />
-          </label>
+            {searchMessage ? <div className="dashboard-search-message">{searchMessage}</div> : null}
+          </form>
 
           <nav className="dashboard-nav" aria-label="Navigasi dashboard">
             {navItems.map((item) => (
@@ -103,7 +251,9 @@ function DashboardLayout() {
                 alt="Foto profil"
               />
             ) : (
-              <span>{initial}</span>
+              <span className="dashboard-avatar-icon">
+                <Icon name="user" size={16} />
+              </span>
             )}
           </button>
           </div>

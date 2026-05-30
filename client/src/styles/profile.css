@@ -15,20 +15,18 @@
   gap: 8px;
   border-radius: 999px;
   padding: 0 14px;
-  border: 1px solid rgba(31, 122, 74, 0.22);
-  color: var(--text);
-  background: linear-gradient(160deg, #ffffff 0%, #eef6f0 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow:
-    0 12px 20px rgba(23, 94, 57, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 12px rgba(2,6,23,0.35);
 }
 
 .profile-back-button:hover {
   transform: translateY(-1px);
-  border-color: rgba(31, 122, 74, 0.45);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .profile-stack > .panel {
@@ -146,9 +144,9 @@
   flex: 0 0 auto;
   border-radius: 6px;
   padding: 0 14px;
-  color: var(--text);
-  background: var(--surface);
-  box-shadow: 0 12px 24px rgba(23, 94, 57, 0.14);
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4d4d 100%);
+  box-shadow: 0 8px 18px rgba(255, 77, 77, 0.16);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -156,7 +154,7 @@
 
 .profile-logout-button:hover {
   transform: translateY(-1px);
-  background: var(--surface-soft);
+  filter: brightness(0.95);
 }
 
 .profile-budget-panel {
@@ -177,7 +175,7 @@
 .profile-edit-overlay {
   position: fixed;
   inset: 0;
-  z-index: 40;
+  z-index: 100;
   display: grid;
   place-items: center;
   padding: 20px;
@@ -393,9 +391,9 @@
   gap: 8px;
   min-width: 0;
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 8px;
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 8px 18px rgba(23, 94, 57, 0.12);
 }
 

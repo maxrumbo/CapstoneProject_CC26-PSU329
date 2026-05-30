@@ -20,10 +20,13 @@
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   overflow: hidden;
-  border: 1px solid rgba(31, 122, 74, 0.18);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: 0 24px 56px rgba(23, 94, 57, 0.2);
+  border-radius: 12px;
+  /* Dark glassmorphism */
+  background: rgba(15, 18, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e6eef5;
+  box-shadow: 0 24px 64px rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(8px) saturate(120%);
 }
 
 .analisis-ai-header {
@@ -32,8 +35,7 @@
   justify-content: space-between;
   gap: 14px;
   padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(160deg, #ffffff 0%, #eef6f0 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .analisis-ai-title {
@@ -92,7 +94,7 @@
   min-height: 360px;
   overflow-y: auto;
   padding: 14px;
-  background: linear-gradient(180deg, #fbfefc 0%, #f2f8f4 100%);
+  background: transparent;
 }
 
 .analisis-ai-loading {
@@ -133,8 +135,8 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  color: var(--primary);
-  background: var(--primary-soft);
+  color: #fff;
+  background: rgba(245,166,35,0.12);
 }
 
 .analisis-ai-empty h3 {
@@ -168,23 +170,37 @@
   background: var(--primary-dark);
 }
 
-.analisis-ai-result {
-  display: grid;
-  gap: 12px;
-}
-
-.analisis-ai-hero {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  overflow: hidden;
-  padding: 18px;
-  border-radius: 8px;
+.analisis-ai-toggle {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border-radius: 999px;
   color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  box-shadow: 0 18px 34px rgba(23, 94, 57, 0.28);
+  cursor: pointer;
+  font-weight: 800;
 }
 
-.analisis-ai-hero.safe {
-  background: linear-gradient(135deg, #087245 0%, #0f8f5f 100%);
+.analisis-ai-toggle.circular {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 9999px;
+  display: inline-grid;
+  place-items: center;
+  gap: 0;
+}
+
+.analisis-ai-toggle.circular svg {
+  display: block;
+}
+
+.analisis-ai-toggle:hover {
+  transform: translateY(-2px);
 }
 
 .analisis-ai-hero.warning {
