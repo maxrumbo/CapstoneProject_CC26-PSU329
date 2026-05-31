@@ -1,51 +1,25 @@
-﻿fastapi>=0.111.0
+﻿# --- FASTAPI & SERVER ---
+fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# --- DATABASE & AUTH ---
 sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.9
 python-jose[cryptography]>=3.3.0
 passlib[bcrypt]>=1.7.4
 pydantic-settings>=2.3.0
 pydantic[email]>=2.7.0
-python-multipart>=0.0.9
 
-# --- PUSTAKA AI & DATA SCIENCE ---
-tensorflow-intel>=2.16.0; platform_system == "Windows"
-tensorflow>=2.16.0; platform_system != "Windows"
-torch>=2.2.0
-scikit-learn>=1.4.0
+# --- DATA PROCESSING & AI ---
+# Menggunakan pandas versi stabil terbaru
+pandas>=2.2.0
 numpy>=1.26.0
-pandas==3.0.2
-yfinance==1.3.0
+# Memilih salah satu: Kalau model LSTM-mu pakai PyTorch, hapus tensorflow
+torch>=2.2.0
+# Library untuk Gemini AI
 google-genai>=2.6.0
-nltk>=3.9.0
-Sastrawi>=1.0.1
 
-# --- PUSTAKA PENDUKUNG ---
-beautifulsoup4==4.14.3
-cachetools==7.1.1
-certifi>=2026.4.22
-cffi==2.0.0
-charset-normalizer==3.4.7
-curl_cffi==0.15.0
-frozendict==2.4.7
-idna==3.13
-markdown-it-py==4.2.0
-mdurl==0.1.2
-multitasking==0.0.13
-peewee==4.0.5
-platformdirs==4.9.6
-pycparser==3.0
-Pygments==2.20.0
-python-dateutil==2.9.0.post0
-pytz>=2026.2
-requests==2.33.1
-rich==15.0.0
-six==1.17.0
-soupsieve==2.8.3
-typing_extensions==4.15.0
-tzdata>=2026.2
-urllib3==2.7.0
-websockets==16.0
-
-# --- PERBAIKAN BENTROKAN VERSI ---
-protobuf>=3.20.3,<5.0.0dev
+# --- UTILITIES ---
+requests>=2.33.1
+python-dateutil>=2.9.0
