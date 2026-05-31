@@ -96,7 +96,6 @@ const landingSections = [
 /* ─── Floating particle background ─── */
 function ParticleField() {
   const particles = Array.from({ length: 24 }).map((_, i) => {
-    // Deterministic pseudo-random values based on index to keep render pure.
     const rand = (n) => {
       const x = Math.sin((i + 1) * 999 + n) * 10000;
       return x - Math.floor(x);
@@ -182,15 +181,12 @@ function AboutBlobsBackground() {
 function ServicesGridBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Top-left accent glow */}
       <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full blur-3xl"
         style={{ background: "radial-gradient(circle, rgba(245, 166, 35, 0.15), transparent)" }} />
       
-      {/* Bottom-right accent glow */}
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl"
         style={{ background: "radial-gradient(circle, rgba(34, 197, 94, 0.12), transparent)" }} />
       
-      {/* Animated gradient overlay */}
       <div className="absolute inset-0 opacity-40"
         style={{
           background: "linear-gradient(45deg, transparent 0%, rgba(96, 165, 250, 0.05) 50%, transparent 100%)",
@@ -319,7 +315,9 @@ export default function WelcomePage() {
   }, []);
 
   useEffect(() => {
-    if (!isMobile) {
+    // Matikan efek ketik jika di mobile agar tampilan box tidak menyusut (bantet)
+    if (isMobile) {
+      setTypedBadgeText(badgeText);
       return;
     }
 
@@ -339,7 +337,7 @@ export default function WelcomePage() {
 
         if (charIndex >= badgeText.length) {
           deleting = true;
-          timeoutId = window.setTimeout(tick, 1200);
+          timeoutId = window.setTimeout(tick, 2500); // Jeda sebelum teks dihapus
           return;
         }
 
@@ -377,9 +375,7 @@ export default function WelcomePage() {
 
   const normalizeSearchText = (value) => value.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 
-  // Clear previous highlights added by the search (unwrap highlight spans)
   const clearSearchHighlights = () => {
-    // remove inline highlight spans
     const spans = Array.from(document.querySelectorAll(".search-highlight"));
     spans.forEach((s) => {
       const txt = document.createTextNode(s.textContent);
@@ -414,24 +410,19 @@ export default function WelcomePage() {
 
     if (!q) return 0;
 
-    // Search visible elements that contain text and are not too large containers
     const all = Array.from(document.querySelectorAll("body *"));
     const matches = all.filter((el) => {
       if (!el || !el.textContent) return false;
-      // skip script, style, SVG path, and hidden elements
       const tag = el.tagName.toLowerCase();
       if (tag === "script" || tag === "style" || tag === "svg" || tag === "path") return false;
       const style = window.getComputedStyle(el);
       if (style && (style.display === "none" || style.visibility === "hidden" || style.opacity === "0")) return false;
-      // prefer leaf-ish nodes to avoid highlighting whole layout containers
       if (el.children && el.children.length > 0) {
-        // allow small containers with few children
         if (el.children.length > 3) return false;
       }
       return el.textContent.toLowerCase().includes(q);
     });
 
-    // wrap all matched substrings in text nodes inside the first matching sections
     const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(escapeRegExp(q), "ig");
     let total = 0;
@@ -491,13 +482,11 @@ export default function WelcomePage() {
     const normalized = normalizeSearchText(searchValue);
 
     if (!normalized) {
-      // empty search: clear highlights and message
       clearSearchHighlights();
       setSearchMessage("");
       return;
     }
 
-    // First try landing sections (exact/partial)
     const landingMatch = landingSections.find((s) => {
       const label = s.label.toLowerCase();
       return (
@@ -521,7 +510,6 @@ export default function WelcomePage() {
       return;
     }
 
-    // Otherwise perform page-find style search and highlight matched words
     clearSearchHighlights();
     const count = findAndHighlight(normalized);
     if (count <= 0) {
@@ -532,7 +520,6 @@ export default function WelcomePage() {
       lastSearchQueryRef.current = normalized;
     }
 
-    // hide transient text-only message after delay, keep highlights/nav unless cleared
     searchMessageTimerRef.current = window.setTimeout(() => {
       setSearchMessage("");
       searchMessageTimerRef.current = null;
@@ -597,13 +584,11 @@ export default function WelcomePage() {
       `}</style>
 
       <header className={isMobile ? "w-full flex items-center justify-center pt-4 pb-0 bg-transparent" : "welcome-topbar"}>
-        
         <a 
           href="#home" 
           aria-label="Go to home"
           className={isMobile ? "flex items-center justify-center" : "welcome-topbar-logo"}
         >
-          {/* Skala 1.3 biar ukurannya pas di tengah layar HP */}
           <div style={isMobile ? { transform: "scale(1.3)", transformOrigin: "center", display: "flex" } : {}}>
             <BrandLogo className="welcome-topbar-logo-mark" variant="lockup" />
           </div>
@@ -637,9 +622,8 @@ export default function WelcomePage() {
         )}
       </header>
       
-
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center pt-4 md:pt-24 pb-24">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 py-24">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl"
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.2), transparent)" }} />
@@ -653,9 +637,10 @@ export default function WelcomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              {/* Tampilkan badge utuh jika isMobile, jika tidak jalankan teks ketik (beserta caret-nya) */}
               <span className="text-xs font-semibold tracking-wider uppercase text-amber-500" aria-label={badgeText}>
-                {isMobile ? typedBadgeText : badgeText}
-                {isMobile ? <span className="type-caret" aria-hidden="true">|</span> : null}
+                {isMobile ? badgeText : typedBadgeText}
+                {!isMobile && <span className="type-caret" aria-hidden="true">|</span>}
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
