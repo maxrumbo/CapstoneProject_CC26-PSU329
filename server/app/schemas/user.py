@@ -1,11 +1,7 @@
 from datetime import datetime
-<<<<<<< HEAD
-from pydantic import BaseModel, EmailStr, computed_field, field_validator
-=======
 from typing import Optional
 
-from pydantic import BaseModel, EmailStr, field_validator
->>>>>>> 6bb0a55f7f503976c3ed7232da107ac1e3c4de8a
+from pydantic import BaseModel, EmailStr, computed_field, field_validator
 
 
 class UserRegister(BaseModel):
@@ -52,4 +48,4 @@ class UserResponse(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
-    user: UserResponse
+    user: UserResponse   

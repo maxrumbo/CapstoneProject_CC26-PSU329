@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandLogo from "../components/brand/BrandLogo";
+import AnimatedAiLogo from "../components/brand/AnimatedAiLogo";
 
 /* ─── Icon Components ─── */
 function IconTransaction({ color }) {
@@ -658,7 +659,7 @@ export default function WelcomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FeatureCard icon={IconTransaction} title="Transaction Tracking" desc="Record income and expenses with clear personal category summaries." accent="#F5A623" />
-            <FeatureCard icon={IconBrain} title="AI Insights" desc="Get guidance based on patterns from your personal financial activity." accent="#22c55e" />
+            <FeatureCard icon={AnimatedAiLogo} title="AI Insights" desc="Get guidance based on patterns from your personal financial activity." accent="#22c55e" />
           </div>
         </div>
       </section>
@@ -674,7 +675,7 @@ export default function WelcomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard icon={IconChart} title="AI Recommendations" desc="Practical suggestions based on transaction and budget trends." accent="#F5A623" />
+            <FeatureCard icon={AnimatedAiLogo} title="AI Recommendations" desc="Practical suggestions based on transaction and budget trends." accent="#F5A623" />
             <FeatureCard icon={IconTarget} title="Savings Tracker" desc="Set savings targets and monitor progress over time." accent="#22c55e" />
             <FeatureCard icon={IconMoney} title="Budget Planning" desc="Set monthly budgets and review spending by category at a glance." accent="#60a5fa" />
             <FeatureCard icon={IconBell} title="Alerts" desc="Stay informed when spending or goal targets need attention." accent="#a78bfa" />

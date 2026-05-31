@@ -64,8 +64,8 @@ DEMO_USER_DISPLAY_NAME=Demo SAWIT
 
 ## 4. Jalankan Server
 
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```bashuvicorn main:app --reload --host 0.0.0.0 --port 8000
+
 ```
 
 Swagger UI tersedia di `http://localhost:8000/docs`.
