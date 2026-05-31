@@ -12,22 +12,6 @@ function IconTransaction({ color }) {
   );
 }
 
-function IconBrain({ color }) {
-  return (
-    <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5a4 4 0 100-8 4 4 0 000 8z" />
-    </svg>
-  );
-}
-
-function IconChart({ color }) {
-  return (
-    <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-    </svg>
-  );
-}
-
 function IconTarget({ color }) {
   return (
     <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
@@ -306,7 +290,8 @@ export default function WelcomePage() {
   const badgeText = "AI-POWERED PERSONAL FINANCE";
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
-  const [typedBadgeText, setTypedBadgeText] = useState("");
+  const [typedBadgeText, setTypedBadgeText] = useState(badgeText);
+  const [isMobile, setIsMobile] = useState(false);
   const searchMessageTimerRef = useRef(null);
   const lastSearchQueryRef = useRef("");
   const activeMatchIndexRef = useRef(0);
@@ -322,9 +307,24 @@ export default function WelcomePage() {
   }, []);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      return;
+    }
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setTypedBadgeText(badgeText);
       return;
     }
 
@@ -366,7 +366,7 @@ export default function WelcomePage() {
         window.clearTimeout(timeoutId);
       }
     };
-  }, [badgeText]);
+  }, [badgeText, isMobile]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -596,39 +596,50 @@ export default function WelcomePage() {
         }
       `}</style>
 
-      <header className="welcome-topbar">
-        <a className="welcome-topbar-logo" href="#home" aria-label="Go to home">
-          <BrandLogo className="welcome-topbar-logo-mark" variant="lockup" />
+      <header className={isMobile ? "w-full flex items-center justify-center pt-4 pb-0 bg-transparent" : "welcome-topbar"}>
+        
+        <a 
+          href="#home" 
+          aria-label="Go to home"
+          className={isMobile ? "flex items-center justify-center" : "welcome-topbar-logo"}
+        >
+          {/* Skala 1.3 biar ukurannya pas di tengah layar HP */}
+          <div style={isMobile ? { transform: "scale(1.3)", transformOrigin: "center", display: "flex" } : {}}>
+            <BrandLogo className="welcome-topbar-logo-mark" variant="lockup" />
+          </div>
         </a>
 
-        <nav className="welcome-topbar-nav" aria-label="Primary">
-          {landingSections.map((section) => (
-            <a key={section.id} className="welcome-topbar-link" href={`#${section.id}`}>
-              {section.label}
-            </a>
-          ))}
-        </nav>
+        {!isMobile && (
+          <>
+            <nav className="welcome-topbar-nav" aria-label="Primary">
+              {landingSections.map((section) => (
+                <a key={section.id} className="welcome-topbar-link" href={`#${section.id}`}>
+                  {section.label}
+                </a>
+              ))}
+            </nav>
 
-        <form className="welcome-searchbar" role="search" aria-label="Search SAWIT" onSubmit={handleSearchSubmit}>
-          <svg className="welcome-searchbar-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
-          </svg>
-          <input
-            type="search"
-            placeholder="Search Home, Services, Contact..."
-            aria-label="Search"
-            value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
-          />
-          {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
-        </form>
-        {/* profile button removed from welcome topbar */}
+            <form className="welcome-searchbar" role="search" aria-label="Search SAWIT" onSubmit={handleSearchSubmit}>
+              <svg className="welcome-searchbar-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+              </svg>
+              <input
+                type="search"
+                placeholder="Search Home, Services, Contact..."
+                aria-label="Search"
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+              />
+              {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
+            </form>
+          </>
+        )}
       </header>
       
 
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 py-24">
+      <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center pt-4 md:pt-24 pb-24">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl"
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.2), transparent)" }} />
@@ -636,32 +647,32 @@ export default function WelcomePage() {
             style={{ background: "radial-gradient(circle, rgba(245,166,35,0.15), transparent)" }} />
         </div>
         <ParticleField />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-16 items-center justify-between w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-10 md:gap-16 items-center justify-between w-full">
           {/* Left */}
-          <div className="flex flex-col gap-6 md:w-1/2">
+          <div className="flex w-full flex-col gap-6 md:w-1/2 items-center md:items-start text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               <span className="text-xs font-semibold tracking-wider uppercase text-amber-500" aria-label={badgeText}>
-                {typedBadgeText}
-                <span className="type-caret" aria-hidden="true">|</span>
+                {isMobile ? typedBadgeText : badgeText}
+                {isMobile ? <span className="type-caret" aria-hidden="true">|</span> : null}
               </span>
             </div>
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
+            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
               style={{ fontFamily: "'Syne', sans-serif", animationDelay: "0.1s" }}>
               Master Your<br />
               <span className="gold-shimmer">Finances</span><br />
               Smarter.
             </h1>
-            <p className="text-lg leading-relaxed max-w-md animate-fade-up text-gray-300"
+            <p className="text-base sm:text-lg leading-relaxed max-w-md animate-fade-up text-gray-300"
               style={{ animationDelay: "0.2s" }}>
               SAWIT helps you track spending, plan savings, and make smarter money decisions
               with AI-powered insights built for personal finance.
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex w-full flex-col flex-wrap gap-4 sm:w-auto sm:flex-row justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <button
                 onClick={() => navigate("/auth?mode=register")}
-                className="group px-8 py-3.5 rounded-full font-bold text-base flex items-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
+                className="group w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
                 style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", boxShadow: "0 8px 32px rgba(245,166,35,0.45)" }}>
                 Get Started Free
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -670,7 +681,7 @@ export default function WelcomePage() {
               </button>
               <button
                 onClick={() => navigate("/auth?mode=login")}
-                className="px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
                 View Demo
               </button>
             </div>
@@ -679,23 +690,25 @@ export default function WelcomePage() {
             </div>
           </div>
           {/* Right */}
-          <div className="flex items-center justify-center md:w-1/2 md:justify-end animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="hidden md:flex items-center justify-center md:w-1/2 md:justify-end animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <HeroCharacter />
           </div>
         </div>
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer transition-all duration-300 hover:opacity-100"
-          style={{ opacity: 0.6 }}
-          aria-label="Scroll to about section"
-        >
-          <span className="text-xs tracking-widest uppercase text-gray-300 group-hover:text-amber-400 transition-colors duration-300">Scroll</span>
-          <div className="flex flex-col items-center gap-1 group-hover:translate-y-1 transition-transform duration-300">
-            <div className="w-px h-6 bg-gradient-to-b from-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="w-px h-8 bg-linear-to-b from-white/40 to-transparent animate-bounce" style={{ animationDuration: '2s' }} />
-            <div className="w-0.5 h-1 rounded-full bg-white/40 animate-pulse" />
-          </div>
-        </button>
+        {!isMobile ? (
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer transition-all duration-300 hover:opacity-100"
+            style={{ opacity: 0.6 }}
+            aria-label="Scroll to about section"
+          >
+            <span className="text-xs tracking-widest uppercase text-gray-300 group-hover:text-amber-400 transition-colors duration-300">Scroll</span>
+            <div className="flex flex-col items-center gap-1 group-hover:translate-y-1 transition-transform duration-300">
+              <div className="w-px h-6 bg-linear-to-b from-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="w-px h-8 bg-linear-to-b from-white/40 to-transparent animate-bounce" style={{ animationDuration: '2s' }} />
+              <div className="w-0.5 h-1 rounded-full bg-white/40 animate-pulse" />
+            </div>
+          </button>
+        ) : null}
       </section>
 
       {/* FEATURES */}

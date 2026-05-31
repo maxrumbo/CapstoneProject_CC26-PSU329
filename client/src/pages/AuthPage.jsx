@@ -196,7 +196,7 @@ function OtpInput({ value, onChange }) {
 
 /* ─── AUTH STATES ─── */
 
-function LoginForm({ onSwitch, toast }) {
+function LoginForm({ onSwitch }) {
   const { setSession } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -249,7 +249,7 @@ function LoginForm({ onSwitch, toast }) {
         </h2>
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>Sign in to your SAWIT account</p>
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4">
         {apiError ? (
           <p className="text-sm font-semibold text-red-300" role="alert">
             {apiError}
@@ -314,7 +314,7 @@ function RegisterForm({ onSwitch, toast }) {
         </h2>
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>Start growing your palm estate today</p>
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4">
         <Input label="Full Name" value={form.name} onChange={set("name")} placeholder="" required />
         <Input label="Email" type="email" value={form.email} onChange={set("email")} placeholder="" required error={errors.email} />
         <Input label="Password" type="password" value={form.password} onChange={set("password")} placeholder="" required error={errors.password} />
@@ -398,7 +398,7 @@ function ForgotForm({ onSwitch, toast }) {
       <StepDots total={3} current={step} />
 
       {step === 0 && (
-        <form onSubmit={submitEmail} className="flex flex-col gap-4">
+        <form onSubmit={submitEmail} className="flex w-full flex-col gap-4">
           <Input label="Email Address" type="email" value={email} onChange={e => setEmail(e.target.value)}
             placeholder="" required error={errors.email} />
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
@@ -436,7 +436,7 @@ function ForgotForm({ onSwitch, toast }) {
       )}
 
       {step === 2 && (
-        <form onSubmit={submitNewPw} className="flex flex-col gap-4">
+        <form onSubmit={submitNewPw} className="flex w-full flex-col gap-4">
           <Input label="New Password" type="password" value={newPw} onChange={e => setNewPw(e.target.value)}
             placeholder="" required error={errors.newPw} />
           <Input label="Confirm New Password" type="password" value={confirmPw} onChange={e => setConfirmPw(e.target.value)}
@@ -562,7 +562,7 @@ export default function AuthPage() {
 
       {/* Card */}
       <div
-        className="relative z-10 w-full max-w-md rounded-3xl px-8 pb-8 pt-5 sm:px-10 sm:pb-10 sm:pt-6"
+        className="relative z-10 w-full md:w-1/3 max-w-md md:max-w-none rounded-3xl px-6 sm:px-8 pb-8 pt-5 sm:pb-10 sm:pt-6"
         style={{
           background: "rgba(20,26,32,0.85)",
           border: "1px solid rgba(255,255,255,0.09)",

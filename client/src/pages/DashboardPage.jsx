@@ -9,8 +9,8 @@ const STREAMLIT_URL =
 
 function DashboardPage() {
   return (
-    <section className="dashboard-page-stack dashboard-embed-page">
-      <header className="dashboard-section dashboard-section--embed">
+    <section className="dashboard-page-stack dashboard-embed-page grid grid-cols-1 gap-6 md:grid-cols-3">
+      <header className="dashboard-section dashboard-section--embed md:col-span-3">
         <div className="dashboard-section-title">
           <span className="dashboard-section-icon" aria-hidden="true">
             <Icon name="dashboard" size={18} />
@@ -25,8 +25,8 @@ function DashboardPage() {
         </span>
       </header>
 
-      <section className="workspace-grid single-column">
-        <div className="primary-column">
+      <section className="workspace-grid single-column grid grid-cols-1 gap-6 md:grid-cols-3 md:col-span-3">
+        <div className="primary-column md:col-span-3">
           <AnalysisPreview streamlitUrl={STREAMLIT_URL} />
         </div>
       </section>
