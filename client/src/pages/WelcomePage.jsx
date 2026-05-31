@@ -266,7 +266,7 @@ function HeroCharacter() {
         style={{ background: "radial-gradient(circle, #F5A623 0%, #22c55e 60%, transparent 100%)" }} />
 
       <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "360px", height: "420px" }}>
-        <img src="/3Dpict.svg" alt="3D Character" className="hero-3dpict" />
+        <img src={`${import.meta.env.BASE_URL}IconLandingPage.svg`} alt="3D Character" className="hero-3dpict" />
       </div>
 
       <div className="w-48 h-10 mt-1 rounded-full blur-xl"

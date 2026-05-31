@@ -164,5 +164,3 @@ This section lists the UI components, important CSS classes, design tokens, and 
 - Icons: export as SVGs (individual icons) and provide stroke weights matching the app (1.8px equivalent).
 - Color tokens: provide swatches for each CSS var and tints (10%/20% darker/lighter) for hover/active states.
 - Components: panels, nav pills, metric tiles, and hero CTAs as reusable components.
-
-
