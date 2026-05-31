@@ -1,23 +1,74 @@
-# Environment variables
-.env
-server/.env
-.env.local
-.env.*.local
+# ========================
+# Node & Frontend (React/Vite)
+# ========================
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Virtual environments
-.venv/
-server/.venv/
-venv/
-env/
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
 
-# Python
+# Build / Production
+dist/
+dist-ssr/
+build/
+
+# Tailwind
+.tailwind/
+
+# ========================
+# Backend (Python / FastAPI)
+# ========================
 __pycache__/
-*.pyc
 *.py[cod]
 *$py.class
 
-# OS and IDE
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env.bak/
+
+# Python logs & testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ========================
+# Machine Learning & Data Science
+# ========================
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Model Weights & Large Datasets (Mencegah error limit size di GitHub)
+*.csv
+*.dat
+*.pkl
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# ========================
+# General & Environment
+# ========================
+# Mengabaikan semua file environment di folder mana pun
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-.vscode/
-.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

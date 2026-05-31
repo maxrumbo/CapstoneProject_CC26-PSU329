@@ -3,6 +3,26 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { loginUser } from "../services/authApi";
 import { useAuth } from "../context/useAuth";
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+const isValidEmail = (value) => emailRegex.test(value.trim());
+const isValidPassword = (value) => passwordRegex.test(value);
+const invalidCredentialHints = [
+  "invalid credential",
+  "invalid credentials",
+  "incorrect email or password",
+  "email atau password",
+  "wrong password",
+  "unauthorized",
+  "login gagal",
+  "bad credentials",
+];
+
+const isCredentialMismatchError = (message = "") => {
+  const normalized = message.toLowerCase();
+  return invalidCredentialHints.some((hint) => normalized.includes(hint));
+};
+
 /* ─── Toast notification ─── */
 function Toast({ message, type = "success", onClose, fixed = true, emphasized = false, duration = 5000 }) {
   useEffect(() => {
@@ -56,7 +76,7 @@ function Toast({ message, type = "success", onClose, fixed = true, emphasized = 
 }
 
 /* ─── Input field ─── */
-function Input({ label, type = "text", value, onChange, placeholder, autoComplete, required }) {
+function Input({ label, type = "text", value, onChange, placeholder, autoComplete, required, error }) {
   const [focused, setFocused] = useState(false);
   const [showPw, setShowPw] = useState(false);
   const isPassword = type === "password";
@@ -74,14 +94,19 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
           placeholder={placeholder}
           autoComplete={autoComplete}
           required={required}
+          aria-invalid={!!error}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
           style={{
             background: "rgba(255,255,255,0.05)",
-            border: focused ? "1px solid rgba(245,166,35,0.6)" : "1px solid rgba(255,255,255,0.1)",
+            border: error
+              ? "1px solid rgba(248,113,113,0.75)"
+              : focused
+              ? "1px solid rgba(245,166,35,0.6)"
+              : "1px solid rgba(255,255,255,0.1)",
             color: "#fff",
-            boxShadow: focused ? "0 0 0 3px rgba(245,166,35,0.12)" : "none",
+            boxShadow: focused && !error ? "0 0 0 3px rgba(245,166,35,0.12)" : "none",
             paddingRight: isPassword ? "44px" : "16px",
           }}
         />
@@ -96,6 +121,11 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
           </button>
         )}
       </div>
+      {error ? (
+        <p className="text-xs mt-0.5" style={{ color: "#fda4af" }}>
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -173,11 +203,19 @@ function LoginForm({ onSwitch, toast }) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
+  const [errors, setErrors] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     setApiError("");
+
+    const nextErrors = { email: "", password: "" };
+    if (!isValidEmail(email)) nextErrors.email = "Format email tidak valid.";
+    if (!isValidPassword(password)) nextErrors.password = "Password min. 8 karakter, wajib huruf dan angka.";
+    setErrors(nextErrors);
+    if (nextErrors.email || nextErrors.password) return;
+
+    setLoading(true);
 
     try {
       const response = await loginUser({ email, password });
@@ -192,7 +230,12 @@ function LoginForm({ onSwitch, toast }) {
       setSession(accessToken, user, true);
       navigate("/dashboard", { replace: true });
     } catch (error) {
-      setApiError(error.message || "Login gagal. Coba lagi.");
+      const backendMessage = error?.message || "";
+      if (isCredentialMismatchError(backendMessage)) {
+        setApiError("Email atau password tidak cocok.");
+      } else {
+        setApiError(backendMessage || "Login gagal. Coba lagi.");
+      }
     } finally {
       setLoading(false);
     }
@@ -213,9 +256,9 @@ function LoginForm({ onSwitch, toast }) {
           </p>
         ) : null}
         <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)}
-          placeholder="you@example.com" autoComplete="email" required />
+          placeholder="" autoComplete="email" required error={errors.email} />
         <Input label="Password" type="password" value={password} onChange={e => setPassword(e.target.value)}
-          placeholder="••••••••" autoComplete="current-password" required />
+          placeholder="" autoComplete="current-password" required error={errors.password} />
         <div className="text-right -mt-1">
           <button type="button" onClick={() => onSwitch("forgot")}
             className="text-xs font-medium transition-colors hover:opacity-80"
@@ -242,14 +285,20 @@ function LoginForm({ onSwitch, toast }) {
 function RegisterForm({ onSwitch, toast }) {
   const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({ email: "", password: "", confirm: "" });
 
   const set = (k) => (e) => setForm(p => ({ ...p, [k]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirm) {
-      toast("Passwords do not match.", "error"); return;
-    }
+
+    const nextErrors = { email: "", password: "", confirm: "" };
+    if (!isValidEmail(form.email)) nextErrors.email = "Format email tidak valid.";
+    if (!isValidPassword(form.password)) nextErrors.password = "Password min. 8 karakter, wajib huruf dan angka.";
+    if (form.password !== form.confirm) nextErrors.confirm = "Password konfirmasi tidak sama.";
+    setErrors(nextErrors);
+    if (nextErrors.email || nextErrors.password || nextErrors.confirm) return;
+
     setLoading(true);
     await new Promise(r => setTimeout(r, 1400));
     setLoading(false);
@@ -266,10 +315,10 @@ function RegisterForm({ onSwitch, toast }) {
         <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>Start growing your palm estate today</p>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <Input label="Full Name" value={form.name} onChange={set("name")} placeholder="Budi Santoso" required />
-        <Input label="Email" type="email" value={form.email} onChange={set("email")} placeholder="you@example.com" required />
-        <Input label="Password" type="password" value={form.password} onChange={set("password")} placeholder="Min. 8 characters" required />
-        <Input label="Confirm Password" type="password" value={form.confirm} onChange={set("confirm")} placeholder="Re-enter password" required />
+        <Input label="Full Name" value={form.name} onChange={set("name")} placeholder="" required />
+        <Input label="Email" type="email" value={form.email} onChange={set("email")} placeholder="" required error={errors.email} />
+        <Input label="Password" type="password" value={form.password} onChange={set("password")} placeholder="" required error={errors.password} />
+        <Input label="Confirm Password" type="password" value={form.confirm} onChange={set("confirm")} placeholder="" required error={errors.confirm} />
         <button type="submit" disabled={loading}
           className="w-full py-3.5 rounded-full font-bold text-base transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-60 mt-2 flex items-center justify-center gap-2"
           style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)" }}>
@@ -293,9 +342,17 @@ function ForgotForm({ onSwitch, toast }) {
   const [newPw, setNewPw] = useState("");
   const [confirmPw, setConfirmPw] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({ email: "", newPw: "", confirmPw: "" });
 
   const submitEmail = async (e) => {
     e.preventDefault();
+
+    if (!isValidEmail(email)) {
+      setErrors((prev) => ({ ...prev, email: "Format email tidak valid." }));
+      return;
+    }
+
+    setErrors((prev) => ({ ...prev, email: "" }));
     setLoading(true);
     await new Promise(r => setTimeout(r, 1000));
     setLoading(false);
@@ -314,7 +371,13 @@ function ForgotForm({ onSwitch, toast }) {
 
   const submitNewPw = async (e) => {
     e.preventDefault();
-    if (newPw !== confirmPw) { toast("Passwords do not match.", "error"); return; }
+
+    const nextErrors = { newPw: "", confirmPw: "" };
+    if (!isValidPassword(newPw)) nextErrors.newPw = "Password min. 8 karakter, wajib huruf dan angka.";
+    if (newPw !== confirmPw) nextErrors.confirmPw = "Password konfirmasi tidak sama.";
+    setErrors((prev) => ({ ...prev, ...nextErrors }));
+    if (nextErrors.newPw || nextErrors.confirmPw) return;
+
     setLoading(true);
     await new Promise(r => setTimeout(r, 1000));
     setLoading(false);
@@ -337,7 +400,7 @@ function ForgotForm({ onSwitch, toast }) {
       {step === 0 && (
         <form onSubmit={submitEmail} className="flex flex-col gap-4">
           <Input label="Email Address" type="email" value={email} onChange={e => setEmail(e.target.value)}
-            placeholder="you@example.com" required />
+            placeholder="" required error={errors.email} />
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
             We'll send a one-time code to this address.
           </p>
@@ -375,9 +438,9 @@ function ForgotForm({ onSwitch, toast }) {
       {step === 2 && (
         <form onSubmit={submitNewPw} className="flex flex-col gap-4">
           <Input label="New Password" type="password" value={newPw} onChange={e => setNewPw(e.target.value)}
-            placeholder="Min. 8 characters" required />
+            placeholder="" required error={errors.newPw} />
           <Input label="Confirm New Password" type="password" value={confirmPw} onChange={e => setConfirmPw(e.target.value)}
-            placeholder="Re-enter password" required />
+            placeholder="" required error={errors.confirmPw} />
           <button type="submit" disabled={loading}
             className="w-full py-3.5 rounded-full font-bold text-base transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2 mt-2"
             style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)" }}>

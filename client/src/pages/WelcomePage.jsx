@@ -303,8 +303,10 @@ function FeatureCard({ icon: Icon, title, desc, accent }) {
 
 export default function WelcomePage() {
   const navigate = useNavigate();
+  const badgeText = "AI-POWERED PERSONAL FINANCE";
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
+  const [typedBadgeText, setTypedBadgeText] = useState("");
   const searchMessageTimerRef = useRef(null);
   const lastSearchQueryRef = useRef("");
   const activeMatchIndexRef = useRef(0);
@@ -318,6 +320,53 @@ export default function WelcomePage() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setTypedBadgeText(badgeText);
+      return;
+    }
+
+    let charIndex = 0;
+    let deleting = false;
+    let timeoutId = null;
+
+    const tick = () => {
+      if (!deleting) {
+        charIndex += 1;
+        setTypedBadgeText(badgeText.slice(0, charIndex));
+
+        if (charIndex >= badgeText.length) {
+          deleting = true;
+          timeoutId = window.setTimeout(tick, 1200);
+          return;
+        }
+
+        timeoutId = window.setTimeout(tick, 80);
+        return;
+      }
+
+      charIndex -= 1;
+      setTypedBadgeText(badgeText.slice(0, Math.max(charIndex, 0)));
+
+      if (charIndex <= 0) {
+        deleting = false;
+        timeoutId = window.setTimeout(tick, 350);
+        return;
+      }
+
+      timeoutId = window.setTimeout(tick, 45);
+    };
+
+    timeoutId = window.setTimeout(tick, 450);
+
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [badgeText]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -530,8 +579,13 @@ export default function WelcomePage() {
           0% { background-position: -200% center; }
           100% { background-position: 200% center; }
         }
+        @keyframes caretBlink {
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0; }
+        }
         .animate-float { animation: float linear infinite; }
         .animate-fade-up { animation: fadeUp 0.7s ease both; }
+        .type-caret { animation: caretBlink 0.9s steps(1, end) infinite; }
         .gold-shimmer {
           background: linear-gradient(90deg, #F5A623, #ffd080, #F5A623);
           background-size: 200% auto;
@@ -588,8 +642,9 @@ export default function WelcomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-xs font-semibold tracking-wider uppercase text-amber-500">
-                AI-POWERED PERSONAL FINANCE
+              <span className="text-xs font-semibold tracking-wider uppercase text-amber-500" aria-label={badgeText}>
+                {typedBadgeText}
+                <span className="type-caret" aria-hidden="true">|</span>
               </span>
             </div>
             <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
