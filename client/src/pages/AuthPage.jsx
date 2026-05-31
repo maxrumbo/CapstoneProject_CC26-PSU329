@@ -67,7 +67,7 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
   const isPassword = type === "password";
 
   return (
-    <div className="flex flex-col gap-0.5 sm:gap-1.5">
+    <div className="flex flex-col gap-1 sm:gap-1.5">
       <label className="font-semibold tracking-wide uppercase" style={{ color: "rgba(255,255,255,0.45)", fontSize: "9px" }}>
         {label}
       </label>
@@ -82,7 +82,7 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
           aria-invalid={!!error}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="w-full h-8 sm:h-11 px-3 sm:px-4 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none transition-all duration-200"
+          className="w-full h-9 sm:h-12 px-3 sm:px-4 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none transition-all duration-200"
           style={{
             background: "rgba(255,255,255,0.05)",
             border: error ? "1px solid rgba(248,113,113,0.75)" : focused ? "1px solid rgba(245,166,35,0.6)" : "1px solid rgba(255,255,255,0.1)",
@@ -95,19 +95,10 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
           <button
             type="button"
             onClick={() => setShowPw(!showPw)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 transition-opacity hover:opacity-80"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-sm sm:text-lg transition-opacity hover:opacity-80"
+            style={{ color: "rgba(255,255,255,0.35)" }}
           >
-            {showPw ? (
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-              </svg>
-            ) : (
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
-            )}
+            {showPw ? "🙈" : "👁"}
           </button>
         )}
       </div>
@@ -119,7 +110,7 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
 /* ─── Step indicator ─── */
 function StepDots({ total, current }) {
   return (
-    <div className="flex items-center gap-2 justify-center mb-2 sm:mb-5">
+    <div className="flex items-center gap-2 justify-center mb-3 sm:mb-6">
       {Array.from({ length: total }).map((_, i) => (
         <div key={i} className="rounded-full transition-all duration-300"
           style={{ width: i === current ? "16px" : "5px", height: "5px", background: i === current ? "#F5A623" : i < current ? "rgba(245,166,35,0.4)" : "rgba(255,255,255,0.15)" }} />
@@ -155,7 +146,7 @@ function OtpInput({ value, onChange }) {
         <input
           key={i} ref={el => inputs.current[i] = el} type="text" inputMode="numeric" maxLength={1} value={d}
           onChange={e => handleChange(i, e)} onKeyDown={e => handleKey(i, e)}
-          className="w-8 h-9 sm:w-11 sm:h-12 text-center text-sm sm:text-lg font-bold rounded-lg sm:rounded-xl outline-none transition-all duration-200"
+          className="w-9 h-9 sm:w-11 sm:h-12 text-center text-sm sm:text-lg font-bold rounded-lg sm:rounded-xl outline-none transition-all duration-200"
           style={{ background: d ? "rgba(245,166,35,0.15)" : "rgba(255,255,255,0.05)", border: d ? "1px solid rgba(245,166,35,0.5)" : "1px solid rgba(255,255,255,0.12)", color: "#fff" }}
         />
       ))}
@@ -202,25 +193,27 @@ function LoginForm({ onSwitch }) {
 
   return (
     <div style={{ animation: "cardSlide 0.35s ease both" }}>
-      <div className="text-center mb-3 sm:mb-6">
-        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Welcome back</h2>
+      <div className="text-center mb-4 sm:mb-8">
+        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0.5 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Welcome back</h2>
         <p className="sm:text-sm" style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>Sign in to your SAWIT account</p>
       </div>
-      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2 sm:gap-4">
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-3 sm:gap-4">
         {apiError && <p className="font-semibold text-red-300" role="alert" style={{ fontSize: "10px" }}>{apiError}</p>}
         <Input label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)} required error={errors.email} />
         <Input label="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} required error={errors.password} />
         
-        <div className="text-right -mt-1 sm:-mt-1">
+        {/* Tombol Forgot Password Diperkecil Maksimal */}
+        <div className="text-right -mt-2 sm:-mt-1">
           <button type="button" onClick={() => onSwitch("forgot")} className="font-medium transition-colors hover:opacity-80" style={{ color: "#F5A623", fontSize: "10px" }}>Forgot password?</button>
         </div>
 
-        <button type="submit" disabled={loading} className="w-full h-8 sm:h-11 rounded-full font-bold transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-60 mt-0.5 sm:mt-2 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
+        {/* Tombol Sign In Diperpendek */}
+        <button type="submit" disabled={loading} className="w-full h-9 sm:h-12 rounded-full font-bold transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-60 mt-1 sm:mt-2 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
           {loading && <span className="auth-inline-loader" />}
           {loading ? "Signing in…" : "Sign In"}
         </button>
       </form>
-      <p className="text-center mt-3 sm:mt-5" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
+      <p className="text-center mt-5 sm:mt-6" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
         Don't have an account? <button onClick={() => onSwitch("register")} className="font-semibold transition-colors hover:opacity-80" style={{ color: "#F5A623" }}>Create one</button>
       </p>
     </div>
@@ -250,22 +243,23 @@ function RegisterForm({ onSwitch, toast }) {
 
   return (
     <div style={{ animation: "cardSlide 0.35s ease both" }}>
-      <div className="text-center mb-3 sm:mb-6">
-        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Create account</h2>
+      <div className="text-center mb-4 sm:mb-8">
+        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0.5 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Create account</h2>
         <p className="sm:text-sm" style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>Start growing your estate</p>
       </div>
-      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2 sm:gap-4">
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2.5 sm:gap-4">
         <Input label="Full Name" value={form.name} onChange={set("name")} required />
         <Input label="Email" type="email" value={form.email} onChange={set("email")} required error={errors.email} />
         <Input label="Password" type="password" value={form.password} onChange={set("password")} required error={errors.password} />
         <Input label="Confirm Password" type="password" value={form.confirm} onChange={set("confirm")} required error={errors.confirm} />
         
-        <button type="submit" disabled={loading} className="w-full h-8 sm:h-11 rounded-full font-bold transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-60 mt-0.5 sm:mt-2 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
+        {/* Tombol Register Diperpendek */}
+        <button type="submit" disabled={loading} className="w-full h-9 sm:h-12 rounded-full font-bold transition-all duration-200 hover:opacity-90 active:scale-95 disabled:opacity-60 mt-1 sm:mt-2 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
           {loading && <span className="auth-inline-loader" />}
           {loading ? "Creating account…" : "Create Account"}
         </button>
       </form>
-      <p className="text-center mt-3 sm:mt-5" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
+      <p className="text-center mt-4 sm:mt-6" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
         Already have an account? <button onClick={() => onSwitch("login")} className="font-semibold transition-colors hover:opacity-80" style={{ color: "#F5A623" }}>Sign in</button>
       </p>
     </div>
@@ -311,26 +305,26 @@ function ForgotForm({ onSwitch, toast }) {
   return (
     <div style={{ animation: "cardSlide 0.35s ease both" }}>
       <div className="text-center mb-2">
-        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Reset Password</h2>
+        <h2 className="text-base sm:text-2xl font-extrabold text-white mb-0.5 sm:mb-1.5" style={{ fontFamily: "'Syne', sans-serif" }}>Reset Password</h2>
         <p className="sm:text-sm" style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>{stepLabels[step]}</p>
       </div>
       <StepDots total={3} current={step} />
       {step === 0 && (
-        <form onSubmit={submitEmail} className="flex w-full flex-col gap-2.5 sm:gap-4">
+        <form onSubmit={submitEmail} className="flex w-full flex-col gap-3 sm:gap-4">
           <Input label="Email Address" type="email" value={email} onChange={e => setEmail(e.target.value)} required error={errors.email} />
           <p className="sm:text-xs" style={{ color: "rgba(255,255,255,0.35)", fontSize: "9px" }}>We'll send a one-time code to this address.</p>
-          <button type="submit" disabled={loading} className="w-full h-8 sm:h-11 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2 mt-1 sm:mt-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
+          <button type="submit" disabled={loading} className="w-full h-9 sm:h-12 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2 mt-1 sm:mt-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
             {loading && <span className="auth-inline-loader" />} {loading ? "Sending…" : "Send OTP"}
           </button>
         </form>
       )}
       {step === 1 && (
-        <form onSubmit={submitOtp} className="flex flex-col gap-3 sm:gap-6">
+        <form onSubmit={submitOtp} className="flex flex-col gap-4 sm:gap-6">
           <div>
-            <p className="text-center mb-2 sm:mb-4" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>Enter the 6-digit code sent to <span style={{ color: "#F5A623" }}>{email}</span></p>
+            <p className="text-center mb-3 sm:mb-4" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>Enter the 6-digit code sent to <span style={{ color: "#F5A623" }}>{email}</span></p>
             <OtpInput value={otp} onChange={setOtp} />
           </div>
-          <button type="submit" disabled={loading} className="w-full h-8 sm:h-11 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
+          <button type="submit" disabled={loading} className="w-full h-9 sm:h-12 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
             {loading && <span className="auth-inline-loader" />} {loading ? "Verifying…" : "Verify Code"}
           </button>
           <button type="button" onClick={() => { toast(`New OTP sent to ${email}`, "info"); setOtp(""); }} className="text-center transition-colors hover:opacity-80" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
@@ -339,15 +333,15 @@ function ForgotForm({ onSwitch, toast }) {
         </form>
       )}
       {step === 2 && (
-        <form onSubmit={submitNewPw} className="flex w-full flex-col gap-2.5 sm:gap-4">
+        <form onSubmit={submitNewPw} className="flex w-full flex-col gap-3 sm:gap-4">
           <Input label="New Password" type="password" value={newPw} onChange={e => setNewPw(e.target.value)} required error={errors.newPw} />
           <Input label="Confirm New Password" type="password" value={confirmPw} onChange={e => setConfirmPw(e.target.value)} required error={errors.confirmPw} />
-          <button type="submit" disabled={loading} className="w-full h-8 sm:h-11 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2 mt-1 sm:mt-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
+          <button type="submit" disabled={loading} className="w-full h-9 sm:h-12 rounded-full font-bold transition-all duration-200 hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-2 mt-2 sm:mt-2" style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", color: "#1a1000", boxShadow: "0 8px 24px rgba(245,166,35,0.4)", fontSize: "12px" }}>
             {loading && <span className="auth-inline-loader" />} {loading ? "Saving…" : "Set New Password"}
           </button>
         </form>
       )}
-      <p className="text-center mt-4 sm:mt-6" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
+      <p className="text-center mt-5 sm:mt-6" style={{ color: "rgba(255,255,255,0.4)", fontSize: "10px" }}>
         <button onClick={() => onSwitch("login")} className="font-semibold transition-colors hover:opacity-80" style={{ color: "#F5A623" }}>← Back to Sign In</button>
       </p>
     </div>
@@ -405,8 +399,8 @@ export default function AuthPage() {
         <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg> Home
       </a>
 
-      {/* Card - Diubah batas max-width nya menjadi sm:max-w-[440px] biar seukuran desktop standar */}
-      <div className="relative z-10 w-[92%] mx-auto sm:max-w-[440px] rounded-2xl sm:rounded-3xl px-4 sm:px-8 pb-4 pt-4 sm:pb-8 sm:pt-6"
+      {/* Card */}
+      <div className="relative z-10 w-[92%] mx-auto max-w-70 sm:max-w-md md:w-1/3 md:max-w-none rounded-2xl sm:rounded-3xl px-5 sm:px-8 pb-5 pt-4 sm:pb-10 sm:pt-6"
         style={{ background: "rgba(20,26,32,0.85)", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04) inset", backdropFilter: "blur(24px)" }}>
         {toastData && <Toast key={toastData.id} message={toastData.message} type={toastData.type} onClose={() => setToastData(null)} fixed={false} emphasized={toastData.emphasized} duration={toastData.duration} />}
         
