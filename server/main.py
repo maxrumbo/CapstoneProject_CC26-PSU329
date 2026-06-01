@@ -65,6 +65,8 @@ app.add_middleware(
         "https://sahabatduwit-hbkc5ebhh-maxrumbos-projects.vercel.app",
         "https://capstone-project-cc-26-psu-329-nn3mfak7p-maxrumbos-projects.vercel.app",
     ],
+    # Allow Vercel preview subdomains like <name>-<hash>-<project>.vercel.app
+    allow_origin_regex=r"^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
