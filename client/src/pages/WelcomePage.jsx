@@ -286,7 +286,6 @@ export default function WelcomePage() {
   const badgeText = "AI-POWERED PERSONAL FINANCE";
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
-  const [typedBadgeText, setTypedBadgeText] = useState(badgeText);
   const [isMobile, setIsMobile] = useState(false);
   const searchMessageTimerRef = useRef(null);
   const lastSearchQueryRef = useRef("");
@@ -313,63 +312,6 @@ export default function WelcomePage() {
       mediaQuery.removeEventListener("change", updateIsMobile);
     };
   }, []);
-
-  useEffect(() => {
-    // Matikan efek ketik jika di mobile agar tampilan box tidak menyusut (bantet)
-    if (isMobile) {
-      // Guard to avoid calling setState synchronously unconditionally
-      // which triggers the eslint `set-state-in-effect` warning and
-      // can cause unnecessary cascading renders.
-      if (typedBadgeText !== badgeText) {
-        setTypedBadgeText(badgeText);
-      }
-      return;
-    }
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    let charIndex = 0;
-    let deleting = false;
-    let timeoutId = null;
-
-    const tick = () => {
-      if (!deleting) {
-        charIndex += 1;
-        setTypedBadgeText(badgeText.slice(0, charIndex));
-
-        if (charIndex >= badgeText.length) {
-          deleting = true;
-          timeoutId = window.setTimeout(tick, 2500); // Jeda sebelum teks dihapus
-          return;
-        }
-
-        timeoutId = window.setTimeout(tick, 80);
-        return;
-      }
-
-      charIndex -= 1;
-      setTypedBadgeText(badgeText.slice(0, Math.max(charIndex, 0)));
-
-      if (charIndex <= 0) {
-        deleting = false;
-        timeoutId = window.setTimeout(tick, 350);
-        return;
-      }
-
-      timeoutId = window.setTimeout(tick, 45);
-    };
-
-    timeoutId = window.setTimeout(tick, 450);
-
-    return () => {
-      if (timeoutId) {
-        window.clearTimeout(timeoutId);
-      }
-    };
-  }, [badgeText, isMobile, typedBadgeText]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -646,10 +588,8 @@ export default function WelcomePage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              {/* Tampilkan badge utuh jika isMobile, jika tidak jalankan teks ketik (beserta caret-nya) */}
               <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.14em] uppercase text-amber-500" aria-label={badgeText}>
-                {isMobile ? badgeText : typedBadgeText}
-                {!isMobile && <span className="type-caret" aria-hidden="true">|</span>}
+                {badgeText}
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-up text-white"
