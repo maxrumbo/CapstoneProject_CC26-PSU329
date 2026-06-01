@@ -130,6 +130,16 @@ def register(payload: UserRegister, request: Request, db: Session = Depends(get_
 
         existing.hashed_password = hash_password(payload.password)
         existing.display_name = payload.display_name
+        
+        if settings.OTP_DEV_MODE:
+            existing.email_verified_at = datetime.now(timezone.utc)
+            db.commit()
+            db.refresh(existing)
+            return APIResponse(
+                data=UserResponse.model_validate(existing),
+                message="Registrasi diperbarui. Akun otomatis terverifikasi (Dev Mode).",
+            )
+            
         db.commit()
         db.refresh(existing)
         send_user_verification_email(request, db, existing)
@@ -146,6 +156,17 @@ def register(payload: UserRegister, request: Request, db: Session = Depends(get_
         hashed_password=hash_password(payload.password),
         display_name=payload.display_name,
     )
+    
+    if settings.OTP_DEV_MODE:
+        user.email_verified_at = datetime.now(timezone.utc)
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+        return APIResponse(
+            data=UserResponse.model_validate(user),
+            message="Registrasi berhasil. Akun otomatis terverifikasi (Dev Mode).",
+        )
+
     db.add(user)
     db.commit()
     db.refresh(user)
