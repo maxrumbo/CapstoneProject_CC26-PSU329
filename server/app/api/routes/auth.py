@@ -118,6 +118,25 @@ def send_verification_or_auto_verify(
         )
 
 
+def send_otp_or_return_fallback(email: str, code: str, purpose: str) -> tuple[bool, str]:
+    try:
+        send_otp_email(email, code, purpose)
+        return True, "OTP dikirim ke email."
+    except HTTPException as exc:
+        if settings.EMAIL_DELIVERY_REQUIRED:
+            raise
+
+        logger.warning(
+            "OTP delivery failed for %s; returning fallback code because "
+            "EMAIL_DELIVERY_REQUIRED=false. Detail: %s",
+            email,
+            exc.detail,
+        )
+        return False, (
+            "Layanan email sedang tidak tersedia. Gunakan kode OTP dari response ini."
+        )
+
+
 def verify_otp(db: Session, email: str, purpose: str, code: str) -> None:
     now = datetime.now(timezone.utc)
     otp = (
@@ -332,14 +351,18 @@ def request_otp(payload: OtpRequest, db: Session = Depends(get_db)):
         )
 
     code, expires_at = create_otp(db, email, payload.purpose)
-    send_otp_email(email, code, payload.purpose)
+    email_sent, otp_message = send_otp_or_return_fallback(
+        email,
+        code,
+        payload.purpose,
+    )
 
     return APIResponse(
         data=OtpRequestResponse(
             expires_at=expires_at,
-            otp_code=code if settings.OTP_DEV_MODE else None,
+            otp_code=code if settings.OTP_DEV_MODE or not email_sent else None,
         ),
-        message="OTP dikirim ke email.",
+        message=otp_message,
     )
 
 
@@ -439,14 +462,18 @@ def request_profile_otp(
     db: Session = Depends(get_db),
 ):
     code, expires_at = create_otp(db, current_user.email, "change_password")
-    send_otp_email(current_user.email, code, "change_password")
+    email_sent, otp_message = send_otp_or_return_fallback(
+        current_user.email,
+        code,
+        "change_password",
+    )
 
     return APIResponse(
         data=OtpRequestResponse(
             expires_at=expires_at,
-            otp_code=code if settings.OTP_DEV_MODE else None,
+            otp_code=code if settings.OTP_DEV_MODE or not email_sent else None,
         ),
-        message="OTP dikirim ke email.",
+        message=otp_message,
     )
 
 
