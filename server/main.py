@@ -61,6 +61,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         *settings.cors_origins,
+        "https://sahabatduwit.vercel.app",
+        "https://sahabatduwit-hbkc5ebhh-maxrumbos-projects.vercel.app",
         "https://capstone-project-cc-26-psu-329-nn3mfak7p-maxrumbos-projects.vercel.app",
     ],
     allow_credentials=True,
