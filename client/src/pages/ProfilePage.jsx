@@ -421,7 +421,7 @@ function ProfilePage() {
                 alt="Foto profil"
               />
             ) : (
-              initial
+              <Icon name="user" size={40} />
             )}
             <span className="profile-avatar-edit" aria-hidden="true">
               <Icon name="pencil" size={14} />
@@ -458,7 +458,7 @@ function ProfilePage() {
                       alt="Pratinjau foto profil"
                     />
                   ) : (
-                    initial
+                    <Icon name="user" size={28} />
                   )}
                   <label
                     className="profile-avatar-edit"

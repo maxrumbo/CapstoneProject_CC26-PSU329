@@ -22,13 +22,48 @@ const VerifyEmailPage = lazy(() =>
   import("./features/auth/pages/VerifyEmailPage")
 );
 
-function PageLoader({ label = "Memuat halaman..." }) {
+function PageLoader({ label = "Hampir siap..." }) {
   return (
     <div className="app-route-loader-shell">
       <main className="app-route-loader-main">
         <div className="app-route-loader" role="status" aria-live="polite">
-          <div className="sawit-loader-core sawit-loader-core-lg" aria-hidden="true" />
-          <img src="/logo-no-bg.png" alt="" className="app-route-loader-logo" />
+          <svg
+            className="app-route-loader-hourglass"
+            viewBox="0 0 64 64"
+            width="96"
+            height="96"
+            aria-hidden="true"
+            role="img"
+          >
+            <defs>
+              <linearGradient id="gSand" x1="0" x2="1">
+                <stop offset="0%" stopColor="#9effc9" />
+                <stop offset="100%" stopColor="#39D98A" />
+              </linearGradient>
+            </defs>
+
+            {/* frame */}
+            <g className="hg-frame" fill="none" stroke="#22312d" strokeWidth="2">
+              <path d="M16 6h32v6L34 30l14 18v6H16v-6l14-18L16 12V6z" strokeOpacity="0.36" />
+            </g>
+
+            {/* top sand (shrinks) */}
+            <g className="hg-top-sand" fill="url(#gSand)">
+              <path d="M22 12h20c0 8-8 14-10 16-2-2-10-8-10-16z" />
+            </g>
+
+            {/* bottom sand (grows) */}
+            <g className="hg-bottom-sand" fill="url(#gSand)">
+              <path d="M22 52h20c0-8-8-14-10-16-2 2-10 8-10 16z" />
+            </g>
+
+            {/* falling grains */}
+            <g className="hg-grains" fill="#9effc9">
+              <circle className="grain g1" cx="31.5" cy="28" r="0.95" />
+              <circle className="grain g2" cx="32" cy="32" r="0.8" />
+              <circle className="grain g3" cx="32.5" cy="36" r="0.7" />
+            </g>
+          </svg>
           <p className="app-route-loader-label">{label}</p>
         </div>
       </main>

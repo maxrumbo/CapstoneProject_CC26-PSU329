@@ -1,28 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BrandLogo from "../components/brand/BrandLogo";
+import AnimatedAiLogo from "../components/brand/AnimatedAiLogo";
 
 /* ─── Icon Components ─── */
 function IconTransaction({ color }) {
   return (
     <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2-13H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z" />
-    </svg>
-  );
-}
-
-function IconBrain({ color }) {
-  return (
-    <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5a4 4 0 100-8 4 4 0 000 8z" />
-    </svg>
-  );
-}
-
-function IconChart({ color }) {
-  return (
-    <svg className="w-6 h-6" fill="none" stroke={color} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
     </svg>
   );
 }
@@ -70,26 +55,33 @@ function IconLock({ color }) {
 /* ─── Social Icons ─── */
 function IconWhatsApp() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.116-3.905 6.089-1.884 9.201 1.913 3.106 6.02 3.824 9.075 1.708l.014-.01c2.94-2.034 3.717-5.938 1.733-9.066-1.326-2.165-3.861-3.494-6.514-3.494l.007.001z" />
+    <svg className="w-6 h-6" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-102.8 83.6-186.4 186.4-186.4 49.8 0 96.6 19.4 131.9 54.6s54.6 82.1 54.6 131.9c0 102.8-83.6 186.4-186.4 186.4zm101.5-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.5 21.7-6.4 4.2-11.9 1.4c-5.5-2.8-23.3-8.6-44.4-27.4-16.4-14.6-27.5-32.7-30.7-38.2-3.2-5.5-.3-8.5 2.4-11.3 2.5-2.4 5.5-6.4 8.2-9.6 2.8-3.2 3.7-5.5 5.5-9.1 1.8-3.7 .9-6.8-.4-9.6-1.4-2.8-12.5-30.1-17.1-41.3-4.5-10.8-9.1-9.3-12.5-9.4l-10.6-.2c-3.7 0-9.6 1.4-14.7 6.8s-19.7 19.2-19.7 46.8 20.2 54.3 23 58c2.8 3.7 39.5 60.4 95.8 84.8 13.4 5.8 23.9 9.3 32 12 13.5 4.3 25.8 3.6 35.5 2.2 10.8-1.6 33.3-13.6 38-26.8 4.7-13.2 4.7-24.4 3.3-26.8-1.4-2.4-5.1-3.8-10.6-6.6z"
+      />
     </svg>
   );
 }
 
 function IconInstagram() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.756 0 8.333.012 7.053.07 2.695.272.273 2.69.07 7.052.012 8.333 0 8.756 0 12c0 3.244.012 3.667.07 4.947.202 4.358 2.625 6.78 6.986 6.982 1.281.058 1.704.07 4.947.07 3.243 0 3.666-.012 4.947-.07 4.358-.202 6.78-2.625 6.977-6.99.058-1.28.07-1.703.07-4.947 0-3.244-.012-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.012 15.259 0 12 0z" />
-      <circle cx="12" cy="12" r="3.6" />
-      <path d="M18.406 5.594a.75.75 0 11-1.06-1.061.75.75 0 011.06 1.06z" />
+    <svg className="w-5 h-5" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M224.1 141c-63.6 0-115.1 51.5-115.1 115.1S160.5 371.2 224.1 371.2 339.2 319.7 339.2 256.1 287.7 141 224.1 141zm0 190.1c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.2s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.2 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.9zm-48.5 224.1c-7.8 19.6-23 34.9-42.6 42.6-29.5 11.7-99.6 9-132.1 9s-102.6 2.6-132.1-9c-19.6-7.8-34.9-23-42.6-42.6-11.7-29.5-9-99.6-9-132.1s-2.6-102.6 9-132.1c7.8-19.6 23-34.9 42.6-42.6 29.5-11.7 99.6-9 132.1-9s102.6-2.6 132.1 9c19.6 7.8 34.9 23 42.6 42.6 11.7 29.5 9 99.6 9 132.1s2.7 102.6-9 132.1z"
+      />
     </svg>
   );
 }
 
 function IconLinkedIn() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+    <svg className="w-5 h-5" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3C448 46.5 433.6 32 416 32zM135.4 416H69.1V202.2h66.3V416zm-33.2-243.3c-21.2 0-38.4-17.2-38.4-38.4s17.2-38.4 38.4-38.4 38.4 17.2 38.4 38.4-17.2 38.4-38.4 38.4zM384.3 416H318V314.4c0-24.3-.5-55.6-33.9-55.6-34 0-39.2 26.5-39.2 53.9V416h-66.2V202.2h63.6v29.2h.9c8.9-16.9 30.7-34.7 63.2-34.7 67.6 0 80.1 44.5 80.1 102.3V416z"
+      />
     </svg>
   );
 }
@@ -104,7 +96,6 @@ const landingSections = [
 /* ─── Floating particle background ─── */
 function ParticleField() {
   const particles = Array.from({ length: 24 }).map((_, i) => {
-    // Deterministic pseudo-random values based on index to keep render pure.
     const rand = (n) => {
       const x = Math.sin((i + 1) * 999 + n) * 10000;
       return x - Math.floor(x);
@@ -190,15 +181,12 @@ function AboutBlobsBackground() {
 function ServicesGridBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Top-left accent glow */}
       <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full blur-3xl"
         style={{ background: "radial-gradient(circle, rgba(245, 166, 35, 0.15), transparent)" }} />
       
-      {/* Bottom-right accent glow */}
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl"
         style={{ background: "radial-gradient(circle, rgba(34, 197, 94, 0.12), transparent)" }} />
       
-      {/* Animated gradient overlay */}
       <div className="absolute inset-0 opacity-40"
         style={{
           background: "linear-gradient(45deg, transparent 0%, rgba(96, 165, 250, 0.05) 50%, transparent 100%)",
@@ -236,7 +224,7 @@ function ContactRingsBackground() {
 function StatBadge({ className, label, value, color, delay }) {
   return (
     <div
-      className={`${className} absolute px-3 py-2 rounded-xl text-xs z-20`}
+      className={`${className} absolute px-2.5 py-2 rounded-xl text-[11px] z-20`}
       style={{
         background: "rgba(20,25,30,0.85)",
         border: `1px solid ${color}40`,
@@ -253,19 +241,19 @@ function StatBadge({ className, label, value, color, delay }) {
 
 function HeroCharacter() {
   return (
-    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "420px", height: "480px" }}>
+    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "340px", height: "400px" }}>
       <div className="absolute inset-0 rounded-full blur-3xl opacity-30"
         style={{ background: "radial-gradient(circle, #F5A623 0%, #22c55e 60%, transparent 100%)" }} />
 
-      <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "360px", height: "420px" }}>
-        <img src="/3Dpict.svg" alt="3D Character" className="hero-3dpict" />
+      <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "286px", height: "340px" }}>
+        <img src={`${import.meta.env.BASE_URL}IconLandingPage.svg`} alt="3D Character" className="hero-3dpict" />
       </div>
 
-      <div className="w-48 h-10 mt-1 rounded-full blur-xl"
+      <div className="w-36 h-8 mt-1 rounded-full blur-xl"
         style={{ background: "radial-gradient(ellipse, rgba(245,166,35,0.5) 0%, transparent 70%)" }} />
-      <StatBadge className="-left-4 sm:-left-14" style={{ top: "40px" }} label="Net Worth" value="+24.8%" color="#22c55e" delay="0s" />
-      <StatBadge className="-right-4 sm:-right-14" style={{ top: "130px" }} label="Target Reached" value="IDR 10M" color="#F5A623" delay="0.4s" />
-      <StatBadge className="-left-4 sm:-left-12" style={{ bottom: "80px" }} label="Monthly Savings" value="+15%" color="#60a5fa" delay="0.8s" />
+      <StatBadge className="-left-2 sm:-left-8" style={{ top: "46px" }} label="Net Worth" value="+24.8%" color="#22c55e" delay="0s" />
+      <StatBadge className="-right-2 sm:right-4" style={{ top: "122px" }} label="Target Reached" value="IDR 10M" color="#F5A623" delay="0.4s" />
+      <StatBadge className="-left-2 sm:-left-6" style={{ bottom: "72px" }} label="Monthly Savings" value="+15%" color="#60a5fa" delay="0.8s" />
     </div>
   );
 }
@@ -295,8 +283,11 @@ function FeatureCard({ icon: Icon, title, desc, accent }) {
 
 export default function WelcomePage() {
   const navigate = useNavigate();
+  const badgeText = "AI-POWERED PERSONAL FINANCE";
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
+  const [typedBadgeText, setTypedBadgeText] = useState(badgeText);
+  const [isMobile, setIsMobile] = useState(false);
   const searchMessageTimerRef = useRef(null);
   const lastSearchQueryRef = useRef("");
   const activeMatchIndexRef = useRef(0);
@@ -311,6 +302,75 @@ export default function WelcomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Matikan efek ketik jika di mobile agar tampilan box tidak menyusut (bantet)
+    if (isMobile) {
+      // Guard to avoid calling setState synchronously unconditionally
+      // which triggers the eslint `set-state-in-effect` warning and
+      // can cause unnecessary cascading renders.
+      if (typedBadgeText !== badgeText) {
+        setTypedBadgeText(badgeText);
+      }
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    let charIndex = 0;
+    let deleting = false;
+    let timeoutId = null;
+
+    const tick = () => {
+      if (!deleting) {
+        charIndex += 1;
+        setTypedBadgeText(badgeText.slice(0, charIndex));
+
+        if (charIndex >= badgeText.length) {
+          deleting = true;
+          timeoutId = window.setTimeout(tick, 2500); // Jeda sebelum teks dihapus
+          return;
+        }
+
+        timeoutId = window.setTimeout(tick, 80);
+        return;
+      }
+
+      charIndex -= 1;
+      setTypedBadgeText(badgeText.slice(0, Math.max(charIndex, 0)));
+
+      if (charIndex <= 0) {
+        deleting = false;
+        timeoutId = window.setTimeout(tick, 350);
+        return;
+      }
+
+      timeoutId = window.setTimeout(tick, 45);
+    };
+
+    timeoutId = window.setTimeout(tick, 450);
+
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [badgeText, isMobile, typedBadgeText]);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -320,9 +380,7 @@ export default function WelcomePage() {
 
   const normalizeSearchText = (value) => value.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 
-  // Clear previous highlights added by the search (unwrap highlight spans)
   const clearSearchHighlights = () => {
-    // remove inline highlight spans
     const spans = Array.from(document.querySelectorAll(".search-highlight"));
     spans.forEach((s) => {
       const txt = document.createTextNode(s.textContent);
@@ -357,24 +415,19 @@ export default function WelcomePage() {
 
     if (!q) return 0;
 
-    // Search visible elements that contain text and are not too large containers
     const all = Array.from(document.querySelectorAll("body *"));
     const matches = all.filter((el) => {
       if (!el || !el.textContent) return false;
-      // skip script, style, SVG path, and hidden elements
       const tag = el.tagName.toLowerCase();
       if (tag === "script" || tag === "style" || tag === "svg" || tag === "path") return false;
       const style = window.getComputedStyle(el);
       if (style && (style.display === "none" || style.visibility === "hidden" || style.opacity === "0")) return false;
-      // prefer leaf-ish nodes to avoid highlighting whole layout containers
       if (el.children && el.children.length > 0) {
-        // allow small containers with few children
         if (el.children.length > 3) return false;
       }
       return el.textContent.toLowerCase().includes(q);
     });
 
-    // wrap all matched substrings in text nodes inside the first matching sections
     const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const regex = new RegExp(escapeRegExp(q), "ig");
     let total = 0;
@@ -434,13 +487,11 @@ export default function WelcomePage() {
     const normalized = normalizeSearchText(searchValue);
 
     if (!normalized) {
-      // empty search: clear highlights and message
       clearSearchHighlights();
       setSearchMessage("");
       return;
     }
 
-    // First try landing sections (exact/partial)
     const landingMatch = landingSections.find((s) => {
       const label = s.label.toLowerCase();
       return (
@@ -464,7 +515,6 @@ export default function WelcomePage() {
       return;
     }
 
-    // Otherwise perform page-find style search and highlight matched words
     clearSearchHighlights();
     const count = findAndHighlight(normalized);
     if (count <= 0) {
@@ -475,7 +525,6 @@ export default function WelcomePage() {
       lastSearchQueryRef.current = normalized;
     }
 
-    // hide transient text-only message after delay, keep highlights/nav unless cleared
     searchMessageTimerRef.current = window.setTimeout(() => {
       setSearchMessage("");
       searchMessageTimerRef.current = null;
@@ -522,8 +571,13 @@ export default function WelcomePage() {
           0% { background-position: -200% center; }
           100% { background-position: 200% center; }
         }
+        @keyframes caretBlink {
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0; }
+        }
         .animate-float { animation: float linear infinite; }
         .animate-fade-up { animation: fadeUp 0.7s ease both; }
+        .type-caret { animation: caretBlink 0.9s steps(1, end) infinite; }
         .gold-shimmer {
           background: linear-gradient(90deg, #F5A623, #ffd080, #F5A623);
           background-size: 200% auto;
@@ -534,39 +588,51 @@ export default function WelcomePage() {
         }
       `}</style>
 
-      <header className="welcome-topbar">
-        <a className="welcome-topbar-logo" href="#home" aria-label="Go to home">
-          <BrandLogo className="welcome-topbar-logo-mark" variant="lockup" />
+      <header className={isMobile ? "w-full flex items-center justify-center pt-2 pb-0 bg-transparent" : "welcome-topbar"}>
+        <a 
+          href="#home" 
+          aria-label="Go to home"
+          className={isMobile ? "flex items-center justify-center" : "welcome-topbar-logo"}
+        >
+          <div style={isMobile ? { transform: "scale(1.3)", transformOrigin: "center", display: "flex" } : {}}>
+            <BrandLogo className="welcome-topbar-logo-mark" variant="lockup" />
+          </div>
         </a>
 
-        <nav className="welcome-topbar-nav" aria-label="Primary">
-          {landingSections.map((section) => (
-            <a key={section.id} className="welcome-topbar-link" href={`#${section.id}`}>
-              {section.label}
-            </a>
-          ))}
-        </nav>
+        {!isMobile && (
+          <>
+            <nav className="welcome-topbar-nav" aria-label="Primary">
+              {landingSections.map((section) => (
+                <a key={section.id} className="welcome-topbar-link" href={`#${section.id}`}>
+                  {section.label}
+                </a>
+              ))}
+            </nav>
 
-        <form className="welcome-searchbar" role="search" aria-label="Search SAWIT" onSubmit={handleSearchSubmit}>
-          <svg className="welcome-searchbar-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
-          </svg>
-          <input
-            type="search"
-            placeholder="Search Home, Services, Contact..."
-            aria-label="Search"
-            value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
-          />
-          {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
-        </form>
-        {/* profile button removed from welcome topbar */}
+            <form className="welcome-searchbar" role="search" aria-label="Search SAWIT" onSubmit={handleSearchSubmit}>
+              <svg className="welcome-searchbar-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+              </svg>
+              <input
+                type="search"
+                placeholder="Search Home, Services, Contact..."
+                aria-label="Search"
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+              />
+              {searchMessage ? <div className="welcome-search-message">{searchMessage}</div> : null}
+            </form>
+          </>
+        )}
       </header>
       
-
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 py-24">
+      <section
+        id="home"
+        className={isMobile ? "relative min-h-screen flex items-center pt-6 pb-10" : "relative min-h-screen flex items-center pt-28 pb-20"}
+        style={isMobile ? { marginTop: "-28px" } : undefined}
+      >
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl"
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.2), transparent)" }} />
@@ -574,31 +640,33 @@ export default function WelcomePage() {
             style={{ background: "radial-gradient(circle, rgba(245,166,35,0.15), transparent)" }} />
         </div>
         <ParticleField />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-16 items-center justify-between w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-between w-full">
           {/* Left */}
-          <div className="flex flex-col gap-6 md:w-1/2">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit animate-fade-up"
+          <div className="flex w-full flex-col gap-5 md:w-1/2 items-center md:items-start text-center md:text-left md:pt-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-xs font-semibold tracking-wider uppercase text-amber-500">
-                AI-POWERED PERSONAL FINANCE
+              {/* Tampilkan badge utuh jika isMobile, jika tidak jalankan teks ketik (beserta caret-nya) */}
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.14em] uppercase text-amber-500" aria-label={badgeText}>
+                {isMobile ? badgeText : typedBadgeText}
+                {!isMobile && <span className="type-caret" aria-hidden="true">|</span>}
               </span>
             </div>
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-up text-white"
               style={{ fontFamily: "'Syne', sans-serif", animationDelay: "0.1s" }}>
               Master Your<br />
               <span className="gold-shimmer">Finances</span><br />
               Smarter.
             </h1>
-            <p className="text-lg leading-relaxed max-w-md animate-fade-up text-gray-300"
+            <p className="text-base sm:text-[1.05rem] leading-relaxed max-w-md animate-fade-up text-gray-300"
               style={{ animationDelay: "0.2s" }}>
               SAWIT helps you track spending, plan savings, and make smarter money decisions
               with AI-powered insights built for personal finance.
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex w-full flex-col flex-wrap gap-3 sm:w-auto sm:flex-row justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <button
                 onClick={() => navigate("/auth?mode=register")}
-                className="group px-8 py-3.5 rounded-full font-bold text-base flex items-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
+                className="group w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
                 style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", boxShadow: "0 8px 32px rgba(245,166,35,0.45)" }}>
                 Get Started Free
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -607,7 +675,7 @@ export default function WelcomePage() {
               </button>
               <button
                 onClick={() => navigate("/auth?mode=login")}
-                className="px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
+                className="w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
                 View Demo
               </button>
             </div>
@@ -616,23 +684,25 @@ export default function WelcomePage() {
             </div>
           </div>
           {/* Right */}
-          <div className="flex items-center justify-center md:w-1/2 md:justify-end animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="hidden md:flex items-center justify-center md:w-1/2 md:justify-end animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <HeroCharacter />
           </div>
         </div>
-        <button 
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer transition-all duration-300 hover:opacity-100"
-          style={{ opacity: 0.6 }}
-          aria-label="Scroll to about section"
-        >
-          <span className="text-xs tracking-widest uppercase text-gray-300 group-hover:text-amber-400 transition-colors duration-300">Scroll</span>
-          <div className="flex flex-col items-center gap-1 group-hover:translate-y-1 transition-transform duration-300">
-            <div className="w-px h-6 bg-gradient-to-b from-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="w-px h-8 bg-linear-to-b from-white/40 to-transparent animate-bounce" style={{ animationDuration: '2s' }} />
-            <div className="w-0.5 h-1 rounded-full bg-white/40 animate-pulse" />
-          </div>
-        </button>
+        {!isMobile ? (
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer transition-all duration-300 hover:opacity-100"
+            style={{ opacity: 0.6 }}
+            aria-label="Scroll to about section"
+          >
+            <span className="text-xs tracking-widest uppercase text-gray-300 group-hover:text-amber-400 transition-colors duration-300">Scroll</span>
+            <div className="flex flex-col items-center gap-1 group-hover:translate-y-1 transition-transform duration-300">
+              <div className="w-px h-6 bg-linear-to-b from-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="w-px h-8 bg-linear-to-b from-white/40 to-transparent animate-bounce" style={{ animationDuration: '2s' }} />
+              <div className="w-0.5 h-1 rounded-full bg-white/40 animate-pulse" />
+            </div>
+          </button>
+        ) : null}
       </section>
 
       {/* FEATURES */}
@@ -651,7 +721,7 @@ export default function WelcomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FeatureCard icon={IconTransaction} title="Transaction Tracking" desc="Record income and expenses with clear personal category summaries." accent="#F5A623" />
-            <FeatureCard icon={IconBrain} title="AI Insights" desc="Get guidance based on patterns from your personal financial activity." accent="#22c55e" />
+            <FeatureCard icon={AnimatedAiLogo} title="AI Insights" desc="Get guidance based on patterns from your personal financial activity." accent="#22c55e" />
           </div>
         </div>
       </section>
@@ -667,7 +737,7 @@ export default function WelcomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <FeatureCard icon={IconChart} title="AI Recommendations" desc="Practical suggestions based on transaction and budget trends." accent="#F5A623" />
+            <FeatureCard icon={AnimatedAiLogo} title="AI Recommendations" desc="Practical suggestions based on transaction and budget trends." accent="#F5A623" />
             <FeatureCard icon={IconTarget} title="Savings Tracker" desc="Set savings targets and monitor progress over time." accent="#22c55e" />
             <FeatureCard icon={IconMoney} title="Budget Planning" desc="Set monthly budgets and review spending by category at a glance." accent="#60a5fa" />
             <FeatureCard icon={IconBell} title="Alerts" desc="Stay informed when spending or goal targets need attention." accent="#a78bfa" />
@@ -695,7 +765,7 @@ export default function WelcomePage() {
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full transition-all duration-300 hover:scale-110"
-              style={{ background: "rgba(34, 197, 94, 0.1)", color: "#22c55e" }}
+              style={{ background: "rgba(34, 197, 94, 0.12)", color: "#25D366" }}
               onMouseEnter={(e) => e.currentTarget.style.background = "rgba(34, 197, 94, 0.2)"}
               onMouseLeave={(e) => e.currentTarget.style.background = "rgba(34, 197, 94, 0.1)"}
             >
@@ -706,9 +776,9 @@ export default function WelcomePage() {
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full transition-all duration-300 hover:scale-110"
-              style={{ background: "rgba(245, 166, 35, 0.1)", color: "#F5A623" }}
-              onMouseEnter={(e) => e.currentTarget.style.background = "rgba(245, 166, 35, 0.2)"}
-              onMouseLeave={(e) => e.currentTarget.style.background = "rgba(245, 166, 35, 0.1)"}
+              style={{ background: "rgba(225, 48, 108, 0.12)", color: "#E1306C" }}
+              onMouseEnter={(e) => e.currentTarget.style.background = "rgba(225, 48, 108, 0.2)"}
+              onMouseLeave={(e) => e.currentTarget.style.background = "rgba(225, 48, 108, 0.1)"}
             >
               <IconInstagram />
             </a>
