@@ -64,7 +64,8 @@ DEMO_USER_DISPLAY_NAME=Demo SAWIT
 
 ## 4. Jalankan Server
 
-```bashuvicorn main:app --reload --host 0.0.0.0 --port 8000
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 ```
 

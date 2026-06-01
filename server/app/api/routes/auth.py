@@ -122,9 +122,23 @@ def register(payload: UserRegister, request: Request, db: Session = Depends(get_
     email = payload.email.lower()
     existing = db.query(User).filter(User.email == email).first()
     if existing:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Email sudah terdaftar",
+        if existing.email_verified_at is not None:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Email sudah terdaftar",
+            )
+
+        existing.hashed_password = hash_password(payload.password)
+        existing.display_name = payload.display_name
+        db.commit()
+        db.refresh(existing)
+        send_user_verification_email(request, db, existing)
+
+        return APIResponse(
+            data=UserResponse.model_validate(existing),
+            message=(
+                "Registrasi diperbarui. Link verifikasi baru dikirim ke email."
+            ),
         )
 
     user = User(
