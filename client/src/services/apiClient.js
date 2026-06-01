@@ -1,5 +1,8 @@
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD
+    ? "https://sawit-server-production.up.railway.app/api"
+    : "http://localhost:8000/api");
 
 const buildApiUrl = (path) => {
   const baseUrl = API_BASE_URL.replace(/\/$/, "");
