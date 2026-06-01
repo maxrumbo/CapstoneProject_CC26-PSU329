@@ -223,7 +223,7 @@ function LoginForm({ onSwitch }) {
 function RegisterForm({ onSwitch, toast }) {
   const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({ email: "", password: "", confirm: "" });
+  const [errors] = useState({ email: "", password: "", confirm: "" });
   const set = (k) => (e) => setForm(p => ({ ...p, [k]: e.target.value }));
 
   const handleSubmit = async (e) => {
@@ -282,7 +282,7 @@ function ForgotForm({ onSwitch, toast }) {
   const [newPw, setNewPw] = useState("");
   const [confirmPw, setConfirmPw] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({ email: "", newPw: "", confirmPw: "" });
+  const [errors] = useState({ email: "", newPw: "", confirmPw: "" });
 
   const submitEmail = async (e) => {
     e.preventDefault();
