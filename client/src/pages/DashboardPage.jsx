@@ -9,7 +9,9 @@ const BASE_STREAMLIT_URL =
 function DashboardPage() {
   const { user } = useAuth();                
 
-  const STREAMLIT_URL = `${BASE_STREAMLIT_URL}/?user_id=${user?.id}&embed=true`;
+  const STREAMLIT_URL = user?.id
+  ? `${BASE_STREAMLIT_URL}/?user_id=${user.id}&embed=true`
+  : null;
 
   return (
     <section className="dashboard-page-stack dashboard-embed-page grid grid-cols-1 gap-6 md:grid-cols-3">
