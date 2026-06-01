@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     OTP_EXPIRE_MINUTES: int = 10
     OTP_DEV_MODE: bool = False  # Changed default to False for production safety
     EMAIL_VERIFICATION_EXPIRE_MINUTES: int = 30
+    EMAIL_DELIVERY_REQUIRED: bool = False
     FRONTEND_VERIFY_EMAIL_URL: str = "http://localhost:5173/auth/verify-email"
     SMTP_HOST: str = ""
     SMTP_PORT: int = 587

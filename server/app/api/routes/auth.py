@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 import hashlib
+import logging
 import secrets
 from urllib.parse import quote
 
@@ -25,6 +26,7 @@ from app.schemas.user import TokenResponse, UserLogin, UserRegister, UserRespons
 from app.services.email import send_otp_email, send_verification_email
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
+logger = logging.getLogger(__name__)
 
 
 def hash_otp_code(code: str) -> str:
@@ -88,6 +90,34 @@ def send_user_verification_email(request: Request, db: Session, user: User) -> N
     send_verification_email(user.email, user.display_name, verification_link)
 
 
+def send_verification_or_auto_verify(
+    request: Request,
+    db: Session,
+    user: User,
+) -> tuple[bool, str]:
+    try:
+        send_user_verification_email(request, db, user)
+        return True, "Cek email untuk verifikasi akun."
+    except HTTPException as exc:
+        if settings.EMAIL_DELIVERY_REQUIRED:
+            raise
+
+        logger.warning(
+            "Email verification delivery failed for %s; auto-verifying because "
+            "EMAIL_DELIVERY_REQUIRED=false. Detail: %s",
+            user.email,
+            exc.detail,
+        )
+        user.email_verified_at = datetime.now(timezone.utc)
+        mark_existing_codes_consumed(db, user.email, "email_verification")
+        db.commit()
+        db.refresh(user)
+        return False, (
+            "Layanan email sedang tidak tersedia. Akun otomatis diverifikasi "
+            "untuk sementara."
+        )
+
+
 def verify_otp(db: Session, email: str, purpose: str, code: str) -> None:
     now = datetime.now(timezone.utc)
     otp = (
@@ -142,12 +172,21 @@ def register(payload: UserRegister, request: Request, db: Session = Depends(get_
             
         db.commit()
         db.refresh(existing)
-        send_user_verification_email(request, db, existing)
+        email_sent, verification_message = send_verification_or_auto_verify(
+            request,
+            db,
+            existing,
+        )
 
         return APIResponse(
             data=UserResponse.model_validate(existing),
             message=(
-                "Registrasi diperbarui. Link verifikasi baru dikirim ke email."
+                "Registrasi diperbarui. "
+                + (
+                    "Link verifikasi baru dikirim ke email."
+                    if email_sent
+                    else verification_message
+                )
             ),
         )
 
@@ -171,11 +210,22 @@ def register(payload: UserRegister, request: Request, db: Session = Depends(get_
     db.commit()
     db.refresh(user)
 
-    send_user_verification_email(request, db, user)
+    email_sent, verification_message = send_verification_or_auto_verify(
+        request,
+        db,
+        user,
+    )
 
     return APIResponse(
         data=UserResponse.model_validate(user),
-        message="Registrasi berhasil. Cek email untuk verifikasi akun.",
+        message=(
+            "Registrasi berhasil. "
+            + (
+                "Cek email untuk verifikasi akun."
+                if email_sent
+                else verification_message
+            )
+        ),
     )
 
 
@@ -202,8 +252,18 @@ def resend_verification(
             detail="Email sudah diverifikasi",
         )
 
-    send_user_verification_email(request, db, user)
-    return APIResponse(message="Link verifikasi dikirim ulang ke email.")
+    email_sent, verification_message = send_verification_or_auto_verify(
+        request,
+        db,
+        user,
+    )
+    return APIResponse(
+        message=(
+            "Link verifikasi dikirim ulang ke email."
+            if email_sent
+            else verification_message
+        )
+    )
 
 
 @router.get(
