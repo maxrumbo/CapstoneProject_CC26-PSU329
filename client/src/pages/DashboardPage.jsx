@@ -1,13 +1,16 @@
+import { useAuth } from "../context/useAuth"; 
 import AnalysisPreview from "../components/dashboard/AnalysisPreview";
 import Icon from "../components/ui/Icon";
 
-const DEFAULT_STREAMLIT_URL =
-  "https://dashboardtransaksi.streamlit.app/?user_id=3&embed=true";
-
-const STREAMLIT_URL =
-  import.meta.env.VITE_STREAMLIT_URL || DEFAULT_STREAMLIT_URL;
+const BASE_STREAMLIT_URL =
+  import.meta.env.VITE_STREAMLIT_URL ||
+  "https://dashboardtransaksi.streamlit.app";
 
 function DashboardPage() {
+  const { user } = useAuth();                
+
+  const STREAMLIT_URL = `${BASE_STREAMLIT_URL}/?user_id=${user?.id}&embed=true`;
+
   return (
     <section className="dashboard-page-stack dashboard-embed-page grid grid-cols-1 gap-6 md:grid-cols-3">
       <header className="dashboard-section dashboard-section--embed md:col-span-3">
