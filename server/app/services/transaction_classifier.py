@@ -1,11 +1,12 @@
 """Backward-compatible public service for transaction classification."""
 
 from app.services.ml.artifacts import TransactionClassifierError
-from app.services.ml.predictor import predict_transaction_category as _predict
 
 
 def predict_transaction_category(description: str) -> dict:
     try:
+        from app.services.ml.predictor import predict_transaction_category as _predict
+
         return _predict(description)
     except ValueError:
         raise
