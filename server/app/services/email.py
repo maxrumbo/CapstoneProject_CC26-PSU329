@@ -16,10 +16,11 @@ def send_email(
     text_body: str,
     html_body: str | None = None,
 ) -> None:
+    if settings.OTP_DEV_MODE:
+        print(f"[EMAIL:DEV] To: {to_email}\nSubject: {subject}\n{text_body}")
+        return
+
     if not _smtp_ready():
-        if settings.OTP_DEV_MODE:
-            print(f"[EMAIL:DEV] To: {to_email}\nSubject: {subject}\n{text_body}")
-            return
 
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,

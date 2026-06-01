@@ -132,26 +132,32 @@ custom_stopwords = {
 
 
 def _load_adjective_stopwords() -> set[str]:
-    local_path = (
+    words_path = Path(__file__).resolve().parent / "data" / "adjective_stopwords.txt"
+    if words_path.exists():
+        words_from_file = {
+            word.strip().lower()
+            for word in words_path.read_text(encoding="utf-8-sig").splitlines()
+            if word.strip()
+        }
+        logger.info(
+            "[preprocessing] Loaded %s kata dari resource adjective lokal.",
+            len(words_from_file),
+        )
+        return words_from_file
+
+    csv_path = (
         Path(__file__).resolve().parents[4]
         / "data-scientist"
         / "kategorisasi"
         / "indonesian-adjective-sentiment-raw.csv"
     )
-    source = local_path
-    if not local_path.exists():
-        source = (
-            "https://raw.githubusercontent.com/maxrumbo/CapstoneProject_CC26-PSU329"
-            "/development/data-scientist/kategorisasi/indonesian-adjective-sentiment-raw.csv"
-        )
-
     try:
-        df_adj = pd.read_csv(source)
+        df_adj = pd.read_csv(csv_path)
         words_from_csv = set(df_adj["word"].dropna().str.lower().str.strip())
         logger.info("[preprocessing] Loaded %s kata dari CSV adjective.", len(words_from_csv))
         return words_from_csv
     except Exception as exc:
-        logger.warning("[preprocessing] Gagal load CSV adjective: %s", exc)
+        logger.warning("[preprocessing] Gagal load resource adjective lokal: %s", exc)
         return set()
 
 

@@ -63,6 +63,7 @@ app.add_middleware(
         *settings.cors_origins,
         "https://capstone-project-cc-26-psu-329-nn3mfak7p-maxrumbos-projects.vercel.app",
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
