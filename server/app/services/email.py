@@ -1,8 +1,7 @@
-import smtplib
 import logging
-from email.message import EmailMessage
 from typing import Optional
 
+import requests
 from fastapi import HTTPException, status
 
 from app.core.config import settings
@@ -10,19 +9,17 @@ from app.core.config import settings
 logger = logging.getLogger(__name__)
 
 
-def _smtp_ready() -> bool:
-    """Check if SMTP configuration is complete."""
-    return bool(settings.SMTP_HOST and settings.SMTP_FROM_EMAIL)
-
-
 def _is_dev_mode() -> bool:
     """Check if running in development mode."""
-    # Handle various truthy values for OTP_DEV_MODE
     if isinstance(settings.OTP_DEV_MODE, bool):
         return settings.OTP_DEV_MODE
     if isinstance(settings.OTP_DEV_MODE, str):
-        return settings.OTP_DEV_MODE.lower() in ('true', '1', 'yes', 'on')
+        return settings.OTP_DEV_MODE.lower() in ("true", "1", "yes", "on")
     return False
+
+
+def _apps_script_ready() -> bool:
+    return bool(settings.APPS_SCRIPT_EMAIL_WEBHOOK_URL and settings.APPS_SCRIPT_EMAIL_SECRET)
 
 
 def send_email(
@@ -31,82 +28,82 @@ def send_email(
     text_body: str,
     html_body: Optional[str] = None,
 ) -> None:
-    """
-    Send email via SMTP or print to console in dev mode.
-    
-    In dev mode (OTP_DEV_MODE=true), emails are printed to console.
-    In production, emails are sent via SMTP.
-    """
-    # Priority 1: Check dev mode first
+    """Send email through Google Apps Script, or log it in dev mode."""
     if _is_dev_mode():
-        logger.info(f"[EMAIL:DEV] To: {to_email}")
-        logger.info(f"[EMAIL:DEV] Subject: {subject}")
-        logger.info(f"[EMAIL:DEV] Body:\n{text_body}")
+        logger.info("[EMAIL:DEV] To: %s", to_email)
+        logger.info("[EMAIL:DEV] Subject: %s", subject)
+        logger.info("[EMAIL:DEV] Body:\n%s", text_body)
         if html_body:
-            logger.debug(f"[EMAIL:DEV] HTML Body:\n{html_body}")
+            logger.debug("[EMAIL:DEV] HTML Body:\n%s", html_body)
         return
 
-    # Priority 2: Check if SMTP is configured
-    if not _smtp_ready():
-        logger.error("SMTP configuration incomplete")
+    if settings.EMAIL_PROVIDER.strip().lower() != "apps_script":
+        logger.error("Unsupported EMAIL_PROVIDER: %s", settings.EMAIL_PROVIDER)
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Konfigurasi SMTP belum lengkap",
+            detail="Konfigurasi provider email tidak dikenali.",
         )
 
-    # Priority 3: Try to send via SMTP with better error handling
+    if not _apps_script_ready():
+        logger.error("Google Apps Script email configuration incomplete")
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Konfigurasi Google Apps Script email belum lengkap",
+        )
+
+    payload = {
+        "secret": settings.APPS_SCRIPT_EMAIL_SECRET,
+        "to": to_email,
+        "subject": subject,
+        "text": text_body,
+        "html": html_body or "",
+        "fromName": settings.EMAIL_FROM_NAME,
+    }
+
     try:
-        message = EmailMessage()
-        message["Subject"] = subject
-        message["From"] = f"{settings.SMTP_FROM_NAME} <{settings.SMTP_FROM_EMAIL}>"
-        message["To"] = to_email
-        message.set_content(text_body)
-
-        if html_body:
-            message.add_alternative(html_body, subtype="html")
-
-        # Attempt SMTP connection with timeout
-        with smtplib.SMTP(
-            settings.SMTP_HOST,
-            settings.SMTP_PORT,
+        response = requests.post(
+            settings.APPS_SCRIPT_EMAIL_WEBHOOK_URL,
+            json=payload,
             timeout=20,
-        ) as server:
-            # Enable TLS if configured
-            if settings.SMTP_USE_TLS:
-                server.starttls()
-            
-            # Authenticate if credentials provided
-            if settings.SMTP_USERNAME and settings.SMTP_PASSWORD:
-                server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
-            
-            # Send the message
-            server.send_message(message)
-            logger.info(f"Email sent successfully to {to_email}")
+        )
+    except requests.Timeout as exc:
+        logger.error("Timeout connecting to Google Apps Script email webhook: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Koneksi ke layanan email timeout. Coba lagi nanti.",
+        ) from exc
+    except requests.RequestException as exc:
+        logger.error("Network error connecting to Google Apps Script email webhook: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Gagal terhubung ke layanan email. Periksa konfigurasi Apps Script.",
+        ) from exc
 
-    except smtplib.SMTPAuthenticationError as exc:
-        logger.error(f"SMTP authentication failed: {exc}")
+    response_body = _parse_apps_script_response(response)
+    if response.status_code >= 400 or not response_body.get("success"):
+        detail = response_body.get("error") or response.text[:200] or f"HTTP {response.status_code}"
+        logger.error("Google Apps Script email error: %s", detail)
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Gagal autentikasi SMTP. Periksa kredensial email.",
-        ) from exc
-    except smtplib.SMTPException as exc:
-        logger.error(f"SMTP error: {exc}")
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Gagal mengirim email via SMTP. Coba lagi nanti.",
-        ) from exc
-    except OSError as exc:
-        logger.error(f"Network error connecting to SMTP: {exc}")
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Gagal terhubung ke server email. Periksa konfigurasi SMTP.",
-        ) from exc
-    except Exception as exc:
-        logger.error(f"Unexpected error sending email: {exc}")
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Gagal mengirim email. Coba lagi nanti.",
-        ) from exc
+            detail=f"Gagal mengirim email via Google Apps Script: {detail}",
+        )
+
+    logger.info(
+        "Email sent successfully via Google Apps Script to %s. Remaining quota: %s",
+        to_email,
+        response_body.get("remainingQuota", "unknown"),
+    )
+
+
+def _parse_apps_script_response(response: requests.Response) -> dict:
+    try:
+        body = response.json()
+    except ValueError:
+        return {"success": False, "error": response.text[:200]}
+
+    if isinstance(body, dict):
+        return body
+    return {"success": False, "error": "Response layanan email tidak valid"}
 
 
 def send_otp_email(email: str, code: str, purpose: str) -> None:
@@ -116,7 +113,7 @@ def send_otp_email(email: str, code: str, purpose: str) -> None:
         "change_password": "ganti password",
         "signup": "pendaftaran",
     }.get(purpose, purpose)
-    
+
     subject = f"Kode OTP SAWIT untuk {purpose_label}"
     text_body = (
         f"Kode OTP SAWIT kamu adalah {code}.\n\n"
@@ -154,4 +151,3 @@ def send_verification_email(
         "<p>Jika Anda tidak membuat akun ini, abaikan email ini.</p>"
     )
     send_email(email, subject, text_body, html_body)
-
