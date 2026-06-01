@@ -8,7 +8,7 @@ const BASE_STREAMLIT_URL =
 
 function DashboardPage() {
   const { user } = useAuth();                
-
+  console.log("USER OBJECT:", JSON.stringify(user))
   const STREAMLIT_URL = user?.id
   ? `${BASE_STREAMLIT_URL}/?user_id=${user.id}&embed=true`
   : null;
