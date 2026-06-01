@@ -56,10 +56,13 @@ app = FastAPI(
 )
 
 # ── CORS Middleware ───────────────────────────────────────────────────────────
-# Izinkan request dari frontend React (Vite default port 5173)
+# Izinkan request dari frontend React lokal dan domain frontend production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=[
+        *settings.cors_origins,
+        "https://capstone-project-cc-26-psu-329-nn3mfak7p-maxrumbos-projects.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
