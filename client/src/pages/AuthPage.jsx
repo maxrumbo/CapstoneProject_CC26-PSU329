@@ -97,8 +97,20 @@ function Input({ label, type = "text", value, onChange, placeholder, autoComplet
             onClick={() => setShowPw(!showPw)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-sm sm:text-lg transition-opacity hover:opacity-80"
             style={{ color: "rgba(255,255,255,0.35)" }}
+            aria-label={showPw ? "Sembunyikan password" : "Tampilkan password"}
           >
-            {showPw ? "🙈" : "👁"}
+            {showPw ? (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3.5 12s3.2-6.5 8.5-6.5S20.5 12 20.5 12s-3.2 6.5-8.5 6.5S3.5 12 3.5 12Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="12" cy="12" r="2.8" stroke="currentColor" strokeWidth="1.8" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M2 12s3.5-7 10-7c2.3 0 4.3.8 6 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4.2 4.2 19.8 19.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M9.1 9.1A3.1 3.1 0 0 0 8.5 12a3.5 3.5 0 0 0 5.1 3.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
           </button>
         )}
       </div>
