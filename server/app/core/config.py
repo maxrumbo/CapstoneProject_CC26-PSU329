@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 24 jam
     OTP_EXPIRE_MINUTES: int = 10
-    OTP_DEV_MODE: bool = True
+    OTP_DEV_MODE: bool = False  # Changed default to False for production safety
     EMAIL_VERIFICATION_EXPIRE_MINUTES: int = 30
     FRONTEND_VERIFY_EMAIL_URL: str = "http://localhost:5173/auth/verify-email"
     SMTP_HOST: str = ""
@@ -54,3 +54,4 @@ def get_settings() -> Settings:
 
 
 settings = get_settings()
+
