@@ -1,11 +1,8 @@
 from datetime import datetime
-<<<<<<< HEAD
 from pydantic import BaseModel, EmailStr, computed_field, field_validator
-=======
 from typing import Optional
 
 from pydantic import BaseModel, EmailStr, field_validator
->>>>>>> 6bb0a55f7f503976c3ed7232da107ac1e3c4de8a
 
 
 class UserRegister(BaseModel):

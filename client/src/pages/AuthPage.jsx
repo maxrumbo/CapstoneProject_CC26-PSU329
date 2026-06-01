@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { loginUser } from "../services/authApi";
+import { loginUser, registerUser, requestOtp, resetPassword } from "../services/authApi";
 import { useAuth } from "../context/useAuth";
 
 /* ─── Toast notification ─── */
@@ -226,14 +226,26 @@ function RegisterForm({ onSwitch, toast }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (form.password.length < 8) {
+      toast("Password minimal 8 karakter.", "error"); return;
+    }
     if (form.password !== form.confirm) {
       toast("Passwords do not match.", "error"); return;
     }
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1400));
-    setLoading(false);
-    onSwitch("login");
-    setTimeout(() => toast("Account created! Please check your email for the activation link.", "success"), 100);
+    try {
+      await registerUser({
+        name: form.name,
+        email: form.email,
+        password: form.password,
+      });
+      onSwitch("login");
+      setTimeout(() => toast("Account created! Please check your email for the activation link.", "success"), 100);
+    } catch (error) {
+      toast(error.message || "Registration failed. Please try again.", "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -276,10 +288,18 @@ function ForgotForm({ onSwitch, toast }) {
   const submitEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1000));
-    setLoading(false);
-    toast(`OTP sent to ${email}`, "info");
-    setStep(1);
+    try {
+      await requestOtp({
+        email,
+        purpose: "reset_password",
+      });
+      toast(`OTP sent to ${email}`, "info");
+      setStep(1);
+    } catch (error) {
+      toast(error.message || "Failed to send OTP.", "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const submitOtp = async (e) => {
@@ -293,12 +313,22 @@ function ForgotForm({ onSwitch, toast }) {
 
   const submitNewPw = async (e) => {
     e.preventDefault();
+    if (newPw.length < 8) { toast("Password minimal 8 karakter.", "error"); return; }
     if (newPw !== confirmPw) { toast("Passwords do not match.", "error"); return; }
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1000));
-    setLoading(false);
-    onSwitch("login");
-    setTimeout(() => toast("Password updated! Please sign in.", "success"), 100);
+    try {
+      await resetPassword({
+        email,
+        code: otp,
+        new_password: newPw,
+      });
+      onSwitch("login");
+      setTimeout(() => toast("Password updated! Please sign in.", "success"), 100);
+    } catch (error) {
+      toast(error.message || "Failed to update password.", "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const stepLabels = ["Enter Email", "Verify OTP", "New Password"];
@@ -343,7 +373,18 @@ function ForgotForm({ onSwitch, toast }) {
             {loading ? <span className="auth-inline-loader" /> : null}
             {loading ? "Verifying…" : "Verify Code"}
           </button>
-          <button type="button" onClick={() => { toast(`New OTP sent to ${email}`, "info"); setOtp(""); }}
+          <button type="button" onClick={async () => {
+            setLoading(true);
+            try {
+              await requestOtp({ email, purpose: "reset_password" });
+              toast(`New OTP sent to ${email}`, "info");
+              setOtp("");
+            } catch (error) {
+              toast(error.message || "Failed to resend OTP.", "error");
+            } finally {
+              setLoading(false);
+            }
+          }}
             className="text-sm text-center transition-colors hover:opacity-80"
             style={{ color: "rgba(255,255,255,0.4)" }}>
             Didn't receive it? <span style={{ color: "#F5A623" }}>Resend</span>
