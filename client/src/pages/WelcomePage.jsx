@@ -224,7 +224,7 @@ function ContactRingsBackground() {
 function StatBadge({ className, label, value, color, delay }) {
   return (
     <div
-      className={`${className} absolute px-3 py-2 rounded-xl text-xs z-20`}
+      className={`${className} absolute px-2.5 py-2 rounded-xl text-[11px] z-20`}
       style={{
         background: "rgba(20,25,30,0.85)",
         border: `1px solid ${color}40`,
@@ -241,19 +241,19 @@ function StatBadge({ className, label, value, color, delay }) {
 
 function HeroCharacter() {
   return (
-    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "420px", height: "480px" }}>
+    <div className="relative flex flex-col items-center justify-end select-none" style={{ width: "340px", height: "400px" }}>
       <div className="absolute inset-0 rounded-full blur-3xl opacity-30"
         style={{ background: "radial-gradient(circle, #F5A623 0%, #22c55e 60%, transparent 100%)" }} />
 
-      <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "360px", height: "420px" }}>
+      <div className="relative z-10 hero-frame overflow-hidden" style={{ width: "286px", height: "340px" }}>
         <img src={`${import.meta.env.BASE_URL}IconLandingPage.svg`} alt="3D Character" className="hero-3dpict" />
       </div>
 
-      <div className="w-48 h-10 mt-1 rounded-full blur-xl"
+      <div className="w-36 h-8 mt-1 rounded-full blur-xl"
         style={{ background: "radial-gradient(ellipse, rgba(245,166,35,0.5) 0%, transparent 70%)" }} />
-      <StatBadge className="-left-4 sm:-left-14" style={{ top: "40px" }} label="Net Worth" value="+24.8%" color="#22c55e" delay="0s" />
-      <StatBadge className="-right-4 sm:-right-14" style={{ top: "130px" }} label="Target Reached" value="IDR 10M" color="#F5A623" delay="0.4s" />
-      <StatBadge className="-left-4 sm:-left-12" style={{ bottom: "80px" }} label="Monthly Savings" value="+15%" color="#60a5fa" delay="0.8s" />
+      <StatBadge className="-left-2 sm:-left-8" style={{ top: "46px" }} label="Net Worth" value="+24.8%" color="#22c55e" delay="0s" />
+      <StatBadge className="-right-2 sm:right-4" style={{ top: "122px" }} label="Target Reached" value="IDR 10M" color="#F5A623" delay="0.4s" />
+      <StatBadge className="-left-2 sm:-left-6" style={{ bottom: "72px" }} label="Monthly Savings" value="+15%" color="#60a5fa" delay="0.8s" />
     </div>
   );
 }
@@ -317,7 +317,12 @@ export default function WelcomePage() {
   useEffect(() => {
     // Matikan efek ketik jika di mobile agar tampilan box tidak menyusut (bantet)
     if (isMobile) {
-      setTypedBadgeText(badgeText);
+      // Guard to avoid calling setState synchronously unconditionally
+      // which triggers the eslint `set-state-in-effect` warning and
+      // can cause unnecessary cascading renders.
+      if (typedBadgeText !== badgeText) {
+        setTypedBadgeText(badgeText);
+      }
       return;
     }
 
@@ -364,7 +369,7 @@ export default function WelcomePage() {
         window.clearTimeout(timeoutId);
       }
     };
-  }, [badgeText, isMobile]);
+  }, [badgeText, isMobile, typedBadgeText]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -583,7 +588,7 @@ export default function WelcomePage() {
         }
       `}</style>
 
-      <header className={isMobile ? "w-full flex items-center justify-center pt-4 pb-0 bg-transparent" : "welcome-topbar"}>
+      <header className={isMobile ? "w-full flex items-center justify-center pt-2 pb-0 bg-transparent" : "welcome-topbar"}>
         <a 
           href="#home" 
           aria-label="Go to home"
@@ -623,7 +628,11 @@ export default function WelcomePage() {
       </header>
       
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 py-24">
+      <section
+        id="home"
+        className={isMobile ? "relative min-h-screen flex items-center pt-6 pb-10" : "relative min-h-screen flex items-center pt-28 pb-20"}
+        style={isMobile ? { marginTop: "-28px" } : undefined}
+      >
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl"
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.2), transparent)" }} />
@@ -631,33 +640,33 @@ export default function WelcomePage() {
             style={{ background: "radial-gradient(circle, rgba(245,166,35,0.15), transparent)" }} />
         </div>
         <ParticleField />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-10 md:gap-16 items-center justify-between w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-between w-full">
           {/* Left */}
-          <div className="flex w-full flex-col gap-6 md:w-1/2 items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full w-fit animate-fade-up"
+          <div className="flex w-full flex-col gap-5 md:w-1/2 items-center md:items-start text-center md:text-left md:pt-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               {/* Tampilkan badge utuh jika isMobile, jika tidak jalankan teks ketik (beserta caret-nya) */}
-              <span className="text-xs font-semibold tracking-wider uppercase text-amber-500" aria-label={badgeText}>
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.14em] uppercase text-amber-500" aria-label={badgeText}>
                 {isMobile ? badgeText : typedBadgeText}
                 {!isMobile && <span className="type-caret" aria-hidden="true">|</span>}
               </span>
             </div>
-            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold leading-tight animate-fade-up text-white"
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-up text-white"
               style={{ fontFamily: "'Syne', sans-serif", animationDelay: "0.1s" }}>
               Master Your<br />
               <span className="gold-shimmer">Finances</span><br />
               Smarter.
             </h1>
-            <p className="text-base sm:text-lg leading-relaxed max-w-md animate-fade-up text-gray-300"
+            <p className="text-base sm:text-[1.05rem] leading-relaxed max-w-md animate-fade-up text-gray-300"
               style={{ animationDelay: "0.2s" }}>
               SAWIT helps you track spending, plan savings, and make smarter money decisions
               with AI-powered insights built for personal finance.
             </p>
-            <div className="flex w-full flex-col flex-wrap gap-4 sm:w-auto sm:flex-row justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex w-full flex-col flex-wrap gap-3 sm:w-auto sm:flex-row justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <button
                 onClick={() => navigate("/auth?mode=register")}
-                className="group w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
+                className="group w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
                 style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", boxShadow: "0 8px 32px rgba(245,166,35,0.45)" }}>
                 Get Started Free
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -666,7 +675,7 @@ export default function WelcomePage() {
               </button>
               <button
                 onClick={() => navigate("/auth?mode=login")}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
+                className="w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
                 View Demo
               </button>
             </div>
