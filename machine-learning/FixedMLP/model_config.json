@@ -1,0 +1,13 @@
+{
+  "n_classes": 6,
+  "classes": [
+    "Entertainment",
+    "Kesehatan",
+    "Konsumsi",
+    "Langganan",
+    "Tagihan",
+    "Transport"
+  ],
+  "bert_input_dim": 768,
+  "test_acc_func_api": 0.9521080638559148
+}
