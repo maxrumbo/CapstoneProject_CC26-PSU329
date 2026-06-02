@@ -1,0 +1,882 @@
+Nama Produk,label,text_cleaned,text_stopwords_removed,clean_text,token_awal,token_akhir,reduksi,persen_%
+"Wisata Batas Kampung sejuk alami Surabaya ""GRATIS""",Entertainment,wisata batas kampung sejuk alami surabaya gratis,wisata batas surabaya,wisata batas surabaya,7.0,3.0,4.0,57.1
+Taman Pelangi,Entertainment,taman pelangi,pelangi,pelangi,2.0,1.0,1.0,50.0
+Kampoeng Lawas Maspati,Entertainment,kampoeng lawas maspati,kampoeng lawas maspati,kampoeng lawas maspati,3.0,3.0,0.0,0.0
+Bungkul Park,Entertainment,bungkul park,bungkul park,bungkul park,2.0,2.0,0.0,0.0
+Bamboo Forest Keputih Surabaya,Entertainment,bamboo forest keputih surabaya,bamboo forest keputih surabaya,bamboo forest putih surabaya,4.0,4.0,0.0,0.0
+Taman Air Mancur Menari Kenjeran,Entertainment,taman air mancur menari kenjeran,air mancur menari kenjeran,air mancur tari kenjeran,5.0,4.0,1.0,20.0
+Unesa Lake,Entertainment,unesa lake,unesa lake,unesa lake,2.0,2.0,0.0,0.0
+Tunjungan Romansa,Entertainment,tunjungan romansa,tunjungan romansa,tunjung romansa,2.0,2.0,0.0,0.0
+Suroboyo Park,Entertainment,suroboyo park,suroboyo park,suroboyo park,2.0,2.0,0.0,0.0
+Kunang Kunang Park,Entertainment,kunang kunang park,kunang kunang park,nang nang park,3.0,3.0,0.0,0.0
+Adventure Land Romokalisari,Entertainment,adventure land romokalisari,adventure land romokalisari,adventure land romokalisari,3.0,3.0,0.0,0.0
+Surabaya Zoo,Entertainment,surabaya zoo,surabaya zoo,surabaya zoo,2.0,2.0,0.0,0.0
+Mangrove Wonorejo Ecotourism,Entertainment,mangrove wonorejo ecotourism,mangrove wonorejo ecotourism,mangrove wonorejo ecotourism,3.0,3.0,0.0,0.0
+Hutan Kota Balas Klumprik,Entertainment,hutan kota balas klumprik,hutan kota balas klumprik,hutan kota balas klumprik,4.0,4.0,0.0,0.0
+Kota Tua Surabaya,Entertainment,kota tua surabaya,kota surabaya,kota surabaya,3.0,2.0,1.0,33.3
+Kenjeran Park Outbound,Entertainment,kenjeran park outbound,kenjeran park outbound,kenjeran park outbound,3.0,3.0,0.0,0.0
+Kenjeran Park,Entertainment,kenjeran park,kenjeran park,kenjeran park,2.0,2.0,0.0,0.0
+Surabaya North Quay,Entertainment,surabaya north quay,surabaya north quay,surabaya north quay,3.0,3.0,0.0,0.0
+Edu Wisata Lontar Sewu (Hendrosari),Entertainment,edu wisata lontar sewu hendrosari,edu wisata lontar sewu hendrosari,edu wisata lontar sewu hendrosari,5.0,5.0,0.0,0.0
+Taman Harmoni Keputih,Entertainment,taman harmoni keputih,harmoni keputih,harmoni putih,3.0,2.0,1.0,33.3
+LaFest,Entertainment,lafest,lafest,lafest,1.0,1.0,0.0,0.0
+Pakal Park,Entertainment,pakal park,pakal park,pakal park,2.0,2.0,0.0,0.0
+Taman Flora Bratang Surabaya,Entertainment,taman flora bratang surabaya,flora bratang surabaya,flora bratang surabaya,4.0,3.0,1.0,25.0
+Telaga Mboro Sidowungu,Entertainment,telaga mboro sidowungu,telaga mboro sidowungu,telaga mboro sidowungu,3.0,3.0,0.0,0.0
+Danau Citraland,Entertainment,danau citraland,danau citraland,danau citraland,2.0,2.0,0.0,0.0
+Loka Asri Park,Entertainment,loka asri park,loka park,loka park,3.0,2.0,1.0,33.3
+Kebun Bibit Wonorejo,Entertainment,kebun bibit wonorejo,kebun bibit wonorejo,kebun bibit wonorejo,3.0,3.0,0.0,0.0
+Bukit Ular,Entertainment,bukit ular,bukit ular,bukit ular,2.0,2.0,0.0,0.0
+Notredame Adventure Park Wisata Bukit Mas 2,Entertainment,notredame adventure park wisata bukit mas,notredame adventure park wisata bukit mas,notredame adventure park wisata bukit mas,7.0,6.0,1.0,14.3
+Ria Beach Kenjeran,Entertainment,ria beach kenjeran,beach kenjeran,beach kenjeran,3.0,2.0,1.0,33.3
+Kebun Bibit Manyar,Entertainment,kebun bibit manyar,kebun bibit manyar,kebun bibit manyar,3.0,3.0,0.0,0.0
+Alun - Alun Surabaya,Entertainment,alun alun surabaya,alun alun surabaya,alun alun surabaya,4.0,3.0,1.0,25.0
+Wisata Religi Sunan Giri,Entertainment,wisata religi sunan giri,wisata religi sunan giri,wisata religi sunan giri,4.0,4.0,0.0,0.0
+Park Shanghai - Pakuwon City Mall,Entertainment,park shanghai pakuwon city mall,park shanghai pakuwon city mall,park shanghai pakuwon city mall,6.0,5.0,1.0,16.7
+Lesehan Legok Asri,Entertainment,lesehan legok asri,lesehan,leseh,3.0,1.0,2.0,66.7
+Dynasty Water World Gresik,Entertainment,dynasty water world gresik,dynasty water world gresik,dynasty water world gresik,4.0,4.0,0.0,0.0
+Waduk Hulaan,Entertainment,waduk hulaan,waduk hulaan,waduk hulaan,2.0,2.0,0.0,0.0
+Blockbuster Museum Surabaya,Entertainment,blockbuster museum surabaya,blockbuster museum surabaya,blockbuster museum surabaya,3.0,3.0,0.0,0.0
+Wisata Bukit Mas,Entertainment,wisata bukit mas,wisata bukit mas,wisata bukit mas,3.0,3.0,0.0,0.0
+Taman Mozaik,Entertainment,taman mozaik,mozaik,mozaik,2.0,1.0,1.0,50.0
+Driyorejo SkyView,Entertainment,driyorejo skyview,driyorejo skyview,driyorejo skyview,2.0,2.0,0.0,0.0
+Taman Angsa,Entertainment,taman angsa,angsa,angsa,2.0,1.0,1.0,50.0
+Taman Grand Harvest - Harvestory Park,Entertainment,taman grand harvest harvestory park,grand harvest harvestory park,grand harvest harvestory park,6.0,4.0,2.0,33.3
+Taman Cangkruan 18,Entertainment,taman cangkruan,cangkruan,cangkruan,3.0,1.0,2.0,66.7
+Monumen Jalesveva Jayamahe,Entertainment,monumen jalesveva jayamahe,monumen jalesveva jayamahe,monumen jalesveva jayamahe,3.0,3.0,0.0,0.0
+Taman Cahaya,Entertainment,taman cahaya,taman cahaya,taman cahaya,2.0,1.0,1.0,50.0
+G-Park Gresik,Entertainment,gpark gresik,gpark gresik,gpark gresik,2.0,2.0,0.0,0.0
+Taman Paliatif,Entertainment,taman paliatif,paliatif,paliatif,2.0,1.0,1.0,50.0
+Bukit Songkro Wringinanom,Entertainment,bukit songkro wringinanom,bukit songkro wringinanom,bukit songkro wringinanom,3.0,3.0,0.0,0.0
+Taman Rusa Sambikerep,Entertainment,taman rusa sambikerep,rusa sambikerep,rusa sambikerep,3.0,2.0,1.0,33.3
+ArekAsik Adventure,Entertainment,arekasik adventure,arekasik adventure,arekasik adventure,2.0,2.0,0.0,0.0
+Taman Anggrek Sememi Surabaya,Entertainment,taman anggrek sememi surabaya,anggrek sememi surabaya,anggrek mem surabaya,4.0,3.0,1.0,25.0
+Travel Parks Dawablandong,Entertainment,travel parks dawablandong,travel parks dawablandong,travel parks dawablandong,3.0,3.0,0.0,0.0
+Taman Wisata INTAN ABATANI Dawarblandong,Entertainment,taman wisata intan abatani dawarblandong,wisata intan abatani dawarblandong,wisata intan abatani dawarblandong,5.0,4.0,1.0,20.0
+Waduk Pucuk,Entertainment,waduk pucuk,waduk pucuk,waduk pucuk,2.0,2.0,0.0,0.0
+Pantai Goa Petapa,Entertainment,pantai goa petapa,goa petapa,goa tapa,3.0,2.0,1.0,33.3
+Taman Greenville,Entertainment,taman greenville,greenville,greenville,2.0,1.0,1.0,50.0
+Alas Prambon,Entertainment,alas prambon,alas prambon,alas prambon,2.0,2.0,0.0,0.0
+Agrowisata Sambimadu Sambibulu,Entertainment,agrowisata sambimadu sambibulu,agrowisata sambimadu sambibulu,agrowisata sambimadu sambibulu,3.0,3.0,0.0,0.0
+Kusuma Tirta Minapolitan,Entertainment,kusuma tirta minapolitan,kusuma tirta minapolitan,kusuma tirta minapolitan,3.0,3.0,0.0,0.0
+WISATA ALAS PRAMBON,Entertainment,wisata alas prambon,wisata alas prambon,wisata alas prambon,3.0,3.0,0.0,0.0
+Jayandaru Monument,Entertainment,jayandaru monument,jayandaru monument,jayandaru monument,2.0,2.0,0.0,0.0
+Citra Harmoni Water Park,Entertainment,citra harmoni water park,citra harmoni water park,citra harmoni water park,4.0,4.0,0.0,0.0
+Taman Abhirama Sidoarjo,Entertainment,taman abhirama sidoarjo,abhirama sidoarjo,abhirama sidoarjo,3.0,2.0,1.0,33.3
+Suncity Waterpark Sidoarjo,Entertainment,suncity waterpark sidoarjo,suncity waterpark sidoarjo,suncity waterpark sidoarjo,3.0,3.0,0.0,0.0
+Taman Tandjoeng Poeri,Entertainment,taman tandjoeng poeri,tandjoeng poeri,tandjoeng poeri,3.0,2.0,1.0,33.3
+Monstero Fishing Park,Entertainment,monstero fishing park,monstero fishing park,monstero fishing park,3.0,3.0,0.0,0.0
+Taman Abhirupa Krian,Entertainment,taman abhirupa krian,abhirupa krian,abhirupa krian,3.0,2.0,1.0,33.3
+Wisata Desa WBT,Entertainment,wisata desa wbt,wisata desa wbt,wisata desa wbt,3.0,3.0,0.0,0.0
+Kolam Pancing Siap Saji,Entertainment,kolam pancing siap saji,kolam pancing saji,kolam pancing saji,4.0,3.0,1.0,25.0
+Museum Mpu Tantular,Entertainment,museum mpu tantular,museum mpu tantular,museum mpu tantular,3.0,3.0,0.0,0.0
+Fishing Wake Wetan travel,Entertainment,fishing wake wetan travel,fishing wake wetan travel,fishing wake wetan travel,4.0,4.0,0.0,0.0
+Kampung Lali Gadget,Entertainment,kampung lali gadget,gadget,gadget,3.0,1.0,2.0,66.7
+Unesa Lake Ketintang,Entertainment,unesa lake ketintang,unesa lake ketintang,unesa lake ketintang,3.0,3.0,0.0,0.0
+Action Kids | Metro Outbound Organizer | Outbound Malang | Outbound Surabaya | Outbound Pandaan | Outbound Sidoarjo,Entertainment,action kids metro outbound organizer outbound malang outbound surabaya outbound pandaan outbound sidoarjo,action kids metro outbound organizer outbound outbound surabaya outbound pandaan outbound sidoarjo,action kids metro outbound organizer outbound outbound surabaya outbound pandaan outbound sidoarjo,18.0,12.0,6.0,33.3
+Mangrove Wonorejo,Entertainment,mangrove wonorejo,mangrove wonorejo,mangrove wonorejo,2.0,2.0,0.0,0.0
+Maha Sky Batu Angkruk,Entertainment,maha sky batu angkruk,maha sky batu angkruk,maha sky batu angkruk,4.0,4.0,0.0,0.0
+Eling Bening,Entertainment,eling bening,eling bening,eling bening,2.0,2.0,0.0,0.0
+Floating Tourism Ambarawa,Entertainment,floating tourism ambarawa,floating tourism ambarawa,floating tourism ambarawa,3.0,3.0,0.0,0.0
+Ngrembel Asri,Entertainment,ngrembel asri,ngrembel,ngrembel,2.0,1.0,1.0,50.0
+Thematic Attraction Kampung Jawi,Entertainment,thematic attraction kampung jawi,thematic attraction jawi,thematic attraction jawi,4.0,3.0,1.0,25.0
+Kampung Pelangi Kalisari,Entertainment,kampung pelangi kalisari,pelangi kalisari,pelangi kalisari,3.0,2.0,1.0,33.3
+Nirwana Stable,Entertainment,nirwana stable,nirwana stable,nirwana stable,2.0,2.0,0.0,0.0
+Grand Maerakaca,Entertainment,grand maerakaca,grand maerakaca,grand maerakaca,2.0,2.0,0.0,0.0
+Kebun Durian dan Wisata Edukasi Watu Simbar,Entertainment,kebun durian dan wisata edukasi watu simbar,kebun durian wisata edukasi watu simbar,kebun durian wisata edukasi watu simbar,7.0,6.0,1.0,14.3
+Desa Wisata Lembah Kalipancur,Entertainment,desa wisata lembah kalipancur,desa wisata lembah kalipancur,desa wisata lembah kalipancur,4.0,4.0,0.0,0.0
+D'Pongs Wisata Keluarga,Entertainment,dpongs wisata keluarga,dpongs wisata keluarga,dpongs wisata keluarga,3.0,3.0,0.0,0.0
+Gubug Serut,Entertainment,gubug serut,gubug serut,gubug serut,2.0,2.0,0.0,0.0
+Brown Canyon,Entertainment,brown canyon,brown canyon,brown canyon,2.0,2.0,0.0,0.0
+Obyek Wisata Goa Kreo,Entertainment,obyek wisata goa kreo,obyek wisata goa kreo,obyek wisata goa kreo,4.0,4.0,0.0,0.0
+Koetatoea,Entertainment,koetatoea,koetatoea,koetatoea,1.0,1.0,0.0,0.0
+Lembah Waduk Jatibarang (eLWeJe),Entertainment,lembah waduk jatibarang elweje,lembah waduk jatibarang elweje,lembah waduk jatibarang elweje,4.0,4.0,0.0,0.0
+Watu Gunung,Entertainment,watu gunung,watu gunung,watu gunung,2.0,2.0,0.0,0.0
+Pantai tirang semarang,Entertainment,pantai tirang semarang,tirang semarang,tirang semarang,3.0,2.0,1.0,33.3
+Dung Tungkul Meteseh,Entertainment,dung tungkul meteseh,dung tungkul meteseh,dung tungkul meteseh,3.0,3.0,0.0,0.0
+Kampung Wisata Taman Lele Semarang,Entertainment,kampung wisata taman lele semarang,wisata lele semarang,wisata lele semarang,5.0,3.0,2.0,40.0
+Silayur Park,Entertainment,silayur park,silayur park,silayur park,2.0,2.0,0.0,0.0
+AWANNCOSTA,Entertainment,awanncosta,awanncosta,awanncosta,1.0,1.0,0.0,0.0
+Mount of Prayer Gethsemane,Entertainment,mount of prayer gethsemane,mount of prayer gethsemane,mount of prayer gethsemane,4.0,4.0,0.0,0.0
+Taman Rusa Graha Padma,Entertainment,taman rusa graha padma,rusa graha padma,rusa graha padma,4.0,3.0,1.0,25.0
+Pantai Wisata Ngebum,Entertainment,pantai wisata ngebum,wisata ngebum,wisata ngebum,3.0,2.0,1.0,33.3
+Marina Beach,Entertainment,marina beach,marina beach,marina beach,2.0,2.0,0.0,0.0
+Yangkung Agro Secino,Entertainment,yangkung agro secino,yangkung agro secino,yangkung agro secino,3.0,3.0,0.0,0.0
+Pekalongan regency pavilion Castle Maerokoco,Entertainment,pekalongan regency pavilion castle maerokoco,pekalongan regency pavilion castle maerokoco,kalong regency pavilion castle maerokoco,5.0,5.0,0.0,0.0
+Semarang Chinatown,Entertainment,semarang chinatown,semarang chinatown,semarang chinatown,2.0,2.0,0.0,0.0
+Panorama Alam,Entertainment,panorama alam,panorama alam,panorama alam,2.0,2.0,0.0,0.0
+Taman Budaya Raden Saleh (TBRS),Entertainment,taman budaya raden saleh tbrs,budaya raden saleh tbrs,budaya raden saleh tbrs,5.0,4.0,1.0,20.0
+Gimbal melan pantai ngebum,Entertainment,gimbal melan pantai ngebum,gimbal melan ngebum,gimbal mel ngebum,4.0,3.0,1.0,25.0
+Tourism Village Kandri,Entertainment,tourism village kandri,tourism village kandri,tourism village kandri,3.0,3.0,0.0,0.0
+Sampangan Park,Entertainment,sampangan park,sampangan park,sampang park,2.0,2.0,0.0,0.0
+Kanal Banjir Barat,Entertainment,kanal banjir barat,kanal banjir barat,kanal banjir barat,3.0,3.0,0.0,0.0
+Kota Lama Semarang,Entertainment,kota lama semarang,kota semarang,kota semarang,3.0,2.0,1.0,33.3
+PURI MAEROKOCO,Entertainment,puri maerokoco,puri maerokoco,puri maerokoco,2.0,2.0,0.0,0.0
+Tabanas Park Semarang,Entertainment,tabanas park semarang,tabanas park semarang,tabanas park semarang,3.0,3.0,0.0,0.0
+Polder Tawang,Entertainment,polder tawang,polder tawang,polder tawang,2.0,2.0,0.0,0.0
+Jungle Toon Waterpark,Entertainment,jungle toon waterpark,jungle toon waterpark,jungle toon waterpark,3.0,3.0,0.0,0.0
+Goa Rong View,Entertainment,goa rong view,goa rong view,goa rong view,3.0,3.0,0.0,0.0
+Saloka Theme Park,Entertainment,saloka theme park,saloka theme park,saloka theme park,3.0,3.0,0.0,0.0
+Bukit Kendalisodo,Entertainment,bukit kendalisodo,bukit kendalisodo,bukit kendalisodo,2.0,2.0,0.0,0.0
+Dusun Semilir,Entertainment,dusun semilir,dusun semilir,dusun milir,2.0,2.0,0.0,0.0
+Dolan Sawah,Entertainment,dolan sawah,dolan sawah,dolan sawah,2.0,2.0,0.0,0.0
+Puji Oriflame,Entertainment,puji oriflame,puji oriflame,puji oriflame,2.0,2.0,0.0,0.0
+Hortimart Agro Center,Entertainment,hortimart agro center,hortimart agro center,hortimart agro center,3.0,3.0,0.0,0.0
+Pengantin Tree Salatiga,Entertainment,pengantin tree salatiga,pengantin tree salatiga,pengantin tree salatiga,3.0,3.0,0.0,0.0
+Kali Odo,Entertainment,kali odo,kali odo,kali odo,2.0,2.0,0.0,0.0
+KEBUN SINGKONG DAN OUTBOND LEDOK,Entertainment,kebun singkong dan outbond ledok,kebun singkong outbond ledok,kebun singkong outbond ledok,5.0,4.0,1.0,20.0
+Agrowisata Kopeng Gunungsari,Entertainment,agrowisata kopeng gunungsari,agrowisata kopeng gunungsari,agrowisata kopeng gunungsari,3.0,3.0,0.0,0.0
+Senjoyo Spring,Entertainment,senjoyo spring,senjoyo spring,senjoyo spring,2.0,2.0,0.0,0.0
+Desa Wisata Kemetul,Entertainment,desa wisata kemetul,desa wisata kemetul,desa wisata kemetul,3.0,3.0,0.0,0.0
+Gardu Pandang Kopeng,Entertainment,gardu pandang kopeng,gardu pandang kopeng,gardu pandang kopeng,3.0,3.0,0.0,0.0
+Gedong Pass (G-Pass),Entertainment,gedong pass gpass,gedong pass gpass,gedong pass gpass,3.0,3.0,0.0,0.0
+Puncak Kenteng Songo 3122 MDPL,Entertainment,puncak kenteng songo mdpl,puncak kenteng songo mdpl,puncak kenteng songo mdpl,5.0,4.0,1.0,20.0
+Gunung Gajah Telomoyo,Entertainment,gunung gajah telomoyo,gunung gajah telomoyo,gunung gajah telomoyo,3.0,3.0,0.0,0.0
+Bukit Harapan Cuntel,Entertainment,bukit harapan cuntel,bukit harapan cuntel,bukit harap cuntel,3.0,3.0,0.0,0.0
+Gunung Telomoyo Via Dalangan,Entertainment,gunung telomoyo via dalangan,gunung telomoyo via dalangan,gunung telomoyo via dalang,4.0,4.0,0.0,0.0
+Merbabu Park,Entertainment,merbabu park,merbabu park,merbabu park,2.0,2.0,0.0,0.0
+Awang-Awang Telomoyo,Entertainment,awangawang telomoyo,awangawang telomoyo,awangawang telomoyo,2.0,2.0,0.0,0.0
+Mount Telomoyo,Entertainment,mount telomoyo,mount telomoyo,mount telomoyo,2.0,2.0,0.0,0.0
+Embung Manajar,Entertainment,embung manajar,embung manajar,embung manajar,2.0,2.0,0.0,0.0
+Wisata Gunung Nganten Desa Lencoh,Entertainment,wisata gunung nganten desa lencoh,wisata gunung nganten desa lencoh,wisata gunung nganten desa lencoh,5.0,5.0,0.0,0.0
+Bukit serang sembung,Entertainment,bukit serang sembung,bukit serang sembung,bukit serang sembung,3.0,3.0,0.0,0.0
+Bukit Gancik Selo Boyolali,Entertainment,bukit gancik selo boyolali,bukit gancik selo boyolali,bukit gancik selo boyolali,4.0,4.0,0.0,0.0
+Dlingo Story,Entertainment,dlingo story,dlingo story,dlingo story,2.0,2.0,0.0,0.0
+Irung Petruk (IPE),Entertainment,irung petruk ipe,irung petruk ipe,irung truk ipe,3.0,3.0,0.0,0.0
+Cepogo Cheese Park,Entertainment,cepogo cheese park,cepogo cheese park,cepogo cheese park,3.0,3.0,0.0,0.0
+Mina Tlatar Indah,Entertainment,mina tlatar indah,mina tlatar,mina tlatar,3.0,2.0,1.0,33.3
+Tlatar Water Park,Entertainment,tlatar water park,tlatar water park,tlatar water park,3.0,3.0,0.0,0.0
+"Wisata Edukasi Religi ""Qolbu"" Boyolali",Entertainment,wisata edukasi religi qolbu boyolali,wisata edukasi religi qolbu boyolali,wisata edukasi religi qolbu boyolali,5.0,5.0,0.0,0.0
+Tikungan Cinta,Entertainment,tikungan cinta,tikungan cinta,tikung cinta,2.0,2.0,0.0,0.0
+Spot Foto Girpasang,Entertainment,spot foto girpasang,spot foto girpasang,spot foto girpasang,3.0,3.0,0.0,0.0
+Jembatan Gantung Jrakah,Entertainment,jembatan gantung jrakah,jembatan gantung jrakah,jembatan gantung jrakah,3.0,3.0,0.0,0.0
+Kaliurang Park Botanical Garden,Entertainment,kaliurang park botanical garden,kaliurang park botanical garden,kaliurang park botanical garden,4.0,4.0,0.0,0.0
+GERBANG MERAPI MOUNTAIN VIEW,Entertainment,gerbang merapi mountain view,gerbang merapi mountain view,gerbang rapi mountain view,4.0,4.0,0.0,0.0
+Lava Merapi and Alien Stone,Entertainment,lava merapi and alien stone,lava merapi and alien stone,lava rapi and alien stone,5.0,5.0,0.0,0.0
+The Lost World Farm,Entertainment,the lost world farm,the lost world farm,the lost world farm,4.0,4.0,0.0,0.0
+The Lost World Castle,Entertainment,the lost world castle,the lost world castle,the lost world castle,4.0,4.0,0.0,0.0
+Tourism Village Nganggring,Entertainment,tourism village nganggring,tourism village nganggring,tourism village nganggring,3.0,3.0,0.0,0.0
+Ekowisata Kali Talang,Entertainment,ekowisata kali talang,ekowisata kali talang,ekowisata kali talang,3.0,3.0,0.0,0.0
+Taman Konservasi Sato Loka,Entertainment,taman konservasi sato loka,konservasi sato loka,konservasi sato loka,4.0,3.0,1.0,25.0
+Suraloka Interactive Zoo,Entertainment,suraloka interactive zoo,suraloka interactive zoo,suraloka interactive zoo,3.0,3.0,0.0,0.0
+Tourism Village Pancoh,Entertainment,tourism village pancoh,tourism village pancoh,tourism village pancoh,3.0,3.0,0.0,0.0
+Tankaman Natural Park,Entertainment,tankaman natural park,tankaman park,tankaman park,3.0,2.0,1.0,33.3
+Ledok Sambi Ecopark,Entertainment,ledok sambi ecopark,ledok sambi ecopark,ledok sambi ecopark,3.0,3.0,0.0,0.0
+Agro Tourism Bhumi Merapi,Entertainment,agro tourism bhumi merapi,agro tourism bhumi merapi,agro tourism bhumi rapi,4.0,4.0,0.0,0.0
+Tanjung Tourism Village,Entertainment,tanjung tourism village,tanjung tourism village,tanjung tourism village,3.0,3.0,0.0,0.0
+Green Kayen,Entertainment,green kayen,green kayen,green kayen,2.0,2.0,0.0,0.0
+Puri Mataram,Entertainment,puri mataram,puri mataram,puri mataram,2.0,2.0,0.0,0.0
+Dewa Bromo - Desa Wisata Bromonilan,Entertainment,dewa bromo desa wisata bromonilan,dewa bromo desa wisata bromonilan,dewa bromo desa wisata bromonilan,6.0,5.0,1.0,16.7
+Taman Lampion,Entertainment,taman lampion,lampion,lampion,2.0,1.0,1.0,50.0
+Agroedukasi Caping Merapi,Entertainment,agroedukasi caping merapi,agroedukasi caping merapi,agroedukasi caping rapi,3.0,3.0,0.0,0.0
+Jogja Exotarium Mini Zoo,Entertainment,jogja exotarium mini zoo,jogja exotarium zoo,jogja exotarium zoo,4.0,3.0,1.0,25.0
+Blue Lagoon Jogja,Entertainment,blue lagoon jogja,blue lagoon jogja,blue lagoon jogja,3.0,3.0,0.0,0.0
+Desa Wisata Pondok Wonolelo,Entertainment,desa wisata pondok wonolelo,desa wisata pondok wonolelo,desa wisata pondok wonolelo,4.0,4.0,0.0,0.0
+Embung Kaliaji,Entertainment,embung kaliaji,embung kaliaji,embung kaliaji,2.0,2.0,0.0,0.0
+Ibarbo Park,Entertainment,ibarbo park,ibarbo park,ibarbo park,2.0,2.0,0.0,0.0
+Taman Pelangi Jogja,Entertainment,taman pelangi jogja,pelangi jogja,pelangi jogja,3.0,2.0,1.0,33.3
+Desa Palagan,Entertainment,desa palagan,desa palagan,desa palagan,2.0,2.0,0.0,0.0
+Secreet zoo,Entertainment,secreet zoo,secreet zoo,secreet zoo,2.0,2.0,0.0,0.0
+Ledok Gebang,Entertainment,ledok gebang,ledok gebang,ledok gebang,2.0,2.0,0.0,0.0
+Titik Nol Kilometer Yogyakarta,Entertainment,titik nol kilometer yogyakarta,titik nol kilometer yogyakarta,titik nol kilometer yogyakarta,4.0,4.0,0.0,0.0
+Slasar Malioboro,Entertainment,slasar malioboro,slasar malioboro,slasar malioboro,2.0,2.0,0.0,0.0
+Tourism Zone Malioboro,Entertainment,tourism zone malioboro,tourism zone malioboro,tourism zone malioboro,3.0,3.0,0.0,0.0
+Malioboro Yogyakarta Indonesia,Entertainment,malioboro yogyakarta indonesia,malioboro yogyakarta indonesia,malioboro yogyakarta indonesia,3.0,3.0,0.0,0.0
+wisata ikan gajahwong,Entertainment,wisata ikan gajahwong,wisata ikan gajahwong,wisata ikan gajahwong,3.0,3.0,0.0,0.0
+Taman Sari Tourist Village,Entertainment,taman sari tourist village,sari tourist village,sari tourist village,4.0,3.0,1.0,25.0
+SKE CITY PARK,Entertainment,ske city park,ske city park,ske city park,3.0,3.0,0.0,0.0
+Jogja Walking Tour | Jogja Good Guide,Entertainment,jogja walking tour jogja good guide,jogja walking tour jogja good guide,jogja walking tour jogja good guide,7.0,6.0,1.0,14.3
+Gerbang Banyu Langit,Entertainment,gerbang banyu langit,gerbang banyu langit,gerbang banyu langit,3.0,3.0,0.0,0.0
+Wisata Kali Gajah Wong Mrican Giwangan,Entertainment,wisata kali gajah wong mrican giwangan,wisata kali gajah mrican giwangan,wisata kali gajah mrican giwang,6.0,5.0,1.0,16.7
+Tugu Yogyakarta Monument,Entertainment,tugu yogyakarta monument,tugu yogyakarta monument,tugu yogyakarta monument,3.0,3.0,0.0,0.0
+Embung Langensari,Entertainment,embung langensari,embung langensari,embung langensari,2.0,2.0,0.0,0.0
+Bukit Panguk Kediwung,Entertainment,bukit panguk kediwung,bukit panguk kediwung,bukit panguk kediwung,3.0,3.0,0.0,0.0
+Bukit Bintang,Entertainment,bukit bintang,bukit bintang,bukit bintang,2.0,2.0,0.0,0.0
+Puncak Gebang,Entertainment,puncak gebang,puncak gebang,puncak gebang,2.0,2.0,0.0,0.0
+Bukit Tompak,Entertainment,bukit tompak,bukit tompak,bukit tompak,2.0,2.0,0.0,0.0
+puncak bucu,Entertainment,puncak bucu,puncak bucu,puncak bucu,2.0,2.0,0.0,0.0
+Watu Amben Stone Park,Entertainment,watu amben stone park,watu amben stone park,watu amben stone park,4.0,4.0,0.0,0.0
+Tegaldowo Puspa Gading Park,Entertainment,tegaldowo puspa gading park,tegaldowo puspa gading park,tegaldowo puspa gading park,4.0,4.0,0.0,0.0
+Goa Selarong,Entertainment,goa selarong,goa selarong,goa selarong,2.0,2.0,0.0,0.0
+TWM ( Tebing Watu Mabur ),Entertainment,twm tebing watu mabur,twm tebing watu mabur,twm tebing watu mabur,6.0,4.0,2.0,33.3
+Watu Goyang,Entertainment,watu goyang,watu goyang,watu goyang,2.0,2.0,0.0,0.0
+Desa Wisata Kaki Langit,Entertainment,desa wisata kaki langit,desa wisata kaki langit,desa wisata kaki langit,4.0,4.0,0.0,0.0
+Gunung Ireng,Entertainment,gunung ireng,gunung ireng,gunung ireng,2.0,2.0,0.0,0.0
+Jurang Tembelan Kanigoro,Entertainment,jurang tembelan kanigoro,jurang tembelan kanigoro,jurang tembel kanigoro,3.0,3.0,0.0,0.0
+Camping ground parangan,Entertainment,camping ground parangan,ground parangan,ground parang,3.0,2.0,1.0,33.3
+Selopamioro Adventure Park,Entertainment,selopamioro adventure park,selopamioro adventure park,selopamioro adventure park,3.0,3.0,0.0,0.0
+Watu Mabur Lemahbang Rock Cliff,Entertainment,watu mabur lemahbang rock cliff,watu mabur lemahbang rock cliff,watu mabur lemahbang rock cliff,5.0,5.0,0.0,0.0
+Kedung Parangan,Entertainment,kedung parangan,kedung parangan,kedung parang,2.0,2.0,0.0,0.0
+Benteng Mataram Park,Entertainment,benteng mataram park,benteng mataram park,benteng mataram park,3.0,3.0,0.0,0.0
+Watu Gagak Hills,Entertainment,watu gagak hills,watu gagak hills,watu gagak hills,3.0,3.0,0.0,0.0
+Lembah Oya Kedungjati,Entertainment,lembah oya kedungjati,lembah oya kedungjati,lembah oya kedungjati,3.0,3.0,0.0,0.0
+Becici Peak,Entertainment,becici peak,becici peak,becici peak,2.0,2.0,0.0,0.0
+Karangtengah Tourism Village,Entertainment,karangtengah tourism village,karangtengah tourism village,karangtengah tourism village,3.0,3.0,0.0,0.0
+Seribu Batu Songgo Langit,Entertainment,seribu batu songgo langit,seribu batu songgo langit,ribu batu songgo langit,4.0,4.0,0.0,0.0
+Geoforest Watu Payung Turunan,Entertainment,geoforest watu payung turunan,geoforest watu payung turunan,geoforest watu payung turun,4.0,4.0,0.0,0.0
+Air Terjun LEPO Dlingo,Entertainment,air terjun lepo dlingo,air terjun lepo dlingo,air terjun lepo dlingo,4.0,4.0,0.0,0.0
+Goa Rancang Kencono,Entertainment,goa rancang kencono,goa rancang kencono,goa rancang kencono,3.0,3.0,0.0,0.0
+Pintoe Langit Dahromo,Entertainment,pintoe langit dahromo,pintoe langit dahromo,pintoe langit dahromo,3.0,3.0,0.0,0.0
+Bendung Tegal,Entertainment,bendung tegal,bendung tegal,bendung tegal,2.0,2.0,0.0,0.0
+WISATA SRIHARJO,Entertainment,wisata sriharjo,wisata sriharjo,wisata sriharjo,2.0,2.0,0.0,0.0
+Balong Waterpark,Entertainment,balong waterpark,balong waterpark,balong waterpark,2.0,2.0,0.0,0.0
+Bulak Ngebuan View,Entertainment,bulak ngebuan view,bulak ngebuan view,bulak ngebuan view,3.0,3.0,0.0,0.0
+Pantai cinemara Sewu Bantul Yogyakarta,Entertainment,pantai cinemara sewu bantul yogyakarta,cinemara sewu bantul yogyakarta,cinemara sewu bantul yogyakarta,5.0,4.0,1.0,20.0
+Laut Bekah,Entertainment,laut bekah,laut,laut,2.0,1.0,1.0,50.0
+KANO MARITIM BAROS,Entertainment,kano maritim baros,kano baros,kano baros,3.0,2.0,1.0,33.3
+Goa cinemara Beach,Entertainment,goa cinemara beach,goa cinemara beach,goa cinemara beach,3.0,3.0,0.0,0.0
+DESWITA OPAK,Entertainment,deswita opak,deswita opak,deswita opak,2.0,2.0,0.0,0.0
+Pantai Parangkusumo,Entertainment,pantai parangkusumo,parangkusumo,pantai parangkusumo,2.0,1.0,1.0,50.0
+cinemara Sewu Beach,Entertainment,cinemara sewu beach,cinemara sewu beach,cinemara sewu beach,3.0,3.0,0.0,0.0
+Pantai Tall Wolu,Entertainment,pantai tall wolu,tall wolu,tall wolu,3.0,2.0,1.0,33.3
+Taman Gumuk Pasir,Entertainment,taman gumuk pasir,gumuk,gumuk,3.0,1.0,2.0,66.7
+Mangrove Baros,Entertainment,mangrove baros,mangrove baros,mangrove baros,2.0,2.0,0.0,0.0
+Baros Beach,Entertainment,baros beach,baros beach,baros beach,2.0,2.0,0.0,0.0
+Muara Pandansimo,Entertainment,muara pandansimo,muara pandansimo,muara pandansimo,2.0,2.0,0.0,0.0
+Sendang Ngembel,Entertainment,sendang ngembel,sendang ngembel,sendang ngembel,2.0,2.0,0.0,0.0
+Pantai Bidara,Entertainment,pantai bidara,bidara,bidara,2.0,1.0,1.0,50.0
+Wisata Sawah Surjan,Entertainment,wisata sawah surjan,wisata sawah surjan,wisata sawah surjan,3.0,3.0,0.0,0.0
+Pantai Mlarangan Asri,Entertainment,pantai mlarangan asri,mlarangan,mlarangan,3.0,1.0,2.0,66.7
+Tugu Pensil,Entertainment,tugu pensil,tugu pensil,tugu pensil,2.0,2.0,0.0,0.0
+Pantai Tanggul Tirto,Entertainment,pantai tanggul tirto,tanggul tirto,tanggul tirto,3.0,2.0,1.0,33.3
+Pantai Patihan,Entertainment,pantai patihan,patihan,patih,2.0,1.0,1.0,50.0
+Kuwaru Beach,Entertainment,kuwaru beach,kuwaru beach,waru beach,2.0,2.0,0.0,0.0
+Cangkring Beach,Entertainment,cangkring beach,cangkring beach,cangkring beach,2.0,2.0,0.0,0.0
+Pemecah Ombak Pantai Glagah,Entertainment,pemecah ombak pantai glagah,pemecah ombak glagah,pecah ombak glagah,4.0,3.0,1.0,25.0
+Taman Bambu Air Waduk Sermo,Entertainment,taman bambu air waduk sermo,bambu air waduk sermo,bambu air waduk sermo,5.0,4.0,1.0,20.0
+Glagah Indah Beach,Entertainment,glagah indah beach,glagah beach,glagah beach,3.0,2.0,1.0,33.3
+Waduk Sermo,Entertainment,waduk sermo,waduk sermo,waduk sermo,2.0,2.0,0.0,0.0
+Nyi Ageng Serang Statue,Entertainment,nyi ageng serang statue,nyi ageng serang statue,nyi ageng serang statue,4.0,4.0,0.0,0.0
+Klenteng Poncowinatan,Entertainment,klenteng poncowinatan,klenteng poncowinatan,klenteng poncowinatan,2.0,2.0,0.0,0.0
+Ekowisata Nologaten,Entertainment,ekowisata nologaten,ekowisata nologaten,ekowisata nologaten,2.0,2.0,0.0,0.0
+Kids Fun,Entertainment,kids fun,kids fun,kids fun,2.0,2.0,0.0,0.0
+Dusun Bambu,Entertainment,dusun bambu,dusun bambu,dusun bambu,2.0,2.0,0.0,0.0
+Alam Wisata Cimahi Resort,Entertainment,alam wisata cimahi resort,alam wisata cimahi resort,alam wisata cimahi resort,4.0,4.0,0.0,0.0
+(Kabuci) kampung Buyut Cipageran Asih Putera,Entertainment,kabuci kampung buyut cipageran asih putera,kabuci buyut cipageran asih putera,kabuci buyut cipageran asih putera,6.0,5.0,1.0,16.7
+Kawasan Punclut,Entertainment,kawasan punclut,kawasan punclut,kawasan punclut,2.0,2.0,0.0,0.0
+Dago Dreampark,Entertainment,dago dreampark,dago dreampark,dago dreampark,2.0,2.0,0.0,0.0
+Bale Bambu Adventure Resort,Entertainment,bale bambu adventure resort,bale bambu adventure resort,bale bambu adventure resort,4.0,4.0,0.0,0.0
+Sarae Hills,Entertainment,sarae hills,sarae hills,sarae hills,2.0,2.0,0.0,0.0
+Teras Cikapundung BBWS,Entertainment,teras cikapundung bbws,teras cikapundung bbws,teras cikapundung bbws,3.0,3.0,0.0,0.0
+Sudut Pandang Bandung,Entertainment,sudut pandang bandung,sudut pandang bandung,sudut pandang bandung,3.0,3.0,0.0,0.0
+Peta Park,Entertainment,peta park,peta park,peta park,2.0,2.0,0.0,0.0
+Kampung Batu Malakasari Ecopark,Entertainment,kampung batu malakasari ecopark,batu malakasari ecopark,batu malakasari ecopark,4.0,3.0,1.0,25.0
+Wisata Pakuhaji,Entertainment,wisata pakuhaji,wisata pakuhaji,wisata pakuhaji,2.0,2.0,0.0,0.0
+Bukit Moko,Entertainment,bukit moko,bukit moko,bukit moko,2.0,2.0,0.0,0.0
+Lembang Wonderland,Entertainment,lembang wonderland,lembang wonderland,lembang wonderland,2.0,2.0,0.0,0.0
+Jendela Alam,Entertainment,jendela alam,jendela alam,jendela alam,2.0,2.0,0.0,0.0
+Taman Junghuhn,Entertainment,taman junghuhn,junghuhn,junghuhn,2.0,1.0,1.0,50.0
+Tebing Karaton,Entertainment,tebing karaton,tebing karaton,tebing karaton,2.0,2.0,0.0,0.0
+Stone Mountain,Entertainment,stone mountain,stone mountain,stone mountain,2.0,2.0,0.0,0.0
+Oray Tapa,Entertainment,oray tapa,oray,oray,2.0,1.0,1.0,50.0
+Manglayang Jungle Place,Entertainment,manglayang jungle place,manglayang jungle place,manglayang jungle place,3.0,3.0,0.0,0.0
+Wisata Tangga Seribu Manglayang,Entertainment,wisata tangga seribu manglayang,wisata tangga seribu manglayang,wisata tangga ribu manglayang,4.0,4.0,0.0,0.0
+MiniMania - Taman Miniatur Dunia (Lembang),Entertainment,minimania taman miniatur dunia lembang,minimania miniatur dunia lembang,minimania miniatur dunia lembang,6.0,4.0,2.0,33.3
+Rumah Pohon (Playground & Waterpark),Entertainment,rumah pohon playground waterpark,rumah pohon playground waterpark,rumah pohon playground waterpark,5.0,4.0,1.0,20.0
+Wana Wisata Kampoeng Ciherang,Entertainment,wana wisata kampoeng ciherang,wana wisata kampoeng ciherang,wana wisata kampoeng ciherang,4.0,4.0,0.0,0.0
+Rainbow Garden Lembang,Entertainment,rainbow garden lembang,rainbow garden lembang,rainbow garden lembang,3.0,3.0,0.0,0.0
+Taman Braga,Entertainment,taman braga,braga,braga,2.0,1.0,1.0,50.0
+La Fresa Farm (Wisata Petik Strawberry),Entertainment,la fresa farm wisata petik strawberry,la fresa farm wisata petik strawberry,la fresa farm wisata petik strawberry,6.0,6.0,0.0,0.0
+Puncak Bintang,Entertainment,puncak bintang,puncak bintang,puncak bintang,2.0,2.0,0.0,0.0
+Plaza Cikapundung River Spot,Entertainment,plaza cikapundung river spot,plaza cikapundung river spot,plaza cikapundung river spot,4.0,4.0,0.0,0.0
+Taman Film,Entertainment,taman film,film,film,2.0,1.0,1.0,50.0
+DI Edutainment,Entertainment,di edutainment,edutainment,edutainment,2.0,1.0,1.0,50.0
+Monumen Perjuangan Rakyat Jawa Barat,Entertainment,monumen perjuangan rakyat jawa barat,monumen perjuangan rakyat jawa barat,monumen juang rakyat jawa barat,5.0,5.0,0.0,0.0
+Babakan Siliwangi City Forest,Entertainment,babakan siliwangi city forest,babakan siliwangi city forest,babakan siliwangi city forest,4.0,4.0,0.0,0.0
+Vanda Park,Entertainment,vanda park,vanda park,vanda park,2.0,2.0,0.0,0.0
+Margacinta Park,Entertainment,margacinta park,margacinta park,margacinta park,2.0,2.0,0.0,0.0
+Taman Foto Bandung,Entertainment,taman foto bandung,foto bandung,foto bandung,3.0,2.0,1.0,33.3
+Wisata Alam Cika-Cika,Entertainment,wisata alam cikacika,wisata alam cikacika,wisata alam cikacika,3.0,3.0,0.0,0.0
+Cikapayang Dago Park,Entertainment,cikapayang dago park,cikapayang dago park,cikapayang dago park,3.0,3.0,0.0,0.0
+Taman Superhero,Entertainment,taman superhero,superhero,superhero,2.0,1.0,1.0,50.0
+Taman Balai Kota Bandung,Entertainment,taman balai kota bandung,balai kota bandung,balai kota bandung,4.0,3.0,1.0,25.0
+sky garden PVJ,Entertainment,sky garden pvj,sky garden pvj,sky garden pvj,3.0,3.0,0.0,0.0
+Curug Putri Cipariuk,Entertainment,curug putri cipariuk,curug putri cipariuk,curug putri cipariuk,3.0,3.0,0.0,0.0
+Kampung Konservasi RIMBUN,Entertainment,kampung konservasi rimbun,konservasi,konservasi,3.0,1.0,2.0,66.7
+Saung Eling,Entertainment,saung eling,saung eling,saung eling,2.0,2.0,0.0,0.0
+Kampoeng Gowes Fishing,Entertainment,kampoeng gowes fishing,kampoeng gowes fishing,kampoeng gowes fishing,3.0,3.0,0.0,0.0
+D'Kandang Depok,Entertainment,dkandang depok,dkandang depok,dkandang depok,2.0,2.0,0.0,0.0
+Nangka Waterfall,Entertainment,nangka waterfall,nangka waterfall,nangka waterfall,2.0,2.0,0.0,0.0
+Kebun Durian Warso Farm,Entertainment,kebun durian warso farm,kebun durian warso farm,kebun durian warso farm,4.0,4.0,0.0,0.0
+Danau Summarecon Bekasi,Entertainment,danau summarecon bekasi,danau summarecon bekasi,danau summarecon bekas,3.0,3.0,0.0,0.0
+Telaga Arwana Cibubur,Entertainment,telaga arwana cibubur,telaga arwana cibubur,telaga arwana cibubur,3.0,3.0,0.0,0.0
+Taman Kemang Pratama,Entertainment,taman kemang pratama,kemang pratama,kemang pratama,3.0,2.0,1.0,33.3
+Wisata Alam Kaliwungu,Entertainment,wisata alam kaliwungu,wisata alam kaliwungu,wisata alam kaliwungu,3.0,3.0,0.0,0.0
+Taman Mini Indonesia Indah,Entertainment,taman mini indonesia indah,indonesia,indonesia,4.0,1.0,3.0,75.0
+Taman Limo Jatiwangi Cikarang Barat,Entertainment,taman limo jatiwangi cikarang barat,limo jatiwangi cikarang barat,limo jatiwangi cikarang barat,5.0,4.0,1.0,20.0
+Cibugary Farm - Wisata Edukasi Cibugary,Entertainment,cibugary farm wisata edukasi cibugary,cibugary farm wisata edukasi cibugary,cibugary farm wisata edukasi cibugary,6.0,5.0,1.0,16.7
+Teluk Naga Mas - Taman Wisata & Edukasi,Entertainment,teluk naga mas taman wisata edukasi,teluk naga mas wisata edukasi,teluk naga mas wisata edukasi,8.0,5.0,3.0,37.5
+Danau ciberem,Entertainment,danau ciberem,danau ciberem,danau ciberem,2.0,2.0,0.0,0.0
+Sembilangan Mangrove Forest & Rindu River,Entertainment,sembilangan mangrove forest rindu river,sembilangan mangrove forest river,sembilang mangrove forest river,6.0,4.0,2.0,33.3
+Wisata Kampoeng Kita,Entertainment,wisata kampoeng kita,wisata kampoeng,wisata kampoeng,3.0,2.0,1.0,33.3
+Danau Cipondoh,Entertainment,danau cipondoh,danau cipondoh,danau cipondoh,2.0,2.0,0.0,0.0
+Taman Wisata Pasir Putih,Entertainment,taman wisata pasir putih,wisata,wisata,4.0,1.0,3.0,75.0
+Taman Spathodea,Entertainment,taman spathodea,spathodea,spathodea,2.0,1.0,1.0,50.0
+Setu Pengasinan,Entertainment,setu pengasinan,setu pengasinan,setu asin,2.0,2.0,0.0,0.0
+Go! Wet,Entertainment,go wet,go wet,go wet,2.0,2.0,0.0,0.0
+Wisata saung keramba preto,Entertainment,wisata saung keramba preto,wisata saung keramba preto,wisata saung keramba preto,4.0,4.0,0.0,0.0
+Kampung Main Cipulir,Entertainment,kampung main cipulir,main cipulir,main cipulir,3.0,2.0,1.0,33.3
+Pantjoran Pantai Indah Kapuk,Entertainment,pantjoran pantai indah kapuk,pantjoran kapuk,pantjoran kapuk,4.0,2.0,2.0,50.0
+Sea World Ancol,Entertainment,sea world ancol,sea world ancol,sea world ancol,3.0,3.0,0.0,0.0
+Faunaland Ancol,Entertainment,faunaland ancol,faunaland ancol,faunaland ancol,2.0,2.0,0.0,0.0
+Ancol Taman Impian,Entertainment,ancol taman impian,ancol impian,ancol impi,3.0,2.0,1.0,33.3
+Waduk Sunter Selatan,Entertainment,waduk sunter selatan,waduk sunter selatan,waduk sunter selatan,3.0,3.0,0.0,0.0
+Jakarta Bird Land,Entertainment,jakarta bird land,jakarta bird land,jakarta bird land,3.0,3.0,0.0,0.0
+Danau Cincin,Entertainment,danau cincin,danau cincin,danau cincin,2.0,2.0,0.0,0.0
+Wisata Kota Tua Jakarta,Entertainment,wisata kota tua jakarta,wisata kota jakarta,wisata kota jakarta,4.0,3.0,1.0,25.0
+Old Shanghai Sedayu City,Entertainment,old shanghai sedayu city,old shanghai sedayu city,old shanghai dayu city,4.0,4.0,0.0,0.0
+Samudra Ancol,Entertainment,samudra ancol,samudra ancol,samudra ancol,2.0,2.0,0.0,0.0
+Tebet Eco Park,Entertainment,tebet eco park,tebet park,tebet park,3.0,2.0,1.0,33.3
+Allianz Eco Park,Entertainment,allianz eco park,allianz park,allianz park,3.0,2.0,1.0,33.3
+Mataram City Park,Entertainment,mataram city park,mataram city park,mataram city park,3.0,3.0,0.0,0.0
+Atlantis Water Adventures Ancol,Entertainment,atlantis water adventures ancol,atlantis water adventures ancol,atlantis water adventures ancol,4.0,4.0,0.0,0.0
+Dufan Ancol,Entertainment,dufan ancol,dufan ancol,dufan ancol,2.0,2.0,0.0,0.0
+Ancol Beach,Entertainment,ancol beach,ancol beach,ancol beach,2.0,2.0,0.0,0.0
+Danau Sunter,Entertainment,danau sunter,danau sunter,danau sunter,2.0,2.0,0.0,0.0
+Taman Waduk Pluit,Entertainment,taman waduk pluit,waduk pluit,waduk pluit,3.0,2.0,1.0,33.3
+Tribeca Park,Entertainment,tribeca park,tribeca park,tribeca park,2.0,2.0,0.0,0.0
+Agrowisata Tupai Emas,Entertainment,agrowisata tupai emas,agrowisata tupai emas,agrowisata tupai emas,3.0,3.0,0.0,0.0
+Ekowisata Subak Sembung Peguyangan,Entertainment,ekowisata subak sembung peguyangan,ekowisata subak sembung peguyangan,ekowisata subak sembung peguyangan,4.0,4.0,0.0,0.0
+Big Garden Corner,Entertainment,big garden corner,big garden corner,big garden corner,3.0,3.0,0.0,0.0
+Pantai Mengening,Entertainment,pantai mengening,mengening,kening,2.0,1.0,1.0,50.0
+Batu Belig Beach,Entertainment,batu belig beach,batu belig beach,batu belig beach,3.0,3.0,0.0,0.0
+Kuta Beach,Entertainment,kuta beach,kuta beach,kuta beach,2.0,2.0,0.0,0.0
+Biaung Beach,Entertainment,biaung beach,biaung beach,biaung beach,2.0,2.0,0.0,0.0
+Blangsinga Waterfall,Entertainment,blangsinga waterfall,blangsinga waterfall,blangsinga waterfall,2.0,2.0,0.0,0.0
+Taman Wisata Tukad Bindu,Entertainment,taman wisata tukad bindu,wisata tukad bindu,wisata tukad bindu,4.0,3.0,1.0,25.0
+Lumintang Park,Entertainment,lumintang park,lumintang park,lumintang park,2.0,2.0,0.0,0.0
+Monumen Tragedi Kemanusiaan,Entertainment,monumen tragedi kemanusiaan,monumen tragedi kemanusiaan,monumen tragedi manusia,3.0,3.0,0.0,0.0
+Upside Down World Bali,Entertainment,upside down world bali,upside down world bali,upside down world bal,4.0,4.0,0.0,0.0
+Pantai Double - Six,Entertainment,pantai double six,double six,double six,4.0,2.0,2.0,50.0
+Masceti Beach,Entertainment,masceti beach,masceti beach,masceti beach,2.0,2.0,0.0,0.0
+Lapangan Puputan Badung (I Gusti Ngurah Made Agung),Entertainment,lapangan puputan badung i gusti ngurah made agung,lapangan puputan badung gusti ngurah made,lapang puput badung gusti ngurah made,8.0,6.0,2.0,25.0
+Kertalangu Cultural Village,Entertainment,kertalangu cultural village,kertalangu cultural village,kertalangu cultural village,3.0,3.0,0.0,0.0
+Pantai Munggu,Entertainment,pantai munggu,munggu,munggu,2.0,1.0,1.0,50.0
+Pantai Batu Belig,Entertainment,pantai batu belig,batu belig,batu belig,3.0,2.0,1.0,33.3
+Taman Janggan Renon Denpasar,Entertainment,taman janggan renon denpasar,janggan renon denpasar,janggan renon denpasar,4.0,3.0,1.0,25.0
+Pererenan Beach,Entertainment,pererenan beach,pererenan beach,pererenan beach,2.0,2.0,0.0,0.0
+Lapangan Niti Mandala Renon - Monumen Perjuangan Rakyat Bali,Entertainment,lapangan niti mandala renon monumen perjuangan rakyat bali,lapangan niti mandala renon monumen perjuangan rakyat bali,lapang niti mandala renon monumen juang rakyat bal,9.0,8.0,1.0,11.1
+Sungai Dam Oongan,Entertainment,sungai dam oongan,sungai dam oongan,sungai dam oongan,3.0,3.0,0.0,0.0
+Mertasari Beach,Entertainment,mertasari beach,mertasari beach,mertasari beach,2.0,2.0,0.0,0.0
+CitraLand Waterpark Denpasar,Entertainment,citraland waterpark denpasar,citraland waterpark denpasar,citraland waterpark denpasar,3.0,3.0,0.0,0.0
+Turtle Conservation And Education Center,Entertainment,turtle conservation and education center,turtle conservation and education center,turtle conservation and education center,5.0,5.0,0.0,0.0
+Water Sport Adventure Bali Dolphin Shop,Entertainment,water sport adventure bali dolphin shop,water sport adventure bali dolphin,water sport adventure bal dolphin,6.0,5.0,1.0,16.7
+Pirate Dinner Cruise,Entertainment,pirate dinner cruise,pirate dinner cruise,pirate dinner cruise,3.0,3.0,0.0,0.0
+Pantai Purnama,Entertainment,pantai purnama,purnama,purnama,2.0,1.0,1.0,50.0
+Puputan Margarana Field,Entertainment,puputan margarana field,puputan margarana field,puput margarana field,3.0,3.0,0.0,0.0
+Jerman Beach,Entertainment,jerman beach,jerman beach,jerman beach,2.0,2.0,0.0,0.0
+Petitenget Beach,Entertainment,petitenget beach,petitenget beach,petitenget beach,2.0,2.0,0.0,0.0
+Barong Dance Putra Barong,Entertainment,barong dance putra barong,barong dance putra barong,barong dance putra barong,4.0,4.0,0.0,0.0
+Pantai Saba,Entertainment,pantai saba,saba,saba,2.0,1.0,1.0,50.0
+Gumuh Sari Rekreasi,Entertainment,gumuh sari rekreasi,gumuh sari rekreasi,gumuh sari rekreasi,3.0,3.0,0.0,0.0
+Parking Lot Puspem Badung,Entertainment,parking lot puspem badung,parking lot puspem badung,parking lot puspem badung,4.0,4.0,0.0,0.0
+Paket Honeymoon Bali Murah - Honeymoonbaliku.com,Entertainment,paket honeymoon bali murah honeymoonbalikucom,honeymoon bali honeymoonbalikucom,honeymoon bal honeymoonbalikucom,6.0,3.0,3.0,50.0
+Pitaloka,Entertainment,pitaloka,pitaloka,pitaloka,1.0,1.0,0.0,0.0
+Bali Wake Park,Entertainment,bali wake park,bali wake park,bal wake park,3.0,3.0,0.0,0.0
+Kolam Pancing Bu Isti,Entertainment,kolam pancing bu isti,kolam pancing bu isti,kolam pancing bu isti,4.0,4.0,0.0,0.0
+Bokasi Farm (Pak Oles),Entertainment,bokasi farm pak oles,bokasi farm oles,bokasi farm oles,4.0,3.0,1.0,25.0
+Masjid Nurul Huda Bandara Ngurah Rai,Entertainment,masjid nurul huda bandara ngurah rai,masjid nurul huda bandara ngurah rai,masjid nurul huda bandara ngurah rai,6.0,6.0,0.0,0.0
+Museum Sandi,Entertainment,museum sandi,museum sandi,museum sandi,2.0,2.0,0.0,0.0
+Romo Mangun Museum,Entertainment,romo mangun museum,romo mangun museum,romo mangun museum,3.0,3.0,0.0,0.0
+Jogja National Museum,Entertainment,jogja national museum,jogja national museum,jogja national museum,3.0,3.0,0.0,0.0
+Vredeburg Fort Museum,Entertainment,vredeburg fort museum,vredeburg fort museum,vredeburg fort museum,3.0,3.0,0.0,0.0
+Museum Sonobudoyo Unit I,Entertainment,museum sonobudoyo unit i,museum sonobudoyo unit,museum sonobudoyo unit,4.0,3.0,1.0,25.0
+Museum Wahanarata,Entertainment,museum wahanarata,museum wahanarata,museum wahanarata,2.0,2.0,0.0,0.0
+Affandi Museum,Entertainment,affandi museum,affandi museum,affandi museum,2.0,2.0,0.0,0.0
+Museum Batik Yogyakarta,Entertainment,museum batik yogyakarta,museum batik yogyakarta,museum batik yogyakarta,3.0,3.0,0.0,0.0
+Sasana Wiratama Diponegoro Museum,Entertainment,sasana wiratama diponegoro museum,sasana wiratama diponegoro museum,sasana wiratama diponegoro museum,4.0,4.0,0.0,0.0
+Museum Perjuangan,Entertainment,museum perjuangan,museum perjuangan,museum juang,2.0,2.0,0.0,0.0
+Museum TNI AD Dharma Wiratama,Entertainment,museum tni ad dharma wiratama,museum tni ad dharma wiratama,museum tni ad dharma wiratama,5.0,5.0,0.0,0.0
+Museum Kotagede Intro Living Museum,Entertainment,museum kotagede intro living museum,museum kotagede intro living museum,museum kotagede intro living museum,5.0,5.0,0.0,0.0
+Lokasi eks Oudheden Museum,Entertainment,lokasi eks oudheden museum,lokasi eks oudheden museum,lokasi eks oudheden museum,4.0,4.0,0.0,0.0
+Central Museum of the Air Force Dirgantara Mandala,Entertainment,central museum of the air force dirgantara mandala,central museum of the air force dirgantara mandala,central museum of the air force dirgantara mandala,8.0,8.0,0.0,0.0
+Museum UGM,Entertainment,museum ugm,museum ugm,museum ugm,2.0,2.0,0.0,0.0
+Museum Dr. Yap Prawirohusodo,Entertainment,museum dr yap prawirohusodo,museum dr yap prawirohusodo,museum dr yap prawirohusodo,4.0,4.0,0.0,0.0
+Monumen Yogya Kembali (Museum Monjali),Entertainment,monumen yogya kembali museum monjali,monumen yogya museum monjali,monumen yogya museum monjali,5.0,4.0,1.0,20.0
+Indonesian Education Museum,Entertainment,indonesian education museum,indonesian education museum,indonesian education museum,3.0,3.0,0.0,0.0
+Museum of Biology UGM,Entertainment,museum of biology ugm,museum of biology ugm,museum of biology ugm,4.0,4.0,0.0,0.0
+Sonobudoyo Museum Office,Entertainment,sonobudoyo museum office unit ii,sonobudoyo museum office unit ii,sonobudoyo museum office unit ii,5.0,5.0,0.0,0.0
+Museum Sasmitaloka Panglima Besar Jenderal Sudirman,Entertainment,museum sasmitaloka panglima besar jenderal sudirman,museum sasmitaloka panglima jenderal sudirman,museum sasmitaloka panglima jenderal sudirman,6.0,5.0,1.0,16.7
+Taman Pintar Yogyakarta,Entertainment,taman pintar yogyakarta,yogyakarta,yogyakarta,3.0,1.0,2.0,66.7
+Museum Omah Jayeng ,Entertainment,museum omah jayeng,museum omah jayeng,museum omah jayeng,3.0,3.0,0.0,0.0
+Museum Satwa Gembira Loka Zoo,Entertainment,museum satwa gembira loka zoo,museum satwa loka zoo,museum satwa loka zoo,5.0,4.0,1.0,20.0
+Museum Sonobudaya Unit l,Entertainment,museum sonobudaya unit l,museum sonobudaya unit,museum sonobudaya unit,4.0,3.0,1.0,25.0
+Museum HM Soeharto,Entertainment,museum hm soeharto,museum hm soeharto,museum hm soeharto,3.0,3.0,0.0,0.0
+Museum dan Tanah Liat,Entertainment,museum dan tanah liat,museum tanah,museum tanah,4.0,2.0,2.0,50.0
+Museum of Dewantara Kirti Griya,Entertainment,museum of dewantara kirti griya,museum of dewantara kirti griya,museum of dewantara kirti griya,5.0,5.0,0.0,0.0
+Museum Sri Sultan Hamengkubuwono IX,Entertainment,museum sri sultan hamengkubuwono ix,museum sri sultan hamengkubuwono ix,museum sri sultan hamengkubuwono ix,5.0,5.0,0.0,0.0
+Andi Bayou Museum,Entertainment,andi bayou museum,andi bayou museum,andi bayou museum,3.0,3.0,0.0,0.0
+Museum Batik Gan,Entertainment,museum batik gan,museum batik gan,museum batik gan,3.0,3.0,0.0,0.0
+"Museum Air ""Water For Life"" Jogja Bay Waterpark",Entertainment,museum air water for life jogja bay waterpark,museum air water for life jogja bay waterpark,museum air water for life jogja bay waterpark,8.0,8.0,0.0,0.0
+Museum Plataran,Entertainment,museum plataran,museum plataran,museum plataran,2.0,2.0,0.0,0.0
+DX Museum & Library,Entertainment,dx museum library,dx museum library,dx museum library,4.0,3.0,1.0,25.0
+Museum Serat Holistik Kehidupan Susilawati Susmono,Entertainment,museum serat holistik kehidupan susilawati susmono,museum serat holistik kehidupan susilawati susmono,museum serat holistik hidup susilawati susmono,6.0,6.0,0.0,0.0
+Museum Kampung Hilang,Entertainment,museum kampung hilang,museum hilang,museum hilang,3.0,2.0,1.0,33.3
+Situs Mata Air Sempor,Entertainment,situs mata air sempor,situs mata air sempor,situs mata air sempor,4.0,4.0,0.0,0.0
+Merapi Volcano Museum,Entertainment,merapi volcano museum,merapi volcano museum,rapi volcano museum,3.0,3.0,0.0,0.0
+Omah Petroek,Entertainment,omah petroek,omah petroek,omah petroek,2.0,2.0,0.0,0.0
+Museum Anak Bajang,Entertainment,museum anak bajang,museum bajang,museum bajang,3.0,2.0,1.0,33.3
+Museum Misi Muntilan,Entertainment,museum misi muntilan,museum misi muntilan,museum misi muntilan,3.0,3.0,0.0,0.0
+Museum Ullen Sentalu,Entertainment,museum ullen sentalu,museum ullen sentalu,museum ullen sentalu,3.0,3.0,0.0,0.0
+Museum Mini Sisa Hartaku,Entertainment,museum mini sisa hartaku,museum sisa hartaku,museum sisa harta,4.0,3.0,1.0,25.0
+Musium Petilasan Mbah Maridjan,Entertainment,musium petilasan mbah maridjan,musium petilasan mbah maridjan,musium tilas mbah maridjan,4.0,4.0,0.0,0.0
+Museum Anaia dan Alisha,Entertainment,museum anaia dan alisha,museum anaia alisha,museum anaia alisha,4.0,3.0,1.0,25.0
+Haji Widayat Museum,Entertainment,haji widayat museum,haji widayat museum,haji widayat museum,3.0,3.0,0.0,0.0
+Kebon Pasinaon Living Museum,Entertainment,kebon pasinaon living museum,kebon pasinaon living museum,kebon pasinaon living museum,4.0,4.0,0.0,0.0
+Merapi Observatorium,Entertainment,merapi observatorium,merapi observatorium,rapi observatorium,2.0,2.0,0.0,0.0
+Museum Wayang Sasana Gunarasa,Entertainment,museum wayang sasana gunarasa,museum wayang sasana gunarasa,museum wayang sasana gunarasa,4.0,4.0,0.0,0.0
+MUSEUM & KAMPUNG SENI BOROBUDUR,Entertainment,museum kampung seni borobudur,museum seni borobudur,museum seni borobudur,5.0,3.0,2.0,40.0
+Museum Kapal Samudraraksa,Entertainment,museum kapal samudraraksa,museum kapal samudraraksa,museum kapal samudraraksa,3.0,3.0,0.0,0.0
+Borobudur Conservation Center,Entertainment,borobudur conservation center,borobudur conservation center,borobudur conservation center,3.0,3.0,0.0,0.0
+Museum Karmawibangga Taman Wisata Candi Borobudur,Entertainment,museum karmawibangga taman wisata candi borobudur,museum karmawibangga wisata candi borobudur,museum karmawibangga wisata candi borobudur,6.0,5.0,1.0,16.7
+Monumen Wiranara ,Entertainment,monumen wiranara,monumen wiranara,monumen wiranara,2.0,2.0,0.0,0.0
+Monumen Situs Rumah Sandi Indonesia,Entertainment,monumen situs rumah sandi indonesia,monumen situs rumah sandi indonesia,monumen situs rumah sandi indonesia,5.0,5.0,0.0,0.0
+WATU PUNGGANG,Entertainment,watu punggang,watu punggang,watu punggang,2.0,2.0,0.0,0.0
+Rumah Jamu Menoreh,Entertainment,rumah jamu menoreh,rumah jamu menoreh,rumah jamu toreh,3.0,3.0,0.0,0.0
+Bukit Pandawa,Entertainment,bukit pandawa,bukit pandawa,bukit pandawa,2.0,2.0,0.0,0.0
+Bekas Markas Kolonel T.B. Simatupang,Entertainment,bekas markas kolonel tb simatupang,bekas markas kolonel tb simatupang,bekas markas kolonel tb simatupang,5.0,5.0,0.0,0.0
+Monumen PATUNG WEDUS,Entertainment,monumen patung wedus,monumen patung wedus,monumen patung wedus,3.0,3.0,0.0,0.0
+TEATER MACAN (Sandiwara Bahasa Jawa),Entertainment,teater macan sandiwara bahasa jawa,teater macan sandiwara jawa,teater macan sandiwara jawa,5.0,4.0,1.0,20.0
+Mahaloka Paradise,Entertainment,mahaloka paradise,mahaloka paradise,mahaloka paradise,2.0,2.0,0.0,0.0
+Pendopo R. Sosrojoewono,Entertainment,pendopo r sosrojoewono,pendopo sosrojoewono,pendopo sosrojoewono,3.0,2.0,1.0,33.3
+Sanggar Seni DUA ATAP Ngluwar,Entertainment,sanggar seni dua atap ngluwar,sanggar seni atap ngluwar,sanggar seni atap ngluwar,5.0,4.0,1.0,20.0
+Museum Alam Marmer Indonesia,Entertainment,museum alam marmer indonesia,museum alam marmer indonesia,museum alam marmer indonesia,4.0,4.0,0.0,0.0
+Museum Tosan Aji,Entertainment,museum tosan aji,museum tosan aji,museum tosan aji,3.0,3.0,0.0,0.0
+Gedung Pustaka Lowano,Entertainment,gedung pustaka lowano,gedung pustaka lowano,gedung pustaka lowano,3.0,3.0,0.0,0.0
+Monumen Perdamaian Dunia,Entertainment,monumen perdamaian dunia,monumen perdamaian dunia,monumen damai dunia,3.0,3.0,0.0,0.0
+Wisma Emha,Entertainment,wisma emha,wisma emha,wisma emha,2.0,2.0,0.0,0.0
+Bandung Express Purworejo,Entertainment,bandung express purworejo,bandung express purworejo,bandung express purworejo,3.0,3.0,0.0,0.0
+Nama Jalan Argoputro,Entertainment,nama jalan argoputro,nama jalan argoputro,nama jalan argoputro,3.0,3.0,0.0,0.0
+Place Of Birth ASHRY ROYAN ALIEF,Entertainment,place of birth ashry royan alief,place of birth ashry royan alief,place of birth ashry royan alief,6.0,6.0,0.0,0.0
+Hometown Assemble,Entertainment,hometown assemble,hometown assemble,hometown assemble,2.0,2.0,0.0,0.0
+Wajan Raksasa,Entertainment,wajan raksasa,wajan raksasa,wajan raksasa,2.0,2.0,0.0,0.0
+Art Center Purworejo,Entertainment,art center purworejo,art center purworejo,art center purworejo,3.0,3.0,0.0,0.0
+Jembangan Natural Park,Entertainment,jembangan natural park,jembangan park,jembangan park,3.0,2.0,1.0,33.3
+Prasasti Waduk Wadaslintang,Entertainment,prasasti waduk wadaslintang,prasasti waduk wadaslintang,prasasti waduk wadaslintang,3.0,3.0,0.0,0.0
+Siporong City,Entertainment,siporong city,siporong city,siporong city,2.0,2.0,0.0,0.0
+Pesarean Mbah Buyut Klowong,Entertainment,pesarean mbah buyut klowong,pesarean mbah buyut klowong,sarean mbah buyut klowong,4.0,4.0,0.0,0.0
+Goa Gunung Pencu,Entertainment,goa gunung pencu,goa gunung pencu,goa gunung pencu,3.0,3.0,0.0,0.0
+The Spirit Of Java's,Entertainment,the spirit of javas,the spirit of javas,the spirit of javas,4.0,4.0,0.0,0.0
+Rumah crystal kebumen,Entertainment,rumah crystal kebumen,rumah crystal kebumen,rumah crystal kebumen,3.0,3.0,0.0,0.0
+Museum Gerabah Kebumen,Entertainment,museum gerabah kebumen,museum gerabah kebumen,museum gerabah kebumen,3.0,3.0,0.0,0.0
+Anev Potlot Galery,Entertainment,anev potlot galery,anev potlot galery,anev potlot galery,3.0,3.0,0.0,0.0
+PAMOKSAN GAJAH MADA PANJER KEBUMEN,Entertainment,pamoksan gajah mada panjer kebumen,pamoksan gajah mada panjer kebumen,pamoksan gajah mada panjer kebumen,5.0,5.0,0.0,0.0
+Kampoeng ETNIK Kebumen,Entertainment,kampoeng etnik kebumen,kampoeng etnik kebumen,kampoeng etnik kebumen,3.0,3.0,0.0,0.0
+Soni Gemstone,Entertainment,soni gemstone,soni gemstone,soni gemstone,2.0,2.0,0.0,0.0
+Toni stone arts,Entertainment,toni stone arts,toni stone arts,ton stone arts,3.0,3.0,0.0,0.0
+Pos Security Rumah Joglo,Entertainment,pos security rumah joglo,pos security rumah joglo,pos security rumah joglo,4.0,4.0,0.0,0.0
+irex house,Entertainment,irex house,irex house,irex house,2.0,2.0,0.0,0.0
+Masjid Baiturrahman Lundong,Entertainment,masjid baiturrahman lundong,masjid baiturrahman lundong,masjid baiturrahman lundong,3.0,3.0,0.0,0.0
+TBM RUANG LIDRUNG,Entertainment,tbm ruang lidrung,tbm ruang lidrung,tbm ruang lidrung,3.0,3.0,0.0,0.0
+Roemah Martha Tilaar,Entertainment,roemah martha tilaar,roemah martha tilaar,roemah martha tilaar,3.0,3.0,0.0,0.0
+Tono Keris Gallery,Entertainment,tono keris gallery,tono keris gallery,tono keris gallery,3.0,3.0,0.0,0.0
+Villa Kajoran,Entertainment,villa kajoran,villa kajoran,villa kajoran,2.0,2.0,0.0,0.0
+Boni Adbrahim,Entertainment,boni adbrahim,boni adbrahim,bon adbrahim,2.0,2.0,0.0,0.0
+Galeri sibuluk,Entertainment,galeri sibuluk,galeri sibuluk,galeri sibuluk,2.0,2.0,0.0,0.0
+Cagar Budaya TROPONG ROMAKAMAL,Entertainment,cagar budaya tropong romakamal,cagar budaya tropong romakamal,cagar budaya tropong romakamal,4.0,4.0,0.0,0.0
+Waduk Sempor Gombong,Entertainment,waduk sempor gombong,waduk sempor gombong,waduk sempor gombong,3.0,3.0,0.0,0.0
+Pesanggarahan Keluarga Besar Soeroredjo,Entertainment,pesanggarahan keluarga besar soeroredjo,pesanggarahan keluarga soeroredjo,pesanggarahan keluarga soeroredjo,4.0,3.0,1.0,25.0
+watu jali,Entertainment,watu jali,watu jali,watu jali,2.0,2.0,0.0,0.0
+Museum Batik Gumelem,Entertainment,museum batik gumelem,museum batik gumelem,museum batik gumelem,3.0,3.0,0.0,0.0
+Tugu jago palamarta,Entertainment,tugu jago palamarta,tugu palamarta,tugu palamarta,3.0,2.0,1.0,33.3
+Pendapa Kawedanan Purwareja-Klampok,Entertainment,pendapa kawedanan purwarejaklampok,pendapa kawedanan purwarejaklampok,pendapa kawedanan purwarejaklampok,3.0,3.0,0.0,0.0
+Pepunden Danyang Ronggeng,Entertainment,pepunden danyang ronggeng,pepunden danyang ronggeng,pepunden danyang ronggeng,3.0,3.0,0.0,0.0
+Monumen KI Jaya Diwangsa,Entertainment,monumen ki jaya diwangsa,monumen ki diwangsa,monumen ki wangsa,4.0,3.0,1.0,25.0
+Bukit Pangonan Indah,Entertainment,bukit pangonan indah,bukit pangonan,bukit pangonan,3.0,2.0,1.0,33.3
+Museum Bank Rakyat Indonesia,Entertainment,museum bank rakyat indonesia,museum bank rakyat indonesia,museum bank rakyat indonesia,4.0,4.0,0.0,0.0
+General Sudirman Museum,Entertainment,general sudirman museum,general sudirman museum,general sudirman museum,3.0,3.0,0.0,0.0
+Museum Prof Dr R Soegarda Poerbakawatja,Entertainment,museum prof dr r soegarda poerbakawatja,museum prof dr soegarda poerbakawatja,museum prof dr soegarda poerbakawatja,6.0,5.0,1.0,16.7
+Monumen Panglima Besar Jenderal Soedirman,Entertainment,monumen panglima besar jenderal soedirman,monumen panglima jenderal soedirman,monumen panglima jenderal soedirman,5.0,4.0,1.0,20.0
+Aquarium Purbasari Pancuran Mas PURBALINGGA,Entertainment,aquarium purbasari pancuran mas purbalingga,aquarium purbasari pancuran mas purbalingga,aquarium purbasari pancur mas purbalingga,5.0,5.0,0.0,0.0
+Museum Prasejarah Sokaraja Kidul,Entertainment,museum prasejarah sokaraja kidul,museum prasejarah sokaraja kidul,museum prasejarah sokaraja kidul,4.0,4.0,0.0,0.0
+Stupa Banyumudal,Entertainment,stupa banyumudal,stupa banyumudal,stupa banyumudal,2.0,2.0,0.0,0.0
+TYANDA HOUSE,Entertainment,tyanda house,tyanda house,tyanda house,2.0,2.0,0.0,0.0
+Watu Atap Cendana,Entertainment,watu atap cendana,watu atap cendana,watu atap cendana,3.0,3.0,0.0,0.0
+Astana Panjang Mbah kuning,Entertainment,astana panjang mbah kuning,astana mbah,astana mbah,4.0,2.0,2.0,50.0
+Ndaleme Kayim Abdul Jamil,Entertainment,ndaleme kayim abdul jamil,ndaleme kayim abdul,ndaleme kayim abdul,4.0,3.0,1.0,25.0
+TAMAN KERETA API PURWOKERTO,Entertainment,taman kereta api purwokerto,kereta api purwokerto,kereta api purwokerto,4.0,3.0,1.0,25.0
+Museum Purbakala Bumiayu,Entertainment,museum purbakala bumiayu,museum purbakala bumiayu,museum purbakala bumiayu,3.0,3.0,0.0,0.0
+Candi Pancurawis,Entertainment,candi pancurawis,candi pancurawis,candi pancurawis,2.0,2.0,0.0,0.0
+PRANCIS (Prapatan Cipanas),Entertainment,prancis prapatan cipanas,prancis prapatan cipanas,prancis prapatan cipanas,3.0,3.0,0.0,0.0
+LASKAR BENDAWIKUN,Entertainment,laskar bendawikun,laskar bendawikun,laskar bendawikun,2.0,2.0,0.0,0.0
+Visae action figure,Entertainment,visae action figure,visae action figure,visae action figure,3.0,3.0,0.0,0.0
+Museum Galuh Cisaga,Entertainment,museum galuh cisaga,museum galuh cisaga,museum galuh cisaga,3.0,3.0,0.0,0.0
+Kebon jati gandok mulyajaya,Entertainment,kebon jati gandok mulyajaya,kebon jati gandok mulyajaya,kebon jati gandok mulyajaya,4.0,4.0,0.0,0.0
+Batandos,Entertainment,batandos,batandos,batandos,1.0,1.0,0.0,0.0
+Padepokan Tapakkaruhun Nusantara,Entertainment,padepokan tapakkaruhun nusantara,padepokan tapakkaruhun nusantara,padepokan tapakkaruhun nusantara,3.0,3.0,0.0,0.0
+Lapak mancing VIP Pengpreng ,Entertainment, Madura, Ci Baganjing,lapak mancing vip pengpreng madura ci baganjing,8.0,6.0,2.0,25.0
+Museum Ki Sunda Desa Mekarmukti,Entertainment,museum ki sunda desa mekarmukti,museum ki sunda desa mekarmukti,museum ki sunda desa mekarmukti,5.0,5.0,0.0,0.0
+Wisata Alam Ciung Wanara,Entertainment,wisata alam ciung wanara,wisata alam ciung wanara,wisata alam ciung wanara,4.0,4.0,0.0,0.0
+Monumen Perjuangan Rakyat Sukadana,Entertainment,monumen perjuangan rakyat sukadana,monumen perjuangan rakyat sukadana,monumen juang rakyat sukadana,4.0,4.0,0.0,0.0
+Situs Gunung Susuru,Entertainment,situs gunung susuru,situs gunung susuru,situs gunung susuru,3.0,3.0,0.0,0.0
+Kabuyutan Galuh Bojongloa,Entertainment,kabuyutan galuh bojongloa,kabuyutan galuh bojongloa,kabuyutan galuh bojongloa,3.0,3.0,0.0,0.0
+TPU Pasgar City,Entertainment,tpu pasgar city,tpu pasgar city,tpu pasgar city,3.0,3.0,0.0,0.0
+Aki Mandung,Entertainment,aki mandung,aki mandung,aki mandung,2.0,2.0,0.0,0.0
+saung Kadu Haji Acan,Entertainment,saung kadu haji acan,saung kadu haji acan,saung kadu haji acan,4.0,4.0,0.0,0.0
+Gapura Kabupaten Ciamis Jalan Cimaragas,Entertainment,gapura kabupaten ciamis jalan cimaragas,gapura kabupaten ciamis jalan cimaragas,gapura kabupaten ciamis jalan cimaragas,5.0,5.0,0.0,0.0
+MUSEUM GALUNGGUNG,Entertainment,museum galunggung,museum galunggung,museum galunggung,2.0,2.0,0.0,0.0
+House Of Tamara,Entertainment,house of tamara,house of tamara,house of tamara,3.0,3.0,0.0,0.0
+Wisata Alam Batu Mahpar Galunggung,Entertainment,wisata alam batu mahpar galunggung,wisata alam batu mahpar galunggung,wisata alam batu mahpar galunggung,5.0,5.0,0.0,0.0
+Si Tardjo,Entertainment,si tardjo,si tardjo,si tardjo,2.0,2.0,0.0,0.0
+batas desa,Entertainment,batas desa,batas desa,batas desa,2.0,2.0,0.0,0.0
+MESJID JAMI NURUL HUDA,Entertainment,mesjid jami nurul huda,mesjid jami nurul huda,mesjid jam nurul huda,4.0,4.0,0.0,0.0
+Tangga Seribu Kawah Galunggung,Entertainment,tangga seribu kawah galunggung,tangga seribu kawah galunggung,tangga ribu kawah galunggung,4.0,4.0,0.0,0.0
+Patung bangkong,Entertainment,patung bangkong,patung bangkong,patung bangkong,2.0,2.0,0.0,0.0
+Los Jaelani,Entertainment,los jaelani,jaelani,jaelani,2.0,1.0,1.0,50.0
+Keraton Bubi Anduk,Entertainment,keraton bubi anduk,keraton bubi anduk,keraton bubi anduk,3.0,3.0,0.0,0.0
+Cibiru empire,Entertainment,cibiru empire,cibiru empire,cibiru empire,2.0,2.0,0.0,0.0
+Peristiwa gedoran,Entertainment,peristiwa gedoran,peristiwa gedoran,peristiwa gedor,2.0,2.0,0.0,0.0
+keluarga bapak Ane jaelani,Entertainment,keluarga bapak ane jaelani,keluarga ane jaelani,keluarga ane jaelani,4.0,3.0,1.0,25.0
+Saung Bumi Kang Haji Ateng,Entertainment,saung bumi kang haji ateng,saung bumi kang haji ateng,saung bumi kang haji ateng,5.0,5.0,0.0,0.0
+Museum RAA Adiwidjaya Garut,Entertainment,museum raa adiwidjaya garut,museum raa adiwidjaya garut,museum raa adiwidjaya garut,4.0,4.0,0.0,0.0
+Situs pra sejarah unden Berundak Pasir Lulumpang,Entertainment,situs pra sejarah unden berundak pasir lulumpang,situs pra sejarah unden berundak lulumpang,situs pra sejarah unden undak lulumpang,7.0,6.0,1.0,14.3
+Situ Sukarame,Entertainment,situ sukarame,situ sukarame,situ sukarame,2.0,2.0,0.0,0.0
+Tugu Simpang Lima,Entertainment,tugu simpang lima,tugu simpang,tugu simpang,3.0,2.0,1.0,33.3
+Pencak Silat Gadjah Putih Mega Paksi Pusaka,Entertainment,pencak silat gadjah putih mega paksi pusaka,pencak silat gadjah mega paksi pusaka,pencak silat gadjah mega paksi pusaka,7.0,6.0,1.0,14.3
+CIKANANGA OFFICIAL,Entertainment,cikananga official,cikananga official,cikananga official,2.0,2.0,0.0,0.0
+Studio Proklamasi,Entertainment,studio proklamasi,studio proklamasi,studio proklamasi,2.0,2.0,0.0,0.0
+Nando perlanda,Entertainment,nando perlanda,nando perlanda,nando landa,2.0,2.0,0.0,0.0
+Situ Cibalagung,Entertainment,situ cibalagung,situ cibalagung,situ cibalagung,2.0,2.0,0.0,0.0
+PAGURON PENCAK SILAT GADJAH PUTIH SELURUH INDONESIA,Entertainment,paguron pencak silat gadjah putih seluruh indonesia,paguron pencak silat gadjah indonesia,paguron pencak silat gadjah indonesia,7.0,5.0,2.0,28.6
+Paket wisata Candi Cangkuang dan tempat wisata garut lainnya!,Entertainment,paket wisata candi cangkuang dan tempat wisata garut lainnya,wisata candi cangkuang wisata garut,wisata candi cangkuang wisata garut,9.0,5.0,4.0,44.4
+Nolimits 2 stroke,Entertainment,nolimits stroke,nolimits stroke,nolimits stroke,3.0,2.0,1.0,33.3
+batas desa salakaria,Entertainment,batas desa salakaria,batas desa salakaria,batas desa salakaria,3.0,3.0,0.0,0.0
+Bapro Art,Entertainment,bapro art,bapro art,bapro art,2.0,2.0,0.0,0.0
+Museum haji umam,Entertainment,museum haji umam,museum haji umam,museum haji umam,3.0,3.0,0.0,0.0
+Mokim jadupatiya dokart art house museum,Entertainment,mokim jadupatiya dokart art house museum,mokim jadupatiya dokart art house museum,mokim jadupatiya dokart art house museum,6.0,6.0,0.0,0.0
+Geothermal Information Center,Entertainment,geothermal information center,geothermal information center,geothermal information center,3.0,3.0,0.0,0.0
+Padepokan seni Ulun Bentang,Entertainment,padepokan seni ulun bentang,padepokan seni ulun bentang,padepokan seni ulun bentang,4.0,4.0,0.0,0.0
+Makom Karomah Eyang Mangkubumi,Entertainment,makom karomah eyang mangkubumi,makom karomah eyang mangkubumi,makom karomah eyang mangkubumi,4.0,4.0,0.0,0.0
+Sophiyan,Entertainment,sophiyan,sophiyan,sophiyan,1.0,1.0,0.0,0.0
+Dadang Vijay,Entertainment,dadang vijay,dadang vijay,dadang vijay,2.0,2.0,0.0,0.0
+Markas sukses Prabowo Subianto beserta mayor teddy,Entertainment,markas sukses prabowo subianto beserta mayor teddy,markas prabowo subianto beserta mayor teddy,markas prabowo subianto serta mayor teddy,7.0,6.0,1.0,14.3
+Taman Hutan Kamojang,Entertainment,taman hutan kamojang,hutan kamojang,hutan kamojang,3.0,2.0,1.0,33.3
+Rumah Cubluk,Entertainment,rumah cubluk,rumah cubluk,rumah cubluk,2.0,2.0,0.0,0.0
+Petilasan Dipati Ukur,Entertainment,petilasan dipati ukur,petilasan dipati ukur,tilas pati ukur,3.0,3.0,0.0,0.0
+Museum Geologi,Entertainment,museum geologi,museum geologi,museum geologi,2.0,2.0,0.0,0.0
+Museum Kota Bandung,Entertainment,museum kota bandung,museum kota bandung,museum kota bandung,3.0,3.0,0.0,0.0
+Sri Baduga Museum,Entertainment,sri baduga museum,sri baduga museum,sri baduga museum,3.0,3.0,0.0,0.0
+Asia-Africa Conference Museum,Entertainment,asiaafrica conference museum,asiaafrica conference museum,asiaafrica conference museum,3.0,3.0,0.0,0.0
+Museum Pos Indonesia,Entertainment,museum pos indonesia,museum pos indonesia,museum pos indonesia,3.0,3.0,0.0,0.0
+Mandala Wangsit Siliwangi Museum,Entertainment,mandala wangsit siliwangi museum,mandala wangsit siliwangi museum,mandala wangsit siliwangi museum,4.0,4.0,0.0,0.0
+Gedung Sate,Entertainment,gedung sate,gedung sate,gedung sate,2.0,2.0,0.0,0.0
+Museum Nike Ardilla,Entertainment,museum nike ardilla,museum nike ardilla,museum nike ardilla,3.0,3.0,0.0,0.0
+Inggit Garnasih Historic House,Entertainment,inggit garnasih historic house,inggit garnasih historic house,inggit garnasih historic house,4.0,4.0,0.0,0.0
+Gedung Indonesia Menggugat,Entertainment,gedung indonesia menggugat,gedung indonesia menggugat,gedung indonesia gugat,3.0,3.0,0.0,0.0
+Museum Kavaleri TNI AD,Entertainment,museum kavaleri tni ad,museum kavaleri tni ad,museum kavaleri tni ad,4.0,4.0,0.0,0.0
+Banceuy Bandung Prison Monument,Entertainment,banceuy bandung prison monument,banceuy bandung prison monument,banceuy bandung prison monument,4.0,4.0,0.0,0.0
+Museum Gedung Sate,Entertainment,museum gedung sate,museum gedung sate,museum gedung sate,3.0,3.0,0.0,0.0
+Museum Perbendaharaan,Entertainment,museum perbendaharaan,museum perbendaharaan,museum bendahara,2.0,2.0,0.0,0.0
+Museum Mainan,Entertainment,museum mainan,museum mainan,museum main,2.0,2.0,0.0,0.0
+Museum/Galeri Sejarah Kebudayaan Indonesia Tionghoa,Entertainment,museumgaleri sejarah kebudayaan indonesia tionghoa,museumgaleri sejarah kebudayaan indonesia tionghoa,museumgaleri sejarah budaya indonesia tionghoa,5.0,5.0,0.0,0.0
+Hall Of Fame Jawa Barat - Panggung Inohong,Entertainment,hall of fame jawa barat panggung inohong,hall of fame jawa barat panggung inohong,hall of fame jawa barat panggung inohong,8.0,7.0,1.0,12.5
+Taman Sejarah Bandung,Entertainment,taman sejarah bandung,sejarah bandung,sejarah bandung,3.0,2.0,1.0,33.3
+Tugu Monumen KAA,Entertainment,tugu monumen kaa,tugu monumen kaa,tugu monumen kaa,3.0,3.0,0.0,0.0
+Museum Srihadi Soedarsono,Entertainment,museum srihadi soedarsono,museum srihadi soedarsono,museum srihadi soedarsono,3.0,3.0,0.0,0.0
+Museum Barli,Entertainment,museum barli,museum barli,museum barli,2.0,2.0,0.0,0.0
+NuArt Sculpture Park,Entertainment,nuart sculpture park,nuart sculpture park,nuart sculpture park,3.0,3.0,0.0,0.0
+Puspa Iptek Sundial,Entertainment,puspa iptek sundial,puspa iptek sundial,puspa iptek sundial,3.0,3.0,0.0,0.0
+Bale Budaya Parahyangan,Entertainment,bale budaya parahyangan,bale budaya parahyangan,bale budaya parahyangan,3.0,3.0,0.0,0.0
+Bale Seni Barli,Entertainment,bale seni barli,bale seni barli,bale seni barli,3.0,3.0,0.0,0.0
+Nyoman Nuarta Galerry,Entertainment,nyoman nuarta galerry,nyoman nuarta galerry,nyoman nuarta galerry,3.0,3.0,0.0,0.0
+Primari's Kingdom,Entertainment,primaris kingdom,primaris kingdom,primaris kingdom,2.0,2.0,0.0,0.0
+Nay's garage 11,Entertainment,nays garage,nays garage,nays garage,3.0,2.0,1.0,33.3
+Rumah Jendral Devin,Entertainment,rumah jendral devin,rumah jendral devin,rumah jendral devin,3.0,3.0,0.0,0.0
+Gg. Cepot,Entertainment,gg cepot,gg cepot,gg cepot,2.0,2.0,0.0,0.0
+Eyang Sakti Jaya Dipa Kusuma,Entertainment,eyang sakti jaya dipa kusuma,eyang dipa kusuma,eyang dipa kusuma,5.0,3.0,2.0,40.0
+Galery Giri Maruta,Entertainment,galery giri maruta,galery giri maruta,galery giri maruta,3.0,3.0,0.0,0.0
+BS MARWAH AQUATIC,Entertainment,bs marwah aquatic,bs marwah aquatic,bs marwah aquatic,3.0,3.0,0.0,0.0
+Museum PETA,Entertainment,museum peta,museum peta,museum peta,2.0,2.0,0.0,0.0
+Indonesian Museum of Ethnobotany,Entertainment,indonesian museum of ethnobotany,indonesian museum of ethnobotany,indonesian museum of ethnobotany,4.0,4.0,0.0,0.0
+Museum of Zoology (Museum Zoologicum Bogoriense),Entertainment,museum of zoology museum zoologicum bogoriense,museum of zoology museum zoologicum bogoriense,museum of zoology museum zoologicum bogoriense,6.0,6.0,0.0,0.0
+Museum Perjoangan Bogor,Entertainment,museum perjoangan bogor,museum perjoangan bogor,museum joang bogor,3.0,3.0,0.0,0.0
+Museum Kepresidenan Balai Kirti,Entertainment,museum kepresidenan balai kirti,museum kepresidenan balai kirti,museum presiden balai kirti,4.0,4.0,0.0,0.0
+Museum Tanah dan Pertanian,Entertainment,museum tanah dan pertanian,museum tanah pertanian,museum tanah tani,4.0,3.0,1.0,25.0
+Museum Pajajaran Bogor,Entertainment,museum pajajaran bogor,museum pajajaran bogor,museum pajajaran bogor,3.0,3.0,0.0,0.0
+Lulu Trick Eye Museum,Entertainment,lulu trick eye museum,lulu trick eye museum,lulu trick eye museum,4.0,4.0,0.0,0.0
+Galeri Bumi Parawira,Entertainment,galeri bumi parawira,galeri bumi parawira,galeri bumi parawira,3.0,3.0,0.0,0.0
+Museum Nasional Penanggulangan Terorisme BNPT Adhi Pradana,Entertainment,museum nasional penanggulangan terorisme bnpt adhi pradana,museum nasional penanggulangan terorisme bnpt adhi pradana,museum nasional tanggulang terorisme bnpt adhi pradana,7.0,7.0,0.0,0.0
+Museum Pembela Tanah Air,Entertainment,museum pembela tanah air,museum pembela tanah air,museum bela tanah air,4.0,4.0,0.0,0.0
+MONUMEN PERJUANGAN MASYARAKAT CIBINONG,Entertainment,monumen perjuangan masyarakat cibinong,monumen perjuangan masyarakat cibinong,monumen juang masyarakat cibinong,4.0,4.0,0.0,0.0
+Museum Layang-layang Indonesia,Entertainment,museum layanglayang indonesia,museum layanglayang indonesia,museum layanglayang indonesia,3.0,3.0,0.0,0.0
+Indonesia Museum,Entertainment,indonesia museum,indonesia museum,indonesia museum,2.0,2.0,0.0,0.0
+Museum Keprajuritan Indonesia,Entertainment,museum keprajuritan indonesia,museum keprajuritan indonesia,museum prajurit indonesia,3.0,3.0,0.0,0.0
+Museum Betawi,Entertainment,museum betawi,museum betawi,museum betawi,2.0,2.0,0.0,0.0
+Museum Pengkhianatan PKI (Komunis),Entertainment,museum pengkhianatan pki komunis,museum pengkhianatan pki komunis,museum khianat pki komunis,4.0,4.0,0.0,0.0
+National Museum of Indonesia,Entertainment,national museum of indonesia,national museum of indonesia,national museum of indonesia,4.0,4.0,0.0,0.0
+Satriamandala Museum,Entertainment,satriamandala museum,satriamandala museum,satriamandala museum,2.0,2.0,0.0,0.0
+Museum MACAN,Entertainment,museum macan,museum macan,museum macan,2.0,2.0,0.0,0.0
+MOJA Museum,Entertainment,moja museum,moja museum,moja museum,2.0,2.0,0.0,0.0
+Museum Taman Prasasti,Entertainment,museum taman prasasti,museum prasasti,museum prasasti,3.0,2.0,1.0,33.3
+Kebangkitan Nasional Museum,Entertainment,kebangkitan nasional museum,kebangkitan nasional museum,bangkit nasional museum,3.0,3.0,0.0,0.0
+Museum Sumpah Pemuda,Entertainment,museum sumpah pemuda,museum sumpah pemuda,museum sumpah pemuda,3.0,3.0,0.0,0.0
+Jakarta History Museum,Entertainment,jakarta history museum,jakarta history museum,jakarta history museum,3.0,3.0,0.0,0.0
+Museum Mandiri,Entertainment,museum mandiri,museum,museum,2.0,1.0,1.0,50.0
+Wayang Museum,Entertainment,wayang museum,wayang museum,wayang museum,2.0,2.0,0.0,0.0
+Lawang Sewu,Entertainment,lawang sewu,lawang sewu,lawang sewu,2.0,2.0,0.0,0.0
+Museum Kota Lama,Entertainment,museum kota lama,museum kota,museum kota,3.0,2.0,1.0,33.3
+Museum Ranggawarsita,Entertainment,museum ranggawarsita,museum ranggawarsita,museum ranggawarsita,2.0,2.0,0.0,0.0
+Museum Mandala Bhakti,Entertainment,museum mandala bhakti,museum mandala bhakti,museum mandala bhakti,3.0,3.0,0.0,0.0
+Museum Akpol Semarang,Entertainment,museum akpol semarang,museum akpol semarang,museum akpol semarang,3.0,3.0,0.0,0.0
+revahouse,Entertainment,revahouse,revahouse,revahouse,1.0,1.0,0.0,0.0
+Semarang Contemporary Art Gallery,Entertainment,semarang contemporary art gallery,semarang contemporary art gallery,semarang contemporary art gallery,4.0,4.0,0.0,0.0
+Museum Perkembangan Islam Jawa Tengah,Entertainment,museum perkembangan islam jawa tengah,museum perkembangan islam jawa,museum kembang islam jawa,5.0,4.0,1.0,20.0
+Tugu Muda Semarang,Entertainment,tugu muda semarang,tugu semarang,tugu semarang,3.0,2.0,1.0,33.3
+Maerokoco Semarang,Entertainment,maerokoco semarang,maerokoco semarang,maerokoco semarang,2.0,2.0,0.0,0.0
+Kampung Batik Gedong Semarang,Entertainment,kampung batik gedong semarang,batik gedong semarang,batik gedong semarang,4.0,3.0,1.0,25.0
+Situs Yoni Don Bosco,Entertainment,situs yoni don bosco,situs yoni don bosco,situs yoni don bosco,4.0,4.0,0.0,0.0
+Museum Polri,Entertainment,museum polri,museum polri,museum polri,2.0,2.0,0.0,0.0
+Anjungan Kota Semarang,Entertainment,anjungan kota semarang,anjungan kota semarang,anjung kota semarang,3.0,3.0,0.0,0.0
+Asmaul Husna Tower Great Mosque of Central Java,Entertainment,asmaul husna tower great mosque of central java,asmaul husna tower great mosque of central java,asmaul husna tower great mosque of central java,8.0,8.0,0.0,0.0
+Museum Ambalingga,Entertainment,museum ambalingga,museum ambalingga,museum ambalingga,2.0,2.0,0.0,0.0
+Museum Ronggowarsito,Entertainment,museum ronggowarsito,museum ronggowarsito,museum ronggowarsito,2.0,2.0,0.0,0.0
+Anjungan Kabupaten Karanganyar,Entertainment,anjungan kabupaten karanganyar,anjungan kabupaten karanganyar,anjung kabupaten karanganyar,3.0,3.0,0.0,0.0
+Museum Dekat Tunas Rimba,Entertainment,museum dekat tunas rimba,museum tunas rimba,museum tunas rimba,4.0,3.0,1.0,25.0
+Anjungan Kabupaten Demak,Entertainment,anjungan kabupaten demak,anjungan kabupaten demak,anjung kabupaten demak,3.0,3.0,0.0,0.0
+Antock Art House Gallery,Entertainment,antock art house gallery,antock art house gallery,antock art house gallery,4.0,4.0,0.0,0.0
+Anjungan Kabupaten Batang,Entertainment,anjungan kabupaten batang,anjungan kabupaten batang,anjung kabupaten batang,3.0,3.0,0.0,0.0
+Anjungan Kabupaten Boyolali,Entertainment,anjungan kabupaten boyolali,anjungan kabupaten boyolali,anjung kabupaten boyolali,3.0,3.0,0.0,0.0
+Kwik Hway Gwan Memorial Building,Entertainment,kwik hway gwan memorial building,kwik hway gwan memorial building,kwik hway gwan memorial building,5.0,5.0,0.0,0.0
+Perkutut,Entertainment,perkutut,perkutut,perkutut,1.0,1.0,0.0,0.0
+Kantor museum,Entertainment,kantor museum,kantor museum,kantor museum,2.0,2.0,0.0,0.0
+Cagar Budaya Layur 35,Entertainment,cagar budaya layur,cagar budaya layur,cagar budaya layur,4.0,3.0,1.0,25.0
+Gedung Juang 45,Entertainment,gedung juang,gedung juang,gedung juang,3.0,2.0,1.0,33.3
+WATU BALE,Entertainment,watu bale,watu bale,watu bale,2.0,2.0,0.0,0.0
+voormalig SJS-hoofdkwartier,Entertainment,voormalig sjshoofdkwartier,voormalig sjshoofdkwartier,voormalig sjshoofdkwartier,2.0,2.0,0.0,0.0
+Museum Mandala parking lot,Entertainment,museum mandala parking lot,museum mandala parking lot,museum mandala parking lot,4.0,4.0,0.0,0.0
+Tugu Cikal Sukosono,Entertainment,tugu cikal sukosono,tugu cikal sukosono,tugu cikal sukosono,3.0,3.0,0.0,0.0
+Monumen Pertempuran Tegalkangkung,Entertainment,monumen pertempuran tegalkangkung,monumen pertempuran tegalkangkung,monumen tempur tegalkangkung,3.0,3.0,0.0,0.0
+Semarang Shark Garage,Entertainment,semarang shark garage,semarang shark garage,semarang shark garage,3.0,3.0,0.0,0.0
+Menara MAJT,Entertainment,menara majt,menara majt,menara majt,2.0,2.0,0.0,0.0
+HistorySpark,Entertainment,historyspark,historyspark,historyspark,1.0,1.0,0.0,0.0
+MONUMEN GERBONG DATAR TUA,Entertainment,monumen gerbong datar tua,monumen gerbong,monumen gerbong,4.0,2.0,2.0,50.0
+Sendang Mintoloyo TBRS,Entertainment,sendang mintoloyo tbrs,sendang mintoloyo tbrs,sendang mintoloyo tbrs,3.0,3.0,0.0,0.0
+Parkiran khusus Lawang Sewu,Entertainment,parkiran khusus lawang sewu,parkiran lawang sewu,parkir lawang sewu,4.0,3.0,1.0,25.0
+Patung Batas Kota Sriwulan,Entertainment,patung batas kota sriwulan,patung batas kota sriwulan,patung batas kota sriwulan,4.0,4.0,0.0,0.0
+Anjungan Kabupaten Brebes,Entertainment,anjungan kabupaten brebes,anjungan kabupaten brebes,anjung kabupaten brebes,3.0,3.0,0.0,0.0
+Dmz 3D Museum,Entertainment,dmz d museum,dmz museum,dmz museum,3.0,2.0,1.0,33.3
+Masjid Dan Anjungan Demak,Entertainment,masjid dan anjungan demak,masjid anjungan demak,masjid anjung demak,4.0,3.0,1.0,25.0
+Base camp RGS,Entertainment,base camp rgs,base camp rgs,base camp rgs,3.0,3.0,0.0,0.0
+Monumen Tugu Pahlawan dan Museum Sepuluh Nopember Surabaya,Entertainment,monumen tugu pahlawan dan museum sepuluh nopember surabaya,monumen tugu pahlawan museum sepuluh nopember surabaya,monumen tugu pahlawan museum puluh nopember surabaya,8.0,7.0,1.0,12.5
+Siola Surabaya Museum,Entertainment,siola surabaya museum,siola surabaya museum,siola surabaya museum,3.0,3.0,0.0,0.0
+Museum Pendidikan Surabaya,Entertainment,museum pendidikan surabaya,museum pendidikan surabaya,museum didik surabaya,3.0,3.0,0.0,0.0
+Museum H. O. S. Tjokroaminoto,Entertainment,museum h o s tjokroaminoto,museum tjokroaminoto,museum tjokroaminoto,5.0,2.0,3.0,60.0
+De Javasche Bank,Entertainment,de javasche bank,de javasche bank,de javasche bank,3.0,3.0,0.0,0.0
+Museum Dr. Soetomo,Entertainment,museum dr soetomo,museum dr soetomo,museum dr soetomo,3.0,3.0,0.0,0.0
+Museum TNI AL Loka Jala Crana,Entertainment,museum tni al loka jala crana,museum tni al loka jala crana,museum tni al loka jala crana,6.0,6.0,0.0,0.0
+Museum Olahraga Surabaya,Entertainment,museum olahraga surabaya,museum olahraga surabaya,museum olahraga surabaya,3.0,3.0,0.0,0.0
+Rumah Wafat Wage Rudolf Supratman,Entertainment,rumah wafat wage rudolf supratman,rumah wafat wage rudolf supratman,rumah wafat wage rudolf supratman,5.0,5.0,0.0,0.0
+Museum Pusat TNI AL Jalesveva Jayamahe,Entertainment,museum pusat tni al jalesveva jayamahe,museum pusat tni al jalesveva jayamahe,museum pusat tni al jalesveva jayamahe,6.0,6.0,0.0,0.0
+Museum Etnografi dan Pusat Kajian Kematian Universitas Airlangga,Entertainment,museum etnografi dan pusat kajian kematian universitas airlangga,museum etnografi pusat kajian kematian universitas airlangga,museum etnografi pusat kaji mati universitas airlangga,8.0,7.0,1.0,12.5
+Museum Bank Mandiri,Entertainment,museum bank mandiri,museum bank,museum bank,3.0,2.0,1.0,33.3
+Dolanan Art Experience,Entertainment,dolanan art experience,dolanan art experience,dolan art experience,3.0,3.0,0.0,0.0
+Vice Admiral Yos Sudarso Monument,Entertainment,vice admiral yos sudarso monument,vice admiral yos sudarso monument,vice admiral yos sudarso monument,5.0,5.0,0.0,0.0
+Taman Sejarah dan Museum Hidup Kota Lama Surabaya,Entertainment,taman sejarah dan museum hidup kota lama surabaya,sejarah museum hidup kota surabaya,sejarah museum hidup kota surabaya,8.0,5.0,3.0,37.5
+Museum Anatomi Veteriner,Entertainment,museum anatomi veteriner,museum anatomi,museum anatomi,3.0,2.0,1.0,33.3
+B-P House Indonesia,Entertainment,bp house indonesia,bp house indonesia,bp house indonesia,3.0,3.0,0.0,0.0
+Museum Teknoform - Universitas DINAMIKA,Entertainment,museum teknoform universitas dinamika,museum teknoform universitas dinamika,museum teknoform universitas dinamika,5.0,4.0,1.0,20.0
+GNI SURABAYA,Entertainment,gni surabaya,gni surabaya,gni surabaya,2.0,2.0,0.0,0.0
+Patung Suroboyo Raksasa,Entertainment,patung suroboyo raksasa,patung suroboyo raksasa,patung suroboyo raksasa,3.0,3.0,0.0,0.0
+Surabaya Youth Center,Entertainment,surabaya youth center,surabaya youth center,surabaya youth center,3.0,3.0,0.0,0.0
+Tempat Kelahiran Soekarno,Entertainment,tempat kelahiran soekarno,kelahiran soekarno,lahir soekarno,3.0,2.0,1.0,33.3
+Orasis Art Space,Entertainment,orasis art space,orasis art space,orasis art space,3.0,3.0,0.0,0.0
+Gedung Cak Durasim,Entertainment,gedung cak durasim,gedung cak durasim,gedung cak durasim,3.0,3.0,0.0,0.0
+Taman Tugu Pahlawan Alun Alun Contong,Entertainment,taman tugu pahlawan alun alun contong,tugu pahlawan alun alun contong,tugu pahlawan alun alun contong,6.0,5.0,1.0,16.7
+Okassi Scooter Museum,Entertainment,okassi scooter museum,okassi scooter museum,okassi scooter museum,3.0,3.0,0.0,0.0
+Gedhong Pusoko MeSir,Entertainment,gedhong pusoko mesir,gedhong pusoko mesir,gedhong pusoko mesir,3.0,3.0,0.0,0.0
+Musium Kematian Unair Surabaya,Entertainment,musium kematian unair surabaya,musium kematian unair surabaya,musium mati unair surabaya,4.0,4.0,0.0,0.0
+Museum Misi Pasturan Katolik Surabaya,Entertainment,museum misi pasturan katolik surabaya,museum misi pasturan katolik surabaya,museum misi pastur katolik surabaya,5.0,5.0,0.0,0.0
+S. Pandji Studio,Entertainment,s pandji studio,pandji studio,pandji studio,3.0,2.0,1.0,33.3
+Rumah Air Surabaya,Entertainment,rumah air surabaya,rumah air surabaya,rumah air surabaya,3.0,3.0,0.0,0.0
+Galeri Pusaka Papat Sekawan,Entertainment,galeri pusaka papat sekawan,galeri pusaka papat sekawan,galeri pusaka papat kawan,4.0,4.0,0.0,0.0
+Museum Pendidikan Kedokteran Unair Surabaya,Entertainment,museum pendidikan kedokteran unair surabaya,museum pendidikan kedokteran unair surabaya,museum didik dokter unair surabaya,5.0,5.0,0.0,0.0
+Pesarean Joko Berek Sawunggaling,Entertainment,pesarean joko berek sawunggaling,pesarean joko berek sawunggaling,sarean joko rek sawunggaling,4.0,4.0,0.0,0.0
+Istana Marsha Lazuarditya,Entertainment,istana marsha lazuarditya,istana marsha lazuarditya,istana marsha lazuarditya,3.0,3.0,0.0,0.0
+Museum BI,Entertainment,museum bi,museum bi,museum bi,2.0,2.0,0.0,0.0
+SIOLA Mal Pelayanan Publik,Entertainment,siola mal pelayanan publik,siola mal pelayanan publik,siola mal layan publik,4.0,4.0,0.0,0.0
+Wesijowo keris,Entertainment,wesijowo keris,wesijowo keris,wesijowo keris,2.0,2.0,0.0,0.0
+Museum Hidup Polwiltabes Surabaya,Entertainment,museum hidup polwiltabes surabaya,museum hidup polwiltabes surabaya,museum hidup polwiltabes surabaya,4.0,4.0,0.0,0.0
+Taman Gantung Tunjungan,Entertainment,taman gantung tunjungan,gantung tunjungan,gantung tunjung,3.0,2.0,1.0,33.3
+MBKM SABDI,Entertainment,mbkm sabdi,mbkm sabdi,mbkm sabdi,2.0,2.0,0.0,0.0
+Rumah Kelahiran DR. H. ROESLAN ABDULGANI,Entertainment,rumah kelahiran dr h roeslan abdulgani,rumah kelahiran dr roeslan abdulgani,rumah lahir dr roeslan abdulgani,6.0,5.0,1.0,16.7
+Aku Wong Jowo,Entertainment,aku wong jowo,jowo,jowo,3.0,1.0,2.0,66.7
+Monumen Kanca Yudha,Entertainment,monumen kanca yudha,monumen kanca yudha,monumen kanca yudha,3.0,3.0,0.0,0.0
+Parking,Entertainment,parking,parking,parking,1.0,1.0,0.0,0.0
+Pesarean Mbah Kramat Dewo,Entertainment,pesarean mbah kramat dewo,pesarean mbah kramat dewo,sarean mbah kramat dewo,4.0,4.0,0.0,0.0
+Taman Ekspresi Dan Perpustakaan,Entertainment,taman ekspresi dan perpustakaan,ekspresi perpustakaan,ekspresi pustaka,4.0,2.0,2.0,50.0
+Syeh muhamad yahya,Entertainment,syeh muhamad yahya,syeh muhamad yahya,syeh muhamad yahya,3.0,3.0,0.0,0.0
+Museum of Mind [MoM],Entertainment,museum of mind mom,museum of mind mom,museum of mind mom,4.0,4.0,0.0,0.0
+Pesarean syeikh abddurrochman,Entertainment,pesarean syeikh abddurrochman,pesarean syeikh abddurrochman,sarean syeikh abddurrochman,3.0,3.0,0.0,0.0
+Darmawan Design,Entertainment,darmawan design,darmawan design,darmawan design,2.0,2.0,0.0,0.0
+Galeri Prabangkara,Entertainment,galeri prabangkara,galeri prabangkara,galeri prabangkara,2.0,2.0,0.0,0.0
+Cuci Pusaka Mr.Rius,Entertainment,cuci pusaka mrrius,pusaka mrrius,pusaka mrrius,3.0,2.0,1.0,33.3
+Museum Gajah,Entertainment,museum gajah,museum gajah,museum gajah,2.0,2.0,0.0,0.0
+Siola Convention Hall,Entertainment,siola convention hall,siola convention hall,siola convention hall,3.0,3.0,0.0,0.0
+Indonesian Cancer Museum,Entertainment,indonesian cancer museum,indonesian cancer museum,indonesian cancer museum,3.0,3.0,0.0,0.0
+Rumah Kompos,Entertainment,rumah kompos,rumah kompos,rumah kompos,2.0,2.0,0.0,0.0
+Halte Perpustakaan BI Darmo,Entertainment,halte perpustakaan bi darmo,halte perpustakaan bi darmo,halte pustaka bi darmo,4.0,4.0,0.0,0.0
+ISTANA BONEKA PANJANGJIWO (ISBON),Entertainment,istana boneka panjangjiwo isbon,istana boneka panjangjiwo isbon,istana boneka panjangjiwo isbon,4.0,4.0,0.0,0.0
+GOR Pancasila,Entertainment,gor pancasila,gor pancasila,gor pancasila,2.0,2.0,0.0,0.0
+Asrama Haji Sukolilo Surabaya,Entertainment,asrama haji sukolilo surabaya,asrama haji sukolilo surabaya,asrama haji sukolilo surabaya,4.0,4.0,0.0,0.0
+Hyperbox Family Karaoke,Entertainment,hyperbox family karaoke,hyperbox family karaoke,hyperbox family karaoke,3.0,3.0,0.0,0.0
+Happy Puppy Ringroad Utara,Entertainment,happy puppy ringroad utara,happy puppy ringroad utara,happy puppy ringroad utara,4.0,4.0,0.0,0.0
+Top40 Karaoke Keluarga,Entertainment,top karaoke keluarga,karaoke keluarga,karaoke keluarga,3.0,2.0,1.0,33.3
+Family Fun Ringroad,Entertainment,family fun ringroad,family fun ringroad,family fun ringroad,3.0,3.0,0.0,0.0
+Freedom karaoke jogja,Entertainment,freedom karaoke jogja,freedom karaoke jogja,freedom karaoke jogja,3.0,3.0,0.0,0.0
+Boshe KTV,Entertainment,boshe ktv,boshe ktv,boshe ktv,2.0,2.0,0.0,0.0
+Turgo Family Karaoke,Entertainment,turgo family karaoke,turgo family karaoke,turgo family karaoke,3.0,3.0,0.0,0.0
+Happy Puppy Yogyakarta Seturan,Entertainment,happy puppy yogyakarta seturan,happy puppy yogyakarta seturan,happy puppy yogyakarta tur,4.0,4.0,0.0,0.0
+Happy Puppy,Entertainment,happy puppy,happy puppy,happy puppy,2.0,2.0,0.0,0.0
+Inul Vizta Lippo Plaza Yogyakarta,Entertainment,inul vizta lippo plaza yogyakarta,inul vizta lippo plaza yogyakarta,inul vizta lippo plaza yogyakarta,5.0,5.0,0.0,0.0
+NAV Jogjakarta,Entertainment,nav jogjakarta,nav jogjakarta,nav jogjakarta,2.0,2.0,0.0,0.0
+Singgah Family Karaoke,Entertainment,singgah family karaoke,singgah family karaoke,singgah family karaoke,3.0,3.0,0.0,0.0
+CLUB AND KARAOKE,Entertainment,club and karaoke,club and karaoke,club and karaoke,3.0,3.0,0.0,0.0
+Bayubajra Family Karaoke,Entertainment,bayubajra family karaoke,bayubajra family karaoke,bayubajra family karaoke,3.0,3.0,0.0,0.0
+Yellow River Karaoke & Spa,Entertainment,yellow river karaoke spa,yellow river karaoke spa,yellow river karaoke spa,5.0,4.0,1.0,20.0
+Terrace Jogja,Entertainment,terrace jogja,terrace jogja,terrace jogja,2.0,2.0,0.0,0.0
+Blackdoor Karaoke,Entertainment,blackdoor karaoke,blackdoor karaoke,blackdoor karaoke,2.0,2.0,0.0,0.0
+3 LEBAH KARAOKE AND LOUNGE,Entertainment,lebah karaoke and lounge,lebah karaoke and lounge,lebah karaoke and lounge,5.0,4.0,1.0,20.0
+RedBox Karaoke & Lounge,Entertainment,redbox karaoke lounge,redbox karaoke lounge,redbox karaoke lounge,4.0,3.0,1.0,25.0
+BLASS Studio karaoke,Entertainment,blass studio karaoke,blass studio karaoke,blass studio karaoke,3.0,3.0,0.0,0.0
+Insomnia Karaoke,Entertainment,insomnia karaoke,insomnia karaoke,insomnia karaoke,2.0,2.0,0.0,0.0
+Family Karaoke,Entertainment,family karaoke,family karaoke,family karaoke,2.0,2.0,0.0,0.0
+BELLA KARAOKE,Entertainment,bella karaoke,bella karaoke,bella karaoke,2.0,2.0,0.0,0.0
+NEVADA KARAOKE,Entertainment,nevada karaoke,nevada karaoke,nevada karaoke,2.0,2.0,0.0,0.0
+Krismanada karaoke music live,Entertainment,krismanada karaoke music live,krismanada karaoke music,krismanada karaoke music,4.0,3.0,1.0,25.0
+Master karaoke pedan,Entertainment,master karaoke pedan,master karaoke pedan,master karaoke dan,3.0,3.0,0.0,0.0
+KARAOKE 58,Entertainment,karaoke,karaoke,karaoke,2.0,1.0,1.0,50.0
+Horizon karaoke,Entertainment,horizon karaoke,horizon karaoke,horizon karaoke,2.0,2.0,0.0,0.0
+Ktv,Entertainment,ktv,ktv,ktv,1.0,1.0,0.0,0.0
+ALEXA KARAOKE,Entertainment,alexa karaoke,alexa karaoke,alexa karaoke,2.0,2.0,0.0,0.0
+PREDATOR Billiard JOGJA,Entertainment,predator billiard jogja,predator billiard jogja,predator billiard jogja,3.0,3.0,0.0,0.0
+Royal Crown Karaoke,Entertainment,royal crown karaoke,crown karaoke,crown karaoke,3.0,2.0,1.0,33.3
+PREDATOR KARAOKE,Entertainment,predator karaoke,predator karaoke,predator karaoke,2.0,2.0,0.0,0.0
+Happy Family 2 Karaoke,Entertainment,happy family karaoke,happy family karaoke,happy family karaoke,4.0,3.0,1.0,25.0
+NEW START KARAOKE,Entertainment,new start karaoke,start karaoke,start karaoke,3.0,2.0,1.0,33.3
+Bayu Karaoke,Entertainment,bayu karaoke,bayu karaoke,bayu karaoke,2.0,2.0,0.0,0.0
+Masterpiece Jogja,Entertainment,masterpiece jogja,masterpiece jogja,masterpiece jogja,2.0,2.0,0.0,0.0
+Faiq Home,Entertainment,faiq home,faiq home,faiq home,2.0,2.0,0.0,0.0
+Karaoke Tama Ganco,Entertainment,karaoke tama ganco,karaoke tama ganco,karaoke tama ganco,3.0,3.0,0.0,0.0
+Homestay Eling & Tresno,Entertainment,homestay eling tresno,homestay eling tresno,homestay eling tresno,4.0,3.0,1.0,25.0
+POWERMOVE Yap Square,Entertainment,powermove yap square,powermove yap square,powermove yap square,3.0,3.0,0.0,0.0
+A2 Cokro Riverview,Entertainment,a cokro riverview,cokro riverview,cokro riverview,3.0,2.0,1.0,33.3
+New Redcliff Spa & Karaoke,Entertainment,new redcliff spa karaoke,redcliff spa karaoke,redcliff spa karaoke,5.0,3.0,2.0,40.0
+XT Square,Entertainment,xt square,xt square,xt square,2.0,2.0,0.0,0.0
+Kick Off Futsal & Pickleball & Basketball & Karaoke,Entertainment,kick off futsal pickleball basketball karaoke,kick off futsal pickleball basketball karaoke,kick off futsal pickleball basketball karaoke,9.0,6.0,3.0,33.3
+3Lebahkaraoke&Honey bee,Entertainment,lebahkaraokehoney bee,lebahkaraokehoney bee,lebahkaraokehoney bee,2.0,2.0,0.0,0.0
+Rumah Wadah Jogja,Entertainment,rumah wadah jogja,rumah jogja,rumah jogja,3.0,2.0,1.0,33.3
+WisnuDjatiPratama,Entertainment,wisnudjatipratama,wisnudjatipratama,wisnudjatipratama,1.0,1.0,0.0,0.0
+KARAOKE RISKI KASURAN,Entertainment,karaoke riski kasuran,karaoke riski kasuran,karaoke riski kasur,3.0,3.0,0.0,0.0
+Villa Mollien Jogja,Entertainment,villa mollien jogja,villa mollien jogja,villa mollien jogja,3.0,3.0,0.0,0.0
+EC Executive Karaoke Yogyakarta,Entertainment,ec executive karaoke yogyakarta,ec executive karaoke yogyakarta,ec executive karaoke yogyakarta,4.0,4.0,0.0,0.0
+the crown karaoke,Entertainment,the crown karaoke,the crown karaoke,the crown karaoke,3.0,3.0,0.0,0.0
+De Djogdja,Entertainment,de djogdja,de djogdja,de djogdja,2.0,2.0,0.0,0.0
+De Djogdja Karaoke Lounge ,Entertainment,de djogdja karaoke lounge,de djogdja karaoke lounge,de djogdja karaoke lounge,4.0,4.0,0.0,0.0
+Griya Sunarti Family Homestay,Entertainment,griya sunarti family homestay,griya sunarti family homestay,griya sunarti family homestay,4.0,4.0,0.0,0.0
+KARAOKE KELUARGA MINGGIR,Entertainment,karaoke keluarga minggir,karaoke keluarga minggir,karaoke keluarga minggir,3.0,3.0,0.0,0.0
+BBC Karaoke,Entertainment,bbc karaoke,bbc karaoke,bbc karaoke,2.0,2.0,0.0,0.0
+Glow Karaoke Jogja,Entertainment,glow karaoke jogja,glow karaoke jogja,glow karaoke jogja,3.0,3.0,0.0,0.0
+Dinasty karaoke,Entertainment,dinasty karaoke,dinasty karaoke,dinasty karaoke,2.0,2.0,0.0,0.0
+Mono karaoke,Entertainment,mono karaoke,mono karaoke,mono karaoke,2.0,2.0,0.0,0.0
+KARAOKE MIRAMA,Entertainment,karaoke mirama,karaoke mirama,karaoke mirama,2.0,2.0,0.0,0.0
+V.I.P KARAOKE,Entertainment,vip karaoke,vip karaoke,vip karaoke,2.0,2.0,0.0,0.0
+Zion Solution,Entertainment,zion solution,zion solution,zion solution,2.0,2.0,0.0,0.0
+SK musik & karaoke,Entertainment,sk musik karaoke,sk musik karaoke,sk musik karaoke,4.0,3.0,1.0,25.0
+Empire XXI Cinema Yogyakarta,Entertainment,empire xxi cinema yogyakarta,empire xxi cinema yogyakarta,empire xxi cinema yogyakarta,4.0,4.0,0.0,0.0
+Cin polis Lippo Plaza Jogja,Entertainment,cin polis lippo plaza jogja,cin polis lippo plaza jogja,cin polis lippo plaza jogja,4.0,5.0,-1.0,-25.0
+Cinema XXI Plaza Ambarrukmo,Entertainment,cinema xxi plaza ambarrukmo,cinema xxi plaza ambarrukmo,cinema xxi plaza ambarrukmo,4.0,4.0,0.0,0.0
+Bioskop Sonobudoyo,Entertainment,bioskop sonobudoyo,bioskop sonobudoyo,bioskop sonobudoyo,2.0,2.0,0.0,0.0
+Gaby's Cinema,Entertainment,gabys cinema,gabys cinema,gabys cinema,2.0,2.0,0.0,0.0
+Eks Bioskop Mataram,Entertainment,eks bioskop mataram,eks bioskop mataram,eks bioskop mataram,3.0,3.0,0.0,0.0
+Jogja City XXI,Entertainment,jogja city xxi,jogja city xxi,jogja city xxi,3.0,3.0,0.0,0.0
+Cinepolis ,Entertainment,cinepolis,cinepolis,cinepolis,1.0,1.0,0.0,0.0
+CGV Pakuwon Mall Yogyakarta,Entertainment,cgv pakuwon mall yogyakarta,cgv pakuwon mall yogyakarta,cgv pakuwon mall yogyakarta,4.0,4.0,0.0,0.0
+Eks Bioskop Indra,Entertainment,eks bioskop indra,eks bioskop indra,eks bioskop indra,3.0,3.0,0.0,0.0
+Cinema Meet Up,Entertainment,cinema meet up,cinema meet up,cinema meet up,3.0,3.0,0.0,0.0
+Sleman City Hall XXI,Entertainment,sleman city hall xxi,sleman city hall xxi,sleman city hall xxi,4.0,4.0,0.0,0.0
+CGV Jwalk Mall,Entertainment,cgv jwalk mall,cgv jwalk mall,cgv jwalk mall,3.0,3.0,0.0,0.0
+CGV Transmart Maguwo,Entertainment,cgv transmart maguwo,cgv transmart maguwo,cgv transmart maguwo,3.0,3.0,0.0,0.0
+Galeria Mall Yogyakarta,Entertainment,galeria mall yogyakarta,galeria mall yogyakarta,galeria mall yogyakarta,3.0,3.0,0.0,0.0
+Plaza Malioboro,Entertainment,plaza malioboro,plaza malioboro,plaza malioboro,2.0,2.0,0.0,0.0
+EPIC CINEMA,Entertainment,epic cinema,epic cinema,epic cinema,2.0,2.0,0.0,0.0
+Cinema Universitas Amikom,Entertainment,cinema universitas amikom,cinema universitas amikom,cinema universitas amikom,3.0,3.0,0.0,0.0
+JFA CINEMA HUB,Entertainment,jfa cinema hub,jfa cinema hub,jfa cinema hub,3.0,3.0,0.0,0.0
+Cinema Kotagede,Entertainment,cinema kotagede,cinema kotagede,cinema kotagede,2.0,2.0,0.0,0.0
+Jogja Film Academy,Entertainment,jogja film academy,jogja film academy,jogja film academy,3.0,3.0,0.0,0.0
+Gedung Permata,Entertainment,gedung permata,gedung permata,gedung permata,2.0,2.0,0.0,0.0
+Indo Bara Cinema,Entertainment,indo bara cinema,indo bara cinema,indo bara cinema,3.0,3.0,0.0,0.0
+Lippo Plaza Jogja,Entertainment,lippo plaza jogja,lippo plaza jogja,lippo plaza jogja,3.0,3.0,0.0,0.0
+Graha Cinema,Entertainment,graha cinema,graha cinema,graha cinema,2.0,2.0,0.0,0.0
+Kolibri Cinema,Entertainment,kolibri cinema,kolibri cinema,kolibri cinema,2.0,2.0,0.0,0.0
+KDM Cinema,Entertainment,kdm cinema,kdm cinema,kdm cinema,2.0,2.0,0.0,0.0
+Ambarrukmo Plaza,Entertainment,ambarrukmo plaza,ambarrukmo plaza,ambarrukmo plaza,2.0,2.0,0.0,0.0
+Cinema Bakery,Entertainment,cinema bakery,cinema bakery,cinema bakery,2.0,2.0,0.0,0.0
+Clivora Cinema,Entertainment,clivora cinema,clivora cinema,clivora cinema,2.0,2.0,0.0,0.0
+Sahid J-Walk,Entertainment,sahid jwalk,sahid jwalk,sahid jwalk,2.0,2.0,0.0,0.0
+FOCUSED EQUIPMENT YOGYAKARTA,Entertainment,focused equipment yogyakarta,focused equipment yogyakarta,focused equipment yogyakarta,3.0,3.0,0.0,0.0
+AZKO Urip Sumoharjo,Entertainment,azko urip sumoharjo,azko urip sumoharjo,azko urip sumoharjo,3.0,3.0,0.0,0.0
+Jogja City Mall,Entertainment,jogja city mall,jogja city mall,jogja city mall,3.0,3.0,0.0,0.0
+Empire XXI,Entertainment,empire xxi,empire xxi,empire xxi,2.0,2.0,0.0,0.0
+Auditorium Building LPP Yogyakarta,Entertainment,auditorium building lpp yogyakarta,auditorium building lpp yogyakarta,auditorium building lpp yogyakarta,4.0,4.0,0.0,0.0
+VisualTime STUDIO,Entertainment,visualtime studio,visualtime studio,visualtime studio,2.0,2.0,0.0,0.0
+Grand Kangen Hotel Urip Sumoharjo Yogyakarta,Entertainment,grand kangen hotel urip sumoharjo yogyakarta,grand hotel urip sumoharjo yogyakarta,grand hotel urip sumoharjo yogyakarta,6.0,5.0,1.0,16.7
+Bilik Cinema Photography,Entertainment,bilik cinema photography,bilik cinema photography,bilik cinema photography,3.0,3.0,0.0,0.0
+Ibar Malioboro,Entertainment,ibar malioboro,ibar malioboro,ibar malioboro,2.0,2.0,0.0,0.0
+Toko sehat tentrem graha cinema,Entertainment,toko sehat tentrem graha cinema,tentrem graha cinema,tentrem graha cinema,5.0,3.0,2.0,40.0
+WAYANG CINEMA,Entertainment,wayang cinema,wayang cinema,wayang cinema,2.0,2.0,0.0,0.0
+OGH Doni Hotel,Entertainment,ogh doni hotel,ogh doni hotel,ogh doni hotel,3.0,3.0,0.0,0.0
+Audiovisual.id,Entertainment,audiovisualid,audiovisualid,audiovisualid,1.0,1.0,0.0,0.0
+SUA Coffee Malioboro,Entertainment,sua coffee malioboro,sua coffee malioboro,sua coffee malioboro,3.0,3.0,0.0,0.0
+Picture style cinema Post-Production,Entertainment,picture style cinema postproduction,picture style cinema postproduction,picture style cinema postproduction,4.0,4.0,0.0,0.0
+Koen Cinema Indonesia,Entertainment,koen cinema indonesia,koen cinema indonesia,koen cinema indonesia,3.0,3.0,0.0,0.0
+ARTOTEL Suites Bianti - Yogyakarta,Entertainment,artotel suites bianti yogyakarta,artotel suites bianti yogyakarta,artotel suites bianti yogyakarta,5.0,4.0,1.0,20.0
+X Cinema Production House,Entertainment,x cinema production house,cinema production house,cinema production house,4.0,3.0,1.0,25.0
+Dmedia Cinema Indonesia,Entertainment,dmedia cinema indonesia,dmedia cinema indonesia,dmedia cinema indonesia,3.0,3.0,0.0,0.0
+Jamaah Cinema mahasiswa,Entertainment,jamaah cinema mahasiswa,jamaah cinema mahasiswa,jamaah cinema mahasiswa,3.0,3.0,0.0,0.0
+De Laxston Hotel,Entertainment,de laxston hotel,de laxston hotel,de laxston hotel,3.0,3.0,0.0,0.0
+Klaten Town Square XXI,Entertainment,klaten town square xxi,klaten town square xxi,klaten town square xxi,4.0,4.0,0.0,0.0
+AFS CINEMA,Entertainment,afs cinema,afs cinema,afs cinema,2.0,2.0,0.0,0.0
+Planters Guesthouse,Entertainment,planters guesthouse,planters guesthouse,planters guesthouse,2.0,2.0,0.0,0.0
+Jogja Gallery,Entertainment,jogja gallery,jogja gallery,jogja gallery,2.0,2.0,0.0,0.0
+Andi Photo Cinema,Entertainment,andi photo cinema,andi photo cinema,andi photo cinema,3.0,3.0,0.0,0.0
+P-tric Cinema,Entertainment,ptric cinema,ptric cinema,ptric cinema,2.0,2.0,0.0,0.0
+Kos Bu Helmi Iromejan,Entertainment,kos bu helmi iromejan,kos bu helmi iromejan,kos bu helm iromejan,4.0,4.0,0.0,0.0
+Homeschooling HSPG,Entertainment,homeschooling hspg,homeschooling hspg,homeschooling hspg,2.0,2.0,0.0,0.0
+Elegant Photo Jogja,Entertainment,elegant photo jogja,elegant photo jogja,elegant photo jogja,3.0,3.0,0.0,0.0
+Foto Wisuda Jogja,Entertainment,foto wisuda jogja,foto wisuda jogja,foto wisuda jogja,3.0,3.0,0.0,0.0
+University of Amikom Yogyakarta,Entertainment,university of amikom yogyakarta,university of amikom yogyakarta,university of amikom yogyakarta,4.0,4.0,0.0,0.0
+Solo Paragon XXI,Entertainment,solo paragon xxi,paragon xxi,paragon xxi,3.0,2.0,1.0,33.3
+QUEEN PHOTO CINEMA,Entertainment,queen photo cinema,queen photo cinema,queen photo cinema,3.0,3.0,0.0,0.0
+Swarna Cinema,Entertainment,swarna cinema,swarna cinema,swarna cinema,2.0,2.0,0.0,0.0
+The Park XXI,Entertainment,the park xxi,the park xxi,the park xxi,3.0,3.0,0.0,0.0
+Solo Square XXI,Entertainment,solo square xxi,square xxi,square xxi,3.0,2.0,1.0,33.3
+Alegre Photo & Cinema,Entertainment,alegre photo cinema,alegre photo cinema,alegre photo cinema,4.0,3.0,1.0,25.0
+Blanzer big cinema,Entertainment,blanzer big cinema,blanzer big cinema,blanzer big cinema,3.0,3.0,0.0,0.0
+TUGU LOR,Entertainment,tugu lor,tugu lor,tugu lor,2.0,2.0,0.0,0.0
+Seruni,Entertainment,seruni,seruni,pantai seruni,1.0,1.0,0.0,0.0
+CGV Transmart Solo,Entertainment,cgv transmart solo,cgv transmart,cgv transmart,3.0,2.0,1.0,33.3
+GRAND XXI,Entertainment,grand xxi,grand xxi,grand xxi,2.0,2.0,0.0,0.0
+Urban Perfume Point Yogyakarta,Entertainment,urban perfume point yogyakarta,urban perfume point yogyakarta,urban perfume point yogyakarta,4.0,4.0,0.0,0.0
+One vision cinema,Entertainment,one vision cinema,one vision cinema,one vision cinema,3.0,3.0,0.0,0.0
+Gorengan PAK BUDIMAN,Entertainment,gorengan pak budiman,gorengan budiman,goreng budiman,3.0,2.0,1.0,33.3
+Amikom Resource Center,Entertainment,amikom resource center,amikom resource center,amikom resource center,3.0,3.0,0.0,0.0
+Cinema kocomoto,Entertainment,cinema kocomoto,cinema kocomoto,cinema kocomoto,2.0,2.0,0.0,0.0
+Oemah Cinema,Entertainment,oemah cinema,oemah cinema,oemah cinema,2.0,2.0,0.0,0.0
+Pitu Cinema,Entertainment,pitu cinema,pitu cinema,pitu cinema,2.0,2.0,0.0,0.0
+Villa Verde Jogja,Entertainment,villa verde jogja,villa verde jogja,villa verde jogja,3.0,3.0,0.0,0.0
+CV. Jaya Lestari Cinema,Entertainment,cv jaya lestari cinema,cv cinema,cv cinema,4.0,2.0,2.0,50.0
+Djampi Jawi,Entertainment,djampi jawi,djampi jawi,djampi jawi,2.0,2.0,0.0,0.0
+Asmara cinema,Entertainment,asmara cinema,asmara cinema,asmara cinema,2.0,2.0,0.0,0.0
+Obertography Photo Cinema,Entertainment,obertography photo cinema,obertography photo cinema,obertography photo cinema,3.0,3.0,0.0,0.0
+MACPRO CINEMA,Entertainment,macpro cinema,macpro cinema,macpro cinema,2.0,2.0,0.0,0.0
+Cinema Guppy,Entertainment,cinema guppy,cinema guppy,cinema guppy,2.0,2.0,0.0,0.0
+Tickle Hotel,Entertainment,tickle hotel,tickle hotel,tickle hotel,2.0,2.0,0.0,0.0
+Creator Photo Cinema,Entertainment,creator photo cinema,creator photo cinema,creator photo cinema,3.0,3.0,0.0,0.0
+Tirai Cinema,Entertainment,tirai cinema,tirai cinema,tirai cinema,2.0,2.0,0.0,0.0
+Cahyadi Photo & Cinema,Entertainment,cahyadi photo cinema,cahyadi photo cinema,cahyadi photo cinema,4.0,3.0,1.0,25.0
+Routine Photo Cinema,Entertainment,routine photo cinema,routine photo cinema,routine photo cinema,3.0,3.0,0.0,0.0
+MINION CINEMA,Entertainment,minion cinema,minion cinema,minion cinema,2.0,2.0,0.0,0.0
+HOC PICTURES (HOUSE OF CINEMA),Entertainment,hoc pictures house of cinema,hoc pictures house of cinema,hoc pictures house of cinema,5.0,5.0,0.0,0.0
+Cinema 6D Taman Kyai Langgeng,Entertainment,cinema d taman kyai langgeng,cinema kyai,cinema kyai,5.0,2.0,3.0,60.0
+SUGAR EXECUTIVE CLUB AND KARAOKE,Entertainment,sugar executive club and karaoke,sugar executive club and karaoke,sugar executive club and karaoke,5.0,5.0,0.0,0.0
+KANJENG MAMI Karaoke Live,Entertainment,kanjeng mami karaoke live,kanjeng mami karaoke,kanjeng mami karaoke,4.0,3.0,1.0,25.0
