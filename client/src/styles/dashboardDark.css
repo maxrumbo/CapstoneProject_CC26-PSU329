@@ -100,7 +100,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border: 1px solid var(--dashboard-border);
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(16, 23, 32, 0.92), rgba(10, 15, 22, 0.86));
@@ -110,9 +110,9 @@
 
 .dashboard-actions {
   display: grid;
-  grid-template-columns: auto minmax(220px, 1fr) auto auto auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 12px;
+  gap: clamp(14px, 2.2vw, 34px);
   width: 100%;
   max-width: none;
   margin: 0;
@@ -122,6 +122,19 @@
   display: flex;
   align-items: center;
   min-width: 0;
+}
+
+.dashboard-brand .brand-logo-compact {
+  height: 48px;
+  width: auto;
+}
+
+.dashboard-desktop-bar {
+  align-items: center;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
+  gap: clamp(10px, 1.4vw, 20px);
+  min-width: 0;
+  width: 100%;
 }
 
 .dashboard-search,
@@ -141,6 +154,7 @@
   /* let the outer topbar-surface provide background/border; keep search inner transparent */
   background: transparent;
   border: none;
+  min-width: 0;
   transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -168,12 +182,13 @@
 
 .dashboard-nav {
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .dashboard-pill {
   height: 42px;
-  padding: 0 14px 0 11px;
+  padding: 0 12px 0 10px;
   color: var(--dashboard-muted);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.025);
@@ -214,7 +229,7 @@
 
 .dashboard-topbar-feature {
   height: 42px;
-  padding: 0 14px;
+  padding: 0 16px 0 12px;
   color: var(--dashboard-text);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.03);
@@ -230,6 +245,7 @@
 }
 
 .dashboard-avatar {
+  flex: 0 0 44px;
   width: 44px;
   height: 44px;
   color: #fff;
@@ -237,6 +253,32 @@
   border-color: rgba(245, 166, 35, 0.28);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
   transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.dashboard-right-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+}
+
+@media (max-width: 1180px) {
+  .dashboard-desktop-bar {
+    grid-template-columns: minmax(220px, 1fr) auto auto;
+    gap: 10px;
+  }
+
+  .dashboard-pill,
+  .dashboard-topbar-feature {
+    gap: 8px;
+    padding-right: 10px;
+  }
+
+  .dashboard-pill-icon,
+  .dashboard-topbar-icon {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .dashboard-avatar:hover {
@@ -536,12 +578,45 @@
   }
 
   .dashboard-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .dashboard-brand .brand-logo-compact {
+    height: 40px;
+  }
+
+  .dashboard-mobile-search {
+    height: 40px;
+    min-width: 0;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--dashboard-border);
+  }
+
+  .dashboard-mobile-search input {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .dashboard-mobile-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard-menu-toggle {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 46px;
+    border-color: rgba(245, 166, 35, 0.22);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .dashboard-nav {
     overflow-x: auto;
     padding-bottom: 2px;
+    flex-wrap: nowrap;
   }
 
   .dashboard-section-title,
