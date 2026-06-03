@@ -1,3 +1,5 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -19,6 +21,8 @@ from app.api.routes.budget import router as budget_router
 from app.api.routes.profile import router as profile_router
 from app.api.routes.subscriptions import router as subscriptions_router
 from app.api.routes.advice import router as advice_router
+from app.api.routes.kategorisasi import router as kategorisasi_router, load_ml_models  # ← fix: load_ml_models (pakai s)
+
 
 # ── Buat semua tabel di database (jika belum ada) ────────────────────────────
 Base.metadata.create_all(bind=engine)
@@ -46,17 +50,27 @@ def ensure_email_verified_column() -> None:
 
 ensure_email_verified_column()
 
+
+# ── Lifespan: load ML model saat server start ─────────────────────────────────
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    load_ml_models()   # IndoBERT tokenizer + model + MLP + LabelEncoder
+    yield
+    # (opsional) cleanup saat server shutdown
+
+
 # ── Inisialisasi aplikasi FastAPI ─────────────────────────────────────────────
 app = FastAPI(
     title="SAWIT (Sahabat Duwit) API",
     description="Backend API untuk aplikasi manajemen keuangan Gen Z",
     version="1.0.0",
-    docs_url="/docs",       # Swagger UI
-    redoc_url="/redoc",     # ReDoc
+    docs_url="/docs",
+    redoc_url="/redoc",
+    lifespan=lifespan,   # ← tambahan ini saja yang baru
 )
 
+
 # ── CORS Middleware ───────────────────────────────────────────────────────────
-# Izinkan request dari frontend React lokal dan domain frontend production
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -97,6 +111,7 @@ app.include_router(budget_router, prefix="/api")
 app.include_router(profile_router, prefix="/api")
 app.include_router(subscriptions_router, prefix="/api")
 app.include_router(advice_router, prefix="/api")
+app.include_router(kategorisasi_router)   # ← prefix sudah ada di dalam router (/api/ml)
 
 
 # ── Health Check ──────────────────────────────────────────────────────────────
@@ -108,4 +123,3 @@ def health_check():
         "version": "1.0.0",
         "docs": "/docs",
     }
-
