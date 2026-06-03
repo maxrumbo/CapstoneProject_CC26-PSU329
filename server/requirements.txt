@@ -14,7 +14,7 @@ pydantic[email]>=2.7.0
 # --- DATA PROCESSING & AI ---
 transformers>=4.40.0
 tensorflow>=2.16.0
-# PySastrawi>=1.2.1
+PySastrawi>=1.2.1
 scikit-learn>=1.4.0
 # Menggunakan pandas versi stabil terbaru
 pandas>=2.2.0
