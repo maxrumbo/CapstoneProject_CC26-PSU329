@@ -2,6 +2,7 @@ import Icon from "../ui/Icon";
 
 function AnalysisPreview({
   streamlitUrl,
+  fullUrl,
   eyebrow = "Dashboard Analitik",
   title = "Streamlit Analytics",
   icon = "chart",
@@ -24,7 +25,7 @@ function AnalysisPreview({
         {hasStreamlit ? (
           <a
             className="streamlit-button"
-            href={streamlitUrl}
+            href={fullUrl || streamlitUrl}
             target="_blank"
             rel="noreferrer"
           >
