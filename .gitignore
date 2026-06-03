@@ -62,6 +62,8 @@ htmlcov/
 .env.*
 !.env.example
 
+!artifacts/label_encoder.pkl
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
