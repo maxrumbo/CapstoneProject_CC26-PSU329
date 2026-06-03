@@ -262,6 +262,12 @@
   min-width: max-content;
 }
 
+.dashboard-mobile-search,
+.dashboard-mobile-avatar,
+.dashboard-menu-toggle {
+  display: none;
+}
+
 @media (max-width: 1180px) {
   .dashboard-desktop-bar {
     grid-template-columns: minmax(220px, 1fr) auto auto;
@@ -582,11 +588,16 @@
     gap: 10px;
   }
 
+  .dashboard-desktop-bar {
+    display: none;
+  }
+
   .dashboard-brand .brand-logo-compact {
     height: 40px;
   }
 
   .dashboard-mobile-search {
+    display: flex;
     height: 40px;
     min-width: 0;
     padding: 0 12px;
@@ -601,11 +612,13 @@
   }
 
   .dashboard-mobile-avatar {
+    display: grid;
     width: 40px;
     height: 40px;
   }
 
   .dashboard-menu-toggle {
+    display: inline-flex;
     grid-column: 1 / -1;
     width: 100%;
     min-height: 46px;

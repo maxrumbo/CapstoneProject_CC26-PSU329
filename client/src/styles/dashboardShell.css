@@ -253,6 +253,12 @@
   min-width: max-content;
 }
 
+.dashboard-mobile-search,
+.dashboard-mobile-avatar,
+.dashboard-menu-toggle {
+  display: none;
+}
+
 .dashboard-content {
   position: relative;
   z-index: 1;
@@ -337,11 +343,16 @@
     justify-content: flex-start;
   }
 
+  .dashboard-desktop-bar {
+    display: none;
+  }
+
   .dashboard-brand .brand-logo-compact {
     height: 40px;
   }
 
   .dashboard-mobile-search {
+    display: flex;
     height: 40px;
     padding: 0 12px;
     border-radius: 999px;
@@ -353,11 +364,13 @@
   }
 
   .dashboard-mobile-avatar {
+    display: grid;
     width: 40px;
     height: 40px;
   }
 
   .dashboard-menu-toggle {
+    display: inline-flex;
     grid-column: 1 / -1;
     width: 100%;
     min-height: 46px;
