@@ -8,9 +8,9 @@ const BASE_STREAMLIT_URL =
 
 function DashboardPage() {
   const { user } = useAuth();                
-  console.log("USER OBJECT:", JSON.stringify(user))
-  const STREAMLIT_URL = user?.id
-  ? `${BASE_STREAMLIT_URL}/?user_id=${user.id}&embed=true`
+  const token = localStorage.getItem('token')
+  const STREAMLIT_URL = token
+  ? `${BASE_STREAMLIT_URL}/?token=${token}&embed=true`
   : null;
 
   return (
