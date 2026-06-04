@@ -131,7 +131,7 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: minmax(220px, 1fr) max-content max-content max-content;
+  grid-template-columns: clamp(260px, 30vw, 520px) max-content max-content max-content;
   grid-template-areas: "search nav dashboard avatar";
   justify-content: stretch;
   gap: 8px;
@@ -207,6 +207,8 @@
 .dashboard-pill {
   height: 42px;
   padding: 0 10px 0 8px;
+  min-width: 136px;
+  justify-content: flex-start;
   color: var(--dashboard-muted);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.025);
@@ -283,11 +285,14 @@
 .dashboard-right-tools .dashboard-topbar-feature {
   grid-area: dashboard;
   justify-self: end;
+  min-width: 168px;
+  justify-content: flex-start;
 }
 
 .dashboard-right-tools .dashboard-avatar {
   grid-area: avatar;
   justify-self: end;
+  margin-left: 6px;
 }
 
 .dashboard-mobile-search,
@@ -298,7 +303,7 @@
 
 @media (max-width: 1180px) {
   .dashboard-desktop-bar {
-    grid-template-columns: minmax(150px, 1fr) max-content max-content max-content;
+    grid-template-columns: clamp(190px, 20vw, 260px) max-content max-content max-content;
     gap: 5px;
   }
 
@@ -314,6 +319,14 @@
     font-size: 10.5px;
   }
 
+  .dashboard-pill {
+    min-width: 106px;
+  }
+
+  .dashboard-right-tools .dashboard-topbar-feature {
+    min-width: 136px;
+  }
+
   .dashboard-pill-icon,
   .dashboard-topbar-icon {
     width: 23px;
@@ -327,12 +340,8 @@
   }
 
   .dashboard-desktop-bar {
-    grid-template-columns: minmax(170px, 1fr) max-content max-content max-content;
+    grid-template-columns: clamp(200px, 22vw, 300px) max-content max-content max-content;
     gap: 6px;
-  }
-
-  .dashboard-search {
-    width: 100%;
   }
 
   .dashboard-pill {
@@ -348,18 +357,21 @@
   .dashboard-topbar-feature {
     width: auto;
     padding: 0 8px 0 7px;
-    justify-content: center;
+  }
+
+  .dashboard-pill {
+    min-width: 112px;
+  }
+
+  .dashboard-right-tools .dashboard-topbar-feature {
+    min-width: 146px;
   }
 }
 
 @media (max-width: 1180px) and (min-width: 981px) {
   .dashboard-desktop-bar {
-    grid-template-columns: minmax(140px, 1fr) max-content max-content max-content;
+    grid-template-columns: clamp(180px, 19vw, 240px) max-content max-content max-content;
     gap: 5px;
-  }
-
-  .dashboard-search {
-    width: 100%;
   }
 
   .dashboard-pill,
@@ -715,6 +727,31 @@
   transform: translateY(-1px);
   border-color: rgba(245, 166, 35, 0.22);
   background: rgba(20, 29, 40, 0.98);
+}
+
+.dashboard-shell .type-toggle {
+  gap: 8px;
+  padding: 6px;
+  border-radius: 16px;
+  border-color: var(--dashboard-border);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.dashboard-shell .type-toggle button {
+  min-height: 46px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.72);
+  color: var(--dashboard-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard-shell .type-toggle button.active {
+  border-color: rgba(245, 166, 35, 0.5);
+  background: linear-gradient(135deg, #f5a623 0%, #d97c00 100%);
+  color: #1a1203;
 }
 
 .dashboard-shell .transaction-row strong,

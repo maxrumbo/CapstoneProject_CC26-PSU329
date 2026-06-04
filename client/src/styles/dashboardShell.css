@@ -111,7 +111,7 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: minmax(220px, 1fr) max-content max-content max-content;
+  grid-template-columns: clamp(260px, 30vw, 520px) max-content max-content max-content;
   grid-template-areas: "search nav dashboard avatar";
   justify-content: stretch;
   gap: 8px;
@@ -216,6 +216,7 @@
   align-items: center;
   gap: 8px;
   padding: 0 10px 0 8px;
+  min-width: 136px;
   height: 38px;
   border-radius: 999px;
   border: 1px solid rgba(31, 122, 74, 0.2);
@@ -271,11 +272,13 @@
 .dashboard-right-tools .dashboard-topbar-feature {
   grid-area: dashboard;
   justify-self: end;
+  min-width: 168px;
 }
 
 .dashboard-right-tools .dashboard-avatar {
   grid-area: avatar;
   justify-self: end;
+  margin-left: 6px;
 }
 
 @media (max-width: 1320px) and (min-width: 981px) {
@@ -288,12 +291,8 @@
   }
 
   .dashboard-desktop-bar {
-    grid-template-columns: minmax(170px, 1fr) max-content max-content max-content;
+    grid-template-columns: clamp(200px, 22vw, 300px) max-content max-content max-content;
     gap: 6px;
-  }
-
-  .dashboard-search {
-    width: 100%;
   }
 
   .dashboard-pill,
@@ -301,6 +300,14 @@
     gap: 6px;
     padding: 0 8px 0 7px;
     font-size: 11px;
+  }
+
+  .dashboard-pill {
+    min-width: 112px;
+  }
+
+  .dashboard-right-tools .dashboard-topbar-feature {
+    min-width: 146px;
   }
 
   .dashboard-pill-icon,
