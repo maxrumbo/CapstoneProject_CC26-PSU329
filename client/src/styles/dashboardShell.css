@@ -90,9 +90,9 @@
 
 .dashboard-actions {
   display: grid;
-  grid-template-columns: auto minmax(260px, 1fr) auto auto auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 10px;
+  gap: clamp(12px, 2vw, 28px);
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -102,6 +102,19 @@
   display: flex;
   align-items: center;
   min-width: 0;
+}
+
+.dashboard-brand .brand-logo-compact {
+  height: 48px;
+  width: auto;
+}
+
+.dashboard-desktop-bar {
+  align-items: center;
+  grid-template-columns: minmax(260px, 1fr) auto auto;
+  gap: clamp(10px, 1.4vw, 20px);
+  min-width: 0;
+  width: 100%;
 }
 
 .dashboard-search {
@@ -116,6 +129,7 @@
   border: none;
   background: transparent;
   width: 100%;
+  min-width: 0;
   transition: width 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
@@ -180,6 +194,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;
+  flex-wrap: nowrap;
 }
 
 .dashboard-pill {
@@ -228,6 +244,19 @@
 
 .dashboard-pill-label {
   white-space: nowrap;
+}
+
+.dashboard-right-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+}
+
+.dashboard-mobile-search,
+.dashboard-mobile-avatar,
+.dashboard-menu-toggle {
+  display: none;
 }
 
 .dashboard-content {
@@ -305,13 +334,46 @@
   }
 
   .dashboard-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     justify-content: stretch;
-    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .dashboard-brand {
     justify-content: flex-start;
+  }
+
+  .dashboard-desktop-bar {
+    display: none;
+  }
+
+  .dashboard-brand .brand-logo-compact {
+    height: 40px;
+  }
+
+  .dashboard-mobile-search {
+    display: flex;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 999px;
+  }
+
+  .dashboard-mobile-search input {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .dashboard-mobile-avatar {
+    display: grid;
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard-menu-toggle {
+    display: inline-flex;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 46px;
   }
 }
 
@@ -321,8 +383,8 @@
   }
 
   .dashboard-actions {
-    grid-template-columns: 1fr;
-    align-items: stretch;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
   }
 
   .dashboard-search {

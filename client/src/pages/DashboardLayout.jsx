@@ -31,9 +31,7 @@ const navItems = [
 function DashboardLayout() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const displayName = user?.display_name || user?.email || "Akun SAWIT";
   const photoUrl = user?.photo_url || "";
-  const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Search state (adapted from WelcomePage search behavior)
@@ -116,7 +114,7 @@ function DashboardLayout() {
         if (!regex.test(originalText)) return;
 
         regex.lastIndex = 0;
-        const replaced = originalText.replace(regex, (match) => `<span class=\"search-highlight\">${match}</span>`);
+        const replaced = originalText.replace(regex, (match) => `<span class="search-highlight">${match}</span>`);
         const temp = document.createElement("span");
         temp.innerHTML = replaced;
         while (temp.firstChild) {
@@ -186,14 +184,52 @@ function DashboardLayout() {
 
       <header className="dashboard-topbar">
         <div className="dashboard-topbar-surface flex flex-col gap-3 md:gap-0">
-          <div className="dashboard-actions flex items-center justify-between gap-3 w-full">
+          <div className="dashboard-actions">
             <div className="dashboard-brand" aria-label="SAWIT">
               <BrandLogo variant="compact" />
             </div>
 
+            <form
+              className="dashboard-search dashboard-mobile-search md:hidden"
+              onSubmit={handleSearchSubmit}
+              role="search"
+            >
+              <span className="dashboard-search-icon">
+                <Icon name="search" size={16} />
+              </span>
+              <input
+                type="search"
+                placeholder="Cari transaksi..."
+                aria-label="Cari transaksi"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                className="bg-transparent border-none outline-none focus:ring-0"
+              />
+              {searchMessage ? <div className="dashboard-search-message">{searchMessage}</div> : null}
+            </form>
+
+            <button
+              className="dashboard-avatar dashboard-mobile-avatar md:hidden"
+              type="button"
+              onClick={() => navigate("/dashboard/profile")}
+              aria-label="Buka profil"
+            >
+              {photoUrl ? (
+                <img
+                  className="dashboard-avatar-image"
+                  src={photoUrl}
+                  alt="Foto profil"
+                />
+              ) : (
+                <span className="dashboard-avatar-icon">
+                  <Icon name="user" size={16} />
+                </span>
+              )}
+            </button>
+
             <button
               type="button"
-              className="md:hidden inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white transition-colors hover:bg-white/10"
+              className="dashboard-menu-toggle md:hidden inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white transition-colors hover:bg-white/10"
               aria-label="Buka menu navigasi"
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen((current) => !current)}
@@ -203,7 +239,7 @@ function DashboardLayout() {
               </svg>
             </button>
 
-            <div className="hidden md:flex items-center gap-4 w-full justify-end">
+            <div className="dashboard-desktop-bar hidden md:grid">
               <form className="dashboard-search" onSubmit={handleSearchSubmit} role="search">
                 <span className="dashboard-search-icon">
                   <Icon name="search" size={16} />
@@ -236,59 +272,46 @@ function DashboardLayout() {
                 ))}
               </nav>
 
-              <NavLink
-                to="/dashboard"
-                end
-                className={({ isActive }) =>
-                  isActive
-                    ? "dashboard-topbar-feature active"
-                    : "dashboard-topbar-feature"
-                }
-                aria-label="Buka Dashboard Analitik"
-              >
-                <span className="dashboard-topbar-icon" aria-hidden="true">
-                  <Icon name="dashboard" size={16} />
-                </span>
-                <span className="dashboard-topbar-title">Dashboard Analitik</span>
-              </NavLink>
-
-              <button
-                className="dashboard-avatar"
-                type="button"
-                onClick={() => navigate("/dashboard/profile")}
-                aria-label="Buka profil"
-              >
-                {photoUrl ? (
-                  <img
-                    className="dashboard-avatar-image"
-                    src={photoUrl}
-                    alt="Foto profil"
-                  />
-                ) : (
-                  <span className="dashboard-avatar-icon">
-                    <Icon name="user" size={16} />
+              <div className="dashboard-right-tools">
+                <NavLink
+                  to="/dashboard"
+                  end
+                  className={({ isActive }) =>
+                    isActive
+                      ? "dashboard-topbar-feature active"
+                      : "dashboard-topbar-feature"
+                  }
+                  aria-label="Buka Dashboard Analitik"
+                >
+                  <span className="dashboard-topbar-icon" aria-hidden="true">
+                    <Icon name="dashboard" size={16} />
                   </span>
-                )}
-              </button>
+                  <span className="dashboard-topbar-title">Dashboard Analitik</span>
+                </NavLink>
+
+                <button
+                  className="dashboard-avatar"
+                  type="button"
+                  onClick={() => navigate("/dashboard/profile")}
+                  aria-label="Buka profil"
+                >
+                  {photoUrl ? (
+                    <img
+                      className="dashboard-avatar-image"
+                      src={photoUrl}
+                      alt="Foto profil"
+                    />
+                  ) : (
+                    <span className="dashboard-avatar-icon">
+                      <Icon name="user" size={16} />
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
           <div className={`${mobileMenuOpen ? "flex" : "hidden"} md:hidden flex-col gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-md`}>
-            <form className="dashboard-search w-full" onSubmit={handleSearchSubmit} role="search">
-              <span className="dashboard-search-icon">
-                <Icon name="search" size={16} />
-              </span>
-              <input
-                type="search"
-                placeholder="Cari transaksi, kategori, atau insight"
-                aria-label="Cari transaksi"
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                className="bg-transparent border-none outline-none focus:ring-0"
-              />
-              {searchMessage ? <div className="dashboard-search-message">{searchMessage}</div> : null}
-            </form>
-
             <nav className="grid grid-cols-2 gap-2" aria-label="Navigasi dashboard mobile">
               {navItems.map((item) => (
                 <NavLink
@@ -321,28 +344,6 @@ function DashboardLayout() {
               </span>
               <span className="dashboard-topbar-title">Dashboard Analitik</span>
             </NavLink>
-
-            <button
-              className="dashboard-avatar self-start"
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigate("/dashboard/profile");
-              }}
-              aria-label="Buka profil"
-            >
-              {photoUrl ? (
-                <img
-                  className="dashboard-avatar-image"
-                  src={photoUrl}
-                  alt="Foto profil"
-                />
-              ) : (
-                <span className="dashboard-avatar-icon">
-                  <Icon name="user" size={16} />
-                </span>
-              )}
-            </button>
           </div>
         </div>
       </header>

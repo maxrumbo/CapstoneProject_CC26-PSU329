@@ -17,8 +17,8 @@ def configure_tensorflow_runtime() -> None:
 
 
 def _model_dir() -> Path:
-    # Use os.path.join with a relative path to the server's machine-learning/FixedMLP
-    base_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "machine-learning", "FixedMLP")
+    # Use os.path.join with a relative path to the repository's machine-learning/FixedMLP
+    base_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "machine-learning", "FixedMLP")
     return Path(base_dir).resolve()
 
 
