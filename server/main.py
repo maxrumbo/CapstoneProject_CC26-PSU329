@@ -1,3 +1,4 @@
+import threading
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -21,8 +22,10 @@ from app.api.routes.budget import router as budget_router
 from app.api.routes.profile import router as profile_router
 from app.api.routes.subscriptions import router as subscriptions_router
 from app.api.routes.advice import router as advice_router
-from app.api.routes.kategorisasi import router as kategorisasi_router, load_ml_models  # ← fix: load_ml_models (pakai s)
-
+from app.api.routes.kategorisasi import (
+    router as kategorisasi_router,
+    load_ml_models,   # fungsi load (bukan background task)
+)
 
 # ── Buat semua tabel di database (jika belum ada) ────────────────────────────
 Base.metadata.create_all(bind=engine)
@@ -31,10 +34,9 @@ ensure_user_photo_url(engine)
 
 
 def ensure_email_verified_column() -> None:
-    columns = {column["name"] for column in inspect(engine).get_columns("users")}
+    columns = {col["name"] for col in inspect(engine).get_columns("users")}
     if "email_verified_at" in columns:
         return
-
     with engine.begin() as connection:
         connection.execute(
             text("ALTER TABLE users ADD COLUMN email_verified_at TIMESTAMP WITH TIME ZONE")
@@ -51,12 +53,30 @@ def ensure_email_verified_column() -> None:
 ensure_email_verified_column()
 
 
-# ── Lifespan: load ML model saat server start ─────────────────────────────────
+# ── Background ML loader ──────────────────────────────────────────────────────
+def background_load_task() -> None:
+    """
+    Load model ML di background thread agar startup Railway tidak timeout.
+    Server langsung ready menerima request; ML model siap dalam ~30-60 detik.
+    Endpoint /api/ml/kategorisasi akan lazy-load jika background belum selesai.
+    """
+    try:
+        load_ml_models()
+    except Exception as exc:
+        # Log error tapi jangan crash server — endpoint akan retry via ensure_models_loaded()
+        print(f"[ML] ❌ Background load gagal: {exc}")
+
+
+# ── Lifespan ──────────────────────────────────────────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    load_ml_models()   # IndoBERT tokenizer + model + MLP + LabelEncoder
+    # Jalankan loading ML di background agar startup tidak timeout
+    ml_thread = threading.Thread(target=background_load_task, daemon=True, name="ml-loader")
+    ml_thread.start()
+    print("[STARTUP] 🚀 Server siap. ML model sedang dimuat di background...")
     yield
-    # (opsional) cleanup saat server shutdown
+    # Cleanup saat shutdown (opsional)
+    print("[SHUTDOWN] Server berhenti.")
 
 
 # ── Inisialisasi aplikasi FastAPI ─────────────────────────────────────────────
@@ -66,9 +86,8 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
-    lifespan=lifespan,   # ← tambahan ini saja yang baru
+    lifespan=lifespan,
 )
-
 
 # ── CORS Middleware ───────────────────────────────────────────────────────────
 app.add_middleware(
@@ -85,41 +104,38 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # ── Global Exception Handler ──────────────────────────────────────────────────
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     """
     Tangkap semua error yang tidak ter-handle.
-    Jangan expose raw error message ke client di production.
+    Hapus key 'detail' di production agar tidak expose error mentah ke client.
     """
     return JSONResponse(
         status_code=500,
         content={
             "success": False,
-            "error": "Terjadi kesalahan di server. Silakan coba lagi.",
-            "detail": str(exc),  # Hapus baris ini di production
+            "error":   "Terjadi kesalahan di server. Silakan coba lagi.",
+            "detail":  str(exc),  # Hapus baris ini di production
         },
     )
 
-
 # ── Register Routers ──────────────────────────────────────────────────────────
-app.include_router(auth_router, prefix="/api")
-app.include_router(transactions_router, prefix="/api")
-app.include_router(wishlist_router, prefix="/api")
-app.include_router(budget_router, prefix="/api")
-app.include_router(profile_router, prefix="/api")
+app.include_router(auth_router,          prefix="/api")
+app.include_router(transactions_router,  prefix="/api")
+app.include_router(wishlist_router,      prefix="/api")
+app.include_router(budget_router,        prefix="/api")
+app.include_router(profile_router,       prefix="/api")
 app.include_router(subscriptions_router, prefix="/api")
-app.include_router(advice_router, prefix="/api")
-app.include_router(kategorisasi_router)   # ← prefix sudah ada di dalam router (/api/ml)
-
+app.include_router(advice_router,        prefix="/api")
+app.include_router(kategorisasi_router)  # prefix /api/ml sudah di dalam router
 
 # ── Health Check ──────────────────────────────────────────────────────────────
 @app.get("/", tags=["Health"])
 def health_check():
     return {
-        "status": "OK",
+        "status":  "OK",
         "message": "SAWIT API berjalan dengan baik 🌴",
         "version": "1.0.0",
-        "docs": "/docs",
+        "docs":    "/docs",
     }
