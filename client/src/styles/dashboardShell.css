@@ -92,9 +92,9 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: clamp(12px, 2vw, 28px);
+  gap: clamp(10px, 1.3vw, 18px);
   width: 100%;
-  max-width: 1280px;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -111,11 +111,10 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: minmax(260px, 1fr) auto;
-  grid-template-areas:
-    "search avatar"
-    "nav dashboard";
-  gap: 10px 12px;
+  grid-template-columns: clamp(240px, 23vw, 380px) max-content max-content max-content;
+  grid-template-areas: "search nav dashboard avatar";
+  justify-content: end;
+  gap: 8px;
   min-width: 0;
   width: 100%;
 }
@@ -131,7 +130,7 @@
   border-radius: 999px;
   border: 1px solid rgba(31, 122, 74, 0.18);
   background: rgba(255, 255, 255, 0.72);
-  width: 100%;
+  width: clamp(240px, 23vw, 380px);
   min-width: 0;
   transition: width 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
@@ -201,7 +200,7 @@
   grid-area: nav;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   min-width: 0;
   flex-wrap: nowrap;
   overflow: visible;
@@ -216,7 +215,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 12px;
+  padding: 0 10px 0 8px;
   height: 38px;
   border-radius: 999px;
   border: 1px solid rgba(31, 122, 74, 0.2);
@@ -273,6 +272,38 @@
 .dashboard-right-tools .dashboard-avatar {
   grid-area: avatar;
   justify-self: end;
+}
+
+@media (max-width: 1320px) and (min-width: 981px) {
+  .dashboard-actions {
+    gap: 10px;
+  }
+
+  .dashboard-brand .brand-logo-compact {
+    height: 40px;
+  }
+
+  .dashboard-desktop-bar {
+    grid-template-columns: clamp(200px, 18vw, 280px) max-content max-content max-content;
+    gap: 6px;
+  }
+
+  .dashboard-search {
+    width: clamp(200px, 18vw, 280px);
+  }
+
+  .dashboard-pill,
+  .dashboard-topbar-feature {
+    gap: 6px;
+    padding: 0 8px 0 7px;
+    font-size: 11px;
+  }
+
+  .dashboard-pill-icon,
+  .dashboard-topbar-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .dashboard-mobile-search,
