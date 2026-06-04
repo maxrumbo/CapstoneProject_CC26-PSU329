@@ -131,8 +131,8 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: clamp(260px, 30vw, 520px) max-content max-content minmax(12px, 1fr) max-content;
-  grid-template-areas: "search nav dashboard . avatar";
+  grid-template-columns: minmax(360px, 1fr) max-content max-content max-content;
+  grid-template-areas: "search nav dashboard avatar";
   justify-content: stretch;
   gap: 8px;
   min-width: 0;
@@ -292,7 +292,7 @@
 .dashboard-right-tools .dashboard-avatar {
   grid-area: avatar;
   justify-self: end;
-  margin-left: 0;
+  margin-left: 6px;
 }
 
 .dashboard-mobile-search,
@@ -303,7 +303,7 @@
 
 @media (max-width: 1180px) {
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(190px, 20vw, 260px) max-content max-content minmax(8px, 1fr) max-content;
+    grid-template-columns: minmax(210px, 1fr) max-content max-content max-content;
     gap: 5px;
   }
 
@@ -340,7 +340,7 @@
   }
 
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(200px, 22vw, 300px) max-content max-content minmax(8px, 1fr) max-content;
+    grid-template-columns: minmax(230px, 1fr) max-content max-content max-content;
     gap: 6px;
   }
 
@@ -370,7 +370,7 @@
 
 @media (max-width: 1180px) and (min-width: 981px) {
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(180px, 19vw, 240px) max-content max-content minmax(6px, 1fr) max-content;
+    grid-template-columns: minmax(190px, 1fr) max-content max-content max-content;
     gap: 5px;
   }
 
