@@ -103,7 +103,8 @@ def predict_category(
 
         prediction = {
             "category": ml_res.results[0].prediksi,
-            "confidence": float(ml_res.results[0].confidence.strip('%')) / 100 if '%' in ml_res.results[0].confidence else ml_res.results[0].confidence
+            "confidence": float(ml_res.results[0].confidence.strip('%')) / 100 if '%' in ml_res.results[0].confidence else ml_res.results[0].confidence,
+            "model_label": "IndoBERT"
         }
     except Exception as exc:
         raise HTTPException(
