@@ -17,7 +17,9 @@ def configure_tensorflow_runtime() -> None:
 
 
 def _model_dir() -> Path:
-    return Path(__file__).resolve().parents[4] / "machine-learning" / "ModelLSTM"
+    # Use os.path.join with a relative path to the repository's machine-learning/FixedMLP
+    base_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "machine-learning", "FixedMLP")
+    return Path(base_dir).resolve()
 
 
 @lru_cache(maxsize=1)
@@ -26,7 +28,7 @@ def load_model_artifacts():
     configure_tensorflow_runtime()
 
     model_dir = _model_dir()
-    model_path = model_dir / "best_lstm_model.keras"
+    model_path = model_dir / "mlp_functional.keras"
     tokenizer_path = model_dir / "tokenizer.json"
     config_path = model_dir / "model_config.json"
 

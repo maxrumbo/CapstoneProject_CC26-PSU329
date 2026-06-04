@@ -301,6 +301,23 @@ export default function WelcomePage() {
     };
   }, []);
 
+  // Mobile-specific classes to keep desktop unchanged
+  const heroSectionClass = isMobile
+    ? "relative min-h-screen flex items-center pt-2 pb-8"
+    : "relative min-h-screen flex items-center pt-28 pb-20";
+
+  const leftColClass = isMobile
+    ? "flex w-full flex-col gap-3 md:w-1/2 items-center md:items-start text-center md:text-left"
+    : "flex w-full flex-col gap-5 md:w-1/2 items-center md:items-start text-center md:text-left md:pt-6";
+
+  const primaryBtnClass = isMobile
+    ? "group w-full sm:w-auto px-6 py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
+    : "group w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950";
+
+  const secondaryBtnClass = isMobile
+    ? "w-full sm:w-auto px-6 py-4 rounded-full font-semibold text-lg transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600"
+    : "w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600";
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     const updateIsMobile = () => setIsMobile(mediaQuery.matches);
@@ -570,11 +587,7 @@ export default function WelcomePage() {
       </header>
       
       {/* HERO */}
-      <section
-        id="home"
-        className={isMobile ? "relative min-h-screen flex items-center pt-6 pb-10" : "relative min-h-screen flex items-center pt-28 pb-20"}
-        style={isMobile ? { marginTop: "-28px" } : undefined}
-      >
+      <section id="home" className={heroSectionClass}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl"
             style={{ background: "radial-gradient(circle, rgba(34,197,94,0.2), transparent)" }} />
@@ -584,7 +597,7 @@ export default function WelcomePage() {
         <ParticleField />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-between w-full">
           {/* Left */}
-          <div className="flex w-full flex-col gap-5 md:w-1/2 items-center md:items-start text-center md:text-left md:pt-6">
+          <div className={leftColClass}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit animate-fade-up"
               style={{ background: "rgba(245,166,35,0.12)", border: "1px solid rgba(245,166,35,0.3)", animationDelay: "0s" }}>
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
@@ -606,7 +619,7 @@ export default function WelcomePage() {
             <div className="flex w-full flex-col flex-wrap gap-3 sm:w-auto sm:flex-row justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <button
                 onClick={() => navigate("/auth?mode=register")}
-                className="group w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 text-yellow-950"
+                className={primaryBtnClass}
                 style={{ background: "linear-gradient(135deg, #F5A623, #e08000)", boxShadow: "0 8px 32px rgba(245,166,35,0.45)" }}>
                 Get Started Free
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -615,7 +628,7 @@ export default function WelcomePage() {
               </button>
               <button
                 onClick={() => navigate("/auth?mode=login")}
-                className="w-full sm:w-auto px-7 py-3 rounded-full font-semibold text-base transition-all duration-200 hover:bg-white/10 text-gray-300 border border-gray-600">
+                className={secondaryBtnClass}>
                 View Demo
               </button>
             </div>
