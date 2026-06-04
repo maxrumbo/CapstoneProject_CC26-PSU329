@@ -268,3 +268,25 @@ def kategorisasi(req: KategorisasiRequest):
         ))
 
     return KategorisasiResponse(results=results)
+
+def predict_transaction_category_baru(text: str) -> dict:
+    """Fungsi pembungkus untuk memprediksi satu teks transaksi menggunakan IndoBERT + MLP"""
+    # 1. Pastikan model sudah nangkring di memori
+    ensure_models_loaded()
+
+    # 2. Preprocessing & Ekstraksi Fitur IndoBERT
+    clean_text = preprocess(text)
+    X = extract_bert_features([clean_text]).astype(np.float32)
+
+    # 3. Prediksi menggunakan MLP Keras
+    proba = ML_MODELS["mlp"].predict(X, verbose=0)[0]
+    pred = np.argmax(proba)
+
+    # 4. Ambil nama label kategori aslinya
+    label = ML_MODELS["le"].inverse_transform([pred])[0]
+
+    # 5. Kembalikan format dict yang dicari oleh transactions.py
+    return {
+        "category": label,
+        "confidence": float(proba[pred])
+    }
