@@ -106,7 +106,7 @@
 
 .dashboard-brand .brand-logo-compact {
   height: 48px;
-  width: auto;
+  width: 118px;
 }
 
 .dashboard-desktop-bar {
@@ -288,6 +288,7 @@
 
   .dashboard-brand .brand-logo-compact {
     height: 40px;
+    width: 98px;
   }
 
   .dashboard-desktop-bar {
@@ -417,6 +418,7 @@
 
   .dashboard-brand .brand-logo-compact {
     height: 40px;
+    width: 98px;
   }
 
   .dashboard-mobile-search {

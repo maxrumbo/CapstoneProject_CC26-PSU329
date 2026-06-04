@@ -32,8 +32,7 @@
 
 .welcome-topbar-logo-mark {
   width: clamp(106px, 11.5vw, 150px);
-  height: auto;
-  display: block;
+  height: clamp(42px, 4.2vw, 58px);
 }
 
 .welcome-topbar-nav {

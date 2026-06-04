@@ -126,7 +126,7 @@
 
 .dashboard-brand .brand-logo-compact {
   height: 42px;
-  width: auto;
+  width: 104px;
 }
 
 .dashboard-desktop-bar {
@@ -337,6 +337,7 @@
 @media (max-width: 1320px) and (min-width: 981px) {
   .dashboard-brand .brand-logo-compact {
     height: 40px;
+    width: 98px;
   }
 
   .dashboard-desktop-bar {
@@ -880,6 +881,7 @@
 
   .dashboard-brand .brand-logo-compact {
     height: 40px;
+    width: 98px;
   }
 
   .dashboard-brand {
