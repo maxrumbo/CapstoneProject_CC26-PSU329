@@ -89,9 +89,40 @@ export const createTransaction = async (token, payload) => {
   return normalizeTransactionResponse(response);
 };
 
-export const predictTransactionCategory = async (token, description) =>
-  apiRequest("/transactions/predict-category", {
+const parseConfidence = (value) => {
+  if (typeof value === "number") {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    const cleaned = value.replace("%", "").trim();
+    const numericValue = Number(cleaned);
+    return Number.isFinite(numericValue) ? numericValue / 100 : null;
+  }
+
+  return null;
+};
+
+export const predictTransactionCategory = async (token, description) => {
+  const response = await apiRequest("/ml/kategorisasi", {
     method: "POST",
     token,
-    body: { description },
+    body: {
+      texts: [description],
+      top_k: 1,
+    },
   });
+
+  const result = response?.results?.[0];
+  if (!result) {
+    throw new Error("Prediksi kategori tidak tersedia.");
+  }
+
+  return {
+    data: {
+      category: result.prediksi,
+      confidence: parseConfidence(result.confidence),
+    },
+    message: "Kategori berhasil diprediksi",
+  };
+};

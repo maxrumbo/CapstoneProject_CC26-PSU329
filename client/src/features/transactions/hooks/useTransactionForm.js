@@ -1,25 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { formatCurrency } from "../../../utils/formatCurrency";
-import {
-  INCOME_CATEGORY,
-  TRANSACTION_CATEGORIES,
-} from "../constants/transactionCategories";
+import { INCOME_CATEGORY } from "../constants/transactionCategories";
 
 const DEFAULT_METHOD = "Tunai";
 const MIN_DESCRIPTION_LENGTH_FOR_AI = 3;
-
-const normalizeCategory = (category) => {
-  if (!category) {
-    return "";
-  }
-
-  const normalized = String(category).trim().toLowerCase();
-  return (
-    TRANSACTION_CATEGORIES.find(
-      (item) => item.toLowerCase() === normalized
-    ) || ""
-  );
-};
 
 const getToday = () => {
   const today = new Date();
@@ -87,20 +71,22 @@ export function useTransactionForm({
           return;
         }
 
-        const normalizedCategory = normalizeCategory(prediction.category);
+        if (!prediction.category) {
+          setCategoryPrediction({
+            isLoading: false,
+            category: "",
+            confidence: prediction.confidence ?? null,
+            error: "Kategori hasil prediksi tidak tersedia.",
+          });
+          return;
+        }
 
         setCategoryPrediction({
           isLoading: false,
-          category: normalizedCategory,
+          category: prediction.category,
           confidence: prediction.confidence,
-          error: normalizedCategory
-            ? ""
-            : "Kategori hasil prediksi tidak dikenali.",
+          error: "",
         });
-
-        if (!normalizedCategory) {
-          return;
-        }
 
         setFormData((prev) => {
           const isCurrentExpense = prev.type === "expense";
@@ -113,7 +99,7 @@ export function useTransactionForm({
 
           return {
             ...prev,
-            category: normalizedCategory,
+            category: prediction.category,
           };
         });
       } catch (err) {

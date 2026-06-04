@@ -18,7 +18,7 @@ from app.schemas.transaction import (
     TransactionResponse,
 )
 
-from app.api.routes.kategorisasi import kategorisasi, KategorisasiRequest
+from app.api.routes.kategorisasi import predict_transaction_category_baru
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
 
 
@@ -98,14 +98,8 @@ def predict_category(
     current_user: User = Depends(get_current_user),
 ):
     try:
-        req_ml = KategorisasiRequest(texts=[payload.description])
-        ml_res = kategorisasi(req_ml)
-
-        prediction = {
-            "category": ml_res.results[0].prediksi,
-            "confidence": float(ml_res.results[0].confidence.strip('%')) / 100 if '%' in ml_res.results[0].confidence else ml_res.results[0].confidence,
-            "model_label": "IndoBERT"
-        }
+        prediction = predict_transaction_category_baru(payload.description)
+        prediction["model_label"] = "IndoBERT+MLP"
     except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
@@ -140,10 +134,9 @@ def create_transaction(
             )
 
         try:
-            req_ml = KategorisasiRequest(texts=[payload.description])
-            ml_res = kategorisasi(req_ml)
+            prediction = predict_transaction_category_baru(payload.description)
             # Langsung ambil dan timpa kategori dengan hasil prediksi AI
-            category = ml_res.results[0].prediksi
+            category = prediction["category"]
         except Exception as exc:
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
