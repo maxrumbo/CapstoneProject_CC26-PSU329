@@ -30,7 +30,7 @@ function TransactionForm({
             <Icon name="form" size={18} />
           </span>
           <div>
-            <p className="eyebrow">Fitur Aktif</p>
+            <p className="eyebrow">Transaksi</p>
             <h3>Input Transaksi</h3>
           </div>
         </div>

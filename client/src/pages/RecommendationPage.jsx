@@ -145,7 +145,7 @@ function RecommendationPage({ onProfileClick, userName }) {
   return (
     <>
       <DashboardHeader
-        eyebrow="Fitur Aktif"
+        eyebrow="Rekomendasi AI"
         title="Rekomendasi AI"
         description="Pantau status pengeluaran dan dapatkan saran hemat personal dari Gemini AI."
         icon="ai"
