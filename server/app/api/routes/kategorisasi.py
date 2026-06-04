@@ -17,12 +17,12 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 router = APIRouter(prefix="/api/ml", tags=["ML Kategorisasi"])
 
 # ── Path ke folder artifacts (hanya untuk MLP & label_encoder) ───────────────
-_THIS_FILE = os.path.abspath(__file__)
-_ROUTES_DIR = os.path.dirname(_THIS_FILE)
-_API_DIR = os.path.dirname(_ROUTES_DIR)
-_APP_DIR = os.path.dirname(_API_DIR)
-_ROOT_DIR = os.path.dirname(_APP_DIR)
-ARTIFACTS_DIR = os.path.join(_ROOT_DIR, "artifacts")
+# ✅ GANTI dengan ini — pakai env var, fallback ke path absolut
+ARTIFACTS_DIR = os.getenv(
+    "ARTIFACTS_DIR",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "artifacts")
+)
+ARTIFACTS_DIR = os.path.abspath(ARTIFACTS_DIR)
 
 # ── BARU: IndoBERT dipanggil dari Hugging Face Hub, bukan folder lokal ────────
 # Ganti "USERNAME_HF_KAMU" dengan username Hugging Face StefanoGarrent
