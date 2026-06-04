@@ -36,7 +36,9 @@ export function useTransactionForm({
     confidence: null,
     error: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const latestDescriptionRef = useRef(formData.description);
+  const submitInFlightRef = useRef(false);
   const isExpense = formData.type === "expense";
 
   useEffect(() => {
@@ -192,6 +194,10 @@ export function useTransactionForm({
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (submitInFlightRef.current) {
+      return;
+    }
+
     if (!formData.description.trim()) {
       setMessage("Deskripsi transaksi wajib diisi.");
       return;
@@ -215,18 +221,26 @@ export function useTransactionForm({
       category: isExpense ? formData.category || null : INCOME_CATEGORY,
     };
 
-    const result = await onAddTransaction(payload);
+    submitInFlightRef.current = true;
+    setIsSubmitting(true);
 
-    setMessage(result.message);
+    try {
+      const result = await onAddTransaction(payload);
 
-    if (result.success) {
-      setFormData(createInitialFormData());
-      setCategoryPrediction({
-        isLoading: false,
-        category: "",
-        confidence: null,
-        error: "",
-      });
+      setMessage(result.message);
+
+      if (result.success) {
+        setFormData(createInitialFormData());
+        setCategoryPrediction({
+          isLoading: false,
+          category: "",
+          confidence: null,
+          error: "",
+        });
+      }
+    } finally {
+      submitInFlightRef.current = false;
+      setIsSubmitting(false);
     }
   };
 
@@ -234,7 +248,8 @@ export function useTransactionForm({
     formData,
     categoryPrediction,
     isExpense,
-    isSubmitDisabled: isExpense && availableBalance <= 0,
+    isSubmitting,
+    isSubmitDisabled: isSubmitting || (isExpense && availableBalance <= 0),
     message,
     handleChange,
     handleSubmit,

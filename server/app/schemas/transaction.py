@@ -1,12 +1,16 @@
 from datetime import date, datetime
 from decimal import Decimal
 from typing import Optional
+from zoneinfo import ZoneInfo
+
 from pydantic import BaseModel, field_validator, model_validator
 
 from app.models.transaction import (
     INCOME_CATEGORY,
     TransactionType,
 )
+
+APP_TIMEZONE = ZoneInfo("Asia/Jakarta")
 
 
 class TransactionCreate(BaseModel):
@@ -37,8 +41,8 @@ class TransactionCreate(BaseModel):
     @field_validator("date")
     @classmethod
     def date_not_future(cls, v: date) -> date:
-        from datetime import date as date_type
-        if v > date_type.today():
+        today = datetime.now(APP_TIMEZONE).date()
+        if v > today:
             raise ValueError("Tanggal tidak boleh di masa depan")
         return v
 

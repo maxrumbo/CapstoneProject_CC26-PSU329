@@ -11,6 +11,7 @@ function TransactionForm({
     categoryPrediction,
     formData,
     isExpense,
+    isSubmitting,
     isSubmitDisabled,
     message,
     handleChange,
@@ -161,7 +162,7 @@ function TransactionForm({
           >
             <span className="button-content">
               <Icon name="save" size={15} />
-              Simpan Transaksi
+              {isSubmitting ? "Menyimpan..." : "Simpan Transaksi"}
             </span>
           </button>
         </div>
