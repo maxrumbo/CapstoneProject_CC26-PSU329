@@ -111,9 +111,9 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: clamp(240px, 23vw, 380px) max-content max-content max-content;
+  grid-template-columns: minmax(220px, 1fr) max-content max-content max-content;
   grid-template-areas: "search nav dashboard avatar";
-  justify-content: end;
+  justify-content: stretch;
   gap: 8px;
   min-width: 0;
   width: 100%;
@@ -130,7 +130,7 @@
   border-radius: 999px;
   border: 1px solid rgba(31, 122, 74, 0.18);
   background: rgba(255, 255, 255, 0.72);
-  width: clamp(240px, 23vw, 380px);
+  width: 100%;
   min-width: 0;
   transition: width 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
@@ -260,6 +260,10 @@
   white-space: nowrap;
 }
 
+.dashboard-topbar-title {
+  white-space: nowrap;
+}
+
 .dashboard-right-tools {
   display: contents;
 }
@@ -284,12 +288,12 @@
   }
 
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(200px, 18vw, 280px) max-content max-content max-content;
+    grid-template-columns: minmax(170px, 1fr) max-content max-content max-content;
     gap: 6px;
   }
 
   .dashboard-search {
-    width: clamp(200px, 18vw, 280px);
+    width: 100%;
   }
 
   .dashboard-pill,

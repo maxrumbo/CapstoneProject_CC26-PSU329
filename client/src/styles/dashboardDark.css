@@ -131,9 +131,9 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: clamp(240px, 23vw, 380px) max-content max-content max-content;
+  grid-template-columns: minmax(220px, 1fr) max-content max-content max-content;
   grid-template-areas: "search nav dashboard avatar";
-  justify-content: end;
+  justify-content: stretch;
   gap: 8px;
   min-width: 0;
   width: 100%;
@@ -156,7 +156,7 @@
   border: 1px solid var(--dashboard-border);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   min-width: 0;
-  width: clamp(240px, 23vw, 380px);
+  width: 100%;
   transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -244,6 +244,7 @@
 .dashboard-topbar-title {
   letter-spacing: 0.01em;
   color: inherit;
+  white-space: nowrap;
 }
 
 .dashboard-topbar-feature {
@@ -297,12 +298,12 @@
 
 @media (max-width: 1180px) {
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(190px, 16vw, 240px) max-content max-content max-content;
+    grid-template-columns: minmax(150px, 1fr) max-content max-content max-content;
     gap: 5px;
   }
 
   .dashboard-search {
-    width: clamp(190px, 16vw, 240px);
+    width: 100%;
     padding: 0 10px;
   }
 
@@ -326,12 +327,12 @@
   }
 
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(200px, 18vw, 280px) max-content max-content max-content;
+    grid-template-columns: minmax(170px, 1fr) max-content max-content max-content;
     gap: 6px;
   }
 
   .dashboard-search {
-    width: clamp(200px, 18vw, 280px);
+    width: 100%;
   }
 
   .dashboard-pill {
@@ -353,12 +354,12 @@
 
 @media (max-width: 1180px) and (min-width: 981px) {
   .dashboard-desktop-bar {
-    grid-template-columns: clamp(180px, 15vw, 230px) max-content max-content max-content;
+    grid-template-columns: minmax(140px, 1fr) max-content max-content max-content;
     gap: 5px;
   }
 
   .dashboard-search {
-    width: clamp(180px, 15vw, 230px);
+    width: 100%;
   }
 
   .dashboard-pill,
@@ -446,6 +447,12 @@
 .dashboard-shell .panel,
 .dashboard-shell .topbar-profile,
 .dashboard-shell .project-card,
+.dashboard-shell .subscription-summary-card,
+.dashboard-shell .subscription-item,
+.dashboard-shell .wishlist-card,
+.dashboard-shell .wishlist-result-card,
+.dashboard-shell .wishlist-summary div,
+.dashboard-shell .wishlist-list-item,
 .dashboard-shell .analysis-placeholder,
 .dashboard-shell .report-toolbar,
 .dashboard-shell .transaction-row,
@@ -457,6 +464,77 @@
   border-color: var(--dashboard-border);
   background: var(--dashboard-surface);
   box-shadow: var(--dashboard-shadow);
+}
+
+.dashboard-shell .subscription-summary-card,
+.dashboard-shell .subscription-summary-card.primary,
+.dashboard-shell .wishlist-card,
+.dashboard-shell .wishlist-result-card,
+.dashboard-shell .wishlist-summary div,
+.dashboard-shell .wishlist-list-item {
+  border-color: var(--dashboard-border);
+  background: rgba(17, 24, 39, 0.82);
+  color: var(--dashboard-text);
+}
+
+.dashboard-shell .subscription-summary-card.primary,
+.dashboard-shell .wishlist-summary div {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.dashboard-shell .subscription-summary-card strong,
+.dashboard-shell .wishlist-result-header h4,
+.dashboard-shell .wishlist-summary dd,
+.dashboard-shell .wishlist-list-item strong {
+  color: var(--dashboard-text);
+}
+
+.dashboard-shell .subscription-summary-card span,
+.dashboard-shell .wishlist-summary dt,
+.dashboard-shell .wishlist-list-header span,
+.dashboard-shell .wishlist-list-summary-row > div:first-child span {
+  color: var(--dashboard-muted);
+}
+
+.dashboard-shell .subscription-summary-icon,
+.dashboard-shell .subscription-item-icon {
+  border-color: rgba(245, 166, 35, 0.16);
+  background: rgba(245, 166, 35, 0.08);
+  color: var(--dashboard-accent);
+}
+
+.dashboard-shell .subscription-secondary-button,
+.dashboard-shell .subscription-action-button,
+.dashboard-shell .wishlist-result-close,
+.dashboard-shell .wishlist-delete-button {
+  border-color: var(--dashboard-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--dashboard-text);
+}
+
+.dashboard-shell .subscription-secondary-button:hover:not(:disabled),
+.dashboard-shell .subscription-action-button:hover:not(:disabled),
+.dashboard-shell .wishlist-result-close:hover,
+.dashboard-shell .wishlist-status-button:hover,
+.dashboard-shell .wishlist-status-button[aria-expanded="true"] {
+  border-color: rgba(245, 166, 35, 0.28);
+  background: rgba(245, 166, 35, 0.08);
+  color: #fff2cf;
+}
+
+.dashboard-shell .subscription-feedback {
+  border: 1px solid rgba(74, 222, 128, 0.18);
+  background: rgba(34, 197, 94, 0.1);
+  color: rgba(187, 247, 208, 0.95);
+}
+
+.dashboard-shell .subscription-feedback.error,
+.dashboard-shell .wishlist-error,
+.dashboard-shell .wishlist-delete-button:hover:not(:disabled),
+.dashboard-shell .subscription-action-button.danger:hover:not(:disabled) {
+  border-color: rgba(248, 113, 113, 0.28);
+  background: rgba(248, 113, 113, 0.1);
+  color: #fb7185;
 }
 
 .dashboard-shell .panel::before {
@@ -520,7 +598,24 @@
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   color: var(--dashboard-text);
+  color-scheme: dark;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.dashboard-shell select option,
+.dashboard-shell select optgroup {
+  background: #111827;
+  color: var(--dashboard-text);
+}
+
+.dashboard-shell select option:checked {
+  background: #243145;
+  color: #fff2cf;
+}
+
+.dashboard-shell select option:hover {
+  background: rgba(245, 166, 35, 0.18);
+  color: var(--dashboard-text);
 }
 
 .dashboard-shell input:disabled,
