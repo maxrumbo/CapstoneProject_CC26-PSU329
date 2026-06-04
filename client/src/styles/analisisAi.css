@@ -1,7 +1,7 @@
 .analisis-ai {
   position: fixed;
-  right: clamp(16px, 3vw, 28px);
-  bottom: clamp(16px, 3vw, 28px);
+  right: clamp(24px, 4vw, 72px);
+  bottom: clamp(18px, 3vw, 32px);
   z-index: 40;
   display: grid;
   justify-items: end;
@@ -15,8 +15,8 @@
 }
 
 .analisis-ai-panel {
-  width: min(760px, calc(100vw - 32px));
-  max-height: min(720px, calc(100vh - 110px));
+  width: min(680px, calc(100vw - 96px));
+  max-height: min(680px, calc(100vh - 128px));
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   overflow: hidden;
