@@ -111,13 +111,17 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.4fr) auto;
-  gap: clamp(10px, 1.4vw, 20px);
+  grid-template-columns: minmax(260px, 1fr) auto;
+  grid-template-areas:
+    "search avatar"
+    "nav dashboard";
+  gap: 10px 12px;
   min-width: 0;
   width: 100%;
 }
 
 .dashboard-search {
+  grid-area: search;
   position: relative;
   display: flex;
   align-items: center;
@@ -194,12 +198,13 @@
 }
 
 .dashboard-nav {
+  grid-area: nav;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   min-width: 0;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: visible;
   scrollbar-width: none;
 }
 
@@ -257,10 +262,17 @@
 }
 
 .dashboard-right-tools {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  min-width: max-content;
+  display: contents;
+}
+
+.dashboard-right-tools .dashboard-topbar-feature {
+  grid-area: dashboard;
+  justify-self: end;
+}
+
+.dashboard-right-tools .dashboard-avatar {
+  grid-area: avatar;
+  justify-self: end;
 }
 
 .dashboard-mobile-search,
