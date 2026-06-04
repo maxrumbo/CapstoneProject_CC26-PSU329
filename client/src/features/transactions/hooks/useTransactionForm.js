@@ -8,6 +8,19 @@ import {
 const DEFAULT_METHOD = "Tunai";
 const MIN_DESCRIPTION_LENGTH_FOR_AI = 3;
 
+const normalizeCategory = (category) => {
+  if (!category) {
+    return "";
+  }
+
+  const normalized = String(category).trim().toLowerCase();
+  return (
+    TRANSACTION_CATEGORIES.find(
+      (item) => item.toLowerCase() === normalized
+    ) || ""
+  );
+};
+
 const getToday = () => {
   const today = new Date();
   const year = today.getFullYear();
@@ -74,14 +87,18 @@ export function useTransactionForm({
           return;
         }
 
+        const normalizedCategory = normalizeCategory(prediction.category);
+
         setCategoryPrediction({
           isLoading: false,
-          category: prediction.category,
+          category: normalizedCategory,
           confidence: prediction.confidence,
-          error: "",
+          error: normalizedCategory
+            ? ""
+            : "Kategori hasil prediksi tidak dikenali.",
         });
 
-        if (!TRANSACTION_CATEGORIES.includes(prediction.category)) {
+        if (!normalizedCategory) {
           return;
         }
 
@@ -96,7 +113,7 @@ export function useTransactionForm({
 
           return {
             ...prev,
-            category: prediction.category,
+            category: normalizedCategory,
           };
         });
       } catch (err) {
@@ -153,6 +170,9 @@ export function useTransactionForm({
     setFormData((prev) => ({
       ...prev,
       [name]: nextValue,
+      ...(name === "description" && prev.type === "expense"
+        ? { category: "" }
+        : {}),
     }));
   };
 
