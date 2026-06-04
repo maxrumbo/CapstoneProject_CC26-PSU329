@@ -168,7 +168,7 @@ function WishlistCalculator() {
             <Icon name="target" size={18} />
           </span>
           <div>
-            <p className="eyebrow">Fitur Aktif</p>
+            <p className="eyebrow">Wishlist</p>
             <h3>Wishlist Calculator</h3>
           </div>
         </div>

@@ -4,7 +4,7 @@ function SubscriptionPage() {
   return (
     <>
       <header className="dashboard-section">
-        <p className="dashboard-section-kicker">Fitur Aktif</p>
+        <p className="dashboard-section-kicker">Subscription</p>
         <h2>Subscription Tracker</h2>
         <span>Catat langganan aktif dan pantau total pengeluaran bulanannya.</span>
       </header>
