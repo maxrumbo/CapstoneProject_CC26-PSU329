@@ -26,7 +26,7 @@ ARTIFACTS_DIR = os.path.join(_ROOT_DIR, "artifacts")
 
 # ── BARU: IndoBERT dipanggil dari Hugging Face Hub, bukan folder lokal ────────
 # Ganti "USERNAME_HF_KAMU" dengan username Hugging Face StefanoGarrent
-HF_MODEL_ID = "USERNAME_HF_KAMU/sawit-indobert-kategorisasi"
+HF_MODEL_ID = "StefanoGarrent/sawit-indobert-kategorisasi"
 
 # Cache di /tmp agar tidak re-download setiap restart (Railway persistent /tmp)
 HF_CACHE_DIR = "/tmp/hf_model_cache"
