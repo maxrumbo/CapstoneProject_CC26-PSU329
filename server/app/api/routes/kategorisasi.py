@@ -10,38 +10,38 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List
 
-
 nltk.download("stopwords", quiet=True)
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-
 router = APIRouter(prefix="/api/ml", tags=["ML Kategorisasi"])
 
-
-# ── Path ke folder artifacts (absolut, aman di Railway) ───────────────────────
-# Struktur: app/api/routes/kategorisasi.py
-#   → naik 1x = app/api/  → naik 2x = app/  → naik 3x = /app/ (root Railway)
-#   → bergabung "artifacts" = /app/artifacts/
-_THIS_FILE    = os.path.abspath(__file__)
-_ROUTES_DIR   = os.path.dirname(_THIS_FILE)
-_API_DIR      = os.path.dirname(_ROUTES_DIR)
-_APP_DIR      = os.path.dirname(_API_DIR)
-_ROOT_DIR     = os.path.dirname(_APP_DIR)
+# ── Path ke folder artifacts (hanya untuk MLP & label_encoder) ───────────────
+_THIS_FILE = os.path.abspath(__file__)
+_ROUTES_DIR = os.path.dirname(_THIS_FILE)
+_API_DIR = os.path.dirname(_ROUTES_DIR)
+_APP_DIR = os.path.dirname(_API_DIR)
+_ROOT_DIR = os.path.dirname(_APP_DIR)
 ARTIFACTS_DIR = os.path.join(_ROOT_DIR, "artifacts")
 
+# ── BARU: IndoBERT dipanggil dari Hugging Face Hub, bukan folder lokal ────────
+# Ganti "USERNAME_HF_KAMU" dengan username Hugging Face StefanoGarrent
+HF_MODEL_ID = "StefanoGarrent/sawit-indobert-kategorisasi"
+
+# Cache di /tmp agar tidak re-download setiap restart (Railway persistent /tmp)
+HF_CACHE_DIR = "/tmp/hf_model_cache"
 
 # ── Custom Objects (wajib ada agar model.keras bisa di-load) ──────────────────
 @keras.utils.register_keras_serializable()
 class ResidualBlock(layers.Layer):
     def __init__(self, units, dropout_rate=0.3, **kwargs):
         super().__init__(**kwargs)
-        self.dense1   = layers.Dense(units, activation="relu")
-        self.dense2   = layers.Dense(units)
-        self.bn       = layers.BatchNormalization()
-        self.dropout  = layers.Dropout(dropout_rate)
-        self.add      = layers.Add()
-        self.relu     = layers.Activation("relu")
+        self.dense1 = layers.Dense(units, activation="relu")
+        self.dense2 = layers.Dense(units)
+        self.bn = layers.BatchNormalization()
+        self.dropout = layers.Dropout(dropout_rate)
+        self.add = layers.Add()
+        self.relu = layers.Activation("relu")
 
     def call(self, inputs, training=False):
         x = self.dense1(inputs)
@@ -65,12 +65,12 @@ class FocalLoss(keras.losses.Loss):
         self.alpha = alpha
 
     def call(self, y_true, y_pred):
-        y_true    = tf.cast(y_true, tf.int32)
-        y_pred    = tf.clip_by_value(y_pred, 1e-7, 1.0)
+        y_true = tf.cast(y_true, tf.int32)
+        y_pred = tf.clip_by_value(y_pred, 1e-7, 1.0)
         y_true_oh = tf.one_hot(y_true, tf.shape(y_pred)[-1])
         y_true_oh = tf.cast(y_true_oh, tf.float32)
-        ce        = -tf.reduce_sum(y_true_oh * tf.math.log(y_pred), axis=-1)
-        pt        = tf.reduce_sum(y_true_oh * y_pred, axis=-1)
+        ce = -tf.reduce_sum(y_true_oh * tf.math.log(y_pred), axis=-1)
+        pt = tf.reduce_sum(y_true_oh * y_pred, axis=-1)
         return tf.reduce_mean(self.alpha * tf.pow(1.0 - pt, self.gamma) * ce)
 
     def get_config(self):
@@ -80,14 +80,14 @@ class FocalLoss(keras.losses.Loss):
 
 
 # ── Preprocessing ─────────────────────────────────────────────────────────────
-factory      = StemmerFactory()
-stemmer      = factory.create_stemmer()
-STOPWORDS    = set(stopwords.words("indonesian"))
-CUSTOM_SW    = {"promo", "promosi", "sale", "diskon", "gratis", "free",
-                "ongkir", "cashback", "voucher"}
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+STOPWORDS = set(stopwords.words("indonesian"))
+CUSTOM_SW = {"promo", "promosi", "sale", "diskon", "gratis", "free",
+             "ongkir", "cashback", "voucher"}
 DOMAIN_WORDS = {"solar", "transport", "langganan", "tagihan",
                 "kesehatan", "konsumsi", "entertainment"}
-ALL_SW       = (STOPWORDS | CUSTOM_SW) - DOMAIN_WORDS
+ALL_SW = (STOPWORDS | CUSTOM_SW) - DOMAIN_WORDS
 
 
 def preprocess(text: str) -> str:
@@ -108,45 +108,49 @@ ML_MODELS: dict = {}
 def load_ml_models():
     """Dipanggil dari lifespan di main.py"""
 
-    # Debug log — tampil di Railway logs untuk verifikasi path
-    print(f"[ML] ARTIFACTS_DIR  = {ARTIFACTS_DIR}")
+    # ── 1. Log path artifacts (untuk debug Railway) ───────────────────────────
+    print(f"[ML] ARTIFACTS_DIR = {ARTIFACTS_DIR}")
     print(f"[ML] Path exists    = {os.path.exists(ARTIFACTS_DIR)}")
+    print(f"[ML] HF_MODEL_ID    = {HF_MODEL_ID}")
+    print(f"[ML] HF_CACHE_DIR   = {HF_CACHE_DIR}")
 
-    tokenizer_path = os.path.join(ARTIFACTS_DIR, "indobert_tokenizer")
-    bert_path      = os.path.join(ARTIFACTS_DIR, "indobert_model")
-    mlp_path       = os.path.join(ARTIFACTS_DIR, "mlp_functional.keras")
-    le_path        = os.path.join(ARTIFACTS_DIR, "label_encoder.pkl")
+    # ── 2. Path artifact lokal (MLP & LabelEncoder tetap dari GitHub) ─────────
+    mlp_path = os.path.join(ARTIFACTS_DIR, "mlp_functional.keras")
+    le_path  = os.path.join(ARTIFACTS_DIR, "label_encoder.pkl")
 
-    # Validasi semua artifact ada sebelum load
-    for name, path in [
-        ("indobert_tokenizer", tokenizer_path),
-        ("indobert_model",     bert_path),
-        ("mlp_functional",     mlp_path),
-        ("label_encoder",      le_path),
-    ]:
+    for name, path in [("mlp_functional", mlp_path), ("label_encoder", le_path)]:
         if not os.path.exists(path):
             raise FileNotFoundError(
                 f"[ML] Artifact tidak ditemukan: '{name}' -> {path}\n"
-                "Pastikan folder artifacts/ sudah ter-push ke GitHub "
-                "dan tidak masuk .gitignore"
+                "Pastikan artifacts/ (tanpa folder indobert) sudah ter-push ke GitHub."
             )
 
-    print("⏳ [ML] Loading IndoBERT tokenizer...")
-    ML_MODELS["tokenizer"] = AutoTokenizer.from_pretrained(tokenizer_path)
+    # ── 3. Load tokenizer dari Hugging Face Hub ───────────────────────────────
+    print("⏳ [ML] Loading IndoBERT tokenizer dari Hugging Face Hub...")
+    ML_MODELS["tokenizer"] = AutoTokenizer.from_pretrained(
+        HF_MODEL_ID,
+        cache_dir=HF_CACHE_DIR,
+    )
 
+    # ── 4. Load IndoBERT model dari Hugging Face Hub ──────────────────────────
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"⏳ [ML] Loading IndoBERT model (device: {device})...")
-    bert = AutoModel.from_pretrained(bert_path).to(device)
+    print(f"⏳ [ML] Loading IndoBERT model dari HF Hub (device: {device})...")
+    bert = AutoModel.from_pretrained(
+        HF_MODEL_ID,
+        cache_dir=HF_CACHE_DIR,
+    ).to(device)
     bert.eval()
     ML_MODELS["bert"]   = bert
     ML_MODELS["device"] = device
 
+    # ── 5. Load MLP model (dari artifacts/ di GitHub) ─────────────────────────
     print("⏳ [ML] Loading MLP model...")
     ML_MODELS["mlp"] = keras.models.load_model(
         mlp_path,
         custom_objects={"ResidualBlock": ResidualBlock, "FocalLoss": FocalLoss},
     )
 
+    # ── 6. Load LabelEncoder (dari artifacts/ di GitHub) ──────────────────────
     print("⏳ [ML] Loading LabelEncoder...")
     with open(le_path, "rb") as f:
         ML_MODELS["le"] = pickle.load(f)
@@ -180,9 +184,9 @@ class KategorisasiRequest(BaseModel):
 
 
 class KategorisasiItem(BaseModel):
-    teks: str
-    prediksi: str
-    confidence: str
+    teks:        str
+    prediksi:    str
+    confidence:  str
     top_k_labels: str
 
 
@@ -194,9 +198,10 @@ class KategorisasiResponse(BaseModel):
 @router.get("/health")
 def ml_health():
     return {
-        "status": "ok",
-        "loaded": list(ML_MODELS.keys()),
-        "artifacts_dir": ARTIFACTS_DIR,
+        "status":           "ok",
+        "loaded":           list(ML_MODELS.keys()),
+        "hf_model_id":      HF_MODEL_ID,
+        "artifacts_dir":    ARTIFACTS_DIR,
         "artifacts_exists": os.path.exists(ARTIFACTS_DIR),
     }
 
