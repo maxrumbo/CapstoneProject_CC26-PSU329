@@ -9,5 +9,6 @@
     "Transport"
   ],
   "bert_input_dim": 768,
+  "max_len": 64,
   "test_acc_func_api": 0.9503069995906672
 }

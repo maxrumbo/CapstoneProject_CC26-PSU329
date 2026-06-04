@@ -8,39 +8,38 @@ from app.services.ml.artifacts import (
 from app.services.ml.label_map import MODEL_LABEL_TO_CATEGORY
 from app.services.ml.preprocessing import preprocess_text
 
-# The inference order mirrors Notebook_Cleaning_Data.ipynb preprocessing before
-# tokenization, then asks the LSTM model for the final classification.
-
 
 def predict_transaction_category(
     description: str,
     confidence_threshold: float | None = None,
 ) -> dict:
-    """Predict the transaction category from a user-provided description."""
+    """Prediksi kategori transaksi dari deskripsi yang diberikan user."""
     cleaned_description = _validate_description(description)
     threshold = _validate_confidence_threshold(confidence_threshold)
     processed_text = preprocess_text(cleaned_description)
 
     try:
         model, tokenizer, config = load_model_artifacts()
-        max_len = int(config.get("max_len") or 20)
-        classes = list(config.get("classes") or [])
-        if not classes:
-            raise TransactionClassifierError(
-                "Konfigurasi model tidak memiliki daftar kelas."
-            )
+        max_len = int(config["max_len"])   # FIX: tidak lagi config.get() agar error jelas
+        classes = list(config["classes"])
 
+        # Tokenisasi menggunakan Keras Tokenizer (sesuai tokenizer.json di FixedMLP/)
         sequence = tokenizer.texts_to_sequences([processed_text])
-        padded_sequence = _pad_sequences(
+        padded = _pad_sequences(
             sequence,
             maxlen=max_len,
             padding="post",
             truncating="post",
         )
-        predictions = model.predict(padded_sequence, verbose=0)
+
+        predictions = model.predict(padded, verbose=0)
         scores = _first_prediction_row(predictions)
         class_index, confidence = _argmax(scores)
+
+        # FIX: label diambil dari classes (PascalCase) sesuai model_config.json
+        # agar cocok dengan kunci di label_map.py
         model_label = str(classes[class_index])
+
     except TransactionClassifierError:
         raise
     except ModuleNotFoundError as exc:
@@ -52,9 +51,11 @@ def predict_transaction_category(
     except Exception as exc:
         raise TransactionClassifierError("Gagal melakukan prediksi kategori.") from exc
 
+    # Lookup kategori — berhasil karena kunci label_map sudah PascalCase
     category = MODEL_LABEL_TO_CATEGORY.get(model_label)
     if not category:
         raise TransactionClassifierError(f"Label model tidak dikenali: {model_label}")
+
     if threshold is not None and confidence < threshold:
         raise TransactionClassifierError(
             "Prediksi kategori berada di bawah confidence threshold."
@@ -70,12 +71,12 @@ def predict_transaction_category(
 def _validate_description(description: str) -> str:
     if not isinstance(description, str):
         raise ValueError("Deskripsi harus berupa teks")
-    cleaned_description = description.strip()
-    if not cleaned_description:
+    cleaned = description.strip()
+    if not cleaned:
         raise ValueError("Deskripsi tidak boleh kosong")
-    if len(cleaned_description) > 255:
+    if len(cleaned) > 255:
         raise ValueError("Deskripsi maksimal 255 karakter")
-    return cleaned_description
+    return cleaned
 
 
 def _validate_confidence_threshold(confidence_threshold: float | None) -> float | None:
@@ -88,11 +89,10 @@ def _validate_confidence_threshold(confidence_threshold: float | None) -> float 
 
 
 def _pad_sequences(sequences, maxlen: int, padding: str, truncating: str):
+    """Pad sequences menggunakan TF jika tersedia, fallback ke pure-Python."""
     try:
         configure_tensorflow_runtime()
-
         from tensorflow.keras.preprocessing.sequence import pad_sequences
-
         return pad_sequences(
             sequences,
             maxlen=maxlen,

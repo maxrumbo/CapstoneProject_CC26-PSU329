@@ -1,14 +1,16 @@
 """Label mapping for the transaction classifier output."""
 
-# Mirrors the labels produced by Notebook_Cleaning_Data.ipynb and the LSTM
-# training config so API consumers receive user-friendly category names.
+# FIX: Kunci harus PERSIS sama dengan nilai `classes` di model_config.json
+# yaitu PascalCase (bukan lowercase seperti sebelumnya).
+# Sebelumnya: "entertainment": "Entertainment" -> lookup selalu None
+# Sekarang  : "Entertainment":  "Entertainment" -> lookup berhasil
 MODEL_LABEL_TO_CATEGORY = {
-    "entertainment": "Entertainment",
-    "kesehatan": "Kesehatan",
-    "konsumsi": "Konsumsi",
-    "langganan": "Langganan",
-    "tagihan": "Tagihan",
-    "transport": "Transportasi",
+    "Entertainment": "Entertainment",
+    "Kesehatan": "Kesehatan",
+    "Konsumsi": "Konsumsi",
+    "Langganan": "Langganan",
+    "Tagihan": "Tagihan",
+    "Transport": "Transportasi",
 }
 
 CATEGORY_TO_MODEL_LABEL = {
