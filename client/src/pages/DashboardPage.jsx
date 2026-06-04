@@ -1,4 +1,3 @@
-import { useAuth } from "../context/useAuth"; 
 import AnalysisPreview from "../components/dashboard/AnalysisPreview";
 import Icon from "../components/ui/Icon";
 
@@ -7,7 +6,6 @@ const BASE_STREAMLIT_URL =
   "https://dashboardtransaksi.streamlit.app";
 
 function DashboardPage() {
-  const { user } = useAuth();                
   const token = localStorage.getItem('token')
   
   const STREAMLIT_URL = token

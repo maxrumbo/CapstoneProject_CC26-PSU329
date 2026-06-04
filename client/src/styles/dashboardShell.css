@@ -111,7 +111,7 @@
 
 .dashboard-desktop-bar {
   align-items: center;
-  grid-template-columns: minmax(260px, 1fr) auto auto;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.4fr) auto;
   gap: clamp(10px, 1.4vw, 20px);
   min-width: 0;
   width: 100%;
@@ -125,9 +125,8 @@
   padding: 0 12px;
   height: 44px;
   border-radius: 999px;
-  /* single outer wrapper should carry border/background; inner search uses transparent input */
-  border: none;
-  background: transparent;
+  border: 1px solid rgba(31, 122, 74, 0.18);
+  background: rgba(255, 255, 255, 0.72);
   width: 100%;
   min-width: 0;
   transition: width 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
@@ -196,6 +195,12 @@
   gap: 6px;
   min-width: 0;
   flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.dashboard-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .dashboard-pill {
@@ -211,6 +216,7 @@
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
+  flex: 0 0 auto;
   transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
   box-shadow:
     0 12px 20px rgba(23, 94, 57, 0.12),
@@ -356,6 +362,8 @@
     height: 40px;
     padding: 0 12px;
     border-radius: 999px;
+    border: 1px solid rgba(31, 122, 74, 0.18);
+    background: rgba(255, 255, 255, 0.72);
   }
 
   .dashboard-mobile-search input {

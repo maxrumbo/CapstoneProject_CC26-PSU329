@@ -403,7 +403,7 @@
 }
 
 .category-budget-card.locked {
-  background: var(--surface-soft);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .category-budget-card.locked:hover {
@@ -494,6 +494,44 @@
   opacity: 0.55;
   cursor: not-allowed;
   transform: none;
+}
+
+.dashboard-shell .category-budget-card,
+.dashboard-shell .category-budget-card.locked {
+  border-color: rgba(148, 163, 184, 0.14);
+  background: rgba(17, 24, 39, 0.62);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.dashboard-shell .category-budget-card.locked {
+  background: rgba(17, 24, 39, 0.72);
+}
+
+.dashboard-shell .category-budget-card.locked:hover {
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.dashboard-shell .category-budget-heading {
+  color: var(--dashboard-text);
+}
+
+.dashboard-shell .category-usage {
+  color: rgba(139, 152, 172, 0.86);
+}
+
+.dashboard-shell .category-budget-card input,
+.dashboard-shell .category-budget-card input:disabled {
+  opacity: 1;
+  -webkit-text-fill-color: var(--dashboard-text);
+  color: var(--dashboard-text);
+  background: rgba(31, 41, 55, 0.64);
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.dashboard-shell .budget-form .submit-button:disabled {
+  opacity: 0.62;
+  color: #1a1203;
+  background: linear-gradient(135deg, #f5a623 0%, #d97c00 100%);
 }
 
 .profile-budget-loading {

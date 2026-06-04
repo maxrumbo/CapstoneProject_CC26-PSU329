@@ -94,7 +94,6 @@ function ProfilePage() {
     profileOverrides.name || user?.display_name || user?.email || "Pengguna SAWIT";
   const email = profileOverrides.email || user?.email || "-";
   const savedPhotoUrl = profileOverrides.photoUrl || user?.photo_url || "";
-  const initial = displayName.trim() ? displayName.trim()[0].toUpperCase() : "S";
   const [budgetMonth] = useState(getCurrentMonth);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isPasswordEditing, setIsPasswordEditing] = useState(false);

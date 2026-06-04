@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function AnimatedAiLogo({ size = 40 }) {
   return (
     <div style={{ width: size, height: size, display: "inline-block" }}>
