@@ -17,20 +17,19 @@ def configure_tensorflow_runtime() -> None:
 
 
 def _model_dir() -> Path:
-    # Use os.path.join with a relative path to the repository's machine-learning/FixedMLP
     base_dir = os.path.join(os.path.dirname(__file__), "FixedMLP")
     return Path(base_dir).resolve()
 
 
 @lru_cache(maxsize=1)
 def load_model_artifacts():
-    """Load and cache the Keras model, tokenizer, and training config."""
+    """Load dan cache model Keras, tokenizer Keras, dan config training."""
     configure_tensorflow_runtime()
 
     model_dir = _model_dir()
-    model_path = model_dir / "mlp_functional.keras"
+    model_path    = model_dir / "mlp_functional.keras"
     tokenizer_path = model_dir / "tokenizer.json"
-    config_path = model_dir / "model_config.json"
+    config_path   = model_dir / "model_config.json"
 
     missing_files = [
         str(path)
@@ -55,9 +54,9 @@ def load_model_artifacts():
         ) from exc
 
     try:
-        model = load_model(str(model_path), compile=False)
+        model     = load_model(str(model_path), compile=False)
         tokenizer = tokenizer_from_json(tokenizer_path.read_text(encoding="utf-8"))
-        config = json.loads(config_path.read_text(encoding="utf-8"))
+        config    = json.loads(config_path.read_text(encoding="utf-8"))
     except TransactionClassifierError:
         raise
     except Exception as exc:
@@ -67,7 +66,12 @@ def load_model_artifacts():
 
     if not config.get("classes"):
         raise TransactionClassifierError("Konfigurasi model tidak memiliki daftar kelas.")
+
+    # FIX: max_len sekarang ada di model_config.json (sudah diperbaiki)
     if not config.get("max_len"):
-        raise TransactionClassifierError("Konfigurasi model tidak memiliki max_len.")
+        raise TransactionClassifierError(
+            "Konfigurasi model tidak memiliki max_len. "
+            "Tambahkan \"max_len\": 64 ke file model_config.json."
+        )
 
     return model, tokenizer, config
