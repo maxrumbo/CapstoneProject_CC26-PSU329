@@ -17,11 +17,8 @@ from app.schemas.transaction import (
     TransactionCreate,
     TransactionResponse,
 )
-from app.services.transaction_classifier import (
-    TransactionClassifierError,
-    predict_transaction_category,
-)
 
+from app.api.routes.kategorisasi import predict_transaction_category_baru
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
 
 
@@ -88,7 +85,6 @@ def get_balance_summary(
 
 
 # ── ENDPOINT 1: CREATE transaksi baru ────────────────────────────────────────
-
 @router.post(
     "/predict-category",
     response_model=APIResponse[TransactionCategoryPredictionResponse],
@@ -99,13 +95,13 @@ def predict_category(
     current_user: User = Depends(get_current_user),
 ):
     try:
-        prediction = predict_transaction_category(payload.description)
+      prediction = predict_transaction_category_baru(payload.description)
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail=str(exc),
         ) from exc
-    except TransactionClassifierError as exc:
+   except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=str(exc),
@@ -115,7 +111,6 @@ def predict_category(
         data=TransactionCategoryPredictionResponse(**prediction),
         message="Kategori berhasil diprediksi",
     )
-
 
 @router.post(
     "/",
@@ -139,13 +134,12 @@ def create_transaction(
             )
 
         try:
-            prediction = predict_transaction_category(payload.description)
-        except TransactionClassifierError as exc:
+            prediction = predict_transaction_category_baru(payload.description)
+        except Exception as exc: # BARIS 138: Ubah ke Exception umum biar aman
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
                 detail=str(exc),
             ) from exc
-
         category = prediction["category"]
 
     transaction = Transaction(
