@@ -18,7 +18,7 @@ from app.schemas.transaction import (
     TransactionResponse,
 )
 
-from app.api.routes.kategorisasi import predict_transaction_category_baru
+from app.api.routes.kategorisasi import kategorisasi, KategorisasiRequest
 router = APIRouter(prefix="/transactions", tags=["Transactions"])
 
 
@@ -53,11 +53,13 @@ def _get_balance(user_id: int, db: Session, up_to_date: Optional[date] = None) -
     summary="Hitung saldo user (total income - total expense)",
 )
 def get_balance_summary(
-    up_to_date: Optional[date] = Query(None, description="Hitung saldo sampai tanggal ini (YYYY-MM-DD)"),
+    up_to_date: Optional[date] = Query(
+        None, description="Hitung saldo sampai tanggal ini (YYYY-MM-DD)"),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    base_query = db.query(Transaction).filter(Transaction.user_id == current_user.id)
+    base_query = db.query(Transaction).filter(
+        Transaction.user_id == current_user.id)
     if up_to_date:
         base_query = base_query.filter(Transaction.date <= up_to_date)
 
@@ -85,6 +87,7 @@ def get_balance_summary(
 
 
 # ── ENDPOINT 1: CREATE transaksi baru ────────────────────────────────────────
+
 @router.post(
     "/predict-category",
     response_model=APIResponse[TransactionCategoryPredictionResponse],
@@ -95,13 +98,14 @@ def predict_category(
     current_user: User = Depends(get_current_user),
 ):
     try:
-      prediction = predict_transaction_category_baru(payload.description)
-    except ValueError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=str(exc),
-        ) from exc
-   except Exception as exc:
+        req_ml = KategorisasiRequest(texts=[payload.description])
+        ml_res = kategorisasi(req_ml)
+
+        prediction = {
+            "category": ml_res.results[0].prediksi,
+            "confidence": float(ml_res.results[0].confidence.strip('%')) / 100 if '%' in ml_res.results[0].confidence else ml_res.results[0].confidence
+        }
+    except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=str(exc),
@@ -111,6 +115,7 @@ def predict_category(
         data=TransactionCategoryPredictionResponse(**prediction),
         message="Kategori berhasil diprediksi",
     )
+
 
 @router.post(
     "/",
@@ -134,13 +139,15 @@ def create_transaction(
             )
 
         try:
-            prediction = predict_transaction_category_baru(payload.description)
-        except Exception as exc: # BARIS 138: Ubah ke Exception umum biar aman
+            req_ml = KategorisasiRequest(texts=[payload.description])
+            ml_res = kategorisasi(req_ml)
+            # Langsung ambil dan timpa kategori dengan hasil prediksi AI
+            category = ml_res.results[0].prediksi
+        except Exception as exc:
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
                 detail=str(exc),
             ) from exc
-        category = prediction["category"]
 
     transaction = Transaction(
         user_id=current_user.id,
@@ -169,15 +176,21 @@ def create_transaction(
     summary="Ambil daftar transaksi (dengan filter & pagination)",
 )
 def get_transactions(
-    skip: int = Query(0, ge=0, description="Jumlah data yang dilewati (pagination)"),
-    limit: int = Query(100, ge=1, le=500, description="Jumlah data yang diambil"),
-    start_date: Optional[date] = Query(None, description="Filter dari tanggal (YYYY-MM-DD)"),
-    end_date: Optional[date] = Query(None, description="Filter sampai tanggal (YYYY-MM-DD)"),
-    type: Optional[TransactionType] = Query(None, description="Filter tipe: income atau expense"),
+    skip: int = Query(
+        0, ge=0, description="Jumlah data yang dilewati (pagination)"),
+    limit: int = Query(100, ge=1, le=500,
+                       description="Jumlah data yang diambil"),
+    start_date: Optional[date] = Query(
+        None, description="Filter dari tanggal (YYYY-MM-DD)"),
+    end_date: Optional[date] = Query(
+        None, description="Filter sampai tanggal (YYYY-MM-DD)"),
+    type: Optional[TransactionType] = Query(
+        None, description="Filter tipe: income atau expense"),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    query = db.query(Transaction).filter(Transaction.user_id == current_user.id)
+    query = db.query(Transaction).filter(
+        Transaction.user_id == current_user.id)
 
     if start_date:
         query = query.filter(Transaction.date >= start_date)
@@ -211,7 +224,8 @@ def get_transaction(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    transaction = db.query(Transaction).filter(Transaction.id == transaction_id).first()
+    transaction = db.query(Transaction).filter(
+        Transaction.id == transaction_id).first()
 
     if not transaction:
         raise HTTPException(

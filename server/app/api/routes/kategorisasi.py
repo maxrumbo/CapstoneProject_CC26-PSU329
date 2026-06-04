@@ -14,30 +14,33 @@ import tensorflow as tf
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List
-
-nltk.download("stopwords", quiet=True)
-nltk.download("punkt", quiet=True)
 from nltk.corpus import stopwords
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
+# Download dependencies NLTK (diletakkan setelah import agar Flake8 tidak protes)
+nltk.download("stopwords", quiet=True)
+nltk.download("punkt", quiet=True)
 
 router = APIRouter(prefix="/api/ml", tags=["ML Kategorisasi"])
 
 # ── Config dari environment variable ─────────────────────────────────────────
-HF_MODEL_ID  = os.getenv("HF_MODEL_ID",  "StefanoGarrent/sawit-indobert-kategorisasi")
-HF_TOKEN     = os.getenv("HF_TOKEN",     None)
+HF_MODEL_ID = os.getenv(
+    "HF_MODEL_ID", "StefanoGarrent/sawit-indobert-kategorisasi")
+HF_TOKEN = os.getenv("HF_TOKEN", None)
 HF_CACHE_DIR = os.getenv("HF_CACHE_DIR", "/tmp/hf_model_cache")
+
 
 # ── Custom Keras Objects ──────────────────────────────────────────────────────
 @keras.utils.register_keras_serializable()
 class ResidualBlock(layers.Layer):
     def __init__(self, units, dropout_rate=0.3, **kwargs):
         super().__init__(**kwargs)
-        self.dense1   = layers.Dense(units, activation="relu")
-        self.dense2   = layers.Dense(units)
-        self.bn       = layers.BatchNormalization()
-        self.dropout  = layers.Dropout(dropout_rate)
-        self.add_     = layers.Add()
-        self.relu     = layers.Activation("relu")
+        self.dense1 = layers.Dense(units, activation="relu")
+        self.dense2 = layers.Dense(units)
+        self.bn = layers.BatchNormalization()
+        self.dropout = layers.Dropout(dropout_rate)
+        self.add_ = layers.Add()
+        self.relu = layers.Activation("relu")
 
     def call(self, inputs, training=False):
         x = self.dense1(inputs)
@@ -49,7 +52,10 @@ class ResidualBlock(layers.Layer):
 
     def get_config(self):
         config = super().get_config()
-        config.update({"units": self.dense1.units, "dropout_rate": self.dropout.rate})
+        config.update({
+            "units": self.dense1.units,
+            "dropout_rate": self.dropout.rate
+        })
         return config
 
 
@@ -61,11 +67,12 @@ class FocalLoss(keras.losses.Loss):
         self.alpha = alpha
 
     def call(self, y_true, y_pred):
-        y_true    = tf.cast(y_true, tf.int32)
-        y_pred    = tf.clip_by_value(y_pred, 1e-7, 1.0)
-        y_true_oh = tf.cast(tf.one_hot(y_true, tf.shape(y_pred)[-1]), tf.float32)
-        ce        = -tf.reduce_sum(y_true_oh * tf.math.log(y_pred), axis=-1)
-        pt        = tf.reduce_sum(y_true_oh * y_pred, axis=-1)
+        y_true = tf.cast(y_true, tf.int32)
+        y_pred = tf.clip_by_value(y_pred, 1e-7, 1.0)
+        y_true_oh = tf.cast(tf.one_hot(
+            y_true, tf.shape(y_pred)[-1]), tf.float32)
+        ce = -tf.reduce_sum(y_true_oh * tf.math.log(y_pred), axis=-1)
+        pt = tf.reduce_sum(y_true_oh * y_pred, axis=-1)
         return tf.reduce_mean(self.alpha * tf.pow(1.0 - pt, self.gamma) * ce)
 
     def get_config(self):
@@ -76,13 +83,17 @@ class FocalLoss(keras.losses.Loss):
 
 # ── Preprocessing ─────────────────────────────────────────────────────────────
 _stemmer_factory = StemmerFactory()
-stemmer          = _stemmer_factory.create_stemmer()
-STOPWORDS        = set(stopwords.words("indonesian"))
-CUSTOM_SW        = {"promo", "promosi", "sale", "diskon", "gratis", "free",
-                    "ongkir", "cashback", "voucher"}
-DOMAIN_WORDS     = {"solar", "transport", "langganan", "tagihan",
-                    "kesehatan", "konsumsi", "entertainment"}
-ALL_SW           = (STOPWORDS | CUSTOM_SW) - DOMAIN_WORDS
+stemmer = _stemmer_factory.create_stemmer()
+STOPWORDS = set(stopwords.words("indonesian"))
+CUSTOM_SW = {
+    "promo", "promosi", "sale", "diskon", "gratis", "free",
+    "ongkir", "cashback", "voucher"
+}
+DOMAIN_WORDS = {
+    "solar", "transport", "langganan", "tagihan",
+    "kesehatan", "konsumsi", "entertainment"
+}
+ALL_SW = (STOPWORDS | CUSTOM_SW) - DOMAIN_WORDS
 
 
 def preprocess(text: str) -> str:
@@ -104,10 +115,10 @@ _load_lock = threading.Lock()
 def load_ml_models() -> None:
     """
     Load semua artefak ML dari Hugging Face Hub.
-    - Dipanggil sekali di background thread (background_load_task) saat startup.
+    - Dipanggil sekali di background thread saat startup.
     - Juga bisa dipanggil secara lazy via ensure_models_loaded().
     """
-    print(f"[ML] HF_MODEL_ID  = {HF_MODEL_ID}")
+    print(f"[ML] HF_MODEL_ID = {HF_MODEL_ID}")
     print(f"[ML] HF_CACHE_DIR = {HF_CACHE_DIR}")
     print(f"[ML] HF_TOKEN set = {HF_TOKEN is not None}")
 
@@ -118,7 +129,7 @@ def load_ml_models() -> None:
         login(token=HF_TOKEN, add_to_git_credential=False)
         print("[ML] ✅ HF Hub login berhasil")
     else:
-        print("[ML] ⚠️  HF_TOKEN tidak di-set — rate limit publik berlaku")
+        print("[ML] ⚠️ HF_TOKEN tidak di-set — rate limit publik berlaku")
 
     # ── 1. Tokenizer IndoBERT ─────────────────────────────────────────────────
     print("⏳ [ML] Loading IndoBERT tokenizer dari HF Hub...")
@@ -138,7 +149,7 @@ def load_ml_models() -> None:
         cache_dir=HF_CACHE_DIR,
     ).to(device)
     bert.eval()
-    ML_MODELS["bert"]   = bert
+    ML_MODELS["bert"] = bert
     ML_MODELS["device"] = device
     print("✅ [ML] IndoBERT siap")
 
@@ -153,7 +164,8 @@ def load_ml_models() -> None:
     print(f"[ML] MLP path (cached): {mlp_path}")
     ML_MODELS["mlp"] = keras.models.load_model(
         mlp_path,
-        custom_objects={"ResidualBlock": ResidualBlock, "FocalLoss": FocalLoss},
+        custom_objects={"ResidualBlock": ResidualBlock,
+                        "FocalLoss": FocalLoss},
     )
     print("✅ [ML] MLP siap")
 
@@ -180,7 +192,7 @@ def ensure_models_loaded() -> None:
     if ML_MODELS:
         return
     with _load_lock:
-        if ML_MODELS:   # double-check setelah acquire lock
+        if ML_MODELS:
             return
         print("[ML] ⚡ Lazy-loading model (background load belum selesai)...")
         load_ml_models()
@@ -189,20 +201,20 @@ def ensure_models_loaded() -> None:
 # ── Ekstraksi fitur BERT ───────────────────────────────────────────────────────
 def extract_bert_features(texts: List[str], batch_size: int = 32) -> np.ndarray:
     tokenizer = ML_MODELS["tokenizer"]
-    bert      = ML_MODELS["bert"]
-    device    = ML_MODELS["device"]
+    bert = ML_MODELS["bert"]
+    device = ML_MODELS["device"]
     embeddings = []
     with torch.no_grad():
         for i in range(0, len(texts), batch_size):
-            batch = texts[i : i + batch_size]
-            enc   = tokenizer(
+            batch = texts[i: i + batch_size]
+            enc = tokenizer(
                 batch, padding=True, truncation=True,
                 max_length=64, return_tensors="pt"
             )
-            enc  = {k: v.to(device) for k, v in enc.items()}
-            out  = bert(**enc)
+            enc = {k: v.to(device) for k, v in enc.items()}
+            out = bert(**enc)
             mask = enc["attention_mask"].unsqueeze(-1).float()
-            emb  = (out.last_hidden_state * mask).sum(1) / mask.sum(1)
+            emb = (out.last_hidden_state * mask).sum(1) / mask.sum(1)
             embeddings.append(emb.cpu().numpy())
     return np.vstack(embeddings)
 
@@ -229,11 +241,11 @@ class KategorisasiResponse(BaseModel):
 def ml_health():
     """Cek status model yang sudah dimuat."""
     return {
-        "status":        "ok" if ML_MODELS else "loading",
-        "loaded":        list(ML_MODELS.keys()),
-        "hf_model_id":   HF_MODEL_ID,
-        "hf_cache_dir":  HF_CACHE_DIR,
-        "hf_token_set":  HF_TOKEN is not None,
+        "status": "ok" if ML_MODELS else "loading",
+        "loaded": list(ML_MODELS.keys()),
+        "hf_model_id": HF_MODEL_ID,
+        "hf_cache_dir": HF_CACHE_DIR,
+        "hf_token_set": HF_TOKEN is not None,
     }
 
 
@@ -241,20 +253,21 @@ def ml_health():
 def kategorisasi(req: KategorisasiRequest):
     """Kategorisasi teks transaksi menggunakan IndoBERT + MLP."""
 
-    # Pastikan model sudah dimuat (lazy fallback jika background belum selesai)
+    # Pastikan model sudah dimuat
     ensure_models_loaded()
 
     if not req.texts:
-        raise HTTPException(status_code=400, detail="Field 'texts' tidak boleh kosong")
+        raise HTTPException(
+            status_code=400, detail="Field 'texts' tidak boleh kosong")
 
-    clean  = [preprocess(t) for t in req.texts]
-    X      = extract_bert_features(clean).astype(np.float32)
-    proba  = ML_MODELS["mlp"].predict(X, verbose=0)
-    preds  = np.argmax(proba, axis=1)
+    clean = [preprocess(t) for t in req.texts]
+    X = extract_bert_features(clean).astype(np.float32)
+    proba = ML_MODELS["mlp"].predict(X, verbose=0)
+    preds = np.argmax(proba, axis=1)
 
     results = []
     for i, (pred, prob) in enumerate(zip(preds, proba)):
-        label   = ML_MODELS["le"].inverse_transform([pred])[0]
+        label = ML_MODELS["le"].inverse_transform([pred])[0]
         top_idx = prob.argsort()[::-1][: req.top_k]
         top_lbl = ", ".join(
             f"{ML_MODELS['le'].inverse_transform([j])[0]} {prob[j]*100:.1f}%"
@@ -269,23 +282,19 @@ def kategorisasi(req: KategorisasiRequest):
 
     return KategorisasiResponse(results=results)
 
+
 def predict_transaction_category_baru(text: str) -> dict:
     """Fungsi pembungkus untuk memprediksi satu teks transaksi menggunakan IndoBERT + MLP"""
-    # 1. Pastikan model sudah nangkring di memori
     ensure_models_loaded()
 
-    # 2. Preprocessing & Ekstraksi Fitur IndoBERT
     clean_text = preprocess(text)
     X = extract_bert_features([clean_text]).astype(np.float32)
 
-    # 3. Prediksi menggunakan MLP Keras
     proba = ML_MODELS["mlp"].predict(X, verbose=0)[0]
     pred = np.argmax(proba)
 
-    # 4. Ambil nama label kategori aslinya
     label = ML_MODELS["le"].inverse_transform([pred])[0]
 
-    # 5. Kembalikan format dict yang dicari oleh transactions.py
     return {
         "category": label,
         "confidence": float(proba[pred])
