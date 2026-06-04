@@ -157,8 +157,16 @@
 }
 
 .dashboard-search input {
+  min-height: 0;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
   color: var(--dashboard-text);
   caret-color: var(--dashboard-accent);
+  padding: 0;
 }
 
 .dashboard-search input::placeholder {
@@ -314,13 +322,9 @@
   }
 
   .dashboard-topbar-feature {
-    width: 42px;
-    padding: 0;
+    width: auto;
+    padding: 0 12px 0 9px;
     justify-content: center;
-  }
-
-  .dashboard-topbar-feature .dashboard-topbar-title {
-    display: none;
   }
 }
 

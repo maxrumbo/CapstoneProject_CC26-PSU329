@@ -281,12 +281,12 @@ function DashboardLayout() {
                       ? "dashboard-topbar-feature active"
                       : "dashboard-topbar-feature"
                   }
-                  aria-label="Buka Dashboard Analitik"
+                  aria-label="Buka Dashboard"
                 >
                   <span className="dashboard-topbar-icon" aria-hidden="true">
                     <Icon name="dashboard" size={16} />
                   </span>
-                  <span className="dashboard-topbar-title">Dashboard Analitik</span>
+                  <span className="dashboard-topbar-title">Dashboard</span>
                 </NavLink>
 
                 <button
@@ -337,12 +337,12 @@ function DashboardLayout() {
               className={({ isActive }) =>
                 `${isActive ? "dashboard-topbar-feature active" : "dashboard-topbar-feature"} w-full justify-center`
               }
-              aria-label="Buka Dashboard Analitik"
+              aria-label="Buka Dashboard"
             >
               <span className="dashboard-topbar-icon" aria-hidden="true">
                 <Icon name="dashboard" size={16} />
               </span>
-              <span className="dashboard-topbar-title">Dashboard Analitik</span>
+              <span className="dashboard-topbar-title">Dashboard</span>
             </NavLink>
           </div>
         </div>
