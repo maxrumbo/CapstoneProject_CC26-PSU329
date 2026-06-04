@@ -399,11 +399,15 @@
 
   .dashboard-actions {
     grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand search avatar"
+      "menu menu menu";
     justify-content: stretch;
     gap: 10px;
   }
 
   .dashboard-brand {
+    grid-area: brand;
     justify-content: flex-start;
   }
 
@@ -416,6 +420,7 @@
   }
 
   .dashboard-mobile-search {
+    grid-area: search;
     display: flex;
     height: 40px;
     padding: 0 12px;
@@ -430,16 +435,19 @@
   }
 
   .dashboard-mobile-avatar {
+    grid-area: avatar;
     display: grid;
     width: 40px;
     height: 40px;
+    justify-self: end;
   }
 
   .dashboard-menu-toggle {
+    grid-area: menu;
     display: inline-flex;
-    grid-column: 1 / -1;
     width: 100%;
     min-height: 46px;
+    gap: 8px;
   }
 }
 

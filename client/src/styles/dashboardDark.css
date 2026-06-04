@@ -635,7 +635,6 @@
 .dashboard-shell .feature-card p,
 .dashboard-shell .transaction-meta,
 .dashboard-shell .field-hint,
-.dashboard-shell .form-message,
 .dashboard-shell .dashboard-topbar-title,
 .dashboard-shell .dashboard-pill-label,
 .dashboard-shell .dashboard-section span,
@@ -869,6 +868,9 @@
 
   .dashboard-actions {
     grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand search avatar"
+      "menu menu menu";
     gap: 10px;
   }
 
@@ -880,7 +882,12 @@
     height: 40px;
   }
 
+  .dashboard-brand {
+    grid-area: brand;
+  }
+
   .dashboard-mobile-search {
+    grid-area: search;
     display: flex;
     height: 40px;
     min-width: 0;
@@ -896,16 +903,19 @@
   }
 
   .dashboard-mobile-avatar {
+    grid-area: avatar;
     display: grid;
     width: 40px;
     height: 40px;
+    justify-self: end;
   }
 
   .dashboard-menu-toggle {
+    grid-area: menu;
     display: inline-flex;
-    grid-column: 1 / -1;
     width: 100%;
     min-height: 46px;
+    gap: 8px;
     border-color: rgba(245, 166, 35, 0.22);
     background: rgba(255, 255, 255, 0.04);
   }

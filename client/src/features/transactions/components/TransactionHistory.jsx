@@ -24,7 +24,6 @@ function TransactionHistory({
             <h3>Riwayat Terbaru</h3>
           </div>
         </div>
-        <span className="status-pill">Berfungsi</span>
       </div>
 
       <div className="report-toolbar">

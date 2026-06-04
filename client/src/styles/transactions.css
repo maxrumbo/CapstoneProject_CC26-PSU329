@@ -192,7 +192,7 @@ select:focus {
   margin: 12px 0 0;
   padding: 10px 12px;
   border-radius: 5px;
-  color: #0f3a25;
+  color: #000;
   background: linear-gradient(160deg, #bfe7cf 0%, #9fd9b6 100%);
   border: 1px solid rgba(63, 140, 95, 0.45);
   box-shadow:

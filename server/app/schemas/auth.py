@@ -2,6 +2,8 @@ from datetime import datetime
 from typing import Literal, Optional
 from pydantic import BaseModel, EmailStr, field_validator
 
+from app.schemas.password import validate_password_strength
+
 
 OtpPurpose = Literal["signup", "reset_password", "change_password"]
 
@@ -27,9 +29,7 @@ class RegisterWithOtp(BaseModel):
     @field_validator("password")
     @classmethod
     def password_strength(cls, v: str) -> str:
-        if len(v) < 8:
-            raise ValueError("Password minimal 8 karakter")
-        return v
+        return validate_password_strength(v)
 
 
 class ResetPasswordWithOtp(BaseModel):
@@ -40,9 +40,7 @@ class ResetPasswordWithOtp(BaseModel):
     @field_validator("new_password")
     @classmethod
     def password_strength(cls, v: str) -> str:
-        if len(v) < 8:
-            raise ValueError("Password minimal 8 karakter")
-        return v
+        return validate_password_strength(v)
 
 
 class ChangePasswordWithOtp(BaseModel):
@@ -52,9 +50,7 @@ class ChangePasswordWithOtp(BaseModel):
     @field_validator("new_password")
     @classmethod
     def password_strength(cls, v: str) -> str:
-        if len(v) < 8:
-            raise ValueError("Password minimal 8 karakter")
-        return v
+        return validate_password_strength(v)
 
 
 class ResendVerificationRequest(BaseModel):

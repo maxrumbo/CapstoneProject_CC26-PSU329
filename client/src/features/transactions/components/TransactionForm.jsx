@@ -21,6 +21,7 @@ function TransactionForm({
     onAddTransaction,
     onPredictCategory,
   });
+  const displayedCategory = formData.category || categoryPrediction.category;
 
   return (
     <section className="panel transaction-form-card" id="transaksi">
@@ -34,7 +35,6 @@ function TransactionForm({
             <h3>Input Transaksi</h3>
           </div>
         </div>
-        <span className="status-pill">Berfungsi</span>
       </div>
 
       <form className="transaction-form" onSubmit={handleSubmit}>
@@ -120,16 +120,16 @@ function TransactionForm({
               <div className="ai-category-result">
                 {categoryPrediction.isLoading
                   ? "Menganalisis..."
-                  : formData.category || "Otomatis oleh AI"}
+                  : displayedCategory || "Otomatis oleh AI"}
               </div>
               {categoryPrediction.isLoading && (
                 <small className="field-hint category-prediction-hint">
                   AI menganalisis kategori...
                 </small>
               )}
-              {!categoryPrediction.isLoading && categoryPrediction.category && (
+              {!categoryPrediction.isLoading && displayedCategory && (
                 <small className="field-hint category-prediction-hint">
-                  AI memilih {categoryPrediction.category}
+                  AI memilih {displayedCategory}
                 </small>
               )}
               {!categoryPrediction.isLoading && categoryPrediction.error && (

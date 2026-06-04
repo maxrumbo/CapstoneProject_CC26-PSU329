@@ -212,7 +212,7 @@ export function useTransactionForm({
     const payload = {
       ...formData,
       amount: Number(formData.amount),
-      category: isExpense ? null : INCOME_CATEGORY,
+      category: isExpense ? formData.category || null : INCOME_CATEGORY,
     };
 
     const result = await onAddTransaction(payload);

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Icon from "../../../components/ui/Icon";
 import { validateRegisterForm } from "../utils/authValidation";
 import { registerUser } from "../../../services/authApi";
+import { passwordRequirementMessage } from "../../../utils/passwordValidation";
 
 const initialFormData = {
   name: "",
@@ -15,7 +16,7 @@ const getRequiredMessage = (name) => {
   const messages = {
     name: "Nama wajib diisi.",
     email: "Email wajib diisi.",
-    password: "Password minimal 8 karakter.",
+    password: passwordRequirementMessage,
     confirmPassword: "Password dan konfirmasi password harus sama.",
     acceptedTerms: "Persetujuan harus dicentang.",
   };
@@ -181,7 +182,7 @@ function RegisterForm({ onSwitchToLogin }) {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 autoComplete="new-password"
-                placeholder="Minimal 8 karakter"
+                placeholder="Min. 8 karakter, huruf besar, angka"
                 value={formData.password}
                 aria-invalid={Boolean(errors.password)}
                 aria-describedby={

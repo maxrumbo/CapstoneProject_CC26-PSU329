@@ -1,8 +1,9 @@
 from datetime import datetime
-from pydantic import BaseModel, EmailStr, computed_field, field_validator
 from typing import Optional
 
-from pydantic import BaseModel, EmailStr, field_validator
+from pydantic import BaseModel, EmailStr, computed_field, field_validator
+
+from app.schemas.password import validate_password_strength
 
 
 class UserRegister(BaseModel):
@@ -13,9 +14,7 @@ class UserRegister(BaseModel):
     @field_validator("password")
     @classmethod
     def password_strength(cls, v: str) -> str:
-        if len(v) < 8:
-            raise ValueError("Password minimal 8 karakter")
-        return v
+        return validate_password_strength(v)
 
     @field_validator("display_name")
     @classmethod

@@ -237,6 +237,7 @@ function DashboardLayout() {
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
+              <span>Fitur</span>
             </button>
 
             <div className="dashboard-desktop-bar hidden md:grid">
@@ -311,7 +312,7 @@ function DashboardLayout() {
             </div>
           </div>
 
-          <div className={`${mobileMenuOpen ? "flex" : "hidden"} md:hidden flex-col gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-md`}>
+          <div className={`${mobileMenuOpen ? "flex" : "hidden"} dashboard-mobile-menu-panel md:hidden flex-col gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-md`}>
             <nav className="grid grid-cols-2 gap-2" aria-label="Navigasi dashboard mobile">
               {navItems.map((item) => (
                 <NavLink

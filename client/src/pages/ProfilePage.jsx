@@ -9,6 +9,10 @@ import {
   BUDGET_CATEGORIES,
   createEmptyCategoryLimits,
 } from "../utils/budgetStorage";
+import {
+  isValidPassword,
+  passwordRequirementMessage,
+} from "../utils/passwordValidation";
 
 const toNumber = (value) => {
   const numberValue = Number(value);
@@ -333,6 +337,11 @@ function ProfilePage() {
           return;
         }
 
+        if (!isValidPassword(editDraft.password)) {
+          setProfileOtpError(passwordRequirementMessage);
+          return;
+        }
+
         if (!profileOtp.trim()) {
           setProfileOtpError("Kode OTP wajib diisi.");
           return;
@@ -520,7 +529,7 @@ function ProfilePage() {
                     name="password"
                     value={isPasswordEditing ? editDraft.password : "********"}
                     onChange={handleEditChange}
-                    placeholder="Password baru"
+                    placeholder="Min. 8 karakter, huruf besar, angka"
                     readOnly={!isPasswordEditing}
                   />
                   <button

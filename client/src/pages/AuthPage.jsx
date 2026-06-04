@@ -2,11 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { loginUser, registerUser, requestOtp, resetPassword } from "../services/authApi";
 import { useAuth } from "../context/useAuth";
+import { isValidPassword, passwordRequirementMessage } from "../utils/passwordValidation";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
 const isValidEmail = (value) => emailRegex.test(value.trim());
-const isValidPassword = (value) => passwordRegex.test(value);
 const invalidCredentialHints = [
   "invalid credential",
   "invalid credentials",
@@ -182,7 +181,7 @@ function LoginForm({ onSwitch }) {
     setApiError("");
     const nextErrors = { email: "", password: "" };
     if (!isValidEmail(email)) nextErrors.email = "Format email tidak valid.";
-    if (!isValidPassword(password)) nextErrors.password = "Password min. 8 karakter, wajib huruf dan angka.";
+    if (!isValidPassword(password)) nextErrors.password = passwordRequirementMessage;
     setErrors(nextErrors);
     if (nextErrors.email || nextErrors.password) return;
     setLoading(true);
@@ -240,8 +239,8 @@ function RegisterForm({ onSwitch, toast }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password.length < 8) {
-      toast("Password minimal 8 karakter.", "error"); return;
+    if (!isValidPassword(form.password)) {
+      toast(passwordRequirementMessage, "error"); return;
     }
     if (form.password !== form.confirm) {
       toast("Passwords do not match.", "error"); return;
@@ -321,7 +320,7 @@ function ForgotForm({ onSwitch, toast }) {
 
   const submitNewPw = async (e) => {
     e.preventDefault();
-    if (newPw.length < 8) { toast("Password minimal 8 karakter.", "error"); return; }
+    if (!isValidPassword(newPw)) { toast(passwordRequirementMessage, "error"); return; }
     if (newPw !== confirmPw) { toast("Passwords do not match.", "error"); return; }
     setLoading(true);
     try {

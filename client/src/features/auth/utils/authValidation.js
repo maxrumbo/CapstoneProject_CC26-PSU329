@@ -1,3 +1,8 @@
+import {
+  isValidPassword,
+  passwordRequirementMessage,
+} from "../../../utils/passwordValidation";
+
 export const validateEmail = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 };
@@ -13,6 +18,8 @@ export const validateLoginForm = ({ email, password }) => {
 
   if (!password) {
     errors.password = "Password wajib diisi.";
+  } else if (!isValidPassword(password)) {
+    errors.password = passwordRequirementMessage;
   }
 
   return errors;
@@ -37,8 +44,8 @@ export const validateRegisterForm = ({
     errors.email = "Format email harus valid.";
   }
 
-  if (password.length < 8) {
-    errors.password = "Password minimal 8 karakter.";
+  if (!isValidPassword(password)) {
+    errors.password = passwordRequirementMessage;
   }
 
   if (password !== confirmPassword) {
