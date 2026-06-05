@@ -11,8 +11,8 @@
   left: 0;
   right: 0;
   z-index: 60;
-  height: 84px;
-  padding: 6px 22px 14px 20px;
+  min-height: 84px;
+  padding: 12px clamp(18px, 2.6vw, 32px);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) minmax(320px, 520px);
   align-items: center;
@@ -27,7 +27,6 @@
   align-items: center;
   justify-self: start;
   line-height: 0;
-  transform: translateY(-32px);
 }
 
 .welcome-topbar-logo-mark {
@@ -40,7 +39,6 @@
   align-items: center;
   justify-content: center;
   gap: clamp(16px, 2vw, 32px);
-  transform: translateY(-34px);
 }
 
 .welcome-topbar-link {
@@ -95,7 +93,6 @@
     0 0 22px rgba(245, 166, 35, 0.2),
     0 0 48px rgba(245, 166, 35, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  transform: translateY(-34px);
   position: relative;
 }
 
