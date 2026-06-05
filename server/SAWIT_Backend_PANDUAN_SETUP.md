@@ -1,6 +1,6 @@
 # SAWIT Backend - Panduan Setup & Jalankan Server
 
-Panduan ini menjelaskan cara menjalankan backend SAWIT, termasuk fitur klasifikasi kategori transaksi otomatis dengan model LSTM.
+Panduan ini menjelaskan cara menjalankan backend SAWIT, termasuk fitur klasifikasi kategori transaksi otomatis berbasis IndoBERT + MLP dari Hugging Face Hub.
 
 ## 1. Masuk ke Folder & Aktifkan Virtual Environment
 
@@ -38,7 +38,7 @@ numpy>=1.26.0
 google-genai>=2.6.0
 ```
 
-Dependency AI dipakai untuk klasifikasi kategori transaksi dengan model LSTM di `machine-learning/ModelLSTM`. Model yang dipakai adalah `best_lstm_model.keras`, `tokenizer.json`, dan `model_config.json`.
+Dependency AI dipakai untuk klasifikasi kategori transaksi via Hugging Face Hub (IndoBERT + MLP).
 Dependency `google-genai` dipakai untuk fitur Rekomendasi AI dan Early Warning berbasis Gemini.
 
 ## 3. Siapkan File `.env`
@@ -112,7 +112,7 @@ Cek saldo:
 GET /api/transactions/summary/balance
 ```
 
-Tambah pengeluaran. Kategori tidak perlu dikirim karena backend selalu memakai prediksi AI LSTM dari `description`:
+Tambah pengeluaran. Kategori tidak perlu dikirim karena backend selalu memakai prediksi AI IndoBERT + MLP dari `description`:
 
 ```http
 POST /api/transactions/
@@ -177,7 +177,7 @@ POST /api/transactions/
 | POST | `/api/auth/login` | Login dan dapat JWT token | Tidak |
 | GET | `/api/auth/me` | Data user login | Ya |
 | GET | `/api/transactions/summary/balance` | Hitung saldo | Ya |
-| POST | `/api/transactions/predict-category` | Prediksi kategori pengeluaran dengan LSTM | Ya |
+| POST | `/api/transactions/predict-category` | Prediksi kategori pengeluaran dengan IndoBERT + MLP (HF Hub) | Ya |
 | POST | `/api/transactions/` | Tambah transaksi baru | Ya |
 | GET | `/api/transactions/` | Daftar transaksi | Ya |
 | GET | `/api/transactions/{id}` | Detail transaksi | Ya |
@@ -189,7 +189,7 @@ POST /api/transactions/
 
 ## Catatan Validasi
 
-- Expense selalu dikategorikan otomatis oleh model LSTM; kategori manual dari client diabaikan.
+- Expense selalu dikategorikan otomatis oleh model IndoBERT + MLP (HF Hub); kategori manual dari client diabaikan.
 - Income selalu memakai kategori `Pemasukan`.
 - Deskripsi wajib diisi dan maksimal 255 karakter.
 - Amount harus lebih dari 0.
@@ -205,7 +205,7 @@ POST /api/transactions/
 | `database "sawit_db" does not exist` | Database belum dibuat | Buat database di pgAdmin |
 | `module 'pydantic_settings' not found` | Dependency belum terinstall | Jalankan `pip install -r requirements.txt` |
 | `No module named 'tensorflow'` saat prediksi | Dependency AI belum terinstall | Jalankan `pip install -r requirements.txt` |
-| Prediksi mengembalikan 503 | Model LSTM gagal dimuat atau file model tidak ditemukan | Pastikan folder `machine-learning/ModelLSTM` lengkap |
+| Prediksi mengembalikan 503 | Model HF Hub gagal dimuat atau akses repo ditolak | Pastikan `HF_MODEL_ID` valid dan `HF_TOKEN` terisi jika repo privat |
 | Rekomendasi AI mengembalikan 503 Gemini belum terinstall | Dependency `google-genai` belum terinstall | Jalankan `pip install google-genai` atau `pip install -r requirements.txt` |
 | Rekomendasi AI mengembalikan 503 API key kosong | `GEMINI_API_KEY` belum diisi | Isi `GEMINI_API_KEY` di `server/.env`, lalu restart backend |
 | `401 Unauthorized` | Token belum dikirim | Login lalu pakai token Bearer |
