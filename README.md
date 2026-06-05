@@ -1,106 +1,101 @@
-# Capstone Project CC26-PSU329
+# SAWIT - Sahabat Duwit
 
-README ini dibuat sebagai panduan kerja 
+Ringkas. Cerdas. Siap bantu kamu mengelola keuangan harian.
 
-## Isi Repo
+## Deskripsi Singkat Proyek
 
-- `client/` - frontend React + Vite
-- `data-scientist/` - analisis data, notebook, dan script Python
-- `server/` - backend
-- `machine-learning/` - model dan kode machine learning
+SAWIT (Sahabat Duwit) adalah aplikasi manajemen keuangan berbasis web untuk membantu pengguna mencatat transaksi, melihat ringkasan saldo, dan mendapatkan rekomendasi pengelolaan keuangan. Backend menyediakan API transaksi dan fitur AI untuk kategorisasi otomatis pengeluaran.
 
-## Alur Kerja yang Disarankan
+## Highlight Fitur
 
-1. Clone repository ke laptop masing-masing.
-2. Selalu buat branch baru untuk pekerjaan kamu.
-3. Kerjakan perubahan di branch itu, jangan langsung di `development (default)`.
-4. Commit perubahan dengan pesan yang jelas. misal (Maxwell : update profile page)
-5. Push branch ke GitHub.
-6. Kalau sudah selesai, buat pull request atau minta review dari tim.
+- Pencatatan transaksi income dan expense dengan ringkasan saldo.
+- Kategorisasi otomatis pengeluaran berbasis IndoBERT + MLP.
+- Rekomendasi dan early warning berbasis AI.
+- Dashboard ringkas untuk pemantauan kondisi finansial.
 
-## Cara Clone
+## Galeri Aplikasi
 
-Kalau pakai terminal:
+Tempatkan gambar di folder docs/images/ lalu isi tautan berikut.
 
-```bash
-git clone <url-repository>
-cd CapstoneProject_CC26-PSU329
-```
+### Hero Image
 
-Kalau pakai GitHub Desktop:
+![Hero](docs/images/hero.png)
 
-1. Login ke GitHub Desktop.
-2. Pilih menu Clone a repository.
-3. Masukkan URL repo atau pilih dari daftar repository kamu.
-4. Tentukan folder lokal, lalu clone.
+### Screenshot - Dashboard
 
-## Cara Kerja Pakai Branch
+![Dashboard](docs/images/screenshot-dashboard.png)
 
-Satu orang sebaiknya punya satu branch kerja sendiri. Contoh nama branch:
+### Screenshot - Transaksi
 
-- `feature/login`
-- `feature/dashboard`
-- `fix/navbar`
-- `data-cleaning`
+![Transaksi](docs/images/screenshot-transactions.png)
 
-Contoh alur pakai terminal:
+### Screenshot - Rekomendasi AI
+
+![Rekomendasi](docs/images/screenshot-advice.png)
+
+## Petunjuk Setup Environment
+
+### Prasyarat
+
+- Node.js 18+
+- Python 3.10+
+- PostgreSQL
+
+### Frontend (client/)
 
 ```bash
-git checkout -b feature/nama-kamu
-git add .
-git commit -m "Add login page"
-git push origin feature/nama-kamu
-```
-
-## Alur Push yang Aman
-
-- Pastikan sudah `git pull` dulu sebelum mulai kerja supaya branch kamu tidak ketinggalan.
-- Commit perubahan kecil-kecil supaya mudah dilacak.
-- Jangan push langsung ke `main` kecuali memang disetujui tim.
-- Kalau ada konflik, jangan asal hapus file. Cek dulu perubahan dari anggota lain.
-
-## Do
-
-- Pakai branch sendiri untuk setiap tugas.
-- Pull dulu sebelum mulai kerja.
-- Kasih nama commit yang jelas.
-- Simpan file yang sudah selesai sebelum push.
-- Tanya tim kalau tidak yakin sebelum mengubah file penting.
-
-## Don't
-
-- Jangan kerja langsung di `main`.
-- Jangan force push kalau tidak paham dampaknya.
-- Jangan hapus file milik orang lain tanpa diskusi.
-- Jangan commit file yang tidak perlu, seperti file sementara atau hasil build.
-- Jangan overwrite perubahan anggota tim lain.
-
-## Menjalankan Frontend
-
-Masuk ke folder `client/`, lalu jalankan:
-
-```bash
+cd client
 npm install
 npm run dev
 ```
 
-## Data Science
-
-Di folder `data-scientist/` terdapat dua bagian utama:
-
-- `kategorisasi/` - dataset, notebook, dan kebutuhan Python untuk klasifikasi atau sentimen
-- `saham/` - script Python untuk data historis saham LQ45
-
-Contoh menjalankan script di `data-scientist/saham/`:
+### Backend (server/)
 
 ```bash
+cd server
+python -m venv .venv
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+# Windows CMD
+.venv\Scripts\activate
 pip install -r requirements.txt
-python src/init_historical.py
-python src/fetch_lq45.py
 ```
 
-## Catatan
+Buat file server/.env:
 
-- Kalau mau tambah fitur baru, buat branch baru dulu.
-- Kalau pakai GitHub Desktop, tetap ikuti alur yang sama: branch, commit, push.
-- Folder `server/` dan `machine-learning/` masih bisa dikembangkan sesuai kebutuhan tim.
+```env
+DATABASE_URL=postgresql://postgres:password_kamu@localhost:5432/sawit_db
+SECRET_KEY=ganti_dengan_random_string_panjang_minimal_32_karakter
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+GEMINI_API_KEY=isi_api_key_gemini_dari_tim_ai
+HF_MODEL_ID=StefanoGarrent/sawit-indobert-kategorisasi
+HF_TOKEN=isi_token_huggingface_jika_repo_privat
+HF_CACHE_DIR=/tmp/hf_model_cache
+```
+
+Jalankan server:
+
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+## Tautan Model ML
+
+Model AI dapat diunduh dari Google Drive berikut:
+https://drive.google.com/drive/folders/1hY5yuir9umRMbqMUdKrCGkO84qnIuVU3
+
+Catatan: Backend saat ini memuat model dari Hugging Face Hub melalui HF_MODEL_ID dan HF_TOKEN.
+
+## Cara Menjalankan Aplikasi
+
+1. Jalankan backend di folder server/ (lihat langkah di atas).
+2. Jalankan frontend di folder client/.
+3. Buka aplikasi di browser: http://localhost:5173
+
+## Struktur Repo
+
+- client/ - frontend React + Vite
+- server/ - backend FastAPI
+- data-scientist/ - notebook dan riset data
+- machine-learning/ - artifacts training/model
