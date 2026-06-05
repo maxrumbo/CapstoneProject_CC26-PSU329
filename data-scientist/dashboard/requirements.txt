@@ -1,1 +1,8 @@
-
+streamlit
+pandas
+plotly
+python-dotenv
+requests
+streamlit-antd-components
+supabase
+PyJWT
