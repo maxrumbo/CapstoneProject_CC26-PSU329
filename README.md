@@ -95,6 +95,11 @@ https://drive.google.com/drive/folders/1hY5yuir9umRMbqMUdKrCGkO84qnIuVU3
 
 Catatan: Backend saat ini memuat model dari Hugging Face Hub melalui HF_MODEL_ID dan HF_TOKEN.
 
+## Tech Report
+
+Dokumen tech report dapat diakses di:
+https://drive.google.com/file/d/19Us8byCFFXWmWw_ewWPgOyfiPmh37w6F/view?usp=drivesdk
+
 ## Cara Menjalankan Aplikasi
 
 1. Jalankan backend di folder server/ (lihat langkah di atas).
@@ -121,9 +126,9 @@ Dokumentasi interaktif tersedia di http://localhost:8000/docs
 - client/ - frontend React + Vite
 - server/ - backend FastAPI
 - data-scientist/ - notebook dan riset data
-- machine-learning/ - artifacts training/model
+- server/artifacts/ - artifacts training/model
 
 ## Catatan Pengembangan
 
 - Backend memuat model AI dari Hugging Face Hub.
-- Folder data-scientist dan machine-learning berisi material riset dan training.
+- Folder data-scientist dan artifacts berisi material riset dan training.
