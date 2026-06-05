@@ -15,23 +15,23 @@ SAWIT (Sahabat Duwit) adalah aplikasi manajemen keuangan berbasis web untuk memb
 
 ## Galeri Aplikasi
 
-Tempatkan gambar di folder docs/images/ lalu isi tautan berikut.
 
-### Hero Image
+![Welcome Page](docs/images/welcome-page.png)
 
-![Hero](docs/images/hero.png)
+## Tech Stack
 
-### Screenshot - Dashboard
+Frontend:
+- React + Vite
+- Tailwind CSS
 
-![Dashboard](docs/images/screenshot-dashboard.png)
+Backend:
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
 
-### Screenshot - Transaksi
-
-![Transaksi](docs/images/screenshot-transactions.png)
-
-### Screenshot - Rekomendasi AI
-
-![Rekomendasi](docs/images/screenshot-advice.png)
+AI/ML:
+- Hugging Face Transformers (IndoBERT)
+- TensorFlow/Keras (MLP)
 
 ## Petunjuk Setup Environment
 
@@ -80,6 +80,14 @@ Jalankan server:
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+## Konfigurasi Environment
+
+Backend memakai variabel berikut:
+- DATABASE_URL: koneksi PostgreSQL.
+- SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES: konfigurasi JWT.
+- GEMINI_API_KEY: API key Gemini untuk rekomendasi AI.
+- HF_MODEL_ID, HF_TOKEN, HF_CACHE_DIR: konfigurasi model AI dari Hugging Face Hub.
+
 ## Tautan Model ML
 
 Model AI dapat diunduh dari Google Drive berikut:
@@ -93,9 +101,29 @@ Catatan: Backend saat ini memuat model dari Hugging Face Hub melalui HF_MODEL_ID
 2. Jalankan frontend di folder client/.
 3. Buka aplikasi di browser: http://localhost:5173
 
+## Endpoint Utama (Backend)
+
+- POST /api/auth/register
+- POST /api/auth/login
+- GET /api/auth/me
+- POST /api/transactions/
+- GET /api/transactions/
+- GET /api/transactions/summary/balance
+- POST /api/transactions/predict-category
+- POST /api/budget/set
+- GET /api/budget/summary/{month}
+- GET /api/advice/
+
+Dokumentasi interaktif tersedia di http://localhost:8000/docs
+
 ## Struktur Repo
 
 - client/ - frontend React + Vite
 - server/ - backend FastAPI
 - data-scientist/ - notebook dan riset data
 - machine-learning/ - artifacts training/model
+
+## Catatan Pengembangan
+
+- Backend memuat model AI dari Hugging Face Hub.
+- Folder data-scientist dan machine-learning berisi material riset dan training.
