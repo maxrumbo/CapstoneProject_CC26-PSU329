@@ -172,7 +172,6 @@ function WishlistCalculator() {
             <h3>Wishlist Calculator</h3>
           </div>
         </div>
-        <span className="status-pill">Aktif</span>
       </div>
 
       <form className="wishlist-form" onSubmit={handleSubmit} noValidate>

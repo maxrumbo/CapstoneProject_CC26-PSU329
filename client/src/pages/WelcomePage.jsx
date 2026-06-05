@@ -284,6 +284,7 @@ function FeatureCard({ icon: Icon, title, desc, accent }) {
 export default function WelcomePage() {
   const navigate = useNavigate();
   const badgeText = "AI-POWERED PERSONAL FINANCE";
+  const demoUrl = "https://youtu.be/nL1J3YKx4fI";
   const [searchValue, setSearchValue] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
   const [isMobile, setIsMobile] = useState(false);
@@ -626,11 +627,14 @@ export default function WelcomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </button>
-              <button
-                onClick={() => navigate("/auth?mode=login")}
-                className={secondaryBtnClass}>
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={secondaryBtnClass}
+                aria-label="View SAWIT demo video">
                 View Demo
-              </button>
+              </a>
             </div>
             <div className="animate-fade-up text-sm max-w-md text-gray-400" style={{ animationDelay: "0.4s" }}>
               Track transactions, budgets, subscriptions, and financial goals in one place.

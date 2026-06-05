@@ -38,12 +38,6 @@ const toCategoryNumbers = (categoryInputs = {}) =>
     {}
   );
 
-const getConfiguredExpenseCategoryCount = (categoryLimits = {}) =>
-  BUDGET_CATEGORIES.filter(
-    (category) =>
-      category.type === "expense" && toNumber(categoryLimits[category.name]) > 0
-  ).length;
-
 const getCurrentMonth = () => {
   const today = new Date();
   const month = String(today.getMonth() + 1).padStart(2, "0");
@@ -127,13 +121,6 @@ function ProfilePage() {
 
   const hasSavedBudget = Boolean(budget?.updated_at);
   const isBudgetEditable = !hasSavedBudget || isEditingBudget;
-  const categoryLimits = budget?.category_limits || createEmptyCategoryLimits();
-  const configuredExpenseCategoryCount =
-    getConfiguredExpenseCategoryCount(categoryLimits);
-  const budgetStatus =
-    configuredExpenseCategoryCount <= 0
-      ? "Belum ada kategori"
-      : "Kategori aktif";
 
   useEffect(() => {
     let isActive = true;
@@ -612,9 +599,6 @@ function ProfilePage() {
                 <h3>Alokasi Per Kategori</h3>
               </div>
             </div>
-            <span className="status-pill">
-              {budgetStatus}
-            </span>
           </div>
 
           {isLoading ? (
